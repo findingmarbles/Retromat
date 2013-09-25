@@ -135,11 +135,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
   margin-bottom: -3px;
 }
 
-.finding_marbles, #navi {
-    font-size: 0.8em;
+.languageswitcher {
+    margin-left: 10px;
 }
 
 #navi {
+    font-size: 0.8em;
     position: absolute;
     top: 18px;
     right: 63px;
@@ -441,19 +442,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
         margin-bottom: 0px;
     }
 
-    #header {
-        display: none;
-    }
-
-    #navi {
-        display: none;
-    }
-
-    #pitch {
-        display: none;
-    }
-
-    #book {
+    #header,
+    #navi,
+    #pitch,
+    #book,
+    .languageswitcher {
         display: none;
     }
 
