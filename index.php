@@ -1,7 +1,29 @@
+<?php
+
+$lang = 'en';
+if (ISSET($_GET['lang'])) {
+    $input_lang = $_GET['lang'];
+    if ($input_lang == 'en' ||
+        $input_lang == 'de' ||
+        $input_lang == 'es' ||
+        $input_lang == 'nl')
+    {
+        $lang = $input_lang;
+    }
+}
+
+$_lang = array();
+$language_file = 'lang/index_' . $lang . '.php';
+require($language_file);
+
+$activities_file = 'lang/activities_' . $lang . '.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retr-O-Mat</title>
+<title>Retr-O-Mat - <?php echo($_lang['HTML_TITLE']); ?></title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -33,7 +55,7 @@
 // "CONFIG"
 var NUMBER_OF_REGULAR_PHASES = 5;
 var PHASE_SOMETHING_DIFFERENT = 5;
-var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Chance to show "different" phase is 1:INVERTED_CHANCE
+var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
 
 // Frequent sources for activities
 var source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
@@ -46,28 +68,30 @@ var source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Ju
 var source_unknown = 'Unknown';
 
 var PHASE_ID_TAG = 'phase';
-var phase_titles = ['Set the stage', 'Gather data', 'Generate insights', 'Decide what to do', 'Close the retrospective', 'Something completely different'];
-
-
 
 <?php
-    $lang = 'EN';
-    if (ISSET($_GET['lang'])) {
-        $input_lang = $_GET['lang'];
-        if ($input_lang == 'EN' ||
-            $input_lang == 'DE' ||
-            $input_lang == 'ES' ||
-            $input_lang == 'NL')
-        {
-            $lang = $input_lang;
-        }
+
+require($activities_file);
+
+$selected_EN = '';
+$selected_DE = '';
+$selected_ES = '';
+$selected_NL = '';
+switch ($lang) {
+    case 'en':
+        $selected_EN = 'selected';
+        break;
+    case 'de':
+        $selected_DE = 'selected';
+        break;
+    case 'es':
+        $selected_ES = 'selected';
+        break;
+    case 'nl':
+        $selected_NL = 'selected';
     }
-    $activities_file = 'php/activities_' . $lang . '.php';
-    include($activities_file);
+
 ?>
-
-
-
 
 last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
 
@@ -159,7 +183,7 @@ function publish_plan_id(plan_id) {
 function get_activity_array(index) {
     var activity_array = all_activities[index];
     if (activity_array == null) {
-        alert("Sorry, can't find activity with ID " + convert_index_to_id(index));
+        alert("<?php echo($_lang['ERROR_MISSING_ACTIVITY']); ?> " + convert_index_to_id(index));
     }
     return activity_array;
 }
@@ -215,7 +239,7 @@ function format_item(activity_index) {
 
         res += "  <div class='summary'>" + activity.summary;
         if (activity.source != null) {
-            res += "  <br><span class='source'>Source: " + activity.source + "</span>";
+            res += "  <br><span class='source'><?php echo($_lang['ACTIVITY_SOURCE']); ?> " + activity.source + "</span>";
         }
         res += "  </div><!-- END summary -->";
         res += "  <div class='description'>" + activity.desc;
@@ -324,7 +348,7 @@ function format_block(activity_index, block_number) {
         res += "\n\n<div class='activity_block bg" + bg + "' id='" + PHASE_ID_TAG + block_number + "'>\n";
         res += "  <div class='activity-wrapper'>\n";
 
-        res += "      <a href='JavaScript:prev()' class='phase-stepper prev_button'>&#9668;</a>\n";
+        res += "      <a href='JavaScript:prev()' class='phase-stepper prev_button' title='<?php echo($_lang['ACTIVITY_PREV']); ?>'>&#9668;</a>\n";
 
         res += "    <div class='activity-content'>\n";
         res += "      <div class='phase_title'><a href='#' onClick='JavaScript:show_activities_in_phase(" + activity.phase + ")'>" + phase_titles[activity.phase] + "</a></div>";
@@ -335,12 +359,12 @@ function format_block(activity_index, block_number) {
         if (activity.photo != null) {
             res += activity.photo + " | ";
         }
-        res += "        <a href='mailto:corinna@finding-marbles.com?subject=Photos%20for%20Activity%3A%20ID&body=Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name' class='less_pronounced'>Add Photo</a>";
+        res += "        <a href='mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']); ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']); ?>' class='less_pronounced'><?php echo($_lang['ACTIVITY_PHOTO_ADD']); ?></a>";
         res += "</span>";
         res += "      </div><!-- END .photo_link -->";
 
         res += "    </div><!-- END .activity-content -->\n";
-        res += "      <a href='JavaScript:next()' class='phase-stepper next_button'>&#9658;</a>\n";
+        res += "      <a href='JavaScript:next()' class='phase-stepper next_button' title='<?php echo($_lang['ACTIVITY_NEXT']); ?>'>&#9658;</a>\n";
 
         res += "  </div><!-- END .activity-wrapper -->\n";
         res += "</div><!-- END .activity_block -->\n";
@@ -373,8 +397,6 @@ function show_plan(plan_id) {
         $('.phase-stepper ').removeClass('display_none');
         $('#plan_title_container').addClass('display_none');
         publish_plan_id(plan_id);
-    } else {
-        alert("Sorry, I don't recognize the Plan-ID. (Should be: '<number>-<number>-...-<number>')");
     }
 }
 
@@ -458,76 +480,77 @@ function init() {
 
 <div id="header">
     <img id="logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
+    <!--
     <select class="languageswitcher" onchange="switchLanguage(this.value)">
-        <option value="EN" <?php if($lang=='EN') { echo('selected'); } ?> >English</option>
-        <option value="DE" <?php if($lang=='DE') { echo('selected'); } ?> >Deutsch</option>
-        <option value="ES" <?php if($lang=='ES') { echo('selected'); } ?> >Espa&ntilde;ol</option>
-        <option value="NL" <?php if($lang=='NL') { echo('selected'); } ?> >Nederlands</option>
+        <option value="en" <?php echo($selected_EN); ?> >English</option>
+        <option value="de" <?php echo($selected_DE); ?> >Deutsch</option>
+        <option value="es" <?php echo($selected_ES); ?> >Espa&ntilde;ol</option>
+        <option value="nl" <?php echo($selected_NL); ?> >Nederlands</option>
     </select>
+    -->
 
       <span id="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
-        <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
-        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About</a> |
-        <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
+        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
+          <!--
+          <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
+          <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
+          -->
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
       </span>
 </div>
 
 <div id="pitch">
     <div class="content">
-        Planning your next <b>retrospective</b>? Get started with a random plan, tweak it, print it and share the URL.
-        Or just browse around for new ideas!
+        <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-
+<!--
 <div id="book">
     <div class="content">
         New to Retrospectives? "<a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a>" might be for you!
     </div>
 </div>
-
+-->
 <div class="plan_id">
     <div class="content">
         <div id="header-print">
-            Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) by <a href="http://finding-marbles.com">Finding-Marbles.com</a></span>
+            Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div>
-            Plan-ID:
+            <?php echo($_lang['INDEX_PLAN_ID']); ?>
             <form action="JavaScript:show_plan($('.plan_id_input').val())" name="plan_id_form" class="plan_id_form">
                 <input type="text" size="12" name="plan_id" class="plan_id_input" value="">
-                <input type="submit" class="plan_id_submit" value="Show">
+                <input type="submit" class="plan_id_submit" value="<?php echo($_lang['INDEX_BUTTON_SHOW']); ?>">
             </form>
         </div>
-        <div class="new_plan"><a href="JavaScript:show_random_plan()">New random retrospective plan</a>
+        <div class="new_plan"><a href="JavaScript:show_random_plan()"><?php echo($_lang['INDEX_RANDOM_RETRO']); ?></a>
         </div>
     </div>
 </div>
 <div id="plan_title_container" class="display_none">
-    <div class="content">All activities for <span id="plan_title" class="uppercase">Replaced by JS</span>
+    <div class="content"><?php echo($_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE']); ?> <span id="plan_title" class="uppercase">Replaced by JS</span>
     </div>
 </div>
 
 <div id="plan">
     <noscript>
-        Retr-O-Mat relies heavily on JavaScript and doesn't work without it.
-        Please enable JavaScript in your browser. Thanks!
+        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
     </noscript>
 
 </div><!-- END plan -->
 
-<div id="footer">
+<div id="mini-about">
     <div class="content">
-        Retr-O-Mat contains <span id="footer_no_of_activities"></span>
-        activities, allowing for <span id="footer_no_of_combinations"></span>
-        combinations (<span id="footer_no_of_combinations_formula"></span>)
-        and I'm constantly adding more. Feel free to also
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">add an activity</a>.
-        <br><br>
-        Questions, suggestions, praise? Write me at
-        <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a>
+        <?php echo($_lang['INDEX_MINI_ABOUT']); ?>
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_MINI_ABOUT_SUGGEST']); ?></a>!
     </div>
 </div>
 
+<div id="mini-team">
+   <div class="content">
+       <?php echo($_lang['INDEX_MINI_TEAM']); ?>
+    </div>
+</div>
 
 <script>
     var _gaq = _gaq || [];

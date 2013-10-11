@@ -1,3 +1,5 @@
+var phase_titles = ['Einstimmung', 'Daten sammeln', 'Erkenntnisse gewinnen', 'Entscheiden', 'Abschluss', 'Etwas ganz Anderes'];
+
 // BIG ARRAY OF ALL ACTIVITIES
 // Mandatory: id, phase, name, summary, desc
 // Example:

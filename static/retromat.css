@@ -57,7 +57,7 @@ body {
   font-family: 'Droid Sans', sans-serif;
   font-size: 100%;
   line-height: 1.1em;
-  background-color: #bbd0d3; /* light blue */
+  background-color: rgb(0,20,13);
 }
 
 b {
@@ -100,7 +100,11 @@ ul ul {
     top:0;
     left:0;
     width: 100%;
-    padding: 15px 20px 17px 20px;   
+    padding: 15px 20px 17px 20px;
+}
+
+#header,
+#mini-team {
     color: #fff;
 
 background: rgb(40,61,48); /* Old browsers */
@@ -120,12 +124,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
     box-shadow:         0px 0px 4px 4px rgba(40, 40, 40, 0.6);
 }
 
-#header a, #navi a {
+#header a,
+#navi a,
+#mini-team a {
     color: #fff;
     text-decoration:none;
 }
 
-#header a:hover, #navi a:hover {
+#header a:hover,
+#navi a:hover
+#mini-team a:hover {
     color: #fff;
     text-decoration:underline;
 }
@@ -385,19 +393,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-#footer {
+#mini-about {
     background-image: url("images/tile_bottom.png");
     background-repeat: repeat;
 }
 
-#footer .content {
+#mini-about .content {
     font-family: 'Droid Serif', serif;
     font-size: 0.8em;
     background: #92c9d1; /* The Fallback */
     background: rgba(255, 255, 255, 0.6);
 }
 
-#footer_print {
+#mini-about_print {
     display: none;
 }
 
@@ -446,6 +454,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
     #navi,
     #pitch,
     #book,
+    #mini-team,
     .languageswitcher {
         display: none;
     }
@@ -536,11 +545,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', end
       display: none;
     }
 
-    #footer {
+    #mini-about {
       display: none;
     }
 
-    #footer_print .content {
+    #mini-about_print .content {
         font-family: 'Droid Serif', serif;
         border-top: 1px #111 solid;
     }
