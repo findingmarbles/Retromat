@@ -9,7 +9,19 @@ $_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
 $_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE'] = 'All activities for';
 $_lang['INDEX_MINI_ABOUT'] = 'Retr-O-Mat contains <span id="footer_no_of_activities"></span> activities, allowing for <span id="footer_no_of_combinations"></span> combinations (<span id="footer_no_of_combinations_formula"></span>) and we are constantly adding more. You know a great activity?';
 $_lang['INDEX_MINI_ABOUT_SUGGEST'] = 'Suggest it';
-$_lang['INDEX_MINI_TEAM'] = 'Questions, suggestions, praise? Write to <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a>';
+$_lang['INDEX_MINI_TEAM'] = <<<EOT
+       <div style="margin-left:10px;">
+           <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="mini-team-photo">
+           <div class="mini-team-text" style="margin-right:0">
+           <h2>Created by <a href="http://finding-marbles.com/">Corinna Baldauf</a></h2>
+    Corinna wished for something like Retr-O-Mat during her Scrummaster years.
+    Eventually she just built it herself in the hope that it would be useful to others too.
+    Any questions, suggestions or encouragement?
+    You can write her at <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a> or
+    <a href="https://twitter.com/findingmarbles">contact her on Twitter</a>.
+           </div>
+       </div>
+EOT;
 
 $_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
 

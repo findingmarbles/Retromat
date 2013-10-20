@@ -9,7 +9,30 @@ $_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Plan';
 $_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE'] = 'All Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_MINI_ABOUT'] = 'Retr-O-Mat enth&auml;lt <span id="footer_no_of_activities"></span> Aktivit&auml;ten, was insgesamt <span id="footer_no_of_combinations"></span> (<span id="footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glicht. Und wir f&uuml;gen laufend weitere hinzu. Du kennst eine tolle Aktivit&auml;t?';
 $_lang['INDEX_MINI_ABOUT_SUGGEST'] = 'Schlag sie vor';
-$_lang['INDEX_MINI_TEAM'] = 'Questions, suggestions, praise? Write to <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a>';
+$_lang['INDEX_MINI_TEAM'] = <<<EOT
+<div style="float:left;width:50%;">
+           <h2>&Uuml;bersetzung: <a href="http://www.judithandresen.com/">Judith Andresen</a></h2>
+           <img src="static/images/team/judith_andresen.jpg" width="70" height="93" title="Judith Andresen" class="mini-team-photo">
+           <div class="mini-team-text">
+               Als Autorin von
+               "<a href="http://www.amazon.de/gp/product/3446439080/ref%3Das_li_qf_sp_asin_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=3446439080&linkCode=as2&tag=judithandrese-21">Erfolgreiche Retrospektiven</a>"
+               kennt sich Judith bestens mit Retrospektiven aus.
+               Dar&uuml;berhinaus bietet sie Projektcoaching und Beratung an.
+               Folge ihr auf <a href="https://twitter.com/JudithAndresen">Twitter</a>!
+           </div>
+       </div>
+
+       <div style="margin-left:10px;">
+           <h2>Englisches Original: <a href="http://finding-marbles.com/">Corinna Baldauf</a></h2>
+           <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="mini-team-photo">
+           <div class="mini-team-text" style="margin-right:0">
+               Corinna ist (Web-)Entwicklerin aus Düsseldorf. In einem fr&uuml;heren Leben
+               war sie Scrummaster. In dieser Zeit erschuf sie den Retr-O-Maten.<br>
+               Folge ihr auf <a href="https://twitter.com/findingmarbles">Twitter</a>!
+           </div>
+       </div>
+EOT;
+
 
 $_lang['PRINT_HEADER'] = 'von Finding-Marbles.com';
 
