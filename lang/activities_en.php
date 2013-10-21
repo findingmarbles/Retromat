@@ -1061,7 +1061,7 @@ desc:      "Hand out pens and sticky notes. Ask everyone for ideas on how to tur
 into a certain desaster - one idea per note. When everyone's finished writing, hang up all stickies \
 and walk through them. Identify and discuss themes. <br>\
 In the next phase turn these negative actions into their opposite.",
-source:     source_judith,
+source:     source_findingMarbles,
 duration:  "15 min groupsize",
 suitable:  "iteration, project, release"
 };
@@ -1092,14 +1092,58 @@ suitable:  "iteration, project, release"
 };
 all_activities[71] = {
 phase:     3,
-name:      "Divide the dollar",
+name:      "Divide the Dollar",
 summary:   "How much is an action item worth to the team?",
 desc:      "Hang up the list of possible actions. Draw a column next to it, titled 'Importance (in $)'. \
-Tell the team they get to spend 100 (virtual) dollars on the action items. The more \
+The team gets to spend 100 (virtual) dollars on the action items. The more \
 important it is to them, the more they should spend. Make it more fun by bringing paper \
 money from a board game such as Monopoly.\
 <br><br>Let them agree on prices. Consider the 2 or 3 highest amount action items as chosen.",
 source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
+duration:  "10 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[72] = {
+phase:     3,
+name:      "Pitch",
+summary:   "Ideas for actions compete for 2 available 'Will do'-slots",
+desc:      "Ask everyone to think of 2 changes they'd like to implement and write them down on separate \
+index cards. Draw 2 slots on the board. The first team member puts their favorite change idea \
+into the first slot. His neighbor puts their favorite into the second slot. The third member has \
+to pitch her favorite idea against the one already hanging that she favors less. If the team \
+prefers her idea, it's swapped against the hanging one. This continues until everyone has presented \
+both their cards. \
+<br><br>Try not to start the circle with dominant team members.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration"
+};
+all_activities[73] = {
+phase:     2,
+name:      "Pessimize",
+summary:   "If we had ruined the last sprint what would we have done?",
+desc:      "You start the activity by asking: 'If we had completely ruined last sprint what would we have done?' \
+Record the answers on a flip chart. Next question: 'What would be the opposite of that?' \
+Record it on another flip chart. Now ask participants to comment the items on the 'Opposite'-chart \
+by posting sticky notes answering 'What keeps us from doing this?'. Hand out different colored \
+sticky notes to comment on the comments, asking 'Why is it like this?'.",
+source:     source_judith,
+duration:  "25 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[74] = {
+phase:     1,
+name:      "Writing the Unspeakable",
+summary:   "Write down what you can never ever say out loud",
+desc:      "Do you suspect that unspoken taboos are holding back the team? \
+Consider this silent activity: Stress confidentiality ('What happens in Vegas stays in Vegas') \
+and announce that all \
+notes of the following activities will be destroyed in the end. Only afterwards hand out a piece \
+of paper to each participant to write down the biggest unspoken taboo in the company. <br>\
+When everyone's done, they pass their paper to their left-hand neighbors. The neighbors read \
+and may add comments. Papers are passed on and on until they return to their authors. One last \
+read. Then all pages are ceremoniously shredded or (if you're outside) burned.",
+source:     "Vanessa",
 duration:  "10 min groupsize",
 suitable:  "iteration, project, release"
 };

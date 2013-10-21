@@ -15,7 +15,7 @@ $_lang['INDEX_MINI_TEAM'] = <<<EOT
            <div class="mini-team-text" style="margin-right:0">
            <h2>Created by <a href="http://finding-marbles.com/">Corinna Baldauf</a></h2>
     Corinna wished for something like Retr-O-Mat during her Scrummaster years.
-    Eventually she just built it herself in the hope that it would be useful to others too.
+    Eventually she just built it herself in the hope that it would be useful to others, too.
     Any questions, suggestions or encouragement?
     You can write her at <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a> or
     <a href="https://twitter.com/findingmarbles">contact her on Twitter</a>.
