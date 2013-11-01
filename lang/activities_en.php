@@ -37,7 +37,7 @@ for all to see. If trust is low, deliberately destroy the votes afterwards to en
 what people make of the data. If there's a majority of Vacationers or Prisoners consider using the \
 retro to discuss this finding.",
 duration:  "5-10 numberPeople",
-source:  source_unknown,
+source:  source_agileRetrospectives,
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -52,7 +52,7 @@ all_activities[2] = {
 phase:     0,
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
 summary:   "Ask one question that each participants answers in turn",
-desc:      "In round-robin each participant answers the same question (unless they say 'I pass').\
+desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
 Sample questions: <br>\
 <ul>\
     <li>In one word - What do you need from this retrospective?</li>\
@@ -215,7 +215,7 @@ Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by 
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.\
 <br><br>\
-(Check out <a='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
+(Check out <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
@@ -224,13 +224,13 @@ all_activities[12] = {
 phase:     3,
 name:      "SMART Goals",
 summary:   "Formulate a specific and measurable plan of action",
-desc:      "Introduce <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART goals</a>\
+desc:      "Introduce <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART goals</a> \
 (specific, measurable, attainable, relevant, timely) and examples for SMART vs not so \
 smart goals, e.g.'We&apos;ll study stories before pulling them by talking about them with the \
 product owner each Wednesday at 9am' vs. 'We'll get to know the stories before they \
 are in our sprint backlog'.<br>\
 Form groups around the issues the team wants to work on. Each group identifies 1-5 \
-concrete steps to reach the goal. Let each group report. All participants should agree \
+concrete steps to reach the goal. Let each group present their results. All participants should agree \
 on the 'SMART-ness' of the goals. Refine and confirm.",
 source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
@@ -311,6 +311,7 @@ and what kept it in place. One idea per note. Post the stickies motor and anchor
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
 source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>, who adapted it from " + source_innovationGames,
 duration:  "10-15 groupSize",
+photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contributed by Corinna Baldauf'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[19] = {
@@ -335,13 +336,14 @@ two actions. The pairs form groups of 4. Then 8. Now collect every group's two a
 and have a vote on the final two.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 duration:  "15-30 groupSize",
+photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity20]' title='Taken by Paulo Caroli'>View Photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
 phase:     0,
 name:      "Temperature Reading",
 summary:   "Participants mark their 'temperature' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot.\
+desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
 Each participant marks their mood on the sheet.",
 source:  source_unknown
 };
@@ -384,7 +386,7 @@ influence, you can gain a lot.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 duration:  "20-60 complexity",
-photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]'>View Photo</a>",
+photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]' title='Contributed by Corinna Baldauf'>View Photo</a>",
 suitable: "release, project, smallGroups, complex"
 
 
@@ -398,7 +400,7 @@ change. Then form pairs and spread across the room. Each pair discusses both top
 and ponders possible actions - 5 minutes per participant (topic) - one after the other. \
 After 10 minutes the pairs break up to form new pairs. Continue \
 until everyone has talked to everyone else. <br>\
-If the group has an odd number of members, the facilitator is part of a pair but the partner gets \
+If the group has an odd number of members, the facilitator is part of a pair but the partner \
 gets all 10 minutes for their topic.",
 source:    source_kalnin,
 duration:  "10 perPerson",
@@ -438,14 +440,14 @@ suitable: "iteration, release, smallGroups, smoothSailing, mature"
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles & Soup / Circle of Influence & Concern",
+name:      "Circles &amp; Soup / Circle of Influence &amp; Concern",
 summary:   "Create actions based on how much control the team has to carry them out",
 desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
 'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
-from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.)\
-Take your insights from the last phase and put them in the appropriate circle.<br>\
+from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
+Take your insights from the last phase and put them in the appropriate circle.<br> \
 The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
-circle of influence. The pairs post their action plans next to the respective issue and read it out loud.\
+circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Futureworks Consulting</a> \
 who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and \
@@ -501,6 +503,7 @@ Let each team member choose how they feel about the project. This is a fun and e
 surface problems early. You can address them in the subsequent phases.",
 source:    "Andrew Ciccarelli",
 duration:  "10 for 5 people",
+photo:    "<a href='static/images/activities/32_Emoticons.jpg' rel='lightbox[activity31]' title='Contributed by Ruud Rietveld'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[32] = {
@@ -650,7 +653,7 @@ index cards and describes their choice.",
 source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna</a>",
 duration:  "15-20",
 suitable: "iteration, release, project",
-photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]'>View Photo</a>"
+photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contributed by Corinna Baldauf'>View Photo</a>"
 };
 all_activities[42] = {
 phase:     0,
@@ -832,7 +835,7 @@ and let the team reflect on the process of completing the tasks - what went good
 source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
 duration:  "30-40 min",
 suitable:  "project, release",
-photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity53]'>View Photo</a>"
+photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity53]' title='Contributed by Wolfgang Fassbender'>View Photo</a>"
 };
 all_activities[54] = {
 phase:     2,
@@ -895,7 +898,7 @@ summary:   "Create a happiness histogram to get people talking",
 desc:      "Prepare a flip chart with a horizontal scale from 1 (Unhappy) \
 to 5 (Happy).\
 <ul>\
-    <li>One team member after the other places their sticky note and explains their placement</li>\
+    <li>One team member after the other places their sticky note and comment on their placement</li>\
     <li>If anything noteworthy comes from the reason, let the team choose to either discuss it there and then or postpone it for later in the retrospective</li>\
     <li>If someone else has the same score, they place their sticky above the placed one, effectively forming a histogram</li>\
 </ul>",
@@ -918,18 +921,17 @@ you usually close on a positive note.",
 source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefen Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
 duration:  "5-10 min",
 suitable:  "iteration, project",
-photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]'>View Photo</a>"
+photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]' title='Contributed by Amber Haley'>View Photo</a>"
 };
 all_activities[60] = {
 phase:     3,
 name:      "Chaos Cocktail Party",
 summary:   "Actively identify, discuss, clarify and prioritize a number of actions",
-desc:      "Everyone writes one card with an action that is important to do. \
+desc:      "Everyone writes one card with an action that they think is important to do. \
 Then team members go around and chat about the cards \
 like in a cocktail party. Every chat pair discusses the actions on their \
-two cards. The moderator \
-stops the chatting after 1 minute. Each chat pair splits \
-5 points between the two cards. More points go to the more important action. The moderator facilitates \
+two cards. Stop the chatting after 1 minute. Each chat pair splits \
+5 points between the two cards. More points go to the more important action. Organize \
 3 to 5 rounds of chats (depending on group size). At the end everyone adds \
 up the points on their card. In the end the cards are ranked by points \
 and the team decides how much can be done in the next iteration, pulling from the top.",
@@ -938,7 +940,7 @@ duration:  "10-15 min",
 suitable:  "iteration, project, release, largeGroup"
 };
 all_activities[61] = {
-phase:     5,
+phase:     1,
 name:      "Expectations",
 summary:   "What can others expect of you? What can you expect of them?",
 desc:      "Give each team member a piece of paper. The lower half is blank. The top half is divided into two sections:\
@@ -989,7 +991,7 @@ The long and dull stories are now nicely grouped to 'attack' in subsequent phase
 source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
 duration:  "10",
 suitable:  "iteration, project",
-photo:    "<a href='http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450' rel='lightbox[activity63]'>View Photo</a>"
+photo:    "<a href='http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450' rel='lightbox[activity63]' title='Contributed by Wayne D. Grant'>View Photo</a>"
 };
 all_activities[64] = {
 phase:     1,
@@ -1143,7 +1145,64 @@ of paper to each participant to write down the biggest unspoken taboo in the com
 When everyone's done, they pass their paper to their left-hand neighbors. The neighbors read \
 and may add comments. Papers are passed on and on until they return to their authors. One last \
 read. Then all pages are ceremoniously shredded or (if you're outside) burned.",
-source:     "Vanessa",
+source:     "Unknown, via Vanessa",
 duration:  "10 min groupsize",
 suitable:  "iteration, project, release"
 };
+all_activities[75] = {
+phase:     0,
+name:      "Round of Admiration",
+summary:   "Participants express what they admire about one another",
+desc:      "Start a round of admiration by facing your neighbour and stating 'What I admire \
+            most about you is ...' Then your neighbour says what she admires about \
+            her neighbour and so on until the last participants admires you. Feels great, \
+            doesn't it?",
+source:     source_judith,
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+all_activities[76] = {
+phase:     4,
+name:      "Follow Through",
+summary:   "What's the probability of action items getting implemented?",
+desc:      "Let everyone draw an emoticon of their current mood on a sticky note. \
+            Then draw a scale on a flip chart, labeled 'Probability we'll implement \
+            our action items'. Mark '0%' on the left and '100%' on the right. Ask \
+            everyone to place their sticky according to their confidence in their \
+            follow through as a team. <br>Discuss interesting results such as low probability \
+            or bad mood.",
+source:     source_judith,
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
+all_activities[77] = {
+phase:     1,
+name:      "4 Ls - Loved, Learned, Lacked, Longed for",
+summary:   "Explore what people loved, learned, lacked and longed for individually",
+desc:      "Each person brainstorms individually for each of these 4 questions: \
+<ul> \
+    <li>What I Loved</li> \
+    <li>What I Learned</li> \
+    <li>What I Lacked</li> \
+    <li>What I Longed For</li> \
+</ul> \
+Collect the answers, either stickies on flip charts or in a digital tool if you're distributed. \
+Form 4 subgroups, on for each L, read all notes, identify patterns and report their findings to the group. \
+Use this as input for the next phase.",
+source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> probably via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
+duration:  "30 min",
+photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity77]' title='Taken by Ellen Gottesdiener'>View Photo</a>",
+suitable:  "iteration, project, release, distributed"
+};
+/*
+all_activities[78] = {
+phase:     0,
+name:      "Outcome Expections (Core Protocol: Meet)",
+summary:   "Everyone states what they want",
+desc:      "This activities works in 3 rounds of questions: \
+",
+source:     "<a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
+duration:  "5 min groupsize",
+suitable:  "iteration, project, release"
+};
+*/

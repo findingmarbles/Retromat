@@ -504,13 +504,12 @@ function init() {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-<!--
 <div id="book">
-    <div class="content">
-        New to Retrospectives? "<a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a>" might be for you!
+    <div class="content" style="display: table;">
+            You like to click around in Retr-O-Mat?
+            Then you might like our <a href="/analog/index.html">upcoming product</a>!
     </div>
 </div>
--->
 <div class="plan_id">
     <div class="content">
         <div id="header-print">
