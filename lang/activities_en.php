@@ -469,7 +469,7 @@ all_activities[30] = {
 phase:     0,
 name:      "Check In - Draw the Iteration",
 summary:   "Participants draw some aspect of the iteration",
-desc:      "Distribute index cards and markers. Set a topic, e.g. one of the following:\
+desc:      "Distribute index cards and markers. Set a topic, e.g. one of the following: \
 <ul>\
     <li>How did you feel during the iteration?</li>\
     <li>What was the most remarkable moment?</li>\
@@ -477,10 +477,10 @@ desc:      "Distribute index cards and markers. Set a topic, e.g. one of the fol
     <li>What did you long for?</li>\
 </ul>\
 Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
-let people guess what it means, before the artist explains it.<br>\
+let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
 source:    source_findingMarbles + ", adapted from \
-<a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a>\
+<a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
 and Olivier Gourment",
 duration:  "5 + 3 per person",
 suitable: "iteration, release, project"
@@ -603,7 +603,7 @@ desc:      "Head 2 flip charts with 'Worked well' and 'Do differently next time'
 Ask your participants to write concrete proposals for each category - 1 \
 idea per index card. Let them write in silence for a few minutes. \
 Let everyone read out their notes and post them to the appropriate category. \
-Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots\
+Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots \
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.",
 source:    source_agileRetrospectives,

@@ -250,6 +250,24 @@ function format_item(activity_index) {
     return res;
 }
 
+// Returns: <div class="photo-link">-string
+function format_photo_link(activity_index) {
+    var activity = get_activity_array(activity_index);
+    var res = "";
+
+    if (activity != null) {
+        res += "    <div class='photo_link'>";
+        if (activity.photo != null) {
+            res += activity.photo + " | ";
+        }
+        res += "        <a href='mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']); ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']); ?>' class='less_pronounced'><?php echo($_lang['ACTIVITY_PHOTO_ADD']); ?></a>";
+        res += "</span>";
+        res += "      </div><!-- END .photo_link -->";
+    }
+
+    return res;
+}
+
 
 function read_activity_id(div_item_jquery_object) {
     var text = div_item_jquery_object.text();
@@ -261,6 +279,7 @@ function read_activity_id(div_item_jquery_object) {
 // Called at the end of both enable_next & enable_prev
 function wrap_up_scroll_button(activity_index, block_id) {
     $('#' + block_id).find('.item').replaceWith(format_item(activity_index));
+    $('#' + block_id).find('.photo_link').replaceWith(format_photo_link(activity_index));
     publish_plan_id(format_plan_id());
 }
 
@@ -354,14 +373,7 @@ function format_block(activity_index, block_number) {
         res += "      <div class='phase_title'><a href='#' onClick='JavaScript:show_activities_in_phase(" + activity.phase + ")'>" + phase_titles[activity.phase] + "</a></div>";
 
         res += format_item(activity_index);
-
-        res += "    <div class='photo_link'>";
-        if (activity.photo != null) {
-            res += activity.photo + " | ";
-        }
-        res += "        <a href='mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']); ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']); ?>' class='less_pronounced'><?php echo($_lang['ACTIVITY_PHOTO_ADD']); ?></a>";
-        res += "</span>";
-        res += "      </div><!-- END .photo_link -->";
+        res += format_photo_link(activity_index);
 
         res += "    </div><!-- END .activity-content -->\n";
         res += "      <a href='JavaScript:next()' class='phase-stepper next_button' title='<?php echo($_lang['ACTIVITY_NEXT']); ?>'>&#9658;</a>\n";
