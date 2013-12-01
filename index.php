@@ -2,13 +2,9 @@
 
 $lang = 'en';
 if (ISSET($_GET['lang'])) {
-    $input_lang = $_GET['lang'];
-    if ($input_lang == 'en' ||
-        $input_lang == 'de' ||
-        $input_lang == 'es' ||
-        $input_lang == 'nl')
-    {
-        $lang = $input_lang;
+    $availableLanguageCodes = array('en', 'de', 'es', 'nl', 'fr');
+    if (in_array($_GET['lang'], $availableLanguageCodes)) {
+        $lang = $_GET['lang'];
     }
 }
 
