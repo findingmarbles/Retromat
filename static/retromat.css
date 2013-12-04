@@ -220,6 +220,10 @@ ul ul {
   display: none;
 }
 
+
+
+
+
 .plan_id {    
     background-color: #e3f5ab;
 }
@@ -229,17 +233,118 @@ ul ul {
     background: rgba(255, 255, 255, 0.35);
 }
 
+.wrapper-ids_icons {
+    display: table;
+    width: 100%;
+}
+
+.id-display {
+    display: table-cell;
+    width: 377px;
+    vertical-align: middle;
+}
+
+.icon-buttons {
+    display: table-cell;
+    width: 173px;
+}
+
+#id-display__form {
+    display: inline;
+}
+
+.icon-buttons ul {
+    list-style: none;
+    margin: 0;
+}
+
+.icon-buttons li {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    border: 3px white solid;
+/*    border-radius: 8px; */
+}
+
+#icon-random,
+#icon-ids,
+#icon-search {
+    display: block;
+    opacity: .7;
+    width: 100%;
+    height:100%;
+    font-size: 0;
+    line-height: 0;
+    background-color: #c7e478;
+    background-image: url('images/icons.svg');
+/*    border-radius: 5px;*/
+}
+
+#icon-random:hover,
+#icon-ids:hover,
+#icon-search:hover,
+#icon-random:active,
+#icon-ids:active,
+#icon-search:active {
+    opacity: 1;
+}
+
+#icon-ids {
+    background-position: -42px 0px;
+}
+
+#icon-search {
+    background-position: -84px 0px;
+}
+
 .plan_id_form {
     display: inline;
 }
 
-.plan_id input {
+.popup {
+    position: absolute;
+    margin-top: -65px;
+    padding: 15px;
+    background-color: #c7e478;
+    border: 3px solid white;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    background-image: none;
+}
+
+.popup--ids {
+    margin-left: -248px
+}
+
+.popup--search {
+    margin-left: -256px
+}
+
+.popup__info {
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.popup__info,
+.popup__close-link {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.popup__close-link a:hover {
+    color: #000;
+}
+
+.popup input {
+    -moz-border-radius: 8px;
+    border-radius: 8px;
     border-width: 1px;
 }
 
-.plan_id_input {
+.popup-input, /*TODO */
+.popup--ids__input,
+.popup--search__input {
     margin-left: 5px;
     margin-right: 3px;
     padding: 5px 10px 5px 10px;
@@ -248,11 +353,7 @@ ul ul {
     background-color: #f5ffe3;
 }
 
-.plan_id_input:focus {
-    background-color: #fff;
-}
-
-.plan_id_submit {
+.popup__submit {
     padding: 3px 5px 3px 5px;
     font-size: 0.8em;
     background-color: #d0d099;
@@ -270,14 +371,6 @@ ul ul {
 
 .uppercase {
     text-transform: uppercase;
-}
-
-.new_plan {
-    margin-top: -24px;
-    margin-bottom: 11px;
-    font-size: 0.8em;
-    text-decoration: underline;
-    text-align: right;
 }
 
 .activity_block {
@@ -506,19 +599,13 @@ ul ul {
         border-width: 2px;
     }
 
-    .plan_id_submit {
-        display:none;
-    }
-
-    #plan_title_container {
-      display: none;
-    }
-
-    .new_plan {
-      display: none;
-    }
-
-    .photo_link {
+    .plan_id_submit,
+    #plan_title_container,
+    .icon-buttons,
+    .phase-stepper,
+    .photo_link,
+    #mini-about,
+    #mini-team {
         display: none;
     }
 
@@ -529,10 +616,6 @@ ul ul {
     .activity_block {
         width: 100%;
         border-top: solid 1px #111;
-    }
-
-    .phase-stepper {
-        display: none;
     }
 
     .phase_title {
@@ -561,15 +644,6 @@ ul ul {
       margin-top: 15px;
       width: 580px;
       font-size: 0.9em;
-    }
-
-    .photo_link {
-      display: none;
-    }
-
-    #mini-about,
-    #mini-team {
-      display: none;
     }
 
     #header-print .content {

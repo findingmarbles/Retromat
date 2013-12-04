@@ -6,6 +6,7 @@ if (ISSET($_GET['lang'])) {
     if ($input_lang == 'en' ||
         $input_lang == 'de' ||
         $input_lang == 'es' ||
+        $input_lang == 'fr' ||
         $input_lang == 'nl')
     {
         $lang = $input_lang;
@@ -34,7 +35,8 @@ $activities_file = 'lang/activities_' . $lang . '.php';
 <link rel="shortcut icon" href="images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="static/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
 
 <script src="static/lightbox/lightbox.js"></script>
 <link href="static/lightbox/lightbox.css" rel="stylesheet" />
@@ -76,6 +78,7 @@ require($activities_file);
 $selected_EN = '';
 $selected_DE = '';
 $selected_ES = '';
+$selected_FR = '';
 $selected_NL = '';
 switch ($lang) {
     case 'en':
@@ -86,6 +89,9 @@ switch ($lang) {
         break;
     case 'es':
         $selected_ES = 'selected';
+        break;
+    case 'es':
+        $selected_FR = 'selected';
         break;
     case 'nl':
         $selected_NL = 'selected';
@@ -167,8 +173,8 @@ function format_plan_id() {
 
 function publish_plan_id(plan_id) {
     // On page
-    var form = document.forms['plan_id_form'];
-    form.elements['plan_id'].value = plan_id;
+    var form = document.forms['id-display__form'];
+    form.elements['display'].value = plan_id;
 
     // URL
     var param = '?id=' + plan_id + '&lang=<?php echo($lang); ?>';
@@ -429,6 +435,53 @@ function show_activities_in_phase(phase_index) {
     $('.phase-stepper').removeClass('display_table-cell');
 }
 
+function search_activities_for(phrase) {
+    var plan_id = "";
+    var haystack = "";
+    var flag_first = true;
+    var found;
+    var re = new RegExp(phrase,"i");
+    for (var i=0; i<all_activities.length; i++) {
+        found = false;
+        haystack = all_activities[i].name;
+        if (haystack.search(re) != -1) {
+            found = true;
+        }
+        else {
+            haystack = all_activities[i].summary;
+            if (haystack.search(re) != -1) {
+                found = true;
+            } else {
+                haystack = all_activities[i].desc;
+                if (haystack.search(re) != -1) {
+                    found = true;
+                }
+            }
+        }
+
+        if (found) {
+            if (flag_first) {
+                flag_first = false;
+            } else {
+                    plan_id += "-";
+            }
+            plan_id += convert_index_to_id(i);
+        }
+    }
+
+    show_plan_title("'" + phrase + "'");
+    if (plan_id) {
+        show_plan(plan_id);
+        enable_prev();
+        enable_next();
+        $('.phase-stepper').addClass('display_none');
+        $('.phase-stepper').removeClass('display_table-cell');
+    } else {
+        plan_id = '';
+        publish_plan_id(plan_id);
+        $('#plan').html('<div class="activity_block bg1"><div class="activity-wrapper"><div class="activity-content">Sorry, nothing found</div></div></div>');
+    }
+}
 
 // Input: int phase_id
 // Returns: int activity_index - randomly chosen activity from given phase
@@ -483,6 +536,16 @@ function init() {
     write_footer();
 }
 
+function showPopup(popup) {
+    var identifier = '.popup--' + popup;
+    $(identifier).removeClass('display_none');
+}
+
+function hidePopup(popup) {
+    var identifier = '.popup--' + popup;
+    $(identifier).addClass('display_none');
+}
+
 //]]>
 </script>
 
@@ -494,9 +557,10 @@ function init() {
     <img id="logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
     <!--
     <select class="languageswitcher" onchange="switchLanguage(this.value)">
-        <option value="en" <?php echo($selected_EN); ?> >English</option>
         <option value="de" <?php echo($selected_DE); ?> >Deutsch</option>
+        <option value="en" <?php echo($selected_EN); ?> >English</option>
         <option value="es" <?php echo($selected_ES); ?> >Espa&ntilde;ol</option>
+        <option value="fr" <?php echo($selected_FR); ?> >Fran&ccedil;ais</option>
         <option value="nl" <?php echo($selected_NL); ?> >Nederlands</option>
     </select>
     -->
@@ -507,6 +571,7 @@ function init() {
           <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
           <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
           -->
+         <a href="/print/index.html">Print Edition</a> |
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
       </span>
 </div>
@@ -516,28 +581,67 @@ function init() {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-<div id="book">
-    <div class="content" style="display: table;">
-            You like to click around in Retr-O-Mat?
-            Then you might like our <a href="/analog/index.html">upcoming product</a>!
+
+<?php if ($lang == 'en') { ?>
+    <div id="book">
+        <div class="content" style="display: table;">
+                Did you know there's a
+                <a href="/print/index.html">Print Editon of the Retr-O-Mat</a>?
+        </div>
     </div>
-</div>
+<?php } ?>
+
 <div class="plan_id">
     <div class="content">
         <div id="header-print">
             Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
-        <div>
-            <?php echo($_lang['INDEX_PLAN_ID']); ?>
-            <form action="JavaScript:show_plan($('.plan_id_input').val())" name="plan_id_form" class="plan_id_form">
-                <input type="text" size="12" name="plan_id" class="plan_id_input" value="">
-                <input type="submit" class="plan_id_submit" value="<?php echo($_lang['INDEX_BUTTON_SHOW']); ?>">
-            </form>
-        </div>
-        <div class="new_plan"><a href="JavaScript:show_random_plan()"><?php echo($_lang['INDEX_RANDOM_RETRO']); ?></a>
-        </div>
-    </div>
+        <div class="wrapper-ids_icons">
+            <div class="id-display">
+                <?php echo($_lang['INDEX_PLAN']); ?>
+                <form name="id-display__form" id="id-display__form">
+                    <input type="text" size="12" name="display" class="plan_id_input" value="" style="padding: 0 5px; font-weight:bold;font-size:1.7em;border: 1px solid #c7e478">
+                </form>
+            </div>
+            <div class="icon-buttons">
+                <ul>
+                    <li>
+                        <a id="icon-random" title="<?php echo($_lang['INDEX_RANDOM_RETRO']); ?>" href="JavaScript:show_random_plan()">
+                            <?php echo($_lang['INDEX_RANDOM_RETRO']); ?>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="icon-ids" title="<?php echo($_lang['INDEX_ENTER_ID']); ?>" href="JavaScript:showPopup('ids');">
+                            <?php echo($_lang['INDEX_ENTER_ID']); ?>
+                        </a>
+                        <div class="popup--ids popup display_none">
+                            <form action="JavaScript:show_plan($('.popup--ids__input').val())" name="ids_form" class="ids_form">
+                                <input type="text" size="12" name="ids" class="popup--ids__input" value="">
+                                <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_IDS_BUTTON']); ?>">
+                                <a href="JavaScript:hidePopup('ids');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
+                            </form>
+                            <div class="popup__info"><?php echo($_lang['POPUP_IDS_INFO']); ?></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="icon-search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:showPopup('search');">
+                            <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
+                        </a>
+                        <div class="popup--search popup display_none">
+                            <form action="JavaScript:search_activities_for($('.popup--search__input').val())" name="search_form" class="search_form">
+                                <input type="text" size="12" name="search_phrase" class="popup--search__input" value="">
+                                <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
+                                <a href="JavaScript:hidePopup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
+                            </form>
+                            <div class="popup__info"><?php echo($_lang['POPUP_SEARCH_INFO']); ?></div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- icon-buttons -->
+        </div><!-- wrapper-ids_icons -->
+    </div><!-- content -->
 </div>
+
 <div id="plan_title_container" class="display_none">
     <div class="content"><?php echo($_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE']); ?> <span id="plan_title" class="uppercase">Replaced by JS</span>
     </div>

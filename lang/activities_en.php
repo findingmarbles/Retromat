@@ -51,7 +51,7 @@ source:  source_agileRetrospectives
 all_activities[2] = {
 phase:     0,
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
-summary:   "Ask one question that each participants answers in turn",
+summary:   "Ask one question that each participant answers in turn",
 desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
 Sample questions: <br>\
 <ul>\
@@ -273,7 +273,7 @@ duration:  "5-10",
 suitable: "iteration, release"
 };
 all_activities[16] = {
-phase:     4, // 2 oder 3 geht auch
+phase:     4, // 5 geht auch
 name:      "SaMoLo (More of, Same of, Less of)",
 summary:   "Get course corrections on what you do as a facilitator",
 desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and 'Less of'. \
@@ -288,7 +288,7 @@ suitable: "iteration, release, project"
 all_activities[17] = {
 phase:     0,
 name:      "Check In - Amazon Review",
-summary:   "Review the sprint on Amazon. Don't forget the star rating!",
+summary:   "Review the iteration on Amazon. Don't forget the star rating!",
 desc:      "Each team member writes a short review with: \
 <ul>\
     <li>Title</li>\
@@ -296,8 +296,8 @@ desc:      "Each team member writes a short review with: \
     <li>Star rating (5 stars is the best) </li>\
 </ul>\
 Everyone reads out their review. Record the star ratings on a flip chart.<br>\
-Can span whole review by also asking what is recommended about the sprint and what not.",
-source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Codecentric Blog</a>",
+Can span whole retrospective by also asking what is recommended about the sprint and what not.",
+source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
 duration:  "10",
 suitable: "release, project"
 };
@@ -309,7 +309,7 @@ desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as 
 as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
 and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>, who adapted it from " + source_innovationGames,
+source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, who adapted it from " + source_innovationGames,
 duration:  "10-15 groupSize",
 photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contributed by Corinna Baldauf'>View Photo</a>",
 suitable: "iteration, release"
@@ -449,7 +449,7 @@ Take your insights from the last phase and put them in the appropriate circle.<b
 The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
 circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
-source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Futureworks Consulting</a> \
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
 who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and \
 '<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
 suitable: "iteration, release, project, stuck, immature"
@@ -619,7 +619,7 @@ Ask each participant to write down 1 aspect of the retrospective they liked \
 and 1 thing they would change (on different index cards). Post the index \
 cards and walk through them briefly to clarify the exact meaning and detect \
 the majority's preference when notes from different people point into opposite directions.",
-source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Retrospective Wiki</a>",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
 duration:  "5-10",
 suitable: "release, project"
 };
@@ -642,7 +642,7 @@ duration:  "15-30",
 suitable: "release, project, largeGroups"
 };
 all_activities[41] = {
-phase:     1,
+phase:     0,
 name:      "Postcards",
 summary:   "Participants pick a postcard that represents their thoughts / feelings",
 desc:      "Bring a stack of diverse postcards - at least 4 four times as many as participants. \
@@ -650,7 +650,7 @@ Scatter them around the room and instruct team members to pick the postcard that
 represents their view of the last iteration. After choosing they write down three keywords \
 describing the postcard, i.e. sprint, on index cards. In turn everyone hangs up their post- and \
 index cards and describes their choice.",
-source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna</a>",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
 duration:  "15-20",
 suitable: "iteration, release, project",
 photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contributed by Corinna Baldauf'>View Photo</a>"
@@ -804,10 +804,10 @@ desc:      "Place a circle or sphere in the middle of a free space. Let the team
 Explain that the circle is the center of approval: If they agree to a statement they should move towards it, \
 if they don't, they should move as far outwards as their degree of disagreement. Now read out statements, e.g.\
 <ul>\
-    <li>We talked about what was most important to me.</li>\
-    <li>I spoke openly today.</li>\
-    <li>I think the time of the retrospective was well invested.</li>\
-    <li>I am confident we will carry out our action items.</li>\
+    <li>We talked about what was most important to me</li>\
+    <li>I spoke openly today</li>\
+    <li>I think the time of the retrospective was well invested</li>\
+    <li>I am confident we will carry out our action items</li>\
 </ul>\
 Watch the constellations unfold. Any surprising constellations?<br>\
 This can also be an opening activity (#52).",
@@ -898,7 +898,7 @@ summary:   "Create a happiness histogram to get people talking",
 desc:      "Prepare a flip chart with a horizontal scale from 1 (Unhappy) \
 to 5 (Happy).\
 <ul>\
-    <li>One team member after the other places their sticky note and comment on their placement</li>\
+    <li>One team member after the other places their sticky note according to their happiness and comment on their placement</li>\
     <li>If anything noteworthy comes from the reason, let the team choose to either discuss it there and then or postpone it for later in the retrospective</li>\
     <li>If someone else has the same score, they place their sticky above the placed one, effectively forming a histogram</li>\
 </ul>",
@@ -918,7 +918,7 @@ that people answer when they catch the ball, such as: \
 </ul>\
 Depending on the question it might uncover events that are bugging people. If any alarm bells go off, dig a little deeper. With the '1 nice thing'-question \
 you usually close on a positive note.",
-source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefen Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
 duration:  "5-10 min",
 suitable:  "iteration, project",
 photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]' title='Contributed by Amber Haley'>View Photo</a>"
@@ -945,14 +945,14 @@ name:      "Expectations",
 summary:   "What can others expect of you? What can you expect of them?",
 desc:      "Give each team member a piece of paper. The lower half is blank. The top half is divided into two sections:\
 <ul>\
-    <li>What my team mates can expect of me</li>\
-    <li>What I expect of my team mates</li>\
+    <li>What my team mates can expect from me</li>\
+    <li>What I expect from my team mates</li>\
 </ul>\
 Each person fills out the top half for themselves. When everyone is finished, they pass their \
 paper to the left and start reviewing the sheet that was passed to them. In the lower half they \
 write what they personally expect from that person, sign it and pass it on.<br>\
 When the papers made it around the room, take some time to review and share observations.",
-source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Lily</a>",
+source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release, start"
 };
@@ -978,12 +978,12 @@ all_activities[63] = {
 phase:     1,
 name:      "Quartering - Identify boring stories",
 summary:   "Categorize stories in 2 dimensions to identify boring ones",
-desc:      "Draw a big square and divide it into 2 columns.\
+desc:      "Draw a big square and divide it into 2 columns. \
 Label them 'Interesting' and 'Dull'. Let the team write down everything they did last iteration on stickies and \
-put it into the appropriate column. Have them add a rough estimate of how long it took on each of their own stickies.<br>\
-Now add a horizontal line so that your square has 4 quadrants. Label the top row 'Short' (took hours)\
-and the bottom row 'Long' (took days). Rearrange the stickies in each column.<br>\
-The long and dull stories are now nicely grouped to 'attack' in subsequent phases.<br>\
+put it into the appropriate column. Have them add a rough estimate of how long it took on each of their own stickies.<br> \
+Now add a horizontal line so that your square has 4 quadrants. Label the top row 'Short' (took hours) \
+and the bottom row 'Long' (took days). Rearrange the stickies in each column.<br> \
+The long and dull stories are now nicely grouped to 'attack' in subsequent phases.<br> \
 <br>\
 (Splitting the assessment into several steps, improves focus. You can \
 <a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>\

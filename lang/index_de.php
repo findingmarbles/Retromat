@@ -27,7 +27,7 @@ $_lang['INDEX_MINI_TEAM'] = <<<EOT
            <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="mini-team-photo">
            <div class="mini-team-text" style="margin-right:0">
                Corinna ist (Web-)Entwicklerin aus Düsseldorf. In einem fr&uuml;heren Leben
-               war sie Scrummaster. In dieser Zeit erschuf sie den Retr-O-Maten.<br>
+               war sie Scrummaster. Aus dieser Zeit stamt der Retr-O-Mat.<br>
                Folge ihr auf <a href="https://twitter.com/findingmarbles">Twitter</a>!
            </div>
        </div>
