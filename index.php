@@ -469,18 +469,19 @@ function search_activities_for(phrase) {
         }
     }
 
-    show_plan_title("'" + phrase + "'");
     if (plan_id) {
         show_plan(plan_id);
         enable_prev();
         enable_next();
         $('.phase-stepper').addClass('display_none');
         $('.phase-stepper').removeClass('display_table-cell');
+        hidePopup('search');
     } else {
         plan_id = '';
         publish_plan_id(plan_id);
         $('#plan').html('<div class="activity_block bg1"><div class="activity-wrapper"><div class="activity-content">Sorry, nothing found</div></div></div>');
     }
+    show_plan_title("'" + phrase + "'"); // Call must be after "show_plan()" or plan_title_container won't be displayed
 }
 
 // Input: int phase_id
