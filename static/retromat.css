@@ -253,11 +253,13 @@ ul ul {
     display: inline;
 }
 
+.icon-button ul,
 .icon-buttons ul {
     list-style: none;
     margin: 0;
 }
 
+.icon-button li,
 .icon-buttons li {
     display: block;
     float: left;
@@ -300,6 +302,14 @@ ul ul {
 
 .plan_id_form {
     display: inline;
+}
+
+.plan_id_input {
+    padding: 0 5px;
+    font-weight: bold;
+    font-size: 1.6em;
+    background-color: transparent;
+    border: none;
 }
 
 .popup {

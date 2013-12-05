@@ -600,7 +600,7 @@ function hidePopup(popup) {
             <div class="id-display">
                 <?php echo($_lang['INDEX_PLAN']); ?>
                 <form name="id-display__form" id="id-display__form">
-                    <input type="text" size="12" name="display" class="plan_id_input" value="" style="padding: 0 5px; font-weight:bold;font-size:1.7em;border: 1px solid #c7e478">
+                    <input type="text" size="18" name="display" class="plan_id_input" value="">
                 </form>
             </div>
             <div class="icon-buttons">
