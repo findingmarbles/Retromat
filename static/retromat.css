@@ -266,7 +266,7 @@ ul ul {
     width: 42px;
     height: 42px;
     border: 3px white solid;
-/*    border-radius: 8px; */
+    border-radius: 8px;
 }
 
 #icon-random,
@@ -280,7 +280,7 @@ ul ul {
     line-height: 0;
     background-color: #c7e478;
     background-image: url('images/icons.svg');
-/*    border-radius: 5px;*/
+    border-radius: 5px;
 }
 
 #icon-random:hover,
