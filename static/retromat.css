@@ -95,14 +95,14 @@ ul ul {
     margin-bottom: 0px;
 }
 
-#header,
-#mini-team {
+.header,
+.team {
     color: #fff;
     background: rgb(0,20,13);
     z-index: 5;
 }
 
-#header {
+.header {
     position: fixed;
     top:0;
     left:0;
@@ -123,21 +123,21 @@ ul ul {
     box-shadow:         0px 0px 4px 4px rgba(40, 40, 40, 0.6);
 }
 
-#header a,
-#navi a,
-#mini-team a {
+.header a,
+.navi a,
+.team a {
     color: #fff;
     text-decoration:none;
 }
 
-#header a:hover,
-#navi a:hover
-#mini-team a:hover {
+.header a:hover,
+.navi a:hover
+.team a:hover {
     color: #fff;
     text-decoration:underline;
 }
 
-#logo {
+.header__logo {
   margin-right: 4px;
   margin-bottom: -3px;
 }
@@ -146,7 +146,7 @@ ul ul {
     margin-left: 10px;
 }
 
-#navi {
+.navi {
     font-size: 0.8em;
     position: absolute;
     top: 18px;
@@ -187,7 +187,7 @@ ul ul {
     background-color: rgba(30, 30, 30,0.08);
 }
 
-#pitch {
+.pitch {
     width: 100%;
     color: #395360; /* #2A4C70; /*#051A1C;*/
     
@@ -195,7 +195,7 @@ ul ul {
     background-repeat: repeat;
 }
 
-#pitch .content {
+.pitch .content {
     font-size: 1.5em;
     font-family: 'Droid Serif', serif;
     line-height: 1.2em;
@@ -205,18 +205,18 @@ ul ul {
     padding-top:80px;
 }
 
-#book {
+.book {
     background-color: #c7e478;
 }
 
-#book .content {
+.book .content {
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #daeda7; /* The Fallback */
     background-color: rgba(255, 255, 255, 0.35);
 }
 
-#header-print {
+.print-header {
   display: none;
 }
 
@@ -224,16 +224,16 @@ ul ul {
 
 
 
-.plan_id {    
+.plan-header {
     background-color: #e3f5ab;
 }
 
-.plan_id .content {
+.plan-header .content {
     background: #ecf8c8; /* The Fallback */
     background: rgba(255, 255, 255, 0.35);
 }
 
-.wrapper-ids_icons {
+.plan-header__wrapper {
     display: table;
     width: 100%;
 }
@@ -244,23 +244,21 @@ ul ul {
     vertical-align: middle;
 }
 
-.icon-buttons {
+.plan-navi {
     display: table-cell;
     width: 173px;
 }
 
-#id-display__form {
+.id-display__form {
     display: inline;
 }
 
-.icon-button ul,
-.icon-buttons ul {
+.plan-navi ul {
     list-style: none;
     margin: 0;
 }
 
-.icon-button li,
-.icon-buttons li {
+.plan-navi li {
     display: block;
     float: left;
     width: 42px;
@@ -269,9 +267,9 @@ ul ul {
     border-radius: 8px;
 }
 
-#icon-random,
-#icon-ids,
-#icon-search {
+.plan-navi__random,
+.plan-navi__ids,
+.plan-navi__search {
     display: block;
     opacity: .7;
     width: 100%;
@@ -283,20 +281,20 @@ ul ul {
     border-radius: 5px;
 }
 
-#icon-random:hover,
-#icon-ids:hover,
-#icon-search:hover,
-#icon-random:active,
-#icon-ids:active,
-#icon-search:active {
+.plan-navi__random:hover,
+.plan-navi__ids:hover,
+.plan-navi__search:hover,
+.plan-navi__random:active,
+.plan-navi__ids:active,
+.plan-navi__search:active {
     opacity: 1;
 }
 
-#icon-ids {
+.plan-navi__ids {
     background-position: -42px 0px;
 }
 
-#icon-search {
+.plan-navi__search {
     background-position: -84px 0px;
 }
 
@@ -304,7 +302,7 @@ ul ul {
     display: inline;
 }
 
-.plan_id_input {
+.id-display__input {
     padding: 0 5px;
     font-weight: bold;
     font-size: 1.6em;
@@ -369,12 +367,12 @@ ul ul {
     background-color: #d0d099;
 }
 
-#plan_title_container {
+.plan_title_container {
     font-size: 1.5em;
     background-color: #75c7d2;
 }
 
-#plan_title_container .content {
+.plan_title_container .content {
     background-color: #a5dbe2; /* The Fallback */
     background-color: rgba(255, 255, 255, 0.35);
 }
@@ -495,28 +493,28 @@ ul ul {
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-#mini-about {
+.about {
     background-image: url("images/tile_bottom.png");
     background-repeat: repeat;
 }
 
-#mini-about .content {
+.about .content {
     font-family: 'Droid Serif', serif;
     font-size: 0.8em;
     background: #92c9d1; /* The Fallback */
     background: rgba(255, 255, 255, 0.6);
 }
 
-#mini-team {
+.team {
 
 }
 
-#mini-team h2 {
+.team h2 {
     font-weight: bold;
     margin-bottom: 0.5em;
 }
 
-#mini-team a {
+.team a {
     text-decoration: underline;
 }
 
@@ -575,16 +573,16 @@ ul ul {
         margin-bottom: 0px;
     }
 
-    #header,
-    #navi,
-    #pitch,
-    #book,
-    #mini-team,
+    .header,
+    .navi,
+    .pitch,
+    .book,
+    .team,
     .languageswitcher {
         display: none;
     }
 
-    #header-print {
+    .print-header {
       display: block;
       font-weight: bold;
       margin-bottom: 15px;
@@ -598,7 +596,7 @@ ul ul {
         display: inline;
     }
 
-    .plan_id input {
+    .plan-header input {
         margin-left: 5px;
         padding: 5px 10px 5px 10px;
         font-size: 1em;
@@ -610,12 +608,12 @@ ul ul {
     }
 
     .plan_id_submit,
-    #plan_title_container,
-    .icon-buttons,
+    .plan-navi,
+    .plan_title_container,
     .phase-stepper,
     .photo_link,
-    #mini-about,
-    #mini-team {
+    .about,
+    .team {
         display: none;
     }
 
@@ -656,7 +654,7 @@ ul ul {
       font-size: 0.9em;
     }
 
-    #header-print .content {
+    .print-header .content {
         font-family: 'Droid Serif', serif;
         border-top: 1px #111 solid;
     }

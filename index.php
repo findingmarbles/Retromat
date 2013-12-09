@@ -407,7 +407,7 @@ function show_plan(plan_id) {
     var plan_id = String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
     if (plan_id) {
         var plan = format_plan(plan_id);
-        $('#plan').html(plan);
+        $('.js_plan').html(plan);
         enable_prev();
         enable_next();
         $('.js_phase-stepper').addClass('display_table-cell');
@@ -419,7 +419,7 @@ function show_plan(plan_id) {
 
 
 function show_plan_title(title) {
-    $('#js_plan_title').html(title);
+    $('.js_plan_title').html(title);
     $('.js_plan_title_container').removeClass('display_none');
 }
 
@@ -553,8 +553,8 @@ function hidePopup(popup) {
 
 <body onload="JavaScript:init()">
 
-<div id="header">
-    <img id="logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
+<div class="header">
+    <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
     <!--
     <select class="languageswitcher" onchange="switchLanguage(this.value)">
         <option value="de" <?php echo($selected_DE); ?> >Deutsch</option>
@@ -565,7 +565,7 @@ function hidePopup(popup) {
     </select>
     -->
 
-      <span id="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
+      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
           <!--
           <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
@@ -576,42 +576,42 @@ function hidePopup(popup) {
       </span>
 </div>
 
-<div id="pitch">
+<div class="pitch">
     <div class="content">
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
 
 <?php if ($lang == 'en') { ?>
-    <div id="book">
-        <div class="content" style="display: table;">
+    <div class="book">
+        <div class="content">
                 Did you know there's a
                 <a href="/print/index.html">Print Editon of the Retr-O-Mat</a>?
         </div>
     </div>
 <?php } ?>
 
-<div class="plan_id">
+<div class="plan-header">
     <div class="content">
-        <div id="header-print">
+        <div class="print-header">
             Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
-        <div class="wrapper-ids_icons">
+        <div class="plan-header__wrapper">
             <div class="id-display">
                 <?php echo($_lang['INDEX_PLAN']); ?>
-                <form name="id-display__form" id="id-display__form">
-                    <input type="text" size="18" name="display" class="plan_id_input" value="">
+                <form name="id-display__form" class="id-display__form">
+                    <input type="text" size="18" name="display" class="id-display__input" value="">
                 </form>
             </div>
-            <div class="icon-buttons">
+            <div class="plan-navi">
                 <ul>
                     <li>
-                        <a id="icon-random" title="<?php echo($_lang['INDEX_RANDOM_RETRO']); ?>" href="JavaScript:show_random_plan()">
+                        <a class="plan-navi__random" title="<?php echo($_lang['INDEX_RANDOM_RETRO']); ?>" href="JavaScript:show_random_plan()">
                             <?php echo($_lang['INDEX_RANDOM_RETRO']); ?>
                         </a>
                     </li>
                     <li>
-                        <a id="icon-ids" title="<?php echo($_lang['INDEX_ENTER_ID']); ?>" href="JavaScript:showPopup('ids');">
+                        <a class="plan-navi__ids" title="<?php echo($_lang['INDEX_ENTER_ID']); ?>" href="JavaScript:showPopup('ids');">
                             <?php echo($_lang['INDEX_ENTER_ID']); ?>
                         </a>
                         <div class="js_popup--ids popup--ids popup display_none">
@@ -624,7 +624,7 @@ function hidePopup(popup) {
                         </div>
                     </li>
                     <li>
-                        <a id="icon-search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:showPopup('search');">
+                        <a class="plan-navi__search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:showPopup('search');">
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
                         <div class="js_popup--search popup--search popup display_none">
@@ -637,31 +637,30 @@ function hidePopup(popup) {
                         </div>
                     </li>
                 </ul>
-            </div><!-- icon-buttons -->
-        </div><!-- wrapper-ids_icons -->
+            </div><!-- plan-navi -->
+        </div><!-- plan-header__wrapper -->
     </div><!-- content -->
 </div>
 
-<div id="plan_title_container" class="js_plan_title_container display_none">
-    <div class="content"><?php echo($_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE']); ?> <span id="js_plan_title" class="uppercase">Replaced by JS</span>
+<div class="js_plan_title_container plan_title_container display_none">
+    <div class="content"><?php echo($_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE']); ?> <span class="js_plan_title uppercase">Replaced by JS</span>
     </div>
 </div>
 
-<div id="plan">
+<div class="js_plan">
     <noscript>
         <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
     </noscript>
-
 </div><!-- END plan -->
 
-<div id="mini-about">
+<div class="about">
     <div class="content">
         <?php echo($_lang['INDEX_MINI_ABOUT']); ?>
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_MINI_ABOUT_SUGGEST']); ?></a>!
     </div>
 </div>
 
-<div id="mini-team">
+<div class="team">
    <div class="content">
        <?php echo($_lang['INDEX_MINI_TEAM']); ?>
     </div>
