@@ -695,7 +695,7 @@ all_activities[45] = {
 phase:     0,
 name:      "Why Retrospectives?",
 summary:   "Ask 'Why do we do retrospectives?'",
-desc:      "Go back to the roots and start into the retrospectives by asking 'Why do we do this?'\
+desc:      "Go back to the roots and start into the retrospectives by asking 'Why do we do this?' \
 Write down all answers for everyone to see. You might be surprised.",
 source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
 duration:  "5",
@@ -909,7 +909,7 @@ suitable:  "iteration, project, release"
 all_activities[59] = {
 phase:     4,
 name:      "AHA!",
-summary:   "Thow a ball around and uncover learning",
+summary:   "Throw a ball around and uncover learning",
 desc:      "Throw a ball (e.g. koosh ball) around the team and uncover positive thoughts and learning experiences. Give out a question at the beginning \
 that people answer when they catch the ball, such as: \
 <ul>\

@@ -455,6 +455,10 @@ ul ul {
   display: none;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .display_table-cell {
   display: table-cell;
 }

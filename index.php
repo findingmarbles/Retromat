@@ -149,7 +149,7 @@ function write_footer() {
 /************** PLANS *****************/
 
 function get_ids_of_current_activities() {
-    return $('.js_activity_id');
+    return $('.js_plan').find('.js_fill_id');
 }
 
 
@@ -234,47 +234,6 @@ function get_activities_in_phase_as_plan_id(phase_index) {
     return res;
 }
 
-
-// Returns: <div class="item">-string
-function format_item(activity_index) {
-    var activity = get_activity_array(activity_index);
-    var res = "";
-    if (activity != null) {
-        res += "<div class='js_item'>";
-        res += " <h2>" + activity.name + " <span class='activity_id_wrapper'>(#<span class='js_activity_id'>" + convert_index_to_id(activity_index) + "</span>)</span></h2>";
-
-        res += "  <div class='summary'>" + activity.summary;
-        if (activity.source != null) {
-            res += "  <br><span class='source'><?php echo($_lang['ACTIVITY_SOURCE']); ?> " + activity.source + "</span>";
-        }
-        res += "  </div><!-- END summary -->";
-        res += "  <div class='description'>" + activity.desc;
-        res += "  </div><!-- END description -->";
-
-        res += "</div><!-- END js_item -->";
-    }
-    return res;
-}
-
-// Returns: <div class="photo-link">-string
-function format_photo_link(activity_index) {
-    var activity = get_activity_array(activity_index);
-    var res = "";
-
-    if (activity != null) {
-        res += "    <div class='js_photo_link photo_link'>";
-        if (activity.photo != null) {
-            res += activity.photo + " | ";
-        }
-        res += "        <a href='mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']); ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']); ?>' class='less_pronounced'><?php echo($_lang['ACTIVITY_PHOTO_ADD']); ?></a>";
-        res += "</span>";
-        res += "      </div><!-- END .js_photo_link -->";
-    }
-
-    return res;
-}
-
-
 function read_activity_id(div_item_jquery_object) {
     var text = div_item_jquery_object.text();
     var string_activity_id = text.match(/#\d+/);
@@ -283,12 +242,15 @@ function read_activity_id(div_item_jquery_object) {
 }
 
 // Called at the end of both enable_next & enable_prev
-function wrap_up_scroll_button(activity_index, block_id) {
-    $('#' + block_id).find('.js_item').replaceWith(format_item(activity_index));
-    $('#' + block_id).find('.js_photo_link').replaceWith(format_photo_link(activity_index));
+function wrap_up_scroll_button(old_activity_index, new_activity_index) {
+
+    var activity_block = $('.js_activity' + old_activity_index);
+
+    populate_activity_block(new_activity_index, activity_block);
+    activity_block.removeClass('js_activity' + old_activity_index);
+
     publish_plan_id(format_plan_id());
 }
-
 
 function enable_next() {
 
@@ -298,26 +260,24 @@ function enable_next() {
         var tmp_activity = get_activity_array(convert_id_to_index(current_activity_id));
         var phase_index = tmp_activity.phase;
 
-        var found = -1;
+        var found_index = -1;
         for (var i=current_activity_id; i<all_activities.length; i++) {
             tmp_activity = get_activity_array(i);
             if (tmp_activity.phase == phase_index) {
-                found = i;
+                found_index = i;
                 break;
             }
         }
-        if (found == -1) { // Not found in rest of array -> Continue at beginning
+        if (found_index == -1) { // Not found in rest of array -> Continue at beginning
             for (var i=0; i<=current_activity_id; i++) {
                 tmp_activity = get_activity_array(i);
                 if (tmp_activity.phase == phase_index) {
-                    found = i;
+                    found_index = i;
                     break;
                 }
             }
         }
-        var block_id = $(this).parents('.js_activity_block').attr('id');
-        wrap_up_scroll_button(found, block_id);
-
+        wrap_up_scroll_button(convert_id_to_index(current_activity_id), found_index);
     });
 }
 
@@ -329,26 +289,24 @@ function enable_prev() {
         var tmp_activity = get_activity_array(convert_id_to_index(current_activity_id));
         var phase_index = tmp_activity.phase;
 
-        var found = -1;
+        var found_index = -1;
         for (var i=current_activity_id-2; i>=0; i--) {
             tmp_activity = get_activity_array(i);
             if (tmp_activity.phase == phase_index) {
-                found = i;
+                found_index = i;
                 break;
             }
         }
-        if (found == -1) { // Not found in rest of array -> Continue at beginning
+        if (found_index == -1) { // Not found in rest of array -> Continue at beginning
             for (var i=all_activities.length-1; i>=current_activity_id-1; i--) {
                 tmp_activity = get_activity_array(i);
                 if (tmp_activity.phase == phase_index) {
-                    found = i;
+                    found_index = i;
                     break;
                 }
             }
         }
-        var block_id = $(this).parents('.js_activity_block').attr('id');
-        wrap_up_scroll_button(found, block_id);
-
+        wrap_up_scroll_button(convert_id_to_index(current_activity_id), found_index);
     });
 }
 
@@ -363,53 +321,29 @@ function get_contrasting_bg() {
     return bg;
 }
 
-function format_block(activity_index, block_number) {
-    var activity = get_activity_array(activity_index);
-
-    res = "";
-    if (activity != null) {
-        var bg = get_contrasting_bg();
-        res += "\n\n<div class='js_activity_block activity_block bg" + bg + "' id='" + PHASE_ID_TAG + block_number + "'>\n";
-        res += "  <div class='activity-wrapper'>\n";
-
-        res += "      <a href='JavaScript:prev()' class='js_phase-stepper phase-stepper js_prev_button' title='<?php echo($_lang['ACTIVITY_PREV']); ?>'>&#9668;</a>\n";
-
-        res += "    <div class='activity-content'>\n";
-        res += "      <div class='phase_title'><a href='#' onClick='JavaScript:show_activities_in_phase(" + activity.phase + ")'>" + phase_titles[activity.phase] + "</a></div>";
-
-        res += format_item(activity_index);
-        res += format_photo_link(activity_index);
-
-        res += "    </div><!-- END .activity-content -->\n";
-        res += "      <a href='JavaScript:next()' class='js_phase-stepper phase-stepper js_next_button' title='<?php echo($_lang['ACTIVITY_NEXT']); ?>'>&#9658;</a>\n";
-
-        res += "  </div><!-- END .activity-wrapper -->\n";
-        res += "</div><!-- END .js_activity_block -->\n";
-    }
-    return res;
-}
-
-
-function format_plan(plan_id) {
+function publish_plan(plan_id) {
     var ids = String(plan_id).split("-");
-    var res = '';
-    var error_msg = '';
+    var activity_block;
+// TODO Fehlerbehandlung    var error_msg = '';
     for(var i=0; i<ids.length; i++) {
         if (ids[i] != '') { // ignore incorrect single '-' at beginning or end of plan_id
-            res += format_block(parseInt(ids[i])-1, i);
+            activity_block = get_activity_block(parseInt(ids[i])-1, i);
+            activity_block.appendTo($('.js_plan'));
         }
     }
-    return res;
 }
 
 //Input: String
 function show_plan(plan_id) {
     var plan_id = String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
     if (plan_id) {
-        var plan = format_plan(plan_id);
-        $('.js_plan').html(plan);
-        enable_prev();
-        enable_next();
+        $('.js_plan').html(""); // RESET
+
+        //TODO show_plan & publish_plan?? ... Horrible!
+        publish_plan(plan_id);
+        enable_phase_browsing();
+
+        // This function really doesn't read like prose... -> set_visibilities(ENUM);
         $('.js_phase-stepper').addClass('display_table-cell');
         $('.js_phase-stepper ').removeClass('display_none');
         $('.js_plan_title_container').addClass('display_none');
@@ -423,13 +357,17 @@ function show_plan_title(title) {
     $('.js_plan_title_container').removeClass('display_none');
 }
 
+function enable_phase_browsing() {
+    enable_prev();
+    enable_next();
+    enable_phase_link();
+}
 
 function show_activities_in_phase(phase_index) {
     var plan_id = get_activities_in_phase_as_plan_id(phase_index);
     show_plan(plan_id);
     show_plan_title(phase_titles[phase_index]);
-    enable_prev();
-    enable_next();
+    enable_phase_browsing();
     $('.js_phase-stepper').addClass('display_none');
     $('.js_phase-stepper').removeClass('display_table-cell');
 }
@@ -470,8 +408,7 @@ function search_activities_for(phrase) {
 
     if (plan_id) {
         show_plan(plan_id);
-        enable_prev();
-        enable_next();
+        enable_phase_browsing();
         $('.js_phase-stepper').addClass('display_none');
         $('.js_phase-stepper').removeClass('display_table-cell');
         hidePopup('search');
@@ -525,6 +462,16 @@ function switchLanguage(new_lang) {
     window.open(location.protocol + '//' + location.host + location.pathname + '?id=' + urlParams.id + "&lang=" + new_lang, "_self");
 }
 
+function showPopup(popup) {
+    var identifier = '.js_popup--' + popup;
+    $(identifier).removeClass('display_none');
+}
+
+function hidePopup(popup) {
+    var identifier = '.js_popup--' + popup;
+    $(identifier).addClass('display_none');
+}
+
 function init() {
     var urlParams = getUrlVars();
     var plan_id = urlParams.id;
@@ -536,14 +483,60 @@ function init() {
     write_footer();
 }
 
-function showPopup(popup) {
-    var identifier = '.js_popup--' + popup;
-    $(identifier).removeClass('display_none');
+
+function enable_phase_link() {
+
+    $('.js_phase_link').click(function() {
+
+        var current_activity_id = read_activity_id($(this).parent().parent());
+        var tmp_activity = get_activity_array(convert_id_to_index(current_activity_id));
+
+        show_activities_in_phase(tmp_activity.phase);
+
+    });
 }
 
-function hidePopup(popup) {
-    var identifier = '.js_popup--' + popup;
-    $(identifier).addClass('display_none');
+/* Param: activity.photo
+ * Returns: String (empty or link to photo)
+ */
+function get_photo_string(photo) {
+    res = "";
+    if (photo != null) {
+        res = photo + " | ";
+    }
+    return res;
+}
+
+function populate_activity_block(activity_index, activity_block) {
+    var activity = get_activity_array(activity_index);
+
+    $(activity_block).addClass('js_activity' + activity_index);
+
+    $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_name').html(activity.name);
+    $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
+    $(activity_block).find('.js_fill_summary').html(activity.summary);
+    $(activity_block).find('.js_fill_source').html(activity.source);
+    $(activity_block).find('.js_fill_description').html(activity.desc);
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity.photo));
+
+}
+
+
+/* Param: Index of activity
+ * Returns: Object containing "activity_block"-div
+ */
+function get_activity_block(activity_index) {
+    var activity_block = $('.js_activity_block_template').clone()
+    activity_block.removeClass('js_activity_block_template');
+
+    activity_block.addClass('bg' + get_contrasting_bg());
+
+    populate_activity_block(activity_index, activity_block);
+
+    activity_block.removeClass('display_none');
+
+    return activity_block;
 }
 
 //]]>
@@ -652,6 +645,41 @@ function hidePopup(popup) {
         <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
     </noscript>
 </div><!-- END plan -->
+
+<div class="js_activity_block_template js_activity_block activity_block display_none">
+    <div class="activity-wrapper">
+        <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;</a>
+        <div class="activity-content">
+            <div class="js_phase_title phase_title">
+                <a href="#" onclick="JavaScript:All_activities_in_phase" class="js_phase_link">
+                    <span class="js_fill_phase_title"></span>
+                </a>
+            </div>
+            <div class="js_item">
+                <h2><span class="js_fill_name"></span>
+                    <span class="activity_id_wrapper">(#<span class="js_fill_id"></span>)</span>
+                </h2>
+                <div class="summary">
+                    <span class="js_fill_summary"></span>
+                    <br>
+                        <span class="source"><?php echo($_lang['ACTIVITY_SOURCE']) ?>
+                            <span class="js_fill_source"></span>
+                        </span>
+                </div><!-- END summary -->
+                <div class="description">
+                    <span class="js_fill_description"></span>
+                </div><!-- END description -->
+            </div><!-- END js_item -->
+            <div class="js_photo_link photo_link">
+                <span class="js_fill_photo-link"></span>
+                <a href="mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']) ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']) ?>" class="less_pronounced">
+                    <?php echo($_lang['ACTIVITY_PHOTO_ADD']) ?>
+                </a>
+            </div><!-- END .js_photo_link -->
+        </div><!-- END .activity-content -->
+        <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="<?php echo($_lang['ACTIVITY_NEXT']) ?>">&#9658;</a>
+    </div><!-- END .activity-wrapper -->
+</div>
 
 <div class="about">
     <div class="content">
