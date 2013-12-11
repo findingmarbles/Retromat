@@ -363,21 +363,30 @@ function show_activities_in_phase(phase_index) {
 
     /************ BEGIN PopUps Plan Navigation (Search) ************/
 
-function show_popup(popup) {
-    var identifier_popup = '.js_popup--' + popup;
-
-    var identifier_form_element = 'js_popup--' + popup + '__input';
-
-    var form = document.forms['js_' + popup + '_form'];
-    form.elements[identifier_form_element].value = "";
-//    form.elements[identifier_form_element].focus();
-
-    $(identifier_popup).removeClass('display_none');
+function get_input_field(popup_name) {
+    var form = document.forms['js_' + popup_name + '_form'];
+    var element_name = 'js_popup--' + popup_name + '__input';
+    return form.elements[element_name];
 }
 
-function hide_popup(popup) {
-    var identifier = '.js_popup--' + popup;
-    $(identifier).addClass('display_none');
+function reset_input_field(input_field) {
+    input_field.value = "";
+}
+
+function focus_input_field(input_field) {
+    input_field.focus();
+}
+
+function show_popup(popup_name) {
+    $('.js_popup--' + popup_name).removeClass('display_none');
+    
+    var input = get_input_field(popup_name);
+    reset_input_field(input);
+    focus_input_field(input);
+}
+
+function hide_popup(popup_name) {
+    $('.js_popup--' + popup_name).addClass('display_none');
 }
 
 /* Returns: String
