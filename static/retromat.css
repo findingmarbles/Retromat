@@ -238,7 +238,7 @@ ul ul {
     width: 100%;
 }
 
-.id-display {
+.ids-display {
     display: table-cell;
     width: 377px;
     vertical-align: middle;
@@ -249,7 +249,7 @@ ul ul {
     width: 173px;
 }
 
-.id-display__form {
+.ids-display__form {
     display: inline;
 }
 
@@ -302,7 +302,7 @@ ul ul {
     display: inline;
 }
 
-.id-display__input {
+.ids-display__input {
     padding: 0 5px;
     font-weight: bold;
     font-size: 1.6em;
@@ -351,11 +351,10 @@ ul ul {
 }
 
 .popup-input, /*TODO */
-.popup--ids__input,
-.popup--search__input {
+.popup__input {
     margin-left: 5px;
     margin-right: 3px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 5px 7px;
 
     font-size: 1em;
     background-color: #f5ffe3;
