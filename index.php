@@ -210,69 +210,81 @@ function sanitize_plan_id(plan_id) {
 
     /************ BEGIN Phase Navigation (Prev, Next, All activities in Phase) ************/
 
-function enable_prev() {
+function get_phase_from_activity_index(activity_index) {
+    return get_activity_array(activity_index).phase;
+}
 
-    $('.js_prev_button').click(function() {
-
-        var current_activity_id = read_activity_id($(this).parent().parent());
-        var tmp_activity = get_activity_array(convert_id_to_index(current_activity_id));
-        var phase_index = tmp_activity.phase;
-
-        var found_index = -1;
-        for (var i=current_activity_id-2; i>=0; i--) {
-            tmp_activity = get_activity_array(i);
-            if (tmp_activity.phase == phase_index) {
+function get_index_of_prev_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index-1; i>=0; i--) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=all_activities.length-1; i>=activity_index; i--) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
                 found_index = i;
                 break;
             }
         }
-        if (found_index == -1) { // Not found in rest of array -> Continue at beginning
-            for (var i=all_activities.length-1; i>=current_activity_id-1; i--) {
-                tmp_activity = get_activity_array(i);
-                if (tmp_activity.phase == phase_index) {
-                    found_index = i;
-                    break;
-                }
+    }
+
+    return found_index;
+}
+
+function get_index_of_next_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index+1; i<all_activities.length; i++) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=0; i<activity_index; i++) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
             }
         }
-        shared_step_phase_actions(convert_id_to_index(current_activity_id), found_index);
+    }
+
+    return found_index;
+}
+
+function enable_prev() {
+
+    $('.js_prev_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
     });
 }
 
 function enable_next() {
 
     $('.js_next_button').click(function() {
-
-        var current_activity_id = read_activity_id($(this).parent().parent());
-        var tmp_activity = get_activity_array(convert_id_to_index(current_activity_id));
-        var phase_index = tmp_activity.phase;
-
-        var found_index = -1;
-        for (var i=current_activity_id; i<all_activities.length; i++) {
-            tmp_activity = get_activity_array(i);
-            if (tmp_activity.phase == phase_index) {
-                found_index = i;
-                break;
-            }
-        }
-        if (found_index == -1) { // Not found in rest of array -> Continue at beginning
-            for (var i=0; i<=current_activity_id; i++) {
-                tmp_activity = get_activity_array(i);
-                if (tmp_activity.phase == phase_index) {
-                    found_index = i;
-                    break;
-                }
-            }
-        }
-        shared_step_phase_actions(convert_id_to_index(current_activity_id), found_index);
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
     });
 }
 
-function shared_step_phase_actions(old_activity_index, new_activity_index) {
-    var old_identifier = '.js_activity' + old_activity_index;
+function enable_phase_stepper(activity_index, get_neighbor_function) {
+    var phase_index = get_phase_from_activity_index(activity_index);
+
+    var next = get_neighbor_function(activity_index, phase_index);
+
+    var old_identifier = '.js_activity' + activity_index;
     var activity_block = $(old_identifier);
 
-    populate_activity_block(new_activity_index, activity_block);
+    populate_activity_block(next, activity_block);
     activity_block.removeClass(old_identifier);
 
     publish_plan_id(format_plan_id());
@@ -300,8 +312,8 @@ function get_indexes_of_activities_in_phase(phase_index) {
     var activities = new Array();
     var tmp_activity;
     for (var i=0; i<all_activities.length; i++) {
-        tmp_activity = get_activity_array(i);
-        if (tmp_activity.phase == phase_index) {
+        candidate_activity = get_activity_array(i);
+        if (candidate_activity.phase == phase_index) {
             activities.push(i);
         }
     }
@@ -352,6 +364,7 @@ function show_popup(popup) {
 
     var form = document.forms['js_' + popup + '_form'];
     form.elements[identifier_form_element].value = "";
+//    form.elements[identifier_form_element].focus();
 
     $(identifier_popup).removeClass('display_none');
 }
