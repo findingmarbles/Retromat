@@ -521,20 +521,26 @@ ul ul {
     text-decoration: underline;
 }
 
-.mini-team-photo {
+.team-photo {
     border: rgba(255,255,255, 1) 5px solid;
     margin-right: 10px;
+    margin-bottom: 30px;
     float:left;
 }
 
-.mini-team-text {
+.team-text {
     margin-right:15px;
     margin-bottom:20px;
     font-size: 0.8em;
 }
 
-.mini-team-text h2 {
+.team-text h2 {
     font-size: 1rem;
+}
+
+.team__translator {
+    float:left;
+    width:50%;
 }
 
 /************ PRINT **************/

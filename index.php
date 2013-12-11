@@ -3,10 +3,12 @@
 //$_lang = array();
 
 $lang = 'en';
+$isEnglish = true;
 require(get_language_file_path($lang));
 
 $lang = check_for_chosen_lang();
 if ($lang != 'en') {
+    $isEnglish = false;
     require(get_language_file_path($lang));
 }
 
@@ -144,9 +146,9 @@ function get_combinations_string() {
 }
 
 function publish_footer_stats() {
-    $("#js_footer_no_of_activities").html(all_activities.length);
-    $("#js_footer_no_of_combinations").html(get_number_of_combinations());
-    $("#js_footer_no_of_combinations_formula").html(get_combinations_string());
+    $(".js_footer_no_of_activities").html(all_activities.length);
+    $(".js_footer_no_of_combinations").html(get_number_of_combinations());
+    $(".js_footer_no_of_combinations_formula").html(get_combinations_string());
 }
 
 /************ END Footer Functions ************/
@@ -351,7 +353,7 @@ function hide_phase_stepper() {
 function show_activities_in_phase(phase_index) {
     var plan_id = get_activities_in_phase_as_plan_id(phase_index);
     publish_plan(plan_id);
-    publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES_FOR_PHASE']); ?> " + phase_titles[phase_index].toUpperCase());
+    publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase_index].toUpperCase());
     enable_phase_browsing();
     hide_phase_stepper();
 }
@@ -422,7 +424,7 @@ function publish_activities_for_keyword(keyword) {
 
     var plan_id = search_activities_for_keyword(keyword);
 
-    var text = '<?php echo($_lang[INDEX_ALL_ACTIVITIES_FOR_PHASE]) ?>';
+    var text = '<?php echo($_lang[INDEX_ALL_ACTIVITIES]) ?>';
     if (plan_id != '') {
         publish_plan(plan_id);
         hide_phase_stepper();
@@ -641,8 +643,6 @@ function switchLanguage(new_lang) {
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
         <!--
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
-
-
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
 -->
@@ -665,7 +665,7 @@ function switchLanguage(new_lang) {
     </div>
 </div>
 
-<?php if ($lang == 'en') { ?>
+<?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content">
                 Did you know there's a
@@ -773,16 +773,45 @@ function switchLanguage(new_lang) {
 
 <div class="about">
     <div class="content">
-        <?php echo($_lang['INDEX_MINI_ABOUT']); ?>
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_MINI_ABOUT_SUGGEST']); ?></a>!
+        <?php echo($_lang['INDEX_ABOUT']); ?>
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_ABOUT_SUGGEST']); ?></a>!
     </div>
 </div>
 
 <div class="team">
    <div class="content">
-       <?php echo($_lang['INDEX_MINI_TEAM']); ?>
-    </div>
-</div>
+
+<?php if (!$isEnglish) { ?>
+       <div class="team__translator">
+           <h2><?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
+               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
+                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>
+               </a>
+           </h2>
+           <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
+               <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE']); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
+           </a>
+           <div class="team-text">
+               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT']); ?>
+           </div>
+       </div><!-- .team--translator -->
+<?php } ?>
+
+       <div>
+           <h2><?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
+               <a href="http://finding-marbles.com/">
+                   Corinna Baldauf
+               </a>
+           </h2>
+           <a href="http://finding-marbles.com/">
+               <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
+           </a>
+           <div class="team-text" style="margin-right:0">
+               <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>
+           </div>
+       </div><!-- .team--corinna -->
+    </div><!-- .content -->
+</div><!-- .team -->
 
 <!-- Piwik -->
 <script type="text/javascript">

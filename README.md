@@ -56,6 +56,8 @@ indexes 0-14, your language will go live :)
 
 (The indexes should stay the same across language, so don't move activities around.)
 
+Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &ntilde;)
+
 #### Technical setup
 
 To test your translation of the "index_*.php"-file you need a server with PHP.
@@ -83,7 +85,7 @@ overall vision:
 ### Vision for Retr-O-Mat
 
 * Be useful
-** For more people == better
+** For more people => better
 * Be pleasant to use
 ** Simple interface
 ** Consistent
