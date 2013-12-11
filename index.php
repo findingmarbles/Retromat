@@ -19,6 +19,14 @@ require($language_file);
 
 $activities_file = 'lang/activities_' . $lang . '.php';
 
+function print_if_selected($candidate, $chosen) {
+    $res = '';
+    if ($chosen == $candidate) {
+        $res = 'selected';
+    }
+    return $res;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -95,8 +103,7 @@ switch ($lang) {
         break;
     case 'nl':
         $selected_NL = 'selected';
-    }
-
+}
 ?>
 
 last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
@@ -631,15 +638,15 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
-    <!--
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo($selected_DE); ?> >Deutsch</option>
-        <option value="en" <?php echo($selected_EN); ?> >English</option>
-        <option value="es" <?php echo($selected_ES); ?> >Espa&ntilde;ol</option>
-        <option value="fr" <?php echo($selected_FR); ?> >Fran&ccedil;ais</option>
-        <option value="nl" <?php echo($selected_NL); ?> >Nederlands</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
+        <!--
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
+        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
+        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
+        -->
     </select>
-    -->
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
