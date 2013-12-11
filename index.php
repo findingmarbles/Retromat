@@ -1,23 +1,41 @@
 <?php
 
+//$_lang = array();
+
 $lang = 'en';
-if (ISSET($_GET['lang'])) {
-    $input_lang = $_GET['lang'];
-    if ($input_lang == 'en' ||
-        $input_lang == 'de' ||
-        $input_lang == 'es' ||
-        $input_lang == 'fr' ||
-        $input_lang == 'nl')
-    {
-        $lang = $input_lang;
-    }
+require(get_language_file_path($lang));
+
+$lang = check_for_chosen_lang();
+if ($lang != 'en') {
+    require(get_language_file_path($lang));
 }
 
-$_lang = array();
-$language_file = 'lang/index_' . $lang . '.php';
-require($language_file);
-
 $activities_file = 'lang/activities_' . $lang . '.php';
+
+// PHP FUNCTIONS
+
+function check_for_chosen_lang() {
+    $lang = 'en';
+
+    if (ISSET($_GET['lang'])) {
+        $input_lang = $_GET['lang'];
+        if ($input_lang == 'de' ||
+            $input_lang == 'fr')
+        //||
+        //    $input_lang == 'de' ||
+        //    $input_lang == 'es' ||
+        //    $input_lang == 'nl')
+        {
+            $lang = $input_lang;
+        }
+    }
+        return $lang;
+}
+
+function get_language_file_path($lang) {
+    $res = 'lang/index_' . $lang . '.php';
+    return $res;
+}
 
 function print_if_selected($candidate, $chosen) {
     $res = '';
@@ -81,29 +99,8 @@ var PHASE_ID_TAG = 'phase';
 
 <?php
 
-require($activities_file);
+    require($activities_file);
 
-$selected_EN = '';
-$selected_DE = '';
-$selected_ES = '';
-$selected_FR = '';
-$selected_NL = '';
-switch ($lang) {
-    case 'en':
-        $selected_EN = 'selected';
-        break;
-    case 'de':
-        $selected_DE = 'selected';
-        break;
-    case 'es':
-        $selected_ES = 'selected';
-        break;
-    case 'es':
-        $selected_FR = 'selected';
-        break;
-    case 'nl':
-        $selected_NL = 'selected';
-}
 ?>
 
 last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
@@ -638,14 +635,17 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
+
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
-        <!--
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
+        <!--
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
+
+
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
-        -->
+-->
     </select>
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
