@@ -19,19 +19,13 @@ $activities_file = 'lang/activities_' . $lang . '.php';
 function check_for_chosen_lang() {
     $lang = 'en';
 
-    if (ISSET($_GET['lang'])) {
-        $input_lang = $_GET['lang'];
-        if ($input_lang == 'de' ||
-            $input_lang == 'fr')
-        //||
-        //    $input_lang == 'de' ||
-        //    $input_lang == 'es' ||
-        //    $input_lang == 'nl')
-        {
-            $lang = $input_lang;
-        }
+    $availableLanguageCodes = array('en', 'de', 'es', 'nl', 'fr');
+
+    if (in_array($_GET['lang'], $availableLanguageCodes)) {
+        $lang = $_GET['lang'];
     }
-        return $lang;
+
+    return $lang;
 }
 
 function get_language_file_path($lang) {
@@ -379,7 +373,7 @@ function focus_input_field(input_field) {
 
 function show_popup(popup_name) {
     $('.js_popup--' + popup_name).removeClass('display_none');
-    
+
     var input = get_input_field(popup_name);
     reset_input_field(input);
     focus_input_field(input);
@@ -646,16 +640,15 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
-
+    <!--
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English</option>
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
-        <!--
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
--->
     </select>
+    -->
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
@@ -690,7 +683,7 @@ function switchLanguage(new_lang) {
         </div>
         <div class="plan-header__wrapper">
             <div class="ids-display">
-                <?php echo($_lang['INDEX_PLAN']); ?>
+                <?php echo($_lang['INDEX_PLAN_ID']); ?>
                 <form name="js_ids-display__form" class="ids-display__form">
                     <input type="text" size="18" name="js_display" class="ids-display__input" value="">
                 </form>
