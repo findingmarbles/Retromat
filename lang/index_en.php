@@ -13,6 +13,14 @@ $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more. You know a great activity?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Your Name';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'Your URL';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/ - send me a picture of you :)';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
+               Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
+EOT;
+
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wished for something like Retr-O-Mat during her Scrummaster years.
