@@ -57,8 +57,8 @@ function print_if_selected($candidate, $chosen) {
 <link rel="shortcut icon" href="images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
 
-<script src="static/jquery.min.js"></script>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
 
 <script src="static/lightbox/lightbox.js"></script>
 <link href="static/lightbox/lightbox.css" rel="stylesheet" />
@@ -427,7 +427,7 @@ function publish_activities_for_keyword(keyword) {
 
     var plan_id = search_activities_for_keyword(keyword);
 
-    var text = '<?php echo($_lang[INDEX_ALL_ACTIVITIES]) ?>';
+    var text = '<?php echo($_lang["INDEX_ALL_ACTIVITIES"]) ?>';
     if (plan_id != '') {
         publish_plan(plan_id);
         hide_phase_stepper();
@@ -435,7 +435,7 @@ function publish_activities_for_keyword(keyword) {
     } else {
         publish_plan_id(plan_id);
         empty_plan();
-        text = '<?php echo($_lang[POPUP_SEARCH_NO_RESULTS]) ?>';
+        text = '<?php echo($_lang["POPUP_SEARCH_NO_RESULTS"]) ?>';
     }
 
     publish_plan_title(text +  " '" + keyword + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
