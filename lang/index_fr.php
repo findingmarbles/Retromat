@@ -7,8 +7,8 @@ $_lang['INDEX_PLAN_ID'] = 'ID du plan:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Afficher!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nouveau plan aléatoire de rétrospective';
 
-$_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
+$_lang['INDEX_ENTER_ID'] = 'Saisissez des IDs à afficher';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Cherchez des activités pour le mot-clé';
 
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Toutes les activités pour';
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contient <span id="footer_no_of_activities"></span> activités, permettant <span id="footer_no_of_combinations"></span> combinaisons (<span id="footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus. Vous connaissez une activité géniale ?';
@@ -16,10 +16,11 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Pierre Martin';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://www.pierre-martin.fr/';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://www.occitech.fr/';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/pierre_martin.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
-               Tell us something about you, Pierre :) <a href="https://twitter.com/JudithAndresen">Twitter</a>!
+	Lead developer et co-gérant d'<a href="http://www.occitech.fr/">Occitech</a>.<br>
+	Gazouille aussi sur <a href="https://twitter.com/pierremartin">Twitter</a> !
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Original anglais: ';
@@ -44,11 +45,11 @@ $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%2
 $_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat est principalement basé sur JavaScript et ne fonctionne pas sans. Veuillez donc activer JavaScript dans votre navigateur. Merci !';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Désolé, impossible de trouver une activité avec l\'ID';
 
-$_lang['POPUP_CLOSE'] = 'Close';
-$_lang['POPUP_IDS_BUTTON'] = 'Show!';
-$_lang['POPUP_IDS_INFO']= 'Example ID: 3-33-20-13-45';
-$_lang['POPUP_SEARCH_BUTTON'] = 'Search';
-$_lang['POPUP_SEARCH_INFO']= 'Search titles, summaries &amp; descriptions';
-$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Sorry, nothing found for';
+$_lang['POPUP_CLOSE'] = 'Fermer';
+$_lang['POPUP_IDS_BUTTON'] = 'Afficher !';
+$_lang['POPUP_IDS_INFO']= 'ID d\'exemple : 3-33-20-13-45';
+$_lang['POPUP_SEARCH_BUTTON'] = 'Chercher';
+$_lang['POPUP_SEARCH_INFO']= 'Rechercher dans les titres, résumés et descriptions';
+$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Désolé, rien de trouvé pour';
 
 ?>
