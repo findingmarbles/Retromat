@@ -21,7 +21,7 @@ function check_for_chosen_lang() {
 
     $availableLanguageCodes = array('en', 'de', 'es', 'nl', 'fr');
 
-    if (in_array($_GET['lang'], $availableLanguageCodes)) {
+    if (array_key_exists('lang', $_GET) && in_array($_GET['lang'], $availableLanguageCodes)) {
         $lang = $_GET['lang'];
     }
 
