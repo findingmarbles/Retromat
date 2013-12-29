@@ -16,6 +16,11 @@ $activities_file = 'lang/activities_' . $lang . '.php';
 
 // PHP FUNCTIONS
 
+function get_language_file_path($lang) {
+    $res = 'lang/index_' . $lang . '.php';
+    return $res;
+}
+
 function check_for_chosen_lang() {
     $lang = 'en';
 
@@ -26,11 +31,6 @@ function check_for_chosen_lang() {
     }
 
     return $lang;
-}
-
-function get_language_file_path($lang) {
-    $res = 'lang/index_' . $lang . '.php';
-    return $res;
 }
 
 function print_if_selected($candidate, $chosen) {
@@ -420,7 +420,16 @@ function search_activities_for_keyword(keyword) {
             plan_id += convert_index_to_id(i);
         }
     }
-    return plan_id;
+
+    return plan_id + find_ids_in_keyword(keyword, isFirst);
+}
+
+function find_ids_in_keyword(keyword, isFirst) {
+    var res = sanitize_plan_id(keyword);
+    if (res != "null" && !isFirst) { // FIXME "null" is sooo ugly
+        res = "-" + res;
+    }
+    return res;
 }
 
 function publish_activities_for_keyword(keyword) {
