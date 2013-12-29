@@ -133,7 +133,8 @@ Debrief by asking:\
     <li>Suggestions on how to continue?</li>\
 </ul>",
 source:    source_agileRetrospectives,
-duration:  "20-30",
+duration:  "15-25",
+photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contributed by Chloe Gachet'>View Photo</a>",
 suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
@@ -440,7 +441,7 @@ suitable: "iteration, release, smallGroups, smoothSailing, mature"
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles &amp; Soup / Circle of Influence &amp; Concern",
+name:      "Circles &amp; Soup / Circle of Influence",
 summary:   "Create actions based on how much control the team has to carry them out",
 desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
 'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
@@ -1194,15 +1195,56 @@ duration:  "30 min",
 photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity77]' title='Taken by Ellen Gottesdiener'>View Photo</a>",
 suitable:  "iteration, project, release, distributed"
 };
-/*
 all_activities[78] = {
+phase:     1,
+name:      "Value Stream Mapping",
+summary:   "Draw a value stream map of your iteration process",
+desc:      "Explain an example of Value Stream Mapping. (If you're unfamiliar with it, check out \
+<a href='http://www.youtube.com/watch?v=3mcMwlgUFjU'>this video</a> or \
+<a href='http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html'>this article</a>.) \
+Ask the team to draw a value stream map of their process from the point of \
+view of a single user story. If necessary, ask them to break into small groups, and \
+facilitate the process if they need it. Look at the finished map. Where are long delays, \
+choke points and bottlenecks?",
+source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo &quot;Nusco&quot; Perrotta</a>, inspired by <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
+duration:  "20-30 min",
+more:      "http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html",
+suitable:  "iteration, project, release, distributed"
+};
+all_activities[79] = {
+phase:     1,
+name:      "Repeat &amp; Avoid",
+summary:   "Brainstorm what to repeat and what behaviours to avoid",
+desc:      "Head 2 flip charts with 'Repeat' and 'Avoid' respectively. \
+The participants write issues for the columns on sticky notes - 1 per issue. \
+You can also color code the stickies. Example categories are 'People', 'Process', 'Technology', ... \
+Let everyone read out their notes and post them to the appropriate column. \
+Are all issues unanimous?",
+source:     "<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>",
+more:       "http://www.funretrospectives.com/repeat-avoid/",
+duration:  "15-30",
+photo:    "<a href='http://4.bp.blogspot.com/-LLJU-U0lLFg/UR6j7F6mMnI/AAAAAAAACmU/P1NUW-KUraA/s1600/repeat-avoid.JPG' rel='lightbox[activity80]' title='Photo by Luis Goncalves'>View Photo</a>",
+suitable: "iteration, project, remote"
+};
+all_activities[80] = {
 phase:     0,
-name:      "Outcome Expections (Core Protocol: Meet)",
-summary:   "Everyone states what they want",
-desc:      "This activities works in 3 rounds of questions: \
-",
-source:     "<a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
+name:      "Outcome Expectations",
+summary:   "Everyone states what they want out of the retrospective",
+desc:      "Everyone in the team states their goal for the retrospective, i.e. what they \
+want out of the meeting. Examples of what participants might say: \
+<ul> \
+    <li>I'm happy if we get 1 good action item</li> \
+    <li>I want to talk about our argument about unit tests and agree on how we'll do it in the future</li> \
+    <li>I'll consider this retro a success, if we come up with a plan to tidy up $obscureModule</li> \
+</ul> \
+[You can check if these goals were met if you close with activity #14.] \
+<br><br> \
+[The <a href='http://liveingreatness.com/additional-protocols/meet/'>Meet - Core Protocol</a>, which inspired \
+this activity, also describes 'Alignment Checks': Whenever someone thinks the retrospective is not meeting \
+people's needs they can ask for an Alignment Check. Then everyone says a number from 0 to 10 which reflects \
+how much they are getting what they want. The person with the lowest number takes over to get nearer to \
+what they want.]",
+source:     "Inspired by <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
 duration:  "5 min groupsize",
 suitable:  "iteration, project, release"
 };
-*/
