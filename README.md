@@ -34,10 +34,11 @@ Or send a photo illustrating an activity (see above for contact details).
 
 There are a couple of translations currently under construction. Our team of awesome translators:
 
-* Judith Andresen - German
+* Tobias Ranft and Judith Andresen - German
 * Linda van der Pal - Dutch
 * Xavier Verges - Spanish (and possibly Catalan)
 * Pierre Martin - French
+* Weronika Kedzierska - Polish
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
