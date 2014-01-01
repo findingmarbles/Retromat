@@ -7,7 +7,6 @@ var phase_titles = ['Set the stage', 'Gather data', 'Generate insights', 'Decide
 //  id:        i+1,
 //  phase:     int in {1-5},
 //  name:      "",
-//  alternativeName: "",
 //  summary:   "",
 //  desc:      "Multiple \
 //              Lines",
@@ -140,7 +139,6 @@ suitable: "iteration, release, project, introverts"
 all_activities[7] = {
 phase:     2,
 name:      "5 Whys",
-alternativeName: "Root Cause Analysis",
 summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
 desc:      "Divide the participants into small groups (<= 4 people) and give \
 each group one of the top identified issues. Instructions for the group:\
