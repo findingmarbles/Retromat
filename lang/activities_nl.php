@@ -240,14 +240,12 @@ duration:  "5-10",
 suitable: "iteration, release"
 };
 all_activities[16] = {
-phase:     4, // 2 oder 3 geht auch
-name:      "SaMoLo (More of, Same of, Less of)",
-summary:   "Get course corrections on what you do as a facilitator",
-desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and 'Less of'. \
-Ask participants to nudge your behaviour into the right direction: Write stickies \
-with what you should do more, less and what is exactly right. Read out and briefly \
-discuss the stickies section-wise.",
-more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
+phase:     4, // 5 gaat ook
+name:      "MeEvMi (Meer, Evenveel, Minder)",
+summary:   "Krijg koerscorrecties voor wat je doet als facilitator",
+desc:      "Verdeel een flip chart in 3 secties getiteld 'Meer van', 'Evenveel als', en 'Minder van'. \
+Vraag de deelnemers om je gedrag in de juiste richting te duwen: Laat hen op stickes beschrijven wat je meer moet doen, wat je minder moet doen en wat er precies goed is. Lees de resultaten hardop voor en bespreek de stickes per sectie.",
+more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's ervaringen</a>",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 duration:  "5-10",
 suitable: "iteration, release, project"
@@ -255,51 +253,43 @@ suitable: "iteration, release, project"
 all_activities[17] = {
 phase:     0,
 name:      "Check In - Amazon Review",
-summary:   "Review the sprint on Amazon. Don't forget the star rating!",
-desc:      "Each team member writes a short review with: \
+summary:   "Schrijf een review van de iteratie voor Amazon. En vergeet de sterbeoordeling niet!",
+desc:      "Elk team lid schrijft een korte review met: \
 <ul>\
-    <li>Title</li>\
-    <li>Content</li>\
-    <li>Star rating (5 stars is the best) </li>\
+    <li>Titel</li>\
+    <li>Inhoud</li>\
+    <li>Sterbeoordeling (5 sterren is het best) </li>\
 </ul>\
-Everyone reads out their review. Record the star ratings on a flip chart.<br>\
-Can span whole review by also asking what is recommended about the sprint and what not.",
-source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Codecentric Blog</a>",
+Iedereen leest zijn review voor. Houdt de sterbeoordelingen bij op een flipchart.<br>\
+Dit kan de hele retrospective in beslag nemen door ook te informeren naar wat er aan te bevelen was aan de sprint en wat niet.",
+source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
 duration:  "10",
 suitable: "release, project"
 };
 all_activities[18] = {
 phase:     1,
-name:      "Speedboat / Sailboat",
-summary:   "Analyze what forces push you forward and what pulls you back",
-desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as well \
-as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
-and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
-Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>, who adapted it from " + source_innovationGames,
+name:      "Speedboot / Zeilboot",
+summary:   "Analyseer welke krachten je voortduwen en welke je terugduwen",
+desc:      "Teken een speedboot op een flipchartvel. Geef het zowel een sterke motor als een zwaar anker. De teamleden schrijven zwijgend op stickies wat het team voortstuwde en wat het verankerde. Per postit 1 idee. Plak vervolgens de stickies op de motor en het anker al naar gelang waar ze thuishoren. Lees iedere notitie voor en bespreek hoe je de motoren kunt vermeerderen en de ankers los kan snijden.",
+source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>, die het aangepast hebben van " + source_innovationGames,
 duration:  "10-15 groupSize",
 suitable: "iteration, release"
 };
 all_activities[19] = {
 phase:     2,
-name:      "Perfection Game",
-summary:   "What would make the next sprint a perfect 10 out of 10?",
-desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a wide one for 'Actions'. \
-Everyone rates the last sprint on a scale from 1 to 10. Then they have to suggest what action(s) \
-would make the next sprint a perfect 10.",
+name:      "Perfectioneringsspel (Perfection Game)",
+summary:   "Wat zou de volgende spring perfect maken?",
+desc:      "Bereid een flip chart voor met twee kolommen, een smalle voor 'Beoordeling' en een brede voor 'Acties'. \
+Iedereen beoordeelt de afgelopen sprint op een schaal van 1 (slecht) tot 10 (goed). Dan moeten ze voorstellen welke acties de volgende sprint beter zouden maken om een 10 te scoren.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
 phase:     3,
-name:      "Merge",
-summary:   "Condense many possible actions down to just two the team will try",
-desc:      "Hand out index cards and markers. Tell everyone to write down the two actions they \
-want to try next sprint - as concretely as possible \
-(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Then everyone pairs \
-up with their neighbor and both together must merge their actions into a single list with \
-two actions. The pairs form groups of 4. Then 8. Now collect every group's two action items \
-and have a vote on the final two.",
+name:      "Samenvoegen",
+summary:   "Verkort de lijst met heel veel mogelijke acties tot twee acties die het team wil uitproberen",
+desc:      "Deel indexkaartjes en stiften uit. Geef iedereen de opdracht om de twee acties die zij volgende sprint uit willen proberen zo concreet mogelijk op te schrijven \
+(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Verdeel de groep vervolgens in paren en laat hen hun twee lisjtjes samenvoegen tot 1 lijst met twee acties. Maak vervolgens groepen van vier en daarna van acht. Verzamel ten slotte de lijstjes van ieder groepje en stem over wat de winnende acties worden.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 duration:  "15-30 groupSize",
 suitable: "iteration, release, project, largeGroups"
