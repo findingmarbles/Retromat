@@ -571,7 +571,7 @@ phase:     2,
 name:      "Remember the Future",
 summary:   "Imagine the next iteration is perfect. What is it like? What did you do?",
 desc:      "'Imagine you could time travel to the end of the next iteration (or release). You learn that it was \
-it was the best, most productive iteration yet! How do your future selves describe it? What do you \
+the best, most productive iteration yet! How do your future selves describe it? What do you \
 see and hear?' Give the team a little time to imagine this state and jot down some keywords to aid their memory. \
 Then let everyone describe their vision of a perfect iteration.<br>\
 Follow up with 'What changes did we implement that resulted in such a productive and satisfying future?'\
@@ -1199,7 +1199,7 @@ name:      "Value Stream Mapping",
 summary:   "Draw a value stream map of your iteration process",
 desc:      "Explain an example of Value Stream Mapping. (If you're unfamiliar with it, check out \
 <a href='http://www.youtube.com/watch?v=3mcMwlgUFjU'>this video</a> or \
-<a href='http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html'>this article</a>.) \
+<a href='http://wall-skills.com/2014/value-stream-mapping/'>this printable 1-pager</a>.) \
 Ask the team to draw a value stream map of their process from the point of \
 view of a single user story. If necessary, ask them to break into small groups, and \
 facilitate the process if they need it. Look at the finished map. Where are long delays, \
