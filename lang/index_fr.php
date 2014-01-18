@@ -37,7 +37,7 @@ $_lang['PRINT_HEADER'] = 'par Finding-Marbles.com';
 $_lang['ACTIVITY_SOURCE'] = 'Source :';
 $_lang['ACTIVITY_PREV'] = 'Afficher une autre activité pour cette phase';
 $_lang['ACTIVITY_NEXT'] = 'Afficher une autre activité pour cette phase';
-$_lang['ACTIVITY_PHOTO_ADD'] = 'Àjouter une Photo';
+$_lang['ACTIVITY_PHOTO_ADD'] = 'Ajouter une Photo';
 
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
