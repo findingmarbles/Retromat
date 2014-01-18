@@ -96,3 +96,98 @@ effectuée par l'équipe.",
 source:    source_findingMarbles,
 suitable: "iteration, max10people"
 };
+all_activities[5] = {
+phase:     1,
+name:      "Aimer à aimer",
+summary:   "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\"",
+desc:      "Préparation: 20 cartes qualité, càd des fiches cartonnées colorées avec un unique mot \
+comme <i>drôle, claire, sérieuse, géniale, dangereuse, désagréable</i>.<br> \
+Chaque membre de l'équipe doit écrire au moins 9 cartes : 3 de chaque pour les choses \
+à commencer à faire, à continuer et à arrêter. Choisissez une personne qui sera le premier juge. \
+Le juge retourne la première carte qualité. Chaque membre sélectionne alors parmi ses cartes \
+celle qui correspond le mieux à ce mot et la pose face cachée sur la table. \
+Le dernier à se décider doit remettre la carte dans son jeu. Le juge mélange toutes \
+les cartes proposées, les retourne une par une et décide laquelle correspond le plus = la gagnante. \
+Toutes les cartes sont jetées. La personne ayant proposé la carte gagnante reçoit \
+la carte qualité. La personne à la gauche du juge devient alors le nouveau juge.<br> \
+Arrêter lorsque tout le monde est à court de cartes (6-9 tours). Celui qui a le plus \
+de cartes qualité gagne. Débriefez en demandant quelles sont les principales conclusions. \
+<br>(Basé sur le jeu 'Apples to Apples')",
+source:    source_agileRetrospectives,
+duration:  "30-40",
+suitable: "iteration, introverts"
+};
+all_activities[6] = {
+phase:     1,
+name:      "Mad Sad Glad",
+summary:   "Collectez les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), triste (sad), ou content (glad) et trouvez les raisons",
+desc:      "Affichez trois affiches intitulées 'en colère' (mad), 'triste' (sad), et 'content' (glad) ou '>:), :(, :)'. \
+Les membres de l'equipe écrivent un évènement par carte lorsqu'ils on ressenti ce sentiment, avec un code couleur pour chaque type de sentiment. \
+Lorsque le temps est écoulé demandez à chacun de placer ses cartes sur les affiches appropriées. Regroupez les cartes sur \
+chaque affiche puis demandez au groupe de nommer chaque regroupement. <br>\
+Terminez en demandant :\
+<ul>\
+    <li>Qu'en ressort-il ? Qu'est-ce qui est inattendu ?</li>\
+    <li>Qu'est-ce qui a rendu cette tâche difficile ? Qu'est-ce qui a été amusant ?</li>\
+    <li>Reconnaissez vous des motifs / modèles ? Que signifient-ils pour vous en tant qu'équipe ?</li>\
+    <li>Des suggestions sur comment continuer ?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "15-25",
+photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contribuée par Chloe Gachet'>Voir la Photo</a>",
+suitable: "iteration, release, project, introverts"
+};
+all_activities[7] = {
+phase:     2,
+name:      "5 Pourquoi",
+alternativeName: "Analyse de cause racine",
+summary:   "Examinez de près la cause racine de problèmes en vous demandant à plusieurs reprises 'Pourquoi ?'",
+desc:      "Divisez les participants en petits groupes (<= 4 personnes) et donnez à chaque groupe \
+l'un des problèmes le plus identifié précédemment. Instructions pour le groupe :\
+<ul>\
+    <li>Une personne demande aux autres 'Pourquoi est-ce arrivé ?' à plusieurs reprises pour trouver la cause racine ou une suite d'évènements</li>\
+    <li>Notez la cause racine trouvée (souvent la réponse au 5ème 'Pourquoi ?')</li>\
+</ul>\
+Laissez le groupe partager leurs conclusions.",
+source:    source_agileRetrospectives,
+duration:  "15-20",
+suitable: "iteration, release, project, root_cause"
+};
+all_activities[8] = {
+phase:     2,
+name:      "Matrice d'apprentissage",
+summary:   "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes",
+desc:      "Après avoir discuté des données de la Phase 2, affichez un tableau à 4 quadrants intitulés \
+':)', ':(', 'Idée !', et 'Appréciation'. Distribuez des post-its. \
+<ul>\
+    <li>Les membres de l'équipe peuvent contribuer à chaque quadrant. Une idée par post-it.</li>\
+    <li>Regroupez les notes.</li>\
+    <li>Distribuez 6 à 10 points aux participants pour voter et élire les idées les plus importantes.</li>\
+</ul>\
+Cette liste sera celle utilisée pour la Phase 4.",
+source:    source_agileRetrospectives,
+duration:  "20-25",
+suitable: "iteration"
+};
+all_activities[9] = {
+phase:     2,
+name:      "Brainstorming / Filtrage",
+summary:   "Générez de nombreuses idées et filtrez les suivant vos critères",
+desc:      "Exposez les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
+qui seront filtrées <em>après</em> le brainstorming.\
+<ul>\
+    <li>Laissez les participants écrire leurs idées pendant 5 à 10 minutes</li>\
+    <li>Faites des tours de table en demandant de façon répétée une idée à chacun, jusqu'à ce que toutes les idées soient au tableau</li>\
+    <li>Demandez ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité, ...). \
+        Laissez le groupe en choisir 4.</li>\
+    <li>Appliquez chaque filtre et marquez les idées qui passent les 4 filtres.</li>\
+    <li>Quelles idées le groupe veut-il faire avancer ? Est-ce que quelqu'un se sent particulièrement concerné par une de ces idées ? \
+        Autrement prenez une décision à la majorité.</li>\
+</ul>\
+Les idées sélectionnées rentrent en Phase 4.",
+source:    source_agileRetrospectives,
+more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
+    Nine Ways To Be A Great Brainstorm Lead</a>",
+duration:  "40-60",
+suitable: "iteration, release, project, introverts"
+};
