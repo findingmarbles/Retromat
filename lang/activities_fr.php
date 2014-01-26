@@ -196,11 +196,28 @@ phase:     3,
 name:      "Le Cercle des Questions",
 summary:   "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus",
 desc:      "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
-ce que vous voulez faire en tant que groupe. Vous commencer par poser la premi&egrave;re question &agrave; votre voisin, Ex : \
+ce que vous voulez faire en tant que groupe. Vous commencer par poser la premi&egrave;re question &agrave; votre voisin, Par exemple \
 'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration' Votre \
 voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
 que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse entendre tout le monde !",
 source:    source_agileRetrospectives,
 duration:  "30+ groupsize",
 suitable: "iteration, release, project, introverts"
+};
+all_activities[11] = {
+phase:     3,
+name:      "Dot Voting - D&eacute;marrer, Arr&ecirc;ter, Continuer",
+summary:   "R&eacute;fl&eacute;chissez ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter et continuer et gardez les propositions les mieux not&eacute;es",
+desc:      "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
+Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
+id&eacute;e par carte. Laissez les &eacute;crire en silence pendant quelques minutes. \
+Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
+Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Votez en distribuant des points. \
+ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
+Les 2 ou 3 meilleures seront vos actions &agrave; mener.\
+<br><br>\
+( Voir <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité .)",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
 };
