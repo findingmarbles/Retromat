@@ -191,3 +191,16 @@ more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-t
 duration:  "40-60",
 suitable: "iteration, release, project, introverts"
 };
+all_activities[10] = {
+phase:     3,
+name:      "Le Cercle des Questions",
+summary:   "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus",
+desc:      "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
+ce que vous voulez faire en tant que groupe. Vous commencer par poser la premi&egrave;re question &agrave; votre voisin, Ex : \
+'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration' Votre \
+voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
+que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse entendre tout le monde !",
+source:    source_agileRetrospectives,
+duration:  "30+ groupsize",
+suitable: "iteration, release, project, introverts"
+};
