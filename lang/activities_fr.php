@@ -1,4 +1,4 @@
-var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Générer des idées', 'Décider des actions', 'Fermer la rétrospective', 'Quelque chose complètement différent'];
+var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Générer des idées', 'Décider des actions', 'Clore la rétrospective', 'Quelque chose de complètement différent'];
 
 // BIG ARRAY OF ALL ACTIVITIES
 // Mandatory: id, phase, name, summary, desc
@@ -196,8 +196,8 @@ phase:     3,
 name:      "Le Cercle des Questions",
 summary:   "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus",
 desc:      "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
-ce que vous voulez faire en tant que groupe. Vous commencer par poser la premi&egrave;re question &agrave; votre voisin, Par exemple \
-'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration' Votre \
+ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
+'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
 voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
 que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse entendre tout le monde !",
 source:    source_agileRetrospectives,
@@ -206,8 +206,8 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Dot Voting - D&eacute;marrer, Arr&ecirc;ter, Continuer",
-summary:   "R&eacute;fl&eacute;chissez ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter et continuer et gardez les propositions les mieux not&eacute;es",
+name:      "D&eacute;marrer, Arr&ecirc;ter, Continuer",
+summary:   "R&eacute;fl&eacute;chissez ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et gardez les propositions les mieux not&eacute;es",
 desc:      "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
 id&eacute;e par carte. Laissez les &eacute;crire en silence pendant quelques minutes. \
@@ -229,9 +229,9 @@ desc:      "Présentez les <a href='http://en.wikipedia.org/wiki/SMART_criteria'
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
 product owner tous les mercreci à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
-ne soit ajoutées au backlog du sprint'.<br>\
+ne soit ajoutées au backlog du sprint'. <br>\
 Créez des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5\
-étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tout les participants doivent \
+étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
 s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
 source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
@@ -241,8 +241,7 @@ all_activities[13] = {
 phase:     4,
 name:      "La porte des retours - les chiffres",
 summary:   "Évaluez la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps",
-desc:      "Placez des posts-its sur la porte numérotés de 1 à 5 . 1 étant le plus haut et le meilleur score, \
-5 le plus bas et le pire.\
+desc:      "Placez des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
 A la fin de la rétrospective, demandez aux participants de placer un post-it sur le chiffre qui d'après eux \
 correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
 source:    "ALE 2011, " + source_findingMarbles,
@@ -255,8 +254,7 @@ name:      "Appréciations",
 summary:   "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive",
 desc:      "Commencez en remerciant de manière sincère l'un des participants. \
 Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...\
-Invitez alors les autres à faire de même et attendez que quelqu'un se jette à l'eau. Arrêtez quand personne \
-n'a parlé pendant plus d'une minute.",
+Invitez alors les autres à faire de même et attendez que quelqu'un se jette à l'eau. Arrêtez quand personne n'a parlé pendant plus d'une minute.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
 duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
@@ -265,10 +263,9 @@ all_activities[15] = {
 phase:     4,
 name:      "Aide, Gêne, Hypothèse",
 summary:   "Obtenez des retours concrets sur votre manière de faciliter",
-desc:      "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' \
-(des suggestions de choses à essayer). \
-Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant \
-des post-its et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
+desc:      "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' 
+(des suggestions de choses à essayer). 
+Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
 source:    source_agileRetrospectives,
 duration:  "5-10",
 suitable: "iteration, release"
