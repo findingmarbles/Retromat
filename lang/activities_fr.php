@@ -261,3 +261,15 @@ source:    source_agileRetrospectives + " who took it from 'The Satir Model: Fam
 duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
 };
+all_activities[15] = {
+phase:     4,
+name:      "Aide, Gêne, Hypothèse",
+summary:   "Obtenez des retours concrets sur votre manière de faciliter",
+desc:      "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' \
+(des suggestions de choses à essayer). \
+Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant \
+des post-its et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
+source:    source_agileRetrospectives,
+duration:  "5-10",
+suitable: "iteration, release"
+};
