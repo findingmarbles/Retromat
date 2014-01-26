@@ -249,3 +249,15 @@ source:    "ALE 2011, " + source_findingMarbles,
 duration:  "2-3",
 suitable: "iteration, largeGroups"
 };
+all_activities[14] = {
+phase:     4,
+name:      "Appréciations",
+summary:   "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive",
+desc:      "Commencez en remerciant de manière sincère l'un des participants. \
+Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...\
+Invitez alors les autres à faire de même et attendez que quelqu'un se jette à l'eau. Arrêtez quand personne \
+n'a parlé pendant plus d'une minute.",
+source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
+duration:  "5-30 groupsize",
+suitable: "iteration, release, project"
+};
