@@ -221,3 +221,19 @@ source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
 };
+all_activities[12] = {
+phase:     3,
+name:      "Objectifs SMART",
+summary:   "Formulez un plan d'action spécifique et mesurable",
+desc:      "Présentez les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
+(Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
+plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
+product owner tous les mercreci à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
+ne soit ajoutées au backlog du sprint'.<br>\
+Créez des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5\
+étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tout les participants doivent \
+s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
+source:    source_agileRetrospectives,
+duration:  "20-60 groupsize",
+suitable: "iteration, release, project"
+};
