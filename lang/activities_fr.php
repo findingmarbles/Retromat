@@ -237,3 +237,15 @@ source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
 suitable: "iteration, release, project"
 };
+all_activities[13] = {
+phase:     4,
+name:      "La porte des retours - les chiffres",
+summary:   "Évaluez la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps",
+desc:      "Placez des posts-its sur la porte numérotés de 1 à 5 . 1 étant le plus haut et le meilleur score, \
+5 le plus bas et le pire.\
+A la fin de la rétrospective, demandez aux participants de placer un post-it sur le chiffre qui d'après eux \
+correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
+source:    "ALE 2011, " + source_findingMarbles,
+duration:  "2-3",
+suitable: "iteration, largeGroups"
+};
