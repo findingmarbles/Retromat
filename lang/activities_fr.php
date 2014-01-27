@@ -212,11 +212,11 @@ desc:      "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', '
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
 id&eacute;e par carte. Laissez les &eacute;crire en silence pendant quelques minutes. \
 Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
-Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Votez en distribuant des points. \
+Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Votez en distribuant des points \
 ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
 Les 2 ou 3 meilleures seront vos actions &agrave; mener.\
 <br><br>\
-( Voir <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité .)",
+(Voir <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
@@ -228,9 +228,9 @@ summary:   "Formulez un plan d'action spécifique et mesurable",
 desc:      "Présentez les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
-product owner tous les mercreci à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
+product owner tous les mercredi à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
 ne soit ajoutées au backlog du sprint'. <br>\
-Créez des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5\
+Créez des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5 \
 étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
 s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
 source:    source_agileRetrospectives,
@@ -253,9 +253,9 @@ phase:     4,
 name:      "Appréciations",
 summary:   "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive",
 desc:      "Commencez en remerciant de manière sincère l'un des participants. \
-Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...\
+Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
 Invitez alors les autres à faire de même et attendez que quelqu'un se jette à l'eau. Arrêtez quand personne n'a parlé pendant plus d'une minute.",
-source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
+source:    source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
 duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
 };
@@ -263,9 +263,10 @@ all_activities[15] = {
 phase:     4,
 name:      "Aide, Gêne, Hypothèse",
 summary:   "Obtenez des retours concrets sur votre manière de faciliter",
-desc:      "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' 
-(des suggestions de choses à essayer). 
-Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
+desc:      "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' \
+(des suggestions de choses à essayer). \
+Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its \
+et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
 source:    source_agileRetrospectives,
 duration:  "5-10",
 suitable: "iteration, release"
