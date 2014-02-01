@@ -271,3 +271,16 @@ source:    source_agileRetrospectives,
 duration:  "5-10",
 suitable: "iteration, release"
 };
+all_activities[16] = {
+phase:     4, // marche aussi pour 5 
+name:      "SaMoLo (Plus de, Autant de, Moins de)",
+summary:   "Pour vous aider à redresser la barre dans votre rôle de facilitateur",
+desc:      "Dessinez au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
+Demandez aux participants un coup de main pour vous aider à améliorer votre comportement : Écrivez sur des post-its \
+ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lisez et \
+discutez un court moment des post-its collés dans chaque partie.",
+more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
+source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
+duration:  "5-10",
+suitable: "iteration, release, project"
+};
