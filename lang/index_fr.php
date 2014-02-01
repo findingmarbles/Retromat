@@ -11,7 +11,7 @@ $_lang['INDEX_ENTER_ID'] = 'Saisissez des IDs à afficher';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Cherchez des activités pour le mot-clé';
 
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Toutes les activités pour';
-$_lang['INDEX_ABOUT'] = 'Retr-O-Mat contient <span id="footer_no_of_activities"></span> activités, permettant <span id="footer_no_of_combinations"></span> combinaisons (<span id="footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus. Vous connaissez une activité géniale ?';
+$_lang['INDEX_ABOUT'] = 'Retr-O-Mat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus. Vous connaissez une activité géniale ?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction : ';
@@ -28,7 +28,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna souhaitait quelque chose comme Retr-O-Mat pendant ses années de Scrummaster.
     Finalement elle le construit elle même dans l'espoir que cela serait utile à d'autres également.
     Des questions, suggestions ou encouragements ?
-    Vous pouvez lui écrire à <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a> ou
+    Vous pouvez lui écrire à <a href="mailto:corinna@finding-marbles.com">un e-mail</a> ou
     <a href="https://twitter.com/findingmarbles">la contacter sur Twitter</a>.
 EOT;
 

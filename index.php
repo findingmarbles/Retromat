@@ -2,15 +2,14 @@
 
 //$_lang = array();
 
-$lang = 'en';
-$isEnglish = true;
-require(get_language_file_path($lang));
+$lang = $argv[1];
 
-$lang = check_for_chosen_lang();
-if ($lang != 'en') {
-    $isEnglish = false;
-    require(get_language_file_path($lang));
+$isEnglish = false;
+if ($lang == 'en') {
+    $isEnglish = true;
 }
+
+require(get_language_file_path($lang));
 
 $activities_file = 'lang/activities_' . $lang . '.php';
 
@@ -19,18 +18,6 @@ $activities_file = 'lang/activities_' . $lang . '.php';
 function get_language_file_path($lang) {
     $res = 'lang/index_' . $lang . '.php';
     return $res;
-}
-
-function check_for_chosen_lang() {
-    $lang = 'en';
-
-    $availableLanguageCodes = array('en', 'de', 'es', 'nl', 'fr');
-
-    if (array_key_exists('lang', $_GET) && in_array($_GET['lang'], $availableLanguageCodes)) {
-        $lang = $_GET['lang'];
-    }
-
-    return $lang;
 }
 
 function print_if_selected($candidate, $chosen) {
@@ -190,7 +177,7 @@ function publish_plan_id(plan_id) {
     form.elements['js_display'].value = plan_id;
 
     // URL
-    var param = '?id=' + plan_id + '&lang=<?php echo($lang); ?>';
+    var param = '?id=' + plan_id;
 
     // history.push doesn't work in IEs < v10 and seems to break IE9 and IE8 works but throws errors - so suppress it for >=IE9
     if (!is_ie) {
@@ -637,7 +624,13 @@ function init() {
 
 function switchLanguage(new_lang) {
     var urlParams = getUrlVars();
-    window.open(location.protocol + '//' + location.host + location.pathname + '?id=' + urlParams.id + "&lang=" + new_lang, "_self");
+// TODO isEnglish ist ne PHP var
+    new_url = location.protocol + '//' + location.host + '/index';
+    if (!isEnglish) {
+        new_url += '_' + new_lang;
+    }
+    new_url += '.html',
+    window.open(new_url, "_self");
 }
 
 //]]>
@@ -649,15 +642,15 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
-    <!--
+
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English</option>
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (82 activities)</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (16 activit&eacute;s)</option>
+<!--        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
+        -->
     </select>
-    -->
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |

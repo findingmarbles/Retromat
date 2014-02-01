@@ -55,7 +55,6 @@ desc:      "In round-robin each participant answers the same question (unless th
 Sample questions: <br>\
 <ul>\
     <li>In one word - What do you need from this retrospective?</li>\
-    <li>In one word - What is on your mind?<br>\
         Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
     <li>In this retrospective - If you were a car, what kind would it be?</li>\
     <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
@@ -1245,4 +1244,17 @@ what they want.]",
 source:     "Inspired by <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
 duration:  "5 min groupsize",
 suitable:  "iteration, project, release"
+};
+
+all_activities[81] = {
+phase:     0,
+name:      "Three Words",
+summary:   "Everybody sums up the last sprint in 3 words",
+desc:      "Ask everyone to describe the last iteration with just 3 words. \
+            Give them a minute to come up with something, then go around the team. \
+            This helps people recall the last sprint so that they have some ground to \
+            start from.",
+source:     "Yurii Liholat",
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
 };
