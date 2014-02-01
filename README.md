@@ -37,7 +37,7 @@ There are a couple of translations currently under construction. Our team of awe
 * Tobias Ranft and Judith Andresen - German
 * Linda van der Pal - Dutch
 * Xavier Verges - Spanish (and possibly Catalan)
-* Pierre Martin - French
+* Pierre Martin and Frank Taillandier - French
 * Weronika Kedzierska - Polish
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
