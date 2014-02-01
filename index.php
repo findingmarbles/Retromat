@@ -623,10 +623,8 @@ function init() {
 }
 
 function switchLanguage(new_lang) {
-    var urlParams = getUrlVars();
-// TODO isEnglish ist ne PHP var
     new_url = location.protocol + '//' + location.host + '/index';
-    if (!isEnglish) {
+    if (new_lang != 'en') {
         new_url += '_' + new_lang;
     }
     new_url += '.html',
