@@ -295,8 +295,21 @@ desc:      "Chaque membre écrit un rapide commentaire qui comporte : \
     <li>Une évaluation (5 étoiles pour le meilleur score) </li>\
 </ul>\
 Chacun lit son commentaire. Notez les évaluations sur un tableau.<br>\
-Peut s'étendre à la rétrospective entière en demandant également ce qui est recommandé de faire et de ne pouras faire pour l'itération.",
+Peut s'étendre à la rétrospective entière en demandant également ce qui est recommandé de faire et de ne pas faire pour l'itération.",
 source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
 duration:  "10",
 suitable: "release, project"
+};
+all_activities[18] = {
+phase:     1,
+name:      "Hors-Bord / Voilier",
+summary:   "Analysez les forces qui vous vont avancer et qui vous ralentissent",
+desc:      "Dessinez un bateau sur un tableau à feuilles. Dotez le d'un bon moteur \
+ainsi que d'une ancre très lourde. Les membres de l'équipe écrivent en silence sur des post-its ce qui a propulsé l'équipe vers l'avant \
+et ce qui lui a fait faire du surplace. Une idée par post-it. Collez les post-its respectivement sur le moteur et l'ancre. \
+Lisez les tous et discutez de comment booster le 'moteur' et comment se passer de l’'ancre'.",
+source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, qui l'a adapté pour " + source_innovationGames,
+duration:  "10-15 par groupe",
+photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contribution de Corinna Baldauf'>Voir la photo</a>",
+suitable: "iteration, release"
 };
