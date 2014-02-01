@@ -284,3 +284,19 @@ source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good prac
 duration:  "5-10",
 suitable: "iteration, release, project"
 };
+all_activities[17] = {
+phase:     0,
+name:      "Check in - Commentaires Amazon",
+summary:   "Commentez l'itération sur Amazon. N'oublier pas l'évaluation !",
+desc:      "Chaque membre écrit un rapide commentaire qui comporte : \
+<ul>\
+    <li>Un titre</li>\
+    <li>Un commentaire</li>\
+    <li>Une évaluation (5 étoiles pour le meilleur score) </li>\
+</ul>\
+Chacun lit son commentaire. Notez les évaluations sur un tableau.<br>\
+Peut s'étendre à la rétrospective entière en demandant également ce qui est recommandé de faire et de ne pouras faire pour l'itération.",
+source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
+duration:  "10",
+suitable: "release, project"
+};
