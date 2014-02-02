@@ -313,3 +313,13 @@ duration:  "10-15 par groupe",
 photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contribution de Corinna Baldauf'>Voir la photo</a>",
 suitable: "iteration, release"
 };
+all_activities[19] = {
+phase:     2,
+name:      "Le jeu de la perfection",
+summary:   "Qu'est-ce qui pourrait faire que la prochaine itération obtiennent une note de 10 sur 10 ?",
+desc:      "Dessinez deux colonnes sur une feuille du tableau, une petite pour 'Évaluation' et une grande pour 'Actions'. \
+Tout le monde évalue la dernière itération sur une échelle de 1 à 10. Ensuite chacun suggère quelles action(s) \
+feraient que la prochaine itération obtienne un score de 10 sur 10.",
+source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+suitable: "iteration, release"
+};
