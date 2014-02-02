@@ -51,8 +51,8 @@ Chaque participant marque son humeur sur le tableau.",
 all_activities[2] = {
 	phase: 0,
 	name: "Check In - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
-	summary: "Posez une question à laquelle chacun des participants répond à son tour ?",
-	desc: "À tour de rôle chaque participant répond à la même question (sauf si ils disent «je passe»). \
+	summary: "Posez une question à laquelle chacun des participants répond à son tour",
+	desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
 Exemples de questions: <br>\
 <ul>\
     <li>En un mot - Qu'attendez-vous de cette rétrospective ?</li>\
@@ -322,4 +322,19 @@ Tout le monde évalue la dernière itération sur une échelle de 1 à 10. Ensui
 feraient que la prochaine itération obtienne un score de 10 sur 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 suitable: "iteration, release"
+};
+all_activities[20] = {
+phase:     3,
+name:      "Fusion",
+summary:   "Réduisez le nombre d'actions possibles à seulement deux qui seront expérimentées par l'équipe",
+desc:      "Distribuez des cartes et des marqueurs. Dites à tout le monde d'écrire les deux actions qu'ils \
+veulent essayer à la prochaine itération - aussi précises que possible \
+(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Ensuite tout le monde paire \
+avec son voisin et ensemble ils doivent fusionner leurs actions en une seule liste avec \
+deux actions. Les paires forment des groupes de 4. Puis 8. Maitenant ramassez les deux actions de tous les groupes \
+et votez pour les deux finales.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+duration:  "15-30 groupSize",
+photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity20]' title='Prise par Paulo Caroli'>Voir la photo</a>",
+suitable: "iteration, release, project, largeGroups"
 };
