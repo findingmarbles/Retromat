@@ -1,8 +1,12 @@
 <?php
 
-//$_lang = array();
+$lang = 'en';
 
-$lang = $argv[1];
+if (isset($argv[1])) {
+    $lang = $argv[1];
+} else if (array_key_exists('lang', $_GET)) {
+    $lang = $_GET['lang'];
+}
 
 $isEnglish = false;
 if ($lang == 'en') {
