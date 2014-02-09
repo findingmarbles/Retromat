@@ -391,5 +391,19 @@ all_activities[24] = {
     photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]' title='Contributed by Corinna Baldauf'>Voir la Photo</a>",
     suitable: "release, project, smallGroups, complex"
 };
-
-
+all_activities[25] = {
+    phase:     2,
+    name:      "Speed Dating",
+    summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête à tête",
+    desc:      "Chaque participant écrit un sujet qu'il souhaite approfondir, càd quelque chose \
+    qu'il aimerait voir changer. Formez ensuite des paires et répartissez vous à travers la salle. \
+    Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minute par\
+    participant (sujet) - l'un après l'autre. \
+    Après 10 minutes les paires se séparent et forment de nouvelles paires. Continuez \
+    jusqu'à ce que tout le monde ait discuté avec tout le monde. <br>\
+    Si le groupe a un nombre impair de membres, le facilitateur devient membre d'une paire \
+    mais son partenaire dispose de l'intégralité des 10 minutes sur son sujet.",
+    source:    source_kalnin,
+    duration:  "10 perPerson",
+    suitable: "iteration, release, smallGroups"
+};
