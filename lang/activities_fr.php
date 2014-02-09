@@ -407,3 +407,26 @@ all_activities[25] = {
     duration:  "10 perPerson",
     suitable: "iteration, release, smallGroups"
 };
+all_activities[26] = {
+    phase:     5,
+    name:      "Biscuits Chinois de Rétrospective",
+    summary:   "Amenez l'équipe manger à l'extérieur et suscitez des discussions avec des biscuits chinois de rétrospective ('retrospective cookies')",
+    desc:      "Invitez l'équipe à manger à l'extérieur, de préférence Chinois si vous souhaitez \
+    rester dans le thème ;)<br>\
+    Distribuez des 'fortune cookies' (biscuits chinois renfermant un mot dans leur emballage) \
+    et faites un tour de table en ouvrant les biscuits et en discutant leur contenu. \
+    Quelques exemples de 'fortunes' :\
+<ul>\
+    <li>Quelle a été la chose la plus efficace que vous ayez fait durant le Sprint, et pourquoi \
+    est-ce que cela a été si réussi ?</li>\
+    <li>Est-ce que le burndown reflète la réalité ? Pourquoi ?</li>\
+    <li>Que contribuez vous au sein de votre entreprise à la communauté de développeurs ? \
+    Que pourriez vous contribuer ?</li>\
+    <li>Quel a été le plus gros obstacle à l'équipe durant ce Sprint ?</li>\
+</ul>\
+Vous pouvez <a href='http://weisbart.com/cookies/'>commander des biscuits chinois de rétrospective chez Weisbart</a> \
+ou cuisiner les vôtre, par exemple si l'Anglais n'est pas la langue natale de votre équipe.",
+    source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
+    duration:  "90-120",
+    suitable: "iteration, release, smallGroups"
+};
