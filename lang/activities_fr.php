@@ -338,3 +338,12 @@ duration:  "15-30 groupSize",
 photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity20]' title='Prise par Paulo Caroli'>Voir la photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
+all_activities[21] = {
+    phase:     0,
+    name:      "Prise de température",
+    summary:   "Les participants marquent leur 'température' (humeur) sur un tableau",
+    desc:      "Préparez un tableau avec un dessin de thermomètre allant de glacé à chaud \
+    en passant par la température du corps. \
+    Chaque participant marque son humeur au tableau.",
+    source:  source_unknown
+};
