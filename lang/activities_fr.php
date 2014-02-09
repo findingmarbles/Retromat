@@ -358,4 +358,18 @@ all_activities[22] = {
     duration:  "2-3",
     suitable: "iteration, largeGroups"
 };
+all_activities[23] = {
+    phase:     3,
+    name:      "Liste des choses à faire",
+    summary:   "Les participants proposent et s'engagent sur des actions",
+    desc:      "Préparez un tableau avec 3 colonnes 'Quoi', 'Qui' et 'Échéance'. \
+    Demandez à chaque participant à tour de rôle ce qu'ils souhaitent faire pour faire \
+    avancer l'équipe. Écrivez la tâche, mettez vous d'accord sur une date d'échéance \
+    et laissez les signer de leur nom. <br>\
+    Si quelqu'un suggère une action pour l'équipe entière, cette personne doit obtenir \
+    l'adhésion (et les signatures) des autres.",
+    source:    source_findingMarbles + ", inspiré par <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>cette liste</a>",
+    duration:  "10-15 groupSize",
+    suitable: "iteration, release, smallGroups"
+};
 
