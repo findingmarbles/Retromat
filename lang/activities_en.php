@@ -7,7 +7,6 @@ var phase_titles = ['Set the stage', 'Gather data', 'Generate insights', 'Decide
 //  id:        i+1,
 //  phase:     int in {1-5},
 //  name:      "",
-//  alternativeName: "",
 //  summary:   "",
 //  desc:      "Multiple \
 //              Lines",
@@ -56,7 +55,6 @@ desc:      "In round-robin each participant answers the same question (unless th
 Sample questions: <br>\
 <ul>\
     <li>In one word - What do you need from this retrospective?</li>\
-    <li>In one word - What is on your mind?<br>\
         Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
     <li>In this retrospective - If you were a car, what kind would it be?</li>\
     <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
@@ -140,7 +138,6 @@ suitable: "iteration, release, project, introverts"
 all_activities[7] = {
 phase:     2,
 name:      "5 Whys",
-alternativeName: "Root Cause Analysis",
 summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
 desc:      "Divide the participants into small groups (<= 4 people) and give \
 each group one of the top identified issues. Instructions for the group:\
@@ -573,7 +570,7 @@ phase:     2,
 name:      "Remember the Future",
 summary:   "Imagine the next iteration is perfect. What is it like? What did you do?",
 desc:      "'Imagine you could time travel to the end of the next iteration (or release). You learn that it was \
-it was the best, most productive iteration yet! How do your future selves describe it? What do you \
+the best, most productive iteration yet! How do your future selves describe it? What do you \
 see and hear?' Give the team a little time to imagine this state and jot down some keywords to aid their memory. \
 Then let everyone describe their vision of a perfect iteration.<br>\
 Follow up with 'What changes did we implement that resulted in such a productive and satisfying future?'\
@@ -1201,7 +1198,7 @@ name:      "Value Stream Mapping",
 summary:   "Draw a value stream map of your iteration process",
 desc:      "Explain an example of Value Stream Mapping. (If you're unfamiliar with it, check out \
 <a href='http://www.youtube.com/watch?v=3mcMwlgUFjU'>this video</a> or \
-<a href='http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html'>this article</a>.) \
+<a href='http://wall-skills.com/2014/value-stream-mapping/'>this printable 1-pager</a>.) \
 Ask the team to draw a value stream map of their process from the point of \
 view of a single user story. If necessary, ask them to break into small groups, and \
 facilitate the process if they need it. Look at the finished map. Where are long delays, \
@@ -1247,4 +1244,17 @@ what they want.]",
 source:     "Inspired by <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
 duration:  "5 min groupsize",
 suitable:  "iteration, project, release"
+};
+
+all_activities[81] = {
+phase:     0,
+name:      "Three Words",
+summary:   "Everybody sums up the last sprint in 3 words",
+desc:      "Ask everyone to describe the last iteration with just 3 words. \
+            Give them a minute to come up with something, then go around the team. \
+            This helps people recall the last sprint so that they have some ground to \
+            start from.",
+source:     "Yurii Liholat",
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
 };

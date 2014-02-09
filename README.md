@@ -32,12 +32,13 @@ Or send a photo illustrating an activity (see above for contact details).
 
 ## Translate
 
-There are a couple of translations currently under construction. Our team of awesome translators:
+The French translation is already live. Additionally there are a couple of translations
+under construction. Our team of awesome translators:
 
+* Pierre Martin and Frank Taillandier - French
 * Tobias Ranft and Judith Andresen - German
 * Linda van der Pal - Dutch
 * Xavier Verges - Spanish (and possibly Catalan)
-* Pierre Martin - French
 * Weronika Kedzierska - Polish
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
@@ -61,11 +62,20 @@ Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &nt
 
 #### Technical setup
 
-To test your translation of the "index_*.php"-file you need a server with PHP.
+To test your translation of the "index_*.php"-file you need a server with PHP. To make the
+index.php load your language, you add the parameter "lang" to the URL. Example:
+Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
+Then you type into your browser something like:
+
+http://localhost:8080/?lang=cn or
+http://localhost:8080/?id=2-6-10-11-15&lang=cn
+
+(Ah, the file "activities_cn.php" also has to exist or it won't work. Fortunately it
+doesn't have to be translated ;)
 
 To test your translatation of the "activities_*.php"-file you need a browser with JS enabled
-and either also the PHP running server or you save a local copy of the index
-page of the live Retr-O-Mat version and replace activities in that local copy.
+and either also the PHP running server or you save a local copy of index.html
+of the live Retr-O-Mat version and replace activities in that local copy.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
