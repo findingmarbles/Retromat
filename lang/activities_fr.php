@@ -347,3 +347,15 @@ all_activities[21] = {
     Chaque participant marque son humeur au tableau.",
     source:  source_unknown
 };
+all_activities[22] = {
+    phase:     4,
+    name:      "La porte des retours - Smileys",
+    summary:   "Mesurez la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
+    desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
+    À la fin de la rétrospective, demandez aux participants de marquer leur niveau \
+    de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
+    source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
+    duration:  "2-3",
+    suitable: "iteration, largeGroups"
+};
+
