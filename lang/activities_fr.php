@@ -372,4 +372,24 @@ all_activities[23] = {
     duration:  "10-15 groupSize",
     suitable: "iteration, release, smallGroups"
 };
+all_activities[24] = {
+    phase:     2,
+    name:      "Diagramme-Causes-Effets",
+    summary:   "Trouvez la source des problèmes dont les origines sont difficiles à localiser \
+        et amènent à des discussions sans fin",
+    desc:      "Écrivez le problème que vous souhaitez explorer sur un post-it et collez le au milieu d'un tableau blanc. \
+        Découvrez en quoi c'est un problème en demandant continuellement 'Et alors ?'. \
+        Découvrez les causes racines de ce problème en demandant continuellement 'Pourquoi (est-ce que cela se produit) ?'. \
+        Documentez vos conclusions en ajoutant des post-its et en explicitant la relation \
+        cause à effet avec des flèches. Chaque post-it peut avoir plus d'une raison et plus \
+        d'une conséquence.<br>\
+        Les cercles vicieux sont généralement de bons points de départ pour la prise d'actions. \
+        Si vous parvenez à casser leur mauvaise influence, vous pouvez gagner énormément.",
+    source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
+    more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
+    duration:  "20-60 complexity",
+    photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]' title='Contributed by Corinna Baldauf'>Voir la Photo</a>",
+    suitable: "release, project, smallGroups, complex"
+};
+
 
