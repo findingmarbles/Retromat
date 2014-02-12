@@ -426,7 +426,7 @@ suitable: "iteration, release, smallGroups"
 all_activities[27] = {
 phase:     5,
 name:      "Take a Walk",
-summary:   "Go to the nearest park and wander about and just talking",
+summary:   "Go to the nearest park and wander about and just talk",
 desc:      "Is there nice weather outside? Then why stay cooped up inside, when walking fills your brain with oxygen \
 and new ideas 'off the trodden track'. Get outside and take a walk in the nearest park. Talk will \
 naturally revolve around work. This is a nice break from routine when things run relatively smoothly and \
