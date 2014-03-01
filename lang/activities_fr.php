@@ -42,11 +42,12 @@ envisagez d'utiliser la rétro pour discuter de cette constatation.",
 };
 all_activities[1] = {
 	phase: 0,
-	name: "Prévisions météo",
+	name: "Bulletin météo",
 	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board",
 	desc: "Préparez un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
 Chaque participant marque son humeur sur le tableau.",
-	source: source_agileRetrospectives
+	source: source_agileRetrospectives,
+    photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox[activity2]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
 };
 all_activities[2] = {
 	phase: 0,
@@ -166,6 +167,7 @@ all_activities[8] = {
 </ul>\
 Cette liste sera celle utilisée pour la Phase 4.",
 	source: source_agileRetrospectives,
+    photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
 	duration: "20-25",
 	suitable: "iteration"
 };
@@ -355,6 +357,7 @@ all_activities[22] = {
     À la fin de la rétrospective, demandez aux participants de marquer leur niveau \
     de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
     source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
+    photo:    "<a href='static/images/activities/23_Feedback-Door-Smilies.jpg' rel='lightbox[activity23]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
     duration:  "2-3",
     suitable: "iteration, largeGroups"
 };
@@ -388,7 +391,8 @@ all_activities[24] = {
     source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
     more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
     duration:  "20-60 complexity",
-    photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]' title='Contributed by Corinna Baldauf'>Voir la Photo</a>",
+    photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity25]' title='Contributed by Corinna Baldauf'>Voir la Photo</a>\
+               <a href='static/images/activities/25_Cause-Effect-Diagram-2.jpg' rel='lightbox[activity25]' title='Contribuée par Philipp Flenker'></a>",
     suitable: "release, project, smallGroups, complex"
 };
 all_activities[25] = {
