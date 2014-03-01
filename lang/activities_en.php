@@ -935,8 +935,9 @@ all_activities[60] = {
 phase:     3,
 name:      "Chaos Cocktail Party",
 summary:   "Actively identify, discuss, clarify and prioritize a number of actions",
-desc:      "Everyone writes one card with an action that they think is important to do. \
-Then team members go around and chat about the cards \
+desc:      "Everyone writes one card with an action that they think is important to do - \
+the more specific (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>), \
+the better. Then team members go around and chat about the cards \
 like in a cocktail party. Every chat pair discusses the actions on their \
 two cards. Stop the chatting after 1 minute. Each chat pair splits \
 5 points between the two cards. More points go to the more important action. Organize \
