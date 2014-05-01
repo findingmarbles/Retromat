@@ -9,6 +9,7 @@ $_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
 $_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
+$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more. You know a great activity?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';

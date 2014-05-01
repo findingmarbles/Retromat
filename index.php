@@ -141,6 +141,7 @@ function sanitize_plan_id(plan_id) {
 }
 
 function empty_plan() {
+    alert('empty');
     $('.js_plan').html("");
 }
 
@@ -725,9 +726,16 @@ function switchLanguage(new_lang) {
 </div>
 
 <div class="js_plan">
-    <noscript>
-        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
-    </noscript>
+    <div class="activity_block bg1">
+        <div class="activity-wrapper">
+            <div class="activity-content">
+                    <?php echo($_lang['INDEX_LOADING']); ?>
+                    <noscript>
+                        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
+                    </noscript>
+            </div>
+        </div>
+    </div>
 </div><!-- END plan -->
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">

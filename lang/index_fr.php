@@ -6,11 +6,11 @@ $_lang['INDEX_PITCH'] = 'Vous planifiez votre prochaine <b>rétrospective</b>? C
 $_lang['INDEX_PLAN_ID'] = 'ID du plan :';
 $_lang['INDEX_BUTTON_SHOW'] = 'Afficher !';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nouveau plan aléatoire de rétrospective';
-
 $_lang['INDEX_ENTER_ID'] = 'Saisissez des IDs à afficher';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Cherchez des activités pour le mot-clé';
-
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Toutes les activités pour';
+$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
+
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus. Vous connaissez une activité géniale ?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
 
