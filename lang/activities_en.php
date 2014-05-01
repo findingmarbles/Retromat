@@ -1309,3 +1309,36 @@ source:    "<a href='https://sven-winkler.squarespace.com/blog-en/2014/2/5/the-s
 duration:  "5-10",
 suitable: "iteration, release"
 };
+all_activities[84] = {
+phase: 0,
+name: "Greetings from the Iteration",
+summary: "Each team member writes a postcard about last iteration",
+desc: "Remind the team what a postcard looks like: \
+<ul> \
+    <li> An image on the front,</li> \
+    <li> a message on one half of the back,</li> \
+    <li> the address and stamp on the other half.</li> \
+</ul> \
+Distribute blank index cards and tell the team they have 10 minutes to write \
+a postcard to a person the whole team knows (i.e. an ex-colleague). \
+When the time is up, collect and shuffle the cards before re-distributing them. \
+Team members take turns to read out loud the postcards they got.",
+source: '<a href="http://uk.linkedin.com/in/alberopomar">Filipe Albero Pomar</a>',
+duration:  "15 min",
+suitable:  "iteration, project"
+};
+all_activities[85] = {
+phase:     1,
+name:      "Lines of Communication",
+summary:   "Visualize how information flows in, out and around the team",
+desc:      "Is information not flowing as well as it needs to? Do you \
+suspect bottlenecks? Visualize the ways information flows to find \
+starting points for improvements. If you want to look at one specific \
+flow (e.g. product requirements, impediments, ...) check out \
+Value Stream Mapping (#79). For messier situations try something akin to \
+Cause-Effect-Diagrams (#25). <br>\
+Look at the finished drawing. Where are delays or dead ends?",
+source:    "<a href='https://twitter.com/bleadof'>Tarmo Aidantausta</a>",
+duration:  "20-30 min",
+suitable:  "iteration, project, release"
+};
