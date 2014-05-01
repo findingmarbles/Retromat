@@ -62,20 +62,25 @@ Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &nt
 
 #### Technical setup
 
-To test your translation of the "index_*.php"-file you need a server with PHP. To make the
-index.php load your language, you add the parameter "lang" to the URL. Example:
-Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
-Then you type into your browser something like:
+To test your translation of the "index_*.php"-file you need php installed. In a terminal run
 
-http://localhost:8080/?lang=cn or
-http://localhost:8080/?id=2-6-10-11-15&lang=cn
+ php index.php en > index.html
+
+to generate the Englisch page.
+
+Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
+In your terminal run
+
+ php index.php cn > index_cn.html
+
+Then open index_cn.html in a browser.
 
 (Ah, the file "activities_cn.php" also has to exist or it won't work. Fortunately it
 doesn't have to be translated ;)
 
 To test your translatation of the "activities_*.php"-file you need a browser with JS enabled
-and either also the PHP running server or you save a local copy of index.html
-of the live Retr-O-Mat version and replace activities in that local copy.
+and either also PHP on the console or you save a local copy of index.html
+of the live Retr-O-Mat version and replace activities in the code of that local copy.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
