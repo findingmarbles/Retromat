@@ -141,7 +141,6 @@ function sanitize_plan_id(plan_id) {
 }
 
 function empty_plan() {
-    alert('empty');
     $('.js_plan').html("");
 }
 
