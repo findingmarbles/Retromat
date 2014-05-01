@@ -312,7 +312,7 @@ and what kept it in place. One idea per note. Post the stickies motor and anchor
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
 source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, who adapted it from " + source_innovationGames,
 duration:  "10-15 groupSize",
-photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contributed by Corinna Baldauf'>View Photo</a>",
+photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity19]' title='Contributed by Corinna Baldauf'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[19] = {
@@ -337,7 +337,7 @@ two actions. The pairs form groups of 4. Then 8. Now collect every group's two a
 and have a vote on the final two.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 duration:  "15-30 groupSize",
-photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity20]' title='Taken by Paulo Caroli'>View Photo</a>",
+photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity21]' title='Taken by Paulo Caroli'>View Photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
@@ -346,7 +346,8 @@ name:      "Temperature Reading",
 summary:   "Participants mark their 'temperature' (mood) on a flipchart",
 desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
 Each participant marks their mood on the sheet.",
-source:  source_unknown
+source:  source_unknown,
+photo: "<a href='static/images/activities/22_Temperature-Reading.jpg' rel='lightbox[activity22]' title='Contributed by Weronika Kedzierska'>View Photo</a>"
 };
 all_activities[22] = {
 phase:     4,
@@ -683,7 +684,6 @@ according to their satisfaction with the retrospective. Psychologically, \
 taking a stand physically is different from just saying something. It's more 'real'.<br> \
 See activity #43 on how to begin the retrospective with the same scale.",
 source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
-photo:    "<a href='static/images/activities/44_Take-A-Stand-Variation.jpg' rel='lightbox[activity44]' title='A variation - Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "2-5",
 suitable: "iteration, release, project"
 };
@@ -1260,7 +1260,6 @@ photo:    "<a href='static/images/activities/81_Outcome-Expectations.jpg' rel='l
 duration:  "5 min groupsize",
 suitable:  "iteration, project, release"
 };
-
 all_activities[81] = {
 phase:     0,
 name:      "Three Words",
@@ -1272,4 +1271,41 @@ desc:      "Ask everyone to describe the last iteration with just 3 words. \
 source:     "Yurii Liholat",
 duration:  "5 min groupsize",
 suitable:  "iteration, project"
+};
+all_activities[82] = {
+phase:     4,
+name:      "Retro Dart",
+summary:   "Check if you hit bull's eye on important issues",
+desc:      "Draw one or several dartboards on a flip chart. \
+Write a question next to each dartboard, e.g. \
+<ul> \
+    <li>We talked about what's important to me</li> \
+    <li>I spoke openly</li> \
+    <li>I'm confident we'll improve next sprint</li> \
+</ul> \
+Participants mark their opinion with a sticky. Smack in the middle is 100% \
+agreement. Outside the disc is 0% agreement.",
+source:   "<a href='http://www.philippflenker.de/'>Philipp Flenker</a>",
+photo:    "<a href='static/images/activities/83_Retro-Dart.jpg' rel='lightbox[activity83]' title='Contributed by Philipp Flenker'>View Photo</a>",
+duration:  "2-5",
+suitable: "iteration, release"
+};
+all_activities[83] = {
+phase:     0,
+name:      "Last Retro's Actions Table",
+summary:   "Assess how to continue with last retro's actions",
+desc:      "Create a table with 5 columns. The first column lists last retro's \
+action items. The other columns are headed 'More of', 'Keep doing', \
+'Less of' and 'Stop doing'. Participants place 1 sticky note per row into the \
+column that states how they want to proceed with that action. Afterwards \
+facilitate a short discussion for each action, e.g. asking: \
+<ul> \
+    <li>Why should we stop doing this?</li> \
+    <li>Why is it worth to go further?</li> \
+    <li>Are our expectations satisfied?</li> \
+    <li>Why do opinions vary that much?</li> \
+</ul>",
+source:    "<a href='https://sven-winkler.squarespace.com/blog-en/2014/2/5/the-starfish'>Sven Winkler</a>",
+duration:  "5-10",
+suitable: "iteration, release"
 };
