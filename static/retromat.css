@@ -548,7 +548,7 @@ ul ul {
 @media print {
 
     body {
-        color: #111;
+        color: black;
         font-family: 'Droid Sans', sans-serif;
         font-size: 100%;
         line-height: 1.1em;
@@ -669,4 +669,3 @@ ul ul {
     }
 
 }
-
