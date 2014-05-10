@@ -841,7 +841,9 @@ and let the team reflect on the process of completing the tasks - what went good
 source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
 duration:  "30-40 min",
 suitable:  "project, release",
-photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity53]' title='Contributed by Wolfgang Fassbender'>View Photo</a>"
+photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity54]' title='Contributed by Wolfgang Fassbender'>View Photo</a>\
+           <a href='static/images/activities/54_Story-Oscars_2.JPG' rel='lightbox[activity54]' title='Contributed by Deborah Lindsay'></a>\
+           <a href='static/images/activities/54_Story-Oscars_3.jpg' rel='lightbox[activity54]' title='Contributed by Geert van der Ploeg'></a>"
 };
 all_activities[54] = {
 phase:     2,
@@ -1202,7 +1204,8 @@ Use this as input for the next phase.",
 source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> probably via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
 duration:  "30 min",
 photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity78]' title='Taken by Ellen Gottesdiener'>View Photo</a>\
-           <a href='static/images/activities/78_Four-Ls.jpg' rel='lightbox[activity78]' title='Contributed by Philipp Flenker'></a>",
+           <a href='static/images/activities/78_Four-Ls.jpg' rel='lightbox[activity78]' title='Contributed by Philipp Flenker'></a>\
+           <a href='static/images/activities/78_Four-Ls_2.jpg' rel='lightbox[activity78]' title='Contributed by Geert van der Ploeg'></a>",
 suitable:  "iteration, project, release, distributed"
 };
 all_activities[78] = {
