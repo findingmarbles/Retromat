@@ -1345,3 +1345,20 @@ source:    "<a href='https://twitter.com/bleadof'>Tarmo Aidantausta</a>",
 duration:  "20-30 min",
 suitable:  "iteration, project, release"
 };
+all_activities[86] = {
+phase:     1,
+name:      "Meeting Satisfaction Histogram",
+summary:   "Create a histogram on how well ritual meetings went during the sprint",
+desc:      "Prepare a flip chart for each meeting that recurs every iteration, \
+(e.g. the Scrum ceremonies) with a horizontal scale from 1 ('Did not meet expectations') \
+to 5 ('Exceeds Expectations'). Each team member adds a sticky note based on their rating \
+for each of these meetings. Let the team discuss why some meetings do not have a rating of 5. \
+<br> \
+You can discuss improvements as part of this activity or in a later activity such as \
+Perfection Game (#20) or Plus \& Delta (#40).",
+source:    "<a href='https://www.linkedin.com/profile/view?id=6689187'>Fanny Santos</a>",
+duration:  "10-20 min",
+suitable:  "iteration, project, release"
+};
+// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

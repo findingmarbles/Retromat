@@ -634,7 +634,7 @@ function switchLanguage(new_lang) {
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (86 activities)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (87 activities)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (27 activit&eacute;s)</option>
 <!--        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
@@ -642,7 +642,7 @@ function switchLanguage(new_lang) {
         -->
     </select>
 
-      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
+      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
           <!--
           <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
