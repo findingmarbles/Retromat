@@ -543,6 +543,8 @@ ul ul {
     width:50%;
 }
 
+
+
 /************ PRINT **************/
 
 @media print {
@@ -607,7 +609,8 @@ ul ul {
 
     .plan-header input {
         margin-left: 5px;
-        padding: 5px 10px 5px 10px;
+        margin-bottom: -20px;
+        padding: 5px 10px 0 10px;
         font-size: 1em;
 
         -moz-border-radius: 10px;
@@ -630,9 +633,17 @@ ul ul {
         text-transform: uppercase;
     }
 
+    .bg0 .activity-wrapper,
+    .bg2 .activity-wrapper,
+    .bg3 .activity-wrapper,
+    .bg0 .activity-wrapper a,
+    .bg2 .activity-wrapper a,
+    .bg3 .activity-wrapper a {
+        color: black;
+    }
+
     .activity_block {
-        width: 100%;
-        border-top: solid 1px #111;
+        border-top: solid 1px black;
     }
 
     .phase_title {
