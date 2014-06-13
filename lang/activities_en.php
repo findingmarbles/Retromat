@@ -1341,7 +1341,7 @@ flow (e.g. product requirements, impediments, ...) check out \
 Value Stream Mapping (#79). For messier situations try something akin to \
 Cause-Effect-Diagrams (#25). <br>\
 Look at the finished drawing. Where are delays or dead ends?",
-source:    "<a href='https://twitter.com/bleadof'>Tarmo Aidantausta</a>",
+source:    "<a href='https://www.linkedin.com/in/bleadof'>Tarmo Aidantausta</a>",
 duration:  "20-30 min",
 suitable:  "iteration, project, release"
 };
@@ -1358,6 +1358,21 @@ You can discuss improvements as part of this activity or in a later activity suc
 Perfection Game (#20) or Plus \& Delta (#40).",
 source:    "<a href='https://www.linkedin.com/profile/view?id=6689187'>Fanny Santos</a>",
 duration:  "10-20 min",
+suitable:  "iteration, project, release"
+};
+all_activities[87] = {
+phase:     3,
+name:      "Impediments Cup",
+summary:   "Impediments compete against each other in a World Cup style",
+desc:      "Prepare a flip chart with a playing schedule for quarter-final, semi-final and final. \
+All participants write down actions on a post-it until you have eight actions. \
+Shuffle them and randomly place them on the playing schedule.<br>\
+The team now has to vote for one of the two actions in each pair. Move the winning \
+action to the next round until you have a winner of the impediments cup. \
+<br><br>\
+If you want to take on more than one or two actions you can play the match for third place.",
+source:    "Pascal Martin, inspired by <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
+duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
