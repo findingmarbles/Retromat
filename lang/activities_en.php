@@ -1371,7 +1371,7 @@ The team now has to vote for one of the two actions in each pair. Move the winni
 action to the next round until you have a winner of the impediments cup. \
 <br><br>\
 If you want to take on more than one or two actions you can play the match for third place.",
-source:    "Pascal Martin, inspired by <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
+source:    "<a href='http://obivandamme.wordpress.com'>Pascal Martin</a>, inspired by <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
