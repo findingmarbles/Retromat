@@ -434,3 +434,48 @@ ou cuisiner les vôtre, par exemple si l'Anglais n'est pas la langue natale de v
     duration:  "90-120",
     suitable: "iteration, release, smallGroups"
 };
+all_activities[27] = {
+phase:     5,
+name:      "Allez prendre l'air !",
+summary:   "Allez dans le parc le plus proche, posez-vous des questions et parlez.",
+desc:      "Fait-il beau dehors ? Oui ? Alors pourquoi rester enfermés quand on peut s'aérer les poumons \
+et voir les choses sous un autre angle.<br /> \
+Allez dehors et faites un tour dans le parc le plus proche. \
+Vous parlerez naturellement du travail. C'est une bonne façon de changer vos habitudes lorsque tout fonctionne \
+et que vous n'avez pas besoin de projeter des documents pour échanger.<br /> \
+Les équipes matures peuvent très bien partager des idées et trouver des consensus malgré le contexte bien plus informel.",
+source:    source_findingMarbles,
+duration:  "60-90",
+suitable: "iteration, release, smallGroups, smoothSailing, mature"
+};
+all_activities[28] = {
+phase:     3,
+name:      "Cercles d'Influence",
+summary:   "Identifier des actions selon le niveau de contrôle que l'équipe souhaite avoir.",
+desc:      "Preparer un tableau avec 3 cercles concentriques, chacun étant assez grand pour y coller des post-its.<br /> \
+Nommez les cercles de l'intérieur vers l'extérieur :<br /> \
+<ul>\
+  <li>L'équipe contrôle - Actions directes</li>\
+  <li>L'équipe influence - Actions de recommandation</li>\
+  <li>Le reste - Actions de réponse/réaction</li>\
+</ul> \
+(\"Le reste\" représente l'environnement dans lequel l'équipe est embarquée.)<br /> \
+Reprenez la liste des idées identifiée à l'étape précédente et placez les dans le cercle approprié. <br /> \
+Les participants rédigent en binôme les actions possibles. Encouragez les à se concentrer en priorité sur les éléments dans leur cercle d'influence.<br /> \
+Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lise à voix haute. <br /> \
+Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc).",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
+qui l'a adapté de \"Seven Habits of Highly Effective People\" par Stephen Covey et \
+'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' par Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Plateau de discussion",
+summary:   "Une approche structurée pour une discussion.",
+desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>plusieurs grilles disponibles (EN)</a>.<br />\
+Choisissez en une, imprimez la dans le plus grand format que vous puissiez (idéalement en A1) et suivez ses instructions.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly chez Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
