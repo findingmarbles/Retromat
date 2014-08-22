@@ -479,3 +479,106 @@ source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'
 duration:  "90-120",
 suitable: "iteration, release, project"
 };
+all_activities[30] = {
+phase:     0,
+name:      "Check In - Dessinez l'itération",
+summary:   "Les participants dessinent certains aspects de l'itération.",
+desc:      "Distribuez des cartes et des marqueurs et choisissez le sujet. Exemples de sujet : \
+<ul> \
+  <li>Comment avez-vous vécu l'itération ?</li>\
+  <li>Quel a été le moment le plus marquant ?</li>\
+  <li>Quel a été le plus gros problème ?</li>\
+  <li>Qu'auriez-vous désiré ?</li>\
+</ul>\
+Demandez à chaque membre de l'équipe de dessiner sa réponse. Collez tous les dessins sur un tableau. <br />\
+Pour chaque dessin, laissez les gens deviner ce qu'il représente avant que son auteur ne l'explique.<br />\
+Les métaphores apportent un nouvel éclairage et créent une compréhension partagée.",
+source:    source_findingMarbles + ", adapté de \
+<a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
+et Olivier Gourment",
+photo:    "<a href='static/images/activities/31_Draw-Iteration.jpg' rel='lightbox[activity31]' title='Contribuée par Eric Lannemajou'>Voir la photo</a>",
+duration:  "5 + 3 par personne",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Gauge du projet par émoticônes",
+summary:   "Aidez les membres de l'équipe à exprimer leur sentiment vis à vis du projet et en traiter les causes au plus tôt.",
+desc:      "Preparez un tableau avec des visages exprimant diverses émotions telles que :\
+<ul>\
+  <li>choc / surprise</li>\
+  <li>nervosité / stress</li>\
+  <li>impuissance / contrainte</li>\
+  <li>confusion</li>\
+  <li>joie</li>\
+  <li>colère</li>\
+  <li>dépassement</li>\
+</ul>\
+Laissez chaque membre de l'équipe choisir comment il se sent à propos du projet, c'est un moyen fun et efficace de faire remonter plus tôt les problèmes. <br />\
+Vous pourrez en trouver les solutions dans les étapes qui suivent.",
+source:    "Andrew Ciccarelli",
+duration:  "10 pour 5 personnes",
+photo:    "<a href='static/images/activities/32_Emoticons.jpg' rel='lightbox[activity32]' title='Contribuée par Ruud Rietveld'>Voir la photo</a>",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Fier(ère) & Désolé(e)",
+summary:   "De quoi les membres de l'équipe sont ils fiers ou désolés ?",
+desc:      "Affichez deux feuilles \"fier(e)\" et \"désolé(e)\".<br />\
+Les membres de l'équipe listent un commentaire pour chaque feuille.<br />\
+Lorsque le temps est écoulé, faites un tour de table pour que chacun lise ses notes et les colle sous le thème approprié. <br/>\
+Démarrez une courte conversation en demandant :\
+<ul>\
+  <li>Est ce que quelque chose vous a surpris ?</li>\
+  <li>Quels motifs peut-on constater ? Que cela signifie-t-il en tant qu'équipe ?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "La douche de l'appréciation",
+summary:   "Ecoutez les gens parler dans votre dos (et uniquement des bonnes choses) !",
+desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos.\
+Quelque chose comme ça : >^<.<br />\
+Les deux personnes dans les chaises qui se font face parler de la troisième personne pendant 2 minutes.<br />\
+Elles ne peuvent dire que des choses positives et rien de ce qu'il s'est dit ne peut être minimisé en en reparlant par la suite.<br />\
+Faites trois tours pour que chacun puisse se doucher une fois !",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "L'auto-évaluation Agile",
+summary:   "Evaluez où vous en êtes avec via une checklist.",
+desc:      "Imprimez une checklist qui vous convient, exemples :\
+<ul>\
+  <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>L'excellente checklist Scrum de Henrik Kniberg</a></li>\
+  <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>L'auto-évaluation des pratiques agiles d'ingénierie (EN)</a></li>\
+  <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Test Nokia (EN)</a></li>\
+</ul>\
+Parcourez les avec l'équipe et échangez pour savoir là où vous en êtes et si vous vous êtes sur la bonne voie. <br />\
+C'est une bonne activité à pratiquer lorsque qu'une itération s'est déroulée sans événement majeur.",
+source:    source_findingMarbles,
+photo:    "<a href='static/images/activities/35_Agile-Self-Assessment.jpg' rel='lightbox[activity35]' title='Contribuée par Philipp Flenker'>Voir la photo</a>",
+duration:  "10-25 minutes selon la liste",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Objectif reconnaissance",
+summary:   "Formuler un objectif positif pour la session.",
+desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en définissant un objectif positif. Exemples : \
+<ul>\
+  <li>Trouvons plusieurs façons de renforcer notre travail d'équipe et nos process</li>\
+  <li>Trouvons comment étendre nos bonnes pratiques et méthodes d'ingénierie</li>\
+  <li>Nous identifierons et tenterons de trouver plus de rapports dans le travail qui fonctionnent</li>\
+  <li>Nous identifierons là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'agumenter celle que nous fournirons lors du prochain</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
