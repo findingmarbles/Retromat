@@ -434,3 +434,151 @@ ou cuisiner les vôtre, par exemple si l'Anglais n'est pas la langue natale de v
     duration:  "90-120",
     suitable: "iteration, release, smallGroups"
 };
+all_activities[27] = {
+phase:     5,
+name:      "Allez prendre l'air !",
+summary:   "Allez dans le parc le plus proche, posez-vous des questions et parlez.",
+desc:      "Fait-il beau dehors ? Oui ? Alors pourquoi rester enfermés quand on peut s'aérer les poumons \
+et voir les choses sous un autre angle.<br /> \
+Allez dehors et faites un tour dans le parc le plus proche. \
+Vous parlerez naturellement du travail. C'est une bonne façon de changer vos habitudes lorsque tout fonctionne \
+et que vous n'avez pas besoin de projeter des documents pour échanger.<br /> \
+Les équipes matures peuvent très bien partager des idées et trouver des consensus malgré le contexte bien plus informel.",
+source:    source_findingMarbles,
+duration:  "60-90",
+suitable: "iteration, release, smallGroups, smoothSailing, mature"
+};
+all_activities[28] = {
+phase:     3,
+name:      "Cercles d'Influence",
+summary:   "Identifier des actions selon le niveau de contrôle que l'équipe souhaite avoir.",
+desc:      "Preparer un tableau avec 3 cercles concentriques, chacun étant assez grand pour y coller des post-its.<br /> \
+Nommez les cercles de l'intérieur vers l'extérieur :<br /> \
+<ul>\
+  <li>L'équipe contrôle - Actions directes</li>\
+  <li>L'équipe influence - Actions de recommandation</li>\
+  <li>Le reste - Actions de réponse/réaction</li>\
+</ul> \
+(\"Le reste\" représente l'environnement dans lequel l'équipe est embarquée.)<br /> \
+Reprenez la liste des idées identifiée à l'étape précédente et placez les dans le cercle approprié. <br /> \
+Les participants rédigent en binôme les actions possibles. Encouragez les à se concentrer en priorité sur les éléments dans leur cercle d'influence.<br /> \
+Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lise à voix haute. <br /> \
+Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc).",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
+qui l'a adapté de \"Seven Habits of Highly Effective People\" par Stephen Covey et \
+'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' par Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Plateau de discussion",
+summary:   "Une approche structurée pour une discussion.",
+desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>plusieurs grilles disponibles (EN)</a>.<br />\
+Choisissez en une, imprimez la dans le plus grand format que vous puissiez (idéalement en A1) et suivez ses instructions.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly chez Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
+all_activities[30] = {
+phase:     0,
+name:      "Check In - Dessinez l'itération",
+summary:   "Les participants dessinent certains aspects de l'itération.",
+desc:      "Distribuez des cartes et des marqueurs et choisissez le sujet. Exemples de sujet : \
+<ul> \
+  <li>Comment avez-vous vécu l'itération ?</li>\
+  <li>Quel a été le moment le plus marquant ?</li>\
+  <li>Quel a été le plus gros problème ?</li>\
+  <li>Qu'auriez-vous désiré ?</li>\
+</ul>\
+Demandez à chaque membre de l'équipe de dessiner sa réponse. Collez tous les dessins sur un tableau. <br />\
+Pour chaque dessin, laissez les gens deviner ce qu'il représente avant que son auteur ne l'explique.<br />\
+Les métaphores apportent un nouvel éclairage et créent une compréhension partagée.",
+source:    source_findingMarbles + ", adapté de \
+<a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
+et Olivier Gourment",
+photo:    "<a href='static/images/activities/31_Draw-Iteration.jpg' rel='lightbox[activity31]' title='Contribuée par Eric Lannemajou'>Voir la photo</a>",
+duration:  "5 + 3 par personne",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Gauge du projet par émoticônes",
+summary:   "Aidez les membres de l'équipe à exprimer leur sentiment vis à vis du projet et en traiter les causes au plus tôt.",
+desc:      "Preparez un tableau avec des visages exprimant diverses émotions telles que :\
+<ul>\
+  <li>choc / surprise</li>\
+  <li>nervosité / stress</li>\
+  <li>impuissance / contrainte</li>\
+  <li>confusion</li>\
+  <li>joie</li>\
+  <li>colère</li>\
+  <li>dépassement</li>\
+</ul>\
+Laissez chaque membre de l'équipe choisir comment il se sent à propos du projet, c'est un moyen fun et efficace de faire remonter plus tôt les problèmes. <br />\
+Vous pourrez en trouver les solutions dans les étapes qui suivent.",
+source:    "Andrew Ciccarelli",
+duration:  "10 pour 5 personnes",
+photo:    "<a href='static/images/activities/32_Emoticons.jpg' rel='lightbox[activity32]' title='Contribuée par Ruud Rietveld'>Voir la photo</a>",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Fier(ère) & Désolé(e)",
+summary:   "De quoi les membres de l'équipe sont ils fiers ou désolés ?",
+desc:      "Affichez deux feuilles \"fier(e)\" et \"désolé(e)\".<br />\
+Les membres de l'équipe listent un commentaire pour chaque feuille.<br />\
+Lorsque le temps est écoulé, faites un tour de table pour que chacun lise ses notes et les colle sous le thème approprié. <br/>\
+Démarrez une courte conversation en demandant :\
+<ul>\
+  <li>Est ce que quelque chose vous a surpris ?</li>\
+  <li>Quels motifs peut-on constater ? Que cela signifie-t-il en tant qu'équipe ?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "La douche de l'appréciation",
+summary:   "Ecoutez les gens parler dans votre dos (et uniquement des bonnes choses) !",
+desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos.\
+Quelque chose comme ça : >^<.<br />\
+Les deux personnes dans les chaises qui se font face parler de la troisième personne pendant 2 minutes.<br />\
+Elles ne peuvent dire que des choses positives et rien de ce qu'il s'est dit ne peut être minimisé en en reparlant par la suite.<br />\
+Faites trois tours pour que chacun puisse se doucher une fois !",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "L'auto-évaluation Agile",
+summary:   "Evaluez où vous en êtes avec via une checklist.",
+desc:      "Imprimez une checklist qui vous convient, exemples :\
+<ul>\
+  <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>L'excellente checklist Scrum de Henrik Kniberg</a></li>\
+  <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>L'auto-évaluation des pratiques agiles d'ingénierie (EN)</a></li>\
+  <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Test Nokia (EN)</a></li>\
+</ul>\
+Parcourez les avec l'équipe et échangez pour savoir là où vous en êtes et si vous vous êtes sur la bonne voie. <br />\
+C'est une bonne activité à pratiquer lorsque qu'une itération s'est déroulée sans événement majeur.",
+source:    source_findingMarbles,
+photo:    "<a href='static/images/activities/35_Agile-Self-Assessment.jpg' rel='lightbox[activity35]' title='Contribuée par Philipp Flenker'>Voir la photo</a>",
+duration:  "10-25 minutes selon la liste",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Objectif reconnaissance",
+summary:   "Formuler un objectif positif pour la session.",
+desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en définissant un objectif positif. Exemples : \
+<ul>\
+  <li>Trouvons plusieurs façons de renforcer notre travail d'équipe et nos process</li>\
+  <li>Trouvons comment étendre nos bonnes pratiques et méthodes d'ingénierie</li>\
+  <li>Nous identifierons et tenterons de trouver plus de rapports dans le travail qui fonctionnent</li>\
+  <li>Nous identifierons là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'agumenter celle que nous fournirons lors du prochain</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
