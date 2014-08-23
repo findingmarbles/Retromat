@@ -45,7 +45,7 @@ function print_if_selected($candidate, $chosen) {
 
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -193,6 +193,7 @@ function populate_activity_block(activity_index, activity_block) {
     $(activity_block).addClass('js_activity' + activity_index);
 
     $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase));
     $(activity_block).find('.js_fill_name').html(activity.name);
     $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
     $(activity_block).find('.js_fill_summary').html(activity.summary);
@@ -742,7 +743,7 @@ function switchLanguage(new_lang) {
         <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;</a>
         <div class="activity-content">
             <div class="js_phase_title phase_title">
-                <a href="#" onclick="JavaScript:All_activities_in_phase" class="js_phase_link">
+                <a href="#" class="js_fill_phase_link">
                     <span class="js_fill_phase_title"></span>
                 </a>
             </div>
