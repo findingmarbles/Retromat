@@ -45,7 +45,7 @@ function print_if_selected($candidate, $chosen) {
 
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
