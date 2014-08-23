@@ -635,7 +635,7 @@ function switchLanguage(new_lang) {
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (88 activities)</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (27 activit&eacute;s)</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (36 activit&eacute;s)</option>
 <!--        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
