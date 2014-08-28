@@ -1375,5 +1375,28 @@ source:    "<a href='http://obivandamme.wordpress.com'>Pascal Martin</a>, inspir
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
+all_activities[88] = {
+phase:     1,
+name:      "Retro Wedding",
+summary:   "Collect examples for something old, new, borrowed and blue",
+desc:      "Analogue to an anglo-american wedding custom ask the team to give examples for the following categories: \
+<ul> \
+    <li>Something Old<br> \
+        Positive feedback or constructive criticism on established practice</li> \
+    <li>Something New<br> \
+        Positive feedback or constructive criticism on experiments in progress</li> \
+    <li>Something Borrowed<br> \
+        Tool/idea from another team, the Web or yourself for a potential experiment</li> \
+    <li>Something Blue<br> \
+        Any blocker or source of sadness</li> \
+</ul> \
+One example per sticky note. There's only one rule: If someone contributes to the 'Something Blue' column, \
+s/he must also have a positive comment in at least 1 other column.<br><br> \
+Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
+source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
+photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Taken by Jordan Morris'>View Photo</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

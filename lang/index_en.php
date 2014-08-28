@@ -27,8 +27,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wished for something like Retr-O-Mat during her Scrummaster years.
     Eventually she just built it herself in the hope that it would be useful to others, too.
     Any questions, suggestions or encouragement?
-    You can write her at <a href="mailto:corinna@finding-marbles.com">corinna@finding-marbles.com</a> or
-    <a href="https://twitter.com/findingmarbles">contact her on Twitter</a>.
+    You can <a href="mailto:corinna@finding-marbles.com">email her</a> or
+    <a href="https://twitter.com/findingmarbles">follow her on Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
