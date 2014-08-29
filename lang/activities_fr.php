@@ -43,7 +43,7 @@ envisagez d'utiliser la rétro pour discuter de cette constatation.",
 all_activities[1] = {
 	phase: 0,
 	name: "Bulletin météo",
-	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board",
+	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
 	desc: "Préparez un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
 Chaque participant marque son humeur sur le tableau.",
 	source: source_agileRetrospectives,
@@ -51,8 +51,8 @@ Chaque participant marque son humeur sur le tableau.",
 };
 all_activities[2] = {
 	phase: 0,
-	name: "Check In - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
-	summary: "Posez une question à laquelle chacun des participants répond à son tour",
+	name: "Lancement - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
+	summary: "Posez une question à laquelle chacun des participants répond à son tour.",
 	desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
 Exemples de questions: <br>\
 <ul>\
@@ -68,7 +68,7 @@ Exemples de questions: <br>\
 all_activities[3] = {
 	phase: 1,
 	name: "Frise chronologie",
-	summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement",
+	summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement.",
 	desc: "Divisez en groupes de 5 personnes ou moins. Distribuez des cartes et des marqueurs. \
 Donnez aux participants 10 minutes pour noter des événements mémorables et / ou personnellement significatifs. \
 Il s'agit de recueillir plusieurs points de vue. Un consensus serait préjudiciable. Tous les participants \
@@ -100,7 +100,7 @@ effectuée par l'équipe.",
 all_activities[5] = {
 	phase: 1,
 	name: "Aimer à aimer",
-	summary: "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\"",
+	summary: "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\".",
 	desc: "Préparation: 20 cartes qualité, càd des fiches cartonnées colorées avec un unique mot \
 comme <i>drôle, claire, sérieuse, géniale, dangereuse, désagréable</i>.<br> \
 Chaque membre de l'équipe doit écrire au moins 9 cartes : 3 de chaque pour les choses \
@@ -121,7 +121,7 @@ de cartes qualité gagne. Débriefez en demandant quelles sont les principales c
 all_activities[6] = {
 	phase: 1,
 	name: "Mad Sad Glad",
-	summary: "Collectez les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), triste (sad), ou content (glad) et trouvez les raisons",
+	summary: "Collectez les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), triste (sad), ou content (glad) et trouvez les raisons.",
 	desc: "Affichez trois affiches intitulées 'en colère' (mad), 'triste' (sad), et 'content' (glad) ou '>:), :(, :)'. \
 Les membres de l'equipe écrivent un évènement par carte lorsqu'ils on ressenti ce sentiment, avec un code couleur pour chaque type de sentiment. \
 Lorsque le temps est écoulé demandez à chacun de placer ses cartes sur les affiches appropriées. Regroupez les cartes sur \
@@ -157,7 +157,7 @@ Laissez le groupe partager leurs conclusions.",
 all_activities[8] = {
 	phase: 2,
 	name: "Matrice d'apprentissage",
-	summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes",
+	summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes.",
 	desc: "Après avoir discuté des données de la Phase 2, affichez un tableau à 4 quadrants intitulés \
 ':)', ':(', 'Idée !', et 'Appréciation'. Distribuez des post-its. \
 <ul>\
@@ -174,7 +174,7 @@ Cette liste sera celle utilisée pour la Phase 4.",
 all_activities[9] = {
 	phase: 2,
 	name: "Brainstorming / Filtrage",
-	summary: "Générez de nombreuses idées et filtrez les suivant vos critères",
+	summary: "Générez de nombreuses idées et filtrez les suivant vos critères.",
 	desc: "Exposez les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
 qui seront filtrées <em>après</em> le brainstorming.\
 <ul>\
@@ -196,7 +196,7 @@ Les idées sélectionnées rentrent en Phase 4.",
 all_activities[10] = {
 	phase: 3,
 	name: "Le Cercle des Questions",
-	summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus",
+	summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
 	desc: "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
 ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
 'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
@@ -209,7 +209,7 @@ que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse ent
 all_activities[11] = {
 	phase: 3,
 	name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
-	summary: "R&eacute;fl&eacute;chissez ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et gardez les propositions les mieux not&eacute;es",
+	summary: "R&eacute;fl&eacute;chissez ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et gardez les propositions les mieux not&eacute;es.",
 	desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
 id&eacute;e par carte. Laissez les &eacute;crire en silence pendant quelques minutes. \
@@ -226,7 +226,7 @@ Les 2 ou 3 meilleures seront vos actions &agrave; mener.\
 all_activities[12] = {
 	phase: 3,
 	name: "Objectifs SMART",
-	summary: "Formulez un plan d'action spécifique et mesurable",
+	summary: "Formulez un plan d'action spécifique et mesurable.",
 	desc: "Présentez les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
@@ -242,7 +242,7 @@ s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
 all_activities[13] = {
 	phase: 4,
 	name: "La porte des retours - les chiffres",
-	summary: "Évaluez la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps",
+	summary: "Évaluez la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
 	desc: "Placez des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
 A la fin de la rétrospective, demandez aux participants de placer un post-it sur le chiffre qui d'après eux \
 correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
@@ -253,7 +253,7 @@ correspond le mieux à la session. Le post-it peut être vide ou contenir un com
 all_activities[14] = {
 	phase: 4,
 	name: "Appréciations",
-	summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive",
+	summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
 	desc: "Commencez en remerciant de manière sincère l'un des participants. \
 Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
 Invitez alors les autres à faire de même et attendez que quelqu'un se jette à l'eau. Arrêtez quand personne n'a parlé pendant plus d'une minute.",
@@ -264,7 +264,7 @@ Invitez alors les autres à faire de même et attendez que quelqu'un se jette à
 all_activities[15] = {
 	phase: 4,
 	name: "Aide, Gêne, Hypothèse",
-	summary: "Obtenez des retours concrets sur votre manière de faciliter",
+	summary: "Obtenez des retours concrets sur votre manière de faciliter.",
 	desc: "Préparez 3 feuilles de papier intitulés 'Aide', 'Gêne', et 'Hypothèse' \
 (des suggestions de choses à essayer). \
 Demandez aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its \
@@ -276,7 +276,7 @@ et en signant de leurs initiales pour que vous puissiez poser des questions par 
 all_activities[16] = {
 	phase: 4, // marche aussi pour 5
 	name: "SaMoLo (Plus de, Autant de, Moins de)",
-	summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur",
+	summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
 	desc: "Dessinez au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
 Demandez aux participants un coup de main pour vous aider à améliorer votre comportement : Écrivez sur des post-its \
 ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lisez et \
@@ -288,7 +288,7 @@ discutez un court moment des post-its collés dans chaque partie.",
 };
 all_activities[17] = {
 phase:     0,
-name:      "Check in - Commentaires Amazon",
+name:      "Lancement - Commentaires Amazon",
 summary:   "Commentez l'itération sur Amazon. N'oublier pas l'évaluation !",
 desc:      "Chaque membre écrit un rapide commentaire qui comporte : \
 <ul>\
@@ -305,7 +305,7 @@ suitable: "release, project"
 all_activities[18] = {
 phase:     1,
 name:      "Hors-Bord / Voilier",
-summary:   "Analysez les forces qui vous vont avancer et qui vous ralentissent",
+summary:   "Analysez les forces qui vous vont avancer et qui vous ralentissent.",
 desc:      "Dessinez un bateau sur un tableau à feuilles. Dotez le d'un bon moteur \
 ainsi que d'une ancre très lourde. Les membres de l'équipe écrivent en silence sur des post-its ce qui a propulsé l'équipe vers l'avant \
 et ce qui lui a fait faire du surplace. Une idée par post-it. Collez les post-its respectivement sur le moteur et l'ancre. \
@@ -328,7 +328,7 @@ suitable: "iteration, release"
 all_activities[20] = {
 phase:     3,
 name:      "Fusion",
-summary:   "Réduisez le nombre d'actions possibles à seulement deux qui seront expérimentées par l'équipe",
+summary:   "Réduisez le nombre d'actions possibles à seulement deux qui seront expérimentées par l'équipe.",
 desc:      "Distribuez des cartes et des marqueurs. Dites à tout le monde d'écrire les deux actions qu'ils \
 veulent essayer à la prochaine itération - aussi précises que possible \
 (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Ensuite tout le monde paire \
@@ -481,7 +481,7 @@ suitable: "iteration, release, project"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Check In - Dessinez l'itération",
+name:      "Lancement - Dessinez l'itération",
 summary:   "Les participants dessinent certains aspects de l'itération.",
 desc:      "Distribuez des cartes et des marqueurs et choisissez le sujet. Exemples de sujet : \
 <ul> \
@@ -581,4 +581,81 @@ desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en d
 source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 duration:  "3 minutes",
 suitable: "iteration, release, project"
+};
+all_activities[36] = {
+phase:     2,
+name:      "Souvenons-nous de l'avenir",
+summary:   "Imaginez que la prochaine itération est parfaite. A quoi ressemble-t-elle ? Qu'avez-vous fait ?",
+desc:      "<p>Imaginez que vous puissez voyager à travers le temps jusqu'à la fin de la prochaine itération (ou release).<br />\
+Vous y apprenez que ça a été la meilleure itération et la plus productive que vous ayez fait !<br />\
+Comment vos futurs vous vous la décrivent ? Qu'y voyez-vous et entendez-vous ?</p>\
+<p>Donnez un peu de temps à l'équipe pour imaginer cette situation et prendre quelques notes / mots clés pour aider leur mémoire.<br />\
+  Ensuite, laissez chacun décrire sa vision de l'itération parfaite.<br />\
+  Pousuivez ensuite avec la question \"Quels changements avons-nous réalisés pour atteindre un avenir si productif et satisfaisant ?\"<br />\
+  Notez les réponses sur des cartes pour s'en servir dans la phase suivante.</p>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Vote par gommette - Garder, Abandonner, Démarrer",
+summary:   "Phosphorez sur les comportements à garder, abandonner et démarrer et gardez en les principaux.",
+desc:      "Séparez un tableau en trois ensembles intitulés :\
+<ul><li>Garder</li>\
+  <li>Abandonner</li>\
+  <li>Démarrer</li>\
+</ul>\
+Demandez à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Laissez les écrire en silence pendant quelques minutes. <br />\
+Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Menez la conversation pour identifiez 20% des idées qui seraient les plus bénéfiques. <br />\
+Laissez chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
+Les 2 ou 3 principales idées seront votre plan d'actions.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[38] = {
+phase:     3,
+name:      "Vote par gommette - Fonctionne bien, Faire différemment",
+summary:   "Phosphorez sur ce qui a bien fonctionné et ce qu'il faudrait faire différemment et gardez les meilleurs idées.",
+desc:      "Intitulez respectivement deux tableaux \"Fonctionne bien\" et \"Faire différemment\".<br /> \
+Demandez à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Laissez les écrire en silence pendant quelques minutes.<br />\
+Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Laissez chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
+Les 2 ou 3 principales idées seront votre plan d'actions.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[39] = {
+phase:     4,
+name:      "Plus & Delta",
+summary:   "Chaque participant note une chose qu'il aime et une qu'il voudrait changer à propos de la rétro.",
+desc:      "Préparez une tableau avec deux colonnes \"Plus\" et \"Delta\". \
+Demandez à chaque participant d'écrire un aspect de la rétrospective qu'il a aimé et un qu'il souhaiterait modifier sur des cartes différentes. <br />\
+Affichez et passez rapidement en revue les cartes en clarifiant leur sens exact \
+et en identifiant la tendance majoritaire lorsque des notes vont dans deux directions opposées pour un même point.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+duration:  "5-10",
+suitable: "release, project"
+};
+all_activities[40] = {
+phase:     2,
+name:      "Le banc du parc",
+summary:   "Discussion de groupe avec un nombre variable de sous-groupes de participants.",
+desc:      "Placez au moins 4 et au maximum 6 chaises en ligne afin qu'elles fassent face au groupe. <br />\
+Expliquez les règles :<ul>\
+  <li>Asseyez-vous sur le banc lorsque vous voulez contribuer à la discussion</li>\
+  <li>Le banc doit toujours avoir une place de libre</li>\
+  <li>Lorsque la dernière place du banc est prise, quelqu'un doit obligatoirement partir et retourner dans le public</li>\
+</ul>\
+Démarrez en vous asseyant sur le \"banc\" et en vous demandant à voix haute \
+ce que vous avez appris au cours de la phase précédente jusqu'à ce que quelqu'un vous rejoigne.<br />\
+Arrêtez l'activité lorsque vous voyez que les discussions cessent.<br />\
+C'est une variante du \"bocal à poisson\". C'est adapté pour les groupes de 10-25 personnes.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+duration:  "15-30",
+suitable: "release, project, largeGroups"
 };

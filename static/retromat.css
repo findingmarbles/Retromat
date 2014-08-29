@@ -440,6 +440,7 @@ ul ul {
 }
 
 .phase_title {
+    line-height: 0.85em;
     margin-bottom: -17px;
     text-align: right;
 }
@@ -463,10 +464,12 @@ ul ul {
 }
 
 .activity_block h2 {
-    margin-bottom: 5px;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Droid Serif',serif;
     font-size: 1.2em;
     font-weight: bold;
+    line-height: 1.25em;
+    margin-bottom: 5px;
+    max-width: 74%;
 }
 
 .activity_id_wrapper {
