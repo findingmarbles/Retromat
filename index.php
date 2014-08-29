@@ -206,13 +206,15 @@ function get_random_integer(upper_limit) {
 
 function populate_activity_block(activity_index, activity_block) {
     var activity = get_activity_array(activity_index);
+    var id = convert_index_to_id(activity_index);
 
     $(activity_block).addClass('js_activity' + activity_index);
 
     $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
     $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
     $(activity_block).find('.js_fill_name').html(activity.name);
-    $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
+    $(activity_block).find('.js_fill_activity_link').prop('href','?id=' + id);
+    $(activity_block).find('.js_fill_id').html(id);
     $(activity_block).find('.js_fill_summary').html(activity.summary);
     $(activity_block).find('.js_fill_source').html(activity.source);
     $(activity_block).find('.js_fill_description').html(activity.desc);
@@ -632,7 +634,7 @@ function switchLanguage(new_lang) {
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (89 activities)</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (36 activit&eacute;s)</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (41 activit&eacute;s)</option>
     </select>
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
@@ -737,7 +739,9 @@ function switchLanguage(new_lang) {
             </div>
             <div class="js_item">
                 <h2><span class="js_fill_name"></span>
-                    <span class="activity_id_wrapper">(#<span class="js_fill_id"></span>)</span>
+                    <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                    </span>
                 </h2>
                 <div class="summary">
                     <span class="js_fill_summary"></span>
