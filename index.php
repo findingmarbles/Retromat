@@ -667,7 +667,7 @@ function switchLanguage(new_lang) {
         <div class="plan-header__wrapper">
             <div class="ids-display">
                 <?php echo($_lang['INDEX_PLAN_ID']); ?>
-                <form name="js_ids-display__form" class="ids-display__form">
+                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
                     <input type="text" size="18" name="js_display" class="ids-display__input" value="">
                 </form>
             </div>
