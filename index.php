@@ -582,7 +582,9 @@ function has_found_match(activity, keyword) {
 
 function find_ids_in_keyword(keyword) {
     var res = sanitize_plan_id(keyword);
-    if (res != "null") { // FIXME "null" is sooo ugly
+    if (res == "null") {
+        res = '';
+    } else {
         res = '-' + res;
     }
     return res;
@@ -613,7 +615,7 @@ function publish_activities_for_keywords(keywords) {
         text = '<?php echo($_lang["POPUP_SEARCH_NO_RESULTS"]) ?>';
     }
 
-    publish_plan_title(text +  " '" + keyword + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
+    publish_plan_title(text +  " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
 }
 
 /************ END PopUps Plan Navigation ************/
