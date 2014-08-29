@@ -32,6 +32,16 @@ function print_if_selected($candidate, $chosen) {
     return $res;
 }
 
+function get_url_to_index() {
+    global $isEnglish;
+    $res = 'http://plans-for-retrospectives.com/';
+    if (!$isEnglish) {
+        global $lang;
+        $res .= 'index_' . $lang . '.html';
+    }
+    return $res;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -617,7 +627,8 @@ function switchLanguage(new_lang) {
 <body onload="JavaScript:init()">
 
 <div class="header">
-    <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
+    <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (89 activities)</option>
