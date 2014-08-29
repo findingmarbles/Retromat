@@ -68,21 +68,21 @@ function print_if_selected($candidate, $chosen) {
 //<![CDATA[
 
 // "CONFIG"
-const NUMBER_OF_REGULAR_PHASES = 5;
-const PHASE_SOMETHING_DIFFERENT = 5;
-const INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
+var NUMBER_OF_REGULAR_PHASES = 5;
+var PHASE_SOMETHING_DIFFERENT = 5;
+var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
 
 // Frequent sources for activities
-const source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
-const source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
-const source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
-const source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Innovation Games<\/a>';
-const source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
-const source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
-const source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
-const source_unknown = 'Unknown';
+var source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
+var source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
+var source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
+var source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Innovation Games<\/a>';
+var source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
+var source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
+var source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
+var source_unknown = 'Unknown';
 
-const PHASE_ID_TAG = 'phase';
+var PHASE_ID_TAG = 'phase';
 
 <?php
 
@@ -96,11 +96,14 @@ last_block_bg = -1; // Stores bg of last block so that no consecutive blocks hav
 
 /************* FUNCTIONS ******************************************************************/
 
+
+
 function init() {
     var urlParams = getUrlVars();
     var plan_id = urlParams.id;
+    var phase = urlParams.phase;
     if(plan_id) {
-        publish_plan(plan_id);
+        publish_plan(plan_id, phase);
     } else {
         publish_random_plan();
     }
@@ -122,16 +125,20 @@ function getUrlVars() {
 }
 
 //Input: String
-function publish_plan(plan_id) {
+function publish_plan(plan_id, phase) {
     var plan_id = sanitize_plan_id(plan_id);
-
     if (plan_id) {
         empty_plan();
         publish_activity_blocks(plan_id);
         enable_phase_browsing();
 
-        show_phase_stepper();
-        hide_plan_title();
+        if (phase != undefined) {
+            publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase].toUpperCase());
+            hide_phase_stepper();
+        } else {
+            show_phase_stepper();
+            hide_plan_title();
+        }
         publish_plan_id(plan_id);
     }
 }
@@ -193,7 +200,7 @@ function populate_activity_block(activity_index, activity_block) {
     $(activity_block).addClass('js_activity' + activity_index);
 
     $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
-    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase));
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
     $(activity_block).find('.js_fill_name').html(activity.name);
     $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
     $(activity_block).find('.js_fill_summary').html(activity.summary);
@@ -231,7 +238,6 @@ function get_photo_string(photo) {
 function enable_phase_browsing() {
     enable_prev();
     enable_next();
-    enable_phase_link();
 }
 
 function enable_prev() {
@@ -342,28 +348,7 @@ function get_index_of_next_activity_in_phase(activity_index, phase_index) {
     return found_index;
 }
 
-function enable_phase_link() {
-
-    $('.js_phase_link').click(function() {
-
-        var activity_id = read_activity_id($(this).parent().parent());
-        var activity = get_activity_array(convert_id_to_index(activity_id));
-
-        show_activities_in_phase(activity.phase);
-
-    });
-}
-
 /************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
-
-
-function show_activities_in_phase(phase_index) {
-    var plan_id = get_activities_in_phase_as_plan_id(phase_index);
-    publish_plan(plan_id);
-    publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase_index].toUpperCase());
-    enable_phase_browsing();
-    hide_phase_stepper();
-}
 
 /* Returns: String of all activities in this phase formatted as plan id
  */
@@ -635,20 +620,12 @@ function switchLanguage(new_lang) {
     <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (88 activities)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (89 activities)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (36 activit&eacute;s)</option>
-<!--        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
-        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
-        -->
     </select>
 
       <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
-          <!--
-          <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
-          <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
-          -->
          <a href="/print/index.html">Print Edition</a> |
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
       </span>
