@@ -1417,5 +1417,29 @@ source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
+all_activities[90] = {
+phase:     2,
+name:      "Poster Session",
+summary:   "Split a large group into smaller ones that create posters",
+desc:      "After you've identified an important topic in the previous phase \
+you can now go into detail. Have the larger group split up into groups of 2-4 \
+people that will each prepare a poster (flip chart) to present to the other groups. \
+If you have identified more than one main topic, let the team members select \
+on which they want to work further.<br> \
+Give the teams guidelines about what the posters should cover / answer, such as: \
+<ul> \
+    <li>What exactly happens? Why is that a problem?</li> \
+    <li>Why / when / how does this situation happen?</li> \
+    <li>Who benefits from the current situation? What is the benefit?</li> \
+    <li>Possible solutions (with Pros and Cons)</li> \
+    <li>Who could help change the situation?</li> \
+    <li>... whatever is appropriate in your setting ...</li> \
+</ul> \
+The groups have 15-20 minutes to discuss and create their posters. Afterwards \
+gather and each group gets 2 minutes to present their results.",
+source:    "Unknown, adapted by " + source_findingMarbles + ", inspired by Michal Grzeskowiak",
+duration:  "30 min",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
