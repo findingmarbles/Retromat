@@ -1398,5 +1398,24 @@ photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
+all_activities[89] = {
+phase:     0,
+name:      "Agile Values Cheer Up",
+summary:   "Remind each other of agile values you displayed",
+desc:      "Draw 4 large bubbles and write one of the agile core values into each: \
+<ol> \
+    <li>Individuals and their interactions</li> \
+    <li>Delivering working software</li> \
+    <li>Customer collaboration</li> \
+    <li>Responding to change</li> \
+</ol> \
+Ask participants to write down instances when their colleagues have displayed \
+one of the values - 1 cheerful sticky note per example. In turn, let \
+everyone post their note in the corresponding bubble and read them out loud. \
+Rejoice in how you embody agile core values :)",
+source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
