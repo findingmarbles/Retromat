@@ -545,21 +545,19 @@ function hide_popup(popup_name) {
  */
 function search_activities_for_keyword(keyword) {
     var plan_id = '';
-    var isFirst = true;
     var isMatch = false;
     for (var i=0; i<all_activities.length; i++) {
         isMatch = has_found_match(all_activities[i], keyword);
-
         if (isMatch) {
-            if (isFirst) {
-                isFirst = false;
-            } else {
-                plan_id += "-";
-            }
-            plan_id += convert_index_to_id(i);
+            plan_id += convert_index_to_id(i) + '-';
         }
     }
-    return plan_id + find_ids_in_keyword(keyword, isFirst);
+    if (plan_id.length > 0) {
+        plan_id = plan_id.substr(0, plan_id.length-1)
+    }
+
+    return plan_id; // Remove trailing '-'
+
 }
 
 function has_found_match(activity, keyword) {
@@ -582,17 +580,27 @@ function has_found_match(activity, keyword) {
     return isMatch;
 }
 
-function find_ids_in_keyword(keyword, isFirst) {
+function find_ids_in_keyword(keyword) {
     var res = sanitize_plan_id(keyword);
-    if (res != "null" && !isFirst) { // FIXME "null" is sooo ugly
-        res = "-" + res;
+    if (res != "null") { // FIXME "null" is sooo ugly
+        res = '-' + res;
     }
     return res;
 }
 
-function publish_activities_for_keyword(keyword) {
+function publish_activities_for_keywords(keywords) {
 
-    var plan_id = search_activities_for_keyword(keyword);
+    var keywords_array = keywords.split(' ');
+    var plan_id = '';
+    for (var i=0; i<keywords_array.length; i++) {
+        var sub_ids = search_activities_for_keyword(keywords_array[i]);
+        if (sub_ids.length > 0) {
+            plan_id += sub_ids + '-';
+        }
+    }
+    plan_id = plan_id.substr(0, plan_id.length-1); // Remove trailing '-'
+
+    plan_id += find_ids_in_keyword(keywords);
 
     var text = '<?php echo($_lang["INDEX_ALL_ACTIVITIES"]) ?>';
     if (plan_id != '') {
@@ -696,7 +704,7 @@ function switchLanguage(new_lang) {
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
                         <div class="js_popup--search popup--search popup display_none">
-                            <form action="JavaScript:publish_activities_for_keyword($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
                                 <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
                                 <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
                                 <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>

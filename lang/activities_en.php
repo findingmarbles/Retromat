@@ -337,7 +337,7 @@ two actions. The pairs form groups of 4. Then 8. Now collect every group's two a
 and have a vote on the final two.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 duration:  "15-30 groupSize",
-photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity21]' title='Taken by Paulo Caroli'>View Photo</a>",
+photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity21]' title='Photo taken by Paulo Caroli'>View Photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
@@ -1203,7 +1203,7 @@ Form 4 subgroups, on for each L, read all notes, identify patterns and report th
 Use this as input for the next phase.",
 source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> probably via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
 duration:  "30 min",
-photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity78]' title='Taken by Ellen Gottesdiener'>View Photos</a>\
+photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity78]' title='Photo taken by Ellen Gottesdiener'>View Photos</a>\
            <a href='static/images/activities/78_Four-Ls.jpg' rel='lightbox[activity78]' title='Contributed by Philipp Flenker'></a>\
            <a href='static/images/activities/78_Four-Ls_2.jpg' rel='lightbox[activity78]' title='Contributed by Geert van der Ploeg'></a>",
 suitable:  "iteration, project, release, distributed"
@@ -1394,7 +1394,7 @@ One example per sticky note. There's only one rule: If someone contributes to th
 s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
-photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Taken by Jordan Morris'>View Photo</a>",
+photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
