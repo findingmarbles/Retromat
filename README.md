@@ -35,10 +35,10 @@ Or send a photo illustrating an activity (see above for contact details).
 The French translation is already live. Additionally there are a couple of translations
 under construction. Our team of awesome translators:
 
-* Pierre Martin and Frank Taillandier - French
+* Julien Dubois, Pierre Martin and Frank Taillandier - French
+* Thomas Wallet, Pedro Ángel Serrano and Xavier Verges - Spanish
 * Tobias Ranft and Judith Andresen - German
 * Linda van der Pal - Dutch
-* Pedro Ángel Serrano and Xavier Verges - Spanish (and possibly Catalan)
 * Weronika Kedzierska - Polish
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
@@ -101,12 +101,12 @@ overall vision:
 ### Vision for Retr-O-Mat
 
 * Be useful
-** For more people => better
+ * For more people => better
 * Be pleasant to use
-** Simple interface
-** Consistent
-*** Activities are written in short, straightforward language. For the time
+ * Simple interface
+ * Consistent
+  * Activities are written in short, straightforward language. For the time
 being this means that I edit all submitted activities. In the future this
 could be handled by a committee at one point.
-** Pretty
+ * Pretty
 

@@ -594,7 +594,7 @@ desc:      "Divide a flip chart into boxes headed with  'Keep', 'Drop' and 'Add'
 Ask your participants to write concrete proposals for each category - 1 \
 idea per index card. Let them write in silence for a few minutes. \
 Let everyone read out their notes and post them to the appropriate category. \
-Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots\
+Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots \
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.",
 source:    source_agileRetrospectives,
@@ -785,7 +785,7 @@ suitable:  "iteration"
 all_activities[51] = {
 phase:     0,
 name:      "Constellation - Opening",
-summary:   "Let the participants affirm or reject statements without speaking",
+summary:   "Let the participants affirm or reject statements by moving around",
 desc:      "Place a circle or sphere in the middle of a free space. Let the team gather around it. \
 Explain that the circle is the center of approval: If they agree to a statement they should move towards it, \
 if they don't, they should move as far outwards as their degree of disagreement. Now read out statements, e.g.\
@@ -805,7 +805,7 @@ suitable:  "iteration, project, release"
 all_activities[52] = {
 phase:     4,
 name:      "Constellation - Closing",
-summary:   "Let the participants rate the retrospective without speaking",
+summary:   "Let the participants rate the retrospective by moving around",
 desc:      "Place a circle or sphere in the middle of a free space. Let the team gather around it. \
 Explain that the circle is the center of approval: If they agree to a statement they should move towards it, \
 if they don't, they should move as far outwards as their degree of disagreement. Now read out statements, e.g.\
