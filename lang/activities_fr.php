@@ -218,7 +218,7 @@ Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plu
 ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
 Les 2 ou 3 meilleures seront vos actions &agrave; mener.\
 <br><br>\
-(Voir <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité)",
+(Voir <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité)",
 	source: source_agileRetrospectives,
 	duration: "15-30",
 	suitable: "iteration"

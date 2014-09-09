@@ -37,7 +37,6 @@ what people make of the data. If there's a majority of Vacationers or Prisoners 
 retro to discuss this finding.",
 duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
-photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox[activity2]' title='Contributed by Philipp Flenker'>View Photo</a>",
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -216,7 +215,7 @@ Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by 
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.\
 <br><br>\
-(Check out <a href='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
+(Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"

@@ -106,7 +106,7 @@ overall vision:
  * Simple interface
  * Consistent
   * Activities are written in short, straightforward language. For the time
-being this means that I edit all submitted activities. In the future this
-could be handled by a committee at one point.
+being this means that I edit all submitted activities. I could hand this over
+to other people at some point in the future.
  * Pretty
 
