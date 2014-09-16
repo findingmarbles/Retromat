@@ -16,10 +16,10 @@ $_lang['INDEX_ABOUT_SUGGEST'] = '&iexcl;Proponla';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traducci&oacute;n: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Thomas Wallet';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://thomaswallet.blogspot.com.ar';
-//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/ - send me a picture of you :)';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
 Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter.</a>
-<br><br> Agradecimientos a Pedro &Aacute;ngel Serrano y Xavier Verges. 
+<br><br> Agradecimientos a Pedro &Aacute;ngel Serrano y <a href="https://twitter.com/XavierVerges">Xavier Verges</a>.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';

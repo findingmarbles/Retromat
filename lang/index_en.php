@@ -17,7 +17,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 //$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
 //$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Your Name';
 //$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'Your URL';
-//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/ - send me a picture of you :)';
+//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/ - send me a picture; will be cut to 70x93px :)';
 //$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
 //             Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
 //EOT;
