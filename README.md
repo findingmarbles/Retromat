@@ -36,7 +36,7 @@ The French translation is already live. Additionally there are a couple of trans
 under construction. Our team of awesome translators:
 
 * Julien Dubois, Pierre Martin and Frank Taillandier - French
-* Thomas Wallet, Pedro Ángel Serrano and Xavier Verges - Spanish
+* Thomas Wallet and Pedro Ángel Serrano - Spanish
 * Tobias Ranft and Judith Andresen - German
 * Linda van der Pal - Dutch
 * Weronika Kedzierska - Polish
@@ -56,7 +56,9 @@ You don't have to translate all activities at once. Just start at index 0 and wo
 way down. The first live version of Retr-O-Mat had 15 activities. So as soon as you've translated
 indexes 0-14, your language will go live :)
 
-(The indexes should stay the same across language, so don't move activities around.)
+(The indexes should stay the same across language, so don't move activities around.
+Some of the attributes, e.g. 'duration' and 'suitable', never show up on the
+page the visitors see. No need to translate those.)
 
 Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &ntilde;)
 
