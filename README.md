@@ -38,7 +38,6 @@ under construction. Our team of awesome translators:
 * Julien Dubois, Pierre Martin and Frank Taillandier - French
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
 * Tobias Ranft and Judith Andresen - German
-* Linda van der Pal - Dutch
 * Weronika Kedzierska - Polish
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
