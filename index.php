@@ -789,17 +789,23 @@ function switchLanguage(new_lang) {
 
 <?php if (!$isEnglish) { ?>
        <div class="team__translator">
-           <h2><?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>
-               </a>
+           <h2>
+               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
            </h2>
-           <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-               <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE']); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
-           </a>
-           <div class="team-text">
-               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT']); ?>
-           </div>
+           <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                   <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
+               </a>
+                <h3 style="margin-bottom: 10px">
+                   <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                       <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
+                   </a>
+                </h3>
+
+               <div class="team-text">
+                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
+               </div>
+           <?php } ?>
        </div><!-- .team--translator -->
 <?php } ?>
 

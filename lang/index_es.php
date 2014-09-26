@@ -18,13 +18,19 @@ $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contiene <span class="js_footer_no_of_activities"></span> actividades, permitiendo generar <span class="js_footer_no_of_combinations"></span> combinaciones (<span class="js_footer_no_of_combinations_formula"></span>) y estamos continuamente agregando m&aacute;s. &iquest;Conoces una buena actividad?';
 $_lang['INDEX_ABOUT_SUGGEST'] = '&iexcl;Proponla';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traducci&oacute;n: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Thomas Wallet';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://thomaswallet.blogspot.com.ar';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/thomas_wallet.jpg';
-$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
-Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter.</a>
-<br><br> Agradecimientos a  <a href="https://twitter.com/Pedroserranot">Pedro &Aacute;ngel Serrano</a>.
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traducido por ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Pedro Serrano';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/pedroserranot';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/pedro_angel_serrano.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+CSM y PMP apasionado de las metodologías ágiles. Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+<br><br><br>
+EOT;
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Thomas Wallet';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'http://thomaswallet.blogspot.com.ar';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/thomas_wallet.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
+Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';

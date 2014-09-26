@@ -19,18 +19,18 @@ $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus. Vous connaissez une activité géniale?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction : ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Pierre Martin';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://www.occitech.fr/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/pierre_martin.jpg';
-$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction: ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Pierre Martin';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://www.occitech.fr/';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/pierre_martin.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Lead developer et co-gérant d'<a href="http://www.occitech.fr/">Occitech</a>.<br>
 	Gazouille aussi sur <a href="https://twitter.com/pierremartin">Twitter</a>!<br><br>
 	Merci aussi à <a href="http://frank.taillandier.me/">Frank Taillandier</a> et
 	<a href="http://juliendubois.fr/">Julien Dubois</a>!
 EOT;
 
-$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Version originale : ';
+$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Version originale: ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna souhaitait quelque chose comme Retr-O-Mat pendant ses années de Scrummaster.
     Finalement elle le construit elle même dans l'espoir que cela serait utile à d'autres également.
