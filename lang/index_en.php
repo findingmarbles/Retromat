@@ -11,6 +11,11 @@ $_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
 $_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
+
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more. You know a great activity?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 

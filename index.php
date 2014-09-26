@@ -648,10 +648,11 @@ function switchLanguage(new_lang) {
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (41 activit&eacute;s)</option>
     </select>
 
-      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
-        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
-         <a href="/print/index.html">Print Edition</a> |
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
+      <span class="navi">
+        <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
+        <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
+        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>  |
+        <?php echo($_lang['INDEX_NAVI_ADD_ACTIVITY']); ?>
       </span>
 </div>
 

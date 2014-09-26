@@ -10,6 +10,11 @@ $_lang['INDEX_ENTER_ID'] = 'Ingresar IDs a visualizar';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Buscar actividades por palabra clave';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Todas las actividades para';
 
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/09/retr-o-mat-en-espanol.html">Sobre Retr-O-Mat</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
+
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contiene <span class="js_footer_no_of_activities"></span> actividades, permitiendo generar <span class="js_footer_no_of_combinations"></span> combinaciones (<span class="js_footer_no_of_combinations_formula"></span>) y estamos continuamente agregando m&aacute;s. &iquest;Conoces una buena actividad?';
 $_lang['INDEX_ABOUT_SUGGEST'] = '&iexcl;Proponla';
 
@@ -19,7 +24,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://thomaswallet.blogspot.com.ar';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
 Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter.</a>
-<br><br> Agradecimientos a Pedro &Aacute;ngel Serrano y <a href="https://twitter.com/XavierVerges">Xavier Verges</a>.
+<br><br> Agradecimientos a  <a href="https://twitter.com/Pedroserranot">Pedro &Aacute;ngel Serrano</a>.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
