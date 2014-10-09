@@ -10,7 +10,7 @@ $_lang['INDEX_ENTER_ID'] = 'Ingresar IDs a visualizar';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Buscar actividades por palabra clave';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Todas las actividades para';
 
-$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/10/que-es-una-retrospectiva.html">¿Qué es una retrospectiva?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/09/retr-o-mat-en-espanol.html">Sobre Retr-O-Mat</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
