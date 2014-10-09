@@ -31,6 +31,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'http://thomaswallet.blogspot.com.ar';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
+<br> <br>Agradecimientos a Mauro Strione, Sebastian Sabato y Mauro Tresguerras
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
@@ -44,8 +45,8 @@ EOT;
 $_lang['PRINT_HEADER'] = 'por Finding-Marbles.com';
 
 $_lang['ACTIVITY_SOURCE'] = 'Origen:';
-$_lang['ACTIVITY_PREV'] = 'Mostrar otra activada para esta fase';
-$_lang['ACTIVITY_NEXT'] = 'Mostrar otra activada para esta fase';
+$_lang['ACTIVITY_PREV'] = 'Mostrar otra actividad para esta fase';
+$_lang['ACTIVITY_NEXT'] = 'Mostrar otra actividad para esta fase';
 $_lang['ACTIVITY_PHOTO_ADD'] = 'Agregar foto';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Fotos%20para%20Actividad%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hola%20Corinna%21%0D%0A%0D%0A[%20]%20Se%20adjuntan%20fotos%0D%0A[%20]%20Las%20fotos%20estan%20online%20aqui%3A%20%0D%0A%0D%0AAtt.%2C%0D%0ATu%20Nombre';
@@ -61,3 +62,4 @@ $_lang['POPUP_SEARCH_INFO']= 'Buscar en t&iacute;tulos, res&uacute;menes &amp; d
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Disculpa, no se encontr&oacute; nada para';
 
 ?>
+
