@@ -31,7 +31,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'http://thomaswallet.blogspot.com.ar';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
-<br> <br>Agradecimientos a Mauro Strione, Sebastian Sabato y Mauro Tresguerras
+<br><br><br><br>Agradecimientos a Mauro Strione, Sebastian Sabato y Mauro Tresguerras
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
