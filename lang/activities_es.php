@@ -147,7 +147,7 @@ suitable: "iteraci&oacute;n, entrega, proyecto, causa ra&iacute;z"
 all_activities[8] = {
 phase:     2,
 name:      "Matriz de Aprendizaje",
-summary:   "El equipo hace una lluvia de ideas en 4 categor&iacute;as para enumerar r&aacute;pidamente asuntos",
+summary:   "El equipo hace una tormenta de ideas en 4 categor&iacute;as para enumerar r&aacute;pidamente asuntos",
 desc:      "Despu&eacute;s de haber debatido los datos de la fase 2, mostrar un rotafolio con 4 cuadrantes: \
 ':)', ':(', 'Idea', y 'Apreciaci&oacute;n'. Repartir post-its. \
 <ul>\
@@ -164,9 +164,9 @@ suitable: "iteraci&oacute;n"
 
 all_activities[9] = {
 phase:     2,
-name:      "Lluvia de Ideas / Filtro",
+name:      "Tormenta de Ideas / Filtro",
 summary:   "Generar muchas ideas y aplicarles filtros",
-desc:      "Explicar las reglas de la lluvia de ideas y su objetivo: \
+desc:      "Explicar las reglas de la tormenta de ideas y su objetivo: \
 Generar muchas ideas, que luego ser&aacute;n filtradas.\
 <ul>\
     <li>Pedir a los participantes que escriban sus ideas por 5-10 minutos</li>\
@@ -204,7 +204,7 @@ suitable: "iteraci&oacute;n, entrega, proyecto, introvertidos"
 all_activities[11] = {
 phase:     3,
 name:      "Voto por Puntos - Empezar, Parar, Continuar",
-summary:   "Lluvia de ideas sobre que empezar, parar & continuar, y luego elegir las mejores iniciativas", 
+summary:   "Tormenta de ideas sobre que empezar, parar & continuar, y luego elegir las mejores iniciativas", 
 desc:      "Dividir un rotafolio en secciones con los t&iacute;tulos 'Empezar', 'Parar', y 'Continuar'. \
 Pedir a los participantes que escriban propuestas concretas para cada categor&iacute;a - 1 idea por carta. \
 Dejarlos escribir en silencio durante unos minutos. \
@@ -641,7 +641,7 @@ suitable: "iteraci&oacute;n, entrega, proyecto"
 all_activities[37] = {
 phase:     3,
 name:      "Voto con Puntos - Mantener, Parar, Agregar",
-summary:   "Hacer una lluvia de ideas para identificar los comportamientos a mantener, parar e iniciar y elegir los mejores", 
+summary:   "Hacer una tormenta de ideas para identificar los comportamientos a mantener, parar e iniciar y elegir los mejores", 
 desc:      "Dividir una pizarra en columnas intituladas ‘Mantener’, Parar’ e ‘Iniciar. \
 Pedir a los participantes escribir propuestas concretas para cada categor&iacute;a \
 - 1 idea por post-it. Dejar unos minutos para que escriban en silencio. \
@@ -657,7 +657,7 @@ suitable: "iteraci&oacute;n,"
 all_activities[38] = {
 phase:     3,
 name:      "Votos con Puntos - Funcion&oacute; bien, Hacer distinto",
-summary:   "Lluvia de ideas de lo que funcion&oacute; bien y que se puede hacer distinto, eligiendo luego las mejores iniciativas", 
+summary:   "Tormenta de ideas de lo que funcion&oacute; bien y que se puede hacer distinto, eligiendo luego las mejores iniciativas", 
 desc:      "Armar dos rotafolios con ‘Funcion&oacute; bien’ y ‘Hacer distinto la pr&oacute;xima vez'. \
 Pedir a los participantes escribir propuestas concretas para cada categor&iacute;a \
 (1 idea por post-it). Dejar unos minutos para que escriban en silencio. \
@@ -828,4 +828,206 @@ escenario en mente durante la siguiente fase y sugieran acciones que permitan ha
 source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
 duration:  "15 min",
 suitable:  "iteration"
+};
+
+all_activities[50] = {
+phase:     1,
+name:      "Caf&eacute; Lean",
+summary:   "Usar el formato Caf&eacute; Lean para una discusi&oacute;n de los temas principales",
+desc:      "Decidir cu&aacute;nto tiempo se va a invertir en esta actividad, explicar las reglas del caf&eacute; lean para retrospectivas: <ul>\
+    <li>Cada participante escribe temas de los que desea discutir, un tema por post-it</li>\
+    <li>Pegar los post-its en una pizarra. La persona que propuso el tema lo explica en una o dos oraciones. \
+Agrupar los post-its que sean del mismo tema.</li>\
+    <li>Cada participante vota por dos temas que le gustar&iacute;a discutir.</li>\
+    <li>Ordenar los post-its de acuerdo a los votos.</li>\
+    <li>Comenzar con el tema de mayor inter&eacute;s.</li>\
+    <li>Poner una alarma a los 5 minutos. Cuando suena todos votan con pulgares arriba o abajo. \
+Mayor&iacute;a de pulgares hacia arriba: se trabaja durante 5 minutos m&aacute;s en el tema. Mayor&iacute;a de pulgares hacia abajo: \
+se pasa al siguiente tema. </li>\
+</ul> Continuar hasta que se acabe el tiempo establecido.",
+source:    "<a href='http://leancoffee.org/'>Descripci&oacute;n original</a> y \
+<a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>en acci&oacute;n</a>",
+duration:  "20-40 min",
+suitable:  "iteration"
+};
+
+all_activities[51] = {
+phase:     0,
+name:      "Constelaciones - Apertura",
+summary:   "Dejar que los participantes apoyen o rechacen declaraciones movi&eacute;ndose",
+desc:      "Armar un c&iacute;rculo o una esfera en el medio de un espacio libre. Pedir al equipo que se junte alrededor del c&iacute;rculo. \
+Explicar que el c&iacute;rculo es el centro de la aprobaci&oacute;n: Si est&aacute;n de acuerdo con la declaraci&oacute;n se \
+deber&iacute;a mover hacia &eacute;l, si no lo est&aacute;n, deber&iacute;a moverse tan lejos como su nivel de desacuerdo. \
+Ahora leer las declaraciones, por ejemplo:\
+<ul>\
+    <li>Siento que puedo hablar abiertamente en esta retrospectiva</li>\
+    <li>Estoy satisfecho con el &uacute;ltimo sprint</li>\
+    <li>Estoy feliz con la calidad de nuestro c&oacutedigo</li>\
+    <li>Creo que nuestro proceso de integraci&oacute;n continua est&aacute; maduro</li>\
+	</ul>\
+Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
+Esta puede ser tambi&eacute;n una actividad de cierre (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+duration:  "10 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[52] = {
+phase:     4,
+name:      "Constelaciones - Cierre",
+summary:   "Dejar que los participantes eval&uacute;en la retrospectiva movi&eacute;ndose",
+desc:      "Armar un c&iacute;rculo o una esfera en el medio de un espacio libre. Pedir al equipo que se junte alrededor del c&iacute;rculo. \
+Explicar que el c&iacute;rculo es el centro de la aprobaci&oacute;n: Si est&aacute;n de acuerdo con la declaraci&oacute;n se \
+deber&iacute;a mover hacia &eacute;l, si no lo est&aacute;n, deber&iacute;a moverse tan lejos como su nivel de desacuerdo. \
+Ahora leer las declaraciones, por ejemplo:\
+<ul>\
+    <li>Hablamos de lo m&aacute;s importante para mi</li>\
+    <li>Hoy habl&eacute; abiertamente</li>\
+    <li>Creo que el tiempo de la retrospectiva fue bien invertido</li>\
+    <li>Conf&iacute;o que vamos a ejecutar las acciones acordadas</li>\
+	</ul>\
+Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
+Esta puede ser tambi&eacute;n una actividad de apertura (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[53] = {
+phase:     1,
+name:      "Los Oscars de las Historias",
+summary:   "El equipo nomina historias para los premios y reflexiona sobre las ganadoras",
+desc:      "Mostrar todas las historias de usuarios completadas en los &uacute;ltimos sprints en una pizarra. \
+Crear 3 categor&iacute;as de premio (por ejemplo con secciones en la pizarra):\
+<ul>\
+    <li>La mejor historia</li>\
+    <li>La historia más aburrida</li>\
+    <li>... otra categor&iacute;a inventada por el equipo ...</li>\
+</ul>\
+Pedir al equipo que 'nomine' historias ubic&aacute;ndolas en la secci&oacute;n de premio correspondiente. <br>\
+Para cada categor&iacute;a: votar con puntos y anunciar la ganadora. \
+Pedir al equipo por qu&eacute; la historia de usuario ganó en esta categor&iacute;a \
+y dejar que el equipo reflexione sobre el proceso de completar las tareas: que sali&oacute; bien y/o mal.",
+source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
+duration:  "30-40 min",
+suitable:  "project, release",
+photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity54]' title='Contribuci&oacute; de Wolfgang Fassbender'>Ver Fotos</a>\
+           <a href='static/images/activities/54_Story-Oscars_2.JPG' rel='lightbox[activity54]' title='Contribuci&oacute; de Deborah Lindsay'></a>\
+           <a href='static/images/activities/54_Story-Oscars_3.jpg' rel='lightbox[activity54]' title='Contribuci&oacute; de Geert van der Ploeg'></a>"
+};
+
+all_activities[54] = {
+phase:     2,
+name:      "Las 4 Originales",
+summary:   "Hacer las 4 preguntas claves de Norman Kerth",
+desc:      "Norman Kerth, inventor  de las retrospectivas, identific&oacute; las siguientes 4 preguntas clave: \
+<ul>\
+    <li>&iquest;Qu&eacute; hicimos bien, que nos estar&iacute;amos olvidando de no discutirlo&quest;</li>\
+    <li>&iquest;Qu&eacute; aprendimos&quest;</li>\
+    <li>&iquest;Qu&eacute; podr&iacute;amos hacer distinto la pr&oacute;xima vez&quest;</li>\
+    <li>&iquest;Qu&eacute; cosa nos sigue desconcertando&quest;</li>\
+</ul>\
+&iquest;Cu&aacute;les son las respuestas del equipo&quest;",
+source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
+duration:  "15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[55] = {
+phase:     5,
+name:      "Invitar al Cliente",
+summary:   "Poner al equipo en contacto directo con un cliente o una de las partes interesadas (stakeholder)",
+desc:      "Invitar a un cliente o stakeholder interno a la retrospectiva. \
+Pedir al equipo que haga TODAS las preguntas:\
+<ul>\
+    <li>&iquest;C&oacute;mo usa el producto el cliente&quest;</li>\
+    <li>&iquest;Qu&eacute; es lo que m&aacute;s le molesta&quest;</li>\
+    <li>&iquest;Qu&eacute; funcionalidad le facilita m&aacute;s la vida&quest;</li>\
+    <li>Pedir al cliente que muestre su típico flujo de trabajo.</li>\
+    <li>...</li>\
+</ul>",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "45 min",
+suitable:  "iteration, project"
+};
+
+all_activities[56] = {
+phase:     4,
+name:      "D&iacute;galo con Flores",
+summary:   "Cada miembro del equipo demuestra su aprecio hacia otro con una flor.",
+desc:      "Comprar una flor por cada miembro del equipo y repartirlas al final de la retrospectiva. \
+Cada miembro debe entregar una flor a alguien como muestra de aprecio.",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "5 min",
+suitable:  "iteration, project"
+};
+
+all_activities[57] = {
+phase:     2,
+name:      "Jefe encubierto",
+summary:   "&iquest;Si tu jefe hubiera sido testigo del &uacute;ltimo sprint, que le gustar&iacute;a cambiar&quest;",
+desc:      "Imaginar que el jefe estuvo presente todo el sprint pasado en el equipo, de inc&oacute;gnito. &iquest;Qu&eacute; pensar&iacute;a \
+de las interacciones y de los resultados&quest; &iquest;Qu&eacute; le gustar&iacute;a cambiar&quest; \
+<br>Esta configuraci&oacute;n favorece que el equipo se vea a s&iacute; mismo desde un &aacute;ngulo diferente.",
+source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[58] = {
+phase:     0,
+name:      "Histograma de Felicidad",
+summary:   "Crear un diagrama de felicidad para generar diálogo",
+desc:      "Preparar un rotafolio con una escala horizontal del 1 (Infeliz) al 5 (Feliz).\
+<ul>\
+    <li>Cada participante de a uno coloca su post-it de acuerdo a su felicidad y lo comenta.</li>\
+	<li>Si alguien más tiene el mismo puntaje, colocar su post-it arriba del que ya está colocado, formando un histograma</li>\
+    <li>Si algo relevante sale de lo comentado, dejar que el equipo decida entre discutirlo en el momento o posponerlo para discutirlo \
+	m&aacute;s tarde en la retrospectiva</li>\
+</ul>",
+source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
+photo:    "<a href='static/images/activities/59_Happiness-Histogram.jpg' rel='lightbox[activity59]' title='Contribuci&oacute;n de Weronika Kedzierska'>Ver Fotos</a>\
+           <a href='static/images/activities/59_Happiness-Histogram-2.jpg' rel='lightbox[activity59]' title='Contribuci&oacute;n de Weronika Kedzierska'></a>",
+duration:  "2 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[59] = {
+phase:     4,
+name:      "&iexcl;AHA!",
+summary:   "Tirarse una pelota para generar aprendizaje",
+desc:      "Tirarse una pelota (por ejemplo una pelota anti-estr&eacute;s) entre los miembros del equipo para descubrir pensamientos positivos y experiencias de aprendizaje. \
+Dar una pregunta que cada persona debe responder cuando atrapa la pelota, como por ejemplo: \
+<ul>\
+    <li>Una cosa que aprend&iacute; en el &uacute;ltimo sprint</li>\
+    <li>Una cosa asombrosa que alguien hiz&oacute; por mi</li>\
+</ul>\
+De acuerdo a la pregunta pueden surgir temas que molestan a los participantes. \
+Si detecta este tipo de alarma, indagar un poco m&aacute;s sobre el tema. \
+Con la pregunta 'Una cosa linda' se puede cerrar con una nota positiva.",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> y <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project",
+photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]' title='Contribuci&oacute;n de Amber Haley'>Ver Foto</a>"
+};
+
+all_activities[60] = {
+phase:     3,
+name:      "Fiesta de Tragos",
+summary:   "Identificar, discutir, clarificar y priorizar activamente un conjunto de acciones",
+desc:      "Cada particiapente escribe en un post-it una acci&oacute;n que le parezca importante realizar - \
+cuando m&aacute;s especifica (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>) mejor. \
+Luego los miembros del equipo pasean y discuten de a 2 sobre los post-its como si fuera una fiesta de tragos. \
+Cada pareja discute de las acciones de sus dos post-its. Cerrar la discusi&oacute;n luego de 1 minuto. \
+Cada pareja divide 5 puntos entre los dos post-its, poniendo m&aacute;s puntos al post-it m&aacute;s importante. \
+Organizar entre 3 y 5 vueltas (seg&uacute;n el tama&ntilde;o del grupo). Al final todos suman los puntos de cada post-it. \
+Se ordenan las acciones de acuerdo a sus puntos y el equipo decide cuantas de ellas se pueden hacer en la pr&oacute;xima iteraci&oacute;n, \
+partiendo de la m&aacute;s votada.",
+source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
+photo:    "<a href='static/images/activities/61_Chaos-Cocktail-Party.jpg' rel='lightbox[activity61]' title='Contribuci&oacute;n de Philipp Flenker'>Ver Foto</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, largeGroup"
 };
