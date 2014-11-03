@@ -147,7 +147,7 @@ suitable: "iteraci&oacute;n, entrega, proyecto, causa ra&iacute;z"
 all_activities[8] = {
 phase:     2,
 name:      "Matriz de Aprendizaje",
-summary:   "El equipo hace una lluvia de ideas en 4 categor&iacute;as para enumerar r&aacute;pidamente asuntos",
+summary:   "El equipo hace una tormenta de ideas en 4 categor&iacute;as para enumerar r&aacute;pidamente asuntos",
 desc:      "Despu&eacute;s de haber debatido los datos de la fase 2, mostrar un rotafolio con 4 cuadrantes: \
 ':)', ':(', 'Idea', y 'Apreciaci&oacute;n'. Repartir post-its. \
 <ul>\
@@ -164,9 +164,9 @@ suitable: "iteraci&oacute;n"
 
 all_activities[9] = {
 phase:     2,
-name:      "Lluvia de Ideas / Filtro",
+name:      "Tormenta de Ideas / Filtro",
 summary:   "Generar muchas ideas y aplicarles filtros",
-desc:      "Explicar las reglas de la lluvia de ideas y su objetivo: \
+desc:      "Explicar las reglas de la tormenta de ideas y su objetivo: \
 Generar muchas ideas, que luego ser&aacute;n filtradas.\
 <ul>\
     <li>Pedir a los participantes que escriban sus ideas por 5-10 minutos</li>\
@@ -204,7 +204,7 @@ suitable: "iteraci&oacute;n, entrega, proyecto, introvertidos"
 all_activities[11] = {
 phase:     3,
 name:      "Voto por Puntos - Empezar, Parar, Continuar",
-summary:   "Lluvia de ideas sobre que empezar, parar & continuar, y luego elegir las mejores iniciativas", 
+summary:   "Tormenta de ideas sobre que empezar, parar & continuar, y luego elegir las mejores iniciativas", 
 desc:      "Dividir un rotafolio en secciones con los t&iacute;tulos 'Empezar', 'Parar', y 'Continuar'. \
 Pedir a los participantes que escriban propuestas concretas para cada categor&iacute;a - 1 idea por carta. \
 Dejarlos escribir en silencio durante unos minutos. \
@@ -565,4 +565,713 @@ Disparar un peque&ntilde;o debate preguntando por ejemplo: \
 source:    source_agileRetrospectives,
 duration:  "10-15",
 suitable: "iteraci&oacute;n, entrega"
+};
+
+all_activities[33] = {
+phase:     4,
+name:      "La Ducha de Agradecimientos",
+summary:   "Escucha lo que dicen otros a tus espaldas (y solo lo bueno)",
+desc:      "Formar grupos de 3. Cada grupo ubica sus sillas para que 2 sillas se enfrenten \
+y que la tercera le de la espalda, algo como: >^<. <br>\
+Las dos personas en sillas enfrentadas hablan de la tercera durante 2 minutos. \
+Deben decir &uacute;nicamente cosas positivas y nada de lo que dicen puede \
+minimizarse diciendo otras cosas posteriormente. <br>\
+Hacer 3 vueltas para que todos pasen por la ducha una vez.",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteraci&oacute;n, entrega, equipoMaduro"
+};
+
+all_activities[34] = {
+phase:     1,
+name:      "Auto-Evaluaci&oacute;n &Aacute;gil",
+summary:   "Evaluen c&oacute;mo est&aacute;n con un checklist",
+desc:      "Imprimir el checklist que m&aacute;s le guste, por ejemplo:\
+<ul>\
+    <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>El excelente Checklist de Scrum de Henrik Kniberg</a></li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Auto-Evaluaci&oacute;n de pr&aacute;cticas &aacute;giles t&eacute;cnicas</a></li>\
+    <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia Test</a></li>\
+</ul>\
+Revisar cada punto en equipo para debatir c&oacute;mo est&aacute;n al respecto y si est&aacute;n avanzando \
+en la buena direcci&oacute;n. <br>\
+Es una buena actividad luego de una iteraci&oacute;n sin eventos importantes.",
+source:    source_findingMarbles,
+photo:    "<a href='static/images/activities/35_Agile-Self-Assessment.jpg' rel='lightbox[activity35]' title='Contribuci&oacute;n de Philipp Flenker'>Ver Foto</a>",
+duration:  "10-25 minutos de acuerdo al checklist",
+suitable: "equiposPeque&ntilde;os, iteraci&oacute;n, entrega, proyecto, vamosBien"
+};
+
+all_activities[35] = {
+phase:     0,
+name:      "Objetivo Positivo",
+summary:   "Definir un objetivo positivo para la sesión",
+desc:      "Concentrarse en aspectos positivos y no en problemas definiendo \
+un objetivo afirmativo, por ejemplo: \
+<ul>\
+    <li>Busquemos caminos para consolidar nuestras fortalezas en procesos y \
+trabajo en equipo</a></li>\
+    <li>Busquemos como ampliar nuestros mejores usos \
+de pr&aacute;ctica t&eacute;cnicas</li>\
+    <li>Miremos nuestras mejores relaciones de trabajo y encontremos \
+formas de extenderlas</li>\
+    <li>Descubramos donde aportamos m&aacute;s valor en nuestra &uacute;ltima \
+iteraci&oacute;n para incrementar el valor que aportaremos en la pr&oacute;xima </li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutos",
+suitable: "iteraci&oacute;n, entrega, proyecto"
+};
+
+all_activities[36] = {
+phase:     2,
+name:      "Acuerdate del Futuro",
+summary:   "Imagina que la pr&oacute;xima iteraci&oacute;n sali&oacute; perfecta. &iquest;C&oacute;mo fue? &iquest;Qu&eacute; hicieron?",
+desc:      "'Imaginen que pudieran viajar al final de la pr&oacute;xima iteraci&oacute;n (o entrega). \
+Aprenden que fue la mejor y m&aacute;s productiva iteraci&oacute;n hasta el momento. \
+&iquest;C&oacute;mo sus futuros seres se la describir&iacute;an? \
+&iquest;Qu&eacute; ver&iacute;an y escuchar&iacute;an?'<br>\
+Dar al equipo un tiempo para imaginar esta situaci&oacute;n y anotar algunas palabras claves para ayudar su memoria. \
+Luego pedir a todos que describan su visi&oacute;n de la iteraci&oacute;n perfecta.<br>\
+Seguir con '&iquest;Cu&aacute;les fueron los cambios que implementamos que resultaron en un futuro tan productivo y satisfactorio?' \
+Escribir las respuestas en post-its para usarlas en la pr&oacute;xima fase de la retrospectiva.",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteraci&oacute;n, entrega, proyecto"
+};
+
+all_activities[37] = {
+phase:     3,
+name:      "Voto con Puntos - Mantener, Parar, Agregar",
+summary:   "Hacer una tormenta de ideas para identificar los comportamientos a mantener, parar e iniciar y elegir los mejores", 
+desc:      "Dividir una pizarra en columnas intituladas ‘Mantener’, Parar’ e ‘Iniciar. \
+Pedir a los participantes escribir propuestas concretas para cada categor&iacute;a \
+- 1 idea por post-it. Dejar unos minutos para que escriban en silencio. \
+Pedir a todos que lean sus ideas y las ubiquen en la categor&iacute;a correspondiente. \
+Facilitar un peque&ntilde;o debate sobre cuales son el 20% de las ideas m&aacute;s beneficiosas. \
+Los participantes votan las ideas con puntos, por ejemplo cada persona tiene 1,2 o 3 puntos a distribuir entre las ideas. \
+Las top 2 o 3 ideas ser&aacute;n las acciones elegidas.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteraci&oacute;n,"
+};
+
+all_activities[38] = {
+phase:     3,
+name:      "Votos con Puntos - Funcion&oacute; bien, Hacer distinto",
+summary:   "Tormenta de ideas de lo que funcion&oacute; bien y que se puede hacer distinto, eligiendo luego las mejores iniciativas", 
+desc:      "Armar dos rotafolios con ‘Funcion&oacute; bien’ y ‘Hacer distinto la pr&oacute;xima vez'. \
+Pedir a los participantes escribir propuestas concretas para cada categor&iacute;a \
+(1 idea por post-it). Dejar unos minutos para que escriban en silencio. \
+Pedir a todos que lean sus ideas y las ubiquen en la categor&iacute;a correspondiente. \
+Facilitar un peque&ntilde;o debate sobre cuales son el 20% de las ideas m&aacute;s beneficiosas. \
+Los participantes votan las ideas con puntos, por ejemplo cada persona tiene 1,2 o 3 puntos a distribuir entre las ideas. \
+Las top 2 o 3 ideas ser&aacute;n las acciones elegidas.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteraci&oacute;n,"
+};
+
+all_activities[39] = {
+phase:     4,
+name:      "M&aacute;s & Delta",
+summary:   "Cada participante escribe una cosa que le gust&oacute; y una que cambiar&iacute;a de la retro",
+desc:      "Preparar una pizarra con 2 columnas: 'M&aacute;s' y 'Delta'. \
+Pedir a cada participante que escriba 1 aspecto de la retrospectiva que le gust&oacute; \
+y una cosa que cambiar&iacute;a (en post-its separados). \
+Ubicar los post-its donde corresponde y repasarlos brevemente para clarificar \
+lo necesario y detectar la preferencia de la mayor&iacute;a cuando se presentan \
+puntos de vista muy opuestos.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+duration:  "5-10",
+suitable: "iteraci&oacute;n, proyecto"
+};
+
+all_activities[40] = {
+phase:     2,
+name:      "El Banco de la Plaza",
+summary:   "Debate grupal variando los participantes",
+desc:      "Ubicar entre 4 y 6 sillas en l&iacute;nea frente al grupo. \
+Explicar las reglas: <ul>\
+    <li>Sentarse en una silla cuando se quiere contribuir con el debate</li>\
+    <li>Una de las sillas siempre debe estar vac&iacute;a</li>\
+    <li>Cuando se ocupa la &uacute;ltima silla, alguien debe liberar una de las otras sillas inmediatamente</li>\
+</ul>\
+Sentarse en una de las sillas para lanzar el debate, preguntando en voz alta sobre \
+una cosa que aprendi&oacute; en la iteraci&oacute;n hasta que alguien se sume. \
+Cerrar la actividad cuando el debate se est&eacute cayendo. \
+<br>Es una variante de 'Fish Bowl'. Funciona bien con grupos de 10 a 25 personas.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+duration:  "15-30",
+suitable: "iteraci&oacute;n, proyecto, gruposGrandes"
+};
+
+all_activities[41] = {
+phase:     0,
+name:      "Cartas Postales",
+summary:   "Los participantes eligen una carta postal que represente sus pensamientos / sentimientos",
+desc:      "Tener una pila de cartas postales variadas, por lo menos 4 veces la cantidad de participantes. \
+Esparcirlas en toda la sala y pedir a cada persona que elija la que mejor represente \
+su opin&oacute;n de la &uacute;ltima iterac&oacute;n. \
+Luego deben escribir en un post-it 3 palabras clave describiendo la carta postal, o sea la iteraci&oacute;n. \
+De a uno muestran su carta postal y su post-it, explicando su elecci&oacute;n.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+duration:  "15-20",
+suitable: "iteraci&oacute;n, entrega, proyecto",
+photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contribuci&oacute;n de Corinna Baldauf'>Ver Photo</a>"
+};
+
+all_activities[42] = {
+phase:     0,
+name:      "Tomar Posici&oacute;n - Apertura",
+summary:   "Los participantes toman una posici&oacute;n, indicando su satisfacci&oacute;n con respecto a la iteraci&oacute;n",
+desc:      "Crear una gran regla (p. e. una l&iacute;nea larga) sobre el piso con cinta adhesiva. \
+Marcar un extremo como 'Genial' y el otro como 'Malo'. Pedir que los participantes se paren en la l&iacute;nea de acuerdo \
+a su satisfacci&oacute;n con respecto a la &uacute;ltima iteraci&oacute;n. \
+Psicol&oacute;gicamente, tomar una posici&oacute;n de forma f&iacute;sica es diferente a solo expresarse. \
+Es m&aacute;s 'real'. <br>\
+Se puede reutilizar la misma l&iacute;nea de cinta, en caso de cerrar la retro con la actividad #44.",
+source:    source_findingMarbles + ", inspirado por <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+
+all_activities[43] = {
+phase:     4,
+name:      "Tomar Posici&oacute;n - Clausura",
+summary:   "Los participantes toman una posici&oacute;n, indicando su satisfacci&oacute;n con respecto a la retrospectiva",
+desc:      "Crear una gran regla (p. e. una l&iacute;nea larga) sobre el piso con cinta adhesiva. \
+Marcar un extremo como 'Genial' y el otro como 'Malo'. Pedir que los participantes se paren en la l&iacute;nea de acuerdo \
+a su satisfacci&oacute;n con respecto a la &uacute;ltima retrospectiva. \
+Psicol&oacute;gicamente, tomar una posici&oacute;n de forma f&iacute;sica es diferente a solo expresarse. \
+Es m&aacute;s 'real'. <br>\
+Mirar la actividad #43 para comenzar la retrospectiva utilizando la misma l&iacute;nea.",
+source:    source_findingMarbles + ", inspirado por <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+
+all_activities[44] = {
+phase:     4,
+name:      "Satisfecho y Sorprendido",
+summary:   "&iquest;Qu&eacute; dej&oacute; satifechos y/o sorprendidos a los participantes de la retrospectiva?",
+desc:      "Armar una ronda con los miembros del equipo y pedir que cada participante se&ntilde;ale algo que le haya gustado \
+o sorprendido (o ambos).",
+source:    source_unknown,
+duration:  "5",
+suitable: "iteration, release, project"
+};
+
+all_activities[45] = {
+phase:     0,
+name:      "&iquest;Por qu&eacute; las retrospectivas&quest;",
+summary:   "Preguntar '&iquest;Por qu&eacute; hacemos retrospectivas&quest;'",
+desc:      "Volver a las ra&iacute;ces y comenzar la retrospectiva preguntado '&iquest;Por qu&eacute; hacemos esto&quest;' Anotar las respuestas para que las vean todos. Podr&iacute;a ser sorprendente.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+duration:  "5",
+suitable: "iteration, release, project"
+};
+
+all_activities[46] = {
+phase:     1,
+name:      "Vaciar el Buz&oacute;n",
+summary:   "Mirar las notas recolectadas durante el sprint",
+desc:      "Armar el 'buz&oacute;n de retrospectiva' al inicio de la iteraci&oacute;n. \
+Cuando algo significante ocurre o alguien tiene una idea de mejora, se escribe y se deposita en el buz&oacute;n. \
+(Como alternativa, el 'buz&oacute;n' puede ser un lugar visible. Esto puede provocar debates durante la iteraci&oacute;n)<br>\
+Repasar todas las notas y discutirlas.<br>\
+El buz&oacute;n es ideal para iteraciones largas o equipos con mala memoria.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Art&iacute;culo original</a>",
+duration:  "15",
+suitable: "release, project"
+};
+
+all_activities[47] = {
+phase:     3,
+name:      "Tomar Posici&oacute;n - El Baile de la L&iacute;nea",
+summary:   "Sondear la opini&oacute;n de cada persona y lograr consenso",
+desc:      "Cuando un equipo no puede decidirse entre dos opciones, crear una larga l&iacute;nea \
+en el suelo con cinta adhesiva. Marcar un extremo con la opci&oacute;n A) y el otro con la opci&oacute;n B). \
+Los miembros del equipo se posicionan en la l&iacute;nea de acuerdo a sus preferencias por alguna de las opciones. \
+Refinar las opciones hasta que una de las dos obtenga una clara mayor&iacutea.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Art&iacute;culo original</a>",
+duration:  "5-10 por desici&oacute;n",
+suitable: "iteration, release, project"
+};
+
+all_activities[48] = {
+phase:     3,
+name:      "Votar con Puntos - Estrella de Mar",
+summary:   "Recolectar que se quiere empezar a hacer, dejar de hacer, mantener, hacer m&aacute;s o hacer menos",
+desc:      "Dibujar cinco rayos en un rotafolio, dividi&eacute;ndolo en cinco segmentos. \
+Etiquetarlos con 'Comenzar', 'Dejar de hacer', 'Mantener', 'Hacer m&aacute;s' y 'Hacer menos'. \
+Los participantes escriben sus propuestas en post-its y las colocan \
+en el segmento que corresponda. Despu&eacute;s de agrupar las que apunten \
+a la misma idea, votar con puntos las sugerencias a probar.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+duration:  "15 min",
+suitable:  "iteration, release, project"
+};
+
+all_activities[49] = {
+phase:     2,
+name:      "Deseo Concedido",
+summary:   "Un hada te concede un deseo - &iquest;C&oacute;mo sabes que se volvi&oacute; realidad?",
+desc:      "Dar a los participantes 2 minutos para que en silencio reflexionen sobre la siguiente cuesti&oacute;n: \
+'Una hada te concede el deseo de arreglar durante la noche tu problema m&aacutes grande en el trabajo. \
+&iquest;Cu&aacute;l es tu deseo?' <br>\
+Continuar con: 'Llegas al trabajo la ma&ntilde;ana siguiente. Se nota que el hada te ha concedido el deseo. \
+&iquest;C&oacutemo te das cuenta? &iquest;Qu&eacute ves diferente ahora?' <br>\
+Si la confianza con el grupo es elevada, dejar que cada uno describa \
+su 'Deseo concedido/Lugar de Trabajo'. Si no, simplemente decirles a los participantes que mantengan su \
+escenario en mente durante la siguiente fase y sugieran acciones que permitan hacerlo real.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+duration:  "15 min",
+suitable:  "iteration"
+};
+
+all_activities[50] = {
+phase:     1,
+name:      "Caf&eacute; Lean",
+summary:   "Usar el formato Caf&eacute; Lean para una discusi&oacute;n de los temas principales",
+desc:      "Decidir cu&aacute;nto tiempo se va a invertir en esta actividad, explicar las reglas del caf&eacute; lean para retrospectivas: <ul>\
+    <li>Cada participante escribe temas de los que desea discutir, un tema por post-it</li>\
+    <li>Pegar los post-its en una pizarra. La persona que propuso el tema lo explica en una o dos oraciones. \
+Agrupar los post-its que sean del mismo tema.</li>\
+    <li>Cada participante vota por dos temas que le gustar&iacute;a discutir.</li>\
+    <li>Ordenar los post-its de acuerdo a los votos.</li>\
+    <li>Comenzar con el tema de mayor inter&eacute;s.</li>\
+    <li>Poner una alarma a los 5 minutos. Cuando suena todos votan con pulgares arriba o abajo. \
+Mayor&iacute;a de pulgares hacia arriba: se trabaja durante 5 minutos m&aacute;s en el tema. Mayor&iacute;a de pulgares hacia abajo: \
+se pasa al siguiente tema. </li>\
+</ul> Continuar hasta que se acabe el tiempo establecido.",
+source:    "<a href='http://leancoffee.org/'>Descripci&oacute;n original</a> y \
+<a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>en acci&oacute;n</a>",
+duration:  "20-40 min",
+suitable:  "iteration"
+};
+
+all_activities[51] = {
+phase:     0,
+name:      "Constelaciones - Apertura",
+summary:   "Dejar que los participantes apoyen o rechacen declaraciones movi&eacute;ndose",
+desc:      "Armar un c&iacute;rculo o una esfera en el medio de un espacio libre. Pedir al equipo que se junte alrededor del c&iacute;rculo. \
+Explicar que el c&iacute;rculo es el centro de la aprobaci&oacute;n: Si est&aacute;n de acuerdo con la declaraci&oacute;n se \
+deber&iacute;a mover hacia &eacute;l, si no lo est&aacute;n, deber&iacute;a moverse tan lejos como su nivel de desacuerdo. \
+Ahora leer las declaraciones, por ejemplo:\
+<ul>\
+    <li>Siento que puedo hablar abiertamente en esta retrospectiva</li>\
+    <li>Estoy satisfecho con el &uacute;ltimo sprint</li>\
+    <li>Estoy feliz con la calidad de nuestro c&oacutedigo</li>\
+    <li>Creo que nuestro proceso de integraci&oacute;n continua est&aacute; maduro</li>\
+	</ul>\
+Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
+Esta puede ser tambi&eacute;n una actividad de cierre (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+duration:  "10 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[52] = {
+phase:     4,
+name:      "Constelaciones - Cierre",
+summary:   "Dejar que los participantes eval&uacute;en la retrospectiva movi&eacute;ndose",
+desc:      "Armar un c&iacute;rculo o una esfera en el medio de un espacio libre. Pedir al equipo que se junte alrededor del c&iacute;rculo. \
+Explicar que el c&iacute;rculo es el centro de la aprobaci&oacute;n: Si est&aacute;n de acuerdo con la declaraci&oacute;n se \
+deber&iacute;a mover hacia &eacute;l, si no lo est&aacute;n, deber&iacute;a moverse tan lejos como su nivel de desacuerdo. \
+Ahora leer las declaraciones, por ejemplo:\
+<ul>\
+    <li>Hablamos de lo m&aacute;s importante para mi</li>\
+    <li>Hoy habl&eacute; abiertamente</li>\
+    <li>Creo que el tiempo de la retrospectiva fue bien invertido</li>\
+    <li>Conf&iacute;o que vamos a ejecutar las acciones acordadas</li>\
+	</ul>\
+Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
+Esta puede ser tambi&eacute;n una actividad de apertura (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[53] = {
+phase:     1,
+name:      "Los Oscars de las Historias",
+summary:   "El equipo nomina historias para los premios y reflexiona sobre las ganadoras",
+desc:      "Mostrar todas las historias de usuarios completadas en los &uacute;ltimos sprints en una pizarra. \
+Crear 3 categor&iacute;as de premio (por ejemplo con secciones en la pizarra):\
+<ul>\
+    <li>La mejor historia</li>\
+    <li>La historia más aburrida</li>\
+    <li>... otra categor&iacute;a inventada por el equipo ...</li>\
+</ul>\
+Pedir al equipo que 'nomine' historias ubic&aacute;ndolas en la secci&oacute;n de premio correspondiente. <br>\
+Para cada categor&iacute;a: votar con puntos y anunciar la ganadora. \
+Pedir al equipo por qu&eacute; la historia de usuario ganó en esta categor&iacute;a \
+y dejar que el equipo reflexione sobre el proceso de completar las tareas: que sali&oacute; bien y/o mal.",
+source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
+duration:  "30-40 min",
+suitable:  "project, release",
+photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity54]' title='Contribuci&oacute; de Wolfgang Fassbender'>Ver Fotos</a>\
+           <a href='static/images/activities/54_Story-Oscars_2.JPG' rel='lightbox[activity54]' title='Contribuci&oacute; de Deborah Lindsay'></a>\
+           <a href='static/images/activities/54_Story-Oscars_3.jpg' rel='lightbox[activity54]' title='Contribuci&oacute; de Geert van der Ploeg'></a>"
+};
+
+all_activities[54] = {
+phase:     2,
+name:      "Las 4 Originales",
+summary:   "Hacer las 4 preguntas claves de Norman Kerth",
+desc:      "Norman Kerth, inventor  de las retrospectivas, identific&oacute; las siguientes 4 preguntas clave: \
+<ul>\
+    <li>&iquest;Qu&eacute; hicimos bien, que nos estar&iacute;amos olvidando de no discutirlo&quest;</li>\
+    <li>&iquest;Qu&eacute; aprendimos&quest;</li>\
+    <li>&iquest;Qu&eacute; podr&iacute;amos hacer distinto la pr&oacute;xima vez&quest;</li>\
+    <li>&iquest;Qu&eacute; cosa nos sigue desconcertando&quest;</li>\
+</ul>\
+&iquest;Cu&aacute;les son las respuestas del equipo&quest;",
+source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
+duration:  "15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[55] = {
+phase:     5,
+name:      "Invitar al Cliente",
+summary:   "Poner al equipo en contacto directo con un cliente o una de las partes interesadas (stakeholder)",
+desc:      "Invitar a un cliente o stakeholder interno a la retrospectiva. \
+Pedir al equipo que haga TODAS las preguntas:\
+<ul>\
+    <li>&iquest;C&oacute;mo usa el producto el cliente&quest;</li>\
+    <li>&iquest;Qu&eacute; es lo que m&aacute;s le molesta&quest;</li>\
+    <li>&iquest;Qu&eacute; funcionalidad le facilita m&aacute;s la vida&quest;</li>\
+    <li>Pedir al cliente que muestre su típico flujo de trabajo.</li>\
+    <li>...</li>\
+</ul>",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "45 min",
+suitable:  "iteration, project"
+};
+
+all_activities[56] = {
+phase:     4,
+name:      "D&iacute;galo con Flores",
+summary:   "Cada miembro del equipo demuestra su aprecio hacia otro con una flor.",
+desc:      "Comprar una flor por cada miembro del equipo y repartirlas al final de la retrospectiva. \
+Cada miembro debe entregar una flor a alguien como muestra de aprecio.",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "5 min",
+suitable:  "iteration, project"
+};
+
+all_activities[57] = {
+phase:     2,
+name:      "Jefe encubierto",
+summary:   "&iquest;Si tu jefe hubiera sido testigo del &uacute;ltimo sprint, que le gustar&iacute;a cambiar&quest;",
+desc:      "Imaginar que el jefe estuvo presente todo el sprint pasado en el equipo, de inc&oacute;gnito. &iquest;Qu&eacute; pensar&iacute;a \
+de las interacciones y de los resultados&quest; &iquest;Qu&eacute; le gustar&iacute;a cambiar&quest; \
+<br>Esta configuraci&oacute;n favorece que el equipo se vea a s&iacute; mismo desde un &aacute;ngulo diferente.",
+source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[58] = {
+phase:     0,
+name:      "Histograma de Felicidad",
+summary:   "Crear un diagrama de felicidad para generar diálogo",
+desc:      "Preparar un rotafolio con una escala horizontal del 1 (Infeliz) al 5 (Feliz).\
+<ul>\
+    <li>Cada participante de a uno coloca su post-it de acuerdo a su felicidad y lo comenta.</li>\
+	<li>Si alguien más tiene el mismo puntaje, colocar su post-it arriba del que ya está colocado, formando un histograma</li>\
+    <li>Si algo relevante sale de lo comentado, dejar que el equipo decida entre discutirlo en el momento o posponerlo para discutirlo \
+	m&aacute;s tarde en la retrospectiva</li>\
+</ul>",
+source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
+photo:    "<a href='static/images/activities/59_Happiness-Histogram.jpg' rel='lightbox[activity59]' title='Contribuci&oacute;n de Weronika Kedzierska'>Ver Fotos</a>\
+           <a href='static/images/activities/59_Happiness-Histogram-2.jpg' rel='lightbox[activity59]' title='Contribuci&oacute;n de Weronika Kedzierska'></a>",
+duration:  "2 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[59] = {
+phase:     4,
+name:      "&iexcl;AHA!",
+summary:   "Tirarse una pelota para generar aprendizaje",
+desc:      "Tirarse una pelota (por ejemplo una pelota anti-estr&eacute;s) entre los miembros del equipo para descubrir pensamientos positivos y experiencias de aprendizaje. \
+Dar una pregunta que cada persona debe responder cuando atrapa la pelota, como por ejemplo: \
+<ul>\
+    <li>Una cosa que aprend&iacute; en el &uacute;ltimo sprint</li>\
+    <li>Una cosa asombrosa que alguien hiz&oacute; por mi</li>\
+</ul>\
+De acuerdo a la pregunta pueden surgir temas que molestan a los participantes. \
+Si detecta este tipo de alarma, indagar un poco m&aacute;s sobre el tema. \
+Con la pregunta 'Una cosa linda' se puede cerrar con una nota positiva.",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> y <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project",
+photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]' title='Contribuci&oacute;n de Amber Haley'>Ver Foto</a>"
+};
+
+all_activities[60] = {
+phase:     3,
+name:      "Fiesta de Tragos",
+summary:   "Identificar, discutir, clarificar y priorizar activamente un conjunto de acciones",
+desc:      "Cada particiapente escribe en un post-it una acci&oacute;n que le parezca importante realizar - \
+cuando m&aacute;s especifica (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>) mejor. \
+Luego los miembros del equipo pasean y discuten de a 2 sobre los post-its como si fuera una fiesta de tragos. \
+Cada pareja discute de las acciones de sus dos post-its. Cerrar la discusi&oacute;n luego de 1 minuto. \
+Cada pareja divide 5 puntos entre los dos post-its, poniendo m&aacute;s puntos al post-it m&aacute;s importante. \
+Organizar entre 3 y 5 vueltas (seg&uacute;n el tama&ntilde;o del grupo). Al final todos suman los puntos de cada post-it. \
+Se ordenan las acciones de acuerdo a sus puntos y el equipo decide cuantas de ellas se pueden hacer en la pr&oacute;xima iteraci&oacute;n, \
+partiendo de la m&aacute;s votada.",
+source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
+photo:    "<a href='static/images/activities/61_Chaos-Cocktail-Party.jpg' rel='lightbox[activity61]' title='Contribuci&oacute;n de Philipp Flenker'>Ver Foto</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, largeGroup"
+};
+
+all_activities[61] = {
+phase:     1,
+name:      "Expectativas",
+summary:   "&iquest;Qu&eacute; esperan de ti? &iquest;Qu&eacute; puedes esperar de ellos?",
+desc:      "Dar a cada participante una hoja de papel. La mitad inferior est&aacute; vacia. La mitad superior est&aacute; dividida en dos secciones:\
+<ul>\
+    <li>&iquest;Qu&eacute; pueden esperar de mi mis compa&ntilde;eros?</li>\
+    <li>&iquest;Qu&eacute; espero yo de mis compa&ntilde;eros?</li>\
+</ul>\
+Cada uno llena la parte superior por su lado. Cuando todos terminaron, deben pasar su hoja \
+a la izquierda y empezar a revisar la hoja que recibieron. \
+En la parte inferior escriben lo que ellos esperan personalmente de esta persona, la firman y la pasan a la izquierda.<br>\
+Cuando las hojas dieron toda la vuelta, tomar el tiempo de revisar y compartir las observaciones.",
+source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, start"
+};
+
+all_activities[62] = {
+phase:     3,
+name:      "Frutas Colgando Bajo",
+summary:   "Visualizar las promesas y facilidades de posibles acciones para ayudar a elegirlas",
+desc:      "Presentar un &aacute;rbol dibujado previamente. Repartir post-its redondos y pedir a los participantes \
+que escriban las acciones que les gustar&iacute;a ejecutar - una por post-it. \
+Cuando todos terminaron, recuperar los post-its y leerlos de a uno. Ubicar cada 'fruta' en el &aacute;rbol \
+de acuerdo a la evaluaci&oacute;n de los participantes:\
+<ul>\
+    <li>&iquest;Es facil de ejecutar? Ubicarlo abajo. &iquest;Dificil? Ubicarlo arriba.</li>\
+    <li>&iquest;Parece muy beneficioso? Ubicarlo hacia la izquierda. &iquest;Hay dudas en cuanto a su valor? A la derecha.</li>\
+</ul>\
+La elecci&oacute;n logica es de seleccionar las acciones de las frutas de m&aacute;s abajo a la izquierda. \
+Si no hay consenso, se puede discutir brevemente para acordar acciones o hacer un voto por puntos.",
+source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[63] = {
+phase:     1,
+name:      "Cuartos - Identificar Historias Aburridas",
+summary:   "Categorizar las historias en dos dimensiones para identificar las aburridas",
+desc:      "Dibujar un gran cuadrado y dividirlo en 2 columnas. \
+Titularlas 'Interesante' y 'Aburrido'. Pedir al equipo que escriban todo lo que hicieron durante la &uacute;ltima iteraci&oacute;n en post-its \
+y que los ubiquen en la columna correspondiente. \
+Pedirle escribir en los post-its una estimaci&oacute;n aproximada de cuanto les llevo cada historia.<br> \
+Agregar luego una l&iacute;nea horizontal para que el cuadro tenga 4 partes. \
+Titular la parte de arriba 'Corto' (horas) y la parte de abajo 'Largo' (d&iacute;as). \
+Acomodar los post-its con esa divisi&oacute;n.<br> \
+Las historias largas y aburridas est&aacute;n ahora bien agrupadas y listas para ser 'atacadas' en otras fases de la retrospectiva.<br> \
+<br>\
+(Dividir la evaluaci&oacute;n en varios pasos mejora el foco. Se puede \
+<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>\
+    adaptar los cuartos para multiples otras categorizaciones en 2 dimensiones</a>.)",
+source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
+duration:  "10",
+suitable:  "iteration, project",
+photo:    "<a href='http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450' rel='lightbox[activity63]' title='Contribuci&oacute;n de Wayne D. Grant'>Ver Foto</a>"
+};
+
+all_activities[64] = {
+phase:     1,
+name:      "Consulta Apreciativa",
+summary:   "Levantar el esp&iacute;ritu de todos con preguntas positivas",
+desc:      "Esta es una actividad basada en rondas. En cada ronda se hace una pregunta al equipo, sus miembros escriben sus respuestas \
+(darles a todos tiempo para pensar) y luego las leen en voz alta a los demás.<br>\
+Preguntas propuestas para equipos de desarrollo de software:\
+<ol>\
+    <li>&iquest;Cu&aacute;ndo fue la &uacute;ltima vez que estuviste realmente comprometido / motivado / productivo? &iquest;Qu&eacute; hiciste? \
+	&iquest;Qu&eacute; hab&iacute;a ocurrido? &iquest;C&oacute;mo te sentiste?</li>\
+    <li>Desde la perspectiva del c&oacute;digo de la aplicaci&oacute;n: \
+	&iquest;Qu&eacute; es lo m&aacute;s incre&iacute;ble que han construido juntos? &iquest;Qu&eacute; lo hace grandioso?</li>\
+    <li>De las cosas que has construido para esta compa&ntilde;&iacute;a: &iquest;Cu&aacute;l ha sido la de m&aacute;s valor? &iquest;Por qu&eacute;?</li>\
+    <li>&iquest;Cu&aacute;ndo fue tu mejor momento con el Due&ntilde;o de Producto? &iquest;Qu&eacute; fue lo bueno acerca de eso?</li>\
+    <li>&iquest;Cu&aacute;ndo fue mejor tu colaboraci&oacute;n?</li>\
+    <li>&iquest;Cu&aacute;l fue tu contribución m&aacute;s valiosa a la comunidad de desarrolladores (de esta compa&ntilde;&iacute;a)? \
+	¿C&oacute;mo lo hiciste?</li>\
+    <li>Deja tu modestia a un lado: &iquest;Cu&aacute;l es tu habilidad / rasgo de personalidad más valiosa con la que has contribuido al equipo?\
+	&iquest;Ejemplos?</li>\
+    <li>&iquest;Cu&aacute;l es la caracter&iacute;stica m&aacute;s importante de tu equipo? &iquest;Qu&eacute; te diferencia del resto?</li>\
+</ol>\
+<br>\
+('Recuerda el Futuro' (#37) funciona bien como siguiente paso)",
+source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, adaptado para desarrollo de software por " + source_findingMarbles, 
+duration:  "20-25 min groupsize",
+suitable:  "iteration, project"
+};
+
+all_activities[65] = {
+phase:     2,
+name:      "Escritura Cerebral",
+summary:   "Las tormentas de ideas escritas nivelan la participaci&oacute;n de los introvertidos",
+desc:      "Hacer una pregunta central, como por ejemplo \
+'&iquest;Qu&eacute; acciones de mejoras deber&iacute;an ejecutarse en el pr&oacute;ximo sprint? \
+Repartir hojas y marcadores. Todos escriben sus ideas. Luego de 3 minutos, todos pasan su hoja a su vecino \
+y siguen escribiendo ideas en la nueva hoja. Si se quedan sin idea, pueden leer las ideas ya escritas en la hoja y extenderlas. \
+Reglas: no se aceptan comentarios negativos y cada uno escribe sus ideas una sola vez (si varios escriben la misma idea no hay problema). <br>\
+Rotar las hojas cada 3 minutos hasta que todos hayan tenido todas las hojas. Rotar una &uacute;ltima vez. \
+Ahora todos leen su hoja y eligen las mejores 3 ideas. Escribir las 3 mejores ideas de cada hoja en una pizarra para la siguiente fase.",
+source:    "Prof. Bernd Rohrbach",
+duration:  "20 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[66] = {
+phase:     4,
+name:      "Para Llevar",
+summary:   "Registrar lo que los participantes descubrieron durante la retro",
+desc:      "Cada participante escribe en un post-it la cosa m&aacute;s notable que descubri&oacute; durante la retro. \
+Pegar los post-its contra la puerta. De a uno los participantes leen su post-it.",
+source:     source_judith,
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[67] = {
+phase:     2,
+name:      "Mapa de la Compa&ntilde;&iacute;a",
+summary:   "Dibujar un mapa de la compa&ntilde;&iacute;a como si fuera un pa&iacute;s",
+desc:      "Repartir hojas y marcadores. Preguntar: '&iquest;Qu&eacute; pasar&iacute;a si la compa&ntilde;&iacute;a / sector / equipo \
+fuera un territorio? &iquest;C&oacute;mo ser&iacute;a su mapa? &iquest;Qu&eacute; pistas agregar&iacute;as para viajar seguro?' \
+Dejar que los participantes dibujen por 5-10 minutos. Mostrar los dibujos y revisarlos entre todos para aclarar y debatir las \
+metaforas m&aacute;s interesantes.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[68] = {
+phase:     2,
+name:      "Lo Peor Que Podr&iacute;amos Hacer",
+summary:   "Explorar como arruinar con seguridad el pr&oacute;ximo sprint",
+desc:      "Repartir post-its y marcadores. Pedir a todos ideas para transformar el pr&oacute;ximo sprint / entrega en un desastre asegurado \
+- una idea por post-it. Cuando todos terminaron, mostrar todos los post-its y revisarlos entre todos. \
+Identificar y discutir los temas emergentes. <br>\
+En la fase siguiente revertir estas acciones negativas en sus opuestos.",
+source:     source_findingMarbles,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[69] = {
+phase:     0,
+name:      "3 por 1 - Apertura",
+summary:   "Chequear satisfacci&oacute;n con los resultados del sprint, coordinaci&oacute;n &amp; estado de animo, todo a la vez",
+desc:      "Preparar una pizarra con dos ejes. El eje Y es 'Satisfacci&oacute;n con el resultado del sprint', \
+El eje X es 'Cantidad de veces que nos coordinamos'. Pedir a cada participante que dibuje, en la intersecci&oacute;n \
+correspondiente a su satisfacci&oacute;n y nivel de coordinaci&oacute;n, un emoticon representando su estado de animo (no solo un punto). \
+Debatir las variaciones soprendentes y los animos extremos.<br>\
+(Variar el eje X para reflejar temas actuales del equipo, como por ejemplo 'Cantidad de veces que programamos de a pares'.)",
+source:     source_judith,
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
+};
+
+all_activities[70] = {
+phase:     4,
+name:      "3 por 1 - Cierre &iquest;Se ha escuchado a todo el mundo?",
+summary:   "Chequear satisfacci&oacute;n con los resultados de la retro, distribuci&oacute;n equitativa del tiempo hablando &amp; estado de ánimo",
+desc:      "Preparar una pizarra con dos ejes. El eje Y es 'Satisfacci&oacute;n con el resultado de la retro'. \
+El eje X es 'Distribuci&oacute;n equitativa de tiempo hablando' (a m&aacute;s igualdad, m&aacute;s a la derecha). \
+Pedir a cada participante que marque el punto intersecci&oacute;n entre su satisfacci&oacute;n y la percepci&oacute;n del balance en tiempo hablando - \
+con un emoticon que indique su estado de &aacute;nimo (en vez de simplemente un punto). \
+Discutir las desigualdades en tiempo hablando (y los estados de &aacute;nimo extremos).",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[71] = {
+phase:     3,
+name:      "Repartir los dolares",
+summary:   "&iquest;Qu&eacute; tanto vale una acción para el equipo?",
+desc:      "Enumerar la lista de posibles acciones. Dibujar una columna al lado, con el t&iacute;tulo 'Importancia (en $)'. \
+El equipo tiene 100 d&oacute;lares (virtuales) para gastar en las acciones. Mientras m&aacute;s \
+importante sea para ellos, m&aacute;s deber&iacute;an gastar. Hazlo m&aacute;s divertido usando \
+dinero de papel como el del Monopolio.\
+<br><br>Dejar que el equipo acuerde los precios. Identificar las 2 o 3 acciones con mayor cantidad de dinero como las elegidas.",
+source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
+duration:  "10 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[72] = {
+phase:     3,
+name:      "Competencia",
+summary:   "Ideas de acción compiten para 2 lugares disponibles",
+desc:      "Pedir a todos que piensen en dos cambios que les gusta&iacute;a implementar y escribirlos en dos post-its separados. \
+Dibujar dos espacios para un post-it en la pizarra. El primer miembro del equipo pone su mejor idea de cambio en el primer espacio. \
+Su vecino pone su mejor idea en el segundo espacio. El tercer miembro tiene que hacer competir su mejor idea contra la de las dos \
+que ya est&aacute;n en la pizarra que menos le guste. Si el equipo prefiere su idea, la ubica en el espacio en lugar de la otra. \
+Se continua hasta que todos hayan presentado sus dos ideas. \
+<br><br>Tratar de no empezar el circulo con los miembros del equipo que m&aacute;s dominan.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration"
+};
+
+all_activities[73] = {
+phase:     2,
+name:      "Pesimismo",
+summary:   "&iquest;Qu&eacute; podr&iacute;amos haber hecho para arruinar el &uacute;ltimo sprint?",
+desc:      "Empezar la actividad preguntando: ‘&iquest;Qu&eacute; podr&iacute;amos haber hecho para arruinar completamente \
+el &uacute;ltimo sprint?’. \
+Registrar las respuestas en la pizarra. Siguiente pregunta: ‘‘&iquest;Qu&eacute; ser&iacute;a lo opuesto?’. \
+Registrar las respuestas en la pizarra, en otra parte. \
+Pedir ahora a los participantes que comenten los items en la parte de lo ‘Opuesto’ pegando post-its que contesten la pregunta: \
+‘&iquest;Qu&eacute; nos impide hacer eso?’. \
+Usar post-its de otro color para comentar sobre los comentarios, preguntando: ‘&iquest;Por qu&eacute; es as&iacute;?’.",
+source:     source_judith,
+duration:  "25 min groupsize",
+suitable:  "iteration, project"
+};
+
+all_activities[74] = {
+phase:     1,
+name:      "Escribiendo lo que no se puede hablar",
+summary:   "Escribir los temas que no se pueden hablar en voz alta",
+desc:      "&iquest;Crees que hay ciertos temas que nunca se hablan dentro del equipo? \
+Considera esta actividad silenciosa: remarca primero la confidencialidad \
+('Lo que pasa en Las Vegas se queda en Las Vegas') \
+y anuncia que todas las notas de la actividad se destruiran al final. \
+Luego distribuir a cada participante un papel para que escriba el gran tabu de la compa&ntilde;&iacute;a. <br>\
+Cuando todos terminaron, pasan su papel a su vecino izquierdo. \
+El vecino lo lee (en silencio) y puede escribir comentarios. \
+Luego se pasan de vuelta los papeles una y otra vez hasta que lleguen de vuelta a su autor. \
+Cada uno lee los comentarios. Finalmente todos los papeles se despedazan o se queman.",
+source:     "Desconocido, via Vanessa",
+duration:  "10 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[75] = {
+phase:     0,
+name:      "Ronda de Admiraci&oacute;n",
+summary:   "Los participantes expresan lo que admiran unos de otros",
+desc:      "Iniciar una ronda de admiraci&oacute;n dirigi&eacute;ndote a tu vecino y diciendo 'Lo que m&aacute;s admiro \
+            de ti es...' Entonces tu vecino dice lo que admira de su vecino \
+            y as&iacute; sucesivamente hasta que el &uacute;ltimo participante cuenta lo que admira de ti. Se siente genial, \
+            &iquest;verdad&quest;",
+source:     source_judith,
+duration:  "5 min",
+suitable:  "iteration, project, release"
 };
