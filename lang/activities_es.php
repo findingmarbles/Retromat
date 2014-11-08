@@ -335,6 +335,7 @@ desc:      "Preparar una pizarra con dos columnas: una peque&ntilde;a para 'Nota
 Los participantes punt&uacute;an el &uacute;ltimo sprint en una escala de 1 a 10. \
 Luego tienen que proponer acciones a hacer para que el siguiente sprint tenga una puntuaci&oacute;n de 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pieter Versteijnen'>Ver Foto</a>",
 suitable: "iteraci&oacute;n, entrega"
 };
 
@@ -1156,6 +1157,8 @@ Dejar que los participantes dibujen por 5-10 minutos. Mostrar los dibujos y revi
 metaforas m&aacute;s interesantes.",
 source:     source_judith,
 duration:  "15 min groupsize",
+
+photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contribuci&oacute;n de Annette Harder'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 

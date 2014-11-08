@@ -323,6 +323,7 @@ desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a w
 Everyone rates the last sprint on a scale from 1 to 10. Then they have to suggest what action(s) \
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -1065,6 +1066,7 @@ What would a map for it look like? What hints would you add for save travelling?
 for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and discuss interesting metaphors.",
 source:     source_judith,
 duration:  "15 min groupsize",
+photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {
