@@ -37,6 +37,7 @@ what people make of the data. If there's a majority of Vacationers or Prisoners 
 retro to discuss this finding.",
 duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
+photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contributed by Reguel Wermelinger'>View Photo</a>",
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -218,6 +219,7 @@ The top 2 or 3 become your action items.\
 (Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
+photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable: "iteration"
 };
 all_activities[12] = {
@@ -322,6 +324,8 @@ desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a w
 Everyone rates the last sprint on a scale from 1 to 10. Then they have to suggest what action(s) \
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a> \
+<a href='static/images/activities/20_Perfection-Game-2.JPG' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -983,6 +987,7 @@ The straightforward choice is to pick the bottom left fruit as action items. If 
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
+photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.JPG' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[63] = {
@@ -1064,6 +1069,8 @@ What would a map for it look like? What hints would you add for save travelling?
 for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and discuss interesting metaphors.",
 source:     source_judith,
 duration:  "15 min groupsize",
+photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a> \
+<a href='static/images/activities/68_Company-Map-2.jpg' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {
@@ -1393,7 +1400,8 @@ One example per sticky note. There's only one rule: If someone contributes to th
 s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
-photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a>",
+photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a> \
+<a href='static/images/activities/89_Retro-Wedding-2.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
@@ -1438,6 +1446,45 @@ The groups have 15-20 minutes to discuss and create their posters. Afterwards \
 gather and each group gets 2 minutes to present their results.",
 source:    "Unknown, adapted by " + source_findingMarbles + ", inspired by Michal Grzeskowiak",
 duration:  "30 min",
+suitable:  "iteration, project, release"
+};
+all_activities[91] = {
+phase:     4,
+name:      "Motivational Poster",
+summary:   "Turn action items into posters to improve visibility \& follow-through",
+desc:      "Take each of your action items and create a funny poster for it (see the photos for examples). \
+<ol>\
+    <li>Pick an image</li>\
+    <li>Agree on a title</li>\
+    <li>Write a self-mocking description</li>\
+</ol>\
+Print your master piece as big as possible (A4 at the very least) and display it prominently.",
+source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
+photo:    "<a href='static/images/activities/92_Motivational-Poster_INVEST.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'>View Photo</a>\
+           <a href='static/images/activities/92_Motivational-Poster_Pairing.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'></a>",
+duration:  "30 min per topic / poster",
+suitable:  "release"
+};
+all_activities[92] = {
+phase:     1,
+name:      "Tell a Story with Shaping Words",
+summary:   "Each participant tells a story about the last iteration that contains certain words",
+desc:      "Provide everyone with something to write down their story. Then introduce the shaping words, \
+which influence the story to be written: \
+<ul> \
+    <li>If the last iteration could have been better:<br> \
+    You set a couple of shaping words, e.g. such as 'mad, sad, glad' or 'keep, drop, add'. Additionally they have \
+    to write their story in first person. This avoids blaming others. \
+    </li> \
+    <li>If the last iteration was successful:<br> \
+    The team can either choose their own set of words or you can provide random words to unleash the team's creativity. \
+    </li> \
+</ul> \
+Now each participant writes a story of no more than 100 words about last iteration. They have to use each shaping \
+word at least once. Timebox this to 5-10 minutes. <br> \
+When everyone's finished, they read out their stories. Afterwards lead a discussion about common themes of the stories.",
+source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
+duration:  "20-30 minutes",
 suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"

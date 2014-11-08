@@ -19,19 +19,19 @@ $_lang['INDEX_ABOUT'] = 'Retr-O-Mat contiene <span class="js_footer_no_of_activi
 $_lang['INDEX_ABOUT_SUGGEST'] = '&iexcl;Proponla';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traducido por ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Pedro Serrano';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/pedroserranot';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/pedro_angel_serrano.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Thomas Wallet';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://thomaswallet.blogspot.com.ar';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-CSM y PMP apasionado de las metodologías ágiles. Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
 <br><br><br>
 EOT;
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Thomas Wallet';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'http://thomaswallet.blogspot.com.ar';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/thomas_wallet.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Pedro Serrano';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/pedroserranot';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/pedro_angel_serrano.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
-<br><br><br><br>Agradecimientos a Mauro Strione, Sebastian Sabato, Mauro Tresguerras, Martin Contuci e Hiroshi Hiromoto.
+CSM y PMP apasionado de las metodologías ágiles. Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+<br> <br>Agradecimientos a Mauro Strione, Sebastian Sabato, Mauro Tresguerras, Martin Contuci, Hiroshi Hiromoto, Lucho Salazar y Jos&eacute; Mar&iacute;a Bl&aacute;zquez.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
