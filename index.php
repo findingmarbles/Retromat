@@ -643,7 +643,7 @@ function switchLanguage(new_lang) {
         <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (91 activities)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (92 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (76 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (41 activit&eacute;s)</option>
     </select>

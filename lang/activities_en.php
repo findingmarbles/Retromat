@@ -1440,5 +1440,44 @@ source:    "Unknown, adapted by " + source_findingMarbles + ", inspired by Micha
 duration:  "30 min",
 suitable:  "iteration, project, release"
 };
+all_activities[91] = {
+phase:     4,
+name:      "Motivational Poster",
+summary:   "Turn action items into posters to improve visibility \& follow-through",
+desc:      "Take each of your action items and create a funny poster for it (see the photos for examples). \
+<ol>\
+    <li>Pick an image</li>\
+    <li>Agree on a title</li>\
+    <li>Write a self-mocking description</li>\
+</ol>\
+Print your master piece as big as possible (A4 at the very least) and display it prominently.",
+source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
+photo:    "<a href='static/images/activities/92_Motivational-Poster_INVEST.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'>View Photo</a>\
+           <a href='static/images/activities/92_Motivational-Poster_Pairing.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'></a>",
+duration:  "30 min per topic / poster",
+suitable:  "release"
+};
+all_activities[92] = {
+phase:     1,
+name:      "Tell a Story with Shaping Words",
+summary:   "Each participant tells a story about the last iteration that contains certain words",
+desc:      "Provide everyone with something to write down their story. Then introduce the shaping words, \
+which influence the story to be written: \
+<ul> \
+    <li>If the last iteration could have been better:<br> \
+    You set a couple of shaping words, e.g. such as 'mad, sad, glad' or 'keep, drop, add'. Additionally they have \
+    to write their story in first person. This avoids blaming others. \
+    </li> \
+    <li>If the last iteration was successful:<br> \
+    The team can either choose their own set of words or you can provide random words to unleash the team's creativity. \
+    </li> \
+</ul> \
+Now each participant writes a story of no more than 100 words about last iteration. They have to use each shaping \
+word at least once. Timebox this to 5-10 minutes. <br> \
+When everyone's finished, they read out their stories. Afterwards lead a discussion about common themes of the stories.",
+source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
+duration:  "20-30 minutes",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
