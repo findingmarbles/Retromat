@@ -325,7 +325,7 @@ Everyone rates the last sprint on a scale from 1 to 10. Then they have to sugges
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.JPG' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -987,7 +987,7 @@ The straightforward choice is to pick the bottom left fruit as action items. If 
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
-photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.JPG' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
+photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[63] = {
@@ -1070,7 +1070,7 @@ for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and dis
 source:     source_judith,
 duration:  "15 min groupsize",
 photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a> \
-<a href='static/images/activities/68_Company-Map-2.jpg' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {

@@ -326,7 +326,7 @@ Tout le monde évalue la dernière itération sur une échelle de 1 à 10. Ensui
 feraient que la prochaine itération obtienne un score de 10 sur 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribution de Pieter Versteijnen'>Voir la Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.JPG' rel='lightbox[activity20]' title='Contribution de Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/20_Perfection-Game_2.jpg' rel='lightbox[activity20]' title='Contribution de Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
