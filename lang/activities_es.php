@@ -337,7 +337,7 @@ Los participantes punt&uacute;an el &uacute;ltimo sprint en una escala de 1 a 10
 Luego tienen que proponer acciones a hacer para que el siguiente sprint tenga una puntuaci&oacute;n de 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pieter Versteijnen'>Ver Foto</a> \
-<a href='static/images/activities/20_Perfection-Game_2.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pedro Ángel Serrano'></a>",
 suitable: "iteraci&oacute;n, entrega"
 };
 

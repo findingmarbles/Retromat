@@ -1401,7 +1401,7 @@ s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
 photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a> \
-<a href='static/images/activities/89_Retro-Wedding-2.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
