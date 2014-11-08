@@ -219,6 +219,7 @@ Las primeras 2-3 ideas son las acciones elegidas. \
 una variante incre&iacute;ble de esta actividad)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
+photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contribuci&oacute;n de Pedro Ángel Serrano'>Ver Foto</a>",
 suitable: "iteraci&oacute;n"
 };
 
@@ -335,7 +336,8 @@ desc:      "Preparar una pizarra con dos columnas: una peque&ntilde;a para 'Nota
 Los participantes punt&uacute;an el &uacute;ltimo sprint en una escala de 1 a 10. \
 Luego tienen que proponer acciones a hacer para que el siguiente sprint tenga una puntuaci&oacute;n de 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
-photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pieter Versteijnen'>Ver Foto</a>",
+photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pieter Versteijnen'>Ver Foto</a> \
+<a href='static/images/activities/20_Perfection-Game-2.JPG' rel='lightbox[activity20]' title='Contribuci&oacute;n de Pedro Ángel Serrano'></a>",
 suitable: "iteraci&oacute;n, entrega"
 };
 
@@ -1067,6 +1069,7 @@ La elecci&oacute;n logica es de seleccionar las acciones de las frutas de m&aacu
 Si no hay consenso, se puede discutir brevemente para acordar acciones o hacer un voto por puntos.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
+photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.JPG' rel='lightbox[activity63]' title='Contribuci&oacute;n de Pedro Ángel Serrano'>Ver Foto</a>",
 suitable:  "iteration, project, release"
 };
 
@@ -1158,7 +1161,8 @@ metaforas m&aacute;s interesantes.",
 source:     source_judith,
 duration:  "15 min groupsize",
 
-photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contribuci&oacute;n de Annette Harder'>View Photo</a>",
+photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contribuci&oacute;n de Annette Harder'>View Photo</a> \
+<a href='static/images/activities/68_Company-Map-2.jpg' rel='lightbox[activity68]' title='Contribuci&oacute;n de Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 
