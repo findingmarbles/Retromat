@@ -38,6 +38,7 @@ Demandez ce que les participants pensent des résultats. Si il ya une majorité 
 envisagez d'utiliser la rétro pour discuter de cette constatation.",
 	duration: "5-10 numberPeople",
 	source: source_agileRetrospectives,
+photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contribuée par Reguel Wermelinger'>Voir la Photo</a>",
 	suitable: "iteration, release, project, immature"
 };
 all_activities[1] = {

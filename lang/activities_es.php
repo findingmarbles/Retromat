@@ -35,6 +35,7 @@ desc:      "Preparar una pizarra con las &aacute;reas E, C, V y P. Explicar el c
 Hacer una encuesta en forma an&oacute;nima con trozos de papel. Contar las respuestas y registrarlas en la pizarra para que todos puedan ver los resultados. Si la confianza es baja, destruir deliberadamente los votos luego para asegurar privacidad. <br>Preguntar a los participantes que opinan de los datos. Si hay una mayor&iacute;a de Veraneantes o Prisioneros, considerar utilizar la retrospectiva para debatir esta conclusi&oacute;n.",
 duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
+photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contribuci&oacute;n de Reguel Wermelinger'>Ver Foto</a>",
 suitable:   "iteraci&oacute;n, entrega, proyecto, inmaduro"
 };
 

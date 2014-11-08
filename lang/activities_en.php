@@ -37,6 +37,7 @@ what people make of the data. If there's a majority of Vacationers or Prisoners 
 retro to discuss this finding.",
 duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
+photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contributed by Reguel Wermelinger'>View Photo</a>",
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
