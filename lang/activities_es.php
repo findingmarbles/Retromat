@@ -1035,6 +1035,7 @@ photo:    "<a href='static/images/activities/61_Chaos-Cocktail-Party.jpg' rel='l
 duration:  "10-15 min",
 suitable:  "iteration, project, release, largeGroup"
 };
+
 all_activities[61] = {
 phase:     1,
 name:      "Expectativas",
@@ -1160,7 +1161,6 @@ Dejar que los participantes dibujen por 5-10 minutos. Mostrar los dibujos y revi
 metaforas m&aacute;s interesantes.",
 source:     source_judith,
 duration:  "15 min groupsize",
-
 photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contribuci&oacute;n de Annette Harder'>View Photo</a> \
 <a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contribuci&oacute;n de Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
@@ -1185,7 +1185,7 @@ name:      "3 por 1 - Apertura",
 summary:   "Chequear satisfacci&oacute;n con los resultados del sprint, coordinaci&oacute;n &amp; estado de animo, todo a la vez",
 desc:      "Preparar una pizarra con dos ejes. El eje Y es 'Satisfacci&oacute;n con el resultado del sprint', \
 El eje X es 'Cantidad de veces que nos coordinamos'. Pedir a cada participante que dibuje, en la intersecci&oacute;n \
-correspondiente a su satisfacci&oacute;n y nivel de coordinaci&oacute;n, un emoticon representando su estado de animo (no solo un punto). \
+correspondiente a su satisfacci&oacute;n y nivel de coordinaci&oacute;n, un emoticono representando su estado de animo (no solo un punto). \
 Debatir las variaciones soprendentes y los animos extremos.<br>\
 (Variar el eje X para reflejar temas actuales del equipo, como por ejemplo 'Cantidad de veces que programamos de a pares'.)",
 source:     source_judith,
@@ -1200,7 +1200,7 @@ summary:   "Chequear satisfacci&oacute;n con los resultados de la retro, distrib
 desc:      "Preparar una pizarra con dos ejes. El eje Y es 'Satisfacci&oacute;n con el resultado de la retro'. \
 El eje X es 'Distribuci&oacute;n equitativa de tiempo hablando' (a m&aacute;s igualdad, m&aacute;s a la derecha). \
 Pedir a cada participante que marque el punto intersecci&oacute;n entre su satisfacci&oacute;n y la percepci&oacute;n del balance en tiempo hablando - \
-con un emoticon que indique su estado de &aacute;nimo (en vez de simplemente un punto). \
+con un emoticono que indique su estado de &aacute;nimo (en vez de simplemente un punto). \
 Discutir las desigualdades en tiempo hablando (y los estados de &aacute;nimo extremos).",
 source:     source_judith,
 duration:  "15 min groupsize",
@@ -1282,3 +1282,326 @@ source:     source_judith,
 duration:  "5 min",
 suitable:  "iteration, project, release"
 };
+all_activities[76] = {
+phase:     4,
+name:      "Seguir Adelante",
+summary:   "&iquest;Cu&aacute;l es la probabilidad de que las acciones elegidas sean ejecutadas?",
+desc:      "Pedir a cada uno que dibuje un emoticono de su estado de &aacute;nimo en ese momento en un post-it. \
+            Dibujar una escala en una pizarra, etiquetando 'Probabilidad de que concretamos \
+            las acciones elegidas'. Marcar un  '0%' a la izquierda y '100%' a la derecha. Pedir \
+            a cada uno ubicar su post-it en la escala seg&uacute;n su confianza en que sea concretada por el equipo. \
+            <br>Debatir los resultados interesantes como bajas probabilidades o estados de &aacute;nimo negativos.",
+source:     source_judith,
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[77] = {
+phase:     1,
+name:      "Las 4 As - Amado, Aprendido, Ausente, Anhelado",
+summary:   "Explorar individualmente qu&eacute; cosas se han Amado, se han Aprendido, fueron Ausentes o se han Anhelado",
+desc:      "Cada persona piensa individualmente en los siguientes cuatro aspectos: \
+<ul> \
+    <li>&iquest;Qu&eacute; me gusto (Amado)?</li> \
+    <li>&iquest;Qu&eacute; aprendi (Aprendido)?</li> \
+    <li>&iquest;Qu&eacute; ha escaseado (Ausente)?</li> \
+    <li>&iquest;Qu&eacute; se ha echado en falta (Anhelado)?</li> \
+</ul> \
+Recoger las respuestas, a trav&eacute;s de post-its en la pizarra o bien a trav&eacute;s de una herramienta digital si est&aacute;n distribuidos. \
+Formar 4 grupos para cada A, leer todas las notas e identificar patrones y reportar las conclusiones al grupo. \
+Utilizar estas conclusiones como entradas para la siguiente fase.",
+source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> \
+probablemente via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
+duration:  "30 min",
+photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity78]' \
+title='Foto tomada por Ellen Gottesdiener'>Ver Fotos</a>\
+           <a href='static/images/activities/78_Four-Ls.jpg' rel='lightbox[activity78]' title='Contribuci&oacute;n por Philipp Flenker'></a>\
+           <a href='static/images/activities/78_Four-Ls_2.jpg' rel='lightbox[activity78]' title='Contribuci&oacute;n por Geert van der Ploeg'></a>",
+suitable:  "iteration, project, release, distributed"
+};
+
+all_activities[78] = {
+phase:     1,
+name:      "Value Stream Mapping",
+summary:   "Dibujar un ‘value stream map’ (mapa de flujo de valor) del proceso",
+desc:      "Explicar un ejemplo de ‘Value Stream Mapping’. (Si no est&aacute;s familiarizado, mira \
+<a href='http://www.youtube.com/watch?v=3mcMwlgUFjU'>este video</a> o \
+<a href='http://wall-skills.com/2014/value-stream-mapping/'>esta hoja imprimible</a>.) \
+Pedir al equipo que dibuje el ‘value stream map’ de su proceso desde el punto de vista de una historia de usuario. \
+Si fuera necesario, dividirlos en peque&ntilde;os grupos, y/o facilitar el ejercicio. \
+Mirar el mapa creado. &iquest;Donde est&aacute;n las demoras y los cuellos de botella?",
+source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo &quot;Nusco&quot; Perrotta</a>, inspirado por <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
+duration:  "20-30 min",
+more:      "http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html",
+suitable:  "iteration, project, release, distributed"
+};
+
+all_activities[79] = {
+phase:     1,
+name:      "Repetir &amp; Evitar",
+summary:   "Reflexionar sobre que repetir y que comportamientos evitar",
+desc:      "Armar dos rotafolios titulados ‘Repetir’ y ‘Evitar’. \
+Los participantes deben escribir temas para las 2 columnas sobre post-its - 1 por tema. \
+Se pueden usar colores para los post-its: por ejemplos para las categor&iacute;as ‘Personas’, ‘Procesos’, ‘Tecnolog&iacute;a’, etc. \
+Pedir a cada participante que lea sus post-its y los pegue en la columna correspondiente. \
+&iquest;Todos los temas son unanimes?",
+source:     "<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>",
+more:       "http://www.funretrospectives.com/repeat-avoid/",
+duration:  "15-30",
+photo:    "<a href='static/images/activities/80_Repeat-Avoid.jpg' rel='lightbox[activity80]' title='Contribuci&oacute;n por Philipp Flenker'>Ver Foto</a>\
+           <a href='http://4.bp.blogspot.com/-LLJU-U0lLFg/UR6j7F6mMnI/AAAAAAAACmU/P1NUW-KUraA/s1600/repeat-avoid.JPG' rel='lightbox[activity80]' title='Foto por Luis Goncalves'></a>",
+suitable: "iteration, project, remote"
+};
+
+all_activities[80] = {
+phase:     0,
+name:      "Resultados Esperados",
+summary:   "Todos expresan los resultados que esperan de la retrospectiva",
+desc:      "Los miembros del equipo definen sus objetivos para la retrospectiva, o sea los resultados que esperan. Por ejemplo: \
+<ul> \
+    <li>Estar&eacute; feliz si definimos una buena acci&oacute;n</li> \
+    <li>Quiero que hablemos sobre nuestra diferencia respecto a Tests de Unidad y acordar como los vamos a manejar en el futuro</li> \
+    <li>Considerar&eacute; esta retrospectiva un exito si definimos un plan para ordenar el $ModuloOscuro</li> \
+</ul> \
+[Se pueden verificar estos objetivos cerrando la retro con la actividad #14.] \
+<br><br> \
+[El <a href='http://liveingreatness.com/additional-protocols/meet/'>Meet - Core Protocol</a>, que inspira esta actividad, \
+describe tambi&eacute;n ‘Chequeos de Alineaci&oacute;n’: cuando algui&eacute;n piensa que la retrospectiva \
+no est&aacute; cumpliendo con las necesidades de los participantes, pueden solicitar un ‘Chequeo de Alineaci&oacute;n’. \
+Entonces cada uno dice un n&uacute;mero entre 0 y 10 que refleja que tanto est&aacute; consiguiendo de lo que espera. \
+La persona con el n&uacute;mero m&aacute;s bajo toma el control para acercarse a lo que quiere.]",
+source:     "Inspirado por <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
+photo:    "<a href='static/images/activities/81_Outcome-Expectations.jpg' rel='lightbox[activity81]' title='Contribuci&oacute;n por Philipp Flenker'>Ver Foto</a>",
+duration:  "5 min groupsize",
+suitable:  "iteration, project, release"
+};
+
+all_activities[81] = {
+phase:     0,
+name:      "3 Palabras",
+summary:   "Cada uno resume el &uacute;ltimo sprint en 3 palabras",
+desc:      "Pedir a todos que describan la &uacute;ltima iteraci&oacute;n en solo 3 palabras. \
+Esperar un minuto para que puedan prepararlo, luego escuchar las palabras de todos de a uno. \
+Esta actividad ayuda a las persona a recordar el &uacute;ltimo sprint para tener un punto de partida.",
+source:     "Yurii Liholat",
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
+};
+
+all_activities[82] = {
+phase:     4,
+name:      "Retro Dardo",
+summary:   "Verificar si se llega al blanco para los temas importantes",
+desc:      "Dibujar uno o varios blancos en una pizarra. \
+Escribir una pregunta cerca de cada blanco, por ejemplo: \
+<ul> \
+    <li>&iquest;Hablamos de lo que era importante para mi?</li> \
+    <li>&iquest;Habl&eacute; en forma abierta?</li> \
+    <li>&iquest;Tengo confianza de que vamos a mejorar en la pr&oacute;xima iteraci&oacute;n?</li> \
+</ul> \
+Los participantes ubican su opini&oacute;n con un post-it. Un acierto en el medio es un consenso al 100%. \
+Afuera del blanco es un 0% consenso.",
+source:   "<a href='http://www.philippflenker.de/'>Philipp Flenker</a>",
+photo:    "<a href='static/images/activities/83_Retro-Dart.jpg' rel='lightbox[activity83]' title='Contribuci&oacute;n por Philipp Flenker'>Ver Foto</a>",
+duration:  "2-5",
+suitable: "iteration, release"
+};
+
+all_activities[83] = {
+phase:     0,
+name:      "Tabla de Acciones de la &Uacute;ltima Retro",
+summary:   "Evaluar como seguir con las acciones de la &uacute;ltima retro",
+desc:      "Crear una tabla con 5 columnas. En la primera columna enumerar las acciones definidas en la &uacute;ltima retro. \
+Titular las otras columnas: ‘M&aacute;s de’, ‘Seguir’, ‘Menos de’ y ‘Parar’. Los participantes ubican un post-it por l&iacute;nea \
+de acuerdo a lo que quieren respecto a la acci&oacute;n correspondiente. \
+Luego facilitar un breve debate sobre cada acci&oacute;n, preguntando por ejemplo: \
+<ul> \
+    <li>&iquest;Por qu&eacute deber&iacute;amos para esto?</li> \
+    <li>&iquest;Por qu&eacute; vale la pena seguir con esto?</li> \
+    <li>&iquest;Sus expectativas est&aacute;n cumplidas?</li> \
+    <li>&iquest;Por qu&eacute hay tanta variaci&oacute;n en las opiniones?</li> \
+</ul>",
+source:    "<a href='https://sven-winkler.squarespace.com/blog-en/2014/2/5/the-starfish'>Sven Winkler</a>",
+duration:  "5-10",
+suitable: "iteration, release"
+};
+
+all_activities[84] = {
+phase: 0,
+name: "Saludos desde la &Uacute;ltima Iteraci&oacute;n",
+summary: "Cada participante escribe una tarjeta postal sobre la iteraci&oacute;n",
+desc: "Hacer recordar los elementos de una tarjeta postal: \
+<ul> \
+    <li> Una imagen en el frente,</li> \
+    <li> Un mensaje en una mitad de la parte posterior,</li> \
+    <li> La direcci&oacute;n y el sello en la otra mitad.</li> \
+</ul> \
+Repartir tarjetas vac&iacute;as y darle 10 minutos al equipo para que cada uno escriba una tarjeta postal \
+a una persona que todos conozcan (por ejemplo un ex-colega). \
+Cuando se termina el tiempo, recuperar las tarjetas, mezclarlas y re-distribuirlas. \
+De a uno, cada participante lee en voz alta la tarjeta que recibi&oacute;.",
+source: '<a href="http://uk.linkedin.com/in/alberopomar">Filipe Albero Pomar</a>',
+duration:  "15 min",
+suitable:  "iteration, project"
+};
+
+all_activities[85] = {
+phase:     1,
+name:      "L&iacute;neas de Comunicaci&oacute;n",
+summary:   "Visualice como fluye la informaci&oacute;n dentro, fuera y alrededor del equipo",
+desc:      "&iquest;La informaci&oacute;n no fluye tan bien como lo necesita? &iquest;Sospecha \
+que hay embotellamientos? Visualice el flujo de la informaci&oacute;n para encontrar \
+puntos de partida para las mejoras. Si usted desea ver un flujo \
+espec&iacute;fico (ej. requerimientos de producto, impedimentos, ...) consulte el \
+Mapa de Flujo de Valor (#79). Para situaciones m&aacute;s desordenadas, intente algo parecido a \
+Diagramas-Causa-Efecto (#25). <br>\
+Observe el dibujo terminado. &iquest;D&oacute;nde est&aacute;n los retrasos o callejones sin salida?",
+source:    "<a href='https://www.linkedin.com/in/bleadof'>Tarmo Aidantausta</a>",
+duration:  "20-30 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[86] = {
+phase:     1,
+name:      "Histograma de Satisfacci&oacute;n de Reuniones",
+summary:   "Crear un histograma sobre c&oacute;mo fueron las reuniones durante el sprint",
+desc:      "Preparar una pizarra para cada reuni&oacute;n que se repite en cada iteraci&oacute;n, \
+(por ejemplo, cualquier ceremonia de Scrum) con una escala horizontal desde 1 ('No cumple con lo esperado') \
+a 5 ('Sobrepasa las expectativas'). Cada miembro del equipo ubica un post-it basado en su valoraci&oacute;n \
+para cada reuni&oacute;n. Facilitar un breve debate sobre por que algunas de las reuniones no tienen un 5. \
+<br> \
+Se puede discutir mejoras como parte de esta actividad o en actividades posteriores c&oacute;mo \
+El juego de la Perfecci&oacute;n (#20) o M&aacutes & Delta (#40).",
+source:    "<a href='https://www.linkedin.com/profile/view?id=6689187'>Fanny Santos</a>",
+duration:  "10-20 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[87] = {
+phase:     3,
+name:      "El Mundial de los Impedimentos",
+summary:   "Los impedimentos compiten uno contra otro al estilo del Mundial",
+desc:      "Preparar una pizarra con un fixture para cuartos de final, semi-final y final. \
+Todos los participantes escriben acciones en un post-it hasta que tengan ocho. \
+Mezclar y colocar de manera aleatoria las acciones en el fixture.<br>\
+El equipo elige luego la mejor acci&oacute;n de cada partido de cuartos de final. Mover la acci&oacute;n \
+ganadora a la siguiente ronda hasta tener un ganador del mundial de impedimentos. \
+<br><br>\
+Si quieren tomar m&aacutes de una o dos acciones se puede jugar el partido por el tercer puesto.",
+source:    "<a href='http://obivandamme.wordpress.com'>Pascal Martin</a>, inspirado por <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[88] = {
+phase:     1,
+name:      "Retro Boda",
+summary:   "Obtener muestras de algo viejo, nuevo, prestado y azul",
+desc:      "Extrapolando una costumbre anglosajon para casamientos, pedir a los miembros del equipo muestras para las siguientes categorias: \
+<ul> \
+    <li>Algo viejo<br> \
+        Feedback positivo o cr&iacute;tica constructiva de una pr&aacute;ctica establecida</li> \
+    <li>Algo nuevo<br> \
+        Feedback positivo o cr&iacute;tica constructiva de experimentos en curso</li> \
+    <li>Algo prestado<br> \
+        Herramienta/idea de otro equipo, de la web o suya para un posible experimento</li> \
+    <li>Algo azul<br> \
+        Alg&uacute;n bloqueante u origen de conflicto</li> \
+</ul> \
+Un ejemplo por post-it. S&oacute;lamente hay una regla: si alguien pone algo en la categoria azul, \
+tiene que poner tambi&eacute;n algo positivo en al menos una de las otras categorias.<br><br> \
+Cada participante pega sus post-its en las categorias correspondientes y describe la idea brevemente.",
+source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
+photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Foto tomada por Jordan Morris'>Ver Foto</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[89] = {
+phase:     0,
+name:      "Celebrar los Valores &Aacute;giles",
+summary:   "Recordar los valores &aacute;giles que han mostrado",
+desc:      "Dibujar 4 grandes burbujas y escribir en cada una un valor &aacute;gil: \
+<ol> \
+    <li>Individuos e interacciones</li> \
+    <li>Entregar sofware funcionando</li> \
+    <li>Colaboraci&oacute;n con el cliente</li> \
+    <li>Responder al cambio</li> \
+</ol> \
+Pedir a los participantes que escriban los momentos en donde sus colegas han mostrado \
+alguno de los valores - 1 post-it por cada caso. En orden, \
+dejar que todos coloquen su post-it en la burbuja correspondiente y lo lean en voz alta. \
+Celebrar como todos tienen incorporados los valores &aacute;giles :)",
+source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+
+all_activities[90] = {
+phase:     2,
+name:      "Sesi&oacute;n de Rotafolios",
+summary:   "Dividir un grupo grande en grupos m&aacute;s pequeños para crear rotafolios",
+desc:      "Despu&eacute;s de haber identificado un tema importante en la fase anterior, \
+es tiempo de entrar en detalles. Dividir el grupo en subgrupos de 2-4 \
+personas que preparar&aacute;n cada uno un rotafolio para ser presentado a los otros grupos. \
+Si ha identificado m&aacute;s de un tema principal, permita que los miembros del equipo seleccionen \
+el t&oacute;pico que deseen profundizar.<br> \
+Provea de una orientaci&oacute;n al equipo sobre el contenido de los rotafolios o respuestas a cubrir como: \
+<ul> \
+   <li>&iquest;Que ocurre exactamente&quest; &iquest;Por qu&eacute; es esto un problema&quest;</li> \
+   <li>&iquest;Por qu&eacute; / Cuando / C&oacute;mo ocurre esta situaci&oacute;n&quest;</li> \
+   <li>&iquest;Qui&eacute;n se beneficia de la situaci&oacute;n actual&quest; &iquest;Cu&aacutel es el beneficio&quest;</li> \
+   <li>Soluciones posibles (con Pros y Contras)</li> \
+   <li>&iquest;Qui&eacute;n podr&iacute;a ayudar a cambiar la situaci&oacute;n&quest;</li> \
+   <li>... lo que se considere apropiado en esta situaci&oacute;n, etc.</li> \
+</ul> \
+Los grupos tienen de 15 a 20 minutos para discutir y crear sus rotafolios. Despu&eacute;s \
+juntar a todos y cada grupo tiene 2 minutos para presentar sus resultados.",
+source:    "Desconocido, adaptado por" + source_findingMarbles + ", inspirado por Michal Grzeskowiak",
+duration:  "30 min",
+suitable:  "iteration, project, release"
+};	
+
+all_activities[91] = {
+phase:     4,
+name:      "Afiche Motivacional",
+summary:   "Convertir acciones en afiches para mejorar su visibilidad y seguimiento",
+desc:      "Tomar cada acción y crear su afiche divertido (ver fotos de ejemplo). \
+<ol>\
+    <li>Elegir una imagen</li>\
+    <li>Acordar un t&iacute;tulo</li>\
+    <li>Escribir una descripci&oacute;n par&oacute;dica</li>\
+</ol>\
+Imprimir la obra de arte lo m&aacute;s grande possible (A4 como minimo) y exponerla en un lugar clave.",
+source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
+photo:    "<a href='static/images/activities/92_Motivational-Poster_INVEST.png' rel='lightbox[activity92]' title='Contribuci&oacute;n por Romain Trocherie'>Ver Foto</a>\
+           <a href='static/images/activities/92_Motivational-Poster_Pairing.png' rel='lightbox[activity92]' title='Contribuci&oacute;n por Romain Trocherie'></a>",
+duration:  "30 min per topic / poster",
+suitable:  "release"
+};
+
+all_activities[92] = {
+phase:     1,
+name:      "Contar una Historia con Palabras Estructurantes",
+summary:   "Cada participante cuenta una historia sobre la &uacute;ltima iteraci&oacute;n incluyendo ciertas palabras",
+desc:      "Dar a todos algo en lo cual puedan escribir su historia. Introducir luego las palabras estructurantes, \
+que influencian la historia a escribir: \
+<ul> \
+    <li>Si la iteraci&oacute;n podr&iacute;a haber sido mejor:<br> \
+Puede fijar un par de palabras estructurantes, por ejemplo: ‘triste’, ‘enojado’, ‘feliz’ o ‘mantener’, ‘eliminar’, ‘agregar’. \
+Adicionalmente se debe escribir la historia en primera persona. Eso permite evitar recriminar al resto. \
+    </li> \
+    <li>Si la iteraci&oacute;n fue un exito:<br> \
+El equipo puede elegir sus propias palabras estructurantes o puede proveer palabras aleatorias para liberar la creatividad. \
+    </li> \
+</ul> \
+Ahora cada participantes debe escribir una historia de no m&aacute;s de 100 palabras sobre la &uacute;ltima iteraci&oacute;n. \
+Tienen que usar por lo menos una vez cada palabra estructurante. Limitar a 5-10 minutos. <br> \
+Cuando todos terminaron, leen en voz alta su historia. Dejar luego un espacio de debate sobre las tem&aacute;ticas comunes a las distintas historias.",
+source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
+duration:  "20-30 minutes",
+suitable:  "iteration, project, release"
+};
+
+// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
