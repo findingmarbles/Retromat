@@ -704,7 +704,7 @@ all_activities[45] = {
 phase:     0,
 name:      "Why Retrospectives?",
 summary:   "Ask 'Why do we do retrospectives?'",
-desc:      "Go back to the roots and start into the retrospectives by asking 'Why do we do this?' \
+desc:      "Go back to the roots and start into the retrospective by asking 'Why do we do this?' \
 Write down all answers for everyone to see. You might be surprised.",
 source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
 duration:  "5",
@@ -1158,7 +1158,7 @@ summary:   "Write down what you can never ever say out loud",
 desc:      "Do you suspect that unspoken taboos are holding back the team? \
 Consider this silent activity: Stress confidentiality ('What happens in Vegas stays in Vegas') \
 and announce that all \
-notes of the following activities will be destroyed in the end. Only afterwards hand out a piece \
+notes of this activity will be destroyed in the end. Only afterwards hand out a piece \
 of paper to each participant to write down the biggest unspoken taboo in the company. <br>\
 When everyone's done, they pass their paper to their left-hand neighbors. The neighbors read \
 and may add comments. Papers are passed on and on until they return to their authors. One last \
@@ -1485,6 +1485,24 @@ word at least once. Timebox this to 5-10 minutes. <br> \
 When everyone's finished, they read out their stories. Afterwards lead a discussion about common themes of the stories.",
 source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
 duration:  "20-30 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[93] = {
+phase:     1,
+name:      "BYOSM - Build your own Scrum Master",
+summary:   "The team assembles the perfect SM \& takes different points of view",
+desc:      "Draw a Scrum Master on a flipchart with three sections on him/her: brain, heart, stomach. \
+<ul>\
+<li>Round 1: 'What properties does your perfect SM display?' <br>\
+Ask them to silently write down one trait per note. Let participants explain their notes and put them on the drawing. \
+</li> \
+<li>Round 2: 'What does the perfect SM have to know about you as a team so that he/she can work with you well?' \
+</li>\
+<li>Round 3: 'How can you support your SM to make a brilliant job?' <br> \
+</li></ul>\
+You can adapt this activity for other roles, e.g. BYOProductOwner.",
+source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
+duration:  "30 minutes",
 suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
