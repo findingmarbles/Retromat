@@ -663,3 +663,78 @@ source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-b
 duration:  "15-30",
 suitable: "release, project, largeGroups"
 };
+all_activities[41] = {
+phase:     0,
+name:      "Cartes postales",
+summary:   "Les participants choissisent une carte postale qui représente leurs pensées / sentiments",
+desc:      "Amenez un lot de cartes postales variées - au moins quatre fois plus que de participants. \
+Eparpillez les dans la pièce et demandez aux membre de l'équipe de choisir la carte postale qui représente \
+le mieux leur vision de la dernière itération. Après avoir choisi, ils écrivent 3 mots-clefs qui \
+décrivent la carte postale, par exemple sprint, sur une petite fiche. Tour à tour tout le monde accroche sa carte \
+postale ainsi que sa fiche et explique son choix.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+duration:  "15-20",
+suitable: "iteration, release, project",
+photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contribution de Corinna Baldauf'>Voir la photo</a>"
+};
+l_activities[42] = {
+phase:     0,
+name:      "Prise de position - Ouverture",
+summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à l'itération",
+desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définissez une extrémité \
+comme 'Génial' et l'autre comme 'Nul'. Invitez les participants à se positionner sur l'échelle \
+en fonction de leur satisfaction à propos de la dernière itération. Psychologiquement, \
+prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
+Vous pouvez réutiliser cette échelle de valeurs si vous terminez avec l'activité #44.",
+source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+l_activities[43] = {
+phase:     4,
+name:      "Prise de position - Conclusion",
+summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
+desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définissez une extrémité \
+comme 'Génial' et l'autre comme 'Nul'. Invitez les participants à se positionner sur l'échelle \
+en fonction de leur satisfaction à propos de la rétrospective. Psychologiquement, \
+prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
+Voir l'activité #43 pour voir comment la retrospective avec la même échelle de valeurs",
+source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[44] = {
+phase:     4,
+name:      "Ravi & Surpris",
+summary:   "Qu'est-ce qui a plu et/ou supris les participants pendant la retrospective",
+desc:      "Faites simplement un rapide tour du groupe et invitez chaque participant à pointer du doigt une \
+constatation de la retrospective qui les a soit surpris soit ravi (ou les deux).",
+source:    source_unknown,
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[45] = {
+phase:     0,
+name:      "Pourquoi des rétrospectives ?",
+summary:   "Demandez 'Pourquoi faisons-nous des rétrospectives ?'",
+desc:      "Revenons aux sources et commençons la rétrospective en nous demandant 'Pourquoi faisons nous ça ?' \
+Écrivez toutes les réponses pour qu'elles soient visibles par tout le monde. Vous pourriez être surpris.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[46] = {
+phase:     1,
+name:      "Vider la boîte aux lettres",
+summary:   "Jetons un coup d'œil aux notes collectées pendant le sprint",
+desc:      "Mettez en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
+d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit. \
+et le "poste". (La 'boîte aux lettres' peut être également un endroit visible. Celà peut initier \
+une discussion pendant l'itération.) <br>\
+Parcourez toutes les notes et discutez-en.<br>\
+Une boîte aux lettres est bien pour les longues itérations et les équipes distraites.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
+duration:  "15",
+suitable: "release, project"
+};
