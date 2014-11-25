@@ -677,7 +677,7 @@ duration:  "15-20",
 suitable: "iteration, release, project",
 photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contribution de Corinna Baldauf'>Voir la photo</a>"
 };
-l_activities[42] = {
+all_activities[42] = {
 phase:     0,
 name:      "Prise de position - Ouverture",
 summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à l'itération",
@@ -690,7 +690,7 @@ source:    source_findingMarbles + ", inspiré par <a href='http://www.softwarel
 duration:  "2-5",
 suitable: "iteration, release, project"
 };
-l_activities[43] = {
+all_activities[43] = {
 phase:     4,
 name:      "Prise de position - Conclusion",
 summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
@@ -729,7 +729,7 @@ name:      "Vider la boîte aux lettres",
 summary:   "Jetons un coup d'œil aux notes collectées pendant le sprint",
 desc:      "Mettez en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
 d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit. \
-et le "poste". (La 'boîte aux lettres' peut être également un endroit visible. Celà peut initier \
+et le 'poste'. (La 'boîte aux lettres' peut être également un endroit visible. Celà peut initier \
 une discussion pendant l'itération.) <br>\
 Parcourez toutes les notes et discutez-en.<br>\
 Une boîte aux lettres est bien pour les longues itérations et les équipes distraites.",
