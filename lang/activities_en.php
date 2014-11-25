@@ -1488,7 +1488,7 @@ duration:  "20-30 minutes",
 suitable:  "iteration, project, release"
 };
 all_activities[93] = {
-phase:     1,
+phase:     2,
 name:      "BYOSM - Build your own Scrum Master",
 summary:   "The team assembles the perfect SM \& takes different points of view",
 desc:      "Draw a Scrum Master on a flipchart with three sections on him/her: brain, heart, stomach. \
