@@ -1505,5 +1505,21 @@ source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>F
 duration:  "30 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[94] = {
+phase:     2,
+name:      "If I were you",
+summary:   "What could sub-groups improve when interacting with others?",
+desc:      "Identify sub-groups within the participants that interacted during the iteration, \
+e.g. developers/testers, clients/providers, PO/developers, etc. \
+Give participants 3 minutes to silently write down what they think \
+their group did that negatively impacted another group. One person should be part of one group only and write stickies \
+for all groups they don't belong to - 1 sticky per issue. <br><br> \
+Then in turn all participants read their stickies and give them to the corresponding group. \
+The affected group rates it from 0 ('It was not a problem') to 5 ('It was a big problem'). \
+Thus you get insights and shared understanding about problems and can select some of them to work on.",
+source:    "<a href='http://www.elproximopaso.net/2011/10/dinamica-de-retrospectiva-si-fuera-vos.html'>Thomas Wallet</a>",
+duration:  "25-40 minutes",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
