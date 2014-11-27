@@ -1,45 +1,59 @@
 <?php
+$_lang['HTML_TITLE'] = 'Anregungen &amp; Abl&auml;ufe f&uuml;r (agile) Retrospektiven';
 
-$_lang['HTML_TITLE'] = 'Inspiration &amp; Pl&auml;ne f&uuml;r (agile) Retrospektiven';
-
-$_lang['INDEX_PITCH'] = 'Du planst Deine n&auml;chste <b>Retrospektive</b>? Fang mit einem zuf&auml;lligen Plan an, verbessere ihn, druck ihn aus und verbreite die URL. Oder guck einfach nach neuen Ideen!';
-$_lang['INDEX_PLAN_ID'] = 'Plan-ID:';
+$_lang['INDEX_PITCH'] = 'Du planst Deine n&auml;chste <b>Retrospektive</b>? Fang mit einem zuf&auml;llig generierten Ablauf an, pass ihn an, druck ihn aus und teile die URL mit anderen. Oder guck Dich einfach nach neuen Ideen um!';
+$_lang['INDEX_PLAN_ID'] = 'Ablauf-ID:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Anzeigen';
-$_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Plan';
+$_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Ablauf';
+$_lang['INDEX_ENTER_ID'] = 'IDs direkt eingeben';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche die Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
+$_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 
-$_lang['INDEX_ABOUT'] = 'Retr-O-Mat enth&auml;lt <span id="class_footer_no_of_activities"></span> Aktivit&auml;ten, was insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glicht. Und wir f&uuml;gen laufend weitere hinzu. Du kennst eine tolle Aktivit&auml;t?';
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Was ist eine Retrospective?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retr-O-Mat</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Gedruckte Ausgabe</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Eine Aktivit&auml;t hinzuf&uuml;gen</a>';
+
+$_lang['INDEX_ABOUT'] = 'Retr-O-Mat enth&auml;lt <span id="class_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu. Kennst Du eine tolle Aktivit&auml;t?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Judith Andresen';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'http://www.judithandresen.com/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/judith_andresen.jpg';
-$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
-               Als Autorin von
-               "<a href="http://www.amazon.de/gp/product/3446439080/ref%3Das_li_qf_sp_asin_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=3446439080&linkCode=as2&tag=judithandrese-21">Erfolgreiche Retrospektiven</a>"
-               kennt sich Judith bestens mit Retrospektiven aus.
-               Dar&uuml;berhinaus bietet sie Projektcoaching und Beratung an.
-               Folge ihr auf <a href="https://twitter.com/JudithAndresen">Twitter</a>!
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Patrick Zeising';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/peezett';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'http://www.dasprojekt-spiel.de/uploads/pics/100_0391.JPG';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+	Patrick ist Berater, Softwareentwickler und ScrumMaster für <a href="http://www.team-neusta.de/">team neusta</a>. Seine Leidenschaft wecken agile Methoden und die Sicherung von innerer Softwarequalität. Gäbe es in seinem Leben keine IT, so stünde er jetzt mit seiner Gitarre vor einem Mikro auf einer Bühne. Du kannst ihm <a href="mailto:patrick.zeising@web.de">schreiben</a> oder
+    ihm <a href="https://twitter.com/peezett">auf Twitter folgen</a>.
 EOT;
 
-$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Englisches Original: ';
-$_lang['INDEX_TEAM_CORINNA_TEXT'] = <<<EOT
-               Corinna ist (Web-)Entwicklerin aus Düsseldorf. In einem fr&uuml;heren Leben
-               war sie Scrummaster. Aus dieser Zeit stammt der Retr-O-Mat.<br>
-               Folge ihr auf <a href="https://twitter.com/findingmarbles">Twitter</a>!
+$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
+$_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
+    W&auml;hrend ihrer Zeit als ScrumMaster h&auml;tte sich Corinna so etwas wie den Retr-O-Mat gew&uuml;nscht.
+	Letztlich hat sie ihn einfach selbst gebaut in der Hoffnung, dass er auch anderen hilft.
+    Hast Du Fragen an sie, Vorschl&auml;ge oder Aufmunterungen für sie?
+	Du kannst ihr <a href="mailto:corinna@finding-marbles.com">schreiben</a> oder
+    ihr <a href="https://twitter.com/findingmarbles">auf Twitter folgen</a>.
 EOT;
+
 
 $_lang['PRINT_HEADER'] = 'von Finding-Marbles.com';
 
 $_lang['ACTIVITY_SOURCE'] = 'Quelle:';
 $_lang['ACTIVITY_PREV'] = 'Zeige eine andere Aktivit&auml;t f&uuml;r diese Phase';
 $_lang['ACTIVITY_NEXT'] = 'Zeige eine andere Aktivit&auml;t f&uuml;r diese Phase';
-$_lang['ACTIVITY_PHOTO_ADD'] = 'Photo hinzuf&uuml;gen';
-$_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20f%C3%BCr%20Aktivit%C3%A4t%3A%20ID';
-$_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20ist%20im%20Anhang%0D%0A[%20]%20Photo%20ist%20online%20unter%3A%20%0D%0A%0D%0AMfG%2C%0D%0ADein%20Name';
+$_lang['ACTIVITY_PHOTO_ADD'] = 'Foto hinzuf&uuml;gen';
+$_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Fotos%20f%C3%BCr%20Aktivit%C3%A4t%3A%20ID';
+$_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Foto%20ist%20im%20Anhang%0D%0A[%20]%20Photo%20ist%20online%20unter%3A%20%0D%0A%0D%0AMfG%2C%0D%0ADein%20Name';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat benutzt viel JavaScript funktioniert ohne nicht richtig. Bitte schalte in Deinem Browser JavaScript ein. Danke!';
-$_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, ich kann keine Aktivit&auml;t mit dieser ID finden: ';
+$_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat benutzt viel JavaScript und funktioniert ohne nicht richtig. Bitte schalte JavaScript in Deinem Browser ein. Danke!';
+$_lang['ERROR_MISSING_ACTIVITY'] = 'Tut mir leid , ich kann keine Aktivit&auml;t mit dieser ID finden: ';
+
+$_lang['POPUP_CLOSE'] = 'Schlie&szlig;en';
+$_lang['POPUP_IDS_BUTTON'] = 'Anzeigen';
+$_lang['POPUP_IDS_INFO']= 'Beispiel-ID: 3-33-20-13-45';
+$_lang['POPUP_SEARCH_BUTTON'] = 'Suchen';
+$_lang['POPUP_SEARCH_INFO']= 'Durchsucht Titel, Zusammenfassungen &amp; Beschreibungen';
+$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Tut mir leid, kein Ergebnis f&uuml;r';
 
 ?>
