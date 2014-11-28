@@ -48,32 +48,30 @@ photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox
 };
 all_activities[2] = {
 phase:     0,
-name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
-summary:   "Ask one question that each participant answers in turn",
-desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
-Sample questions: <br>\
+name:      "Check In", // TODO This can be expanded to at least 10 different variants - how?
+summary:   "Stelle eine Frage oder Aufgabe, die nacheinander von allen Teilnehmern beantwortet wird.",
+desc:      "Nach dem Round-Robin-Prinzip antwortet jeder Teilnehmer auf die gleiche Frage / Aufgabe (es sei denn, er m&ouml;chte &uuml;bersprungen werden). Beispiele: <br>\
 <ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-        Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
-</ul><br>\
-Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
+    <li>Beschreibe in einem Wort, was Du von dieser Retrospektive als Ergebnis f&uuml;r Dich brauchst.</li>\
+    <li>&Auml;u&szlig;ere eine Bef&uuml;rchtung oder eine Sorge, z.B. in dem Du sie aufschreibst und sie bewusst - auch physikalisch - zur Seite legst.</li>\
+	<li>Wenn Du nur f&uuml;r dieses Treffen ein Auto w&auml;rst, was f&uuml;r eines w&auml;rst Du?</li>\
+	<li>Welches Wort beschreibt Deinen Gef&uuml;hlszustand am besten? Fr&ouml;hlich, sauer, traurig, &auml;ngstlich?</li>\
+</ul> <br>\
+Vermeide es, auf Antworten wie &quot;gut&quot; weiter einzugehen oder eine Erklärung zu verlangen.",
 source:  source_agileRetrospectives
 };
 all_activities[3] = {
 phase:     1,
-name:      "Timeline",
-summary:   "Participants write down significant events and order them chronologically",
-desc:      "Divide into groups with 5 or less people each. Distribute cards and markers. \
-Give participants 10min to note down memorable and / or personally significant events. \
-It's about gathering many perspectives. Consensus would be detrimental. All participants \
-post their cards and order them. It's okay to add cards on the fly. Analyze.<br>\
-Color Coding can help to see patterns, e.g.:<br>\
+name:      "Zeitstrahl",
+summary:   "Die Teilnehmer schreiben wichtige Ereignisse auf und sortieren sie chronologisch.",
+desc:      "Teile die Teilnehmer in Gruppen mit nicht mehr als f&uuml;nf Personen ein. Verteile Karteikarten und Stifte. Gib ihnen 10 Minuten Zeit, Ereignisse aufzuschreiben, an die sie sich spontant erinnern oder die f&uuml;r sie pers&ouml;nlich wichtig sind. <br>\
+Ziel ist es, viele verschiedene Sichtweisen zu sammeln. Eine einheitliche Sichtweise w&auml;re f&uuml;r diese Methode kontraproduktiv.<br>\
+Anschlie&szlig;end h&auml;ngen die Teilnehmer ihre Karten f&uuml;r alle gut sichtbar auf und ordnen sie chronologisch. Es ist ausdr&uuml;cklich erlaubt und erw&uuml;nscht, dass zwischendurch weitere Karten hinzugef&uuml;gt werden. Analysiert das Ergebnis gemeinsam.<br>\
+Farbige Karteikarten k&ouml;nnen verwendet werden, um unterschiedliche Arten von Ergeignissen kenntlich zu machen. Beispiele:<br>\
 <ul>\
-    <li>Emotions</li>\
-    <li>Events (technical, organization, people, ...)</li>\
-    <li>Function (tester, developer, manager, ...)</li>\
+    <li>Gef&uuml;hle</li>\
+    <li>Ereignisse (bezogen auf die Technik, die Organisation, Menschen im Team, ...)</li>\
+    <li>Funktion (Tester, Entwickler, Manager, ...)</li>\
 </ul>",
 duration:  "60-90 timeframe",
 source:  source_agileRetrospectives,
@@ -81,15 +79,14 @@ suitable: "iteration, introverts"
 };
 all_activities[4] = {
 phase:     1,
-name:      "Analyze Stories",
-summary:   "Walk through each story handled by the team and look for possible improvements",
-desc:      "Preparation: Collect all stories handled during the iteration and bring them along to \
-the retrospective.<br> \
-In a group (10 people max.) read out each story. For each one discuss whether it went \
-well or not. If it went well, capture why. If not discuss what you could do differently  \
-in the future.<br>\
-Variants: You can use this for support tickets, bugs or any combination of work \
-done by the team.",
+name:      "User Stories analysieren",
+summary:   "Gehe die f&uuml;r den letzten Sprint geplanten User Stories durch und suche nach m&ouml;glichen Verbesserungen",
+desc:      "Vorbereitung: Sammle f&uuml;r die Retrospektive alle User Stories ein, die f&uuml;r den vergangenen Sprint geplant waren. Lies jede User Story in der Gruppe (max. 10 Teilnehmer) vor und stelle zur Diskussion, ob die Umsetzung der Story gut oder schlecht gelaufen ist.<br> \
+<ul>\
+<li>Falls die Gruppe der Meinung ist, dass die Story gut gelaufen ist, so sammelt gemeinsam Gr&uuml;nde daf&uuml;r.</li>\
+<li>Falls die Story schlecht gelaufen ist, so sammelt Vorschl&auml;ge, was das Team in Zukunft anders machen kann.</li>\
+</ul> <br>\
+Abwandlung: Diese Methode kann ebenso auf Support-Tickets, Bugs oder andere Aufgaben in einem Team angewandt werden.",
 source:    source_findingMarbles,
 suitable: "iteration, max10people"
 };
