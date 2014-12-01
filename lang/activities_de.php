@@ -57,7 +57,7 @@ desc:      "Nach dem Round-Robin-Prinzip antwortet jeder Teilnehmer auf die glei
 	<li>Wenn Du nur f&uuml;r dieses Treffen ein Auto w&auml;rst, was f&uuml;r eines w&auml;rst Du?</li>\
 	<li>Welches Wort beschreibt Deinen Gef&uuml;hlszustand am besten? Fr&ouml;hlich, sauer, traurig, &auml;ngstlich?</li>\
 </ul> <br>\
-Vermeide es, auf Antworten wie &quot;gut&quot; weiter einzugehen oder eine Erkl�rung zu verlangen.",
+Vermeide es, auf Antworten wie &quot;gut&quot; weiter einzugehen oder eine Erkl&auml;rung zu verlangen.",
 source:  source_agileRetrospectives
 };
 all_activities[3] = {
@@ -113,22 +113,20 @@ suitable: "iteration, introverts"
 };
 all_activities[6] = {
 phase:     1,
-name:      "Mad Sad Glad",
-summary:   "Collect events when team members felt mad, sad, or glad and find the sources",
-desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or '>:), :(, :) alternatively). Team members write down \
-one event per color coded card, when they've felt that way. When the time is up \
-have everyone post their cards to the appropriate posters. Cluster the cards on \
-each poster. Ask the group for cluster names. <br>\
-Debrief by asking:\
+name:      "W&uuml;tend Traurig Gl&uuml;cklich",
+summary:   "Sammelt Anl&auml;sse, zu denen Teammitglieder sich w&uuml;tend, traurig oder gl&uuml;cklich gef&uuml;hlt haben und findet dazu die Ursachen",
+desc: "H&auml;nge drei Plakate auf mit den &Uuml;berschriften &quot;w&uuml;tend&quot;, &quot;traurig&quot;, &quot;gl&uuml;cklich&quot; oder einfach '>:), :(, :). Die Teammitglieder schreiben anschlie&szlig;end eine Situation oder einen Anlass pro Plakat auf eine farbig passende Karteikarte. <br>\
+Nach Ablauf der Zeit h&auml;ngt jeder seine Karten auf das jeweils passende Plakat und Du gruppierst Sie. Besprecht gemeinsam passende Namen f&uuml;r die Gruppen. <br>\
+Leite die Nachbesprechung mit Fragen ein: <br>\
 <ul>\
-    <li>What's standing out? What's unexpected?</li>\
-    <li>What was difficult about this task? What was fun?</li>\
-    <li>What patterns do you see? What do they mean for you as a team?</li>\
-    <li>Suggestions on how to continue?</li>\
+    <li>Was f&auml;llt euch auf? Gibt es etwas Unerwartetes?</li>\
+    <li>Fiel euch die Aufgabe schwer? Hat die Aufgabe Spa&szlig; gemacht?</li>\
+    <li>Lassen sich Muster erkennen oder wiederholen sich Dinge? Was bedeutet das f&uuml;r euch als Team?</li>\
+    <li>Gibt es Vorschl&auml;ge dazu, wie ihr als Team weitermachen wollt?</li>\
 </ul>",
 source:    source_agileRetrospectives,
 duration:  "15-25",
-photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contributed by Chloe Gachet'>View Photo</a>",
+photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contributed by Chloe Gachet'>Foto anzeigen</a>",
 suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
@@ -213,7 +211,7 @@ The top 2 or 3 become your action items.\
 (Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
+photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contributed by Pedro Ãngel Serrano'>View Photo</a>",
 suitable: "iteration"
 };
 all_activities[12] = {
@@ -319,7 +317,7 @@ Everyone rates the last sprint on a scale from 1 to 10. Then they have to sugges
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ãngel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -765,7 +763,7 @@ phase:     1,
 name:      "Lean Coffee",
 summary:   "Use the Lean Coffee format for a focused discussion of the top topics",
 desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: <ul>\
-    <li>Everyone writes down topics they’d like to discuss - 1 topic per sticky</li>\
+    <li>Everyone writes down topics theyâ€™d like to discuss - 1 topic per sticky</li>\
     <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. \
         Group stickies that are about the same topic</li>\
     <li>Everyone dot-votes for the 2 topics they want to discuss</li>\
@@ -848,7 +846,7 @@ name:      "Original 4",
 summary:   "Ask Norman Kerth's 4 key questions",
 desc:      "Norman Kerth, inventor of retrospectives, identified the following 4 questions as key: \
 <ul>\
-    <li>What did we do well, that if we didn’t discuss we might forget?</li>\
+    <li>What did we do well, that if we didnâ€™t discuss we might forget?</li>\
     <li>What did we learn?</li>\
     <li>What should we do differently next time?</li>\
     <li>What still puzzles us?</li>\
@@ -981,7 +979,7 @@ The straightforward choice is to pick the bottom left fruit as action items. If 
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
-photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
+photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ãngel Serrano'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[63] = {
@@ -1064,7 +1062,7 @@ for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and dis
 source:     source_judith,
 duration:  "15 min groupsize",
 photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a> \
-<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ãngel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {
@@ -1395,7 +1393,7 @@ s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
 photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a> \
-<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
+<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ãngel Serrano'></a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
