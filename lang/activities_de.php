@@ -115,13 +115,13 @@ all_activities[6] = {
 phase:     1,
 name:      "W&uuml;tend Traurig Gl&uuml;cklich",
 summary:   "Sammelt Anl&auml;sse, zu denen Teammitglieder sich w&uuml;tend, traurig oder gl&uuml;cklich gef&uuml;hlt haben und findet dazu die Ursachen",
-desc: "H&auml;nge drei Plakate auf mit den &Uuml;berschriften &quot;w&uuml;tend&quot;, &quot;traurig&quot;, &quot;gl&uuml;cklich&quot; oder einfach '>:), :(, :). Die Teammitglieder schreiben anschlie&szlig;end eine Situation oder einen Anlass pro Plakat auf eine farbig passende Karteikarte. <br>\
-Nach Ablauf der Zeit h&auml;ngt jeder seine Karten auf das jeweils passende Plakat und Du gruppierst Sie. Besprecht gemeinsam passende Namen f&uuml;r die Gruppen. <br>\
+desc: "H&auml;nge drei Plakate auf mit den &Uuml;berschriften &quot;w&uuml;tend&quot;, &quot;traurig&quot;, &quot;gl&uuml;cklich&quot; oder einfach &gt;:), :(, :). Die Teammitglieder schreiben anschlie&szlig;end eine Situation / einen Anlass pro Plakat auf eine farbig passende Karteikarte. <br>\
+Nach Ablauf der Zeit h&auml;ngt jeder seine Karten auf das jeweils passende Plakat und Du gruppierst Sie. Besprecht gemeinsam passende Bezeichnungen f&uuml;r die Gruppen. <br>\
 Leite die Nachbesprechung mit Fragen ein: <br>\
 <ul>\
-    <li>Was f&auml;llt euch auf? Gibt es etwas Unerwartetes?</li>\
+    <li>Was f&auml;llt euch auf? Was hat euch &uuml;berrascht?</li>\
     <li>Fiel euch die Aufgabe schwer? Hat die Aufgabe Spa&szlig; gemacht?</li>\
-    <li>Lassen sich Muster erkennen oder wiederholen sich Dinge? Was bedeutet das f&uuml;r euch als Team?</li>\
+    <li>Lassen sich Muster erkennen oder wiederholt sich etwas? Was bedeutet das f&uuml;r euch als Team?</li>\
     <li>Gibt es Vorschl&auml;ge dazu, wie ihr als Team weitermachen wollt?</li>\
 </ul>",
 source:    source_agileRetrospectives,
@@ -131,39 +131,38 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
 phase:     2,
-name:      "5 Whys",
-summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
-desc:      "Divide the participants into small groups (<= 4 people) and give \
-each group one of the top identified issues. Instructions for the group:\
+name:      "5 mal &quot;Warum?&quot;",
+summary:   "Grabt euch durch bis zur Wurzel des Problems indem ihr immer wieder fragt &quot;Warum?&quot;",
+desc:      "Teile die Teilnehmer in kleine Gruppen (&lt;= 4 Leute) auf und ordne jeder Gruppe eins der wichtigsten und zuvor identifizierten Themen zu.<br />\
+Aufgabe in den Gruppen:\
 <ul>\
-    <li>One person asks the others 'Why did that happen?' repeatedly to find the root cause or a chain of events</li>\
-    <li>Record the root causes (often the answer to the 5th 'Why?')</li>\
+    <li>Einer fragt die Anderen immer wieder: &quot;Warum?&quot; oder &quot;Wie kam es dazu?&quot;, um die urs&auml;chliche Kette von Ereignissen oder die Wurzel des Problems freizulegen.</li>\
+    <li>Schreibe die Wurzel des Problems auf. Oft handelt es sich dabei um die Antwort auf das f&uuml;nfte &quot;Warum?&quot;.</li>\
 </ul>\
-Let the groups share their findings.",
+Anschlie&szlig;end tauschen sich die Gruppen zu ihren Ergebnissen aus.",
 source:    source_agileRetrospectives,
 duration:  "15-20",
 suitable: "iteration, release, project, root_cause"
 };
 all_activities[8] = {
 phase:     2,
-name:      "Learning Matrix",
-summary:   "Team members brainstorm in 4 categories to quickly list issues",
-desc:      "After discussing the data from Phase 2 show a flip chart with 4 quadrants labeled \
-':)', ':(', 'Idea!', and 'Appreciation'. Hand out sticky notes. \
+name:      "Lernmatrix",
+summary:   "Macht ein Brainstorming in vier Kategorien, um schnell auf eine Liste von Themen zu kommen, die der Gruppe wichtig sind",
+desc:      "Nachdem die Themen aus Phase 2 &quot;Themen sammeln&quot; besprochen wurden, zeige der Gruppe ein Flipchart mit vier Quadranten beschriftet mit :), :(, &quot;Idee!&quot; und &quot;Wertsch&auml;tzung&quot;. Verteile selbstklebende Notizzettel. \
 <ul>\
-    <li>The team members can add their input to any quadrant. One thought per sticky note. </li>\
-    <li>Cluster the notes.</li>\
-    <li>Hand out 6-10 dots for people to vote on the most important issues.</li>\
+    <li>Die Teilnehmer d&uuml;rfen in jedem Quadranten Zettel aufh&auml;ngen - mit immer nur einem Aspekt / Gedanken pro Zettel. </li>\
+    <li>Gruppiere die Zettel.</li>\
+    <li>Verteile 6-10 Klebepunkte und ermuntere die Gruppe, gemeinsam dar&uuml;ber abzustimmen, welches die wichtigsten Themen sind.</li>\
 </ul>\
-This list is your input for Phase 4.",
+Diese Liste ist euer Auftakt f&uuml;r Phase 4 &quot;&Uuml;ber Ma&szlig;nahmen entscheiden&quot;.",
 source:    source_agileRetrospectives,
-photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contributed by Philipp Flenker'>View Photo</a>",
+photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contributed by Philipp Flenker'>Foto anzeigen</a>",
 duration:  "20-25",
 suitable: "iteration"
 };
 all_activities[9] = {
 phase:     2,
-name:      "Brainstorming / Filtering",
+name:      "Brainstorming / Aussortieren",
 summary:   "Generate lots of ideas and filter them against your criteria",
 desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas\
 which will be filtered <em>after</em> the brainstorming.\
