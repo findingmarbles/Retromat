@@ -163,19 +163,18 @@ suitable: "iteration"
 all_activities[9] = {
 phase:     2,
 name:      "Brainstorming / Aussortieren",
-summary:   "Generate lots of ideas and filter them against your criteria",
-desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas\
-which will be filtered <em>after</em> the brainstorming.\
+summary:   "Erzeugt viele Ideen und sortiert sie anhand eurer Kriterien aus",
+desc:      "Erkl&auml;re die Regeln und das Ziel des Brainstormings: Es geht darum, m&ouml;glichst viele neue Ideen und Vorschl&auml;ge zu sammeln und sie <em>hinterher</em> auszusortieren.\
 <ul>\
-    <li>Let people write down their ideas for 5-10 minutes</li>\
-    <li>Go around the table repeatedly always asking one idea each, until all ideas are on the flip chart</li>\
-    <li>Now ask for filters (e.g. cost, time investment, uniqueness of concept, brand appropriateness, ...). \
-        Let the group choose 4.</li>\
-    <li>Apply each filter and mark ideas that pass all 4.</li>\
-    <li>Which ideas will the group carry forward? Does someone feel strongly about one of the ideas?\
-        Otherwise use majority vote. </li>\
+    <li>Lasse den Teilnehmern 5-10 Minuten Zeit, ihre Ideen und Vorschl&auml;ge aufzuschreiben.</li>\
+    <li>Gehe reihum und lasse Dir jeweils eine Idee / einen Vorschlag geben, bis Du alle auf einem Flipchart gesammelt hast.</li>\
+    <li>Frage jetzt das Team, welche Auswahlkriterien es anwenden m&ouml;chte (z.B. Kosten, zeitlicher Aufwand, Einzigartigkeit der Idee, passt der Vorschlag zum Produkt, ...). \
+        Das Team w&auml;hlt vier Kriterien aus.</li>\
+    <li>Wende alle Kriterien nacheinander auf die gesammelten Vorschl&auml;ge an und markiere, welche davon alle vier Kriterien bestehen.</li>\
+    <li>Welche Idee und Vorschl&auml;ge sollen vom Team umgesetzt werden? Gibt es welche, die jemandem f&uuml;r besonders wichtig h&auml;lt?\
+        Macht im Zweifelsfall einen Mehrheitsentscheid. </li>\
 </ul>\
-The selected ideas enter Phase 4.",
+Die ausgew&auml;hlten Ideen und Vorschl&auml;ge sind die Grundlage f&uuml;r Phase 4.",
 source:    source_agileRetrospectives,
 more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
     Nine Ways To Be A Great Brainstorm Lead</a>",
@@ -184,13 +183,11 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[10] = {
 phase:     3,
-name:      "Circle of Questions",
-summary:   "Asking and answering go around the team circle - an excellent way to reach consensus",
-desc:      "Everyone sits in a circle. Begin by stating that you'll go round asking questions to find out \
-what you want to do as a group. You start by asking your neighbor the first question, e.g. \
-'What is the most important thing we should start in the next iteration?' Your \
-neighbor answers and asks her neighbor a related question. Stop when consensus emerges or \
-the time is up. Go around at least once, so that everybody is heard!",
+name:      "Fragen ringsherum",
+summary:   "Fragen im Team ringsherum stellen und beantworten ist eine gute Methode, um einen Konsens zu erreichen.",
+desc:      "Das Team setzt sich in einen Kreis. K&uuml;ndige an, dass Du ringsherum gehen wirst, um jedem eine Frage zu stellen und herauszufinden, was das Team jetzt machen will. <br>\
+Frage zuerst Deinen Nachbarn, was das Wichtigste ist, womit das Team in der n&auml;chsten Iteration auf jeden Fall anfangen sollte. Der Gefragte beantwortet die Frage und wendet sich mit einer &auml;hnlichen Frage an seinen Nachbarn. <br>\
+Ihr k&ouml;nnt aufh&ouml;ren, sobald sich ein Konsens abzeichnet oder die Zeit um ist. Jeder sollte mindestens einmal gefragt werden, damit alle sich einbringen k&ouml;nnen.",
 source:    source_agileRetrospectives,
 duration:  "30+ groupsize",
 suitable: "iteration, release, project, introverts"
