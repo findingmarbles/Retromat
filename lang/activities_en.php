@@ -1421,6 +1421,7 @@ one of the values - 1 cheerful sticky note per example. In turn, let \
 everyone post their note in the corresponding bubble and read them out loud. \
 Rejoice in how you embody agile core values :)",
 source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+photo:    "<a href='static/images/activities/90_Agile-Values-Cheerup.jpg' rel='lightbox[activity90]' title='Contributed by Daryl Praeker'>View Photo</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };

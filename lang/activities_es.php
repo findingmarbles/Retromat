@@ -1533,6 +1533,8 @@ alguno de los valores - 1 post-it por cada caso. En orden, \
 dejar que todos coloquen su post-it en la burbuja correspondiente y lo lean en voz alta. \
 Celebrar como todos tienen incorporados los valores &aacute;giles :)",
 source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+
+photo:    "<a href='static/images/activities/90_Agile-Values-Cheerup.jpg' rel='lightbox[activity90]' title='Contribuci&oacute;n por Daryl Praeker'>Ver Foto</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
