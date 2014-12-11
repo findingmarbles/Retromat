@@ -1,4 +1,4 @@
-var phase_titles = ['Gespr&auml;chsklima schaffen', 'Themen sammeln', 'Erkenntnisse gewinnen', '&Uuml;ber Ma&szlig;nahmen entscheiden', 'Abschluss', 'Etwas v&ouml;llig Anderes'];
+var phase_titles = ['Gespr&auml;chsklima schaffen', 'Themen sammeln', 'Erkenntnisse gewinnen', 'Entscheidungen treffen', 'Abschluss', 'Etwas v&ouml;llig Anderes'];
 
 // BIG ARRAY OF ALL ACTIVITIES
 // Mandatory: id, phase, name, summary, desc
@@ -80,7 +80,7 @@ suitable: "iteration, introverts"
 all_activities[4] = {
 phase:     1,
 name:      "User Stories analysieren",
-summary:   "Gehe die f&uuml;r den letzten Sprint geplanten User Stories durch und suche nach m&ouml;glichen Verbesserungen",
+summary:   "Gehe die f&uuml;r den letzten Sprint geplanten User Stories durch und suche nach m&ouml;glichen Verbesserungen.",
 desc:      "Vorbereitung: Sammle f&uuml;r die Retrospektive alle User Stories ein, die f&uuml;r den vergangenen Sprint geplant waren. Lies jede User Story in der Gruppe (max. 10 Teilnehmer) vor und stelle zur Diskussion, ob die Umsetzung der Story gut oder schlecht gelaufen ist.<br> \
 <ul>\
 <li>Falls die Gruppe der Meinung ist, dass die Story gut gelaufen ist, so sammelt gemeinsam Gr&uuml;nde daf&uuml;r.</li>\
@@ -114,7 +114,7 @@ suitable: "iteration, introverts"
 all_activities[6] = {
 phase:     1,
 name:      "W&uuml;tend Traurig Gl&uuml;cklich",
-summary:   "Sammelt Anl&auml;sse, zu denen Teammitglieder sich w&uuml;tend, traurig oder gl&uuml;cklich gef&uuml;hlt haben und findet dazu die Ursachen",
+summary:   "Sammelt Anl&auml;sse, zu denen Teammitglieder sich w&uuml;tend, traurig oder gl&uuml;cklich gef&uuml;hlt haben und findet dazu die Ursachen.",
 desc: "H&auml;nge drei Plakate auf mit den &Uuml;berschriften &quot;w&uuml;tend&quot;, &quot;traurig&quot;, &quot;gl&uuml;cklich&quot; oder einfach &gt;:), :(, :). Die Teammitglieder schreiben anschlie&szlig;end eine Situation / einen Anlass pro Plakat auf eine farbig passende Karteikarte. <br>\
 Nach Ablauf der Zeit h&auml;ngt jeder seine Karten auf das jeweils passende Plakat und Du gruppierst Sie. Besprecht gemeinsam passende Bezeichnungen f&uuml;r die Gruppen. <br>\
 Leite die Nachbesprechung mit Fragen ein: <br>\
@@ -132,7 +132,7 @@ suitable: "iteration, release, project, introverts"
 all_activities[7] = {
 phase:     2,
 name:      "5 mal &quot;Warum?&quot;",
-summary:   "Grabt euch durch bis zur Wurzel des Problems indem ihr immer wieder fragt &quot;Warum?&quot;",
+summary:   "Grabt euch durch bis zur Wurzel des Problems indem ihr immer wieder fragt &quot;Warum?&quot;.",
 desc:      "Teile die Teilnehmer in kleine Gruppen (&lt;= 4 Leute) auf und ordne jeder Gruppe eins der wichtigsten und zuvor identifizierten Themen zu.<br />\
 Aufgabe in den Gruppen:\
 <ul>\
@@ -147,14 +147,14 @@ suitable: "iteration, release, project, root_cause"
 all_activities[8] = {
 phase:     2,
 name:      "Lernmatrix",
-summary:   "Macht ein Brainstorming in vier Kategorien, um schnell auf eine Liste von Themen zu kommen, die der Gruppe wichtig sind",
-desc:      "Nachdem die Themen aus Phase 2 &quot;Themen sammeln&quot; besprochen wurden, zeige der Gruppe ein Flipchart mit vier Quadranten beschriftet mit :), :(, &quot;Idee!&quot; und &quot;Wertsch&auml;tzung&quot;. Verteile selbstklebende Notizzettel. \
+summary:   "Macht ein Brainstorming in vier Kategorien, um schnell auf eine Liste von Themen zu kommen, die der Gruppe wichtig sind.",
+desc:      "Nachdem die Themen aus Phase 2 besprochen wurden, zeige der Gruppe einen Flipchart mit vier Quadranten beschriftet mit :), :(, &quot;Idee!&quot; und &quot;Wertsch&auml;tzung&quot;. Verteile selbstklebende Notizzettel. \
 <ul>\
     <li>Die Teilnehmer d&uuml;rfen in jedem Quadranten Zettel aufh&auml;ngen - mit immer nur einem Aspekt / Gedanken pro Zettel. </li>\
     <li>Gruppiere die Zettel.</li>\
     <li>Verteile 6-10 Klebepunkte und ermuntere die Gruppe, gemeinsam dar&uuml;ber abzustimmen, welches die wichtigsten Themen sind.</li>\
 </ul>\
-Diese Liste ist euer Auftakt f&uuml;r Phase 4 &quot;&Uuml;ber Ma&szlig;nahmen entscheiden&quot;.",
+Diese Liste ist euer Auftakt f&uuml;r Phase 4.",
 source:    source_agileRetrospectives,
 photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contributed by Philipp Flenker'>Foto anzeigen</a>",
 duration:  "20-25",
@@ -163,16 +163,16 @@ suitable: "iteration"
 all_activities[9] = {
 phase:     2,
 name:      "Brainstorming / Aussortieren",
-summary:   "Erzeugt viele Ideen und sortiert sie anhand eurer Kriterien aus",
+summary:   "Erzeugt viele Ideen und sortiert sie anhand eurer Kriterien aus.",
 desc:      "Erkl&auml;re die Regeln und das Ziel des Brainstormings: Es geht darum, m&ouml;glichst viele neue Ideen und Vorschl&auml;ge zu sammeln und sie <em>hinterher</em> auszusortieren.\
 <ul>\
     <li>Lasse den Teilnehmern 5-10 Minuten Zeit, ihre Ideen und Vorschl&auml;ge aufzuschreiben.</li>\
-    <li>Gehe reihum und lasse Dir jeweils eine Idee / einen Vorschlag geben, bis Du alle auf einem Flipchart gesammelt hast.</li>\
-    <li>Frage jetzt das Team, welche Auswahlkriterien es anwenden m&ouml;chte (z.B. Kosten, zeitlicher Aufwand, Einzigartigkeit der Idee, passt der Vorschlag zum Produkt, ...). \
+    <li>Gehe reihum und lasse Dir jeweils eine Idee / einen Vorschlag nennen, bis Du alle auf einem Flipchart gesammelt hast.</li>\
+    <li>Frage jetzt das Team, welche Auswahlkriterien es anwenden m&ouml;chte (z.B. Kosten, zeitlicher Aufwand, Einzigartigkeit der Idee, passt der Vorschlag zum Produkt, usw. ...). \
         Das Team w&auml;hlt vier Kriterien aus.</li>\
-    <li>Wende alle Kriterien nacheinander auf die gesammelten Vorschl&auml;ge an und markiere, welche davon alle vier Kriterien bestehen.</li>\
-    <li>Welche Idee und Vorschl&auml;ge sollen vom Team umgesetzt werden? Gibt es welche, die jemandem f&uuml;r besonders wichtig h&auml;lt?\
-        Macht im Zweifelsfall einen Mehrheitsentscheid. </li>\
+    <li>Wende alle Kriterien nacheinander auf die gesammelten Vorschl&auml;ge an und markiere, welche davon alle vier Kriterien erf&uuml;llen.</li>\
+    <li>Welche Ideen und Vorschl&auml;ge sollen vom Team umgesetzt werden? Gibt es welche, die jemandem f&uuml;r besonders wichtig h&auml;lt?\
+        Kl&auml;rt das im Zweifelsfall per Mehrheitsentscheid. </li>\
 </ul>\
 Die ausgew&auml;hlten Ideen und Vorschl&auml;ge sind die Grundlage f&uuml;r Phase 4.",
 source:    source_agileRetrospectives,
@@ -183,31 +183,27 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[10] = {
 phase:     3,
-name:      "Fragen ringsherum",
-summary:   "Fragen im Team ringsherum stellen und beantworten ist eine gute Methode, um einen Konsens zu erreichen.",
-desc:      "Das Team setzt sich in einen Kreis. K&uuml;ndige an, dass Du ringsherum gehen wirst, um jedem eine Frage zu stellen und herauszufinden, was das Team jetzt machen will. <br>\
+name:      "Fragen im Kreis",
+summary:   "Im Kreis werden ringsherum Fragen gestellt und beantwortet, damit das Team sich einig dar&uuml;ber wird, was zu tun ist.",
+desc:      "Das Team setzt sich in einen Kreis. K&uuml;ndige an, dass Du ringsherum jedem eine Frage stellen wirst, um herauszufinden, was das Team jetzt machen sollte. <br>\
 Frage zuerst Deinen Nachbarn, was das Wichtigste ist, womit das Team in der n&auml;chsten Iteration auf jeden Fall anfangen sollte. Der Gefragte beantwortet die Frage und wendet sich mit einer &auml;hnlichen Frage an seinen Nachbarn. <br>\
-Ihr k&ouml;nnt aufh&ouml;ren, sobald sich ein Konsens abzeichnet oder die Zeit um ist. Jeder sollte mindestens einmal gefragt werden, damit alle sich einbringen k&ouml;nnen.",
+Ihr k&ouml;nnt aufh&ouml;ren, sobald sich das Team einig ist oder die Zeit verstrichen ist. Jeder sollte mindestens einmal gefragt werden, damit alle sich einbringen k&ouml;nnen.",
 source:    source_agileRetrospectives,
 duration:  "30+ groupsize",
 suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Dot Voting - Start, Stop, Continue",
-summary:   "Brainstorm what to start, stop & continue and pick the top initiatives",
-desc:      "Divide a flip chart into boxes headed with  'Start', 'Continue' and 'Stop'. \
-Ask your participants to write concrete proposals for each category - 1 \
-idea per index card. Let them write in silence for a few minutes. \
-Let everyone read out their notes and post them to the appropriate category. \
-Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots\
-or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
-The top 2 or 3 become your action items.\
-<br><br>\
-(Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
+name:      "Abstimmen mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
+summary:   "Macht ein Brainstorming dazu, womit ihr anfangen, aufh&ouml;ren oder weitermachen wollt und w&auml;hlt den besten Vorschlag aus.",
+desc:      "Teile einen Flipchart in drei Bereiche auf, die mit &quot;anfangen&quot;, &quot;weitermachen&quot; und &quot;aufh&ouml;ren&quot; beschriftet werden. <br>\
+Bitte das Team, sich konkrete Vorschl&auml;ge f&uuml;r jeden Bereich einfallen zu lassen und in Ruhe aufzuschreiben - immer nur ein Vorschlag pro Karteikarte. Anschlie&szlig;end liest jeder seine Karten vor und h&auml;ngt sie in den passenden Bereich auf den Flipchart. <br>\
+Diskutiere mit dem Team, welches die besten Ideen sind, &uuml;ber deren Umsetzung sich abstimmen l&auml;sst. Leite die Abstimmung ein, indem Du Klebepunkte verteilst, die frei verteilt werden d&uuml;rfen - einen, zwei oder drei pro Person. Alternativ zu Klebepunkten k&ouml;nnen die Teammitglieder auch gro&szlig;e &quot;X&quot; malen. <br>\
+Die zwei oder drei Vorschl&auml;ge mit den meisten Punkten oder &quot;X&quot; sind zur Umsetzung ausgew&auml;hlt - sie sind eure Action Items. <br><br> \
+(Die <a href='http://www.funretrospectives.com/open-the-box/'>&quot;Open the Box&quot;-Methode</a> von Paulo Caroli ist eine Variation dieser Aktivit&auml;t.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contributed by Pedro Ãngel Serrano'>View Photo</a>",
+photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Bereitgestellt von Pedro Ãngel Serrano'>Foto anzeigen</a>",
 suitable: "iteration"
 };
 all_activities[12] = {
@@ -313,7 +309,7 @@ Everyone rates the last sprint on a scale from 1 to 10. Then they have to sugges
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
 photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ãngel Serrano'></a>",
+<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -759,7 +755,7 @@ phase:     1,
 name:      "Lean Coffee",
 summary:   "Use the Lean Coffee format for a focused discussion of the top topics",
 desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: <ul>\
-    <li>Everyone writes down topics theyâ€™d like to discuss - 1 topic per sticky</li>\
+    <li>Everyone writes down topics they’d like to discuss - 1 topic per sticky</li>\
     <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. \
         Group stickies that are about the same topic</li>\
     <li>Everyone dot-votes for the 2 topics they want to discuss</li>\
@@ -842,7 +838,7 @@ name:      "Original 4",
 summary:   "Ask Norman Kerth's 4 key questions",
 desc:      "Norman Kerth, inventor of retrospectives, identified the following 4 questions as key: \
 <ul>\
-    <li>What did we do well, that if we didnâ€™t discuss we might forget?</li>\
+    <li>What did we do well, that if we didn’t discuss we might forget?</li>\
     <li>What did we learn?</li>\
     <li>What should we do differently next time?</li>\
     <li>What still puzzles us?</li>\
@@ -975,7 +971,7 @@ The straightforward choice is to pick the bottom left fruit as action items. If 
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
-photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ãngel Serrano'>View Photo</a>",
+photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[63] = {
@@ -1058,7 +1054,7 @@ for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and dis
 source:     source_judith,
 duration:  "15 min groupsize",
 photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a> \
-<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ãngel Serrano'></a>",
+<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {
@@ -1389,7 +1385,7 @@ s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
 photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a> \
-<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ãngel Serrano'></a>",
+<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
