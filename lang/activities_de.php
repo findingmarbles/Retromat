@@ -203,21 +203,15 @@ Die zwei oder drei Vorschl&auml;ge mit den meisten Punkten oder &quot;X&quot; si
 (Die <a href='http://www.funretrospectives.com/open-the-box/'>&quot;Open the Box&quot;-Methode</a> von Paulo Caroli ist eine Variation dieser Aktivit&auml;t.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Bereitgestellt von Pedro Ãngel Serrano'>Foto anzeigen</a>",
+photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Bereitgestellt von Pedro Ángel Serrano'>Foto anzeigen</a>",
 suitable: "iteration"
 };
 all_activities[12] = {
 phase:     3,
-name:      "SMART Goals",
-summary:   "Formulate a specific and measurable plan of action",
-desc:      "Introduce <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART goals</a> \
-(specific, measurable, attainable, relevant, timely) and examples for SMART vs not so \
-smart goals, e.g.'We&apos;ll study stories before pulling them by talking about them with the \
-product owner each Wednesday at 9am' vs. 'We'll get to know the stories before they \
-are in our sprint backlog'.<br>\
-Form groups around the issues the team wants to work on. Each group identifies 1-5 \
-concrete steps to reach the goal. Let each group present their results. All participants should agree \
-on the 'SMART-ness' of the goals. Refine and confirm.",
+name:      "SMARTe Ziele",
+summary:   "Entwickelt genaue und &uuml;berpr&uuml;fbare Ziele",
+desc:      "Erkl&auml;re, was <a href='http://de.wikipedia.org/wiki/SMART_%28Projektmanagement%29'>SMARTe Ziele</a> sind (<b>s</b>pecific, <b>m</b>easurable, <b>a</b>ttainable, <b>r</b>elevant, <b>t</b>imely) und liefere zum Vergleich Gegenbeispiele, z.B. &quot;Wir schauen uns die Stories an bevor sie im Sprint-Backlog landen.&quot; (nicht SMART) im Gegensatz zu &quot;Wir untersuchen Stories vor dem Ausw&auml;hlen f&uuml;r das Sprint Backlog, indem wir sie mit dem Produkt Owner jeden Mittwoch um 9:00h gemeinsam diskutieren.&quot; (SMART). <br></br>\
+Bildet Gruppen zu den Themen, an denen das Team arbeiten m&ouml;chte. Jede Gruppe entwickelt bis zu f&uuml;nf konkrete Schritte zum Erreichen des Ziels und pr&auml;sentiert seine Ergebnisse. Alle Teilnehmer stellen gemeinsam sicher, dass die Ziele SMART sind. &Uuml;berarbeitet die Ziele falls n&ouml;tig und lasst euch vom Team dann erneut best&auml;tigen, dass sie SMART genug sind.",
 source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
 suitable: "iteration, release, project"
