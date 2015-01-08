@@ -209,7 +209,7 @@ suitable: "iteration"
 all_activities[12] = {
 phase:     3,
 name:      "SMARTe Ziele",
-summary:   "Entwickelt genaue und &uuml;berpr&uuml;fbare Ziele",
+summary:   "Entwickelt genaue und &uuml;berpr&uuml;fbare Ziele.",
 desc:      "Erkl&auml;re, was <a href='http://de.wikipedia.org/wiki/SMART_%28Projektmanagement%29'>SMARTe Ziele</a> sind (<b>s</b>pecific, <b>m</b>easurable, <b>a</b>ttainable, <b>r</b>elevant, <b>t</b>imely) und liefere zum Vergleich Gegenbeispiele, z.B. &quot;Wir schauen uns die Stories an bevor sie im Sprint-Backlog landen.&quot; (nicht SMART) im Gegensatz zu &quot;Wir untersuchen Stories vor dem Ausw&auml;hlen f&uuml;r das Sprint Backlog, indem wir sie mit dem Produkt Owner jeden Mittwoch um 9:00h gemeinsam diskutieren.&quot; (SMART). <br></br>\
 Bildet Gruppen zu den Themen, an denen das Team arbeiten m&ouml;chte. Jede Gruppe entwickelt bis zu f&uuml;nf konkrete Schritte zum Erreichen des Ziels und pr&auml;sentiert seine Ergebnisse. Alle Teilnehmer stellen gemeinsam sicher, dass die Ziele SMART sind. &Uuml;berarbeitet die Ziele falls n&ouml;tig und lasst euch vom Team dann erneut best&auml;tigen, dass sie SMART genug sind.",
 source:    source_agileRetrospectives,
@@ -218,12 +218,9 @@ suitable: "iteration, release, project"
 };
 all_activities[13] = {
 phase:     4,
-name:      "Feedback Door - Numbers",
-summary:   "Gauge participants' satisfaction with the retro on a scale from 1 to 5 in minimum time",
-desc:      "Put sticky notes on the door with the numbers 1 through 5 on them. 1 is the topmost and best, \
-5 the lowest and worst.\
-When ending the retrospective, ask your participants to put a sticky to the number they feel \
-reflects the session. The sticky can be empty or have a comment or suggestion on it.",
+name:      "Die Feedback-T&uuml;r - Zahlen",
+summary:   "Miss die Zufriedenheit der Teilnehmer auf einer Skala von 1 bis 5 ohne viel Aufwand.",
+desc:      "H&auml;nge Klebezettel beschriftet mit den Zahlen 1 bis 5 an die T&uuml;r. 1 bedeutet &quot;top / am besten&quot; und 5 &quot;schlecht&quot;. Am Ende der Retrospektive darf jeder Teilnehmer einen Klebezettel unter die Zahl h&auml;ngen, mit der er die Retrospektive bewerten m&ouml;chte. Der Klebezettel darf dabei leer bleiben oder aber auch mit einem Kommentar oder Vorschlag zur Retrospektive versehen werden.",
 source:    "ALE 2011, " + source_findingMarbles,
 duration:  "2-3",
 suitable: "iteration, largeGroups"
