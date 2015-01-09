@@ -227,13 +227,10 @@ suitable: "iteration, largeGroups"
 };
 all_activities[14] = {
 phase:     4,
-name:      "Appreciations",
-summary:   "Let team members appreciate each others and end positively",
-desc:      "Start by giving a sincere appreciation of one of the participants. \
-It can be anything they contributed: help to the team or you, a solved problem, ...\
-Then invite others and wait for someone to work up the nerve. Close, when no one \
-talked for a minute.",
-source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
+name:      "Wertsch&auml;tzung",
+summary:   "Teammitglieder sch&auml;tzen sich gegenseitig wert und schlie&szlig;en mit einer positiven R&uuml;ckmeldung.",
+desc:      "Beginne mit der aufrichtigen Wertsch&auml;tzung eines anderen Teammitglieds. Dabei kann es um alles gehen, was er oder sie zum Projekt beigetragen hat: Hilfestellung f&uuml;r jemanden aus dem Team oder dem Projekt, L&ouml;sung eines Problems, etc. Lade die anderen Teammitglieder dazu ein, reihum im selben Sinne ihre Teamkameraden zu loben und wertzusch&auml;tzen. Beende die Aktivit&auml;t, sobald eine etwas l&auml;ngere Pause entsteht und niemand mehr etwas zu sagen hat.",
+source:    source_agileRetrospectives + ", die es aus 'The Satir Model: Family Therapy and Beyond' entnommen haben.",
 duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
 };
