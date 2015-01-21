@@ -236,24 +236,24 @@ suitable: "iteration, release, project"
 };
 all_activities[15] = {
 phase:     4,
-name:      "Helped, Hindered, Hypothesis",
-summary:   "Get concrete feedback on how you facilitated",
-desc:      "Prepare 3 flip chart papers titled 'Helped', 'Hindered', and 'Hypothesis' \
-(suggestions for things to try out). \
-Ask participants to help you grow and improve as a facilitator by writing \
-you sticky notes and signing their initials so that you may ask questions later.",
+name:      "hilfreich, hinderlich, hypothetisch",
+summary:   "Hole Dir konkretes Feedback zu Deiner T&auml;tigkeit als Coach / Moderator",
+desc:      "Bereite drei Flipcharts mit den &Uuml;berschriften &quot;hilfreich&quot;, &quot;hinderlich&quot; und &quot;hypothetisch&quot; (im Sinne von Vorschl&auml;gen) vor. Erl&auml;utere den Teilnehmern, dass es darum geht, Dir als Coach / Moderator Feedback zu geben, damit Du Dich in Deiner Rolle weiterentwickeln und verbessern kannst. Bitte die Teilnehmer, auf Klebezetteln ihre Ideen zu den Kategorien auf den FlipCharts <br> \
+<ul> \
+	<li>(was war) <b>hilfreich</b>,</li> \
+	<li>(was war) <b>hinderlich</b> und </li> \
+	<li><b>hypothetisch</b> (Vorschl&auml;ge)</li> \
+</ul> \
+zu schreiben und, sofern Sie einverstanden sind, mit ihren Initialen zu signieren, damit Du sie hinterher noch zu ihren Vorschl&auml;gen und Kommentaren befragen kannst.",
 source:    source_agileRetrospectives,
 duration:  "5-10",
 suitable: "iteration, release"
 };
 all_activities[16] = {
 phase:     4, // 5 geht auch
-name:      "SaMoLo (More of, Same of, Less of)",
-summary:   "Get course corrections on what you do as a facilitator",
-desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and 'Less of'. \
-Ask participants to nudge your behaviour into the right direction: Write stickies \
-with what you should do more, less and what is exactly right. Read out and briefly \
-discuss the stickies section-wise.",
+name:      "SaMoLo (Same of, More of, Less of)",
+summary:   "Hole Dir Verbesserungsvorschl&auml;ge zu Deiner Rolle als Moderator",
+desc:      "Unterteile ein Flipchart in drei Abschnitte mit den &Uuml;berschriften &quot;More of&quot; , &quot;Same of&quot; und &quot;Less of&quot;. Bitte die Teilnehmer, Dir einen Schubs in die richtige Richtung zu geben: Sammle Klebezettel dazu, wovon sie mehr (<b>More of</b>), gleichbleibend viel (<b>Same of</b>) oder weniger wollen (<b>Less of</b>). Lies die Klebezettel kategorieweise laut vor und besprich sie kurz.",
 more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 duration:  "5-10",
