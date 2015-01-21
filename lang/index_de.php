@@ -23,7 +23,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Patrick Zeising';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/peezett';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'http://www.dasprojekt-spiel.de/uploads/pics/100_0391.JPG';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	Patrick ist Projektleiter, ScrumMaster und Softwareentwickler in einem fantastischen <a href="http://www.team-neusta.de/">Team</a>. Seine Leidenschaft wecken agile Methoden und die Frage &quot;Was ist Qualität (in der Softwareentwicklung)?&quot;. G&auml;be es in seinem Leben keine IT, so st&uuml;nde er jetzt mit seiner Gitarre vor einem Mikro auf einer B&uuml;hne. Du kannst ihm <a href="mailto:patrick.zeising@web.de">schreiben</a> oder
+	Patrick arbeitet in verschiedenen Rollen in der Softwareentwicklung in einem fantastischen <a href="http://www.team-neusta.de/">Team</a>. Seine Leidenschaft wird dabei geweckt von agilen Methoden. G&auml;be es in seinem Leben keine IT, so st&uuml;nde er jetzt mit seiner Gitarre vor einem Mikro auf einer B&uuml;hne. Du kannst ihm <a href="mailto:patrick.zeising@web.de">schreiben</a> oder
     ihm <a href="https://twitter.com/peezett">auf Twitter folgen</a>.
 EOT;
 
