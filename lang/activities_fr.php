@@ -15,7 +15,6 @@ var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Gén
 //  source:    "",
 //  more:      "", // a link
 //  suitable:  "",
-//  photo: "" // a link
 //};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
@@ -38,7 +37,6 @@ Demandez ce que les participants pensent des résultats. Si il ya une majorité 
 envisagez d'utiliser la rétro pour discuter de cette constatation.",
 	duration: "5-10 numberPeople",
 	source: source_agileRetrospectives,
-photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contribuée par Reguel Wermelinger'>Voir la Photo</a>",
 	suitable: "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -47,8 +45,7 @@ all_activities[1] = {
 	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
 	desc: "Préparez un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
 Chaque participant marque son humeur sur le tableau.",
-	source: source_agileRetrospectives,
-    photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox[activity2]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
+	source: source_agileRetrospectives
 };
 all_activities[2] = {
 	phase: 0,
@@ -136,7 +133,6 @@ Terminez en demandant :\
 </ul>",
 	source: source_agileRetrospectives,
 	duration: "15-25",
-	photo: "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contribuée par Chloe Gachet'>Voir la Photo</a>",
 	suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
@@ -168,7 +164,6 @@ all_activities[8] = {
 </ul>\
 Cette liste sera celle utilisée pour la Phase 4.",
 	source: source_agileRetrospectives,
-    photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
 	duration: "20-25",
 	suitable: "iteration"
 };
@@ -222,7 +217,6 @@ Les 2 ou 3 meilleures seront vos actions &agrave; mener.\
 (Voir <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité.)",
 	source: source_agileRetrospectives,
 	duration: "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contribuée par Pedro Ángel Serrano'>Voir la Foto</a>",
 	suitable: "iteration"
 };
 all_activities[12] = {
@@ -314,7 +308,6 @@ et ce qui lui a fait faire du surplace. Une idée par post-it. Collez les post-i
 Lisez les tous et discutez de comment booster le 'moteur' et comment se passer de l’'ancre'.",
 source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, qui l'a adapté pour " + source_innovationGames,
 duration:  "10-15 par groupe",
-photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity18]' title='Contribution de Corinna Baldauf'>Voir la photo</a>",
 suitable: "iteration, release"
 };
 all_activities[19] = {
@@ -325,8 +318,6 @@ desc:      "Dessinez deux colonnes sur une feuille du tableau, une petite pour '
 Tout le monde évalue la dernière itération sur une échelle de 1 à 10. Ensuite chacun suggère quelles action(s) \
 feraient que la prochaine itération obtienne un score de 10 sur 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
-photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contribution de Pieter Versteijnen'>Voir la Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contribution de Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -341,7 +332,6 @@ deux actions. Les paires forment des groupes de 4. Puis 8. Maitenant ramassez le
 et votez pour les deux finales.",
 source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
 duration:  "15-30 groupSize",
-photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity20]' title='Prise par Paulo Caroli'>Voir la photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
@@ -361,7 +351,6 @@ all_activities[22] = {
     À la fin de la rétrospective, demandez aux participants de marquer leur niveau \
     de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
     source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
-    photo:    "<a href='static/images/activities/23_Feedback-Door-Smilies.jpg' rel='lightbox[activity23]' title='Contribuée par Philipp Flenker'>Voir la Photo</a>",
     duration:  "2-3",
     suitable: "iteration, largeGroups"
 };
@@ -395,8 +384,6 @@ all_activities[24] = {
     source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
     more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
     duration:  "20-60 complexity",
-    photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity25]' title='Contributed by Corinna Baldauf'>Voir la Photo</a>\
-               <a href='static/images/activities/25_Cause-Effect-Diagram-2.jpg' rel='lightbox[activity25]' title='Contribuée par Philipp Flenker'></a>",
     suitable: "release, project, smallGroups, complex"
 };
 all_activities[25] = {
@@ -500,7 +487,6 @@ Les métaphores apportent un nouvel éclairage et créent une compréhension par
 source:    source_findingMarbles + ", adapté de \
 <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
 et Olivier Gourment",
-photo:    "<a href='static/images/activities/31_Draw-Iteration.jpg' rel='lightbox[activity31]' title='Contribuée par Eric Lannemajou'>Voir la photo</a>",
 duration:  "5 + 3 par personne",
 suitable: "iteration, release, project"
 };
@@ -522,7 +508,6 @@ Laissez chaque membre de l'équipe choisir comment il se sent à propos du proje
 Vous pourrez en trouver les solutions dans les étapes qui suivent.",
 source:    "Andrew Ciccarelli",
 duration:  "10 pour 5 personnes",
-photo:    "<a href='static/images/activities/32_Emoticons.jpg' rel='lightbox[activity32]' title='Contribuée par Ruud Rietveld'>Voir la photo</a>",
 suitable: "iteration, release"
 };
 all_activities[32] = {
@@ -567,7 +552,6 @@ desc:      "Imprimez une checklist qui vous convient, exemples :\
 Parcourez les avec l'équipe et échangez pour savoir là où vous en êtes et si vous vous êtes sur la bonne voie. <br />\
 C'est une bonne activité à pratiquer lorsque qu'une itération s'est déroulée sans événement majeur.",
 source:    source_findingMarbles,
-photo:    "<a href='static/images/activities/35_Agile-Self-Assessment.jpg' rel='lightbox[activity35]' title='Contribuée par Philipp Flenker'>Voir la photo</a>",
 duration:  "10-25 minutes selon la liste",
 suitable: "smallTeams, iteration, release, project, smoothGoing"
 };
@@ -675,7 +659,6 @@ postale ainsi que sa fiche et explique son choix.",
 source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
 duration:  "15-20",
 suitable: "iteration, release, project",
-photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contribution de Corinna Baldauf'>Voir la photo</a>"
 };
 all_activities[42] = {
 phase:     0,

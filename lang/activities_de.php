@@ -14,7 +14,6 @@ var phase_titles = ['Gespr&auml;chsklima schaffen', 'Themen sammeln', 'Erkenntni
 //  source:    "",
 //  more:      "", // a link
 //  suitable:  "",
-//  photo: "" // a link
 //};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
@@ -35,7 +34,6 @@ Starte eine anonyme Umfrage, bei der jeder die Rolle, in der er sich am ehesten 
 Um in die Diskussion einzusteigen, frage das Team, was sie von dem Ergebnis der Umfrage halten und wie sie es interpretieren. Falls Urlauber oder Gefangene in der &Uuml;berzahl sind, k&ouml;nntet ihr diese Erkenntnis in der Retrospektive besprechen.",
 duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
-photo:    "<a href='static/images/activities/1_ESVP.jpg' rel='lightbox[activity1]' title='Contributed by Reguel Wermelinger'>View Photo</a>",
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -44,7 +42,6 @@ name:      "Wetterbericht",
 summary:   "Die Teilnehmer markieren ihr Stimmungs-&quot;Wetter&quot; auf einem Flipchart.",
 desc:      "Vorbereitung: Ein Flipchart mit Symbolen f&uuml;r Gewitter, Regen, Bew&ouml;lkung und Sonnenschein. Jeder Teilnehmer macht eine Markierung bei dem Wetterbericht, der am ehesten seiner Stimmung entspricht.",
 source:  source_agileRetrospectives,
-photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox[activity2]' title='Contributed by Philipp Flenker'>View Photo</a>",
 };
 all_activities[2] = {
 phase:     0,
@@ -126,7 +123,6 @@ Leite die Nachbesprechung mit Fragen ein: <br>\
 </ul>",
 source:    source_agileRetrospectives,
 duration:  "15-25",
-photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contributed by Chloe Gachet'>Foto anzeigen</a>",
 suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
@@ -156,7 +152,6 @@ desc:      "Nachdem die Themen aus Phase 2 besprochen wurden, zeige der Gruppe e
 </ul>\
 Diese Liste ist euer Auftakt f&uuml;r Phase 4.",
 source:    source_agileRetrospectives,
-photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contributed by Philipp Flenker'>Foto anzeigen</a>",
 duration:  "20-25",
 suitable: "iteration"
 };
@@ -203,7 +198,6 @@ Die zwei oder drei Vorschl&auml;ge mit den meisten Punkten oder &quot;X&quot; si
 (Die <a href='http://www.funretrospectives.com/open-the-box/'>&quot;Open the Box&quot;-Methode</a> von Paulo Caroli ist eine Variation dieser Aktivit&auml;t.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Bereitgestellt von Pedro Ángel Serrano'>Foto anzeigen</a>",
 suitable: "iteration"
 };
 all_activities[12] = {

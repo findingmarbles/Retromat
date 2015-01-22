@@ -16,7 +16,7 @@ if ($lang == 'en') {
 require(get_language_file_path($lang));
 
 $activities_file = 'lang/activities_' . $lang . '.php';
-$activities_photos_file = 'lang/activities_photos.php';
+$activities_photos_file = 'lang/photos.php';
 
 // PHP FUNCTIONS
 

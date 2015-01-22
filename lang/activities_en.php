@@ -14,7 +14,6 @@ var phase_titles = ['Set the stage', 'Gather data', 'Generate insights', 'Decide
 //  source:    "",
 //  more:      "", // a link
 //  suitable:  "",
-//  photo: "" // a link
 //};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

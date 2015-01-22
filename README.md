@@ -32,13 +32,12 @@ Or send a photo illustrating an activity (see above for contact details).
 
 ## Translate
 
-The French translation is already live. Additionally there are a couple of translations
-under construction. Our team of awesome translators:
+Besides the English original, there's a Spanish, French and German version.
+Our team of awesome translators:
 
-* Julien Dubois, Pierre Martin and Frank Taillandier - French
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
-* Tobias Ranft and Judith Andresen - German
-* Weronika Kedzierska - Polish
+* Julien Dubois, Pierre Martin and Frank Taillandier - French
+* Patrick Zeisig - German
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
@@ -67,7 +66,7 @@ To test your translation of the "index_*.php"-file you need php installed. In a 
 
  php index.php en > index.html
 
-to generate the Englisch page.
+to generate the English page.
 
 Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
 In your terminal run
