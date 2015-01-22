@@ -46,7 +46,7 @@ $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'View photo';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'View photos';
-$_lang['ACTIVITY_PHOTO_BY'] = 'Contributed by ';
+$_lang['ACTIVITY_PHOTO_BY'] = 'Photo by ';
 
 
 $_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';

@@ -50,6 +50,9 @@ $_lang['ACTIVITY_NEXT'] = 'Mostrar otra actividad para esta fase';
 $_lang['ACTIVITY_PHOTO_ADD'] = 'Agregar foto';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Fotos%20para%20Actividad%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hola%20Corinna%21%0D%0A%0D%0A[%20]%20Se%20adjuntan%20fotos%0D%0A[%20]%20Las%20fotos%20estan%20online%20aqui%3A%20%0D%0A%0D%0AAtt.%2C%0D%0ATu%20Nombre';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Ver foto';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Ver fotos';
+$_lang['ACTIVITY_PHOTO_BY'] = 'Foto por ';
 
 $_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat se apoya fuertemente sobre Javascript y no puede funcionar sin el. Por favor habilitalo en tu navegador. &iexcl;Gracias!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Disculpa, no se encuentra actividad con el ID';

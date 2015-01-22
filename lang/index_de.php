@@ -45,6 +45,9 @@ $_lang['ACTIVITY_NEXT'] = 'Zeige eine andere Aktivit&auml;t f&uuml;r diese Phase
 $_lang['ACTIVITY_PHOTO_ADD'] = 'Foto hinzuf&uuml;gen';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Fotos%20f%C3%BCr%20Aktivit%C3%A4t%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Foto%20ist%20im%20Anhang%0D%0A[%20]%20Photo%20ist%20online%20unter%3A%20%0D%0A%0D%0AMfG%2C%0D%0ADein%20Name';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Foto ansehen';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Fotos ansehen';
+$_lang['ACTIVITY_PHOTO_BY'] = 'Foto von ';
 
 $_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat benutzt viel JavaScript und funktioniert ohne nicht richtig. Bitte schalte JavaScript in Deinem Browser ein. Danke!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Tut mir leid , ich kann keine Aktivit&auml;t mit dieser ID finden: ';
