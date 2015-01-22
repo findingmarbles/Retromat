@@ -46,7 +46,6 @@ summary:   "Participants mark their 'weather' (mood) on a flipchart",
 desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshine.\
 Each participant marks their mood on the sheet.",
 source:  source_agileRetrospectives,
-photo:    "<a href='static/images/activities/2_Weather-Report.jpg' rel='lightbox[activity2]' title='Contributed by Philipp Flenker'>View Photo</a>",
 };
 all_activities[2] = {
 phase:     0,
@@ -133,7 +132,6 @@ Debrief by asking:\
 </ul>",
 source:    source_agileRetrospectives,
 duration:  "15-25",
-photo:    "<a href='static/images/activities/7_Mad-Sad-Glad.jpg' rel='lightbox[activity6]' title='Contributed by Chloe Gachet'>View Photo</a>",
 suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
@@ -164,7 +162,6 @@ desc:      "After discussing the data from Phase 2 show a flip chart with 4 quad
 </ul>\
 This list is your input for Phase 4.",
 source:    source_agileRetrospectives,
-photo:    "<a href='static/images/activities/9_Learning-Matrix.jpg' rel='lightbox[activity9]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "20-25",
 suitable: "iteration"
 };
@@ -218,7 +215,6 @@ The top 2 or 3 become your action items.\
 (Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
-photo:    "<a href='static/images/activities/12_Start-Stop-Continue.JPG' rel='lightbox[activity12]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable: "iteration"
 };
 all_activities[12] = {
@@ -312,7 +308,6 @@ and what kept it in place. One idea per note. Post the stickies motor and anchor
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
 source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, who adapted it from " + source_innovationGames,
 duration:  "10-15 groupSize",
-photo:    "<a href='static/images/activities/19_Speedboat.jpg' rel='lightbox[activity19]' title='Contributed by Corinna Baldauf'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[19] = {
@@ -323,8 +318,6 @@ desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a w
 Everyone rates the last sprint on a scale from 1 to 10. Then they have to suggest what action(s) \
 would make the next sprint a perfect 10.",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
-photo:    "<a href='static/images/activities/20_Perfection-Game.jpg' rel='lightbox[activity20]' title='Contributed by Pieter Versteijnen'>View Photo</a> \
-<a href='static/images/activities/20_Perfection-Game-2.jpg' rel='lightbox[activity20]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable: "iteration, release"
 };
 all_activities[20] = {
@@ -339,7 +332,6 @@ two actions. The pairs form groups of 4. Then 8. Now collect every group's two a
 and have a vote on the final two.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 duration:  "15-30 groupSize",
-photo:    "<a href='http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG' rel='lightbox[activity21]' title='Photo taken by Paulo Caroli'>View Photo</a>",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
@@ -349,7 +341,6 @@ summary:   "Participants mark their 'temperature' (mood) on a flipchart",
 desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
 Each participant marks their mood on the sheet.",
 source:  source_unknown,
-photo: "<a href='static/images/activities/22_Temperature-Reading.jpg' rel='lightbox[activity22]' title='Contributed by Weronika Kedzierska'>View Photo</a>"
 };
 all_activities[22] = {
 phase:     4,
@@ -359,7 +350,6 @@ desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against 
 When ending the retrospective, ask your participants to mark their satisfaction \
 with the session with an 'x' below the applicable smily.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
-photo:    "<a href='static/images/activities/23_Feedback-Door-Smilies.jpg' rel='lightbox[activity23]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "2-3",
 suitable: "iteration, largeGroups"
 };
@@ -391,8 +381,6 @@ influence, you can gain a lot.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 duration:  "20-60 complexity",
-photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity25]' title='Contributed by Corinna Baldauf'>View Photo</a>\
-           <a href='static/images/activities/25_Cause-Effect-Diagram-2.jpg' rel='lightbox[activity25]' title='Contributed by Philipp Flenker'></a>",
 suitable: "release, project, smallGroups, complex"
 
 
@@ -488,7 +476,6 @@ Metaphors open new viewpoints and create a shared understanding.",
 source:    source_findingMarbles + ", adapted from \
            <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
            and Olivier Gourment",
-photo:    "<a href='static/images/activities/31_Draw-Iteration.jpg' rel='lightbox[activity31]' title='Contributed by Eric Lannemajou'>View Photo</a>",
 duration:  "5 + 3 per person",
 suitable: "iteration, release, project"
 };
@@ -510,7 +497,6 @@ Let each team member choose how they feel about the project. This is a fun and e
 surface problems early. You can address them in the subsequent phases.",
 source:    "Andrew Ciccarelli",
 duration:  "10 for 5 people",
-photo:    "<a href='static/images/activities/32_Emoticons.jpg' rel='lightbox[activity32]' title='Contributed by Ruud Rietveld'>View Photo</a>",
 suitable: "iteration, release"
 };
 all_activities[32] = {
@@ -556,7 +542,6 @@ desc:      "Print out a checklist that appeals to you, e.g.:\
 Go through them in the team and discuss where you stand and if you're on the right track. <br>\
 This is a good activity after an iteration without major events.",
 source:    source_findingMarbles,
-photo:    "<a href='static/images/activities/35_Agile-Self-Assessment.jpg' rel='lightbox[activity35]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "10-25 minutes depending on the list",
 suitable: "smallTeams, iteration, release, project, smoothGoing"
 };
@@ -661,7 +646,6 @@ index cards and describes their choice.",
 source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
 duration:  "15-20",
 suitable: "iteration, release, project",
-photo:    "<a href='http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg' rel='lightbox[activity41]' title='Contributed by Corinna Baldauf'>View Photo</a>"
 };
 all_activities[42] = {
 phase:     0,
@@ -843,9 +827,6 @@ and let the team reflect on the process of completing the tasks - what went good
 source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
 duration:  "30-40 min",
 suitable:  "project, release",
-photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/54_Story-Oscars.jpg' rel='lightbox[activity54]' title='Contributed by Wolfgang Fassbender'>View Photos</a>\
-           <a href='static/images/activities/54_Story-Oscars_2.JPG' rel='lightbox[activity54]' title='Contributed by Deborah Lindsay'></a>\
-           <a href='static/images/activities/54_Story-Oscars_3.jpg' rel='lightbox[activity54]' title='Contributed by Geert van der Ploeg'></a>"
 };
 all_activities[54] = {
 phase:     2,
@@ -913,8 +894,6 @@ to 5 (Happy).\
     <li>If someone else has the same score, they place their sticky above the placed one, effectively forming a histogram</li>\
 </ul>",
 source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
-photo:    "<a href='static/images/activities/59_Happiness-Histogram.jpg' rel='lightbox[activity59]' title='Contributed by Weronika Kedzierska'>View Photo</a>\
-           <a href='static/images/activities/59_Happiness-Histogram-2.jpg' rel='lightbox[activity59]' title='Contributed by Weronika Kedzierska'></a>",
 duration:  "2 min",
 suitable:  "iteration, project, release"
 };
@@ -933,7 +912,6 @@ you usually close on a positive note.",
 source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
 duration:  "5-10 min",
 suitable:  "iteration, project",
-photo:    "<a href='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf' rel='lightbox[activity59]' title='Contributed by Amber Haley'>View Photo</a>"
 };
 all_activities[60] = {
 phase:     3,
@@ -949,7 +927,6 @@ two cards. Stop the chatting after 1 minute. Each chat pair splits \
 up the points on their card. In the end the cards are ranked by points \
 and the team decides how much can be done in the next iteration, pulling from the top.",
 source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
-photo:    "<a href='static/images/activities/61_Chaos-Cocktail-Party.jpg' rel='lightbox[activity61]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release, largeGroup"
 };
@@ -986,7 +963,6 @@ The straightforward choice is to pick the bottom left fruit as action items. If 
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
 duration:  "10-15 min",
-photo:    "<a href='static/images/activities/63_Low-Hanging-Fruit.jpg' rel='lightbox[activity63]' title='Contributed by Pedro Ángel Serrano'>View Photo</a>",
 suitable:  "iteration, project, release"
 };
 all_activities[63] = {
@@ -1006,7 +982,6 @@ The long and dull stories are now nicely grouped to 'attack' in subsequent phase
 source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
 duration:  "10",
 suitable:  "iteration, project",
-photo:    "<a href='http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450' rel='lightbox[activity63]' title='Contributed by Wayne D. Grant'>View Photo</a>"
 };
 all_activities[64] = {
 phase:     1,
@@ -1068,8 +1043,6 @@ What would a map for it look like? What hints would you add for save travelling?
 for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and discuss interesting metaphors.",
 source:     source_judith,
 duration:  "15 min groupsize",
-photo:    "<a href='static/images/activities/68_Company-Map.jpg' rel='lightbox[activity68]' title='Contributed by Annette Harder'>View Photo</a> \
-<a href='static/images/activities/68_Company-Map-2.JPG' rel='lightbox[activity68]' title='Contributed by Pedro Ángel Serrano'></a>",
 suitable:  "iteration, project, release"
 };
 all_activities[68] = {
@@ -1208,9 +1181,6 @@ Form 4 subgroups, on for each L, read all notes, identify patterns and report th
 Use this as input for the next phase.",
 source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> probably via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
 duration:  "30 min",
-photo:    "<a href='http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg' rel='lightbox[activity78]' title='Photo taken by Ellen Gottesdiener'>View Photos</a>\
-           <a href='static/images/activities/78_Four-Ls.jpg' rel='lightbox[activity78]' title='Contributed by Philipp Flenker'></a>\
-           <a href='static/images/activities/78_Four-Ls_2.jpg' rel='lightbox[activity78]' title='Contributed by Geert van der Ploeg'></a>",
 suitable:  "iteration, project, release, distributed"
 };
 all_activities[78] = {
@@ -1241,8 +1211,6 @@ Are all issues unanimous?",
 source:     "<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>",
 more:       "http://www.funretrospectives.com/repeat-avoid/",
 duration:  "15-30",
-photo:    "<a href='static/images/activities/80_Repeat-Avoid.jpg' rel='lightbox[activity80]' title='Contributed by Philipp Flenker'>View Photo</a>\
-           <a href='http://4.bp.blogspot.com/-LLJU-U0lLFg/UR6j7F6mMnI/AAAAAAAACmU/P1NUW-KUraA/s1600/repeat-avoid.JPG' rel='lightbox[activity80]' title='Photo by Luis Goncalves'></a>",
 suitable: "iteration, project, remote"
 };
 all_activities[80] = {
@@ -1264,7 +1232,6 @@ people's needs they can ask for an Alignment Check. Then everyone says a number 
 how much they are getting what they want. The person with the lowest number takes over to get nearer to \
 what they want.]",
 source:     "Inspired by <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
-photo:    "<a href='static/images/activities/81_Outcome-Expectations.jpg' rel='lightbox[activity81]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "5 min groupsize",
 suitable:  "iteration, project, release"
 };
@@ -1294,7 +1261,6 @@ Write a question next to each dartboard, e.g. \
 Participants mark their opinion with a sticky. Smack in the middle is 100% \
 agreement. Outside the disc is 0% agreement.",
 source:   "<a href='http://www.philippflenker.de/'>Philipp Flenker</a>",
-photo:    "<a href='static/images/activities/83_Retro-Dart.jpg' rel='lightbox[activity83]' title='Contributed by Philipp Flenker'>View Photo</a>",
 duration:  "2-5",
 suitable: "iteration, release"
 };
@@ -1399,8 +1365,6 @@ One example per sticky note. There's only one rule: If someone contributes to th
 s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
-photo:    "<a href='http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615' rel='lightbox[activity89]' title='Photo taken by Jordan Morris'>View Photo</a> \
-<a href='static/images/activities/89_Retro-Wedding.JPG' rel='lightbox[activity89]' title='Contributed by Pedro Ángel Serrano'></a>",
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
 };
@@ -1420,7 +1384,6 @@ one of the values - 1 cheerful sticky note per example. In turn, let \
 everyone post their note in the corresponding bubble and read them out loud. \
 Rejoice in how you embody agile core values :)",
 source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
-photo:    "<a href='static/images/activities/90_Agile-Values-Cheerup.jpg' rel='lightbox[activity90]' title='Contributed by Daryl Praeker'>View Photo</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release"
 };
@@ -1460,8 +1423,6 @@ desc:      "Take each of your action items and create a funny poster for it (see
 </ol>\
 Print your master piece as big as possible (A4 at the very least) and display it prominently.",
 source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
-photo:    "<a href='static/images/activities/92_Motivational-Poster_INVEST.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'>View Photo</a>\
-           <a href='static/images/activities/92_Motivational-Poster_Pairing.png' rel='lightbox[activity92]' title='Contributed by Romain Trocherie'></a>",
 duration:  "30 min per topic / poster",
 suitable:  "release"
 };

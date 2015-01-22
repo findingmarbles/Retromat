@@ -17,7 +17,6 @@ require(get_language_file_path($lang));
 
 $activities_file = 'lang/activities_' . $lang . '.php';
 $activities_photos_file = 'lang/activities_photos.php';
-$activities_photos_path = 'static/images/activities/';
 
 // PHP FUNCTIONS
 
@@ -243,14 +242,22 @@ function convert_index_to_id(index) {
 function get_photo_string(index) {
     res = "";
     if (all_photos[index] != null) {
-        res += "<a href='<?php echo($activities_photos_path); ?>";
-        res += all_photos[index]['filename'];
-        res += "' rel='lightbox[activity" + index + "]' ";
-        res += "title='<?php echo($_lang['ACTIVITY_PHOTO_BY']); ?>";
-        res += all_photos[index]['contributor'];
-        res += "'>";
-        res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW']); ?>";
-        res += "</a>";
+        for (var i=0; i<all_photos[index].length; i++) {
+            res += "<a href='";
+            res += all_photos[index][i]['filename'];
+            res += "' rel='lightbox[activity" + index + "]' ";
+            res += "title='<?php echo($_lang['ACTIVITY_PHOTO_BY']); ?>";
+            res += all_photos[index][i]['contributor'];
+            res += "'>";
+            if (i == 0) {
+                if (all_photos[index].length < 2) {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTO']); ?>";
+                } else {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTOS']); ?>";
+                }
+            }
+            res += "</a>";
+        }
         res += " | ";
     }
     return res;
