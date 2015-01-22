@@ -18,7 +18,7 @@ $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-
 $_lang['INDEX_ABOUT'] = 'Retr-O-Mat enth&auml;lt <span id="class_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu. Kennst Du eine tolle Aktivit&auml;t?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung: ';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung von ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Patrick Zeising';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/peezett';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'http://www.dasprojekt-spiel.de/uploads/pics/100_0391.JPG';
@@ -27,7 +27,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
     ihm <a href="https://twitter.com/peezett">auf Twitter folgen</a>.
 EOT;
 
-$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
+$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Original von ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     W&auml;hrend ihrer Zeit als ScrumMaster h&auml;tte sich Corinna so etwas wie den Retr-O-Mat gew&uuml;nscht.
 	Letztlich hat sie ihn einfach selbst gebaut in der Hoffnung, dass er auch anderen hilft.
