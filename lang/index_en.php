@@ -44,6 +44,9 @@ $_lang['ACTIVITY_NEXT'] = 'Show other activity for this phase';
 $_lang['ACTIVITY_PHOTO_ADD'] = 'Add Photo';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
+$_lang['ACTIVITY_PHOTO_VIEW'] = 'View photo(s)';
+$_lang['ACTIVITY_PHOTO_BY'] = 'Contributed by ';
+
 
 $_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, can\'t find activity with ID';

@@ -16,6 +16,8 @@ if ($lang == 'en') {
 require(get_language_file_path($lang));
 
 $activities_file = 'lang/activities_' . $lang . '.php';
+$activities_photos_file = 'lang/activities_photos.php';
+$activities_photos_path = 'static/images/activities/';
 
 // PHP FUNCTIONS
 
@@ -97,6 +99,7 @@ var PHASE_ID_TAG = 'phase';
 <?php
 
     require($activities_file);
+    require($activities_photos_file);
 
 ?>
 
@@ -218,7 +221,7 @@ function populate_activity_block(activity_index, activity_block) {
     $(activity_block).find('.js_fill_summary').html(activity.summary);
     $(activity_block).find('.js_fill_source').html(activity.source);
     $(activity_block).find('.js_fill_description').html(activity.desc);
-    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity.photo));
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity_index));
 
 }
 
@@ -234,13 +237,21 @@ function convert_index_to_id(index) {
     return parseInt(index) + 1;
 }
 
-/* Param: activity.photo
- * Returns: String (empty or link to photo)
+/* Param: activity index
+ * Returns: String (empty or link to photo(s))
  */
-function get_photo_string(photo) {
+function get_photo_string(index) {
     res = "";
-    if (photo != null) {
-        res = photo + " | ";
+    if (all_photos[index] != null) {
+        res += "<a href='<?php echo($activities_photos_path); ?>";
+        res += all_photos[index]['filename'];
+        res += "' rel='lightbox[activity" + index + "]' ";
+        res += "title='<?php echo($_lang['ACTIVITY_PHOTO_BY']); ?>";
+        res += all_photos[index]['contributor'];
+        res += "'>";
+        res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW']); ?>";
+        res += "</a>";
+        res += " | ";
     }
     return res;
 }
