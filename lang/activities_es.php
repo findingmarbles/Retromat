@@ -1561,5 +1561,43 @@ duration:  "20-30 minutes",
 suitable:  "iteration, project, release"
 };
 
+all_activities[93] = {
+phase:     2,
+name:      "ATPSM - Arma Tu Propio Scrum Master",
+summary:   "El equipo arma el SM perfecto \& escuchando distintos puntos de vista",
+desc:      "Dibujar un Scrum Master en un rotafolio conteniendo tres secciones: cerebro, coraz&oacute;n y estomago. \
+<ul>\
+    <li>Paso 1: '&iquest;Qu&eacute; caracteristicas demuestra su Scrum Master perfecto?' <br>\
+        Pedir a los participantes que escriban en silencio una caracter&iacute;stica por post-it. \
+        Dejar que expliquen sus post-its y los ubiquen en el dibujo. \
+    </li> \
+    <li>Paso 2: '&iquest;Qu&eacute; deber&iacute;a saber el Scrum Master perfecto sobre el equipo para que pueda trabajar bien con ustedes?' \
+    </li>\
+    <li>Paso 3: '&iquest;C&oacute;mo pueden dar soporte al Scrum Master para que pueda hacer un trabajo brillante?' <br> \
+    </li></ul>\
+Se puede adaptar la actividad para otros roles, p.e. Arma Tu Propio Dueño De Producto.",
+source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
+duration:  "30 minutes",
+suitable:  "iteration, project, release"
+};
+
+all_activities[94] = {
+phase:     2,
+name:      "Si fuera tu",
+summary:   "&iquest;Qu&eacute; pueden mejorar los sub-grupos en sus interacciones?",
+desc:      "Identificar entre los participantes los distintos sub-grupos que interactuaron durante la iteraci&oacute;n, \
+p.e. desarrolladores/testers, clientes/proveedores, dueño de producto/desarrolladores, etc. \
+Dejar 3 minutos para que los participantes puedan escribir en silencio lo que piensan que su grupo hizo \
+que pudo haber un impacto negativo sobre otro grupo. Cada persona deber&iacute;a ser parte de un solo grupo \
+y escribir post-its para todos los otros grupos - 1 tema por post-it. <br><br> \
+Luego en orden cada participante lee sus post-its y los entregan al grupo correspondiente. \
+El grupo afectado lo eval&uacute;a desde 0 ('No fue un problema') a 5 ('Fue un gran problema').\
+De esta forma se recolectan percepciones y entendimiento compartido de los problemas. \
+Se pueden seleccionar algunos para trabajarlo en otras actividades.",
+source:    "<a href='http://www.elproximopaso.net/2011/10/dinamica-de-retrospectiva-si-fuera-vos.html'>Thomas Wallet</a>",
+duration:  "25-40 minutes",
+suitable:  "iteration, project, release"
+};
+
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
