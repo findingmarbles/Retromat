@@ -1588,7 +1588,7 @@ summary:   "&iquest;Qu&eacute; pueden mejorar los sub-grupos en sus interaccione
 desc:      "Identificar entre los participantes los distintos sub-grupos que interactuaron durante la iteraci&oacute;n, \
 p.e. desarrolladores/testers, clientes/proveedores, dueño de producto/desarrolladores, etc. \
 Dejar 3 minutos para que los participantes puedan escribir en silencio lo que piensan que su grupo hizo \
-que pudo haber un impacto negativo sobre otro grupo. Cada persona deber&iacute;a ser parte de un solo grupo \
+que pudo haber tenido un impacto negativo sobre otro grupo. Cada persona deber&iacute;a ser parte de un solo grupo \
 y escribir post-its para todos los otros grupos - 1 tema por post-it. <br><br> \
 Luego en orden cada participante lee sus post-its y los entregan al grupo correspondiente. \
 El grupo afectado lo eval&uacute;a desde 0 ('No fue un problema') a 5 ('Fue un gran problema').\
