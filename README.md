@@ -1,7 +1,7 @@
 Retromat
 ========
 
-Retr-O-Mat: Create, tweak, print & share plans for (agile) retrospectives
+Retromat: Create, tweak, print & share plans for (agile) retrospectives
             A collection of activities / methods to inspire scrummasters
             and facilitators in general
 
@@ -12,7 +12,7 @@ http://plans-for-retrospectives.com (or http://retr-o-mat.com)
 
 # Contact
 
-Retr-O-Mat is primarily run by me, Corinna Baldauf, so if you've got questions, suggestions,
+Retromat is primarily run by me, Corinna Baldauf, so if you've got questions, suggestions,
 etc. please get in touch:
 
 * corinna@finding-marbles.com
@@ -21,7 +21,7 @@ etc. please get in touch:
 
 # Contribute
 
-You'd like to get involved with Retr-O-Mat? Great!
+You'd like to get involved with Retromat? Great!
 
 ## Submit an activity or photo
 
@@ -32,7 +32,7 @@ Or send a photo illustrating an activity (see above for contact details).
 
 ## Translate
 
-Besides the English original, there's a Spanish, French and German version.
+Besides the English original, there's a Spanish, French, and German version.
 Our team of awesome translators:
 
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
@@ -54,7 +54,7 @@ You don't have to translate all activities at once. Just start at index 0 and wo
 way down. The first live version of Retr-O-Mat had 15 activities. So as soon as you've translated
 indexes 0-14, your language will go live :)
 
-(The indexes should stay the same across language, so don't move activities around.
+(The indexes should stay the same across languages, so don't move activities around.
 Some of the attributes, e.g. 'duration' and 'suitable', never show up on the
 page the visitors see. No need to translate those.)
 
@@ -80,7 +80,7 @@ doesn't have to be translated ;)
 
 To test your translatation of the "activities_*.php"-file you need a browser with JS enabled
 and either also PHP on the console or you save a local copy of index.html
-of the live Retr-O-Mat version and replace activities in the code of that local copy.
+of the live Retromat version and replace activities in the code of that local copy.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
