@@ -48,7 +48,7 @@ function get_url_to_index() {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retr-O-Mat - <?php echo($_lang['HTML_TITLE']); ?></title>
+<title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -658,7 +658,7 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
-        <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat"></a>
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (17 activities)</option>
@@ -685,7 +685,7 @@ function switchLanguage(new_lang) {
     <div class="book">
         <div class="content">
                 Did you know there's a
-                <a href="/print/index.html">Print Editon of the Retr-O-Mat</a>?
+                <a href="/print/index.html">Print Editon of the Retromat</a>?
         </div>
     </div>
 <?php } ?>
@@ -693,7 +693,7 @@ function switchLanguage(new_lang) {
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
-            Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
+            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div class="plan-header__wrapper">
             <div class="ids-display">
