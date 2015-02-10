@@ -11,11 +11,11 @@ $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Was ist eine Retrospective?</a>';
-$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retr-O-Mat</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retromat</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Gedruckte Ausgabe</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Eine Aktivit&auml;t hinzuf&uuml;gen</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retr-O-Mat enth&auml;lt <span id="class_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu. Kennst Du eine tolle Aktivit&auml;t?';
+$_lang['INDEX_ABOUT'] = 'Retromat enth&auml;lt <span id="class_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu. Kennst Du eine tolle Aktivit&auml;t?';
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung von ';
@@ -29,7 +29,7 @@ EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Original von ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
-    W&auml;hrend ihrer Zeit als ScrumMaster h&auml;tte sich Corinna so etwas wie den Retr-O-Mat gew&uuml;nscht.
+    W&auml;hrend ihrer Zeit als ScrumMaster h&auml;tte sich Corinna so etwas wie den Retromat gew&uuml;nscht.
 	Letztlich hat sie ihn einfach selbst gebaut in der Hoffnung, dass er auch anderen hilft.
     Hast Du Fragen an sie, Vorschl&auml;ge oder Aufmunterungen für sie?
 	Du kannst ihr <a href="mailto:corinna@finding-marbles.com">schreiben</a> oder
@@ -49,7 +49,7 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Foto ansehen';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Fotos ansehen';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Foto von ';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat benutzt viel JavaScript und funktioniert ohne nicht richtig. Bitte schalte JavaScript in Deinem Browser ein. Danke!';
+$_lang['ERROR_NO_SCRIPT'] = 'Retromat benutzt viel JavaScript und funktioniert ohne nicht richtig. Bitte schalte JavaScript in Deinem Browser ein. Danke!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Tut mir leid , ich kann keine Aktivit&auml;t mit dieser ID finden: ';
 
 $_lang['POPUP_CLOSE'] = 'Schlie&szlig;en';
