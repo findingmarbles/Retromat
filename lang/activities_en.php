@@ -1481,5 +1481,22 @@ source:    "<a href='http://www.elproximopaso.net/2011/10/dinamica-de-retrospect
 duration:  "25-40 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[95] = {
+phase:     3,
+name:      "Problem Solving Tree",
+summary:   "Got a big goal? Find the steps that lead to it",
+desc:      "Hand out sticky notes and markers. Write the big problem you \
+want to solve onto a note and stick it to the top of a wall or big board. \
+Ask the participants to write down ideas of what they can do to solve the problem. \
+Post them one level below the original problem. Repeat this for each note on the new level. \
+For every idea ask whether it can be done in a single sprint and if everyone understands what \
+they need to do. If the answer is no, break it down and create another level in the \
+problem solving tree.<br><br> \
+Once you have lower levels that are well understood and easy to implement in a single sprint, \
+dot vote to decide which to tackle in the next sprint. ",
+source:    "<a href='https://www.scrumalliance.org/community/profile/bsarni'>Bob Sarni</a>, described by <a href='http://growingagile.co.za/2012/01/the-problem-solving-tree-a-free-exercise/'>Karen Greaves</a>",
+duration:  "30 minutes",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
