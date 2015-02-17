@@ -89,21 +89,22 @@ suitable: "iteration, max10people"
 };
 all_activities[5] = {
 phase:     1,
-name:      "Like to like",
-summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words\
-such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
-Each team member has to write at least 9 index cards: 3 each with things to \
-start doing, keep doing and stop doing. Choose one person to be the first judge. \
-The judge turns the first quality card. From their own cards each member \
-chooses the best match for this word and places it face down on the table.\
-The last one to choose has to take their card back on their hand. The judge shuffles all \
-submitted cards, turns them one by one and rules the best fit = winning card. \
-All submitted cards are discarded. The submitter of the winning card receives \
-the quality card. The person left of the judge becomes the new judge.<br> \
-Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
-cards wins. Debrief by asking for takeaways. <br>\
-(Game is based on 'Apples to Apples')",
+name:      "P&auml;rchen suchen",
+summary:   "Die Teilnehmer suchen passende Eigenschaftskarten zu ihren Vorschl&auml;gen zu &quot;anfangen, aufh&ouml;ren, weitermachen&quot; (siehe Ablauf-ID 12)", 
+desc:      "Vorbereitung: ca. 20 Eigenschaftskarten, z.B. farbige Karteikarten mit eindeutigen Eigenschaften wie <i>lustig</i>, <i>p&uuml;nktlich</i>, <i>klar</i>, <i>wichtig</i>, <i>beeindruckend</i>, <i>gef&auml;hrlich</i>, <i>scheu&szlig;lich</i>.<br> \
+Jedes Teammitglied muss vor dem Spiel mindestens neun Karteikarten schreiben: jeweils drei f&uuml;r Dinge, die es anzufangen, aufzuh&ouml;ren oder weiterzumachen gilt (siehe Ablauf-ID 12). <br></br> \
+Ein Teammitglied wird als Richter ausgew&auml;hlt und beginnt:<br> \
+<ul>\
+<li>Vom Stapel der vorbereiteten Eigenschaftskarten deckt sie / er die erste Karte auf.</li> \
+<li>Daraufhin suchen alle anderen Teammitglieder aus ihren selbst geschriebenen Karteikarten die eine aus, die am besten dazu passt und legen sie verdeckt auf den Tisch.</li> \
+<li>Wer seine Auswahl als letztes getroffen hat, muss seine Karteikarte wieder aufnehmen und darf in der n&auml;chsten Runde wieder mitmachen. </li> \
+<li>Nun sammelt der Richter alle verdeckten Karteikarten auf und mischt sie.</li> \
+<li>Anschlie&szlig;end deckt er alle Karteikarten auf und entscheidet, welche am besten zu der aufgedeckten Eigenschaftskarte passt - diese Karteikarte hat die Runde gewonnen. Ihr Autor bekommt die Eigenschaftskarte als Belohnung und alle &uuml;brigen Karteikarten der Runde sind verbraucht und werden zur Seite gelegt.</li> \
+<li>Der linke Nachbar vom aktuellen Richter wird der n&auml;chste Richter und eine neue Spielrunde kann beginnen.</li> \
+</ul> \
+Das Spiel ist zu Ende, sobald keiner mehr Karteikarten hat. Wer die meisten Eigenschaftskarten sammeln konnte, gewinnt.<br></br> \
+Schlie&szlig;t die Aktivit&auml;t, indem ihr den Verlauf des Spiels besprecht und welche P&auml;rchen entstanden sind.<br></br> \
+(Das Spiel basiert auf &quot;Apples to Apples&quot;)",
 source:    source_agileRetrospectives,
 duration:  "30-40",
 suitable: "iteration, introverts"
@@ -252,6 +253,22 @@ more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 duration:  "5-10",
 suitable: "iteration, release, project"
+};
+all_activities[17] = {
+phase:     0,
+name:      "Amazon Kundenrezensionen",
+summary:   "Bewertet die zur&uuml;ckliegende Iteration wie eine Amazon Kundenrezension. Vergesst die Sterne nicht!",
+desc:      "Jedes Teammitglied verfasst eine kurze Rezension mit: \
+<ul>\
+    <li>Titel</li>\
+    <li>Inhalt</li>\
+    <li>Sterne-Wertung (von 1 &quot;Gef&auml;llt mir gar nicht&quot; bis 5 &quot;Gef&auml;llt mir sehr&quot;) </li>\
+</ul>\
+Jeder liest seine Rezension laut vor. Sammle die Sterne-Wertungen auf einem Flipchart.<br>\
+Diese Aktivit&auml;t kann auf die gesamte Retrospektive ausgedehnt werden, indem zus&auml;tzlich die Frage beantwortet wird, welche Empfehlungen es f&uuml;r den n&auml;chsten Sprint gibt.",
+source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
+duration:  "10",
+suitable: "release, project"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
