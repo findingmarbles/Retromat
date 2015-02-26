@@ -6,10 +6,10 @@ all_photos[0] = [{
     filename:    path + "1_ESVP.jpg",
     contributor: "Reguel Wermelinger"
 }];
-all_photos[1] = [{
-filename:    path + "2_Weather-Report.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[1] = [
+{filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"}
+];
 all_photos[6] = [{
 filename:    path + "7_Mad-Sad-Glad.jpg",
 contributor: "Chloe Gachet"
@@ -22,10 +22,10 @@ all_photos[11] = [{
 filename:    path + "12_Start-Stop-Continue.JPG",
 contributor: "Pedro Ángel Serrano"
 }];
-all_photos[18] = [{
-filename:    path + "19_Speedboat.jpg",
-contributor: "Corinna Baldauf"
-}];
+all_photos[18] = [
+{filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "19_Speedboat.jpg", contributor: "Corinna Baldauf"}
+];
 all_photos[19] = [
 {filename: path + "20_Perfection-Game.jpg", contributor: "Pieter Versteijnen"},
 {filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
@@ -62,6 +62,12 @@ all_photos[41] = [{
 filename:    "http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg",
 contributor: "Corinna Baldauf"
 }];
+all_photos[46] = [
+{filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"}
+];
+all_photos[48] = [
+{filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"}
+];
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
 {filename:    path + "54_Story-Oscars_2.JPG", contributor: "Deborah Lindsay"},
@@ -69,10 +75,11 @@ all_photos[53] = [
 ];
 all_photos[58] = [
 {filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
-{filename:    path + "59_Happiness-Histogram-2.jpg", contributor: "Weronika Kedzierska"}
+{filename:    path + "59_Happiness-Histogram-2.jpg", contributor: "Weronika Kedzierska"},
+{filename:    path + "59_Happiness-Histogram-3.jpg", contributor: "Stefanie Kreidler"}
 ];
-all_photos[59] = [{
-filename:    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf",
+all_photos[59] = [
+{filename:    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf",
 contributor: "Amber Haley"
 }];
 all_photos[60] = [{
@@ -104,10 +111,10 @@ all_photos[80] = [{
 filename:    path + "81_Outcome-Expectations.jpg",
 contributor: "Philipp Flenker"
 }];
-all_photos[82] = [{
-filename:    path + "83_Retro-Dart.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[82] = [
+{filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
+];
 all_photos[88] = [
 {filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
 {filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
