@@ -270,5 +270,16 @@ source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/
 duration:  "10",
 suitable: "release, project"
 };
+all_activities[18] = {
+phase:     1,
+name:      "Motoryacht",
+summary:   "Findet heraus, was euch antreibt und was euch zur&uuml;ckh&auml;lt.",
+desc:      "Male eine einfach Motoryacht oder ein Schiff auf ein Flipchart. Es sollte sichtbar einen gro&szlig;en Motor und einen schweren Anker haben. <br></br> \
+Die Teammitglieder schreiben nun f&uuml;r sich auf Klebezettel, was das Team / das Projekt angetrieben oder vorangebracht hat und was es zur&uuml;ckgehalten oder behindert hat. Ein Aspekt geh&ouml;rt auf einen Klebezettel.<br></br> \
+H&auml;nge die Klebezettel am Motor und am Anker nacheinander auf und lese sie laut vor. Besprecht, wie sich die treibenden Kr&auml;fte / die Aspekte am Motor verst&auml;rken lassen und sich Anker lichten oder kappen lassen.",
+source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, adaptiert aus " + source_innovationGames,
+duration:  "10-15 groupSize",
+suitable: "iteration, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
