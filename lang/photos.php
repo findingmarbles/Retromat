@@ -67,6 +67,7 @@ all_photos[46] = [
 ];
 all_photos[48] = [
 {filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"}
+{filename:    path + "49_Starfish_2.jpg", contributor: "Rollup Consulting"}
 ];
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
