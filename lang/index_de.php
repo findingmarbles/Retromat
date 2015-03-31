@@ -10,7 +10,7 @@ $_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche die Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 
-$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Was ist eine Retrospective?</a>';
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Was ist eine Retrospektive?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retromat</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Gedruckte Ausgabe</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Eine Aktivit&auml;t hinzuf&uuml;gen</a>';
@@ -31,7 +31,7 @@ $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Original von ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     W&auml;hrend ihrer Zeit als ScrumMaster h&auml;tte sich Corinna so etwas wie den Retromat gew&uuml;nscht.
 	Letztlich hat sie ihn einfach selbst gebaut in der Hoffnung, dass er auch anderen hilft.
-    Hast Du Fragen an sie, Vorschl&auml;ge oder Aufmunterungen für sie?
+    Hast Du Fragen, Vorschl&auml;ge oder Aufmunterungen für sie?
 	Du kannst ihr <a href="mailto:corinna@finding-marbles.com">schreiben</a> oder
     ihr <a href="https://twitter.com/findingmarbles">auf Twitter folgen</a>.
 EOT;
