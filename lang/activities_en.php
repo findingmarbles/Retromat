@@ -1539,25 +1539,23 @@ phase:     3,
 name:      "Planning Poker Voting",
 summary:   "Use your Planning Poker cards for un-influenced voting",
 desc:      "If you've got very influential and / or shy team members you can re-use Planning Poker cards \
-(the original Fibonacci number ones, not <a href='https://twitter.com/pawelbrodzinski/status/493730902241861633'> \
-Pawel Brodzinski's</a> ;) to vote simultaneously: \
+to vote simultaneously: \
 <br><br> \
 Write all suggested actions on sticky notes and put them onto a wall. Hand out an ordered deck of Planning Poker \
-cards to each participant. Count the proposals and removes as many cards from the back of the card decks. \
-If you've got 5 suggestions you might have cards 1, 2, 3, 5, and 8. This depends on your deck (some have a 1/2 card) \
-and doesn't matter, as long as all participants have the same set of values. \
-<br> \
-Explain the rules: <br> \
-Choose a card for each suggestion. Choose a low value if the action is not worth doing in your opinion. \
-Choose a high value if the action is worth starting next sprint. \
+cards to each participant. Count the proposals and remove that many cards from the back of the card decks. \
+If you've got 5 suggestions you might have cards '1', '2', '3', '5', and '8'. This depends on your deck \
+(some have a '1/2' card). It doesn't matter, as long as all participants have the same set of values. \
+<br><br> \
+Explain the rules: Choose a card for each suggestion. Choose a low value if the action is not worth doing \
+in your opinion. Choose a high value if the action is worth starting next sprint. \
 <br><br> \
 Give them a minute to sort out their internal ranking and then present the first suggested action. \
-Everybody chooses a card and they reveal them at the same time, when you say so. \
+Everybody chooses a card and they reveal them at the same time. \
 Add the numbers from all cards and write the sum onto the action. \
 Remove the used poker cards. Repeat this for all actions. \
 If you have more actions than poker values the players can show 'no card' (counting 0) for the appropriate number of times. \
 <br><br> \
-Implement the action with the highest sum in the next sprint. Add more actions, only if there's team consensus.",
+Implement the action with the highest sum in the next sprint. Add more actions only if there's team consensus to do so.",
 source:    "Andreas Ratsch",
 duration:  "15 minutes",
 suitable:  "iteration, project, release"
