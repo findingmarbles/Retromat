@@ -1498,5 +1498,18 @@ source:    "<a href='https://www.scrumalliance.org/community/profile/bsarni'>Bob
 duration:  "30 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[96] = {
+phase:     1,
+name:      "#tweetmysprint",
+summary:   "Produce the team's twitter timeline for the iteration.",
+desc:      "Ask participants to write 3 or more tweets on sticky notes about the sprint they've just \
+completed. Tweets could be on the sprint as a whole, on individual stories, a rant, or shameless self-promotion \
+- but they must be brief. Hash tags, emoticons, attached pictures, @usernames are all welcome. Allow ten minutes to \
+write the tweets, then arrange them in a time-line and discuss themes, trends etc. Now invite participants to favorite, \
+retweet and write replies to the tweets, again following up with discussion.",
+source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
+duration:  "40 minutes for 2 week iteration with team of 6",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

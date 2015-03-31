@@ -128,4 +128,6 @@ all_photos[91] = [
 {filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
 {filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"}
 ];
-
+all_photos[96] = [
+{filename:    path + "97_tweetmysprint", contributor: "Thomas Guest"},
+];
