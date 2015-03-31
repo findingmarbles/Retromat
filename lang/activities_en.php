@@ -1511,5 +1511,28 @@ source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
 duration:  "40 minutes for 2 week iteration with team of 6",
 suitable:  "iteration, project"
 };
+all_activities[97] = {
+phase:     1,
+name:      "Laundry Day",
+summary:   "Which things are clear and feel good and which feel vague and implicit?",
+desc:      "Use this activity if you suspect the team to make lots of unconscious decisions hardly ever \
+questioning anything. You can figure out what things need to be talked about to get an explicit grasp of them. \
+<br><br> \
+You need: \
+<ul> \
+<li> about 3 metres of string as the clothesline</li> \
+<li> about 20 clothes pins</li> \
+<li> a white shirt (cut from paper)</li> \
+<li> a pair of dirty pants (cut from paper)</li> \
+</ul> \
+Hang up the clothesline and mark the middle, e.g. with a ribbon. \
+Hang up the clean shirt on one side and the dirty pants on the other. \
+Ask the team now to write items onto index cards for each of the categories. \
+Hang up the notes with clothespins and re-arrange them into clusters. \
+Now the team picks 2 'dirty' and 2 'clean' topics they want to talk about, e.g. by dot voting."
+source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
+duration:  "10 minutes",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
