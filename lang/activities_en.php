@@ -1501,11 +1501,11 @@ suitable:  "iteration, project, release"
 all_activities[96] = {
 phase:     1,
 name:      "#tweetmysprint",
-summary:   "Produce the team's twitter timeline for the iteration.",
+summary:   "Produce the team's twitter timeline for the iteration",
 desc:      "Ask participants to write 3 or more tweets on sticky notes about the sprint they've just \
 completed. Tweets could be on the sprint as a whole, on individual stories, a rant, or shameless self-promotion \
-- but they must be brief. Hash tags, emoticons, attached pictures, @usernames are all welcome. Allow ten minutes to \
-write the tweets, then arrange them in a time-line and discuss themes, trends etc. Now invite participants to favorite, \
+- as long as they are brief. Hash tags, emoticons, attached pictures, @usernames are all welcome. Allow ten minutes to \
+write the tweets, then arrange them in a timeline and discuss themes, trends etc. Now invite participants to favorite, \
 retweet and write replies to the tweets, again following up with discussion.",
 source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
 duration:  "40 minutes for 2 week iteration with team of 6",
@@ -1529,10 +1529,38 @@ Hang up the clothesline and mark the middle, e.g. with a ribbon. \
 Hang up the clean shirt on one side and the dirty pants on the other. \
 Ask the team now to write items onto index cards for each of the categories. \
 Hang up the notes with clothespins and re-arrange them into clusters. \
-Now the team picks 2 'dirty' and 2 'clean' topics they want to talk about, e.g. by dot voting."
+Now the team picks 2 'dirty' and 2 'clean' topics they want to talk about, e.g. by dot voting.",
 source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
 duration:  "10 minutes",
-suitable:  "iteration, project"
+suitable:  "iteration, project, release"
+};
+all_activities[98] = {
+phase:     3,
+name:      "Planning Poker Voting",
+summary:   "Use your Planning Poker cards for un-influenced voting",
+desc:      "If you've got very influential and / or shy team members you can re-use Planning Poker cards \
+(the original Fibonacci number ones, not <a href='https://twitter.com/pawelbrodzinski/status/493730902241861633'> \
+Pawel Brodzinski's</a> ;) to vote simultaneously: \
+<br><br> \
+Write all suggested actions on sticky notes and put them onto a wall. Hand out an ordered deck of Planning Poker \
+cards to each participant. Count the proposals and removes as many cards from the back of the card decks. \
+If you've got 5 suggestions you might have cards 1, 2, 3, 5, and 8. This depends on your deck (some have a 1/2 card) \
+and doesn't matter, as long as all participants have the same set of values. \
+<br> \
+Explain the rules: <br> \
+Choose a card for each suggestion. Choose a low value if the action is not worth doing in your opinion. \
+Choose a high value if the action is worth starting next sprint. \
+<br><br> \
+Give them a minute to sort out their internal ranking and then present the first suggested action. \
+Everybody chooses a card and they reveal them at the same time, when you say so. \
+Add the numbers from all cards and write the sum onto the action. \
+Remove the used poker cards. Repeat this for all actions. \
+If you have more actions than poker values the players can show 'no card' (counting 0) for the appropriate number of times. \
+<br><br> \
+Implement the action with the highest sum in the next sprint. Add more actions, only if there's team consensus.",
+source:    "Andreas Ratsch",
+duration:  "15 minutes",
+suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
