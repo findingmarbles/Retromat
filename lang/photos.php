@@ -131,3 +131,6 @@ all_photos[91] = [
 all_photos[96] = [
 {filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
 ];
+all_photos[97] = [
+{filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
+];
