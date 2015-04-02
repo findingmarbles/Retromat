@@ -1556,7 +1556,7 @@ Remove the used poker cards. Repeat this for all actions. \
 If you have more actions than poker values the players can show 'no card' (counting 0) for the appropriate number of times. \
 <br><br> \
 Implement the action with the highest sum in the next sprint. Add more actions only if there's team consensus to do so.",
-source:    "Andreas Ratsch",
+source:    "<a href='https://www.xing.com/profile/Andreas_Ratsch'>Andreas Ratsch</a>",
 duration:  "15 minutes",
 suitable:  "iteration, project, release"
 };
