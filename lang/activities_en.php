@@ -1560,5 +1560,25 @@ source:    "<a href='https://www.xing.com/profile/Andreas_Ratsch'>Andreas Ratsch
 duration:  "15 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[99] = {
+phase:     3,
+name:      "Landscape Diagram",
+summary:   "Assess action items based on how clear they are and take your pick",
+desc:      "This activity is helpful when a team is facing an ambiguous, volatile, uncertain or complex set of problems \
+and has many suggested action items to choose from. \
+<br><br> \
+Draw a <a href='http://wiki.hsdinstitute.org/landscape_diagram'>Landscape Diagram</a>, i.e. an x-axis labeled 'Certainty about approach' \
+and a y-axis labeled 'Agreement on issue'. Both go from low certainty / agreement in their mutual origin to high towards the top / right. \
+For each action item ask 'How much agreement do we have that solving this problem would have a great beneficial impact? \
+How certain are we about the first steps toward a solution?' Place the note on the diagram accordingly. \
+<br> \
+When all actions are placed, shortly discuss the 'map' you created. Which actions will give the greatest benefit in the next iteration? \
+Which are more long term? \
+<br><br> \
+Choose 2 actions from the simple / ordered area of the map or 1 action from the complex area.",
+source:    "<a href='TODO'>Diana Larsen</a> adapted it from <a href='http://wiki.hsdinstitute.org'>Human Systems Dynamics Institute</a>",
+duration:  "25 minutes",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
