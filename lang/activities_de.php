@@ -205,7 +205,7 @@ all_activities[12] = {
 phase:     3,
 name:      "SMARTe Ziele",
 summary:   "Entwickelt genaue und &uuml;berpr&uuml;fbare Ziele.",
-desc:      "Erkl&auml;re, was <a href='http://de.wikipedia.org/wiki/SMART_%28Projektmanagement%29'>SMARTe Ziele</a> sind (<b>s</b>pezifisch, <b>m</b>essbar, <b>a</b>usführbar, <b>r</b>elevant, mit <b>T</b>ermin) und liefere zum Vergleich Gegenbeispiele, z.B. &quot;Wir schauen uns die Stories an bevor sie im Sprint-Backlog landen.&quot; (nicht SMART) im Gegensatz zu &quot;Wir untersuchen Stories vor dem Ausw&auml;hlen f&uuml;r das Sprint Backlog, indem wir sie mit dem Produkt Owner jeden Mittwoch um 9:00h gemeinsam diskutieren.&quot; (SMART). <br></br>\
+desc:      "Erkl&auml;re, was <a href='http://de.wikipedia.org/wiki/SMART_%28Projektmanagement%29'>SMARTe Ziele</a> sind (<b>s</b>pezifisch, <b>m</b>essbar, <b>a</b>usf&uuml;hrbar, <b>r</b>elevant, mit <b>T</b>ermin) und liefere zum Vergleich Gegenbeispiele, z.B. &quot;Wir schauen uns die Stories an bevor sie im Sprint-Backlog landen.&quot; (nicht SMART) im Gegensatz zu &quot;Wir untersuchen Stories vor dem Ausw&auml;hlen f&uuml;r das Sprint Backlog, indem wir sie mit dem Produkt Owner jeden Mittwoch um 9:00h gemeinsam diskutieren.&quot; (SMART). <br></br>\
 Bildet Gruppen zu den Themen, an denen das Team arbeiten m&ouml;chte. Jede Gruppe entwickelt bis zu f&uuml;nf konkrete Schritte zum Erreichen des Ziels und pr&auml;sentiert seine Ergebnisse. Alle Teilnehmer stellen gemeinsam sicher, dass die Ziele SMART sind. &Uuml;berarbeitet die Ziele falls n&ouml;tig und lasst euch vom Team dann erneut best&auml;tigen, dass sie SMART genug sind.",
 source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
@@ -278,8 +278,45 @@ desc:      "Male eine einfach Motoryacht oder ein Schiff auf ein Flipchart. Es s
 Die Teammitglieder schreiben nun f&uuml;r sich auf Klebezettel, was das Team / das Projekt angetrieben oder vorangebracht hat und was es zur&uuml;ckgehalten oder behindert hat. Ein Aspekt geh&ouml;rt auf einen Klebezettel.<br></br> \
 H&auml;nge die Klebezettel am Motor und am Anker nacheinander auf und lese sie laut vor. Besprecht, wie sich die treibenden Kr&auml;fte / die Aspekte am Motor verst&auml;rken lassen und sich Anker lichten oder kappen lassen.",
 source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, adaptiert aus " + source_innovationGames,
-duration:  "10-15 groupSize",
+duration: "10-15 groupSize",
 suitable: "iteration, release"
+};
+all_activities[19] = {
+phase:     2,
+name:      "Der perfekte Sprint",
+summary:   "Wie m&uuml;sste der n&auml;chste Sprint sein, damit er perfekt ist?",
+desc:      "Bereite ein Flipchart mit zwei Spalten vor, eine f&uuml;r &quot;Bewertung&quot; und eine f&uuml;r &quot;Ma&szlig;nahme&quot;. \
+Jeder einzelne aus dem Team bewertet jetzt den vergangenen Sprint von &quot;1&quot; f&uuml;r &quot;mies&quot; bis &quot;10&quot; f&uuml;r &quot;perfekt&quot;. In der Spalte daneben werden Vorschl&auml;ge f&uuml;r Ma&szlig;nahmen gesammelt, mit denen der n&auml;chste Sprint perfekt wird.",
+source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+suitable: "iteration, release",
+};
+all_activities[20] = {
+phase:     3,
+name:      "Ma&szlig;nahmen zusammenf&uuml;hren",
+summary:   "F&uuml;hrt verschiedene m&ouml;gliche Ma&szlig;nahmen zusammen und entscheidet, welche zwei als n&auml;chstes umgesetzt werden.",
+desc:      "Verteile Karteikarten und Stifte. Jeder einzelne im Team schreibt jetzt zwei Ma&szlig;nahmen auf, die er gern im n&auml;chsten Sprint ausprobieren oder umsetzen w&uuml;rde. Achtet wenn m&ouml;glich darauf, dass die Ziele <a href='https://de.wikipedia.org/wiki/SMART_%28Projektmanagement%29'>SMART</a> sind. <br></br> \
+Anschlie&szlig;end bilden sich Zweiergruppen, in denen die vier Vorschl&auml;ge diskutiert und zu zwei Vorschl&auml;gen zusammenge&uuml;hrt werden. Dieser Prozess wiederholt sich, indem sich Vierergruppen bilden und aus ihren vier Vorschl&auml;gen wiederum zwei ausw&auml;hlen. Wiederholt den Prozess bei Bedarf erneut mit Achtergruppen. <br></br> \
+Sammelt zum Schluss die vier verbleibenden Ma&szlig;nahmen ein und stimmt dar&uuml;ber ab, welche das Team im n&auml;chsten Sprint ausprobieren und umsetzen wird.",
+source:    "Lydia Grawunder & Sebastian Nachtigall",
+duration:  "15-30 groupSize",
+suitable: "iteration, release, project, largeGroups",
+};
+all_activities[21] = {
+phase:     0,
+name:      "Stimmungsthermometer",
+summary:   "Die Teilnehmer notieren ihre &quot;Temperatur&quot; (Stimmung) auf einem Flipchart.",
+desc:      "Bereite ein Flipchart vor, auf das Du ein einfaches Thermometer aufmalst. Es sollte in der Lage sein, Temperaturen vom Gefrierpunkt &uuml;ber K&ouml;rpertemeperatur bis hin zum Siedepunkt anzuzeigen. <br></br> \
+Jeder einzelne im Team markiert jetzt ein Stelle auf der Temperaturskala, die seiner aktuellen Stimmung entspricht.",
+source:  source_unknown,
+};
+all_activities[22] = {
+phase:     4,
+name:      "Die Feedback-T&uuml;r",
+summary:   "Stelle mit einfachsten Mitteln fest, ob die Teilnehmer mit der Retrospektive zufrieden waren.",
+desc:      "Male ein &quot;:)&quot;, ein &quot;:|&quot;, und ein &quot;:(&quot; auf ein Flipchart oder ein Blatt Papier und h&auml;nge es an die T&uuml;r. Am Ende der Retrospektive bittest Du die Teilnehmer ihre Zufriedenheit mit einem Kreuz am passenden Smiley auszudr&uuml;cken.",
+source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
+duration:  "2-3",
+suitable: "iteration, largeGroups"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
