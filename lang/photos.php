@@ -71,8 +71,8 @@ all_photos[48] = [
 ];
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
-{filename:    path + "54_Story-Oscars_2.JPG", contributor: "Deborah Lindsay"},
-{filename:    path + "54_Story-Oscars_3.JPG", contributor: "Geert van der Ploeg"}
+{filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsay"},
+{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"}
 ];
 all_photos[58] = [
 {filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
@@ -133,4 +133,5 @@ all_photos[96] = [
 ];
 all_photos[97] = [
 {filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
+{filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"}
 ];
