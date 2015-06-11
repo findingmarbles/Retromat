@@ -1576,7 +1576,24 @@ When all actions are placed, shortly discuss the 'map' you created. Which action
 Which are more long term? \
 <br><br> \
 Choose 2 actions from the simple / ordered area of the map or 1 action from the complex area.",
-source:    "<a href='TODO'>Diana Larsen</a> adapted it from <a href='http://wiki.hsdinstitute.org'>Human Systems Dynamics Institute</a>",
+source:    "<a href='http://www.futureworksconsulting.com/who-we-are/diana-larsen'>Diana Larsen</a> adapted it from <a href='http://wiki.hsdinstitute.org'>Human Systems Dynamics Institute</a>",
+duration:  "25 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[100] = {
+phase:     4,
+name:      "Endless Blessings",
+summary:   "Bless the upcoming iteration with all your good wishes",
+desc:      "Stand in a circle. Explain that you will collect good wishes for the next iteration, building on each other's blessings. \
+If you do it for the first time, start the activity by giving the first blessing. Then go around the circle to add to your blessing. \
+Skip over people who can't think of anything. When your losing steam, ask for another blessing and start another round. Continue until \
+no one can think of blessings anymore. <br><br>\
+Example:<br>\
+You start with 'May we finish all stories next iteration'. Your neighbor continues with 'And may they delight our customers'. \
+Their neighbor wishes 'And may we be able to automatically test all new features'. And so on until ideas for additions to this \
+blessing run out.<br> \
+Then someone else can start a new round, e.g. with 'May we write beautiful code next iteration'.",
+source:    "<a href='http://www.deepfun.com/bernie/'>Bernie DeKoven</a> via <a href='http://www.futureworksconsulting.com/who-we-are/diana-larsen'>Diana Larsen</a>",
 duration:  "25 minutes",
 suitable:  "iteration, project, release"
 };
