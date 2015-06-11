@@ -168,7 +168,7 @@ all_activities[9] = {
 phase:     2,
 name:      "Brainstorming / Filtering",
 summary:   "Generate lots of ideas and filter them against your criteria",
-desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas\
+desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas \
 which will be filtered <em>after</em> the brainstorming.\
 <ul>\
     <li>Let people write down their ideas for 5-10 minutes</li>\

@@ -37,7 +37,7 @@ Our team of awesome translators:
 
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
 * Julien Dubois, Pierre Martin and Frank Taillandier - French
-* Patrick Zeisig - German
+* Patrick Zeising - German
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
@@ -64,14 +64,18 @@ Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &nt
 
 To test your translation of the "index_*.php"-file you need php installed. In a terminal run
 
+```
  php index.php en > index.html
+```
 
 to generate the English page.
 
 Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
 In your terminal run
 
+```
  php index.php cn > index_cn.html
+```
 
 Then open index_cn.html in a browser.
 
