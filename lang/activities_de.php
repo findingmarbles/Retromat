@@ -318,5 +318,67 @@ source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wi
 duration:  "2-3",
 suitable: "iteration, largeGroups"
 };
+all_activities[23] = {
+phase:     3,
+name:      "Offene Punkte Liste",
+summary:   "Die Teilnehmer schlagen Ma&szlig;nahmen vor und &uuml;bernehmen sie anschlie&szlig;end selbst.",
+desc:      "Bereite ein Flipchart mit drei Spalten vor, die mit &quot;Was&quot;, &quot;Wer&quot; und &quot;Bis wann&quot; beschriftet sind. Frage einen Teilnehmer nach dem anderen, was er gerne unternehmen w&uuml;rde, um das jeweilige Team voran zu bringen. Schreibe die vorgeschlagene Ma&szlig;nahme auf, einigt euch auf ein F&auml;lligkeitsdatum und lasse den Teilnehmer daneben unterschreiben. <br></br> \
+Falls jemand eine Ma&szlig;nahme vorschl&auml;gt, die vom gesamten Team umgesetzt werden muss, braucht der Vorschlagende Unterschriften anderer Teammitglieder zur Unterst&uuml;tzung.",
+source:    source_findingMarbles + ", in Anlehnung an <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>diese Liste</a>",
+duration:  "10-15 groupSize",
+suitable: "iteration, release, smallGroups"
+};
+all_activities[24] = {
+phase:     2,
+name:      "Diagramm zu Ursache und Wirkung",
+summary:   "Findet die Ursachen von Problemen, die sich schwer fassen lassen und zu endlosen Diskussionen f&uuml;hren.",
+desc:      "Schreibe auf einen Klebezettel das Problem auf, welches untersucht werden soll und klebe es in die Mitte eines Whiteboards. Finde heraus, warum es sich dabei &uuml;berhaupt um ein Problem handelt, in dem Du immer wieder fragst: &quot;Na und?&quot; <br></br> \
+Finde anschlie&szlig;end heraus, was die Ursache f&uuml;r das Problem ist, in dem Du immer wieder fragst &quot;Wieso (kommt es dazu)?&quot;<br></br> \
+Dokumentiere eure Erkenntnisse auf Klebezetteln und stelle kausale Zusammenh&auml;nge zwischen ihnen mit Pfeilen her. Jeder Zettel kann mehrere Ursachen haben und mehr als eine Konsequenz. <br></br> \
+Diese Methode sollte es euch erm&ouml;glichen, Teufelskreise zu entdecken und etwas gegen sie zu unternehmen.",
+source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
+more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
+duration:  "20-60 complexity",
+suitable: "release, project, smallGroups, complex"
+
+
+};
+all_activities[25] = {
+phase:     2,
+name:      "Speed Dating",
+summary:   "Geht einer Sache in Zweiergruppen auf den Grund.",
+desc:      "Jeder Teilnehmer schreibt ein Thema auf, dem er auf den Grund gehen m&ouml;chte, z.B. etwas, was er ver&auml;ndern m&ouml;chte. Anschlie&szlig;end werden Zweiergruppen gebildet, die sich im Raum verteilt hinsetzen. Jede Zweiergruppe bespricht beide Themen und sammelt m&ouml;gliche Ma&szlig;nahmen - f&uuml;nf Minuten pro Thema und Teilnehmer, einer nach dem anderen.<br>\
+Nach zehn Minuten l&ouml;sen sich die Gruppen auf und es bilden sich neue Zweiergruppen. Fahrt damit fort, bis jeder mit jedem gesprochen hat.<br></br> \
+Bei Gruppen mit einer ungeraden Anzahl an Teilnehmern setzt sich der Moderator mit in ein Team. Sein Partner bekommt in diesem Fall die gesamte Redezeit von zehn Minuten.",
+source:    source_kalnin,
+duration:  "10 pro Person",
+suitable: "iteration, release, smallGroups"
+};
+all_activities[26] = {
+phase:     5,
+name:      "Retrospektive Gl&uuml;ckskekse",
+summary:   "Lade das Team zum Essen ein und rege mit retrospektiven Gl&uuml;ckskeksen zum Gespr&auml;ch an.",
+desc:      "Lade das Team zum Essen ein, am besten zum Chinesen, dann passen die Gl&uuml;ckskekse besser. Du kannst die <a href='http://weisbart.com/cookies/'>retrospektiven Gl&uuml;ckskekse bei Adam Weisbart bestellen</a> oder eigene backen, denn die Spr&uuml;che gibt es bei Adam nur auf Englisch.<br></br> \
+Verteile die Gl&uuml;ckskekse und lasse sie der Reihe nach &ouml;ffnen. Besprecht Spr&uuml;che wie zum Beispiel: \
+<ul>\
+    <li> What was the most effective thing you did this Sprint, and why was it so successful?</li>\
+    <li>Did the burndown reflect reality? Why or why not?</li>\
+    <li>What do you contribute to the development community in your company? What could you contribute?</li>\
+    <li>What was our Team's biggest impediment this Sprint?</li>\
+</ul>",
+source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
+duration:  "90-120",
+suitable: "iteration, release, smallGroups"
+};
+all_activities[27] = {
+phase:     5,
+name:      "Spazieren gehen",
+summary:   "Geht in den n&auml;chstgelegenen Park, schlendert umher und unterhaltet euch.",
+desc:      "Ist gerade sch&ouml;nes Wetter drau&szlig;en? Dann lasst euch nicht im B&uuml;ro einsperren, sondern nutzt einen Spaziergang, um frischen Sauerstoff zu tanken und auf neue Ideen zu kommen. Geht raus und macht einen Spaziergang im n&auml;chstgelegenen Park. Eure Unterhaltungen werden sich nach einiger Zeit von ganz alleine um die Arbeit drehen. <br></br> \
+Ziel ist es, in einer informellen Umgebung aus Gewohnheiten auszubrechen. Geeignet ist das in Phasen, in denen eigentlich alles ganz gut l&auml;uft und ihr keine visuelle Dokumentation braucht, um Diskussionen und Gespr&auml;che anzuregen. Ge&uuml;bte Teams k&ouml;nnen auch so Ideen austauschen und gemeinsam Entscheidungen treffen.",
+source:    source_findingMarbles,
+duration:  "60-90",
+suitable: "iteration, release, smallGroups, smoothSailing, mature"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
