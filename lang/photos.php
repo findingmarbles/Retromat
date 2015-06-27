@@ -10,10 +10,10 @@ all_photos[1] = [
 {filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"}
 ];
-all_photos[6] = [{
-filename:    path + "7_Mad-Sad-Glad.jpg",
-contributor: "Chloe Gachet"
-}];
+all_photos[6] = [
+{filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
+{filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
+];
 all_photos[8] = [{
 filename:    path + "9_Learning-Matrix.jpg",
 contributor: "Philipp Flenker"
@@ -72,7 +72,8 @@ all_photos[48] = [
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
 {filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsay"},
-{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"}
+{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
+{filename:    path + "54_Story-Oscars_4.jpg", contributor: "Can Güney Aksakallı"}
 ];
 all_photos[58] = [
 {filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
@@ -106,12 +107,11 @@ all_photos[77] = [
 ];
 all_photos[79] = [
 {filename:    path + "80_Repeat-Avoid.jpg", contributor: "Philipp Flenker"},
-{filename:    "http://4.bp.blogspot.com/-LLJU-U0lLFg/UR6j7F6mMnI/AAAAAAAACmU/P1NUW-KUraA/s1600/repeat-avoid.JPG", contributor: "Luis Goncalves"}
+{filename:    path + "80_Repeat-Avoid_2.jpg", contributor: "Martín Salías"}
 ];
-all_photos[80] = [{
-filename:    path + "81_Outcome-Expectations.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[80] = [
+{filename:    path + "81_Outcome-Expectations.jpg", contributor: "Philipp Flenker"}
+];
 all_photos[82] = [
 {filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
