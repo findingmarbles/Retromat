@@ -73,7 +73,7 @@ all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
 {filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsay"},
 {filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
-{filename:    path + "54_Story-Oscars_4.jpg", contributor: "Can Güney Aksakallı"}
+
 ];
 all_photos[58] = [
 {filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
