@@ -1611,5 +1611,19 @@ source:    "Mike B.",
 duration:  "10 minutes",
 suitable:  "iteration, project"
 };
+all_activities[102] = {
+phase:     3,
+name:      "Systemic Consensus",
+summary:   "Check for resistance instead of approval",
+desc:      "Do you have a hotly debated matter with several possible ways to go and the team \
+            can't agree on any of them? Instead of trying to find a majority for a way that \
+            will create winners and losers, try what happens if you turn the decision inside out: <br>\
+            Draw a table with the voters in the left-most column and proposals on top. Now everybody has to \
+            fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
+            up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
+source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via " + source_findingMarbles,
+duration:  "10 minutes",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
