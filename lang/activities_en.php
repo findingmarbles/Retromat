@@ -1621,7 +1621,8 @@ desc:      "Do you have a hotly debated matter with several possible ways to go 
             Draw a table with the voters in the left-most column and proposals on top. Now everybody has to \
             fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
             up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
-source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via " + source_findingMarbles,
+source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via \
+            <a href='http://finding-marbles.com/2012/01/12/systemic-consensus/'>Corinna Baldauf</a>",
 duration:  "10 minutes",
 suitable:  "iteration, project"
 };
