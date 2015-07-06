@@ -1597,5 +1597,19 @@ source:    "<a href='http://www.deepfun.com/bernie/'>Bernie DeKoven</a> via <a h
 duration:  "25 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[101] = {
+phase:     4,
+name:      "You and Me",
+summary:   "Recognize the efforts of teammates and self-improve a little",
+desc:      "Put up 2 columns on a white board: 'Thank you!' and 'My action'.\
+            Ask everybody to write one sticky per column: Something they want to thank \
+            another teammate for doing; and something they want to change about their own \
+            behavior in the next iteration. It can be something really small. \
+            Once everyone is finisihed, do a round for each person to present their \
+            stickies and post them to the board.",
+source:    "Mike B.",
+duration:  "10 minutes",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
