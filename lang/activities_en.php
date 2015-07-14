@@ -1630,14 +1630,30 @@ all_activities[103] = {
 phase:     4,
 name:      "Note to Self",
 summary:   "Remind yourself of your good intentions",
-desc:      "Thinking back about the discussions, everybody writes a reminder for her- or hisself about \
+desc:      "Thinking back about the discussions, everybody writes a reminder for her- or himself about \
             a change in their own behaviour they want to try \
             during the next iteration. It's for quiet self reflection and is not shared with the group. \
             They take their respective sticky notes with them to their desktop and put it in a place they \
-            will often look at.",
+            will look at often.",
 source:    "<a href='http://www.funretrospectives.com/note-to-self/'>Fun Retrospectives</a>",
 duration:  "3 minutes",
 suitable:  "iteration, project"
+};
+all_activities[104] = {
+phase:     2,
+name:      "Election Manifesto",
+summary:   "Different parties present manifestos for change. Who will get your vote?",
+desc:      "Is there an election coming up in your country? Use it as a back drop \
+            for your team to convince each other of their change initiatives. \
+            <br><br> \
+            Ask the participants to split into political parties with 2 or 3 members. \
+            For 20 minutes, each party will work on a manifesto for change. What isn't working? How would they improve things? <br>\
+            Afterwards the parties meet again and their leaders present their manifestos. Be prepared for tough questions and heckling!<br> \
+            Now plan for a better world! Summarise the manifestos with sticky notes, one color per party. What do the parties agree on? \
+            Which promises are unrealistic and which can you achieve?",
+source:    "<a href='http://wordaligned.org/'>Thomas Guest</a>",
+duration:  "45 minutes",
+suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
