@@ -1626,5 +1626,18 @@ source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via \
 duration:  "10 minutes",
 suitable:  "iteration, project"
 };
+all_activities[103] = {
+phase:     4,
+name:      "Note to Self",
+summary:   "Remind yourself of your good intentions",
+desc:      "Thinking back about the discussions, everybody writes a reminder for her- or hisself about \
+            a change in their own behaviour they want to try \
+            during the next iteration. It's for quiet self reflection and is not shared with the group. \
+            They take their respective sticky notes with them to their desktop and put it in a place they \
+            will often look at.",
+source:    "<a href='http://www.funretrospectives.com/note-to-self/'>Fun Retrospectives</a>",
+duration:  "3 minutes",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
