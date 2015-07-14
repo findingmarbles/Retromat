@@ -66,6 +66,7 @@ all_photos[46] = [
 {filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"}
 ];
 all_photos[48] = [
+{filename:    path + "49_Starfish_3.jpg", contributor: "Eric van der Meulen"},
 {filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"},
 {filename:    path + "49_Starfish_2.jpg", contributor: "Rollup Consulting"}
 ];
