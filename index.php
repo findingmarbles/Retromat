@@ -652,6 +652,11 @@ function switchLanguage(new_lang) {
 //]]>
 </script>
 
+<link rel="alternate" hreflang="en" href="index.html" />
+<link rel="alternate" hreflang="es" href="index_es.html" />
+<link rel="alternate" hreflang="fr" href="index_fr.html" />
+<link rel="alternate" hreflang="de" href="index_de.html" />
+
 </head>
 
 <body onload="JavaScript:init()">
