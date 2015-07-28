@@ -140,7 +140,7 @@ suitable: "iteration, release, project, root_cause"
 };
 all_activities[8] = {
 phase:     2,
-name:      "Learning Matrix",
+name:      "Leermatrix",
 summary:   "Teamleden brainstormen aan de hand van 4 categorieen om snel een lijst met issues boven tafel te krijgen",
 desc:      "Bereid een flipchart voor met vier kwadranten met in ieder kwadrant een icoontje: linksboven een smilie voor de dingen die je goed vond gaan ':)', rechtsboven een frownie voor de dingen die je niet goed vond gaan ':(', linksonder een lampje voor de goede ideeen en rechtsonder een bosje bloemen voor de mensen die je waardeerde. Deel vervolgens post-its uit en geef de teamleden 5-10 minuten om hun ideeen over de sprint aan de hand van deze kwadranten op te schrijven. \
 <ul>\
@@ -296,67 +296,62 @@ suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
 phase:     0,
-name:      "Temperature Reading",
-summary:   "Participants mark their 'temperature' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot.\
-Each participant marks their mood on the sheet.",
+name:      "Temperatuur uitlezen",
+summary:   "Deelnemers zetten hun 'temperatuur' (stemming) op een flipchart",
+desc:      "Bereid een flipchart voor met een tekening van een thermometer met temperaturen van vrieskou tot lichaamstemperatuur tot heet.\
+Elke deelnemer geeft zijn stemming aan op het blad.",
 source:  source_unknown
 };
 all_activities[22] = {
 phase:     4,
-name:      "Feedback Door - Smilies",
-summary:   "Gauge participants' satisfaction with the retro in minimum time using smilies",
-desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against the door. \
-When ending the retrospective, ask your participants to mark their satisfaction \
-with the session with an 'x' below the applicable smily.",
+name:      "Feedback Deur - Smilies",
+summary:   "Peil de tevredenheid van de deelnemers over de retro in minimale tijd met gebruik van smilies",
+desc:      "Teken een ':)', ':|', en ':(' op een vel papier en plak die aan de deur. \
+Vraag aan het eind van de retrospective aan de deelnemers om hun tevredenheid aan te geven door \
+een 'x' onder de toepasselijke smily te zetten.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
 duration:  "2-3",
 suitable: "iteration, largeGroups"
 };
 all_activities[23] = {
 phase:     3,
-name:      "Open Items List",
-summary:   "Participants propose and sign up for actions",
-desc:      "Prepare a flip chart with 3 columns titled 'What', 'Who', and 'Due'. \
-Ask one participant after the other, what they want to do to advance \
-the team. Write down the task, agree on a 'done by'-date and let them sign \
-their name. <br>\
-If someone suggests an action for the whole team, the proposer needs to get \
-buy-in (and signatures) from the others.",
+name:      "Open Items Lijst",
+summary:   "Deelnemer stellen acties voor en schrijven zich er voor in",
+desc:      "Bereid een flipchart voor met drie columns getiteld 'Wat', 'Wie', en 'Te doen voor'. \
+Vraag de deelnemers een voor een wat zij willen doen om het team vooruit te helpen. \
+Schrijf de taak op en spreek een einddatum af en laat die persoon zijn naam er achter zetten. <br>\
+Als iemand een actie voor het hele team voorstelt, moet deze persoon de actie aan de rest van team zien te verkopen \
+en de handtekeningen van de anderen zien te verzamelen.",
 source:    source_findingMarbles + ", inspired by <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>this list</a>",
 duration:  "10-15 groupSize",
 suitable: "iteration, release, smallGroups"
 };
 all_activities[24] = {
 phase:     2,
-name:      "Cause-Effect-Diagram",
-summary:   "Find the source of problems whose origins are hard to pinpoint and lead to endless discussion",
-desc:      "Write the problem you want to explore on a sticky note and put it in the middle of a whiteboard. \
-Find out why that is a problem by repeatedly asking 'So what?'. Find out the root causes \
-by repeatedly asking 'Why (does this happen)?' Document your findings by \
-writing more stickies and showing causal relations with arrows. Each sticky can have more than \
-one reason and more than one consequence<br> \
-Vicious circles are usually good starting points for actions. If you can break their bad \
-influence, you can gain a lot.",
+name:      "Oorzaak-Gevolg-Diagram",
+summary:   "Zoek de bron van problemen waarvan de oorzaak moeilijk vast te stellen is en die tot eindeloze discussie leiden",
+desc:      "Schrijf het probleem dat je wilt onderzoeken op een stickie en plak die op het midden van het whiteboard. \
+Zoek uit waarom het een probleem is door herhaaldelijk 'Dus?' en 'Ja en?' te vragen. Zoek de onderliggend oorzaak van het probleem \
+door herhaaldelijk 'Waarom (doet zich dit voor)?' te vragen. Documenteer de bevindingen door \
+meer stickies te schrijven en causale relaties te leggen met behulp van pijlen. Iedere stickie kan meer dan een \
+reden hebben en meer dan een gevolg.<br> \
+Vicieuze circels zijn meestal een goed aangrijppunt voor acties. Als je hun slechte invloed kunt verbreken, kun je al een hoop winnen.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 duration:  "20-60 complexity",
 photo:    "<a href='http://www.plans-for-retrospectives.com/static/images/activities/25_Cause-Effect-Diagramm.jpg' rel='lightbox[activity24]'>View Photo</a>",
 suitable: "release, project, smallGroups, complex"
-
-
 };
 all_activities[25] = {
 phase:     2,
-name:      "Speed Dating",
-summary:   "Each team member explores one topic in depth in a series of 1:1 talks",
-desc:      "Each participant writes down one topic they want to explore, i.e. something they'd like to \
-change. Then form pairs and spread across the room. Each pair discusses both topics \
-and ponders possible actions - 5 minutes per participant (topic) - one after the other. \
-After 10 minutes the pairs break up to form new pairs. Continue \
-until everyone has talked to everyone else. <br>\
-If the group has an odd number of members, the facilitator is part of a pair but the partner gets \
-gets all 10 minutes for their topic.",
+name:      "Speeddaten",
+summary:   "Ieder teamlid verkent een onderwerp tot in de uithoeken in een serie 1 op 1 gesprekken",
+desc:      "Iedere deelnemer schrijft een onderwerp op dat ze willen uitdiepen, bijvoorbeeld iets dat ze willen veranderen. \
+Daarna worden er tweetallen gevormd en over de ruimte verdeeld. Ieder tweetal bespreekt beide onderwerpen \
+en denkt na over mogelijke acties - 5 minuten per deelnemer (onderwerp) - de een na de ander. \
+Na 10 minutes worden er nieuwe tweetallen gevormd. Ga zo door totdat iedereen alle anderen gesproken heeft. <br>\
+Als de groep een oneven aantal leden heeft, is de facilitator deel van een tweetal, maar krijgt het teamlid de volledige \
+10 minuten voor hun onderwerp.",
 source:    source_kalnin,
 duration:  "10 perPerson",
 suitable: "iteration, release, smallGroups"
