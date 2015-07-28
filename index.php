@@ -1,36 +1,28 @@
 <?php
 
-//$_lang = array();
-
 $lang = 'en';
-$isEnglish = true;
-require(get_language_file_path($lang));
 
-$lang = check_for_chosen_lang();
-if ($lang != 'en') {
-    $isEnglish = false;
-    require(get_language_file_path($lang));
+if (isset($argv[1])) {
+    $lang = $argv[1];
+} else if (array_key_exists('lang', $_GET)) {
+    $lang = $_GET['lang'];
 }
 
+$isEnglish = false;
+if ($lang == 'en') {
+    $isEnglish = true;
+}
+
+require(get_language_file_path($lang));
+
 $activities_file = 'lang/activities_' . $lang . '.php';
+$activities_photos_file = 'lang/photos.php';
 
 // PHP FUNCTIONS
 
 function get_language_file_path($lang) {
     $res = 'lang/index_' . $lang . '.php';
     return $res;
-}
-
-function check_for_chosen_lang() {
-    $lang = 'en';
-
-    $availableLanguageCodes = array('en', 'de', 'es', 'nl', 'fr');
-
-    if (array_key_exists('lang', $_GET) && in_array($_GET['lang'], $availableLanguageCodes)) {
-        $lang = $_GET['lang'];
-    }
-
-    return $lang;
 }
 
 function print_if_selected($candidate, $chosen) {
@@ -41,12 +33,22 @@ function print_if_selected($candidate, $chosen) {
     return $res;
 }
 
+function get_url_to_index() {
+    global $isEnglish;
+    $res = 'http://plans-for-retrospectives.com/';
+    if (!$isEnglish) {
+        global $lang;
+        $res .= 'index_' . $lang . '.html';
+    }
+    return $res;
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retr-O-Mat - <?php echo($_lang['HTML_TITLE']); ?></title>
+<title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -96,6 +98,7 @@ var PHASE_ID_TAG = 'phase';
 <?php
 
     require($activities_file);
+    require($activities_photos_file);
 
 ?>
 
@@ -105,11 +108,388 @@ last_block_bg = -1; // Stores bg of last block so that no consecutive blocks hav
 
 /************* FUNCTIONS ******************************************************************/
 
+
+
+function init() {
+    var urlParams = getUrlVars();
+    var plan_id = urlParams.id;
+    var phase = urlParams.phase;
+    if(plan_id) {
+        publish_plan(plan_id, phase);
+    } else {
+        publish_random_plan();
+    }
+    publish_footer_stats();
+}
+
+// From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html
+// Read a page's GET URL variables and return them as an associative array
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i=0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+//Input: String
+function publish_plan(plan_id, phase) {
+    var plan_id = sanitize_plan_id(plan_id);
+    if (plan_id) {
+        empty_plan();
+        publish_activity_blocks(plan_id);
+        enable_phase_browsing();
+
+        if (phase != undefined) {
+            publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase].toUpperCase());
+            hide_phase_stepper();
+        } else {
+            show_phase_stepper();
+            hide_plan_title();
+        }
+        publish_plan_id(plan_id);
+    }
+}
+
+function sanitize_plan_id(plan_id) {
+    return String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
+}
+
+function empty_plan() {
+    $('.js_plan').html("");
+}
+
+function publish_activity_blocks(plan_id) {
+    var ids = String(plan_id).split("-");
+    var activity_block;
+    for(var i=0; i<ids.length; i++) {
+        if (ids[i] != '') { // ignore incorrect single '-' at beginning or end of plan_id
+            activity_block = get_activity_block(parseInt(ids[i])-1, i);
+            activity_block.appendTo($('.js_plan'));
+        }
+    }
+}
+
+/* Param: Index of activity
+ * Returns: Object containing "activity_block"-div
+ */
+function get_activity_block(activity_index) {
+    var activity_block = $('.js_activity_block_template').clone()
+    activity_block.removeClass('js_activity_block_template');
+
+    activity_block.addClass('bg' + get_contrasting_bg());
+
+    populate_activity_block(activity_index, activity_block);
+
+    activity_block.removeClass('display_none');
+
+    return activity_block;
+}
+
+function get_contrasting_bg() {
+    var bg;
+    do {
+        bg = get_random_integer(5);
+    } while (last_block_bg == bg);
+    last_block_bg = bg;
+
+    return bg;
+}
+
 // Input: int - lowest integer that shall NOT be returned
 // Returns: Random number between 0 and (upper_limit-1)
 function get_random_integer(upper_limit) {
     return Math.floor(Math.random()*upper_limit);
 }
+
+function populate_activity_block(activity_index, activity_block) {
+    var activity = get_activity_array(activity_index);
+    var id = convert_index_to_id(activity_index);
+
+    $(activity_block).addClass('js_activity' + activity_index);
+
+    $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
+    $(activity_block).find('.js_fill_name').html(activity.name);
+    $(activity_block).find('.js_fill_activity_link').prop('href','?id=' + id);
+    $(activity_block).find('.js_fill_id').html(id);
+    $(activity_block).find('.js_fill_summary').html(activity.summary);
+    $(activity_block).find('.js_fill_source').html(activity.source);
+    $(activity_block).find('.js_fill_description').html(activity.desc);
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity_index));
+
+}
+
+function get_activity_array(index) {
+    var activity_array = all_activities[index];
+    if (activity_array == null) {
+        alert("<?php echo($_lang['ERROR_MISSING_ACTIVITY']); ?> " + convert_index_to_id(index));
+    }
+    return activity_array;
+}
+
+function convert_index_to_id(index) {
+    return parseInt(index) + 1;
+}
+
+/* Param: activity index
+ * Returns: String (empty or link to photo(s))
+ */
+function get_photo_string(index) {
+    res = "";
+    if (all_photos[index] != null) {
+        for (var i=0; i<all_photos[index].length; i++) {
+            res += "<a href='";
+            res += all_photos[index][i]['filename'];
+            res += "' rel='lightbox[activity" + index + "]' ";
+            res += "title='<?php echo($_lang['ACTIVITY_PHOTO_BY']); ?>";
+            res += all_photos[index][i]['contributor'];
+            res += "'>";
+            if (i == 0) {
+                if (all_photos[index].length < 2) {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTO']); ?>";
+                } else {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTOS']); ?>";
+                }
+            }
+            res += "</a>";
+        }
+        res += " | ";
+    }
+    return res;
+}
+
+    /************ BEGIN Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+function enable_phase_browsing() {
+    enable_prev();
+    enable_next();
+}
+
+function enable_prev() {
+    $('.js_prev_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
+    });
+}
+
+function convert_id_to_index(id) {
+    return parseInt(id) - 1;
+}
+
+function read_activity_id(div_js_item_jquery_object) {
+    return $(div_js_item_jquery_object.html()).find('.js_fill_id').text();
+}
+
+function get_index_of_prev_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index-1; i>=0; i--) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=all_activities.length-1; i>=activity_index; i--) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+function enable_phase_stepper(activity_index, get_neighbor_function) {
+    var phase_index = get_phase_from_activity_index(activity_index);
+
+    var next = get_neighbor_function(activity_index, phase_index);
+
+    var old_identifier = '.js_activity' + activity_index;
+    var activity_block = $(old_identifier);
+
+    populate_activity_block(next, activity_block);
+    activity_block.removeClass(old_identifier);
+
+    publish_plan_id(format_plan_id());
+}
+
+function get_phase_from_activity_index(activity_index) {
+    return get_activity_array(activity_index).phase;
+}
+
+// Returns string (e.g. 'd-d-d') of activity_ids of shown activities
+function format_plan_id() {
+    var current_activities = get_ids_of_current_activities();
+    var id = '';
+    var activity;
+
+    for (var i=0; i<current_activities.length; i++) {
+        if (i != 0) {
+            id += "-";
+        }
+        activity = current_activities[i];
+        id += $(activity).text();
+    }
+
+    return id;
+}
+
+function get_ids_of_current_activities() {
+    return $('.js_plan').find('.js_fill_id');
+}
+
+function enable_next() {
+
+    $('.js_next_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
+    });
+}
+
+function get_index_of_next_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index+1; i<all_activities.length; i++) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=0; i<activity_index; i++) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+/************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+/* Returns: String of all activities in this phase formatted as plan id
+ */
+function get_activities_in_phase_as_plan_id(phase_index) {
+    // TODO Fehlerbehandlung - Phase nicht gefunden oder leer
+    var res = '';
+    var phase_activities = get_indexes_of_activities_in_phase(phase_index);
+
+    for(var i=0; i<phase_activities.length; i++) {
+        if (i != 0) {
+            res += '-';
+        }
+        res += convert_index_to_id(phase_activities[i]);
+    }
+    return res;
+}
+
+function publish_plan_title(title) {
+    $('.js_fill_plan_title').html(title);
+    show_plan_title();
+}
+
+function show_plan_title() {
+    $('.js_plan_title_container').removeClass('display_none');
+}
+
+
+function hide_phase_stepper() {
+    $('.js_phase-stepper').addClass('hidden');
+}
+
+function show_phase_stepper() {
+    $('.js_phase-stepper').removeClass('hidden');
+}
+
+function hide_plan_title() {
+    $('.js_plan_title_container').addClass('display_none');
+}
+
+function publish_plan_id(plan_id) {
+    // On page
+    var form = document.forms['js_ids-display__form'];
+    form.elements['js_display'].value = plan_id;
+
+    // URL
+    var param = '?id=' + plan_id;
+
+    // history.push doesn't work in IEs < v10 and seems to break IE9 and IE8 works but throws errors - so suppress it for >=IE9
+    if (!is_ie) {
+        history.pushState(param, plan_id, param); // pushState(state object, a title (ignored), URL)
+    }
+}
+
+function publish_random_plan() {
+    var plan_id = '';
+    if(is_time_for_something_different()) {
+        plan_id += pick_random_activity_id_in_phase(PHASE_SOMETHING_DIFFERENT);
+    } else {
+        plan_id += generate_random_regular_plan_id();
+    }
+    publish_plan(plan_id);
+}
+
+/* Returns: Boolean
+ */
+function is_time_for_something_different() {
+    res = false;
+    if (get_random_integer(INVERTED_CHANCE_OF_SOMETHING_DIFFERENT) == 0) {
+        res = true;
+    }
+    return res;
+}
+
+function pick_random_activity_id_in_phase(phase_index) {
+    return convert_index_to_id(pick_random_activity_index_in_phase(phase_index));
+}
+
+// Input: int phase_id
+// Returns: int activity_index - randomly chosen activity from given phase
+function pick_random_activity_index_in_phase(phase_index) {
+    var indexes = get_indexes_of_activities_in_phase(phase_index);
+    return indexes[get_random_integer(indexes.length)];
+}
+
+function get_indexes_of_activities_in_phase(phase_index) {
+    var activities = new Array();
+    var tmp_activity;
+    for (var i=0; i<all_activities.length; i++) {
+        candidate_activity = get_activity_array(i);
+        if (candidate_activity.phase == phase_index) {
+            activities.push(i);
+        }
+    }
+    return activities;
+}
+
+/* Returns: String, example: 14-3-77-34-22
+ * Digits are IDs of activities from the 5 different phases
+ */
+function generate_random_regular_plan_id() {
+    var plan_id = '';
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        if (i != 0) {
+            plan_id += '-';
+        }
+        plan_id += pick_random_activity_id_in_phase(i);
+    }
+    return plan_id;
+}
+
+
 
 /************ BEGIN Footer Functions ************/
 
@@ -147,215 +527,9 @@ function publish_footer_stats() {
 
 /************ END Footer Functions ************/
 
-/************ BEGIN Plan Functions ************/
-
-    /************ BEGIN Converters: Index <-> Id ************/
-
-function convert_index_to_id(index) {
-    return parseInt(index) + 1;
-}
-
-function convert_id_to_index(id) {
-    return parseInt(id) - 1;
-}
-
-    /************ END Converters: Index <-> Id ************/
-
-    /************ BEGIN Getting and Showing IDs ************/
-
-function get_ids_of_current_activities() {
-    return $('.js_plan').find('.js_fill_id');
-}
-
-// Returns string (e.g. 'd-d-d') of activity_ids of shown activities
-function format_plan_id() {
-    var current_activities = get_ids_of_current_activities();
-    var id = '';
-    var activity;
-
-    for (var i=0; i<current_activities.length; i++) {
-        if (i != 0) {
-            id += "-";
-        }
-        activity = current_activities[i];
-        id += $(activity).text();
-    }
-
-    return id;
-}
-
-function publish_plan_id(plan_id) {
-    // On page
-    var form = document.forms['js_ids-display__form'];
-    form.elements['js_display'].value = plan_id;
-
-    // URL
-    var param = '?id=' + plan_id + '&lang=<?php echo($lang); ?>';
-
-    // history.push doesn't work in IEs < v10 and seems to break IE9 and IE8 works but throws errors - so suppress it for >=IE9
-    if (!is_ie) {
-        history.pushState(param, plan_id, param); // pushState(state object, a title (ignored), URL)
-    }
-}
-
-function read_activity_id(div_js_item_jquery_object) {
-    return $(div_js_item_jquery_object.html()).find('.js_fill_id').text();
-}
-
-function sanitize_plan_id(plan_id) {
-    return String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
-}
-
-    /************ END Reading and Showing IDs ************/
-
-    /************ BEGIN Phase Navigation (Prev, Next, All activities in Phase) ************/
-
-function get_phase_from_activity_index(activity_index) {
-    return get_activity_array(activity_index).phase;
-}
-
-function get_index_of_prev_activity_in_phase(activity_index, phase_index) {
-    var found_index = -1;
-    var candidate;
-    for (var i=activity_index-1; i>=0; i--) {
-        candidate = get_activity_array(i);
-        if (candidate.phase == phase_index) {
-            found_index = i;
-            break;
-        }
-    }
-    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
-        for (var i=all_activities.length-1; i>=activity_index; i--) {
-            candidate = get_activity_array(i);
-            if (candidate.phase == phase_index) {
-                found_index = i;
-                break;
-            }
-        }
-    }
-
-    return found_index;
-}
-
-function get_index_of_next_activity_in_phase(activity_index, phase_index) {
-    var found_index = -1;
-    var candidate;
-    for (var i=activity_index+1; i<all_activities.length; i++) {
-        candidate = get_activity_array(i);
-        if (candidate.phase == phase_index) {
-            found_index = i;
-            break;
-        }
-    }
-    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
-        for (var i=0; i<activity_index; i++) {
-            candidate = get_activity_array(i);
-            if (candidate.phase == phase_index) {
-                found_index = i;
-                break;
-            }
-        }
-    }
-
-    return found_index;
-}
-
-function enable_prev() {
-
-    $('.js_prev_button').click(function() {
-        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
-        enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
-    });
-}
-
-function enable_next() {
-
-    $('.js_next_button').click(function() {
-        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
-        enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
-    });
-}
-
-function enable_phase_stepper(activity_index, get_neighbor_function) {
-    var phase_index = get_phase_from_activity_index(activity_index);
-
-    var next = get_neighbor_function(activity_index, phase_index);
-
-    var old_identifier = '.js_activity' + activity_index;
-    var activity_block = $(old_identifier);
-
-    populate_activity_block(next, activity_block);
-    activity_block.removeClass(old_identifier);
-
-    publish_plan_id(format_plan_id());
-}
-
-function enable_phase_link() {
-
-    $('.js_phase_link').click(function() {
-
-        var activity_id = read_activity_id($(this).parent().parent());
-        var activity = get_activity_array(convert_id_to_index(activity_id));
-
-        show_activities_in_phase(activity.phase);
-
-    });
-}
-
-function enable_phase_browsing() {
-    enable_prev();
-    enable_next();
-    enable_phase_link();
-}
-
-function get_indexes_of_activities_in_phase(phase_index) {
-    var activities = new Array();
-    var tmp_activity;
-    for (var i=0; i<all_activities.length; i++) {
-        candidate_activity = get_activity_array(i);
-        if (candidate_activity.phase == phase_index) {
-            activities.push(i);
-        }
-    }
-    return activities;
-}
-
-/* Returns: String of all activities in this phase formatted as plan id
- */
-function get_activities_in_phase_as_plan_id(phase_index) {
-    // TODO Fehlerbehandlung - Phase nicht gefunden oder leer
-    var res = '';
-    var phase_activities = get_indexes_of_activities_in_phase(phase_index);
-
-    for(var i=0; i<phase_activities.length; i++) {
-        if (i != 0) {
-            res += '-';
-        }
-        res += convert_index_to_id(phase_activities[i]);
-    }
-    return res;
-}
-
-function show_phase_stepper() {
-    $('.js_phase-stepper').removeClass('hidden');
-}
-
-function hide_phase_stepper() {
-    $('.js_phase-stepper').addClass('hidden');
-}
-
-function show_activities_in_phase(phase_index) {
-    var plan_id = get_activities_in_phase_as_plan_id(phase_index);
-    publish_plan(plan_id);
-    publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase_index].toUpperCase());
-    enable_phase_browsing();
-    hide_phase_stepper();
-}
 
 
-    /************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
-
-    /************ BEGIN PopUps Plan Navigation (Search) ************/
+/************ BEGIN PopUps Plan Navigation (Search) ************/
 
 function get_input_field(popup_name) {
     var form = document.forms['js_' + popup_name + '_form'];
@@ -389,52 +563,64 @@ function hide_popup(popup_name) {
  */
 function search_activities_for_keyword(keyword) {
     var plan_id = '';
-    var haystack = '';
-    var isFirst = true;
-    var isMatch;
-    var re = new RegExp(keyword,"i");
+    var isMatch = false;
     for (var i=0; i<all_activities.length; i++) {
-        isMatch = false;
-        haystack = all_activities[i].name;
-        if (haystack.search(re) != -1) {
-            isMatch = true;
-        }
-        else {
-            haystack = all_activities[i].summary;
-            if (haystack.search(re) != -1) {
-                isMatch = true;
-            } else {
-                haystack = all_activities[i].desc;
-                if (haystack.search(re) != -1) {
-                    isMatch = true;
-                }
-            }
-        }
-
+        isMatch = has_found_match(all_activities[i], keyword);
         if (isMatch) {
-            if (isFirst) {
-                isFirst = false;
-            } else {
-                plan_id += "-";
-            }
-            plan_id += convert_index_to_id(i);
+            plan_id += convert_index_to_id(i) + '-';
         }
     }
+    if (plan_id.length > 0) {
+        plan_id = plan_id.substr(0, plan_id.length-1)
+    }
 
-    return plan_id + find_ids_in_keyword(keyword, isFirst);
+    return plan_id; // Remove trailing '-'
+
 }
 
-function find_ids_in_keyword(keyword, isFirst) {
+function has_found_match(activity, keyword) {
+    var regEx = new RegExp(keyword,"i");
+    var isMatch = false;
+    var haystack = activity.name;
+    if (haystack.search(regEx) != -1) {
+        isMatch = true;
+    } else {
+        haystack = activity.summary;
+        if (haystack.search(regEx) != -1) {
+            isMatch = true;
+        } else {
+            haystack = activity.desc;
+            if (haystack.search(regEx) != -1) {
+                isMatch = true;
+            }
+        }
+    }
+    return isMatch;
+}
+
+function find_ids_in_keyword(keyword) {
     var res = sanitize_plan_id(keyword);
-    if (res != "null" && !isFirst) { // FIXME "null" is sooo ugly
-        res = "-" + res;
+    if (res == "null") {
+        res = '';
+    } else {
+        res = '-' + res;
     }
     return res;
 }
 
-function publish_activities_for_keyword(keyword) {
+function publish_activities_for_keywords(keywords) {
 
-    var plan_id = search_activities_for_keyword(keyword);
+    var keywords_array = keywords.split(' ');
+    var plan_id = '';
+    for (var i=0; i<keywords_array.length; i++) {
+        var sub_ids = search_activities_for_keyword(keywords_array[i]);
+        if (sub_ids.length > 0) {
+            plan_id += sub_ids + '-';
+        }
+    }
+    plan_id = plan_id.substr(0, plan_id.length-1); // Remove trailing '-'
+
+    plan_id += find_ids_in_keyword(keywords);
 
     var text = '<?php echo($_lang["INDEX_ALL_ACTIVITIES"]) ?>';
     if (plan_id != '') {
@@ -447,197 +633,20 @@ function publish_activities_for_keyword(keyword) {
         text = '<?php echo($_lang["POPUP_SEARCH_NO_RESULTS"]) ?>';
     }
 
-    publish_plan_title(text +  " '" + keyword + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
+    publish_plan_title(text +  " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
 }
 
-    /************ END PopUps Plan Navigation ************/
+/************ END PopUps Plan Navigation ************/
 
-    /************ BEGIN Creating "activity_block"-DIV ************/
 
-/* Param: Index of activity
- * Returns: Object containing "activity_block"-div
- */
-function get_activity_block(activity_index) {
-    var activity_block = $('.js_activity_block_template').clone()
-    activity_block.removeClass('js_activity_block_template');
-
-    activity_block.addClass('bg' + get_contrasting_bg());
-
-    populate_activity_block(activity_index, activity_block);
-
-    activity_block.removeClass('display_none');
-
-    return activity_block;
-}
-
-function populate_activity_block(activity_index, activity_block) {
-    var activity = get_activity_array(activity_index);
-
-    $(activity_block).addClass('js_activity' + activity_index);
-
-    $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
-    $(activity_block).find('.js_fill_name').html(activity.name);
-    $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
-    $(activity_block).find('.js_fill_summary').html(activity.summary);
-    $(activity_block).find('.js_fill_source').html(activity.source);
-    $(activity_block).find('.js_fill_description').html(activity.desc);
-    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity.photo));
-
-}
-
-/* Param: activity.photo
- * Returns: String (empty or link to photo)
- */
-function get_photo_string(photo) {
-    res = "";
-    if (photo != null) {
-        res = photo + " | ";
-    }
-    return res;
-}
-
-function get_contrasting_bg() {
-    var bg;
-    do {
-        bg = get_random_integer(5);
-    } while (last_block_bg == bg);
-    last_block_bg = bg;
-
-    return bg;
-}
-
-    /************ END Creating "activity_block"-DIV ************/
-
-    /************ BEGIN Plan Title Functions ************/
-
-function publish_plan_title(title) {
-    $('.js_fill_plan_title').html(title);
-    show_plan_title();
-}
-
-function show_plan_title() {
-    $('.js_plan_title_container').removeClass('display_none');
-}
-
-function hide_plan_title() {
-    $('.js_plan_title_container').addClass('display_none');
-}
-
-    /************ END Plan Title Functions ************/
-
-function get_activity_array(index) {
-    var activity_array = all_activities[index];
-    if (activity_array == null) {
-        alert("<?php echo($_lang['ERROR_MISSING_ACTIVITY']); ?> " + convert_index_to_id(index));
-    }
-    return activity_array;
-}
-
-function publish_activity_blocks(plan_id) {
-    var ids = String(plan_id).split("-");
-    var activity_block;
-    for(var i=0; i<ids.length; i++) {
-        if (ids[i] != '') { // ignore incorrect single '-' at beginning or end of plan_id
-            activity_block = get_activity_block(parseInt(ids[i])-1, i);
-            activity_block.appendTo($('.js_plan'));
-        }
-    }
-}
-
-function empty_plan() {
-    $('.js_plan').html("");
-}
-
-//Input: String
-function publish_plan(plan_id) {
-    var plan_id = sanitize_plan_id(plan_id);
-
-    if (plan_id) {
-        empty_plan();
-        publish_activity_blocks(plan_id);
-        enable_phase_browsing();
-
-        show_phase_stepper();
-        hide_plan_title();
-        publish_plan_id(plan_id);
-    }
-}
-
-function publish_random_plan() {
-    var plan_id = '';
-    if(is_time_for_something_different()) {
-        plan_id += pick_random_activity_id_in_phase(PHASE_SOMETHING_DIFFERENT);
-    } else {
-        plan_id += generate_random_regular_plan_id();
-    }
-    publish_plan(plan_id);
-}
-
-/* Returns: Boolean
- */
-function is_time_for_something_different() {
-    res = false;
-    if (get_random_integer(INVERTED_CHANCE_OF_SOMETHING_DIFFERENT) == 0) {
-        res = true;
-    }
-    return res;
-}
-
-/* Returns: String, example: 14-3-77-34-22
- * Digits are IDs of activities from the 5 different phases
- */
-function generate_random_regular_plan_id() {
-    var plan_id = '';
-    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
-        if (i != 0) {
-            plan_id += '-';
-        }
-        plan_id += pick_random_activity_id_in_phase(i);
-    }
-    return plan_id;
-}
-
-// Input: int phase_id
-// Returns: int activity_index - randomly chosen activity from given phase
-function pick_random_activity_index_in_phase(phase_index) {
-    var indexes = get_indexes_of_activities_in_phase(phase_index);
-    return indexes[get_random_integer(indexes.length)];
-}
-
-function pick_random_activity_id_in_phase(phase_index) {
-    return convert_index_to_id(pick_random_activity_index_in_phase(phase_index));
-}
-
-/******** END Plan *****/
-
-// From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html
-// Read a page's GET URL variables and return them as an associative array
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i=0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-
-function init() {
-    var urlParams = getUrlVars();
-    var plan_id = urlParams.id;
-    if(plan_id) {
-        publish_plan(plan_id);
-    } else {
-        publish_random_plan();
-    }
-    publish_footer_stats();
-}
 
 function switchLanguage(new_lang) {
-    var urlParams = getUrlVars();
-    window.open(location.protocol + '//' + location.host + location.pathname + '?id=' + urlParams.id + "&lang=" + new_lang, "_self");
+    new_url = location.protocol + '//' + location.host + '/index';
+    if (new_lang != 'en') {
+        new_url += '_' + new_lang;
+    }
+    new_url += '.html',
+    window.open(new_url, "_self");
 }
 
 //]]>
@@ -648,25 +657,21 @@ function switchLanguage(new_lang) {
 <body onload="JavaScript:init()">
 
 <div class="header">
-    <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
-    <!--
-    <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English</option>
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais</option>
-        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
-    </select>
-    -->
+    <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
-      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
-        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
-          <!--
-          <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
-          <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
-          -->
-         <a href="/print/index.html">Print Edition</a> |
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
+    <select class="languageswitcher" onChange="switchLanguage(this.value)">
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (19 Aktivit&auml;ten)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (100 activities)</option>
+        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
+    </select>
+
+      <span class="navi">
+        <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
+        <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
+        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>  |
+        <?php echo($_lang['INDEX_NAVI_ADD_ACTIVITY']); ?>
       </span>
 </div>
 
@@ -675,25 +680,25 @@ function switchLanguage(new_lang) {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-
+<!--
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content">
                 Did you know there's a
-                <a href="/print/index.html">Print Editon of the Retr-O-Mat</a>?
+                <a href="/print/index.html">Print Editon of the Retromat</a>?
         </div>
     </div>
 <?php } ?>
-
+-->
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
-            Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
+            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div class="plan-header__wrapper">
             <div class="ids-display">
                 <?php echo($_lang['INDEX_PLAN_ID']); ?>
-                <form name="js_ids-display__form" class="ids-display__form">
+                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
                     <input type="text" size="18" name="js_display" class="ids-display__input" value="">
                 </form>
             </div>
@@ -722,7 +727,7 @@ function switchLanguage(new_lang) {
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
                         <div class="js_popup--search popup--search popup display_none">
-                            <form action="JavaScript:publish_activities_for_keyword($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
                                 <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
                                 <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
                                 <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
@@ -742,9 +747,16 @@ function switchLanguage(new_lang) {
 </div>
 
 <div class="js_plan">
-    <noscript>
-        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
-    </noscript>
+    <div class="activity_block bg1">
+        <div class="activity-wrapper">
+            <div class="activity-content">
+                    <?php echo($_lang['INDEX_LOADING']); ?>
+                    <noscript>
+                        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
+                    </noscript>
+            </div>
+        </div>
+    </div>
 </div><!-- END plan -->
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">
@@ -752,13 +764,15 @@ function switchLanguage(new_lang) {
         <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;</a>
         <div class="activity-content">
             <div class="js_phase_title phase_title">
-                <a href="#" onclick="JavaScript:All_activities_in_phase" class="js_phase_link">
+                <a href="#" class="js_fill_phase_link">
                     <span class="js_fill_phase_title"></span>
                 </a>
             </div>
             <div class="js_item">
                 <h2><span class="js_fill_name"></span>
-                    <span class="activity_id_wrapper">(#<span class="js_fill_id"></span>)</span>
+                    <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                    </span>
                 </h2>
                 <div class="summary">
                     <span class="js_fill_summary"></span>
@@ -794,17 +808,23 @@ function switchLanguage(new_lang) {
 
 <?php if (!$isEnglish) { ?>
        <div class="team__translator">
-           <h2><?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>
-               </a>
+           <h2>
+               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
            </h2>
-           <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-               <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE']); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
-           </a>
-           <div class="team-text">
-               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT']); ?>
-           </div>
+           <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                   <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
+               </a>
+                <h3 style="margin-bottom: 10px">
+                   <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                       <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
+                   </a>
+                </h3>
+
+               <div class="team-text">
+                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
+               </div>
+           <?php } ?>
        </div><!-- .team--translator -->
 <?php } ?>
 
