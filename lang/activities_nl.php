@@ -356,3 +356,82 @@ source:    source_kalnin,
 duration:  "10 perPerson",
 suitable: "iteration, release, smallGroups"
 };
+all_activities[26] = {
+phase:     5,
+name:      "Retrospective Koekjes",
+summary:   "Neem het team mee uit eten en zwengel de discussie aan met retrospective gelukskoekjes",
+desc:      "Neem het team mee uit eten, bij voorkeur Chinees als je in thema wilt blijven. ;) \
+Verdeel de gelukskoekjes en ga de tafel rond om de koekjes te openen en hun inhoud te bespreken. \
+Voorbeeld 'spreuken': \
+<ul>\
+    <li>Wat was het meest effectieve dat je deze sprint deed, en waarom was het zo succesvol?</li>\
+    <li>Reflecteerde de burndown de realiteit? Waarom?</li>\
+    <li>Wat heb je bijgedragen aan de ontwikkelaars in het bedrijf? Wat zou je kunnen bijdragen?</li>\
+    <li>Wat was het grootste struikelblok deze sprint?</li>\
+</ul>\
+Je kunt <a href='http://weisbart.com/cookies/'>retrospective koekjes bestellen van Weisbart</a> \
+of je eigen koekjes bakken, bijvoorbeeld als niet iedereen in het team Engels spreekt.",
+source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
+duration:  "90-120",
+suitable: "iteration, release, smallGroups"
+};
+all_activities[27] = {
+phase:     5,
+name:      "Maak een Wandeling",
+summary:   "Ga naar het dichtstbijzijnde park om een wandeling te maken en praat gewoon met elkaar",
+desc:      "Is het buiten mooi weer? Waarom zou je dan binnen opgesloten blijven, terwijl een wandeling je hersenen vult met zuurstof \
+en nieuwe ideeën 'buiten de gebaande paden'. Ga naar buiten en maak een wandeling in het dichtstbijzijnde park. Het gesprek zal \
+natuurlijk ove rhet werk gaan. Dit is een mooie afwijking van de routine als alles relatief goed gaat en \
+je geen visuele documentatie nodig hebt om de discussie te ondersteunen. Volwassen teams kunnen hun ideeën gemakkelijke verspreiden en \
+consensus bereiken, zelfs in zo'n informele setting.",
+source:    source_findingMarbles,
+duration:  "60-90",
+suitable: "iteration, release, smallGroups, smoothSailing, mature"
+};
+all_activities[28] = {
+phase:     3,
+name:      "Cirkels &amp; het soepie / Invloedscirkels",
+summary:   "Creëer acties gebaseerd op hoeveel invloed het team heeft om ze uit te voeren",
+desc:      "Bereid een flipchart voor met daarop 3 concentrische cirkels, die ieder groot genoeg zijn om er stickies in te plakken. Label ze met \
+'Team beheerst - Directe actie', 'Team beïnvloedt - Overtuigende/aanbevelende actie' en 'Het soepie - Reactieve actie', \
+respectievelijk van binnen naar buiten. ('Het soepie' geeft de bredere organisatie aan waarbinnen het team zich bevindt.) \
+Neem de inzichten uit de vorige fase en hang ze in de toepasselijke cirkel.<br> \
+De deelnemers schrijven in tweetallen mogelijke acties op. Druk hen op het hart om zich zoveel mogelijk te concentreren op zaken in hun \
+invloedscirkel. De tweetallen hangen hun actieplan naast het bijbehorende inzicht en lezen het hardop voor. \
+Bereik overeenstemming over welke acties uitgevoerd gaan worden (d.m.v. discussie, meerderheidsstemming, Stemmen met stippen, ...)",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
+die het aanpaste vanuit 'Seven Habits of Highly Effective People' van Stephen Covey en \
+'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence And Concern</a>' van Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Dialoogvellen",
+summary:   "Een gestructureerde aanpak om te discussiëren",
+desc:      "Een dialoogvel lijkt een beetje op een spelbord. Er zijn \
+<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>verschillende vellen beschikbaar</a>. \
+Kies er een, print het zo groot mogelijk uit (bij voorkeur op A1) en volg de instructies.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
+all_activities[30] = {
+phase:     0,
+name:      "Inchecken - Teken de Iteratie",
+summary:   "De deelnemers tekeken een aspect van de iteratie",
+desc:      "Geef iedereen indexkaartjes en stiften. Stel een onderwerp vast, bijvoorbeeld een van de volgende: \
+<ul>\
+    <li>Hoe voelde je je tijdens de iteratie?</li>\
+    <li>Wat was het meest opmerkelijke moment?</li>\
+    <li>Wat was het grootste probleem?</li>\
+    <li>Waar verlangde je naar?</li>\
+</ul>\
+Vraag de teamleden om het antwoord te tekenen. Hang alle tekeningen aan het whiteboard. Laat voor iedere tekening \
+de overige deelnemers raden wat het betekent voor de tekenaar het uitlegt.<br> \
+Metaforen openen nieuwe perspectieven en creëren een gedeelde begripsvorming.",
+source:    source_findingMarbles + ", aangepast van \
+           <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
+           en Olivier Gourment",
+duration:  "5 + 3 per person",
+suitable: "iteration, release, project"
+};
