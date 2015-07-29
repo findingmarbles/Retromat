@@ -98,10 +98,17 @@ name:      "Soort zoekt soort",
 summary:   "Deelnemers zoeken kwaliteitenkaartjes bij hun eigen Start-Stop-Volhouden-voorstellen",
 desc:      "Voorbereiding: ca. 20 kwaliteitenkaartjes, bijv. gekleurde indexkaarten met unieke woorden\
 zoals <i>leuk, op tijd, duidelijk, belangrijk, geweldig, gevaarlijk, naar</i>.<br> \
-Ieder teamlid moet ten minste 9 indexkaarten schrijven: 3 van ieder met dingen die het team moet gaan doen (Start), moet blijven doen (Volhouden), of niet meer moet doen (Stop). Kies een persoon die als eerte spelleider is. De spelleider draait het eerste kwaliteitenkaartje om. Uit zijn eigen indexkaarten kiest hij degeen die het beste bij deze kwaliteit past en legt deze omgekeerd op tafel.\
-Alle anderen kiezen uit hun eigen kaarten ook een kaart die bij deze kwaliteit past en legen deze omgekeerd op tafel. Degene die als laatste kiest moet zijn indexkaart weer terugnemen in zijn hand. De spelleider schudt alle kaarten die op tafel liggen, draait ze een voor een om en kiest de best passende kaart. (Hij/zij moet dit ook beargumenteren.) \
-Alle andere kaarten worden uit het spel verwijderd. De persoon die de winnende kaart heeft ingediend ontvangt de kaart met de kwaliteit. Vervolgens wordt de volgende persoon (met de klok mee) de spelleider.<br> \
-Stop het spel zodra de kaarten op zijn (6-9 ronden). Degene met de meeste kwaliteitenkaartjes heeft gewonnen. Sluit het spel af met een rondvraag naar wat iedereen geleerd heeft.<br>\
+Ieder teamlid moet ten minste 9 indexkaarten schrijven: 3 van ieder met dingen die het team moet gaan doen (Start), \
+moet blijven doen (Volhouden), of niet meer moet doen (Stop). Kies een persoon die als eerte spelleider is. \
+De spelleider draait het eerste kwaliteitenkaartje om. Uit zijn eigen indexkaarten kiest hij degeen die het \
+beste bij deze kwaliteit past en legt deze omgekeerd op tafel.\
+Alle anderen kiezen uit hun eigen kaarten ook een kaart die bij deze kwaliteit past en legen deze omgekeerd op \
+tafel. Degene die als laatste kiest moet zijn indexkaart weer terugnemen in zijn hand. De spelleider schudt alle \
+kaarten die op tafel liggen, draait ze een voor een om en kiest de best passende kaart. (Hij/zij moet dit ook beargumenteren.) \
+Alle andere kaarten worden uit het spel verwijderd. De persoon die de winnende kaart heeft ingediend ontvangt de \
+kaart met de kwaliteit. Vervolgens wordt de volgende persoon (met de klok mee) de spelleider.<br> \
+Stop het spel zodra de kaarten op zijn (6-9 ronden). Degene met de meeste kwaliteitenkaartjes heeft gewonnen. Sluit \
+het spel af met een rondvraag naar wat iedereen geleerd heeft.<br>\
 (Dit spel is gebaseerd op het spel 'Appels en Peren')",
 source:    source_agileRetrospectives,
 duration:  "30-40",
@@ -111,8 +118,11 @@ all_activities[6] = {
 phase:     1,
 name:      "Boos Bedroefd Blij",
 summary:   "Verzamel gebeurtenissen waarbij teamleden zich boos, bedroefd of blij voelden en vind de oorzaken",
-desc:      "Hang drie posters op genaamd 'boos', 'bedroefd', en 'blij' (of '>:), :(, :) respectievelijk).  De teamleden schrijven een gebeurtenis op een kleurgecodeerd kaartje (1 gebeurtenis per kaartje) en hoe ze zich toen voelden. Als de tijd om is, hangt iedereen zijn post-its op de bijbehorende poster. Groepeer de kaartjes op iedere poster. Vraag de groep om iedere cluster een naam te geven. <br>\
-Bespreek het resultaat met de volgende vragen:
+desc:      "Hang drie posters op genaamd 'boos', 'bedroefd', en 'blij' (of '>:), :(, :) respectievelijk).  De teamleden \
+schrijven een gebeurtenis op een kleurgecodeerd kaartje (1 gebeurtenis per kaartje) en hoe ze zich toen voelden. Als de \
+tijd om is, hangt iedereen zijn post-its op de bijbehorende poster. Groepeer de kaartjes op iedere poster. Vraag de groep \
+om iedere cluster een naam te geven. <br>\
+Bespreek het resultaat met de volgende vragen: \
 <ul>\
     <li>Wat valt er op? Wat is er onverwacht?</li>\
     <li>Wat was er moeilijk aan deze opdracht? En wat was er leuk?</li>\
@@ -163,7 +173,7 @@ desc:      "Leg de regels van het brainstormen en het doel uit: zoveel mogelijk 
     <li>Ga net zolang de tafel rond, waarbij iedereen iedere keer 1 idee mag opnoemen, net zo lang tot alle ideeen op de flipchart staan</li>\
     <li>Vraag nu naar mogelijke filters (bijv. kosten, tijd investering, hoe uniek het concept is, toepasselijkheid voor het merk, ...). \
         Laat de groep er vervolgens 4 uitkiezen.</li>\
-    <li>Pas vervolgens alle filters toe op de ideeen en markeer de ideeen die aan alle vier de filters voldoen.</li>\
+    <li>Pas vervolgens alle filters toe op de ideeen en markeer de ideeen die aan alle vier de filters voldoen.</li> \
     <li>Welke ideeen komen er door de test? En welke hiervan zal de groep gaan uitvoeren? Is er iemand die grote waarde hecht aan een van de ideeen? Gebruik anders een meerderheidsstemming. </li>\
 </ul>\
 De geselecteerde ideeen gaan door naar fase 4.",
@@ -187,12 +197,15 @@ phase:     3,
 name:      "Stemmen met stippen - Start, Stop, Doorgaan",
 summary:   "Brainstorm over welke dingen gestart, gestopt & voortgezet moeten worden en kies de hoogstscorende initiatieven",
 desc:      "Verdeel een flipover in vakken met de titels 'Start', 'Doorgaan' en 'Stop'. \
-Vraag de deelnemers om voor elke categorie concrete voorstellen op te schrijven - 1 idee per index kaart. Laat ze gedurende een paar minuten in stilte schrijven. \
+Vraag de deelnemers om voor elke categorie concrete voorstellen op te schrijven - 1 idee per index kaart. Laat ze \
+gedurende een paar minuten in stilte schrijven. \
 Laat iedereen zijn notities voorlezen en in de gewenste categorie hangen. \
-Leid een korte discussie over wat de 20% meest zinvolle ideeen zijn.
-Laat iedereen stemmen met stippen of streepjes met een marker op de kaartjes, waarbij iederen bijv. 1, 2 of 3 stippen per persoon te verdelen heeft over de kaartjes. De twee of drie kaartjes met de meeste stemmen worden je actie items.
+Leid een korte discussie over wat de 20% meest zinvolle ideeen zijn. \
+Laat iedereen stemmen met stippen of streepjes met een marker op de kaartjes, waarbij iederen bijv. 1, 2 of 3 stippen \
+per persoon te verdelen heeft over de kaartjes. De twee of drie kaartjes met de meeste stemmen worden je actie items. \
 <br><br>\
-(Kijk ook eens naar <a='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> voor een leuke variatie op deze activiteit.)",
+(Kijk ook eens naar <a='http://agileretroactivities.blogspot.co.at/search/label/innovation'>Paulo Caroli's 'Open the Box'</a> \
+voor een leuke variatie op deze activiteit.)",
 source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
@@ -202,8 +215,12 @@ phase:     3,
 name:      "SMART Doelen",
 summary:   "Formuleer een specifiek en meetbaar actieplan",
 desc:      "Introduceer <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART doelen</a>\
-(specific-specifiek, measurable-meetbaar, attainable-haalbaar, relevant-relevant, timely-tijdig) en geef voorbeelden van SMART vs doelen die niet zo SMART zijn. bijv. 'We zullen elke woensdag om 9 uur stories bestuderen voordat we ze in de sprint opnemen door er over te praten met de product owner' vs. 'We zullen de stories beter leren kennen voor ze in de sprint backlog komen'.<br>\
-Vorm groepen rondom de issues waaraan het team werken wil. Iedere groep identificeert 1-5 concrete stappen om het doel te bereike. Laat iedere groep rapporteren. Alle deelnemers moeten het eens zijn met de SMART-heid van de doelen. Verfijn en bevestig.",
+(specific-specifiek, measurable-meetbaar, attainable-haalbaar, relevant-relevant, timely-tijdig) en geef voorbeelden \
+van SMART vs doelen die niet zo SMART zijn. bijv. 'We zullen elke woensdag om 9 uur stories bestuderen voordat we ze \
+in de sprint opnemen door er over te praten met de product owner' vs. 'We zullen de stories beter leren kennen voor ze \
+in de sprint backlog komen'.<br>\
+Vorm groepen rondom de issues waaraan het team werken wil. Iedere groep identificeert 1-5 concrete stappen om het doel \
+te bereike. Laat iedere groep rapporteren. Alle deelnemers moeten het eens zijn met de SMART-heid van de doelen. Verfijn en bevestig.",
 source:    source_agileRetrospectives,
 duration:  "20-60 groupsize",
 suitable: "iteration, release, project"
@@ -212,8 +229,9 @@ all_activities[13] = {
 phase:     4,
 name:      "Feedback Deur - Getallen",
 summary:   "Peil de deelnemers hun tevredenheid met de retro op een schaal van 1 tot 5 in zo min mogelijk tijd",
-desc:      "Plak post-its op de deur met de getallen 1 tot 5 er op. 1 komt bovenaan en is het beste. 5 komt onderaan en is het slechtst.\
-Vraag aan het eind van de retrospective aan de deelnemers om een post-it op te hangen bij het getal die het beste hun gevoel over de retrospective weergeeft. Het geeltje mag leeg zijn of een opmerking of suggestie bevatten.",
+desc:      "Plak post-its op de deur met de getallen 1 tot 5 er op. 1 komt bovenaan en is het beste. 5 komt onderaan en is het slechtst. \
+Vraag aan het eind van de retrospective aan de deelnemers om een post-it op te hangen bij het getal die het beste hun \
+gevoel over de retrospective weergeeft. Het geeltje mag leeg zijn of een opmerking of suggestie bevatten.",
 source:    "ALE 2011, " + source_findingMarbles,
 duration:  "2-3",
 suitable: "iteration, largeGroups"
@@ -223,7 +241,7 @@ phase:     4,
 name:      "Waarderingen",
 summary:   "Laat de teamleden elkaar waarderen en eindig positief",
 desc:      "Begin met het geven van een oprechte waardering van een van de deelnemers. \
-Het kan gaan over alles waar ze aan bijgedragen hebben: hulp aan het team of aan jou, het oplossen van een probleem, ...\
+Het kan gaan over alles waar ze aan bijgedragen hebben: hulp aan het team of aan jou, het oplossen van een probleem, ... \
 Nodig dan de anderen uit om dat ook te doen en wacht tot iemand de moed verzamelt heeft. Sluit af als er gedurende een volle minuut niemand iets zegt.",
 source:    source_agileRetrospectives + " die het overnamen uit 'The Satir Model: Family Therapy and Beyond'",
 duration:  "5-30 groupsize",
