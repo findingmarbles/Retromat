@@ -20,17 +20,17 @@ $_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Stel het voor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Vertaling: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Linda van der Pal';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = '';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = 'static/images/team/lvdpal';
-$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
-    Linda is Java ontwikkelaar en Scrum master bij <a href="http://iprofs.nl/">iProfs</a>. Ze is de oprichter van <a href="http://jduchess.org/">Duchess</a>
-	en een van de organisatoren van <a href="http://www.devoxx4kids.org/">Devoxx4Kids</a> in Nederland. Ze is groot fan van zowel Java als Agile conferenties 
-	en fanatiek Sketchnoter.
-	Je kunt haar vinden op <a href="https://twitter.com/DuchessFounder">Twitter</a>.
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Linda van der Pal';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/DuchessFounder';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/lvdpal.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+                                              Linda is Java ontwikkelaar en Scrum master bij <a href="http://iprofs.nl/">iProfs</a>. Ze is de oprichter van <a href="http://jduchess.org/">Duchess</a>
+                                          	en een van de organisatoren van <a href="http://www.devoxx4kids.org/">Devoxx4Kids</a> in Nederland. Ze is groot fan van zowel Java als Agile conferenties
+                                          	en fanatiek Sketchnoter.
+                                          	Je kunt haar vinden op <a href="https://twitter.com/DuchessFounder">Twitter</a>.
 EOT;
 
-$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
+$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Gemaakt door: ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wenste tijdens haar Scrummasterjaren vaak genoeg dat er iets als Retromat  was.
     Uiteindelijk bouwde ze het zelf maar, in de hoop dat anderen het ook nuttig zouden vinden.

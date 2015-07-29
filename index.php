@@ -656,6 +656,7 @@ function switchLanguage(new_lang) {
 <link rel="alternate" hreflang="es" href="index_es.html" />
 <link rel="alternate" hreflang="fr" href="index_fr.html" />
 <link rel="alternate" hreflang="de" href="index_de.html" />
+<link rel="alternate" hreflang="nl" href="index_nl.html" />
 
 </head>
 
@@ -670,6 +671,7 @@ function switchLanguage(new_lang) {
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (105 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
+        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (31 activiteiten)</option>
     </select>
 
       <span class="navi">
@@ -835,13 +837,15 @@ function switchLanguage(new_lang) {
 
        <div>
            <h2><?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-               <a href="http://finding-marbles.com/">
-                   Corinna Baldauf
-               </a>
            </h2>
            <a href="http://finding-marbles.com/">
                <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
+           <h3 style="margin-bottom: 10px">
+               <a href="http://finding-marbles.com/">
+                   Corinna Baldauf
+               </a>
+           </h3>
            <div class="team-text" style="margin-right:0">
                <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>
            </div>
