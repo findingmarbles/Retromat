@@ -90,9 +90,9 @@ suitable: "iteration, max10people"
 all_activities[5] = {
 phase:     1,
 name:      "P&auml;rchen suchen",
-summary:   "Die Teilnehmer suchen passende Eigenschaftskarten zu ihren Vorschl&auml;gen zu &quot;anfangen, aufh&ouml;ren, weitermachen&quot; (siehe Ablauf-ID 12)", 
+summary:   "Die Teilnehmer suchen passende Eigenschaftskarten zu ihren Vorschl&auml;gen zu &quot;anfangen, aufh&ouml;ren, weitermachen&quot;",
 desc:      "Vorbereitung: ca. 20 Eigenschaftskarten, z.B. farbige Karteikarten mit eindeutigen Eigenschaften wie <i>lustig</i>, <i>p&uuml;nktlich</i>, <i>klar</i>, <i>wichtig</i>, <i>beeindruckend</i>, <i>gef&auml;hrlich</i>, <i>scheu&szlig;lich</i>.<br> \
-Jedes Teammitglied muss vor dem Spiel mindestens neun Karteikarten schreiben: jeweils drei f&uuml;r Dinge, die es anzufangen, aufzuh&ouml;ren oder weiterzumachen gilt (siehe Ablauf-ID 12). <br></br> \
+Jedes Teammitglied muss vor dem Spiel mindestens neun Karteikarten schreiben: jeweils drei f&uuml;r Dinge, die es anzufangen, aufzuh&ouml;ren oder weiterzumachen gilt. <br></br> \
 Ein Teammitglied wird als Richter ausgew&auml;hlt und beginnt:<br> \
 <ul>\
 <li>Vom Stapel der vorbereiteten Eigenschaftskarten deckt sie / er die erste Karte auf.</li> \
