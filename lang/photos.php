@@ -42,7 +42,7 @@ all_photos[22] = [{
 filename:    path + "23_Feedback-Door-Smilies.jpg",
 contributor: "Philipp Flenker"
 }];
-all_photos[25] = [
+all_photos[24] = [
 {filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
 {filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
 ];
