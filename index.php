@@ -685,7 +685,7 @@ function switchLanguage(new_lang) {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-
+<!--
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content">
@@ -694,7 +694,7 @@ function switchLanguage(new_lang) {
         </div>
     </div>
 <?php } ?>
-
+-->
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
