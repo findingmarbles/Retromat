@@ -38,6 +38,7 @@ Our team of awesome translators:
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
 * Julien Dubois, Pierre Martin and Frank Taillandier - French
 * Patrick Zeising - German
+* Linda van der Pal - Dutch
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
