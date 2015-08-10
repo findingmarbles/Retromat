@@ -305,7 +305,7 @@ desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as 
 as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
 and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, who adapted it from " + source_innovationGames,
+source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 duration:  "10-15 groupSize",
 suitable: "iteration, release"
 };
@@ -569,7 +569,7 @@ see and hear?' Give the team a little time to imagine this state and jot down so
 Then let everyone describe their vision of a perfect iteration.<br>\
 Follow up with 'What changes did we implement that resulted in such a productive and satisfying future?'\
 Write down the answers on index cards to use in the next phase.",
-source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+source:    source_innovationGames + ", found at <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 suitable: "iteration, release, project"
 };
 all_activities[37] = {

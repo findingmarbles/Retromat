@@ -315,8 +315,7 @@ del equipo en silencio escriben en post-its qu&eacute; impulsa al equipo y qu&ea
 deja frenado. Se escribe una idea por post-it. Poner las sugerencias del equipo en la zona \
 del motor y del ancla respectivamente. Leer en voz alta cada una y discutir sobre \
 c&oacute;mo se podr&iacute;a mejorar el motor y hacer m&aacute;s peque&ntilde;o el ancla.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, \
-quien lo adapt&oacute; de " + source_innovationGames,
+source:    source_innovationGames + ", encontrado a <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 duration:  "10-15 groupSize",
 suitable: "iteraci&oacute;n, entrega"
 };
@@ -619,7 +618,7 @@ Dar al equipo un tiempo para imaginar esta situaci&oacute;n y anotar algunas pal
 Luego pedir a todos que describan su visi&oacute;n de la iteraci&oacute;n perfecta.<br>\
 Seguir con '&iquest;Cu&aacute;les fueron los cambios que implementamos que resultaron en un futuro tan productivo y satisfactorio?' \
 Escribir las respuestas en post-its para usarlas en la pr&oacute;xima fase de la retrospectiva.",
-source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+source:    source_innovationGames + ", encontrado a <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 suitable: "iteraci&oacute;n, entrega, proyecto"
 };
 

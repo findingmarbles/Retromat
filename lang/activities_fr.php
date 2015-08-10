@@ -306,7 +306,7 @@ desc:      "Dessinez un bateau sur un tableau à feuilles. Dotez le d'un bon mot
 ainsi que d'une ancre très lourde. Les membres de l'équipe écrivent en silence sur des post-its ce qui a propulsé l'équipe vers l'avant \
 et ce qui lui a fait faire du surplace. Une idée par post-it. Collez les post-its respectivement sur le moteur et l'ancre. \
 Lisez les tous et discutez de comment booster le 'moteur' et comment se passer de l’'ancre'.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>, qui l'a adapté pour " + source_innovationGames,
+source:    source_innovationGames + ", trouvé à <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 duration:  "10-15 par groupe",
 suitable: "iteration, release"
 };
@@ -581,7 +581,7 @@ Comment vos futurs vous vous la décrivent ? Qu'y voyez-vous et entendez-vous ?<
   Ensuite, laissez chacun décrire sa vision de l'itération parfaite.<br />\
   Pousuivez ensuite avec la question \"Quels changements avons-nous réalisés pour atteindre un avenir si productif et satisfaisant ?\"<br />\
   Notez les réponses sur des cartes pour s'en servir dans la phase suivante.</p>",
-source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+source:    source_innovationGames + ", trouvé à <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 suitable: "iteration, release, project"
 };
 all_activities[37] = {

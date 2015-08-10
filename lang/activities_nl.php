@@ -289,7 +289,7 @@ phase:     1,
 name:      "Speedboot / Zeilboot",
 summary:   "Analyseer welke krachten je voortduwen en welke je terugduwen",
 desc:      "Teken een speedboot op een flipchartvel. Geef het zowel een sterke motor als een zwaar anker. De teamleden schrijven zwijgend op stickies wat het team voortstuwde en wat het verankerde. Per postit 1 idee. Plak vervolgens de stickies op de motor en het anker al naar gelang waar ze thuishoren. Lees iedere notitie voor en bespreek hoe je de motoren kunt vermeerderen en de ankers los kan snijden.",
-source:    "<a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>, die het aangepast hebben van " + source_innovationGames,
+source:    source_innovationGames + ", vinden op <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Leading Answers</a>",
 duration:  "10-15 groupSize",
 suitable: "iteration, release"
 };
