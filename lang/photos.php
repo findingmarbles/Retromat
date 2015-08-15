@@ -14,10 +14,10 @@ all_photos[6] = [
 {filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
 {filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
 ];
-all_photos[8] = [{
-filename:    path + "9_Learning-Matrix.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[8] = [
+{filename:    path + "9_Learning-Matrix.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "9_Learning-Matrix-2.jpg", contributor: "Simon Sablowski"}
+];
 all_photos[11] = [{
 filename:    path + "12_Start-Stop-Continue.JPG",
 contributor: "Pedro Ángel Serrano"
@@ -50,10 +50,11 @@ all_photos[30] = [{
 filename:    "31_Draw-Iteration.jpg",
 contributor: "Eric Lannemajou"
 }];
-all_photos[31] = [{
-filename:    path + "32_Emoticons.jpg",
-contributor: "Ruud Rietveld"
-}];
+all_photos[31] = [
+{filename:    path + "32_Emoticons.jpg", contributor: "Simon Sablowski"},
+{filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
+{filename:    path + "32_Emoticons-3.jpg", contributor: "Eric van der Meulen"}
+];
 all_photos[34] = [{
 filename:    path + "35_Agile-Self-Assessment.jpg",
 contributor: "Philipp Flenker"
