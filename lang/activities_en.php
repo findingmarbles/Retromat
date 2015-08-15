@@ -304,7 +304,10 @@ summary:   "Analyze what forces push you forward and what pulls you back",
 desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as well \
 as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
 and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
-Read out each one and discuss how you can increase 'motors' and cut 'anchors'.",
+Read out each one and discuss how you can increase 'motors' and cut 'anchors'. \
+<br><br> \
+Addendum: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
+they already see coming.",
 source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 duration:  "10-15 groupSize",
 suitable: "iteration, release"
@@ -924,7 +927,13 @@ two cards. Stop the chatting after 1 minute. Each chat pair splits \
 5 points between the two cards. More points go to the more important action. Organize \
 3 to 5 rounds of chats (depending on group size). At the end everyone adds \
 up the points on their card. In the end the cards are ranked by points \
-and the team decides how much can be done in the next iteration, pulling from the top.",
+and the team decides how much can be done in the next iteration, pulling from the top.\
+<br><br>\
+Addendum: In many settings you might want to randomly switch the cards in the beginning \
+and between discussions. In this way, neither of the point splitting parties has a stake in \
+which of the cards gets more points. This is an idea by \
+<a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam “Thiagi” Thiagarajan</a> via \
+<a href='https://twitter.com/ptevis'>Paul Tevis</a>",
 source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release, largeGroup"
@@ -1098,7 +1107,9 @@ all_activities[72] = {
 phase:     3,
 name:      "Pitch",
 summary:   "Ideas for actions compete for 2 available 'Will do'-slots",
-desc:      "Ask everyone to think of 2 changes they'd like to implement and write them down on separate \
+desc:      "[Caution: This game creates 'winners' and 'losers'. Don't use it if the team has power imbalances.]\
+<br><br> \
+Ask everyone to think of 2 changes they'd like to implement and write them down on separate \
 index cards. Draw 2 slots on the board. The first team member puts their favorite change idea \
 into the first slot. His neighbor puts their favorite into the second slot. The third member has \
 to pitch her favorite idea against the one already hanging that she favors less. If the team \
@@ -1654,6 +1665,57 @@ desc:      "Is there an election coming up in your country? Use it as a back dro
 source:    "<a href='http://wordaligned.org/'>Thomas Guest</a>",
 duration:  "45 minutes",
 suitable:  "iteration, project, release"
+};
+all_activities[105] = {
+phase:     0,
+name:      "Who said it?",
+summary:   "Attribute quotes to team members and situations",
+desc:      "Before the retro, spend some time looking through email threads, chat logs, ticket discussions, and the like. \
+Collect quotes from the last iteration: Funny quotes, or quotes which without context sound a little odd. \
+Write them down with the name of the person who said them. \
+<br><br> \
+Read out the quotes at the beginning of the retro, and ask the team to guess who said it - the sayer may not self-identify! \
+Often the team will not only know who said it, but also talk about what was going on at the time.",
+source:    "Beccy Stafford",
+duration:  "5-10 minutes",
+suitable:  "iteration, project, release, familiarTeam"
+};
+all_activities[106] = {
+phase:     0,
+name:      "Unlikely Superheros",
+summary:   "Imagine yourself as a superhero! What is your superpower?",
+desc:      "Each participant creates a superhero version of themselves based on how they see themselves in the team / project - \
+Complete with appropriate superpowers, weaknesses and possibly an arch-nemesis.",
+source:    "<a href='http://pietrotull.com/2015/01/26/a-retro-in-practise/'>Pietari Kettunen</a>",
+duration:  "10 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[107] = {
+phase:     0,
+name:      "Know your neighbour - Opening",
+summary:   "How did your right neighbour feel during the iteration",
+desc:      "Ask each team member to try to briefly describe how their neighbour to the right felt during the iteration. \
+Their neighbour confirms or corrects their guess. \
+<br> \
+Once all participants said what they think about how their teammates felt, you get an idea of how connected they are, \
+how the communication is flowing in your team and if people are aware of the feelings expressed, in some way, by others. \
+<br><br> \
+Consider closing with activity #109",
+source:    "<a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
+duration:  "5-10 minutes",
+suitable:  "iteration"
+};
+all_activities[108] = {
+phase:     4,
+name:      "Know your neighbour - Closing",
+summary:   "How does your left neighbour feel about the retrospective",
+desc:      "Ask each team member to guess if their left neighbour thinks this retrospective was a good use \
+of their time and why. Their neighbour confirms or corrects their guess. \
+<br><br> \
+If you have set the stage with activity #108, make sure to go around the other direction this time.",
+source:    "<a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
+duration:  "5-10 minutes",
+suitable:  "iteration"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
