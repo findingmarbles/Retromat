@@ -1674,7 +1674,7 @@ desc:      "Before the retro, spend some time looking through email threads, cha
 Collect quotes from the last iteration: Funny quotes, or quotes which without context sound a little odd. \
 Write them down with the name of the person who said them. \
 <br><br> \
-Read out the quotes at the beginning of the retro, and ask the team to guess who said it - the sayer may not self-identify! \
+Read out the quotes at the beginning of the retro, and ask the team to guess who said it - the source may not self-identify! \
 Often the team will not only know who said it, but also talk about what was going on at the time.",
 source:    "Beccy Stafford",
 duration:  "5-10 minutes",
@@ -1700,7 +1700,7 @@ Their neighbour confirms or corrects their guess. \
 Once all participants said what they think about how their teammates felt, you get an idea of how connected they are, \
 how the communication is flowing in your team and if people are aware of the feelings expressed, in some way, by others. \
 <br><br> \
-Consider closing with activity #109",
+Consider closing with activity #109.",
 source:    "<a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
 duration:  "5-10 minutes",
 suitable:  "iteration"
@@ -1713,7 +1713,7 @@ desc:      "Ask each team member to guess if their left neighbour thinks this re
 of their time and why. Their neighbour confirms or corrects their guess. \
 <br><br> \
 If you have set the stage with activity #108, make sure to go around the other direction this time.",
-source:    "<a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
+source:    "Inspired by <a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
 duration:  "5-10 minutes",
 suitable:  "iteration"
 };
