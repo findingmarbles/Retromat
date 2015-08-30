@@ -18,10 +18,12 @@ all_photos[8] = [
 {filename:    path + "9_Learning-Matrix.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "9_Learning-Matrix-2.jpg", contributor: "Simon Sablowski"}
 ];
-all_photos[11] = [{
-filename:    path + "12_Start-Stop-Continue.JPG",
-contributor: "Pedro Ángel Serrano"
-}];
+all_photos[11] = [
+{filename:    path + "12_Start-Stop-Continue.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[17] = [
+{filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
+];
 all_photos[18] = [
 {filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
 {filename:    path + "19_Speedboat.jpg", contributor: "Corinna Baldauf"}
