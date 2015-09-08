@@ -453,3 +453,23 @@ source:    source_findingMarbles + ", aangepast van \
 duration:  "5 + 3 per person",
 suitable: "iteration, release, project"
 };
+all_activities[31] = {
+phase:     0,
+name:      "Emoticon Project Meter",
+summary:   "Help teamleden om hun gevoelens over het project te uiten om de onderliggende oorzaak vroeg aan te kunnen pakken",
+desc:      "Bereid een flipchart voor met daarop gezichten die verschillende emoties uitdrukken zoals: \
+<ul>\
+    <li>geschokt / verbaasd</li>\
+    <li>nerveus / gestressed</li>\
+    <li>machteloos / beperkt</li>\
+    <li>verward</li>\
+    <li>blij</li>\
+    <li>boos</li>\
+    <li>overweldigd</li>\
+</ul>\
+Laat ieder teamlid kiezen hoe ze zich voelen over het project. Dit is een leuke en effectieve manier om problemen vroegtijdig op te sporen. \
+Je kunt de problemen in de volgende fasen addresseren.",
+source:    "Andrew Ciccarelli",
+duration:  "10 for 5 people",
+suitable: "iteration, release"
+};
