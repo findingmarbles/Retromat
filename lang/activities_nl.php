@@ -473,3 +473,18 @@ source:    "Andrew Ciccarelli",
 duration:  "10 for 5 people",
 suitable: "iteration, release"
 };
+all_activities[32] = {
+phase:     1,
+name:      "Trots & beschaamd",
+summary:   "Waar zijn de teamleden trots op of schamen ze zich voor?",
+desc:      "Hang twee posters op genaamd 'trots' en 'beschaamd'. De teamleden schrijven items op stickies (1 item per sticky). \
+Zodra de tijd voorbij is, leest iedereen zijn briefjes voor en hangen het op de toepasselijke poster. <br>\
+Begin een korte conversatie. Bijvoorbeeld door te vragen::\
+<ul>\
+    <li>Was er iets dat je verraste?</li>\
+    <li>Welke patronen zie je? Wat betekenen die voor het team?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
