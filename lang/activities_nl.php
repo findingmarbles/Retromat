@@ -488,3 +488,32 @@ source:    source_agileRetrospectives,
 duration:  "10-15",
 suitable: "iteration, release"
 };
+all_activities[33] = {
+phase:     4,
+name:      "Waarderingsregen",
+summary:   "Luister hoe anderen achter je rug over je praten - maar dan alleen de goede dingen!",
+desc:      "Vorm groepjes van 3. Iedere groep zet de stoelen zo neer dat er 2 stoelen tegenover elkaar staan \
+en de derde met de rug er naar toe, als volgt: >^<. \
+De twee mensen die op de stoelen zitten die naar elkaar kijken praten gedurende twee minuten over de derde persoon. \
+Daarbij mogen ze alleen positieve dingen zeggen en niets dat gezegd wordt mag later door iets anders te zeggen in waarde verlaagd worden. <br>\
+Hou drie rondes, waarbij iedereen een keer in de 'regenstoel' komt te zitten.",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "Agile zelfbeoordeling",
+summary:   "Beoordeel waar je staat met een checklist",
+desc:      "Print een checklist die je aanspreekt, bijvoorbeeld:\
+<ul>\
+    <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>Henrik Kniberg's uitstekende Scrum Checklist</a></li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Self-assessment of agile engineering practices</a></li>\
+    <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia Test</a></li>\
+</ul>\
+Loop de lijst door met het team en bespreek waar je staat en of je op de goede weg bent.<br>\
+Dit is een mooie activiteit na een iteratie zonder grote gebeurtenissen.",
+source:    source_findingMarbles,
+duration:  "10-25 minutes depending on the list",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
