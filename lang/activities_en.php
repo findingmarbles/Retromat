@@ -1717,5 +1717,33 @@ source:    "Inspired by <a href='https://www.linkedin.com/in/fabilewk'>Fabián L
 duration:  "5-10 minutes",
 suitable:  "iteration"
 };
+all_activities[109] = {
+phase:     1,
+name:      "Movie Critic",
+summary:   "Imagine your last sprint was a movie and write a review about it",
+desc:      "Introduce the activity by asking: \
+            Imagine your last sprint was a movie and you had to write a review: \
+            <ul> \
+<li>            What was the genre of the movie (e.g. horror, drama, ...)?</li> \
+<li>            What was the (central) theme? Describe in 2-3 words.</li> \
+<li>            Was there a big twist (e.g. a bad guy)?</li> \
+<li>            What was the ending like (e.g. happy-end, cliffhanger) and did you expect it?</li> \
+<li>            What was your personal highlight?</li> \
+<li>            Would you recommend it to a colleague?</li> \
+</ul> \
+            Give each team member a piece of paper and 5 minutes to silently ponder the questions. \
+            In the meantime (or before the session) divide a flip chart in 7 columns headed with 'Genre', 'Theme', 'Twist', 'Ending', 'Expected?', 'Highlight', 'Recommend?'. \
+            When everyone has finished writing, fill out the flip chart while each participant reads out their notes. \
+            <br> \
+            Afterwards look at the finished table and lead a discussion about \
+<ul> \
+<li>What's standing out?</li> \
+<li>What patterns do you see? What do they mean for you as a team?</li> \
+<li>Suggestions on how to continue?</li> \
+</ul>",
+source:    "Isabel Corniche",
+duration:  "20-25 minutes",
+suitable:  "iteration"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
