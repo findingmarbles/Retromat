@@ -137,5 +137,7 @@ all_photos[96] = [
 ];
 all_photos[97] = [
 {filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
-{filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"}
+{filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"},
+{filename:    path + "98_Laundry-Day_3.jpg", contributor: "Lionel Secousse"},
+{filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
 ];
