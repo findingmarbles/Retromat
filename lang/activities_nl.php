@@ -517,3 +517,18 @@ source:    source_findingMarbles,
 duration:  "10-25 minutes depending on the list",
 suitable: "smallTeams, iteration, release, project, smoothGoing"
 };
+all_activities[35] = {
+phase:     0,
+name:      "Positief doel",
+summary:   "Bepaal een positief doel voor de sessie",
+desc:      "Concentreer je op de positive aspecten in plaats van op de problemen door een positief doel vast te stellen, bijv.\
+<ul>\
+    <li>Laten we manieren zoeken om de sterke punten van ons proces en ons team te versterken</a></li>\
+    <li>Laten we uitzoeken hoe we de beste manieren om onze engineering practices en methoden te gebruiken kunnen uitbreiden</li>\
+    <li>We gaan kijken naar onze best werkende relaties en manieren zoeken om meer van zulke relaties op te bouwen</li>\
+    <li>We gaan ontdekken waar we de meeste waarde hebben toegevoegd in onze laatste iteratie om de toegevoegde waarde van onze volgende iteratie te vergroten</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
