@@ -532,3 +532,16 @@ source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Di
 duration:  "3 minutes",
 suitable: "iteration, release, project"
 };
+all_activities[36] = {
+phase:     2,
+name:      "Herinneringen uit de toekomst",
+summary:   "Stel je voor dat de volgende iteratie perfect is. Hoe zou dat zijn? Wat heb je gedaan?",
+desc:      "'Stel je voor dat je in de toekomst kunt reizen naar het eind van de volgende iteratie (of release). Daar leer je dat het de beste, \
+meest productieve iteratie tot dusver was! Hoe zullen jullie toekomstige tegenhangers het beschrijven? Wat zie en hoor je?' \
+Geef het team wat tijd om zich dit voor te stellen en schrijf wat steekwoorden op om hun geheugen op te frissen. \
+Laat vervolgens iedereen zijn visie van de perfecte iteratie beschrijven.<br>\
+Stel vervolgens de vraag 'Welke veranderingen hebben we doorgevoerd die resulteerden in zo'n productieve en bevredigende toekomst?'\
+Schrijf de antwoorden op index kaarten om in de volgende fase te gebruiken.",
+source:    source_innovationGames + ", found at <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
