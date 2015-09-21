@@ -194,7 +194,7 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Stemmen met stippen - Start, Stop, Doorgaan",
+name:      "Stemmen met stippen (dotvoting)- Start, Stop, Doorgaan",
 summary:   "Brainstorm over welke dingen gestart, gestopt & voortgezet moeten worden en kies de hoogstscorende initiatieven",
 desc:      "Verdeel een flipover in vakken met de titels 'Start', 'Doorgaan' en 'Stop'. \
 Vraag de deelnemers om voor elke categorie concrete voorstellen op te schrijven - 1 idee per index kaart. Laat ze \
@@ -416,7 +416,7 @@ respectievelijk van binnen naar buiten. ('Het soepie' geeft de bredere organisat
 Neem de inzichten uit de vorige fase en hang ze in de toepasselijke cirkel.<br> \
 De deelnemers schrijven in tweetallen mogelijke acties op. Druk hen op het hart om zich zoveel mogelijk te concentreren op zaken in hun \
 invloedscirkel. De tweetallen hangen hun actieplan naast het bijbehorende inzicht en lezen het hardop voor. \
-Bereik overeenstemming over welke acties uitgevoerd gaan worden (d.m.v. discussie, meerderheidsstemming, Stemmen met stippen, ...)",
+Bereik overeenstemming over welke acties uitgevoerd gaan worden (d.m.v. discussie, meerderheidsstemming, Stemmen met stippen (dotvoting), ...)",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
 die het aanpaste vanuit 'Seven Habits of Highly Effective People' van Stephen Covey en \
 '<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence And Concern</a>' van Jim Bullock",
@@ -544,4 +544,47 @@ Stel vervolgens de vraag 'Welke veranderingen hebben we doorgevoerd die resultee
 Schrijf de antwoorden op index kaarten om in de volgende fase te gebruiken.",
 source:    source_innovationGames + ", found at <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Houden, Opgeven, Toevoegen",
+summary:   "Hou een brainstormsessie over welke gedragingen gehouden, opgegeven en toegevoegd moeten worden en kies daaruit de favoriete initiatieven",
+desc:      "Verdeel een flipchart in drie vakken getiteld 'Houden', 'Opgeven' en 'Toevoegen'. \
+Vraag de deelnemers om concrete voorstellen voor iedere categorie op te schrijven - 1 idee per index kaart. \
+Laat ze een paar minuten in stilte schrijven. \
+Laat dan iedereen zijn aantekeningen voorlezen en in de juiste categorie hangen. \
+Leid een korte discussie over wat de 20% meest waardevolle ideeën zijn. Stem er op door stippen, kruisjes of streepjes op de kaartjes te zetten met een stift. \
+Bijvoorbeeld 1, 2, of 3 stippen die iedere persoon mag uitdelen. \
+De top 2 of 3 worden de actie items voor de volgende iteratie.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[38] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Werkte goed, Anders doen",
+summary:   "Hou een brainstormsessie over wat goed werkte en wat er anders moet en kies daaruit de favoriete initiatieven",
+desc:      "Neem twee flip charts met de titels 'Werkte goed' en 'Volgende keer anders doen'. \
+Vraag de deelnemers om concrete voorstellen per categorie op te schrijven, 1 idee per sticky. \
+Laat ze een paar minuten in stilte schrijven. \
+Laat dan iedereen zijn aantekeningen voorlezen en in de juiste categorie hangen. \
+Leid een korte discussie over wat de 20% meest waardevolle ideeën zijn. Stem er op door stippen, kruisjes of streepjes op de kaartjes te zetten met een stift. \
+Bijvoorbeeld 1, 2, of 3 stippen die iedere persoon mag uitdelen. \
+De top 2 of 3 worden de actie items voor de volgende iteratie.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[39] = {
+phase:     4,
+name:      "Plus & Delta",
+summary:   "Iedere deelnemer schrijft 1 ding op dat hen bevalt en 1 ding dat ze zouden willen veranderen aan de retro",
+desc:      "Bereid een flip chart voor met 2 kolommen: Zet er 'Plus' en 'Delta' boven. \
+Vraag iedere deelnemer om 1 aspect van de retrospective op te schrijven dat hen bevalt \
+en 1 ding dat ze zouden willen veranderen (op verschillende indexkaartjes). Hang de indexkaartjes op de juiste flip chart \
+en neem ze kort door om de exacte betekenis te verduidelijken en om de voorkeur van de meerderheid te peilen \
+als kaartjes van verschillende mensen in verschillende richtingen wijzen.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+duration:  "5-10",
+suitable: "release, project"
 };
