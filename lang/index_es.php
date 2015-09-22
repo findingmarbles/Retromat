@@ -24,7 +24,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://thomaswallet.blogspot.com.ar';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/thomas_wallet.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 Trabajador &aacute;gil pragm&aacute;tico. Enfermo de las retrospectivas. Puede <a href="https://twitter.com/WalletThomas">seguirlo en Twitter</a>.
-<br><br><br>
+<br><br><br><br>
 EOT;
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Pedro Serrano';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/pedroserranot';
