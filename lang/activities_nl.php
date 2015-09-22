@@ -588,3 +588,21 @@ source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Re
 duration:  "5-10",
 suitable: "release, project"
 };
+all_activities[40] = {
+phase:     2,
+name:      "Parkbank",
+summary:   "Groepsdiscussie met varierende subsets van de deelnemers",
+desc:      "Plaats tenminste 4 en maximaal 6 stoelen op een rij zodat ze naar de overige leden van de groep gericht zijn. \
+Leg de regels uit: <ul>\
+    <li>Neem plaats op de 'bank' als je wilt bijdragen aan de discussie</li>\
+    <li>Er moet ten minste altijd 1 plek vrij zijn</li>\
+    <li>Als de laatste plaats bezet wordt, dan moet iemand anders opstaan en naar het publiek terugkeren</li>\
+</ul>\
+Start de discussie door plaats te nemen op de 'bank' en hardop over iets na te denken \
+dat je in de afgelopen iteratie geleerd hebt totdat er iemand bij komt zitten. \
+Beëindig de activiteit als de discussie afsterft. \
+<br>Dit is een variant op de zogenaamde 'Fish Bowl'. Het is geschikt voor groepen van 10-25 mensen.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+duration:  "15-30",
+suitable: "release, project, largeGroups"
+};
