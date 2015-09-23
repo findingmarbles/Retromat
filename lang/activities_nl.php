@@ -194,7 +194,7 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Stemmen met stippen - Start, Stop, Doorgaan",
+name:      "Stemmen met stippen (dotvoting)- Start, Stop, Doorgaan",
 summary:   "Brainstorm over welke dingen gestart, gestopt & voortgezet moeten worden en kies de hoogstscorende initiatieven",
 desc:      "Verdeel een flipover in vakken met de titels 'Start', 'Doorgaan' en 'Stop'. \
 Vraag de deelnemers om voor elke categorie concrete voorstellen op te schrijven - 1 idee per index kaart. Laat ze \
@@ -416,7 +416,7 @@ respectievelijk van binnen naar buiten. ('Het soepie' geeft de bredere organisat
 Neem de inzichten uit de vorige fase en hang ze in de toepasselijke cirkel.<br> \
 De deelnemers schrijven in tweetallen mogelijke acties op. Druk hen op het hart om zich zoveel mogelijk te concentreren op zaken in hun \
 invloedscirkel. De tweetallen hangen hun actieplan naast het bijbehorende inzicht en lezen het hardop voor. \
-Bereik overeenstemming over welke acties uitgevoerd gaan worden (d.m.v. discussie, meerderheidsstemming, Stemmen met stippen, ...)",
+Bereik overeenstemming over welke acties uitgevoerd gaan worden (d.m.v. discussie, meerderheidsstemming, Stemmen met stippen (dotvoting), ...)",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
 die het aanpaste vanuit 'Seven Habits of Highly Effective People' van Stephen Covey en \
 '<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence And Concern</a>' van Jim Bullock",
@@ -451,5 +451,217 @@ source:    source_findingMarbles + ", aangepast van \
            <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
            en Olivier Gourment",
 duration:  "5 + 3 per person",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Emoticon Project Meter",
+summary:   "Help teamleden om hun gevoelens over het project te uiten om de onderliggende oorzaak vroeg aan te kunnen pakken",
+desc:      "Bereid een flipchart voor met daarop gezichten die verschillende emoties uitdrukken zoals: \
+<ul>\
+    <li>geschokt / verbaasd</li>\
+    <li>nerveus / gestressed</li>\
+    <li>machteloos / beperkt</li>\
+    <li>verward</li>\
+    <li>blij</li>\
+    <li>boos</li>\
+    <li>overweldigd</li>\
+</ul>\
+Laat ieder teamlid kiezen hoe ze zich voelen over het project. Dit is een leuke en effectieve manier om problemen vroegtijdig op te sporen. \
+Je kunt de problemen in de volgende fasen addresseren.",
+source:    "Andrew Ciccarelli",
+duration:  "10 for 5 people",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Trots & beschaamd",
+summary:   "Waar zijn de teamleden trots op of schamen ze zich voor?",
+desc:      "Hang twee posters op genaamd 'trots' en 'beschaamd'. De teamleden schrijven items op stickies (1 item per sticky). \
+Zodra de tijd voorbij is, leest iedereen zijn briefjes voor en hangen het op de toepasselijke poster. <br>\
+Begin een korte conversatie. Bijvoorbeeld door te vragen::\
+<ul>\
+    <li>Was er iets dat je verraste?</li>\
+    <li>Welke patronen zie je? Wat betekenen die voor het team?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "Waarderingsregen",
+summary:   "Luister hoe anderen achter je rug over je praten - maar dan alleen de goede dingen!",
+desc:      "Vorm groepjes van 3. Iedere groep zet de stoelen zo neer dat er 2 stoelen tegenover elkaar staan \
+en de derde met de rug er naar toe, als volgt: >^<. \
+De twee mensen die op de stoelen zitten die naar elkaar kijken praten gedurende twee minuten over de derde persoon. \
+Daarbij mogen ze alleen positieve dingen zeggen en niets dat gezegd wordt mag later door iets anders te zeggen in waarde verlaagd worden. <br>\
+Hou drie rondes, waarbij iedereen een keer in de 'regenstoel' komt te zitten.",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "Agile zelfbeoordeling",
+summary:   "Beoordeel waar je staat met een checklist",
+desc:      "Print een checklist die je aanspreekt, bijvoorbeeld:\
+<ul>\
+    <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>Henrik Kniberg's uitstekende Scrum Checklist</a></li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Self-assessment of agile engineering practices</a></li>\
+    <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia Test</a></li>\
+</ul>\
+Loop de lijst door met het team en bespreek waar je staat en of je op de goede weg bent.<br>\
+Dit is een mooie activiteit na een iteratie zonder grote gebeurtenissen.",
+source:    source_findingMarbles,
+duration:  "10-25 minutes depending on the list",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Positief doel",
+summary:   "Bepaal een positief doel voor de sessie",
+desc:      "Concentreer je op de positive aspecten in plaats van op de problemen door een positief doel vast te stellen, bijv.\
+<ul>\
+    <li>Laten we manieren zoeken om de sterke punten van ons proces en ons team te versterken</a></li>\
+    <li>Laten we uitzoeken hoe we de beste manieren om onze engineering practices en methoden te gebruiken kunnen uitbreiden</li>\
+    <li>We gaan kijken naar onze best werkende relaties en manieren zoeken om meer van zulke relaties op te bouwen</li>\
+    <li>We gaan ontdekken waar we de meeste waarde hebben toegevoegd in onze laatste iteratie om de toegevoegde waarde van onze volgende iteratie te vergroten</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
+all_activities[36] = {
+phase:     2,
+name:      "Herinneringen uit de toekomst",
+summary:   "Stel je voor dat de volgende iteratie perfect is. Hoe zou dat zijn? Wat heb je gedaan?",
+desc:      "'Stel je voor dat je in de toekomst kunt reizen naar het eind van de volgende iteratie (of release). Daar leer je dat het de beste, \
+meest productieve iteratie tot dusver was! Hoe zullen jullie toekomstige tegenhangers het beschrijven? Wat zie en hoor je?' \
+Geef het team wat tijd om zich dit voor te stellen en schrijf wat steekwoorden op om hun geheugen op te frissen. \
+Laat vervolgens iedereen zijn visie van de perfecte iteratie beschrijven.<br>\
+Stel vervolgens de vraag 'Welke veranderingen hebben we doorgevoerd die resulteerden in zo'n productieve en bevredigende toekomst?'\
+Schrijf de antwoorden op index kaarten om in de volgende fase te gebruiken.",
+source:    source_innovationGames + ", found at <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Houden, Opgeven, Toevoegen",
+summary:   "Hou een brainstormsessie over welke gedragingen gehouden, opgegeven en toegevoegd moeten worden en kies daaruit de favoriete initiatieven",
+desc:      "Verdeel een flipchart in drie vakken getiteld 'Houden', 'Opgeven' en 'Toevoegen'. \
+Vraag de deelnemers om concrete voorstellen voor iedere categorie op te schrijven - 1 idee per index kaart. \
+Laat ze een paar minuten in stilte schrijven. \
+Laat dan iedereen zijn aantekeningen voorlezen en in de juiste categorie hangen. \
+Leid een korte discussie over wat de 20% meest waardevolle ideeën zijn. Stem er op door stippen, kruisjes of streepjes op de kaartjes te zetten met een stift. \
+Bijvoorbeeld 1, 2, of 3 stippen die iedere persoon mag uitdelen. \
+De top 2 of 3 worden de actie items voor de volgende iteratie.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[38] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Werkte goed, Anders doen",
+summary:   "Hou een brainstormsessie over wat goed werkte en wat er anders moet en kies daaruit de favoriete initiatieven",
+desc:      "Neem twee flip charts met de titels 'Werkte goed' en 'Volgende keer anders doen'. \
+Vraag de deelnemers om concrete voorstellen per categorie op te schrijven, 1 idee per sticky. \
+Laat ze een paar minuten in stilte schrijven. \
+Laat dan iedereen zijn aantekeningen voorlezen en in de juiste categorie hangen. \
+Leid een korte discussie over wat de 20% meest waardevolle ideeën zijn. Stem er op door stippen, kruisjes of streepjes op de kaartjes te zetten met een stift. \
+Bijvoorbeeld 1, 2, of 3 stippen die iedere persoon mag uitdelen. \
+De top 2 of 3 worden de actie items voor de volgende iteratie.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[39] = {
+phase:     4,
+name:      "Plus & Delta",
+summary:   "Iedere deelnemer schrijft 1 ding op dat hen bevalt en 1 ding dat ze zouden willen veranderen aan de retro",
+desc:      "Bereid een flip chart voor met 2 kolommen: Zet er 'Plus' en 'Delta' boven. \
+Vraag iedere deelnemer om 1 aspect van de retrospective op te schrijven dat hen bevalt \
+en 1 ding dat ze zouden willen veranderen (op verschillende indexkaartjes). Hang de indexkaartjes op de juiste flip chart \
+en neem ze kort door om de exacte betekenis te verduidelijken en om de voorkeur van de meerderheid te peilen \
+als kaartjes van verschillende mensen in verschillende richtingen wijzen.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+duration:  "5-10",
+suitable: "release, project"
+};
+all_activities[40] = {
+phase:     2,
+name:      "Parkbank",
+summary:   "Groepsdiscussie met varierende subsets van de deelnemers",
+desc:      "Plaats tenminste 4 en maximaal 6 stoelen op een rij zodat ze naar de overige leden van de groep gericht zijn. \
+Leg de regels uit: <ul>\
+    <li>Neem plaats op de 'bank' als je wilt bijdragen aan de discussie</li>\
+    <li>Er moet ten minste altijd 1 plek vrij zijn</li>\
+    <li>Als de laatste plaats bezet wordt, dan moet iemand anders opstaan en naar het publiek terugkeren</li>\
+</ul>\
+Start de discussie door plaats te nemen op de 'bank' en hardop over iets na te denken \
+dat je in de afgelopen iteratie geleerd hebt totdat er iemand bij komt zitten. \
+Beëindig de activiteit als de discussie afsterft. \
+<br>Dit is een variant op de zogenaamde 'Fish Bowl'. Het is geschikt voor groepen van 10-25 mensen.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+duration:  "15-30",
+suitable: "release, project, largeGroups"
+};
+all_activities[41] = {
+phase:     0,
+name:      "Ansichtkaarten",
+summary:   "De deelnemers kiezen een ansichtkaart die hun gedachten/gevoelens weerspiegelt",
+desc:      "Neem een stapel met diverse ansichtkaarten mee - ten minste 4 keer zo veel kaarten als er deelnemers zijn. \
+Verspreid ze over de ruimte en instrueer alle teamleden om de kaart te kiezen die het beste \
+hun mening over de laatste iteratie weergeeft. Nadat ze gekozen hebben, schrijft iedereen drie steekwoorden \
+op die hun kaart, ofwel de sprint, beschrijven op een indexkaart. Bij toerbeurt hangt iedereen zijn ansicht- en indexkaart op \
+waarbij ze hun keuze beschrijven.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+duration:  "15-20",
+suitable: "iteration, release, project",
+};
+all_activities[42] = {
+phase:     0,
+name:      "Neem een standpunt in - Opening",
+summary:   "Deelnemers nemen een standpunt en en geven daarmee hun tevredenheid met de iteratie aan",
+desc:      "Creëer een grote schaal (ofwel een lange lijn) op de vloer met afplaktape. Markeer het ene  \
+uiteinde als 'Geweldig' en het andere uiteinde als 'Dramatisch'. Laat de deelnemers plaatsnemen op de schaal \
+afhankelijk van hun tevredenheid met de laatste iteratie. Psychologisch is het fysiek \
+innemen van een standpunt anders dan van alleen maar iets zeggen. Het is 'echter'.<br> \
+Je kunt de schaal hergebruiken als je afsluit met activiteit #44.",
+source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[43] = {
+phase:     4,
+name:      "Neem een standpunt in - Sluiting",
+summary:   "Deelnemers nemen een standpunt en en geven daarmee hun tevredenheid met de retrospective aan",
+desc:      "Creëer een grote schaal (ofwel een lange lijn) op de vloer met afplaktape. Markeer het ene  \
+uiteinde als 'Geweldig' en het andere uiteinde als 'Dramatisch'. Laat de deelnemers plaatsnemen op de schaal \
+afhankelijk van hun tevredenheid met de retrospective. Psychologisch is het fysiek \
+innemen van een standpunt anders dan van alleen maar iets zeggen. Het is 'echter'.<br> \
+Zie activiteit #43 om te zien hoe je de retrospective kunt beginnen met dezelfde schaal",
+source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[44] = {
+phase:     4,
+name:      "Blij & Verrast",
+summary:   "Waar werden de deelnemers blij van en/of door verrast tijdens de retrospective",
+desc:      "Doe een snel rondje langs de groep en laat de deelnemers een uitkomst \
+van de retrospective aanwijzen waar ze blij van werden of door verrast werden (of beide).",
+source:    source_unknown,
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[45] = {
+phase:     0,
+name:      "Waarom Retrospectives?",
+summary:   "Vraag 'Waarom doen we retrospectives?'",
+desc:      "Ga terug naar de basics en start de retrospective met de vraag 'Waarom doen we dit?' \
+Schrijf alle antwoorden op zodat iedereen ze zien kan. Laat je verrassen door de uitkomst.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+duration:  "5",
 suitable: "iteration, release, project"
 };
