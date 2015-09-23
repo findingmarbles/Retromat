@@ -606,3 +606,62 @@ source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-b
 duration:  "15-30",
 suitable: "release, project, largeGroups"
 };
+all_activities[41] = {
+phase:     0,
+name:      "Ansichtkaarten",
+summary:   "De deelnemers kiezen een ansichtkaart die hun gedachten/gevoelens weerspiegelt",
+desc:      "Neem een stapel met diverse ansichtkaarten mee - ten minste 4 keer zo veel kaarten als er deelnemers zijn. \
+Verspreid ze over de ruimte en instrueer alle teamleden om de kaart te kiezen die het beste \
+hun mening over de laatste iteratie weergeeft. Nadat ze gekozen hebben, schrijft iedereen drie steekwoorden \
+op die hun kaart, ofwel de sprint, beschrijven op een indexkaart. Bij toerbeurt hangt iedereen zijn ansicht- en indexkaart op \
+waarbij ze hun keuze beschrijven.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+duration:  "15-20",
+suitable: "iteration, release, project",
+};
+all_activities[42] = {
+phase:     0,
+name:      "Neem een standpunt in - Opening",
+summary:   "Deelnemers nemen een standpunt en en geven daarmee hun tevredenheid met de iteratie aan",
+desc:      "Creëer een grote schaal (ofwel een lange lijn) op de vloer met afplaktape. Markeer het ene  \
+uiteinde als 'Geweldig' en het andere uiteinde als 'Dramatisch'. Laat de deelnemers plaatsnemen op de schaal \
+afhankelijk van hun tevredenheid met de laatste iteratie. Psychologisch is het fysiek \
+innemen van een standpunt anders dan van alleen maar iets zeggen. Het is 'echter'.<br> \
+Je kunt de schaal hergebruiken als je afsluit met activiteit #44.",
+source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[43] = {
+phase:     4,
+name:      "Neem een standpunt in - Sluiting",
+summary:   "Deelnemers nemen een standpunt en en geven daarmee hun tevredenheid met de retrospective aan",
+desc:      "Creëer een grote schaal (ofwel een lange lijn) op de vloer met afplaktape. Markeer het ene  \
+uiteinde als 'Geweldig' en het andere uiteinde als 'Dramatisch'. Laat de deelnemers plaatsnemen op de schaal \
+afhankelijk van hun tevredenheid met de retrospective. Psychologisch is het fysiek \
+innemen van een standpunt anders dan van alleen maar iets zeggen. Het is 'echter'.<br> \
+Zie activiteit #43 om te zien hoe je de retrospective kunt beginnen met dezelfde schaal",
+source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[44] = {
+phase:     4,
+name:      "Blij & Verrast",
+summary:   "Waar werden de deelnemers blij van en/of door verrast tijdens de retrospective",
+desc:      "Doe een snel rondje langs de groep en laat de deelnemers een uitkomst \
+van de retrospective aanwijzen waar ze blij van werden of door verrast werden (of beide).",
+source:    source_unknown,
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[45] = {
+phase:     0,
+name:      "Waarom Retrospectives?",
+summary:   "Vraag 'Waarom doen we retrospectives?'",
+desc:      "Ga terug naar de basics en start de retrospective met de vraag 'Waarom doen we dit?' \
+Schrijf alle antwoorden op zodat iedereen ze zien kan. Laat je verrassen door de uitkomst.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+duration:  "5",
+suitable: "iteration, release, project"
+};
