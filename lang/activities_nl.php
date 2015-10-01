@@ -665,3 +665,79 @@ source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity
 duration:  "5",
 suitable: "iteration, release, project"
 };
+all_activities[46] = {
+phase:     1,
+name:      "De brievenbus legen",
+summary:   "Bekijk de aantekeningen die tijdens de sprint verzameld zijn",
+desc:      "Maak een retrospective brievenbus aan het begin van de iteratie. Iedere keer dat er iets Whenever something \
+significants gebeurd of als iemand een idee voor een verbetering heeft, schrijven ze het op en posten het in de brievenbus. \
+(Als alternatief kan de 'brievenbus' ook een zichtbare plek zijn. Dit kan de discussie al tijdens de iteratie \
+aanzwengelen.) <br>\
+Loop de brieven door en bespreek ze.<br>\
+Een brievenbus is geweldig voor lange iteraties en vergeetachtige teams.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Originele artikel</a>",
+duration:  "15",
+suitable: "release, project"
+};
+all_activities[47] = {
+phase:     3,
+name:      "Neem een standpunt in - Line Dance",
+summary:   "Krijg een idee van waar iedereen staat en probeer consensus te bereiken",
+desc:      "Als het team niet tussen twee opties kan kiezen, maak dan een grote schaal (bijv. een lange lijn) \
+op de vloer met afplaktape. Markeer het ene uiteinde als optie A en het andere als optie B. \
+Teamleden positioneren zich op de schaal al naar gelang hun voorkeur voor een van beide opties. \
+Stel nu de opties bij tot een van de twee een duidelijke meerderheid heeft.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Originele artikel</a>",
+duration:  "5-10 per decision",
+suitable: "iteration, release, project"
+};
+all_activities[48] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Zeester",
+summary:   "Verzamel wat er gestart, gestopt, voortgezet, minder gedaan of meer gedaan moet worden",
+desc:      "Teken vijf spaken op een flipchartvel, waardoor het vel in vijf segmenten verdeeld is. \
+Label ze 'Start', 'Stop', 'Voortzetten', 'Meer doen' en 'Minder doen'. \
+De deelnemers schrijven hun voorstellen op sticky notes en hangen die in het \
+toepasselijke segment. Laat na het clusteren van de stickies die hetzelfde idee bevatten, \
+iedereen stemmen op de suggesties die ze uit willen proberen.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+duration:  "15 min",
+suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "Wens vervuld",
+summary:   "Een fee wil een van je wensen in vervulling laten gaan - hoe weet je dan dat je wens uit kwam?",
+desc:      "Geef de deelnemers 2 minuten om in stilte de volgende vraag te overdenken: \
+'Een fee vervult een wens die je grootste probleem op het werk 's nachts oplost. Wat zou je dan wensen?' \
+Volg dit daarna op met: 'Je komt de volgende dag op het werk. Je kunt zien dat je wens uitgekomen is. \
+Hoe weet je dat zo zeker? Wat is er nu anders?' Als het vertrouwen in de groep hoog is, laat iedereen \
+dan zijn 'Vervulde wens'-werkplek beschrijven. Zo niet, vertel de deelnemers dan om hun scenario \
+gedurende de volgende fase van de retrospective in hun achterhoofd te houden en acties voor te stellen die \
+tot doel hebben om in de richting van die gewenste situatie te gaan.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+duration:  "15 min",
+suitable:  "iteration"
+};
+all_activities[50] = {
+phase:     1,
+name:      "Lean Coffee",
+summary:   "Gebruik het Lean Coffee format om de belangrijkste onderwerpen te bespreken",
+desc:      "Vertel hoeveel tijd er beschikbaar is voor deze fase en leg dan de regels van Lean Coffee voor retrospectives uit: <ul>\
+    <li>Iedereen schrijft de onderwerpen op die ze willen bespreken - 1 onderwerp per sticky</li>\
+    <li>Hang de stickies op een whiteboard of flipchart. De persoon die het opschreef beschrijft het onderwerp in 1-2 zinnen. \
+        Groepeer de stickies die over hetzelfde onderwerp gaan</li>\
+    <li>Stem nu met stippen (dotvoting) voor de twee onderwerpen die je wilt bespreken</li>\
+    <li>Sorteer de stickies aan de hand van de stemmen</li>\
+    <li>Start met het onderwerp met de meeste interesse</li>\
+    <li>Zet een wekker op vijf minuten. Als de wekker afgaat, steekt iedereen zijn duim op, omhoog of omlaag. \
+        Als de meerderheid van de duimen omhoog is: Het onderwerp krijgt nog vijf minuten. \
+		Als de meerderheid van de duimen omlaag is: Start het volgende onderwerp. </li>\
+</ul> Stop als de beschikbare tijd op is.",
+source:    "<a href='http://leancoffee.org/'>Originele beschrijving</a> en \
+<a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in actie</a>",
+duration:  "20-40 min",
+suitable:  "iteration"
+};
