@@ -2,13 +2,13 @@
 var path = 'static/images/activities/';
 
 all_photos = [];
-all_photos[0] = [{
-    filename:    path + "1_ESVP.jpg",
-    contributor: "Reguel Wermelinger"
-}];
+all_photos[0] = [
+{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"}
+];
 all_photos[1] = [
 {filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
-{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"}
+{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
 ];
 all_photos[6] = [
 {filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
@@ -140,4 +140,10 @@ all_photos[97] = [
 {filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"},
 {filename:    path + "98_Laundry-Day_3.jpg", contributor: "Lionel Secousse"},
 {filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
+];
+all_photos[106] = [
+{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
+];
+all_photos[112] = [
+{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
 ];
