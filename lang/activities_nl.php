@@ -741,3 +741,96 @@ source:    "<a href='http://leancoffee.org/'>Originele beschrijving</a> en \
 duration:  "20-40 min",
 suitable:  "iteration"
 };
+all_activities[51] = {
+phase:     0,
+name:      "Sterrenbeeld - Opening",
+summary:   "Laat de deelnemers stellingen bevestigen of tegenspreken door rond te bewegen",
+desc:      "Plaats een cirkel in het midden van de ruimte. Laat het team er omheen verzamelen. \
+Leg uit dat de cirkel het centrum van instemming is: Als ze het met een stelling eens zijn moeten ze er naartoe bewegen, \
+zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees nu stellingen voor, bijv.\
+<ul>\
+    <li>Ik kan openlijk spreken tijdens deze retrospective</li>\
+    <li>Ik ben tevreden met de laatste sprint</li>\
+    <li>Ik ben tevreden met de kwaliteit van onze code</li>\
+    <li>Ik vind ons continuous integration proces volwassen</li>\
+</ul>\
+Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
+Dit kan ook een afsluitende activiteit zijn (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+duration:  "10 min",
+suitable:  "iteration, project, release"
+};
+all_activities[52] = {
+phase:     4,
+name:      "Sterrenbeeld - Sluiting",
+summary:   "Laat de deelnemers de retrospective beoordelen door rond te bewegen",
+desc:      "Plaats een cirkel in het midden van de ruimte. Laat het team er omheen verzamelen. \
+Leg uit dat de cirkel het centrum van instemming is: Als ze het met een stelling eens zijn moeten ze er naartoe bewegen, \
+zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees nu stellingen voor, bijv.\
+<ul>\
+    <li>We hebben besproken wat voor mij het meest belangrijk was</li>\
+    <li>Ik heb vandaag openlijk mijn mening geuit</li>\
+    <li>Ik denk dat de retrospective de tijd waard was</li>\
+    <li>Ik heb er alle vertrouwen in dat we onze actiepunten uitvoeren</li>\
+</ul>\
+Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
+Dit kan ook een openingsactiviteit zijn (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+all_activities[53] = {
+phase:     1,
+name:      "Story Oscars",
+summary:   "Het team nomineert stories voor prijzen en bespreekt de winnaars",
+desc:      "Toon alle stories die de laatste sprint(s) afgerond zijn op een bord. \
+Creëer drie prijzencategorieën (bijvoorbeeld als vlakken op het bord):\
+<ul>\
+    <li>Beste story</li>\
+    <li>Irritantste story</li>\
+    <li>... 3de categorie bedacht door het team ...</li>\
+</ul>\
+Vraag het team om stories te nomineren door ze in een van de categorieën te plaatsen. <br>\
+Laat het team voor iedere categorie stemmen met stippen (dotvoting) om de winnaar te bepalen. \
+Vraag het team waarom ze denken dat deze story gewonnen heeft in deze categorie \
+en laat het team reflecteren op het proces van het afmkane van taken - wat ging er goed en/of fout.",
+source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
+duration:  "30-40 min",
+suitable:  "project, release",
+};
+all_activities[54] = {
+phase:     2,
+name:      "Originele 4",
+summary:   "Stel Norman Kerth's 4 sleutelvragen",
+desc:      "Norman Kerth, bedenker van retrospectives, identificeerde de volgende 4 vragen als essentieel: \
+<ul>\
+    <li>Wat deden we goed, dat we mogelijk vergeten als we het niet benoemen?</li>\
+    <li>Wat hebben we geleerd?</li>\
+    <li>Wat zouden we de volgende keer anders moeten doen?</li>\
+    <li>Waar breken we ons nog steeds het hoofd over?</li>\
+</ul>\
+Wat zijn de antwoorden van het team?",
+source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
+duration:  "15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[55] = {
+phase:     5,
+name:      "Nodig een klant uit",
+summary:   "Breng het team in direct contact met een klant of belanghebbende",
+desc:      "Nodig een klant of interne belanghebbende uit bij je retrospective.\
+Laat het team ALLE vragen stellen:\
+<ul>\
+    <li>Hoe gebruikt de klant het product?</li>\
+    <li>Wat vervloeken ze het meest?</li>\
+    <li>Welke functie maakt hun leven gemakkelijker?</li>\
+    <li>Laat de klant een demonstratie geven van hun typische workflow</li>\
+    <li>...</li>\
+</ul>",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "45 min",
+suitable:  "iteration, project"
+};
