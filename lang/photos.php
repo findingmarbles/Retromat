@@ -3,7 +3,8 @@ var path = 'static/images/activities/';
 
 all_photos = [];
 all_photos[0] = [
-{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"}
+{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"},
+{filename:    path + "1_ESVP_2.jpg", contributor: "someone on Twitter"}
 ];
 all_photos[1] = [
 {filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
@@ -20,6 +21,9 @@ all_photos[8] = [
 ];
 all_photos[11] = [
 {filename:    path + "12_Start-Stop-Continue.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[12] = [
+{filename:    path + "13_Smart-Goals.jpg", contributor: "someone on Twitter"}
 ];
 all_photos[17] = [
 {filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
@@ -40,10 +44,10 @@ all_photos[21] = [{
 filename:    path + "22_Temperature-Reading.jpg",
 contributor: "Weronika Kedzierska"
 }];
-all_photos[22] = [{
-filename:    path + "23_Feedback-Door-Smilies.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[22] = [
+{filename:    path + "23_Feedback-Door-Smilies.jpg",contributor: "Philipp Flenker"},
+{filename:    path + "23_Feedback-Door-Smilies_2.jpg",contributor: "someone on Twitter"}
+];
 all_photos[24] = [
 {filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
 {filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
@@ -103,6 +107,9 @@ contributor: "Wayne D. Grant"
 all_photos[67] = [
 {filename:    path + "68_Company-Map.jpg", contributor: "Annette Harder"},
 {filename:    path + "68_Company-Map-2.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[69] = [
+{filename:    path + "70_3-for-1.jpg", contributor: "someone on Twitter"}
 ];
 all_photos[77] = [
 {filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
