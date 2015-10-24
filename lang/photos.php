@@ -11,6 +11,9 @@ all_photos[1] = [
 {filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"},
 {filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
 ];
+all_photos[3] = [
+{filename:    path + "4_Timeline.jpg", contributor: "Virginia Brassesco"}
+];
 all_photos[6] = [
 {filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
 {filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
@@ -131,13 +134,15 @@ all_photos[88] = [
 {filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
 {filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
 ];
-all_photos[89] = [{
-filename:    path + "90_Agile-Values-Cheerup.jpg",
-contributor: "Daryl Praeker"
-}];
+all_photos[89] = [
+{filename:    path + "90_Agile-Values-Cheerup.jpg", contributor: "Daryl Praeker"},
+{filename:    path + "90_Agile-Values-Cheerup-2.jpg", contributor: "Virginia Brassesco"}
+];
 all_photos[91] = [
 {filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
-{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"}
+{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational_Poster-3.jpg", contributor: "Sarah Schmid"},
+{filename:    path + "92_Motivational_Poster-4.jpg", contributor: "Sarah Schmid"}
 ];
 all_photos[96] = [
 {filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
@@ -153,4 +158,11 @@ all_photos[106] = [
 ];
 all_photos[112] = [
 {filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
+];
+all_photos[113] = [
+{filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"}
+];
+all_photos[114] = [
+{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
 ];
