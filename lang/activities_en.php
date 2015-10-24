@@ -1788,7 +1788,7 @@ individuals or to multiple people. \
 Collect all postcards. Consider using envelopes with the name on for privacy. Deliver the cards \
 throughout the next iteration to make someone's day. \
 <br><br> \
-Variation: Use normal paper and let participants fold the paper into little cranes for some origami fun. \
+Variation: Use normal paper and let participants fold the paper into little <a href='http://www.origami-fun.com/origami-crane.html'>cranes</a> for some origami fun. \
 (Suggestion by Virginia Brassesco)",
 source:    "<a href='https://medium.com/agile-outside-the-box/retrospective-technique-appreciation-post-cards-e53ef3d67425'>Philip Rogers</a>",
 duration:  "5-10 minutes",
