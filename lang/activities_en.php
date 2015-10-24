@@ -306,7 +306,7 @@ as a heavy anchor. Team members silently write on sticky notes what propelled th
 and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
 Read out each one and discuss how you can increase 'motors' and cut 'anchors'. \
 <br><br> \
-Addendum: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
+Variation: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
 they already see coming.",
 source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 duration:  "10-15 groupSize",
@@ -1786,7 +1786,10 @@ desc:      "Hand out blank postcards. Each team member silently writes a postcar
 for something they did. They can write as many postcards as they like, and they can address them either to \
 individuals or to multiple people. \
 Collect all postcards. Consider using envelopes with the name on for privacy. Deliver the cards \
-throughout the next iteration to make someone's day.",
+throughout the next iteration to make someone's day. \
+<br><br> \
+Variation: Use normal paper and let participants fold the paper into little cranes for some origami fun. \
+(Suggestion by Virginia Brassesco)",
 source:    "<a href='https://medium.com/agile-outside-the-box/retrospective-technique-appreciation-post-cards-e53ef3d67425'>Philip Rogers</a>",
 duration:  "5-10 minutes",
 suitable:  "iteration, project"
@@ -1807,6 +1810,18 @@ source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dre
 duration:  "30 minutes",
 suitable:  "iteration, project"
 };
+all_activities[113] = {
+phase:     0,
+name:      "Give me a face",
+summary:   "Participants show how they feel by drawing a face on a tangerine",
+desc:      "Each team member gets a sharpie and a tangerine with a sticky note asking: \
+'How do you feel? Please give me a face'. After all are done drawing you go around and \
+compare the works of art and emotions. It's a light-hearted way to set the stage.",
+source:    "<a href='http://se-co.de/index.php/das-sind-wir/'>Afagh Zadeh</a>",
+duration:  "5 minutes",
+suitable:  "iteration, project"
+};
+
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
