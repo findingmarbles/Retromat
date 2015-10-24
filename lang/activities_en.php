@@ -1821,7 +1821,27 @@ source:    "<a href='http://se-co.de/index.php/das-sind-wir/'>Afagh Zadeh</a>",
 duration:  "5 minutes",
 suitable:  "iteration, project"
 };
-
+all_activities[114] = {
+phase:     2,
+name:      "Force Field Analysis",
+summary:   "Analyse the factors that support and hinder a particular initiative",
+desc:      "State the topic that the team will explore in depth (deployment \
+processes, peer-programming, Definition of Done, ...). Break the room into groups \
+of 3-4 people each. Give them 5-7 minutes to list all contributing factors, drivers \
+and actions that make up the topic. Go around the room. Each group reads 1 of their \
+sticky notes and puts it up inside the force field until no group has any items left. \
+Cluster or discard duplicates. Repeat the last 2 steps for factors that inhibit or \
+restrain the topic from being successful or being as effective as it could be. Review \
+all posted items. Add any that are missing. \
+<br><br> \
+To identify the most influential factors, everybody gets to 4 votes - 2 for contributing \
+factors, 2 for inhibitors. Tally the votes and mark the top 2x2 factors with big arrows. \
+Spend the last 15-20 mins of the session brainstorming ways to increase the top driving factors \
+and decrease the top restraining factors.",
+source:    "<a href='http://derekneighbors.com/2009/02/agile-retrospective-using-force-field-analysis/'>Derek Neighbors</a>, via <a href='http://www.silverstripe.com/about-us/team/project-management/joel-edwards/'>Joel Edwards</a>",
+duration:  "60 minutes",
+suitable:  "iteration, project"
+};
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
