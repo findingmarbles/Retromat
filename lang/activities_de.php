@@ -380,5 +380,123 @@ source:    source_findingMarbles,
 duration:  "60-90",
 suitable: "iteration, release, smallGroups, smoothSailing, mature"
 };
+all_activities[28] = {
+phase:     3,
+name:      "Circles &amp; Soup / Circle of Influence",
+summary:   "Create actions based on how much control the team has to carry them out",
+desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
+'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
+from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
+Take your insights from the last phase and put them in the appropriate circle.<br> \
+The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
+circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
+Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
+who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and \
+'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Gespr&auml;chsb&ouml;gen",
+summary:   "Ein strukturierter Ansatz f&uuml;r Diskussionen",
+desc:      "Gespr&auml;chsb&ouml;gen (engl. dialogue sheet) sehen ein wenig so aus wie ein Spielbrett von einem Gesellschaftsspiel. Es sind schon <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>einige Gespr&auml;chsb&ouml;gen online verf&uuml;gbar</a>. <br /> \
+W&auml;hle einen aus, drucke ihn so gro&szlig; wie m&ouml;glich aus (am besten in DIN A1) und befolge anschlie&szlig;end die Anweisungen auf dem Gespr&auml;chsbogen.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
+all_activities[30] = {
+phase:     0,
+name:      "Die Iteration malen",
+summary:   "Die Teilnehmer malen ein Bild zur zur&uuml;ckliegenden Iteration",
+desc:      "Verteile Karteikarten und Stifte. Gebe ein Thema vor, z.B.:\
+<ul>\
+    <li>Wie hast Du Dich w&auml;hrend der Iteration gef&uuml;hlt?</li>\
+    <li>Gab es einen Aha!-Moment? Welcher war das?</li>\
+    <li>Was war das gr&ouml;&szlig;te Problem?</li>\
+    <li>Was hast Du vermisst?</li>\
+</ul>\
+Bitte die Teilnehmer, ihre Antwort als ein kleines Bild zu malen. H&auml;nge alle Zeichnungen an ein Whiteboard. Sprecht die Zeichnungen gemeinsam durch und lasse die Teilnehmer zun&auml;chst raten, was dargestellt ist und was es zu bedeuten hat. Anschlie&szlig;end erkl&auml;rt der jeweilige K&uuml;nstler sein Bild. <br></br> \
+Metaphern erm&ouml;glichen den Perspektivwechsel und neue Sichtweisen. Gemeinsam entwickelt das Team so ein Verst&auml;ndnis f&uuml;r die Geschehnisse in der letzten Interation.",
+source:    source_findingMarbles + ", &uuml;bernommen und angepasst von <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> und Olivier Gourment",
+duration:  "5 + 3 per person",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Projekt-Gef&uuml;hlsmesser",
+summary:   "Hilf Deinen Teammitgliedern dabei, ihre Gef&uuml;hle zum Projekt auszudr&uuml;cken und sprecht schon fr&uuml;hzeitig &uuml;ber die Ursachen",
+desc:      "Bereite einen Flipchart vor mit Gesichtern, die Emotionen ausdr&uuml;cken, z.B.:\
+<ul>\
+    <li>schockiert / &uuml;berrascht</li>\
+    <li>nerv&ouml;s / gestresst</li>\
+    <li>machtlos / eingeschr&auml;nkt</li>\
+    <li>verwirrt</li>\
+    <li>gl&uuml;cklich</li>\
+    <li>wahnsinnig</li>\
+    <li>&uuml;berw&auml;ltigt</li>\
+</ul>\
+Alle Teammitglieder w&auml;hlen ein Gesicht, das am besten ausdr&uuml;ckt, wie sie sich im Projekt f&uuml;hlen. So lassen sich auf unterhaltsame Weise Probleme schon fr&uuml;h zu Tage f&ouml;rdern. Ihr k&ouml;nnt Sie in den Folgephasen der Retrospektive besprechen.",
+source:    "Andrew Ciccarelli",
+duration:  "10 for 5 people",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Stolz & Bedauern",
+summary:   "Worauf sind die Teammitglieder stolz, was bedauern sie?",
+desc:      "H&auml;nge zwei Flipcharts auf mit den &Uuml;berschriften &quot;Stolz&quot; und &quot;Bedauern&quot;. Die Teammitglieder schreiben pro Klebezettel eine Situation auf, die auf eines der Poster passt. Sobald die Zeit um ist, liest jeder seine Zettel kurz vor und h&auml;ngt sie auf das passende Poster.<br></br>\
+Er&ouml;ffne eine kurze Diskussion z.B. mit einer der folgenden Fragen an das Team:\
+<ul>\
+    <li>Gibt es auf den Postern etwas, was euch &uuml;berrascht hat?</li>\
+    <li>Sind Gemeinsamkeiten erkennbar? Was bedeuten sie f&uuml;r das Team?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "In Anerkennung baden",
+summary:   "H&ouml;re anderen dabei zu, wie sie sich hinter Deinem R&uuml;cken &uuml;ber Dich unterhalten - und ihnen nur Gutes einf&auml;llt!",
+desc:      "Bilde Gruppen mit jeweils drei Personen. Jede Gruppe stellt drei St&uuml;hle so auf, dass zwei sich gegen&uuml;ber stehen und der dritte ihnen den R&uuml;cken zudreht. <br></br> \
+Zwei Teammitglieder, die sich gegen&uuml;ber sitzen, unterhalten sich f&uuml;r zwei Minuten &uuml;ber die dritte Person. Dabei d&uuml;rfen sie nur anerkennende und positive Dinge erw&auml;hnen und nichts von dem Gesagten im Nachhinein entkr&auml;ften.<br></br>\
+Haltet drei Runden ab, so dass jeder die Gelegenheit bekommt, in Anerkennung zu baden.",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "Agile Selbsteinsch&auml;tzung",
+summary:   "Sch&auml;tzt anhand einer Checkliste ein, wie agil ihr seid.",
+desc:      "Drucke eine der folgenden Checklisten aus, die zu euch passt: \
+<ul>\
+    <li>Die <a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>Scrum Checklist</a> von Henrik Kniberg</li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Self-assessment of agile engineering practices</a> von Corinna Baldauf</li>\
+    <li>Der <a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia Test</a>, beschrieben von Joe Little</li>\
+</ul>\
+Geht die Checkliste im Team durch und diskutiert, wie agil ihr seid und ob ihr auf dem richtigen Weg seid.<br></br>\
+Diese Aktivit&auml;t eignet sich gut f&uuml;r eine Retrospektive nach einer Iteration, in der nicht viel passiert ist.",
+source:    source_findingMarbles,
+duration:  "10-25 minutes depending on the list",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Wertsch&auml;tzendes Ziel",
+summary:   "W&auml;hle ein positives Motto f&uuml;r die Retrospektive.",
+desc:      "Konzentriert euch auf positive Aspekte eurer Arbeit statt auf Probleme. Gib der Retrospektive ein positives Motto, wie z.B.:\
+<ul>\
+    <li>Lasst uns einen Weg finden, unsere St&auml;rken beim Vorgehen und in der Zusammenarbeit weiter auszubauen.</li>\
+    <li>Lasst uns herausfinden, wie wir die Verwendung von etablierten Entwicklungspraktiken und -methoden steigern k&ouml;nnen.</li>\
+    <li>Wir finden heraus, wo oder zwischen wem die Zusammenarbeit bereits besonders gut funktioniert und wie wir gezielt eine solche hoch produktive Atmosph&auml;re schaffen k&ouml;nnen.</li>\
+    <li>Wir finden heraus, wie und wo wir in der letzten Iteration den h&ouml;chsten Mehrwert f&uuml;r unseren Kunden geschaffen haben, um den erzeugten Mehrwert in der n&auml;chsten Iteration noch zu steigern.</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

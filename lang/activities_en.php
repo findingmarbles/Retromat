@@ -553,7 +553,7 @@ name:      "Appreciative Goal",
 summary:   "State an affirmative goal for the session",
 desc:      "Concentrate on positive aspects instead of problems by setting an affirmative goal, e.g.\
 <ul>\
-    <li>Let's find ways to amplify our strengths in process and teamwork</a></li>\
+    <li>Let's find ways to amplify our strengths in process and teamwork</li>\
     <li>Let's find out how to extend our best uses of engineering practices and methods</li>\
     <li>We'll look at our best working relationships and find ways to build more relationships like that</li>\
     <li>We'll discover where we added the most value during our last iteration to increase the value we'll add during the next</li>\
