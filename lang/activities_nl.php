@@ -834,3 +834,77 @@ source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>
 duration:  "45 min",
 suitable:  "iteration, project"
 };
+all_activities[56] = {
+phase:     4,
+name:      "Zeg het met bloemen",
+summary:   "Ieder teamlid waardeert iemand anders met een bloem",
+desc:      "Koop voor elk teamlid een bloem en onthul die bij de retrospective. \
+Iedereen krijgt een bloem om aan iemand anders te geven als blijk van hun waardering.",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "5 min",
+suitable:  "iteration, project"
+};
+all_activities[57] = {
+phase:     2,
+name:      "Undercover Baas",
+summary:   "Als je baas ooggetuige was geweest van de laatste sprint, wat zou hij of zij dan willen veranderen?",
+desc:      "Stel je voor dat je baas de laatste sprint - onherkend - tussen het team gezeten had. Wat zou hij of zij dan denken \
+over de interacties tussen de teamleden en de behaalde resultaten? Wat zou hij of zij willen veranderen? \
+<br>Deze instelling daagt het team uit om zichzelf vanuit een ander perspectief te bekijken.",
+source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[58] = {
+phase:     0,
+name:      "Blijkheidshistogram",
+summary:   "Teken een blijheidshistogram om mensen aan de praat te krijgen",
+desc:      "Bereid een flipchartvel voor met daarop een horizontale schaal van 1 (Ongelukkig) tot 5 (Blij).\
+<ul>\
+    <li>Het ene na het andere teamlid plaatst een stickie bij aan de hand van hun gevoelens en plaatst daar commentaar bij</li>\
+    <li>Als er iets noemenswaardigs voorbijkomt in de reden, laat het team dat dan ofwel meteen bespreken of stel het uit tot later in de retrospective</li>\
+    <li>Als er iemand anders dezelfde score kiest, dan plaatst hij of zij zijn stickie boven de stickie die er al hangt, om zo effectief een histogram te vormen</li>\
+</ul>",
+source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
+duration:  "2 min",
+suitable:  "iteration, project, release"
+};
+all_activities[59] = {
+phase:     4,
+name:      "AHA!",
+summary:   "Gooi een bal in de rondte en ontdek wat er geleerd is",
+desc:      "Gooi een bal (bijvoorbeeld een koosh ball) rond het team en haal positieve gedachten en leermomenten boven water. Geef aan het begin van de sessie een vraag \
+die beantwoord moet worden als de bal gevangen wordt, bijvoorbeeld: \
+<ul>\
+    <li>Een ding dat ik in de afgelopen sprint geleerd heb</li>\
+    <li>Een geweldig ding dat iemand anders voor me deed</li>\
+</ul>\
+Afhankelijk van de vraag kan deze oefening gebeurtenissen naar boven halen die mensen dwars zaten. Als er alarmbellen afgaan, graaf dan wat dieper. Middels de '1 geweldig ding'-vraag \
+kun je meestal afsluiten op een positieve noot.",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> en <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project",
+};
+all_activities[60] = {
+phase:     3,
+name:      "Chaos Coctailfeest",
+summary:   "Identificeer, bespreek, verhelder en prioriteer actief een aantal acties",
+desc:      "Iedereen beschrijft een kaartje met een actie waarvan zij denken dat het belangrijk is om die uit te voeren - \
+hoe specifieker (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>), \
+hoe beter. Daarna gaan de teamleden rond en praten over de kaarten als op een coctailfeest. \
+Ieder conversatiepaar bespreekt de acties op hun twee kaarten. \
+Beëindig het gesprek na 1 minuut. Ieder paar verdeelt 5 punten over de twee kaarten. \
+De meeste punten gaan naar de belangrijkste actie. Organiseer 3 tot 5 gespreksrondes (afhankelijk van de grootte van de groep). \
+Aan het einde telt iedereen de punten op hun kaart bij elkaar op. \
+Ten slotte worden de kaarten gerangschikt op puntentotaal en beslist het team hoeveel er in de volgende iteratie gedaan kan worden, \
+bovenaan te beginnen.\
+<br><br>\
+Addendum: In veel gevallen kan het nuttig zijn om de kaarten aan het begin van de sessie en tussen de gesprekken door
+random te ruilen. Op deze manier heeft geen van de partijen een belang in welke kaart de meeste punten krijgt. \
+Dit is een idee van \
+<a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam “Thiagi” Thiagarajan</a> via \
+<a href='https://twitter.com/ptevis'>Paul Tevis</a>",
+source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, largeGroup"
+};
