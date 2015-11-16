@@ -908,3 +908,95 @@ source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
 duration:  "10-15 min",
 suitable:  "iteration, project, release, largeGroup"
 };
+all_activities[61] = {
+phase:     1,
+name:      "Verwachtingen",
+summary:   "Wat kunnen anderen van jou verwachten? Wat kun jij van hen verwachten?",
+desc:      "Geef ieder teamlid een stuk papier. De onderste helft is leeg. De bovenste helft is in twee secties verdeeld:\
+<ul>\
+    <li>Wat kunnen mijn teamleden van mij verwachten</li>\
+    <li>Wat ik verwacht van mijn teamleden</li>\
+</ul>\
+Iedere persoon vult de bovenste helft voor zichzelf in. Zodra iedereen klaar is, geven ze hun vel papier \
+naar hun linkerbuur door en reviewen dan het vel wat aan hun gegeven werd. Op de onderste helft schrijven ze \
+wat zij persoonlijk verwachten van die persoon, ondertekenen het en geven het door.<br>\
+Neem, als de vellen papier het hele team rond gegaan zijn, wat tijd om het vel te reviewen en om observaties te delen.",
+source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, start"
+};
+all_activities[62] = {
+phase:     3,
+name:      "Laaghangend fruit",
+summary:   "Visualiseer de belofte en het gemak van mogelijke werkwijzen die gekozen kunnen worden",
+desc:      "Onthul een vooraf getekende boom. Deel indexkaartjes (of stickies) uit en instrueer de deelnemers \
+gewenste acties op te schrijven - een per kaart. Zodra iedereen klaar is, verzamel dan de kaartjes, schud ze, \
+en lees ze een voor een voor. Hang iedere 'vrucht' in de boom aan de hand van de inschatting van de deelnemers: \
+<ul>\
+    <li>Is het makkelijk om te doen? Hang het dan laag in de boom. Moeilijk? Hang het dan hoger.</li>\
+    <li>Lijkt het zinvol? Plaats het dan aan de linkerkant. Is de waarde hooguit dubieus? Hang het dan meer naar rechts.</li>\
+</ul>\
+De eenvoudige keuze is nu om de acties te kiezen die linksonder in de boom hangen. Als hier geen eensgezindheid over is, \
+kun je ofewel een korte discussie houden om te beslissen of om te stemmen met stippen (dotvoting) over de acties in kwestie.",
+source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[63] = {
+phase:     1,
+name:      "Vierendeling - Identificeer saaie stories",
+summary:   "Categoriseer alle stories in 2 dimensies om de saaie stories te identificeren",
+desc:      "Teken een groot vierkant en verdeel dat in 2 kolommen. \
+Label de kolommen 'Interessant' en 'Saai'. Laat het team alles wat ze in de afgelopen iteratie gedaan hebben op stickies opschrijven en \
+hang ze in de toepasselijke kolom. Laat hen ook een ruwe schatting geven van hoe lang het duurde.<br> \
+Voeg nu een horizontale lijn toe, zo dat je vierkant 4 kwadranten heeft. Label de bovenste rij 'Kort' (kostte een aantal uur) \
+en de onderste rij 'Lang' (kostte dagen). Rangschik de stickies in iedere kolom.<br> \
+De lange en saaie stories zijn nu handig gegroepeerd om 'aan te vallen' in komende fasen.<br> \
+<br>\
+(Het opsplitsen van de beoordeling in fasen bevordert de focus. Je kunt de \
+<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>\
+    vierendelingstechniek ook aanpassen voor andere 2-dimensionale categorizeringen</a>.)",
+source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
+duration:  "10",
+suitable:  "iteration, project",
+};
+all_activities[64] = {
+phase:     1,
+name:      "Waarderende navraag",
+summary:   "Ieders humeur opfleuren met positieve vragen",
+desc:      "Dit is een activiteit in rondes. In iedere ronde stel je het team een vraag. De teamleden schrijven hun antwoorden op \
+(zodat iedereen de tijd heeft om na te denken) en lezen die dan voor aan de anderen.<br>\
+Vragen die voorgesteld zijn voor software ontwikkelteams:\
+<ol>\
+    <li>Wanneer was de laatste keer dat je echt geëngageerd / geanimeerd / productief was? Wat deed je toen? Wat was er gebeurd? \
+        Hoe voelde dat?</li>\
+    <li>Vanuit een applicatie-/code-perspectief: wat is het meeste geweldige dat je samen gebouwd hebt? Waarom is dat zo geweldig?</li>\
+    <li>Wat vind je van alle dingen die je voor dit bedrijf gebouwd hebt het meest waardevol? Waarom?</li>\
+    <li>Wanneer werkte je het beste met de Product Owner? Wat was er goed aan?</li>\
+    <li>Wanneer was de samenwerking het beste?</li>\
+    <li>Wat was je meest waardevolle bijdrage aan de ontwikkelcommunity (van dit bedrijf)? Hoe deed je dat?</li>\
+    <li>Laat je bescheidenheid thuis: Wat is de meest waardevolle vaardigheid/karaktertrek die je aan het team bijdraagt?\
+        Geef een voorbeelden?</li>\
+    <li>Wat is het belangrijkste kenmerk van het team? Wat maakt jullie anders?</li>\
+</ol>\
+<br>\
+('Herinneringen uit de toekomst' (#37) werkt goed als volgende stap.)",
+source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, aangepast voor SW ontwikkeling door " + source_findingMarbles,
+duration:  "20-25 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[65] = {
+phase:     2,
+name:      "'Brainwriting'",
+summary:   "Geschreven brainstormsessies vereffenen het veld voor de introverte teamleden",
+desc:      "Stel een centrale vraag, zoals 'Welke acties moeten we in de volgende sprint uitvoeren om te verbeteren?'. \
+Deel pennen en papier uit. Iedereen schrijft hun ideeën op. Na drie minuten geeft iedereen het vel papier door aan hun linkerbuur en schrijft verder \
+op het vel dat ze gekregen hebben. Zodra ze geen ideeën meer hebben, kunnen ze de ideeën van anderen lezen. \
+Regels: Geen negatief commentaar en iedereen schrijft zijn ideeën slechts een keer op. (Als verschillende mensen hetzelfde idee opschrijven,\
+is dat natuurlijk prima.) <br>\
+Geef de vellen iedere drie minuten door totdat iedereen alle vellen gehad heeft. Geef ze nu nog een laatste keer door. \
+Nu leest iedereen het vel door en kiest de drie beste ideeën die er op staan. Verzamel alle top 3's op een flipchartvel voor de volgende fase.",
+source:    "Prof. Bernd Rohrbach",
+duration:  "20 min groupsize",
+suitable:  "iteration, project, release"
+};
