@@ -665,3 +665,338 @@ source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity
 duration:  "5",
 suitable: "iteration, release, project"
 };
+all_activities[46] = {
+phase:     1,
+name:      "De brievenbus legen",
+summary:   "Bekijk de aantekeningen die tijdens de sprint verzameld zijn",
+desc:      "Maak een retrospective brievenbus aan het begin van de iteratie. Iedere keer dat er iets Whenever something \
+significants gebeurd of als iemand een idee voor een verbetering heeft, schrijven ze het op en posten het in de brievenbus. \
+(Als alternatief kan de 'brievenbus' ook een zichtbare plek zijn. Dit kan de discussie al tijdens de iteratie \
+aanzwengelen.) <br>\
+Loop de brieven door en bespreek ze.<br>\
+Een brievenbus is geweldig voor lange iteraties en vergeetachtige teams.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Originele artikel</a>",
+duration:  "15",
+suitable: "release, project"
+};
+all_activities[47] = {
+phase:     3,
+name:      "Neem een standpunt in - Line Dance",
+summary:   "Krijg een idee van waar iedereen staat en probeer consensus te bereiken",
+desc:      "Als het team niet tussen twee opties kan kiezen, maak dan een grote schaal (bijv. een lange lijn) \
+op de vloer met afplaktape. Markeer het ene uiteinde als optie A en het andere als optie B. \
+Teamleden positioneren zich op de schaal al naar gelang hun voorkeur voor een van beide opties. \
+Stel nu de opties bij tot een van de twee een duidelijke meerderheid heeft.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Originele artikel</a>",
+duration:  "5-10 per decision",
+suitable: "iteration, release, project"
+};
+all_activities[48] = {
+phase:     3,
+name:      "Stemmen met stippen (dotvoting) - Zeester",
+summary:   "Verzamel wat er gestart, gestopt, voortgezet, minder gedaan of meer gedaan moet worden",
+desc:      "Teken vijf spaken op een flipchartvel, waardoor het vel in vijf segmenten verdeeld is. \
+Label ze 'Start', 'Stop', 'Voortzetten', 'Meer doen' en 'Minder doen'. \
+De deelnemers schrijven hun voorstellen op sticky notes en hangen die in het \
+toepasselijke segment. Laat na het clusteren van de stickies die hetzelfde idee bevatten, \
+iedereen stemmen op de suggesties die ze uit willen proberen.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+duration:  "15 min",
+suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "Wens vervuld",
+summary:   "Een fee wil een van je wensen in vervulling laten gaan - hoe weet je dan dat je wens uit kwam?",
+desc:      "Geef de deelnemers 2 minuten om in stilte de volgende vraag te overdenken: \
+'Een fee vervult een wens die je grootste probleem op het werk 's nachts oplost. Wat zou je dan wensen?' \
+Volg dit daarna op met: 'Je komt de volgende dag op het werk. Je kunt zien dat je wens uitgekomen is. \
+Hoe weet je dat zo zeker? Wat is er nu anders?' Als het vertrouwen in de groep hoog is, laat iedereen \
+dan zijn 'Vervulde wens'-werkplek beschrijven. Zo niet, vertel de deelnemers dan om hun scenario \
+gedurende de volgende fase van de retrospective in hun achterhoofd te houden en acties voor te stellen die \
+tot doel hebben om in de richting van die gewenste situatie te gaan.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+duration:  "15 min",
+suitable:  "iteration"
+};
+all_activities[50] = {
+phase:     1,
+name:      "Lean Coffee",
+summary:   "Gebruik het Lean Coffee format om de belangrijkste onderwerpen te bespreken",
+desc:      "Vertel hoeveel tijd er beschikbaar is voor deze fase en leg dan de regels van Lean Coffee voor retrospectives uit: <ul>\
+    <li>Iedereen schrijft de onderwerpen op die ze willen bespreken - 1 onderwerp per sticky</li>\
+    <li>Hang de stickies op een whiteboard of flipchart. De persoon die het opschreef beschrijft het onderwerp in 1-2 zinnen. \
+        Groepeer de stickies die over hetzelfde onderwerp gaan</li>\
+    <li>Stem nu met stippen (dotvoting) voor de twee onderwerpen die je wilt bespreken</li>\
+    <li>Sorteer de stickies aan de hand van de stemmen</li>\
+    <li>Start met het onderwerp met de meeste interesse</li>\
+    <li>Zet een wekker op vijf minuten. Als de wekker afgaat, steekt iedereen zijn duim op, omhoog of omlaag. \
+        Als de meerderheid van de duimen omhoog is: Het onderwerp krijgt nog vijf minuten. \
+		Als de meerderheid van de duimen omlaag is: Start het volgende onderwerp. </li>\
+</ul> Stop als de beschikbare tijd op is.",
+source:    "<a href='http://leancoffee.org/'>Originele beschrijving</a> en \
+<a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in actie</a>",
+duration:  "20-40 min",
+suitable:  "iteration"
+};
+all_activities[51] = {
+phase:     0,
+name:      "Sterrenbeeld - Opening",
+summary:   "Laat de deelnemers stellingen bevestigen of tegenspreken door rond te bewegen",
+desc:      "Plaats een cirkel in het midden van de ruimte. Laat het team er omheen verzamelen. \
+Leg uit dat de cirkel het centrum van instemming is: Als ze het met een stelling eens zijn moeten ze er naartoe bewegen, \
+zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees nu stellingen voor, bijv.\
+<ul>\
+    <li>Ik kan openlijk spreken tijdens deze retrospective</li>\
+    <li>Ik ben tevreden met de laatste sprint</li>\
+    <li>Ik ben tevreden met de kwaliteit van onze code</li>\
+    <li>Ik vind ons continuous integration proces volwassen</li>\
+</ul>\
+Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
+Dit kan ook een afsluitende activiteit zijn (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+duration:  "10 min",
+suitable:  "iteration, project, release"
+};
+all_activities[52] = {
+phase:     4,
+name:      "Sterrenbeeld - Sluiting",
+summary:   "Laat de deelnemers de retrospective beoordelen door rond te bewegen",
+desc:      "Plaats een cirkel in het midden van de ruimte. Laat het team er omheen verzamelen. \
+Leg uit dat de cirkel het centrum van instemming is: Als ze het met een stelling eens zijn moeten ze er naartoe bewegen, \
+zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees nu stellingen voor, bijv.\
+<ul>\
+    <li>We hebben besproken wat voor mij het meest belangrijk was</li>\
+    <li>Ik heb vandaag openlijk mijn mening geuit</li>\
+    <li>Ik denk dat de retrospective de tijd waard was</li>\
+    <li>Ik heb er alle vertrouwen in dat we onze actiepunten uitvoeren</li>\
+</ul>\
+Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
+Dit kan ook een openingsactiviteit zijn (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
+<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+all_activities[53] = {
+phase:     1,
+name:      "Story Oscars",
+summary:   "Het team nomineert stories voor prijzen en bespreekt de winnaars",
+desc:      "Toon alle stories die de laatste sprint(s) afgerond zijn op een bord. \
+Creëer drie prijzencategorieën (bijvoorbeeld als vlakken op het bord):\
+<ul>\
+    <li>Beste story</li>\
+    <li>Irritantste story</li>\
+    <li>... 3de categorie bedacht door het team ...</li>\
+</ul>\
+Vraag het team om stories te nomineren door ze in een van de categorieën te plaatsen. <br>\
+Laat het team voor iedere categorie stemmen met stippen (dotvoting) om de winnaar te bepalen. \
+Vraag het team waarom ze denken dat deze story gewonnen heeft in deze categorie \
+en laat het team reflecteren op het proces van het afmkane van taken - wat ging er goed en/of fout.",
+source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
+duration:  "30-40 min",
+suitable:  "project, release",
+};
+all_activities[54] = {
+phase:     2,
+name:      "Originele 4",
+summary:   "Stel Norman Kerth's 4 sleutelvragen",
+desc:      "Norman Kerth, bedenker van retrospectives, identificeerde de volgende 4 vragen als essentieel: \
+<ul>\
+    <li>Wat deden we goed, dat we mogelijk vergeten als we het niet benoemen?</li>\
+    <li>Wat hebben we geleerd?</li>\
+    <li>Wat zouden we de volgende keer anders moeten doen?</li>\
+    <li>Waar breken we ons nog steeds het hoofd over?</li>\
+</ul>\
+Wat zijn de antwoorden van het team?",
+source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
+duration:  "15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[55] = {
+phase:     5,
+name:      "Nodig een klant uit",
+summary:   "Breng het team in direct contact met een klant of belanghebbende",
+desc:      "Nodig een klant of interne belanghebbende uit bij je retrospective.\
+Laat het team ALLE vragen stellen:\
+<ul>\
+    <li>Hoe gebruikt de klant het product?</li>\
+    <li>Wat vervloeken ze het meest?</li>\
+    <li>Welke functie maakt hun leven gemakkelijker?</li>\
+    <li>Laat de klant een demonstratie geven van hun typische workflow</li>\
+    <li>...</li>\
+</ul>",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "45 min",
+suitable:  "iteration, project"
+};
+all_activities[56] = {
+phase:     4,
+name:      "Zeg het met bloemen",
+summary:   "Ieder teamlid waardeert iemand anders met een bloem",
+desc:      "Koop voor elk teamlid een bloem en onthul die bij de retrospective. \
+Iedereen krijgt een bloem om aan iemand anders te geven als blijk van hun waardering.",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+duration:  "5 min",
+suitable:  "iteration, project"
+};
+all_activities[57] = {
+phase:     2,
+name:      "Undercover Baas",
+summary:   "Als je baas ooggetuige was geweest van de laatste sprint, wat zou hij of zij dan willen veranderen?",
+desc:      "Stel je voor dat je baas de laatste sprint - onherkend - tussen het team gezeten had. Wat zou hij of zij dan denken \
+over de interacties tussen de teamleden en de behaalde resultaten? Wat zou hij of zij willen veranderen? \
+<br>Deze instelling daagt het team uit om zichzelf vanuit een ander perspectief te bekijken.",
+source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[58] = {
+phase:     0,
+name:      "Blijkheidshistogram",
+summary:   "Teken een blijheidshistogram om mensen aan de praat te krijgen",
+desc:      "Bereid een flipchartvel voor met daarop een horizontale schaal van 1 (Ongelukkig) tot 5 (Blij).\
+<ul>\
+    <li>Het ene na het andere teamlid plaatst een stickie bij aan de hand van hun gevoelens en plaatst daar commentaar bij</li>\
+    <li>Als er iets noemenswaardigs voorbijkomt in de reden, laat het team dat dan ofwel meteen bespreken of stel het uit tot later in de retrospective</li>\
+    <li>Als er iemand anders dezelfde score kiest, dan plaatst hij of zij zijn stickie boven de stickie die er al hangt, om zo effectief een histogram te vormen</li>\
+</ul>",
+source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
+duration:  "2 min",
+suitable:  "iteration, project, release"
+};
+all_activities[59] = {
+phase:     4,
+name:      "AHA!",
+summary:   "Gooi een bal in de rondte en ontdek wat er geleerd is",
+desc:      "Gooi een bal (bijvoorbeeld een koosh ball) rond het team en haal positieve gedachten en leermomenten boven water. Geef aan het begin van de sessie een vraag \
+die beantwoord moet worden als de bal gevangen wordt, bijvoorbeeld: \
+<ul>\
+    <li>Een ding dat ik in de afgelopen sprint geleerd heb</li>\
+    <li>Een geweldig ding dat iemand anders voor me deed</li>\
+</ul>\
+Afhankelijk van de vraag kan deze oefening gebeurtenissen naar boven halen die mensen dwars zaten. Als er alarmbellen afgaan, graaf dan wat dieper. Middels de '1 geweldig ding'-vraag \
+kun je meestal afsluiten op een positieve noot.",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> en <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+duration:  "5-10 min",
+suitable:  "iteration, project",
+};
+all_activities[60] = {
+phase:     3,
+name:      "Chaos Coctailfeest",
+summary:   "Identificeer, bespreek, verhelder en prioriteer actief een aantal acties",
+desc:      "Iedereen beschrijft een kaartje met een actie waarvan zij denken dat het belangrijk is om die uit te voeren - \
+hoe specifieker (<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>), \
+hoe beter. Daarna gaan de teamleden rond en praten over de kaarten als op een coctailfeest. \
+Ieder conversatiepaar bespreekt de acties op hun twee kaarten. \
+Beëindig het gesprek na 1 minuut. Ieder paar verdeelt 5 punten over de twee kaarten. \
+De meeste punten gaan naar de belangrijkste actie. Organiseer 3 tot 5 gespreksrondes (afhankelijk van de grootte van de groep). \
+Aan het einde telt iedereen de punten op hun kaart bij elkaar op. \
+Ten slotte worden de kaarten gerangschikt op puntentotaal en beslist het team hoeveel er in de volgende iteratie gedaan kan worden, \
+bovenaan te beginnen.\
+<br><br>\
+Addendum: In veel gevallen kan het nuttig zijn om de kaarten aan het begin van de sessie en tussen de gesprekken door
+random te ruilen. Op deze manier heeft geen van de partijen een belang in welke kaart de meeste punten krijgt. \
+Dit is een idee van \
+<a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam “Thiagi” Thiagarajan</a> via \
+<a href='https://twitter.com/ptevis'>Paul Tevis</a>",
+source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, largeGroup"
+};
+all_activities[61] = {
+phase:     1,
+name:      "Verwachtingen",
+summary:   "Wat kunnen anderen van jou verwachten? Wat kun jij van hen verwachten?",
+desc:      "Geef ieder teamlid een stuk papier. De onderste helft is leeg. De bovenste helft is in twee secties verdeeld:\
+<ul>\
+    <li>Wat kunnen mijn teamleden van mij verwachten</li>\
+    <li>Wat ik verwacht van mijn teamleden</li>\
+</ul>\
+Iedere persoon vult de bovenste helft voor zichzelf in. Zodra iedereen klaar is, geven ze hun vel papier \
+naar hun linkerbuur door en reviewen dan het vel wat aan hun gegeven werd. Op de onderste helft schrijven ze \
+wat zij persoonlijk verwachten van die persoon, ondertekenen het en geven het door.<br>\
+Neem, als de vellen papier het hele team rond gegaan zijn, wat tijd om het vel te reviewen en om observaties te delen.",
+source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release, start"
+};
+all_activities[62] = {
+phase:     3,
+name:      "Laaghangend fruit",
+summary:   "Visualiseer de belofte en het gemak van mogelijke werkwijzen die gekozen kunnen worden",
+desc:      "Onthul een vooraf getekende boom. Deel indexkaartjes (of stickies) uit en instrueer de deelnemers \
+gewenste acties op te schrijven - een per kaart. Zodra iedereen klaar is, verzamel dan de kaartjes, schud ze, \
+en lees ze een voor een voor. Hang iedere 'vrucht' in de boom aan de hand van de inschatting van de deelnemers: \
+<ul>\
+    <li>Is het makkelijk om te doen? Hang het dan laag in de boom. Moeilijk? Hang het dan hoger.</li>\
+    <li>Lijkt het zinvol? Plaats het dan aan de linkerkant. Is de waarde hooguit dubieus? Hang het dan meer naar rechts.</li>\
+</ul>\
+De eenvoudige keuze is nu om de acties te kiezen die linksonder in de boom hangen. Als hier geen eensgezindheid over is, \
+kun je ofewel een korte discussie houden om te beslissen of om te stemmen met stippen (dotvoting) over de acties in kwestie.",
+source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[63] = {
+phase:     1,
+name:      "Vierendeling - Identificeer saaie stories",
+summary:   "Categoriseer alle stories in 2 dimensies om de saaie stories te identificeren",
+desc:      "Teken een groot vierkant en verdeel dat in 2 kolommen. \
+Label de kolommen 'Interessant' en 'Saai'. Laat het team alles wat ze in de afgelopen iteratie gedaan hebben op stickies opschrijven en \
+hang ze in de toepasselijke kolom. Laat hen ook een ruwe schatting geven van hoe lang het duurde.<br> \
+Voeg nu een horizontale lijn toe, zo dat je vierkant 4 kwadranten heeft. Label de bovenste rij 'Kort' (kostte een aantal uur) \
+en de onderste rij 'Lang' (kostte dagen). Rangschik de stickies in iedere kolom.<br> \
+De lange en saaie stories zijn nu handig gegroepeerd om 'aan te vallen' in komende fasen.<br> \
+<br>\
+(Het opsplitsen van de beoordeling in fasen bevordert de focus. Je kunt de \
+<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>\
+    vierendelingstechniek ook aanpassen voor andere 2-dimensionale categorizeringen</a>.)",
+source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
+duration:  "10",
+suitable:  "iteration, project",
+};
+all_activities[64] = {
+phase:     1,
+name:      "Waarderende navraag",
+summary:   "Ieders humeur opfleuren met positieve vragen",
+desc:      "Dit is een activiteit in rondes. In iedere ronde stel je het team een vraag. De teamleden schrijven hun antwoorden op \
+(zodat iedereen de tijd heeft om na te denken) en lezen die dan voor aan de anderen.<br>\
+Vragen die voorgesteld zijn voor software ontwikkelteams:\
+<ol>\
+    <li>Wanneer was de laatste keer dat je echt geëngageerd / geanimeerd / productief was? Wat deed je toen? Wat was er gebeurd? \
+        Hoe voelde dat?</li>\
+    <li>Vanuit een applicatie-/code-perspectief: wat is het meeste geweldige dat je samen gebouwd hebt? Waarom is dat zo geweldig?</li>\
+    <li>Wat vind je van alle dingen die je voor dit bedrijf gebouwd hebt het meest waardevol? Waarom?</li>\
+    <li>Wanneer werkte je het beste met de Product Owner? Wat was er goed aan?</li>\
+    <li>Wanneer was de samenwerking het beste?</li>\
+    <li>Wat was je meest waardevolle bijdrage aan de ontwikkelcommunity (van dit bedrijf)? Hoe deed je dat?</li>\
+    <li>Laat je bescheidenheid thuis: Wat is de meest waardevolle vaardigheid/karaktertrek die je aan het team bijdraagt?\
+        Geef een voorbeelden?</li>\
+    <li>Wat is het belangrijkste kenmerk van het team? Wat maakt jullie anders?</li>\
+</ol>\
+<br>\
+('Herinneringen uit de toekomst' (#37) werkt goed als volgende stap.)",
+source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, aangepast voor SW ontwikkeling door " + source_findingMarbles,
+duration:  "20-25 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[65] = {
+phase:     2,
+name:      "'Brainwriting'",
+summary:   "Geschreven brainstormsessies vereffenen het veld voor de introverte teamleden",
+desc:      "Stel een centrale vraag, zoals 'Welke acties moeten we in de volgende sprint uitvoeren om te verbeteren?'. \
+Deel pennen en papier uit. Iedereen schrijft hun ideeën op. Na drie minuten geeft iedereen het vel papier door aan hun linkerbuur en schrijft verder \
+op het vel dat ze gekregen hebben. Zodra ze geen ideeën meer hebben, kunnen ze de ideeën van anderen lezen. \
+Regels: Geen negatief commentaar en iedereen schrijft zijn ideeën slechts een keer op. (Als verschillende mensen hetzelfde idee opschrijven,\
+is dat natuurlijk prima.) <br>\
+Geef de vellen iedere drie minuten door totdat iedereen alle vellen gehad heeft. Geef ze nu nog een laatste keer door. \
+Nu leest iedereen het vel door en kiest de drie beste ideeën die er op staan. Verzamel alle top 3's op een flipchartvel voor de volgende fase.",
+source:    "Prof. Bernd Rohrbach",
+duration:  "20 min groupsize",
+suitable:  "iteration, project, release"
+};
