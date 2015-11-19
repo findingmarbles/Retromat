@@ -687,16 +687,16 @@ function switchLanguage(new_lang) {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-<!--
+
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content">
-                Did you know there's a
-                <a href="/print/index.html">Print Editon of the Retromat</a>?
+                For an interesting new perspective on retrospectives why not try a
+                <a href="http://frontrowagile.com/themed">themed retrospective</a>?
         </div>
     </div>
 <?php } ?>
--->
+
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
