@@ -382,18 +382,19 @@ suitable: "iteration, release, smallGroups, smoothSailing, mature"
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles &amp; Soup / Circle of Influence",
-summary:   "Create actions based on how much control the team has to carry them out",
-desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
-'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
-from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
-Take your insights from the last phase and put them in the appropriate circle.<br> \
-The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
-circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
-Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
-source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
-who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and \
-'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
+name:      "Kreise &amp; die Ursuppe / Einflussbereiche",
+summary:   "Entwickelt Ma&szlig;nahmen abh&auml;ngig davon, ob es in eurer Gewalt liegt, sie umzusetzen.",
+desc:      "Bereite ein Flipchart mit drei konzentrischen Kreisen vor, die gro&szlig; genug sind, um Klebezettel hineinzuh&auml;ngen. Beschrifte die Kreise von innen nach au&szlig;en mit\
+<ul>\
+    <li>&quot;Volle Kontrolle - unmittelbar umsetzbare Ma&szlig;nahmen&quot;,</li>\
+    <li>&quot;Unser Einflussbereich - &Uuml;berzeugungsarbeit&quot; und</li>\
+    <li>&quot;Die Ursuppe - Wir k&ouml;nnen nur reagieren&quot;.</li>\
+</ul>\
+Die &quot;Ursuppe&quot; steht stellvertretend f&uuml;r das Umfeld des Teams und die Umst&auml;nde, auf die ihr keinen Einfluss habt.<br></br> \
+Platziere eure Erkenntnisse aus der vorangegangenen Phase in den passenden Kreisen. Entwickelt anschlie&szlig;end in Zweiergruppen m&ouml;gliche Ma&szlig;nahmen. Konzentriert euch dabei auf Themen, die in eurer Gewalt liegen und die ihr direkt beeinflussen k&ouml;nnt.<br> \
+Die Zweiergruppen stellen ihre Ma&szlig;nahmen vor und platzieren sie neben dem jeweiligen Thema.<br></br> \
+Einigt euch darauf, welche Ma&szlig;nahmen ihr umsetzen wollt, z.B. in einer Diskussion, per Mehrheitsentscheid oder einer Abstimmung mit Klebepunkten.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> in Anlehnung an &quot;Seven Habits of Highly Effective People&quot; von Stephen Covey und &quot;<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>&quot; von Jim Bullock",
 suitable: "iteration, release, project, stuck, immature"
 };
 all_activities[29] = {
