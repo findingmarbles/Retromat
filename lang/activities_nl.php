@@ -1000,3 +1000,61 @@ source:    "Prof. Bernd Rohrbach",
 duration:  "20 min groupsize",
 suitable:  "iteration, project, release"
 };
+all_activities[66] = {
+phase:     4,
+name:      "Meegenomen inzichten",
+summary:   "Leg vast wat de deelnemers geleerd hebben tijdens de retro",
+desc:      "Iedereen schrijft op een stickie het meest opvallend wat ze geleerd hebben tijdens de retro. \
+Hang de stickies op de deur. Ieder van de deelnemers leest zijn eigen notitie voor.",
+source:     source_judith,
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
+all_activities[67] = {
+phase:     2,
+name:      "Bedrijfskaart",
+summary:   "Teken een kaart van het bedrijf alsof het een land was",
+desc:      "Deel pennen en papier uit. Stel de vraag 'Wat als het bedrijf / de afdeling / het team een terrein was? \
+Hoe zou de kaart er dan uit zien? Welke tips zou je toevoegen voor een veilige reis?' Laat de deelnemers 5-10 minuten \
+tekenen. Hang vervolgens de tekeningen op. Loop alle tekeningen langs om te interessante metaforen te verduidelijken en bespreken.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[68] = {
+phase:     2,
+name:      "Het ergste dat we kunnen doen",
+summary:   "Ontdek hoe je de volgende sprint zeker kunt verknallen",
+desc:      "Deel pennen en stickies uit. Vraag iedereen om ideeën hoe de volgende sprint/release tot een \
+gegarandeerde ramp gemaakt kan worden - een idee per stickie. Zodra iedereen klaar is met schrijven, hang je alle stickies \
+op en loop je ze door. Identificeer en bespreek de thema's. <br>\
+Verander deze negatieve acties in de volgende fase in hun tegenpool. ",
+source:     source_findingMarbles,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[69] = {
+phase:     0,
+name:      "3 voor de prijs van 1 - Opening",
+summary:   "Check in een keer de tevredenheid met de resultaten van de sprint, de communicatie en de stemming",
+desc:      "Bereid een flipchartvel voor met een coördinatenstelsel. De y-as is 'tevredenheid met de sprintresultaten'. \
+De x-as is 'Aantal keren dat we afgestemd hebben'. Vraag iedere deelnemer om aan te geven waar hun tevredenheid \
+en idee van benodigd aantal afstemmingen kruisen - met een emoticon om hun stemming aan te geven (dus niet gewoon een stip).\
+Bespreek verrassende varianties en extreme stemmingen.<br>\
+(Varieer de x-as om de huidige team-onderwerpen te reflecteren, bijv. 'Aantal keer dat we samen gecodeerd hebben'.)",
+source:     source_judith,
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[70] = {
+phase:     4,
+name:      "3 voor de prijs van 1 - Sluiting: Werd iedereen gehoord?",
+summary:   "Check in een keer de tevredenheid met de resultaten van de retro, een eerlijke verdeling van spreektijd en de stemming",
+desc:      "Bereid een flipchartvel voor met een coördinatenstelsel. De y-as is 'tevredenheid met de retroresultaten'. \
+De x-as is 'Eerlijke verdeling van spreektijd' (hoe meer het gelijk was, des te verder naar rechts). \
+Vraag iedere deelnemer om aan te geven waar hun tevredenheid en idee van spreektijdbalans elkaar kruisen - \
+met een emoticon om hun stemming aan te geven (dus niet gewoon een stip). Bespreek ongelijkheden in spreektijd en extreme stemmingen.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration, project, release"
+};
