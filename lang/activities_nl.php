@@ -1058,3 +1058,74 @@ source:     source_judith,
 duration:  "15 min groupsize",
 suitable:  "iteration, project, release"
 };
+all_activities[71] = {
+phase:     3,
+name:      "Verdeel de Euro",
+summary:   "Hoeveel is een actie het team waard?",
+desc:      "Hang de lijst met mogelijke acties op. Teken er een kolom naast genaamd 'Belang (in Euro)'. \
+Het team krijgt 100 (virtuele) Euros om te verdelen over de acties. Hoe belangrijker ze een actie vinden, \
+hoe meer ze er aan zouden moeten besteden. Maak het leuker door papieren geld uit een bordspel als Monopoly  \
+mee te nemen.\
+<br><br>Laat iedereen het eens worden over de prijzen. Beschouw de 2 of 3 acties met de hoogste bedragen als gekozen.",
+source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
+duration:  "10 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[72] = {
+phase:     3,
+name:      "Verkooppraatje",
+summary:   "Actie-ideeën strijden om 2 beschikbare 'Gaan we doen'-sloten",
+desc:      "[Opgelet: Deze oefening creëert 'winnaars' en 'verliezers'. Gebruik het niet als er machtsonbalansen in het team zijn.]\
+<br><br> \
+Vraag iedereen om twee veranderingen te bedenken die ze door zouden willen voeren en laat hen die op schrijven \
+op verschillende index kaartjes. Teken 2 sloten op het bord. Het eerste teamlid stop zijn favoriete idee in het \
+eerste slot. Zijn buurman stopt zijn favoriete idee in het tweede slot. Het derde teamlid moet dan zijn favoriete idee \
+verkopen ten opzichte van een van de al aanwezige ideeën die hij minder interessant vindt. Als het team het er mee eens is, \
+worden de kaartjes geruild. Dit gaat door totdat iedereen zijn kaartjes gepresenteerd heeft. \
+<br><br>Probeer de oefening niet te beginnen met de ideeën van dominante teamleden.",
+source:     source_judith,
+duration:  "15 min groupsize",
+suitable:  "iteration"
+};
+all_activities[73] = {
+phase:     2,
+name:      "Pessimeren",
+summary:   "Als we de laatste sprint verknald hadden, wat zouden we dan gedaan hebben?",
+desc:      "Begin de activiteit door te vragen: 'You start the activity by asking: \
+'Als we de laatste sprint verknald hadden, wat zouden we dan gedaan hebben?' \
+Leg de antwoorden vast op een flipchart. De volgende vraag is dan: 'Wat zou het tegenovergestelde daarvan zijn?' \
+Leg dit vast op een andere flipchart. Vraag nu de deelnemers om commentaar te leveren op deze 'tegengestelden'-lijst \
+door stickies te schrijven met het antwoord op 'Wat weerhoudt ons er van om dit te doen?'. Deel vervolgens stickies uit \
+in een andere kleur om daar weer commentaar op te geven door te vragen 'Waarom is dat zo?'",
+source:     source_judith,
+duration:  "25 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[74] = {
+phase:     1,
+name:      "Schrijf het onuitspreekbare",
+summary:   "Schrijf op wat je nooit hardop zou kunnen zeggen",
+desc:      "Heb je het idee dat er onuitgesproken taboes zijn die het team tegenhouden? \
+Beschouw dan deze stille activiteit: Benadruk de vertrouwelijkheid ('Wat in Vegas gebeurt, blijft in Vegas') \
+en kondig van te voren aan dat alle aantekeningen van dez activiteit aan het eind vernietigd worden. \
+Deel pas na deze uitleg aan iedere deelnemer een vel papier uit om het grootste ongesproken taboe in het bedrijf \
+op te schrijven. <br> \
+Zodra iedereen klaar is, geven ze hun vel aan hun linkerbuur. De buren lezen wat er staat \
+en mogen dan commentaar toevoegen. De vellen worden weer doorgegeven en gaan zo de kring rond tot ze bij de auteur \
+terugkomen. Deze leest het vel ook nog een keer door. Daarna worden alle vellen ceremonieel versnipperd of \
+(als je buiten bent) verbrand.",
+source:     "Onbekend, via Vanessa",
+duration:  "10 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[75] = {
+phase:     0,
+name:      "Bewonderingsronde",
+summary:   "De deelnemers drukken uit wat ze in elkaar bewonderen",
+desc:      "Start een bewonderingsronde door je linkerbuur aan te kijken en te vertellen 'Wat ik aan jou het meest bewonder is ...' \
+			Daarna kijkt deze persoon zijn/haar linkerbuur aan en herhaalt de oefening. Net zo lang tot de laatste deelnemer \
+			vertelt wat hij/zij in jou bewondert. Voelt geweldig, niet waar?",
+source:     source_judith,
+duration:  "5 min",
+suitable:  "iteration, project, release"
+};
