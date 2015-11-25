@@ -190,7 +190,7 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Abstimmen mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
+name:      "Abstimmung mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
 summary:   "Macht ein Brainstorming dazu, womit ihr anfangen, aufh&ouml;ren oder weitermachen wollt und w&auml;hlt den besten Vorschlag aus.",
 desc:      "Teile einen Flipchart in drei Bereiche auf, die mit &quot;anfangen&quot;, &quot;weitermachen&quot; und &quot;aufh&ouml;ren&quot; beschriftet werden. <br>\
 Bitte das Team, sich konkrete Vorschl&auml;ge f&uuml;r jeden Bereich einfallen zu lassen und in Ruhe aufzuschreiben - immer nur ein Vorschlag pro Karteikarte. Anschlie&szlig;end liest jeder seine Karten vor und h&auml;ngt sie in den passenden Bereich auf den Flipchart. <br>\
@@ -499,5 +499,30 @@ source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Di
 duration:  "3 minutes",
 suitable: "iteration, release, project"
 };
+all_activities[36] = {
+phase:     2,
+name:      "Zur&uuml;ck in die Zukunft",
+summary:   "Stellt euch vor, der n&auml;chste Sprint w&auml;re perfekt gelaufen. Beschreibt ihn und besprecht, was ihr gemacht habt.",
+desc:      "Stellt euch vor, ihr unternehmt eine Zeitreise ans Ende der n&auml;chsten Iteration oder zum n&auml;csten Release. Ihr findet heraus, dass es die bisher beste und produktivste Iteration &uuml;berhaupt war. Ihr lasst sie euch vom Team der Zukunft beschreiben. Was hat das Team gesehen, geh&ouml;rt und erlebt? <br></br> \
+Gib dem Team ein wenig Zeit, um ihre Fantasie spielen zu lassen. Rate ihnen, sich ein paar Stichworte aufzuschreiben. Anschlie&szlig;end beschreiben alle nacheinander ihre Erinnerung / Vision an die perfekte Iteration.<br></br> \
+Stellt euch gemeinsam die Frage, welche Ver&auml;nderungen das Team der Zukunft umgesetzt hat, die zu einer solch produktiven und perfekten Iteration gef&uuml;hrt haben. Schreibe die Antworten auf Karteikarten, um sie in der n&auml;chsten Phase zu nutzen.",
+source:    source_innovationGames + ", gefunden in <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Abstimmung mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
+summary:   "Macht ein Brainstorming dazu, womit ihr anfangen, aufh&ouml;ren oder weitermachen wollt und w&auml;hlt den besten Vorschlag aus.",
+desc:      "Teile einen Flipchart in drei Bereiche auf, die mit &quot;anfangen&quot;, &quot;weitermachen&quot; und &quot;aufh&ouml;ren&quot; beschriftet werden. <br>\
+Bitte das Team, sich konkrete Vorschl&auml;ge f&uuml;r jeden Bereich einfallen zu lassen und in Ruhe aufzuschreiben - immer nur ein Vorschlag pro Karteikarte. Anschlie&szlig;end liest jeder seine Karten vor und h&auml;ngt sie in den passenden Bereich auf den Flipchart. <br>\
+Diskutiere mit dem Team, welches die besten Ideen sind, &uuml;ber deren Umsetzung sich abstimmen l&auml;sst. Leite die Abstimmung ein, indem Du Klebepunkte verteilst, die frei verteilt werden d&uuml;rfen - einen, zwei oder drei pro Person. Alternativ zu Klebepunkten k&ouml;nnen die Teammitglieder auch gro&szlig;e &quot;X&quot; malen. <br>\
+Die zwei oder drei Vorschl&auml;ge mit den meisten Punkten oder &quot;X&quot; sind zur Umsetzung ausgew&auml;hlt - sie sind eure Action Items. <br><br> \
+(Die <a href='http://www.funretrospectives.com/open-the-box/'>&quot;Open the Box&quot;-Methode</a> von Paulo Caroli ist eine Variation dieser Aktivit&auml;t.)",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+
+
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
