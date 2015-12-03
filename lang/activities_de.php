@@ -522,7 +522,18 @@ source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
 };
-
+all_activities[38] = {
+phase:     3,
+name:      "Abstimmung mit Klebepunkten - Beibehalten, Ver&auml;ndern",
+summary:   "Macht ein Brainstorming dazu, was gut funktioniert hat und was ver&auml;ndert werden soll. Entscheidet, welche Ver&auml;nderungen ihr umsetzen wollt.",
+desc:      "&Uuml;berschreibe zwei Flipcharts jeweils mit &quot;Beibehalten&quot; und &quot;Ver&auml;ndern&quot;. Bitte die Teilnehmer konkrete Vorschl&auml;ge f&uuml;r beide Kategorien zu notieren, immer nur einer pro Karteikarte. <br> \
+Lass sie ein paar Minuten allein dar&uuml;ber nachdenken. Anschlie&szlig;end liest jeder seine Vorschl&auml;ge vor und h&auml;ngt sie in die passende Kategorie.<br></br> \
+F&uuml;hrt eine kurze Diskussion dar&uuml;ber, welche Vorschl&auml;ge die gr&ouml;&szlig;te Chance haben, umgesetzt zu werden oder von welchen der gr&ouml;&szlig;te Mehrwert ausgeht. Stimmt dar&uuml;ber ab, welche Vorschl&auml;ge ihr umsetzt, in dem jeder Teilnehmer eine feste Anzahl Klebepunkte (z.B. 2 oder 3) auf die Karteikarten verteilt. <br> </br> \
+Die 2 oder 3 Vorschl&auml;ge mit den meisten Punkten setzt ihr um.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
