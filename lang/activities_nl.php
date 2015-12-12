@@ -1129,3 +1129,346 @@ source:     source_judith,
 duration:  "5 min",
 suitable:  "iteration, project, release"
 };
+all_activities[76] = {
+phase:     4,
+name:      "Opvolgen",
+summary:   "Hoe waarschijnlijk is het dat de acties uitgevoerd worden?",
+desc:      "Laat iedereen een emoticon tekenen op een stickie die hun huidige stemming weergeeft. \
+            Teken vervolgens een schaal op een flipchartvel, genaamd 'Waarschijnlijkheid dat we onze acties uitvoeren'.  \
+            Zet '0%' aan de linkerkant van de schaal en '100%' aan de rechterkant. Vraag iedereen om hun stickie \
+            op de schaal te plaatsen, afhankelijk van hun zekerheid in het opvolgen van de acties door het team.<br> \
+            Bespreek interessante resultaten zoals een lage waarschijnlijkheid of slechte stemming.",
+source:     source_judith,
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
+all_activities[77] = {
+phase:     1,
+name:      "4 Ls - Loved (geweldig vond), Learned (geleerd heb), Lacked (miste), Longed for (naar verlangde)",
+summary:   "Onderzoek wat iedereen afzonderlijk geweldig vond, van geleerd heeft, miste, of waar ze naar verlangden",
+desc:      "Iedere persoon brainstormt afzonderlijk over het antwoord op de volgende 4 vragen: \
+<ul> \
+    <li>Wat ik geweldig vond</li> \
+    <li>Wat ik geleerd heb</li> \
+    <li>Wat ik miste</li> \
+    <li>Waar ik naar verlangde</li> \
+</ul> \
+Verzamel de antwoorden met stickies op een flipchart of in een digitale tool als je team gedistribueerd is. \
+Vorm 4 subgroepen, voor ieder van de L's, lees alle notities, identificeer de patronen en rapporteer de bevindingen aan de gehele groep. \
+Gebruik de uitkomsten als input voor de volgende fase.",
+source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> waarschijnlijk via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
+duration:  "30 min",
+suitable:  "iteration, project, release, distributed"
+};
+all_activities[78] = {
+phase:     1,
+name:      "Value Stream Mapping",
+summary:   "Breng de waardestromen van je iteratieproces in kaart",
+desc:      "Leg een voorbeeld van Value Stream Mapping uit. (Als je er onbekend mee bent, check dan \
+<a href='http://www.youtube.com/watch?v=3mcMwlgUFjU'>deze video</a> of \
+<a href='http://wall-skills.com/2014/value-stream-mapping/'>deze poster</a>.) \
+Vraag het team om een waardestromingskaart van hun proces te tekenen vanuit het perspectief van \
+een enkele user story. Indien nodig kun je de groep in meerdere subgroepjes verdelen en het proces \
+faciliteren waar nodig. Bekijk de voltooide kaarten. Waar zitten de grote vertragingen, knelpunten, \
+en bottlenecks?",
+source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo &quot;Nusco&quot; Perrotta</a>, geïnspireerd door <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
+duration:  "20-30 min",
+more:      "http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html",
+suitable:  "iteration, project, release, distributed"
+};
+all_activities[79] = {
+phase:     1,
+name:      "Herhalen &amp; Vermijden",
+summary:   "Brainstorm wat er herhaald moet worden en welke soorten gedrag vermeden moeten worden",
+desc:      "Gebruik 2 flipchartvellen, respectievelijk getiteld 'Herhalen' en 'Vermijden'. \
+De deelnemers schrijven zaken voor de kolommen op stickies - 1 idee per stickie. \
+Je kunt de stickies ook nog kleurcoderen. Bijvoorbeeld 'Mensen', 'Proces', 'Techniek', ... \
+Laat iedereen hun stickies voorlezen en in de juiste kolom hangen. \
+Worden de ideeën gedeeld door alle deelnemers?",
+source:     "<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>",
+more:       "http://www.funretrospectives.com/repeat-avoid/",
+duration:  "15-30",
+suitable: "iteration, project, remote"
+};
+all_activities[80] = {
+phase:     0,
+name:      "Uitkomstverwachtingen",
+summary:   "Iedereen geeft aan wat zijn verwachtingen van de retrospective",
+desc:      "Iedereen in het team stelt een doel van de retrospective vast, met andere woorden wat ze \
+met deze bijeenkomst willen bereiken. Voorbeelden van de deelnemers zouden kunnen zeggen: \
+<ul> \
+    <li>Ik ben al blij als we 1 goede actie formuleren</li> \
+    <li>Ik wil praten over onze discussie over unit tests en overeenkomen hoe we dat in de toekomst gaan doen</li> \
+    <li>Ik beschouw deze retro als een succes als we een plan bedenken om $obscureModule op te schonen</li> \
+</ul> \
+[Je kunt checken of deze doelen gehaald zijn door af te sluiten met activiteit #14.] \
+<br><br> \
+[Het <a href='http://liveingreatness.com/additional-protocols/meet/'>Meet - Core Protocol</a>, dat deze activiteit inspireerde \
+beschrijft ook 'Alignment Checks': Wanneer iemand denkt dat de retrospective niet aan iemands behoefte voldoet, \
+kunnen ze om een Alignment Check vragen. Dan kan iedereen een getal van 0 tot 10 noemen om aan te geven in hoeverre ze \
+krijgen wat ze willen. De persoon met het laagste getal mag het dan overnemen om dichter bij hun doel te komen.]",
+source:     "Geïnspireerd door <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
+duration:  "5 min groupsize",
+suitable:  "iteration, project, release"
+};
+all_activities[81] = {
+phase:     0,
+name:      "Drie Woorden",
+summary:   "Iedereen vat de afgelopen sprint samen in 3 woorden",
+desc:      "Vraag iedereen om de afgelopen iteratie in 3 woorden te beschrijven. \
+            Geef ze een minuut om iets te bedenken en ga dan het team rond. \
+            Dit helpt mensen om de laatste sprint te herinneren, zodat ze een basis hebben om mee te starten.",
+source:     "Yurii Liholat",
+duration:  "5 min groupsize",
+suitable:  "iteration, project"
+};
+all_activities[82] = {
+phase:     4,
+name:      "Retro Darten",
+summary:   "Check of je de roos van belangrijke zaken kunt raken",
+desc:      "Teken een of meerdere dartborden op een flipchart. \
+Schrijf naast ieder dartbord een vraag, bijvoorbeeld \
+<ul> \
+    <li>We hebben gesproken over de zaken die belangrijk voor mij zijn</li> \
+    <li>Ik heb openlijk gesproken</li> \
+    <li>Ik ben er zeker van dat we de volgende sprint beter zal gaan</li> \
+</ul> \
+De deelnemers markeren hun mening met een stickie. In de roos is 100% overeenstemming. \
+Buiten de rand van het dartbord is absoluut geen overeenstemming.",
+source:   "<a href='http://www.philippflenker.de/'>Philipp Flenker</a>",
+duration:  "2-5",
+suitable: "iteration, release"
+};
+all_activities[83] = {
+phase:     0,
+name:      "Actietabel van de vorige retro",
+summary:   "Bekijk hoe verder te gaan met de acties uit de vorige retro",
+desc:      "Teken een tabel met 5 kolommen. De eerste kolom bevat de acties uit de vorige retro. \
+De overige kolommen zijn getiteld 'Meer doen', 'Blijven doen', 'Minder doen' en 'Ophouden met'. \
+Deelnemers plaatsen 1 stickie per rij in de kolom die hun mening over de actie weergeeft. \
+Faciliteer naderhand een korte discussie per actie, bijvoorbeeld door te vragen: \
+<ul> \
+    <li>Waarom moeten we hier mee ophouden?</li> \
+    <li>Waarom is het zinvol om hier mee door te gaan?</li> \
+    <li>Werd aan de verwachtingen voldaan?</li> \
+    <li>Waarom lopen de meningen zo ver uit elkaar?</li> \
+</ul>",
+source:    "<a href='https://sven-winkler.squarespace.com/blog-en/2014/2/5/the-starfish'>Sven Winkler</a>",
+duration:  "5-10",
+suitable: "iteration, release"
+};
+all_activities[84] = {
+phase: 0,
+name: "Groeten uit de sprint",
+summary: "Ieder teamlid schrijft een ansichtkaart over de laatste iteratie",
+desc: "Herinner het team aan hoe een ansichtkaart er uit ziet: \
+<ul> \
+    <li> Een plaatje op de voorkant,</li> \
+    <li> een berichtje op de halve achterkant,</li> \
+    <li> het adres en de postzegel op de andere helft.</li> \
+</ul> \
+Deel blanco indexkaarten uit en vertel het team dat ze 10 minuten hebben om een ansichtkaart \
+te schrijven aan iemand die het hele team kent (bijvoorbeeld een ex-collega). \
+Als de tijd om is, verzamel en schud de kaarten, alvorens ze te herverdelen. \
+De teamleden lezen om beurt de kaart die ze gekregen hebben voor.",
+source: '<a href="http://uk.linkedin.com/in/alberopomar">Filipe Albero Pomar</a>',
+duration:  "15 min",
+suitable:  "iteration, project"
+};
+all_activities[85] = {
+phase:     1,
+name:      "Communicatielijnen",
+summary:   "Visualizeer hoe de informatie in-, uit- en door het team stroomt",
+desc:      "Verlopen de informatiestromen niet zo soepel als ze zouden moeten? Vermoed je dat er bottlenecks zijn? \
+Visualizeer dan de manieren waarop de informatie stroomt om startpunten voor verbetering te vinden. \
+Als je een specifieke stroom wilt bekijken (bijvoorbeeld producteisen, blokkeringen, ...) check dan \
+Value Stream Mapping (#79). Voor problematische situaties kun je iets als \
+Oorzaak-Gevolg-Diagrammen (#25) proberen. <br>\
+Bekijk de voltooide tekening. Waar zitten de vertragingen en doodlopende wegen?",
+source:    "<a href='https://www.linkedin.com/in/bleadof'>Tarmo Aidantausta</a>",
+duration:  "20-30 min",
+suitable:  "iteration, project, release"
+};
+all_activities[86] = {
+phase:     1,
+name:      "Vergaderingstevredenheidhistogram",
+summary:   "Maak een histogram met hoe goed de rituele vergaderingen gingen tijdens de sprint",
+desc:      "Bereid een flipchart voor voor elke vergadering die iedere iteratie voorkomt, \
+(bijvoorbeeld de Scrum ceremonies) met een horizontale schaal van 1 ('Voldeed niet aan de verwachtingen') \
+tot 5 ('Boven verwachting'). Ieder teamlid voegt een stickie toe op basis van hun inschatting \
+van ieder van deze vergaderingen. Laat het team bespreken waarom sommige vergaderingen geen 5 scoorden. \
+<br> \
+Je kunt verbeteringen bespreken als onderdeel van deze activiteit of in een latere activiteit zoals \
+het perfectioneringsspel (#20) or Plus \& Delta (#40).",
+source:    "<a href='https://www.linkedin.com/profile/view?id=6689187'>Fanny Santos</a>",
+duration:  "10-20 min",
+suitable:  "iteration, project, release"
+};
+all_activities[87] = {
+phase:     3,
+name:      "Blokkeringencup",
+summary:   "Blokkeringen ('Impediments') strijden tegen elkaar in wereldbeker stijl",
+desc:      "Bereid een flipchart voor met een speelschema voor de kwartfinale, halve finale en finale. \
+Alle deelnemers schrijven acties op stickies, totdat je acht acties hebt. \
+Schud ze en plaats ze op willekeurige volgorde op het schema.<br>\
+Het team moet nu stemmen voor een van de twee acties in ieder paar. Verplaats de winnende actie \
+naar de volgende ronde, totdat er een winnaar van de blokkeringencup bekend is. \
+<br><br>\
+Als je meer dan een of twee acties over wilt houden, dan kun je ook nog strijden om de derde plaats.",
+source:    "<a href='http://obivandamme.wordpress.com'>Pascal Martin</a>, geïnspireerd door <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[88] = {
+phase:     1,
+name:      "Retrobruiloft",
+summary:   "Verzamel voorbeelden van iets ouds, iets nieuws, iets dat geleend is en iets dat blauw is",
+desc:      "Vraag het team, analoog aan het anglo-saksische huwelijksgebruik om voorbeelden te geven in de volgende categorieën: \
+<ul> \
+    <li>Iets ouds<br> \
+        Positieve feedback of constructieve kritiek op bestaande processen</li> \
+    <li>Iets nieuws<br> \
+        Positieve feedback of constructieve kritiek op lopende experimenten</li> \
+    <li>Iets dat geleend is<br> \
+        Gereedschap/idee van een ander team, het web of jezelf voor een potentieel experiment</li> \
+    <li>Iets blauws<br> \
+        Iedere blokkering of bron van verdriet</li> \
+</ul> \
+Een voorbeeld per stickie. Er is maar 1 regel: Als iemand iets in de 'Iets blauws' kolom hangt, \
+dan moet hij/zij ook een positieve opmerking in ten minste 1 andere kolom plaatsen.<br><br> \
+Iedereen hangt hun stickies in de juiste kolom op het bord en beschrijft het voorbeeld in het kort.",
+source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
+duration:  "5-10 min",
+suitable:  "iteration, project, release"
+};
+all_activities[89] = {
+phase:     0,
+name:      "Opvrolijken met Agile Waarden",
+summary:   "Herinner elkaar aan de Agile waarden die je hebt laten zien",
+desc:      "Teken vier grote balonnen en schrijf in ieder ervan een agile kernwaarde: \
+<ol> \
+    <li>Individuen en hun interacties</li> \
+    <li>Werkende software opleveren</li> \
+    <li>Samenwerking met de klant</li> \
+    <li>Reageren op verandering</li> \
+</ol> \
+Vraag deelnemers om voorbeelden op te schrijven van momenten waarop hun collega's een van de waarden vertoonden \
+- 1 opbeurend voorbeeld per stickie. Laat iedereen om de beurt hun stickies in de bijbehorende ballon hangen \
+en hardop voorlezen. Verheug je over hoe jullie de agile kernwaarden belichamen. :)",
+source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+duration:  "10-15 min",
+suitable:  "iteration, project, release"
+};
+all_activities[90] = {
+phase:     2,
+name:      "Postersessie",
+summary:   "Verdeel een grote groep in kleinere groepen die posters maken",
+desc:      "Nadat je belangrijke onderwerpen hebt geïdentificeerd in de vorige fase, \
+kun je nu in detail treden. Verdeel de groep in kleinere groepen van 2-4 personen, \
+waarbij ieder subgroepje een poster voorbereiden en die presenteren aan de andere groepen. \
+Als er meerdere belangrijke onderwerpen geïdentificeerd zijn, laat de teamleden dan het onderwerp \
+selecteren dat ze verder uit willen werken.<br> \
+Geef het team richtlijnen over wat de posters moeten behandelen/beantwoorden, zoals: \
+<ul> \
+    <li>Wat gebeurt er precies? Waarom is dat een probleem?</li> \
+    <li>Waarom / wanneer / hoe treedt deze situatie op?</li> \
+    <li>Wie heeft er voordeel van de huidige situatie? En welk voordeel is dat?</li> \
+    <li>Mogelijke oplossingen (met voor- en nadelen)</li> \
+    <li>Wat zou kunnen helpen om de situatie te veranderen?</li> \
+    <li>... wat er verder nog van toepassing is ...</li> \
+</ul> \
+De groepen krijgen 15-20 minuten om hun posters te bespreken en maken. Naderhand \
+komen alle groepen weer bij elkaar en krijgt elke groep 2 minuten om hun resultaten te presenteren.",
+source:    "Onbekend, aangepast door " + source_findingMarbles + ", geïnspireerd door Michal Grzeskowiak",
+duration:  "30 min",
+suitable:  "iteration, project, release"
+};
+all_activities[91] = {
+phase:     4,
+name:      "Motivatie Poster",
+summary:   "Verander acties in posters om de zichtbaarheid \& opvolging te verbeteren",
+desc:      "Neem de lijst van alle actie items en verander ieder punt in een grappige poster (zie de foto's voor voorbeelden). \
+<ol>\
+    <li>Kies een beeld</li>\
+    <li>Kies een titel</li>\
+    <li>Schrijf een beschrijving vol zelfspot</li>\
+</ol>\
+Print je meesterwerk zo groot mogelijk (A4 is het absolute minimum) en hang de poster op een prominente plaats.",
+source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
+duration:  "30 min per topic / poster",
+suitable:  "release"
+};
+all_activities[92] = {
+phase:     1,
+name:      "Vertel een verhaal met vormende woorden",
+summary:   "Iedere deelnemer vertelt een verhaal over de laatste iteratie dat bepaalde woorden bevat",
+desc:      "Geef iedereen iets om hun verhaal op te schrijven. Introduceer daarna de vormende woorden, \
+die het te schrijven verhaal beïnvloeden: \
+<ul> \
+    <li>Als de laatste iteratie beter geweest kon zijn:<br> \
+    Geef een aantal vormende woorden, zoals 'boos, verdrietig, blij' of 'houden, laten vallen, toevoegen'. \
+    Daarnaast moet het verhaal in de eerste persoon geschreven worden. Dit voorkomt dat er met vingers gewezen wordt. \
+    </li> \
+    <li>Als de laatste iteratie succesvol was:<br> \
+    Het team mag ofwel hun eigen set woorden uitkiezen, of je kunt een aantal random woorden voorstellen \
+	om de creativiteit van het team te ontketenen. \
+    </li> \
+</ul> \
+Iedere deelnemer schrijft nu een verhaal van niet meer dan 100 woorden over de laatste iteratie. Ze moeten de vormende \
+woorden ten minste een keer gebruiken. Zet een timebox van 5-10 minuten. <br> \
+Zodra iedereen klaar is, worden de verhalen voorgelezen. Bespreek naderhand de gemeenschappelijke thema's van de verhalen.",
+source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
+duration:  "20-30 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[93] = {
+phase:     2,
+name:      "BJESM - Bouw je eigen Scrum Master",
+summary:   "Het team stelt de ideale SM samen \& neemt verschilende standpunten in",
+desc:      "Teken een Scrum Master op een flipchart met drie secties: hersenen, hart, buik. \
+<ul>\
+<li>Ronde 1: 'Welke eigenschappen vertoont de perfecte SM?' <br>\
+Vraag iedereen om elk van de eigenschappen op een stickie te schrijven. Laat de deelnemers de eigenschappen uitleggen en op de tekening plakken. \
+</li> \
+<li>Ronde 2: 'Wat moet de perfecte SM weten over jullie als team zodat hij goed met jullie kan werken?' \
+</li>\
+<li>Ronde 3: 'Hoe kunnen jullie de SM ondersteunen om zijn werk uitmuntend te verrichten?' <br> \
+</li></ul>\
+Je kunt dit ook aanpassen voor andere rollen zoals de ProductOwner.",
+source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
+duration:  "30 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[94] = {
+phase:     2,
+name:      "Als ik jou was",
+summary:   "Wat kunnen subgroepen verbeteren in hun interacties met anderen?",
+desc:      "Identificeer subgroepen onder de deelnemers die tijdens de iteratie interacties met elkaar hadden, \
+bijvoorbeeld ontwikkelaars/testers, klanten/leveranciers, PO/ontwikkelaars, etc. \
+Geef de deelnemers drie minuten om in stilte op te schrijven wat hun groep deed dat een negatieve impact \
+op een andere groep had. Iedere persoon mag maar deelnemer van 1 groep zijn, en stickies schrijven voor alle groepen 
+waar ze geen deel van uitmaken - 1 stickie per onderwerp. <br><br> \
+Vervolgens lezen alle deelnemers hun stickies een voor een voor en geven die aan de juiste groep. \
+De groep in kwestie beoordeelt het onderwerp van 0 ('Geen probleem') tot 5 ('Groot probleem'). \
+Op deze manier krijg je inzicht en gedeeld begrip over de problemen en kun je er een aantal uitzoeken om aan te werken.",
+source:    "<a href='http://www.elproximopaso.net/2011/10/dinamica-de-retrospectiva-si-fuera-vos.html'>Thomas Wallet</a>",
+duration:  "25-40 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[95] = {
+phase:     3,
+name:      "Probleemoplossingboom",
+summary:   "Heb je een groot doel? Zoek de stappen die er naar toe leiden",
+desc:      "Deel stickies en stiften uit. Schrijf het grote probleem dat je \
+op wilt lossen op een notitie en hang het boven aan de muur of een groot bord. \
+Vraag de deelnemers ideeën op te schrijven waarmee zij denken het probleem op te kunnen lossen. \
+Hang deze op een niveau onder het originele probleem. Herhaal dit voor iedere notitie op het nieuwe niveau. \
+Vraag voor ieder idee of het in een enkele iteratie uitgevoerd kan worden en of iedereen begrijpt wat \
+er gebeuren moet. Als het antwoord nee is, breek het probleem dan op op het volgende niveau van de \
+probleemoplossingboom.<br><br> \
+Zodra de lagere niveaus goed begrepen en simpel te implementeren zijn in een enkele sprint, \
+ga je stemmen met stippen (dotvoting) om te beslissen welke acties de volgende sprint aangepakt gaan worden. ",
+source:    "<a href='https://www.scrumalliance.org/community/profile/bsarni'>Bob Sarni</a>, beschreven door <a href='http://growingagile.co.za/2012/01/the-problem-solving-tree-a-free-exercise/'>Karen Greaves</a>",
+duration:  "30 minutes",
+suitable:  "iteration, project, release"
+};
