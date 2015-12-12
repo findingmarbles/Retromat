@@ -2,13 +2,17 @@
 var path = 'static/images/activities/';
 
 all_photos = [];
-all_photos[0] = [{
-    filename:    path + "1_ESVP.jpg",
-    contributor: "Reguel Wermelinger"
-}];
+all_photos[0] = [
+{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"},
+{filename:    path + "1_ESVP_2.jpg", contributor: "Manuel Küblböck"}
+];
 all_photos[1] = [
 {filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
-{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"}
+{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
+];
+all_photos[3] = [
+{filename:    path + "4_Timeline.jpg", contributor: "Virginia Brassesco"}
 ];
 all_photos[6] = [
 {filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
@@ -20,6 +24,9 @@ all_photos[8] = [
 ];
 all_photos[11] = [
 {filename:    path + "12_Start-Stop-Continue.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[12] = [
+{filename:    path + "13_Smart-Goals.jpg", contributor: "Manuel Küblböck"}
 ];
 all_photos[17] = [
 {filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
@@ -40,10 +47,10 @@ all_photos[21] = [{
 filename:    path + "22_Temperature-Reading.jpg",
 contributor: "Weronika Kedzierska"
 }];
-all_photos[22] = [{
-filename:    path + "23_Feedback-Door-Smilies.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[22] = [
+{filename:    path + "23_Feedback-Door-Smilies.jpg",contributor: "Philipp Flenker"},
+{filename:    path + "23_Feedback-Door-Smilies_2.jpg",contributor: "Manuel Küblböck"}
+];
 all_photos[24] = [
 {filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
 {filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
@@ -104,6 +111,9 @@ all_photos[67] = [
 {filename:    path + "68_Company-Map.jpg", contributor: "Annette Harder"},
 {filename:    path + "68_Company-Map-2.JPG", contributor: "Pedro Ángel Serrano"}
 ];
+all_photos[69] = [
+{filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
+];
 all_photos[77] = [
 {filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
 {filename:    path + "78_Four-Ls.jpg", contributor: "Philipp Flenker"},
@@ -124,13 +134,15 @@ all_photos[88] = [
 {filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
 {filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
 ];
-all_photos[89] = [{
-filename:    path + "90_Agile-Values-Cheerup.jpg",
-contributor: "Daryl Praeker"
-}];
+all_photos[89] = [
+{filename:    path + "90_Agile-Values-Cheerup.jpg", contributor: "Daryl Praeker"},
+{filename:    path + "90_Agile-Values-Cheerup-2.jpg", contributor: "Virginia Brassesco"}
+];
 all_photos[91] = [
 {filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
-{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"}
+{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational_Poster-3.jpg", contributor: "Sarah Schmid"},
+{filename:    path + "92_Motivational_Poster-4.jpg", contributor: "Sarah Schmid"}
 ];
 all_photos[96] = [
 {filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
@@ -140,4 +152,17 @@ all_photos[97] = [
 {filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"},
 {filename:    path + "98_Laundry-Day_3.jpg", contributor: "Lionel Secousse"},
 {filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
+];
+all_photos[106] = [
+{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
+];
+all_photos[112] = [
+{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
+];
+all_photos[113] = [
+{filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"}
+];
+all_photos[114] = [
+{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
 ];

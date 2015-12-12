@@ -899,7 +899,7 @@ Aan het einde telt iedereen de punten op hun kaart bij elkaar op. \
 Ten slotte worden de kaarten gerangschikt op puntentotaal en beslist het team hoeveel er in de volgende iteratie gedaan kan worden, \
 bovenaan te beginnen.\
 <br><br>\
-Addendum: In veel gevallen kan het nuttig zijn om de kaarten aan het begin van de sessie en tussen de gesprekken door
+Addendum: In veel gevallen kan het nuttig zijn om de kaarten aan het begin van de sessie en tussen de gesprekken door \
 random te ruilen. Op deze manier heeft geen van de partijen een belang in welke kaart de meeste punten krijgt. \
 Dit is een idee van \
 <a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam “Thiagi” Thiagarajan</a> via \

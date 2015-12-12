@@ -667,11 +667,11 @@ function switchLanguage(new_lang) {
         <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (28 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (111 activities)</option>
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (36 Aktivit&auml;ten)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (115 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (31 activiteiten)</option>
+        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (66 activiteiten)</option>
     </select>
 
       <span class="navi">
@@ -687,16 +687,16 @@ function switchLanguage(new_lang) {
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-<!--
+
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content">
-                Did you know there's a
-                <a href="/print/index.html">Print Editon of the Retromat</a>?
+                For an interesting new perspective on retrospectives why not try a
+                <a href="http://frontrowagile.com/themed">themed retrospective</a>?
         </div>
     </div>
 <?php } ?>
--->
+
 <div class="plan-header">
     <div class="content">
         <div class="print-header">

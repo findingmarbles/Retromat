@@ -190,7 +190,7 @@ suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
 phase:     3,
-name:      "Abstimmen mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
+name:      "Abstimmung mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
 summary:   "Macht ein Brainstorming dazu, womit ihr anfangen, aufh&ouml;ren oder weitermachen wollt und w&auml;hlt den besten Vorschlag aus.",
 desc:      "Teile einen Flipchart in drei Bereiche auf, die mit &quot;anfangen&quot;, &quot;weitermachen&quot; und &quot;aufh&ouml;ren&quot; beschriftet werden. <br>\
 Bitte das Team, sich konkrete Vorschl&auml;ge f&uuml;r jeden Bereich einfallen zu lassen und in Ruhe aufzuschreiben - immer nur ein Vorschlag pro Karteikarte. Anschlie&szlig;end liest jeder seine Karten vor und h&auml;ngt sie in den passenden Bereich auf den Flipchart. <br>\
@@ -380,5 +380,160 @@ source:    source_findingMarbles,
 duration:  "60-90",
 suitable: "iteration, release, smallGroups, smoothSailing, mature"
 };
+all_activities[28] = {
+phase:     3,
+name:      "Kreise &amp; die Ursuppe / Einflussbereiche",
+summary:   "Entwickelt Ma&szlig;nahmen abh&auml;ngig davon, ob es in eurer Gewalt liegt, sie umzusetzen.",
+desc:      "Bereite ein Flipchart mit drei konzentrischen Kreisen vor, die gro&szlig; genug sind, um Klebezettel hineinzuh&auml;ngen. Beschrifte die Kreise von innen nach au&szlig;en mit\
+<ul>\
+    <li>&quot;Volle Kontrolle - unmittelbar umsetzbare Ma&szlig;nahmen&quot;,</li>\
+    <li>&quot;Unser Einflussbereich - &Uuml;berzeugungsarbeit&quot; und</li>\
+    <li>&quot;Die Ursuppe - Wir k&ouml;nnen nur reagieren&quot;.</li>\
+</ul>\
+Die &quot;Ursuppe&quot; steht stellvertretend f&uuml;r das Umfeld des Teams und die Umst&auml;nde, auf die ihr keinen Einfluss habt.<br></br> \
+Platziere eure Erkenntnisse aus der vorangegangenen Phase in den passenden Kreisen. Entwickelt anschlie&szlig;end in Zweiergruppen m&ouml;gliche Ma&szlig;nahmen. Konzentriert euch dabei auf Themen, die in eurer Gewalt liegen und die ihr direkt beeinflussen k&ouml;nnt.<br> \
+Die Zweiergruppen stellen ihre Ma&szlig;nahmen vor und platzieren sie neben dem jeweiligen Thema.<br></br> \
+Einigt euch darauf, welche Ma&szlig;nahmen ihr umsetzen wollt, z.B. in einer Diskussion, per Mehrheitsentscheid oder einer Abstimmung mit Klebepunkten.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> in Anlehnung an &quot;Seven Habits of Highly Effective People&quot; von Stephen Covey und &quot;<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>&quot; von Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Gespr&auml;chsb&ouml;gen",
+summary:   "Ein strukturierter Ansatz f&uuml;r Diskussionen",
+desc:      "Gespr&auml;chsb&ouml;gen (engl. dialogue sheet) sehen ein wenig so aus wie ein Spielbrett von einem Gesellschaftsspiel. Es sind schon <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>einige Gespr&auml;chsb&ouml;gen online verf&uuml;gbar</a>. <br /> \
+W&auml;hle einen aus, drucke ihn so gro&szlig; wie m&ouml;glich aus (am besten in DIN A1) und befolge anschlie&szlig;end die Anweisungen auf dem Gespr&auml;chsbogen.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
+all_activities[30] = {
+phase:     0,
+name:      "Die Iteration malen",
+summary:   "Die Teilnehmer malen ein Bild zur zur&uuml;ckliegenden Iteration",
+desc:      "Verteile Karteikarten und Stifte. Gebe ein Thema vor, z.B.:\
+<ul>\
+    <li>Wie hast Du Dich w&auml;hrend der Iteration gef&uuml;hlt?</li>\
+    <li>Gab es einen Aha!-Moment? Welcher war das?</li>\
+    <li>Was war das gr&ouml;&szlig;te Problem?</li>\
+    <li>Was hast Du vermisst?</li>\
+</ul>\
+Bitte die Teilnehmer, ihre Antwort als ein kleines Bild zu malen. H&auml;nge alle Zeichnungen an ein Whiteboard. Sprecht die Zeichnungen gemeinsam durch und lasse die Teilnehmer zun&auml;chst raten, was dargestellt ist und was es zu bedeuten hat. Anschlie&szlig;end erkl&auml;rt der jeweilige K&uuml;nstler sein Bild. <br></br> \
+Metaphern erm&ouml;glichen den Perspektivwechsel und neue Sichtweisen. Gemeinsam entwickelt das Team so ein Verst&auml;ndnis f&uuml;r die Geschehnisse in der letzten Interation.",
+source:    source_findingMarbles + ", &uuml;bernommen und angepasst von <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> und Olivier Gourment",
+duration:  "5 + 3 per person",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Projekt-Gef&uuml;hlsmesser",
+summary:   "Hilf Deinen Teammitgliedern dabei, ihre Gef&uuml;hle zum Projekt auszudr&uuml;cken und sprecht schon fr&uuml;hzeitig &uuml;ber die Ursachen",
+desc:      "Bereite einen Flipchart vor mit Gesichtern, die Emotionen ausdr&uuml;cken, z.B.:\
+<ul>\
+    <li>schockiert / &uuml;berrascht</li>\
+    <li>nerv&ouml;s / gestresst</li>\
+    <li>machtlos / eingeschr&auml;nkt</li>\
+    <li>verwirrt</li>\
+    <li>gl&uuml;cklich</li>\
+    <li>wahnsinnig</li>\
+    <li>&uuml;berw&auml;ltigt</li>\
+</ul>\
+Alle Teammitglieder w&auml;hlen ein Gesicht, das am besten ausdr&uuml;ckt, wie sie sich im Projekt f&uuml;hlen. So lassen sich auf unterhaltsame Weise Probleme schon fr&uuml;h zu Tage f&ouml;rdern. Ihr k&ouml;nnt Sie in den Folgephasen der Retrospektive besprechen.",
+source:    "Andrew Ciccarelli",
+duration:  "10 for 5 people",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Stolz & Bedauern",
+summary:   "Worauf sind die Teammitglieder stolz, was bedauern sie?",
+desc:      "H&auml;nge zwei Flipcharts auf mit den &Uuml;berschriften &quot;Stolz&quot; und &quot;Bedauern&quot;. Die Teammitglieder schreiben pro Klebezettel eine Situation auf, die auf eines der Poster passt. Sobald die Zeit um ist, liest jeder seine Zettel kurz vor und h&auml;ngt sie auf das passende Poster.<br></br>\
+Er&ouml;ffne eine kurze Diskussion z.B. mit einer der folgenden Fragen an das Team:\
+<ul>\
+    <li>Gibt es auf den Postern etwas, was euch &uuml;berrascht hat?</li>\
+    <li>Sind Gemeinsamkeiten erkennbar? Was bedeuten sie f&uuml;r das Team?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "In Anerkennung baden",
+summary:   "H&ouml;re anderen dabei zu, wie sie sich hinter Deinem R&uuml;cken &uuml;ber Dich unterhalten - und ihnen nur Gutes einf&auml;llt!",
+desc:      "Bilde Gruppen mit jeweils drei Personen. Jede Gruppe stellt drei St&uuml;hle so auf, dass zwei sich gegen&uuml;ber stehen und der dritte ihnen den R&uuml;cken zudreht. <br></br> \
+Zwei Teammitglieder, die sich gegen&uuml;ber sitzen, unterhalten sich f&uuml;r zwei Minuten &uuml;ber die dritte Person. Dabei d&uuml;rfen sie nur anerkennende und positive Dinge erw&auml;hnen und nichts von dem Gesagten im Nachhinein entkr&auml;ften.<br></br>\
+Haltet drei Runden ab, so dass jeder die Gelegenheit bekommt, in Anerkennung zu baden.",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "Agile Selbsteinsch&auml;tzung",
+summary:   "Sch&auml;tzt anhand einer Checkliste ein, wie agil ihr seid.",
+desc:      "Drucke eine der folgenden Checklisten aus, die zu euch passt: \
+<ul>\
+    <li>Die <a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>Scrum Checklist</a> von Henrik Kniberg</li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Self-assessment of agile engineering practices</a> von Corinna Baldauf</li>\
+    <li>Der <a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia Test</a>, beschrieben von Joe Little</li>\
+</ul>\
+Geht die Checkliste im Team durch und diskutiert, wie agil ihr seid und ob ihr auf dem richtigen Weg seid.<br></br>\
+Diese Aktivit&auml;t eignet sich gut f&uuml;r eine Retrospektive nach einer Iteration, in der nicht viel passiert ist.",
+source:    source_findingMarbles,
+duration:  "10-25 minutes depending on the list",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Wertsch&auml;tzendes Ziel",
+summary:   "W&auml;hle ein positives Motto f&uuml;r die Retrospektive.",
+desc:      "Konzentriert euch auf positive Aspekte eurer Arbeit statt auf Probleme. Gib der Retrospektive ein positives Motto, wie z.B.:\
+<ul>\
+    <li>Lasst uns einen Weg finden, unsere St&auml;rken beim Vorgehen und in der Zusammenarbeit weiter auszubauen.</li>\
+    <li>Lasst uns herausfinden, wie wir die Verwendung von etablierten Entwicklungspraktiken und -methoden steigern k&ouml;nnen.</li>\
+    <li>Wir finden heraus, wo oder zwischen wem die Zusammenarbeit bereits besonders gut funktioniert und wie wir gezielt eine solche hoch produktive Atmosph&auml;re schaffen k&ouml;nnen.</li>\
+    <li>Wir finden heraus, wie und wo wir in der letzten Iteration den h&ouml;chsten Mehrwert f&uuml;r unseren Kunden geschaffen haben, um den erzeugten Mehrwert in der n&auml;chsten Iteration noch zu steigern.</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
+all_activities[36] = {
+phase:     2,
+name:      "Zur&uuml;ck in die Zukunft",
+summary:   "Stellt euch vor, der n&auml;chste Sprint w&auml;re perfekt gelaufen. Beschreibt ihn und besprecht, was ihr gemacht habt.",
+desc:      "Stellt euch vor, ihr unternehmt eine Zeitreise ans Ende der n&auml;chsten Iteration oder zum n&auml;csten Release. Ihr findet heraus, dass es die bisher beste und produktivste Iteration &uuml;berhaupt war. Ihr lasst sie euch vom Team der Zukunft beschreiben. Was hat das Team gesehen, geh&ouml;rt und erlebt? <br></br> \
+Gib dem Team ein wenig Zeit, um ihre Fantasie spielen zu lassen. Rate ihnen, sich ein paar Stichworte aufzuschreiben. Anschlie&szlig;end beschreiben alle nacheinander ihre Erinnerung / Vision an die perfekte Iteration.<br></br> \
+Stellt euch gemeinsam die Frage, welche Ver&auml;nderungen das Team der Zukunft umgesetzt hat, die zu einer solch produktiven und perfekten Iteration gef&uuml;hrt haben. Schreibe die Antworten auf Karteikarten, um sie in der n&auml;chsten Phase zu nutzen.",
+source:    source_innovationGames + ", gefunden in <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Abstimmung mit Klebepunkten - anfangen, aufh&ouml;ren, weitermachen",
+summary:   "Macht ein Brainstorming dazu, womit ihr anfangen, aufh&ouml;ren oder weitermachen wollt und w&auml;hlt den besten Vorschlag aus.",
+desc:      "Teile einen Flipchart in drei Bereiche auf, die mit &quot;anfangen&quot;, &quot;weitermachen&quot; und &quot;aufh&ouml;ren&quot; beschriftet werden. <br>\
+Bitte das Team, sich konkrete Vorschl&auml;ge f&uuml;r jeden Bereich einfallen zu lassen und in Ruhe aufzuschreiben - immer nur ein Vorschlag pro Karteikarte. Anschlie&szlig;end liest jeder seine Karten vor und h&auml;ngt sie in den passenden Bereich auf den Flipchart. <br>\
+Diskutiere mit dem Team, welches die besten Ideen sind, &uuml;ber deren Umsetzung sich abstimmen l&auml;sst. Leite die Abstimmung ein, indem Du Klebepunkte verteilst, die frei verteilt werden d&uuml;rfen - einen, zwei oder drei pro Person. Alternativ zu Klebepunkten k&ouml;nnen die Teammitglieder auch gro&szlig;e &quot;X&quot; malen. <br>\
+Die zwei oder drei Vorschl&auml;ge mit den meisten Punkten oder &quot;X&quot; sind zur Umsetzung ausgew&auml;hlt - sie sind eure Action Items. <br><br> \
+(Die <a href='http://www.funretrospectives.com/open-the-box/'>&quot;Open the Box&quot;-Methode</a> von Paulo Caroli ist eine Variation dieser Aktivit&auml;t.)",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[38] = {
+phase:     3,
+name:      "Abstimmung mit Klebepunkten - Beibehalten, Ver&auml;ndern",
+summary:   "Macht ein Brainstorming dazu, was gut funktioniert hat und was ver&auml;ndert werden soll. Entscheidet, welche Ver&auml;nderungen ihr umsetzen wollt.",
+desc:      "&Uuml;berschreibe zwei Flipcharts jeweils mit &quot;Beibehalten&quot; und &quot;Ver&auml;ndern&quot;. Bitte die Teilnehmer konkrete Vorschl&auml;ge f&uuml;r beide Kategorien zu notieren, immer nur einer pro Karteikarte. <br> \
+Lass sie ein paar Minuten allein dar&uuml;ber nachdenken. Anschlie&szlig;end liest jeder seine Vorschl&auml;ge vor und h&auml;ngt sie in die passende Kategorie.<br></br> \
+F&uuml;hrt eine kurze Diskussion dar&uuml;ber, welche Vorschl&auml;ge die gr&ouml;&szlig;te Chance haben, umgesetzt zu werden oder von welchen der gr&ouml;&szlig;te Mehrwert ausgeht. Stimmt dar&uuml;ber ab, welche Vorschl&auml;ge ihr umsetzt, in dem jeder Teilnehmer eine feste Anzahl Klebepunkte (z.B. 2 oder 3) auf die Karteikarten verteilt. <br> </br> \
+Die 2 oder 3 Vorschl&auml;ge mit den meisten Punkten setzt ihr um.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
