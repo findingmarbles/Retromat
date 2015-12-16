@@ -258,7 +258,7 @@ function get_photo_string(index) {
             }
             res += "</a>";
         }
-        res += " | ";
+//        res += " | "; PAUSED Until I've got more time
     }
     return res;
 }
@@ -797,9 +797,11 @@ function switchLanguage(new_lang) {
             </div><!-- END js_item -->
             <div class="js_photo_link photo_link">
                 <span class="js_fill_photo-link"></span>
+				<!-- PAUSED Until I've got more time
                 <a href="mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']) ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']) ?>" class="less_pronounced">
                     <?php echo($_lang['ACTIVITY_PHOTO_ADD']) ?>
                 </a>
+                -->
             </div><!-- END .js_photo_link -->
         </div><!-- END .activity-content -->
         <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="<?php echo($_lang['ACTIVITY_NEXT']) ?>">&#9658;</a>
