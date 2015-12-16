@@ -164,6 +164,10 @@ all_photos[97] = [
 all_photos[106] = [
 {filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
 ];
+all_photos[110] = [
+{filename:    path + "110_movie-critic.jpg", contributor: "Ana Maria Betancur Vargas"},
+{filename:    path + "110_movie-critic_2.jpg", contributor: "Ana Maria Betancur Vargas"}
+];
 all_photos[112] = [
 {filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
 ];
