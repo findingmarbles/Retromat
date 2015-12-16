@@ -15,7 +15,7 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Gedruckte Ausgabe</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Aktivit&auml;t hinzuf&uuml;gen</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat enth&auml;lt <span class="js_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu. Kennst Du eine tolle Aktivit&auml;t?';
+$_lang['INDEX_ABOUT'] = 'Retromat enth&auml;lt <span class="js_footer_no_of_activities"></span> Aktivit&auml;ten, die insgesamt <span class="js_footer_no_of_combinations"></span> (<span class="js_footer_no_of_combinations_formula"></span>) Kombinationen erm&ouml;glichen. Und wir f&uuml;gen laufend weitere hinzu.'; // Kennst Du eine tolle Aktivit&auml;t?
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung von ';

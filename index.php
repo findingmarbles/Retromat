@@ -677,8 +677,11 @@ function switchLanguage(new_lang) {
       <span class="navi">
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
-        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>  |
+        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>
+		  <!-- PAUSED Until I've got more time
+		  |
         <?php echo($_lang['INDEX_NAVI_ADD_ACTIVITY']); ?>
+        -->
       </span>
 </div>
 
@@ -806,7 +809,9 @@ function switchLanguage(new_lang) {
 <div class="about">
     <div class="content">
         <?php echo($_lang['INDEX_ABOUT']); ?>
+<!-- PAUSED Until I've got more time
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_ABOUT_SUGGEST']); ?></a>!
+-->
     </div>
 </div>
 

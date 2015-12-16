@@ -16,7 +16,7 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"></span> activiteiten, waarmee <span class="js_footer_no_of_combinations"></span> combinaties gemaakt kunnen worden(<span class="js_footer_no_of_combinations_formula"></span>) en er worden er steeds meer aan toegevoegd. Weet jij nog een geweldige activiteit?';
+$_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"></span> activiteiten, waarmee <span class="js_footer_no_of_combinations"></span> combinaties gemaakt kunnen worden(<span class="js_footer_no_of_combinations_formula"></span>) en er worden er steeds meer aan toegevoegd.'; // Weet jij nog een geweldige activiteit?
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Stel het voor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Vertaling: ';
