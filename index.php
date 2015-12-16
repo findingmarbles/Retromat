@@ -671,7 +671,7 @@ function switchLanguage(new_lang) {
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (115 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (66 activiteiten)</option>
+        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (96 activiteiten)</option>
     </select>
 
       <span class="navi">

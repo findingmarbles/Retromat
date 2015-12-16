@@ -1446,7 +1446,7 @@ summary:   "Wat kunnen subgroepen verbeteren in hun interacties met anderen?",
 desc:      "Identificeer subgroepen onder de deelnemers die tijdens de iteratie interacties met elkaar hadden, \
 bijvoorbeeld ontwikkelaars/testers, klanten/leveranciers, PO/ontwikkelaars, etc. \
 Geef de deelnemers drie minuten om in stilte op te schrijven wat hun groep deed dat een negatieve impact \
-op een andere groep had. Iedere persoon mag maar deelnemer van 1 groep zijn, en stickies schrijven voor alle groepen 
+op een andere groep had. Iedere persoon mag maar deelnemer van 1 groep zijn, en stickies schrijven voor alle groepen \
 waar ze geen deel van uitmaken - 1 stickie per onderwerp. <br><br> \
 Vervolgens lezen alle deelnemers hun stickies een voor een voor en geven die aan de juiste groep. \
 De groep in kwestie beoordeelt het onderwerp van 0 ('Geen probleem') tot 5 ('Groot probleem'). \
