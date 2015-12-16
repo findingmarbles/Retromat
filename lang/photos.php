@@ -33,6 +33,7 @@ all_photos[17] = [
 ];
 all_photos[18] = [
 {filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "19_sailboat.jpg", contributor: "David Johnson"},
 {filename:    path + "19_Speedboat.jpg", contributor: "Corinna Baldauf"}
 ];
 all_photos[19] = [
@@ -64,10 +65,12 @@ all_photos[31] = [
 {filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
 {filename:    path + "32_Emoticons-3.jpg", contributor: "Eric van der Meulen"}
 ];
-all_photos[34] = [{
-filename:    path + "35_Agile-Self-Assessment.jpg",
-contributor: "Philipp Flenker"
-}];
+all_photos[34] = [
+{filename:    path + "35_Agile-Self-Assessment.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[37] = [
+{filename:    path + "38_keep-drop-add.jpg", contributor: "Tracy Kuhlman"}
+];
 all_photos[41] = [{
 filename:    "http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg",
 contributor: "Corinna Baldauf"
@@ -99,10 +102,11 @@ all_photos[60] = [{
 filename:    path + "61_Chaos-Cocktail-Party.jpg",
 contributor: "Philipp Flenker"
 }];
-all_photos[62] = [{
-filename:    path + "63_Low-Hanging-Fruit.jpg",
-contributor: "Pedro Ángel Serrano"
-}];
+all_photos[62] = [
+{filename:    path + "63_Low-Hanging-Fruit.jpg", contributor: "Pedro Ángel Serrano"},
+{filename:    path + "63_low-hanging-fruit_2.jpg", contributor: "Virgi"},
+{filename:    path + "63_low-hanging-fruit_3.jpg", contributor: "Virgi"}
+];
 all_photos[63] = [{
 filename:    "http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450",
 contributor: "Wayne D. Grant"
@@ -130,7 +134,11 @@ all_photos[82] = [
 {filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
 ];
+all_photos[87] = [
+{filename:    path + "88_impediments-cup.jpg", contributor: "Manuel Zaforas Martín"}
+];
 all_photos[88] = [
+{filename:    path + "89_Retro_Wedding_1.jpg", contributor: "Manuel Zaforas Martín"},
 {filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
 {filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
 ];
