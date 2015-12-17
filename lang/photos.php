@@ -104,8 +104,8 @@ contributor: "Philipp Flenker"
 }];
 all_photos[62] = [
 {filename:    path + "63_Low-Hanging-Fruit.jpg", contributor: "Pedro Ángel Serrano"},
-{filename:    path + "63_low-hanging-fruit_2.jpg", contributor: "Virgi"},
-{filename:    path + "63_low-hanging-fruit_3.jpg", contributor: "Virgi"}
+{filename:    path + "63_low-hanging-fruit_2.jpg", contributor: "Virginia Brassesco"},
+{filename:    path + "63_low-hanging-fruit_3.jpg", contributor: "Virginia Brassesco"}
 ];
 all_photos[63] = [{
 filename:    "http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450",
