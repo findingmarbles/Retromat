@@ -178,3 +178,6 @@ all_photos[113] = [
 all_photos[114] = [
 {filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
 ];
+all_photos[117] = [
+{filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
+];

@@ -1842,6 +1842,61 @@ source:    "<a href='http://derekneighbors.com/2009/02/agile-retrospective-using
 duration:  "60 minutes",
 suitable:  "iteration, project"
 };
+all_activities[115] = {
+phase:     1,
+name:      "Genie in a Bottle",
+summary:   "Playfully explore unmet needs",
+desc:      "Present the following scenario to the participants: You have freed a genie from its bottle \
+		and you're granted the customary 3 wishes. What do you wish for? Please make \
+		<ul> \
+			<li>one wish for yourself</li> \
+			<li>one wish for your team</li> \
+			<li>one wish for all the people in the world</li> \
+		</ul> \
+		Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
+<br><br> \
+		Let everybody present their wishes. Optionally you can then dot-vote on the best or most appreciated wishes.",
+source:    "&Ouml;zer &Ouml;zker &amp; Anke Bartels",
+duration:  "10-15 minutes",
+suitable:  "iteration, project"
+};
+all_activities[116] = {
+phase:     3,
+name:      "Maximize Follow Through",
+summary:   "Think about how the team will follow up and set yourselves up for success",
+desc:      "Prepare a flip chart with 4 columns titled 'Action', 'Motivation', 'Ease' and 'Reminder'. \
+		Write down the list of actions the team wants to take in the first column. \
+		Read out each action and fill in the other columns by asking: \
+		<ul> \
+		<li>Motivation - How can we motivate ourselves to do this? \
+			<br>Examples: \'Jane will own this and feedback at the next retrospective', or 'We'll reward ourselves with cake on Friday if we do this every day'</li><br> \
+		<li>Ease - How can we make it easy to do? \
+			<br>Example: For an action 'Start involving Simon in the stand up' a possibility could be 'Move the task board next to Simon's desk'</li><br> \
+		<li>Reminder - How will we remember to do this? \
+			<br>Examples: 'Richard will put a reminder in Google Calendar' or 'We'll do this after the stand up each day' \
+		</ul> \
+		Actions do not require all of the above. But if there are no suggestions for any of the columns, ask the team if they really think they will do it.",
+source:    "<a href='https://twitter.com/nespera'>Chris Rimmer</a>",
+duration:  "15 minutes",
+suitable:  "iteration"
+};
+all_activities[117] = {
+phase:     2,
+name:      "Snow Mountain",
+summary:   "Address problematic burndowns and scope creep",
+desc:      "This activity is helpful when a team is constantly dealing with additional requests and scope creep. \
+		Use the burndown chart of problematic sprints to draw snowy mountains with the same outline. Add a few trees here and there. \
+		Print drawings of kids in various sledging situations such as kid sledging down fast, kid sledging and being scared, \
+		kid with a sledge looking bored, etc. (You can use Google image search with 'kid sledging drawing'). \
+		<br><br> \
+		In teams of 2 or 3, ask the team members to identify which kid's reaction goes with which part of the mountain. <br> \
+		Example: If the mountain is flat, the kid might be bored. If you're facing a wall, the kid might be scared. \
+		<br><br> \
+		You can then discuss the team's reaction facing their own burndowns.",
+source:    "Olivier Fortier",
+duration:  "30 minutes",
+suitable:  "iteration"
+};
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
