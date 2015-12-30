@@ -12,6 +12,7 @@ all_photos[1] = [
 {filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
 ];
 all_photos[3] = [
+{filename:    path + "4_Timeline-2.jpg", contributor: "Martín Salías"},
 {filename:    path + "4_Timeline.jpg", contributor: "Virginia Brassesco"}
 ];
 all_photos[6] = [
