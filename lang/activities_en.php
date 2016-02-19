@@ -34,8 +34,8 @@ Take a poll (anonymously on slips of paper). Count out the answers and keep trac
 for all to see. If trust is low, deliberately destroy the votes afterwards to ensure privacy. Ask \
 what people make of the data. If there's a majority of Vacationers or Prisoners consider using the \
 retro to discuss this finding.",
-duration:  "5-10 numberPeople",
 source:  source_agileRetrospectives,
+duration:  "5-10 numberPeople",
 suitable:   "iteration, release, project, immature"
 };
 all_activities[1] = {
@@ -75,8 +75,8 @@ Color Coding can help to see patterns, e.g.:<br>\
     <li>Events (technical, organization, people, ...)</li>\
     <li>Function (tester, developer, manager, ...)</li>\
 </ul>",
-duration:  "60-90 timeframe",
 source:  source_agileRetrospectives,
+duration:  "60-90 timeframe",
 suitable: "iteration, introverts"
 };
 all_activities[4] = {
@@ -276,8 +276,8 @@ desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and '
 Ask participants to nudge your behaviour into the right direction: Write stickies \
 with what you should do more, less and what is exactly right. Read out and briefly \
 discuss the stickies section-wise.",
-more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
+more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
 duration:  "5-10",
 suitable: "iteration, release, project"
 };
@@ -398,7 +398,7 @@ After 10 minutes the pairs break up to form new pairs. Continue \
 until everyone has talked to everyone else. <br>\
 If the group has an odd number of members, the facilitator is part of a pair but the partner \
 gets all 10 minutes for their topic.",
-source:    source_kalnin,
+source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Thorsten Kalnin</a>",
 duration:  "10 perPerson",
 suitable: "iteration, release, smallGroups"
 };
@@ -445,9 +445,7 @@ Take your insights from the last phase and put them in the appropriate circle.<b
 The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
 circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
-source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
-who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and \
-'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
 suitable: "iteration, release, project, stuck, immature"
 };
 all_activities[29] = {
@@ -475,9 +473,7 @@ desc:      "Distribute index cards and markers. Set a topic, e.g. one of the fol
 Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
 let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from \
-           <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
-           and Olivier Gourment",
+source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
 duration:  "5 + 3 per person",
 suitable: "iteration, release, project"
 };
@@ -527,7 +523,7 @@ The two people in the chairs that face each other talk about the third person fo
 They may only say positive things and nothing that was said may be reduced in meaning by \
 anything said afterwards. <br>\
 Hold 3 rounds so that everyone sits in the shower seat once.",
-source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+source:    "<a href='http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/'>Ralph Miarka</a>",
 duration:  "10-15",
 suitable: "iteration, release, matureTeam"
 };
@@ -765,8 +761,7 @@ desc:      "Say how much time you set aside for this phase, then explain the rul
     <li>Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. \
         Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. </li>\
 </ul> Stop when the allotted time is over.",
-source:    "<a href='http://leancoffee.org/'>Original description</a> and \
-<a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
+source:    "<a href='http://leancoffee.org/'>Original description</a> and <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
 duration:  "20-40 min",
 suitable:  "iteration"
 };
@@ -785,8 +780,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Afterwards ask which constellations were surprising.<br>\
 This can also be a closing activity (#53).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
 duration:  "10 min",
 suitable:  "iteration, project, release"
 };
@@ -805,9 +799,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Any surprising constellations?<br>\
 This can also be an opening activity (#52).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
-<a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 duration:  "5 min",
 suitable:  "iteration, project, release"
 };
@@ -1204,7 +1196,7 @@ Ask the team to draw a value stream map of their process from the point of \
 view of a single user story. If necessary, ask them to break into small groups, and \
 facilitate the process if they need it. Look at the finished map. Where are long delays, \
 choke points and bottlenecks?",
-source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo &quot;Nusco&quot; Perrotta</a>, inspired by <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
+source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo 'Nusco' Perrotta</a>, inspired by <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
 duration:  "20-30 min",
 more:      "http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html",
 suitable:  "iteration, project, release, distributed"
@@ -1632,8 +1624,7 @@ desc:      "Do you have a hotly debated matter with several possible ways to go 
             Draw a table with the voters in the left-most column and proposals on top. Now everybody has to \
             fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
             up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
-source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via \
-            <a href='http://finding-marbles.com/2012/01/12/systemic-consensus/'>Corinna Baldauf</a>",
+source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via <a href='http://finding-marbles.com/2012/01/12/systemic-consensus/'>Corinna Baldauf</a>",
 duration:  "10 minutes",
 suitable:  "iteration, project"
 };
