@@ -493,6 +493,14 @@ function generate_random_regular_plan_id() {
 
 /************ BEGIN Footer Functions ************/
 
+function create_link_to_all_activities(number_of_activities) {
+	var link_string = "<a href='/index<?php if(!$isEnglish) echo("_" . $lang . ".html"); ?>?id=1";
+	for (i=2; i<=number_of_activities; i++) {
+		link_string += "-" + i;
+	}
+	return link_string + "&all=yes'>" + number_of_activities + "</a>";
+}
+
 function get_number_of_activities_in_phase(phase_index) {
     var activities = get_indexes_of_activities_in_phase(phase_index);
     return activities.length;
@@ -520,7 +528,7 @@ function get_combinations_string() {
 }
 
 function publish_footer_stats() {
-    $(".js_footer_no_of_activities").html(all_activities.length);
+    $(".js_footer_no_of_activities").html(create_link_to_all_activities(all_activities.length));
     $(".js_footer_no_of_combinations").html(get_number_of_combinations());
     $(".js_footer_no_of_combinations_formula").html(get_combinations_string());
 }
