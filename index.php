@@ -494,7 +494,7 @@ function generate_random_regular_plan_id() {
 /************ BEGIN Footer Functions ************/
 
 function create_link_to_all_activities(number_of_activities) {
-	var link_string = "<a href='/index<?php if(!$isEnglish) echo("_" . $lang . ".html"); ?>?id=1";
+	var link_string = "<a href='/index<?php if(!$isEnglish) echo("_" . $lang); ?>.html?id=1";
 	for (i=2; i<=number_of_activities; i++) {
 		link_string += "-" + i;
 	}
