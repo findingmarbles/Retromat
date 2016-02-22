@@ -619,7 +619,8 @@ phase:     2,
 name:      "Park Bench",
 summary:   "Group discussion with varying subsets of participants",
 desc:      "Place at least 4 and at most 6 chairs in a row so that they face the group. \
-Explain the rules: <ul>\
+Explain the rules: \
+		<ul>\
     <li>Take a bench seat when you want to contribute to the discussion</li>\
     <li>One seat must always be empty</li>\
     <li>When the last seat is taken, someone else must leave and return to the audience</li>\
@@ -1355,13 +1356,16 @@ summary:   "Collect examples for something old, new, borrowed and blue",
 desc:      "Analogue to an anglo-american wedding custom ask the team to give examples for the following categories: \
 <ul> \
     <li>Something Old<br> \
-        Positive feedback or constructive criticism on established practice</li> \
+Positive feedback or constructive criticism on established practice</li> \
+	\
     <li>Something New<br> \
-        Positive feedback or constructive criticism on experiments in progress</li> \
+Positive feedback or constructive criticism on experiments in progress</li> \
+	\
     <li>Something Borrowed<br> \
-        Tool/idea from another team, the Web or yourself for a potential experiment</li> \
+Tool/idea from another team, the Web or yourself for a potential experiment</li> \
+	\
     <li>Something Blue<br> \
-        Any blocker or source of sadness</li> \
+Any blocker or source of sadness</li> \
 </ul> \
 One example per sticky note. There's only one rule: If someone contributes to the 'Something Blue' column, \
 s/he must also have a positive comment in at least 1 other column.<br><br> \
@@ -1713,7 +1717,7 @@ phase:     1,
 name:      "Movie Critic",
 summary:   "Imagine your last iteration was a movie and write a review about it",
 desc:      "Introduce the activity by asking: \
-            Imagine your last iteration was a movie and you had to write a review: \
+Imagine your last iteration was a movie and you had to write a review: \
             <ul> \
 <li>            What was the genre of the movie (e.g. horror, drama, ...)?</li> \
 <li>            What was the (central) theme? Describe in 2-3 words.</li> \
@@ -1722,11 +1726,11 @@ desc:      "Introduce the activity by asking: \
 <li>            What was your personal highlight?</li> \
 <li>            Would you recommend it to a colleague?</li> \
 </ul> \
-            Give each team member a piece of paper and 5 minutes to silently ponder the questions. \
-            In the meantime (or before the session) divide a flip chart in 7 columns headed with 'Genre', 'Theme', 'Twist', 'Ending', 'Expected?', 'Highlight', 'Recommend?'. \
-            When everyone has finished writing, fill out the flip chart while each participant reads out their notes. \
-            <br> \
-            Afterwards look at the finished table and lead a discussion about \
+Give each team member a piece of paper and 5 minutes to silently ponder the questions. \
+In the meantime (or before the session) divide a flip chart in 7 columns headed with 'Genre', 'Theme', 'Twist', 'Ending', 'Expected?', 'Highlight', 'Recommend?'. \
+When everyone has finished writing, fill out the flip chart while each participant reads out their notes. \
+<br> \
+Afterwards look at the finished table and lead a discussion about \
 <ul> \
 <li>What's standing out?</li> \
 <li>What patterns do you see? What do they mean for you as a team?</li> \
@@ -1741,30 +1745,30 @@ all_activities[110] = {
     name:      "Feedback Sandwich",
     summary:   "Learn how to raise constructive criticism with your team mates in a trusting and positive way",
 desc:      "Try this activity to help teams that are only ever saying nice things to each other and seem reluctant to raise \
-               concerns about each other. If they are always keeping the peace, they miss growth opportunities \
-               and issues may fester. Feedback Sandwich is a way to learn how to give and receive potentially critical feedback. It goes like this: \
-               <br><br> \
-               Team members sit in a circle and take turns receiving the feedback. The team member who's turn it is is not allowed to say \
-               anything until each person finishes their 3 points. Once finished, the person receiving the feedback can only say 'Thank You'. \
-               Each takes turns receiving the feedback until all team members have participated. \
-               <br><br> \
-               Several days before the retro, you send out the following information to team members so that they can prepare: <br> \
-                           'Think about the below questions for each of your team mates and prepare an answer before the session: \
-               <ol> \
-                   <li>What is something you really admire/respect about this person or something you think they do really well in a professional capacity?</li> \
-               <li>What is something you think is a weakness for this person? (Perhaps something they don't do so well, need to work on etc.)</li> \
-               <li>What is something you feel this person shows promise in, but could perhaps work on a little more to truly shine at it?</li> \
-               </ol> \
-                           These questions are quite open in that you can draw on both technical and soft skills for each team member. \
-                           So it might be that you choose to highlight a specific technical strength/weakness, or you might comment on \
-                           someone's professional conduct, approachability, teaching skills, communication skills, etc. \
-               <br><br> \
-                           <b>Disclaimer</b>: This activity is not about being nasty, or mean. It's intended to help the team get to know each \
-                           other better and to improve on how we work individually and as a group. \
-                           The idea is not to cause offence, but rather to understand how your team sees you and perhaps take something \
-                           away to work on. It is up to you what you take away from it, you are free to ignore people's suggestions if \
-                           you do not agree with them. Please deliver your feedback kindly and remember to thank your team for their \
-                           feedback about you.'",
+concerns about each other. If they are always keeping the peace, they miss growth opportunities \
+and issues may fester. Feedback Sandwich is a way to learn how to give and receive potentially critical feedback. It goes like this: \
+<br><br> \
+Team members sit in a circle and take turns receiving the feedback. The team member who's turn it is is not allowed to say \
+anything until each person finishes their 3 points. Once finished, the person receiving the feedback can only say 'Thank You'. \
+Each takes turns receiving the feedback until all team members have participated. \
+<br><br> \
+Several days before the retro, you send out the following information to team members so that they can prepare: <br> \
+'Think about the below questions for each of your team mates and prepare an answer before the session: \
+<ol> \
+   <li>What is something you really admire/respect about this person or something you think they do really well in a professional capacity?</li> \
+<li>What is something you think is a weakness for this person? (Perhaps something they don't do so well, need to work on etc.)</li> \
+<li>What is something you feel this person shows promise in, but could perhaps work on a little more to truly shine at it?</li> \
+</ol> \
+These questions are quite open in that you can draw on both technical and soft skills for each team member. \
+So it might be that you choose to highlight a specific technical strength/weakness, or you might comment on \
+someone's professional conduct, approachability, teaching skills, communication skills, etc. \
+<br><br> \
+<b>Disclaimer</b>: This activity is not about being nasty, or mean. It's intended to help the team get to know each \
+other better and to improve on how we work individually and as a group. \
+The idea is not to cause offence, but rather to understand how your team sees you and perhaps take something \
+away to work on. It is up to you what you take away from it, you are free to ignore people's suggestions if \
+you do not agree with them. Please deliver your feedback kindly and remember to thank your team for their \
+feedback about you.'",
 source:    "<a href='http://www.silverstripe.com/who-we-are/our-team/diana-hennessy'>Diana Hennessy</a>",
 duration:  "60 minutes",
 suitable:  "iteration, project, release, intervention, liftoff"
@@ -1844,9 +1848,9 @@ desc:      "Present the following scenario to the participants: You have freed a
 			<li>one wish for your team</li> \
 			<li>one wish for all the people in the world</li> \
 		</ul> \
-		Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
+Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
 <br><br> \
-		Let everybody present their wishes. Optionally you can then dot-vote on the best or most appreciated wishes.",
+Let everybody present their wishes. Optionally you can then dot-vote on the best or most appreciated wishes.",
 source:    "&Ouml;zer &Ouml;zker &amp; Anke Bartels",
 duration:  "10-15 minutes",
 suitable:  "iteration, project"
