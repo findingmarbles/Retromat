@@ -1842,12 +1842,12 @@ phase:     1,
 name:      "Genie in a Bottle",
 summary:   "Playfully explore unmet needs",
 desc:      "Present the following scenario to the participants: You have freed a genie from its bottle \
-		and you're granted the customary 3 wishes. What do you wish for? Please make \
-		<ul> \
-			<li>one wish for yourself</li> \
-			<li>one wish for your team</li> \
-			<li>one wish for all the people in the world</li> \
-		</ul> \
+and you're granted the customary 3 wishes. What do you wish for? Please make \
+<ul> \
+	<li>one wish for yourself</li> \
+	<li>one wish for your team</li> \
+	<li>one wish for all the people in the world</li> \
+</ul> \
 Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
 <br><br> \
 Let everybody present their wishes. Optionally you can then dot-vote on the best or most appreciated wishes.",
@@ -1860,17 +1860,17 @@ phase:     3,
 name:      "Maximize Follow Through",
 summary:   "Think about how the team will follow up and set yourselves up for success",
 desc:      "Prepare a flip chart with 4 columns titled 'Action', 'Motivation', 'Ease' and 'Reminder'. \
-		Write down the list of actions the team wants to take in the first column. \
-		Read out each action and fill in the other columns by asking: \
-		<ul> \
-		<li>Motivation - How can we motivate ourselves to do this? \
-			<br>Examples: \'Jane will own this and feedback at the next retrospective', or 'We'll reward ourselves with cake on Friday if we do this every day'</li><br> \
-		<li>Ease - How can we make it easy to do? \
-			<br>Example: For an action 'Start involving Simon in the stand up' a possibility could be 'Move the task board next to Simon's desk'</li><br> \
-		<li>Reminder - How will we remember to do this? \
-			<br>Examples: 'Richard will put a reminder in Google Calendar' or 'We'll do this after the stand up each day' \
-		</ul> \
-		Actions do not require all of the above. But if there are no suggestions for any of the columns, ask the team if they really think they will do it.",
+Write down the list of actions the team wants to take in the first column. \
+Read out each action and fill in the other columns by asking: \
+<ul> \
+<li>Motivation - How can we motivate ourselves to do this? \
+	<br>Examples: \'Jane will own this and feedback at the next retrospective', or 'We'll reward ourselves with cake on Friday if we do this every day'</li><br> \
+<li>Ease - How can we make it easy to do? \
+	<br>Example: For an action 'Start involving Simon in the stand up' a possibility could be 'Move the task board next to Simon's desk'</li><br> \
+<li>Reminder - How will we remember to do this? \
+	<br>Examples: 'Richard will put a reminder in Google Calendar' or 'We'll do this after the stand up each day' \
+</ul> \
+Actions do not require all of the above. But if there are no suggestions for any of the columns, ask the team if they really think they will do it.",
 source:    "<a href='https://twitter.com/nespera'>Chris Rimmer</a>",
 duration:  "15 minutes",
 suitable:  "iteration"
@@ -1880,18 +1880,61 @@ phase:     2,
 name:      "Snow Mountain",
 summary:   "Address problematic burndowns and scope creep",
 desc:      "This activity is helpful when a team is constantly dealing with additional requests and scope creep. \
-		Use the burndown chart of problematic sprints to draw snowy mountains with the same outline. Add a few trees here and there. \
-		Print drawings of kids in various sledging situations such as kid sledging down fast, kid sledging and being scared, \
-		kid with a sledge looking bored, etc. (You can use Google image search with 'kid sledging drawing'). \
-		<br><br> \
-		In teams of 2 or 3, ask the team members to identify which kid's reaction goes with which part of the mountain. <br> \
-		Example: If the mountain is flat, the kid might be bored. If you're facing a wall, the kid might be scared. \
-		<br><br> \
-		You can then discuss the team's reaction facing their own burndowns.",
+Use the burndown chart of problematic sprints to draw snowy mountains with the same outline. Add a few trees here and there. \
+Print drawings of kids in various sledging situations such as kid sledging down fast, kid sledging and being scared, \
+kid with a sledge looking bored, etc. (You can use Google image search with 'kid sledging drawing'). \
+<br><br> \
+In teams of 2 or 3, ask the team members to identify which kid's reaction goes with which part of the mountain. <br> \
+Example: If the mountain is flat, the kid might be bored. If you're facing a wall, the kid might be scared. \
+<br><br> \
+You can then discuss the team's reaction facing their own burndowns.",
 source:    "Olivier Fortier",
 duration:  "30 minutes",
 suitable:  "iteration"
 };
-
+all_activities[118] = {
+phase:     1,
+name:      "Hit the Headlines",
+summary:   "Which sprint events were newsworthy?",
+desc:      "Collecting some news headlines in advance and take them to the retrospective to \
+serve as examples. Try to gather a mixture of headlines: factual, opinion, review. \
+Place the headlines where everyone can see them. Hand out sticky notes. Give team members 10 \
+minutes to come up with their own headlines describing newsworthy aspects of the sprint. \
+Encourage short, punchy headlines. \
+<br> \
+Stick the completed headlines to a whiteboard. If any cover the same news item, combine them. \
+If any are unclear, ask the reporter for details. Vote on which news items to discuss and analyse in more depth.",
+source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
+duration:  "15-20 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[119] = {
+phase:     4,
+name:      "My Team is Awesome",
+summary:   "Acknowledge what's awesome about your team",
+desc:      "Give each team member a piece of paper and ask them to write down the following text: \
+<br> \
+'My team is awesome because _______________ <br> \
+and that makes me feel __________________' \
+<br><br> \
+Everyone fills out the blanks for themselves and signs below. When everyone is finished, \
+put up the sheets on a wall. A volunteer reads out the sheets and the team celebrates by \
+cheering or applausing. Take some time to review and share observations. \
+Take a picture to remind the team how awesome it feels to be part of the team.",
+source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
+duration:  "10-15 minutes",
+suitable:  "iteration, project, release"
+};
+all_activities[120] = {
+phase:     1,
+name:      "The Good, the Bad, and the Ugly",
+summary:   "Collect what team members perceived as good, bad and non-optimal",
+desc:      "Put up three sections labeled ‘The Good’, ‘The Bad’ and ‘The Ugly’. Give everyone \
+5 minutes to note down one or more things per category from the last sprint. One aspect per post-it. \
+When the time is up, have everyone stick their post-its to the appropriate labels. Cluster as you collect, if possible.",
+source:    "<a href='http://qualityswdev.com/2016/02/04/wild-wild-west-retrospective/'>Manuel Küblböck</a>",
+duration:  "10 minutes",
+suitable:  "iteration, project"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
