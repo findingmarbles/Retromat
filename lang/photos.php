@@ -77,7 +77,8 @@ filename:    "http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospect
 contributor: "Corinna Baldauf"
 }];
 all_photos[46] = [
-{filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"}
+{filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "47_Retro-Mailbox.jpg", contributor: "Sarah Schmid"}
 ];
 all_photos[48] = [
 {filename:    path + "49_Starfish_3.jpg", contributor: "Eric van der Meulen"},
