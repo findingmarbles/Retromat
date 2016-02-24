@@ -54,7 +54,7 @@ desc:      "In round-robin each participant answers the same question (unless th
 Sample questions: <br>\
 <ul>\
     <li>In one word - What do you need from this retrospective?</li>\
-        Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
+Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
     <li>In this retrospective - If you were a car, what kind would it be?</li>\
     <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
 </ul><br>\
@@ -174,10 +174,10 @@ which will be filtered <em>after</em> the brainstorming.\
     <li>Let people write down their ideas for 5-10 minutes</li>\
     <li>Go around the table repeatedly always asking one idea each, until all ideas are on the flip chart</li>\
     <li>Now ask for filters (e.g. cost, time investment, uniqueness of concept, brand appropriateness, ...). \
-        Let the group choose 4.</li>\
+Let the group choose 4.</li>\
     <li>Apply each filter and mark ideas that pass all 4.</li>\
     <li>Which ideas will the group carry forward? Does someone feel strongly about one of the ideas?\
-        Otherwise use majority vote. </li>\
+Otherwise use majority vote. </li>\
 </ul>\
 The selected ideas enter Phase 4.",
 source:    source_agileRetrospectives,
@@ -247,11 +247,11 @@ suitable: "iteration, largeGroups"
 all_activities[14] = {
 phase:     4,
 name:      "Appreciations",
-summary:   "Let team members appreciate each others and end positively",
+summary:   "Let team members appreciate each other and end positively",
 desc:      "Start by giving a sincere appreciation of one of the participants. \
 It can be anything they contributed: help to the team or you, a solved problem, ...\
 Then invite others and wait for someone to work up the nerve. Close, when no one \
-talked for a minute.",
+has talked for a minute.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
 duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
@@ -445,7 +445,7 @@ Take your insights from the last phase and put them in the appropriate circle.<b
 The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
 circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
-source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' by Jim Bullock",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence and Concern</a>' by Jim Bullock",
 suitable: "iteration, release, project, stuck, immature"
 };
 all_activities[29] = {
@@ -752,16 +752,16 @@ all_activities[50] = {
 phase:     1,
 name:      "Lean Coffee",
 summary:   "Use the Lean Coffee format for a focused discussion of the top topics",
-desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: <ul>\
+desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: \
+		<ul> \
     <li>Everyone writes down topics they’d like to discuss - 1 topic per sticky</li>\
-    <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. \
-        Group stickies that are about the same topic</li>\
+    <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. Group stickies that are about the same topic</li>\
     <li>Everyone dot-votes for the 2 topics they want to discuss</li>\
     <li>Order the stickies according to votes</li>\
     <li>Start with the topic of highest interest</li>\
-    <li>Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. \
-        Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. </li>\
-</ul> Stop when the allotted time is over.",
+    <li>Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. </li>\
+</ul> \
+Stop when the allotted time is over.",
 source:    "<a href='http://leancoffee.org/'>Original description</a> and <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
 duration:  "20-40 min",
 suitable:  "iteration"
@@ -992,15 +992,13 @@ desc:      "This is a round-based activity. In each round you ask the team a que
 (gives everyone time to think) and then read them out to the others.<br>\
 Questions proposed for Software Development teams:\
 <ol>\
-    <li>When was the last time you were really engaged / animated / productive? What did you do? What had \
-        happened? How did it feel?</li>\
+    <li>When was the last time you were really engaged / animated / productive? What did you do? What had happened? How did it feel?</li>\
     <li>From an application-/code-perspective: What is the awesomest stuff you've built together? What makes it great?</li>\
     <li>Of the things you built for this company, which has the most value? Why?</li>\
     <li>When did you work best with the Product Owner? What was good about it?</li>\
     <li>When was your collaboration best?</li>\
     <li>What was your most valuable contribution to the developer community (of this company)? How did you do it?</li>\
-    <li>Leave your modesty at the door: What is the most valuable skill / character trait you contribute to the team?\
-        Examples?</li>\
+    <li>Leave your modesty at the door: What is the most valuable skill / character trait you contribute to the team? Examples?</li>\
     <li>What is your team's most important trait? What sets you apart?</li>\
 </ol>\
 <br>\
@@ -1147,9 +1145,9 @@ phase:     0,
 name:      "Round of Admiration",
 summary:   "Participants express what they admire about one another",
 desc:      "Start a round of admiration by facing your neighbour and stating 'What I admire \
-            most about you is ...' Then your neighbour says what she admires about \
-            her neighbour and so on until the last participants admires you. Feels great, \
-            doesn't it?",
+most about you is ...' Then your neighbour says what she admires about \
+her neighbour and so on until the last participants admires you. Feels great, \
+doesn't it?",
 source:     source_judith,
 duration:  "5 min",
 suitable:  "iteration, project, release"
@@ -1159,11 +1157,11 @@ phase:     4,
 name:      "Follow Through",
 summary:   "What's the probability of action items getting implemented?",
 desc:      "Let everyone draw an emoticon of their current mood on a sticky note. \
-            Then draw a scale on a flip chart, labeled 'Probability we'll implement \
-            our action items'. Mark '0%' on the left and '100%' on the right. Ask \
-            everyone to place their sticky according to their confidence in their \
-            follow through as a team. <br>Discuss interesting results such as low probability \
-            or bad mood.",
+Then draw a scale on a flip chart, labeled 'Probability we'll implement \
+our action items'. Mark '0%' on the left and '100%' on the right. Ask \
+everyone to place their sticky according to their confidence in their \
+follow through as a team. <br>Discuss interesting results such as low probability \
+or bad mood.",
 source:     source_judith,
 duration:  "5-10 min",
 suitable:  "iteration, project, release"
@@ -1243,9 +1241,9 @@ phase:     0,
 name:      "Three Words",
 summary:   "Everybody sums up the last iteration in 3 words",
 desc:      "Ask everyone to describe the last iteration with just 3 words. \
-            Give them a minute to come up with something, then go around the team. \
-            This helps people recall the last iteration so that they have some ground to \
-            start from.",
+Give them a minute to come up with something, then go around the team. \
+This helps people recall the last iteration so that they have some ground to \
+start from.",
 source:     "Yurii Liholat",
 duration:  "5 min groupsize",
 suitable:  "iteration, project"
@@ -1300,7 +1298,7 @@ Distribute blank index cards and tell the team they have 10 minutes to write \
 a postcard to a person the whole team knows (i.e. an ex-colleague). \
 When the time is up, collect and shuffle the cards before re-distributing them. \
 Team members take turns to read out loud the postcards they got.",
-source: '<a href="http://uk.linkedin.com/in/alberopomar">Filipe Albero Pomar</a>',
+source: "<a href='http://uk.linkedin.com/in/alberopomar'>Filipe Albero Pomar</a>",
 duration:  "15 min",
 suitable:  "iteration, project"
 };
@@ -1439,13 +1437,13 @@ summary:   "Each participant tells a story about the last iteration that contain
 desc:      "Provide everyone with something to write down their story. Then introduce the shaping words, \
 which influence the story to be written: \
 <ul> \
-    <li>If the last iteration could have been better:<br> \
-    You set a couple of shaping words, e.g. such as 'mad, sad, glad' or 'keep, drop, add'. Additionally they have \
-    to write their story in first person. This avoids blaming others. \
-    </li> \
-    <li>If the last iteration was successful:<br> \
-    The team can either choose their own set of words or you can provide random words to unleash the team's creativity. \
-    </li> \
+<li>If the last iteration could have been better:<br> \
+You set a couple of shaping words, e.g. such as 'mad, sad, glad' or 'keep, drop, add'. Additionally they have \
+to write their story in first person. This avoids blaming others. \
+</li> \
+<li>If the last iteration was successful:<br> \
+The team can either choose their own set of words or you can provide random words to unleash the team's creativity. \
+</li> \
 </ul> \
 Now each participant writes a story of no more than 100 words about last iteration. They have to use each shaping \
 word at least once. Timebox this to 5-10 minutes. <br> \
@@ -1465,7 +1463,7 @@ Ask them to silently write down one trait per note. Let participants explain the
 </li> \
 <li>Round 2: 'What does the perfect SM have to know about you as a team so that he/she can work with you well?' \
 </li>\
-<li>Round 3: 'How can you support your SM to make a brilliant job?' <br> \
+<li>Round 3: 'How can you support your SM to do a brilliant job?' <br> \
 </li></ul>\
 You can adapt this activity for other roles, e.g. BYOProductOwner.",
 source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
@@ -1609,11 +1607,11 @@ phase:     4,
 name:      "You and Me",
 summary:   "Recognize the efforts of teammates and self-improve a little",
 desc:      "Put up 2 columns on a white board: 'Thank you!' and 'My action'.\
-            Ask everybody to write one sticky per column: Something they want to thank \
-            another teammate for doing; and something they want to change about their own \
-            behavior in the next iteration. It can be something really small. \
-            Once everyone is finisihed, do a round for each person to present their \
-            stickies and post them to the board.",
+Ask everybody to write one sticky per column: Something they want to thank \
+another teammate for doing; and something they want to change about their own \
+behavior in the next iteration. It can be something really small. \
+Once everyone is finisihed, do a round for each person to present their \
+stickies and post them to the board.",
 source:    "Mike B.",
 duration:  "10 minutes",
 suitable:  "iteration, project"
@@ -1623,11 +1621,11 @@ phase:     3,
 name:      "Systemic Consensus",
 summary:   "Check for resistance instead of approval",
 desc:      "Do you have a hotly debated matter with several possible ways to go and the team \
-            can't agree on any of them? Instead of trying to find a majority for a way that \
-            will create winners and losers, try what happens if you turn the decision inside out: <br>\
-            Draw a table with the voters in the left-most column and proposals on top. Now everybody has to \
-            fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
-            up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
+can't agree on any of them? Instead of trying to find a majority for a way that \
+will create winners and losers, try what happens if you turn the decision inside out: <br>\
+Draw a table with the voters in the left-most column and proposals on top. Now everybody has to \
+fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
+up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
 source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via <a href='http://finding-marbles.com/2012/01/12/systemic-consensus/'>Corinna Baldauf</a>",
 duration:  "10 minutes",
 suitable:  "iteration, project"
@@ -1637,10 +1635,10 @@ phase:     4,
 name:      "Note to Self",
 summary:   "Remind yourself of your good intentions",
 desc:      "Thinking back about the discussions, everybody writes a reminder for her- or himself about \
-            a change in their own behaviour they want to try \
-            during the next iteration. It's for quiet self reflection and is not shared with the group. \
-            They take their respective sticky notes with them to their desktop and put it in a place they \
-            will look at often.",
+a change in their own behaviour they want to try \
+during the next iteration. It's for quiet self reflection and is not shared with the group. \
+They take their respective sticky notes with them to their desktop and put it in a place they \
+will look at often.",
 source:    "<a href='http://www.funretrospectives.com/note-to-self/'>Fun Retrospectives</a>",
 duration:  "3 minutes",
 suitable:  "iteration, project"
@@ -1650,13 +1648,13 @@ phase:     2,
 name:      "Election Manifesto",
 summary:   "Different parties present manifestos for change. Who will get your vote?",
 desc:      "Is there an election coming up in your country? Use it as a back drop \
-            for your team to convince each other of their change initiatives. \
-            <br><br> \
-            Ask the participants to split into political parties with 2 or 3 members. \
-            For 20 minutes, each party will work on a manifesto for change. What isn't working? How would they improve things? <br>\
-            Afterwards the parties meet again and their leaders present their manifestos. Be prepared for tough questions and heckling!<br> \
-            Now plan for a better world! Summarise the manifestos with sticky notes, one color per party. What do the parties agree on? \
-            Which promises are unrealistic and which can you achieve?",
+for your team to convince each other of their change initiatives. \
+<br><br> \
+Ask the participants to split into political parties with 2 or 3 members. \
+For 20 minutes, each party will work on a manifesto for change. What isn't working? How would they improve things? <br>\
+Afterwards the parties meet again and their leaders present their manifestos. Be prepared for tough questions and heckling!<br> \
+Now plan for a better world! Summarise the manifestos with sticky notes, one color per party. What do the parties agree on? \
+Which promises are unrealistic and which can you achieve?",
 source:    "<a href='http://wordaligned.org/'>Thomas Guest</a>",
 duration:  "45 minutes",
 suitable:  "iteration, project, release"
@@ -1844,9 +1842,9 @@ summary:   "Playfully explore unmet needs",
 desc:      "Present the following scenario to the participants: You have freed a genie from its bottle \
 and you're granted the customary 3 wishes. What do you wish for? Please make \
 <ul> \
-	<li>one wish for yourself</li> \
-	<li>one wish for your team</li> \
-	<li>one wish for all the people in the world</li> \
+<li>one wish for yourself</li> \
+<li>one wish for your team</li> \
+<li>one wish for all the people in the world</li> \
 </ul> \
 Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
 <br><br> \
