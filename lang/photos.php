@@ -57,10 +57,9 @@ all_photos[24] = [
 {filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
 {filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
 ];
-all_photos[30] = [{
-filename:    "31_Draw-Iteration.jpg",
-contributor: "Eric Lannemajou"
-}];
+all_photos[30] = [
+{filename:    path + "31_Draw-Iteration.jpg", contributor: "Eric Lannemajou"}
+];
 all_photos[31] = [
 {filename:    path + "32_Emoticons.jpg", contributor: "Simon Sablowski"},
 {filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
