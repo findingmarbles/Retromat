@@ -32,7 +32,7 @@ Or send a photo illustrating an activity (see above for contact details).
 
 ## Translate
 
-Besides the English original, there's a Spanish, French, and German version.
+Besides the English original, there's a Spanish, French, German and Dutch version.
 Our team of awesome translators:
 
 * Thomas Wallet and Pedro Ángel Serrano - Spanish
@@ -83,7 +83,7 @@ Then open index_cn.html in a browser.
 (Ah, the file "activities_cn.php" also has to exist or it won't work. Fortunately it
 doesn't have to be translated ;)
 
-To test your translatation of the "activities_*.php"-file you need a browser with JS enabled
+To test your translation of the "activities_*.php"-file you need a browser with JS enabled
 and either also PHP on the console or you save a local copy of index.html
 of the live Retromat version and replace activities in the code of that local copy.
 
