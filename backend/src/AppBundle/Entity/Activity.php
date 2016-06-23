@@ -38,14 +38,18 @@ class Activity
     /**
      * @var int
      *
-     * @ORM\Column(name="phase", type="smallint")
+     * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
+     *
+     * @ORM\Column(name="`phase`", type="smallint")
      */
     private $phase;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
+     *
+     * @ORM\Column(name="`name`", type="string", length=255)
      */
     private $name;
 
@@ -59,7 +63,9 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="desc", type="text")
+     * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
+     *
+     * @ORM\Column(name="`desc`", type="text")
      */
     private $desc;
 
