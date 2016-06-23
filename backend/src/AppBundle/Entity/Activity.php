@@ -15,14 +15,18 @@ class Activity
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * Internal id used by the Doctine ORM.
+     *
+     * @ORM\Column(name="doctrine_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $doctrineId;
 
     /**
      * @var int
+     *
+     * Retromat activity id which the original retromat uses both internally and publicly.
      *
      * @ORM\Column(name="retromat_id", type="smallint", unique=true)
      */
@@ -97,16 +101,6 @@ class Activity
      */
     private $suitable;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set retromatId
@@ -347,5 +341,26 @@ class Activity
     {
         return $this->suitable;
     }
-}
 
+    /**
+     * Get doctrineId
+     *
+     * @return integer
+     */
+    public function getDoctrineId()
+    {
+        return $this->doctrineId;
+    }
+
+    /**
+     * Get doctrineId
+     *
+     * CRUD generator needs this.
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->getDoctrineId();
+    }
+}
