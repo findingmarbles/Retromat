@@ -92,7 +92,7 @@ class ActivityController extends Controller
             $em->persist($activity);
             $em->flush();
 
-            return $this->redirectToRoute('activity_edit', array('id' => $activity->getId()));
+            return $this->redirectToRoute('activity_show', array('id' => $activity->getId()));
         }
 
         return $this->render('activity/edit.html.twig', array(
