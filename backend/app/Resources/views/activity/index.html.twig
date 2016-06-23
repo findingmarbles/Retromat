@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Activity list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Doctrineid</th>
+                <th>Retromatid</th>
+                <th>Language</th>
+                <th>Phase</th>
+                <th>Name</th>
+                <th>Summary</th>
+                <th>Desc</th>
+                <th>Duration</th>
+                <th>Source</th>
+                <th>More</th>
+                <th>Suitable</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for activity in activities %}
+            <tr>
+                <td><a href="{{ path('activity_show', { 'id': activity.doctrineId }) }}">{{ activity.doctrineId }}</a></td>
+                <td>{{ activity.retromatId }}</td>
+                <td>{{ activity.language }}</td>
+                <td>{{ activity.phase }}</td>
+                <td>{{ activity.name }}</td>
+                <td>{{ activity.summary }}</td>
+                <td>{{ activity.desc }}</td>
+                <td>{{ activity.duration }}</td>
+                <td>{{ activity.source }}</td>
+                <td>{{ activity.more }}</td>
+                <td>{{ activity.suitable }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('activity_show', { 'id': activity.doctrineId }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('activity_edit', { 'id': activity.doctrineId }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('activity_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

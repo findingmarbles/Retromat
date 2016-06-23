@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Activity</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Doctrineid</th>
+                <td>{{ activity.doctrineId }}</td>
+            </tr>
+            <tr>
+                <th>Retromatid</th>
+                <td>{{ activity.retromatId }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ activity.language }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ activity.phase }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ activity.name }}</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>{{ activity.summary }}</td>
+            </tr>
+            <tr>
+                <th>Desc</th>
+                <td>{{ activity.desc }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ activity.duration }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ activity.source }}</td>
+            </tr>
+            <tr>
+                <th>More</th>
+                <td>{{ activity.more }}</td>
+            </tr>
+            <tr>
+                <th>Suitable</th>
+                <td>{{ activity.suitable }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('activity_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('activity_edit', { 'id': activity.doctrineId }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
