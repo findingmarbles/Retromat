@@ -6,12 +6,19 @@ use AppBundle\Importer\Activity\OriginalRetromatActivityImporter;
 
 class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
 {
-    public function testExtractActivityString()
+    /**
+     * @var OriginalRetromatActivityImporter
+     */
+    private $importer;
+
+    public function setUp ()
     {
         $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
+        $this->importer = new OriginalRetromatActivityImporter($activityFileName);
+    }
 
-        $importer = new OriginalRetromatActivityImporter($activityFileName);
-
+    public function testExtractActivityString()
+    {
         $expected = <<<'HTML'
 phase:     0,
 name:      "ESVP",
@@ -31,7 +38,7 @@ source:  source_agileRetrospectives,
 duration:  "5-10 numberPeople",
 suitable:   "iteration, release, project, immature"
 HTML;
-        $this->assertEquals($expected, $importer->extractActivityString(0));
+        $this->assertEquals($expected, $this->importer->extractActivityString(0));
 
         $expected = <<<'HTML'
 phase:     0,
@@ -41,6 +48,6 @@ desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshi
 Each participant marks their mood on the sheet.",
 source:  source_agileRetrospectives,
 HTML;
-        $this->assertEquals($expected, $importer->extractActivityString(1));
+        $this->assertEquals($expected, $this->importer->extractActivityString(1));
     }
 }
