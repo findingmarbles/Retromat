@@ -50,4 +50,41 @@ source:  source_agileRetrospectives,
 HTML;
         $this->assertEquals($expected, $this->importer->extractActivityBlock(1));
     }
+
+    public function testExtractActivityPhaseMissing() {
+        $activityBlock = <<<'HTML'
+name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
+summary:   "Ask one question that each participant answers in turn",
+HTML;
+        $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
+        $this->importer->extractActivityPhase($activityBlock);
+    }
+
+
+        public function testExtractActivityPhaseNotFirstInBlock() {
+            $activityBlock = <<<'HTML'
+name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
+phase:     0,
+summary:   "Ask one question that each participant answers in turn",
+HTML;
+            $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
+            $this->importer->extractActivityPhase($activityBlock);
+        }
+
+    public function testExtractActivityPhase()
+    {
+        $activityBlock = <<<'HTML'
+phase:     3,
+name:      "foo",
+summary:   "bar",
+HTML;
+        $this->assertEquals(3, $this->importer->extractActivityPhase($activityBlock));
+
+        $activityBlock = <<<'HTML'
+phase:     0,
+name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
+summary:   "Ask one question that each participant answers in turn",
+HTML;
+        $this->assertEquals(0, $this->importer->extractActivityPhase($activityBlock));
+    }
 }
