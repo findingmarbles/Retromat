@@ -11,7 +11,7 @@ class OriginalRetromatActivityImporter
         $this->activities = file_get_contents($fileName);
     }
 
-    public function extractActivityString($id)
+    public function extractActivityBlock($id)
     {
         $startMarker = "{\n";
         $endMarker = "\n};";
@@ -20,6 +20,6 @@ class OriginalRetromatActivityImporter
         $start = strpos($this->activities, $startMarker, $blockStart) + strlen($startMarker);
         $end = strpos($this->activities, $endMarker, $start);
 
-        return substr($this->activities, $start, $end - $start);
+        return substr($this->activities, $start, $end-$start);
     }
 }

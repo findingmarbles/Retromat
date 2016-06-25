@@ -17,7 +17,7 @@ class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
         $this->importer = new OriginalRetromatActivityImporter($activityFileName);
     }
 
-    public function testExtractActivityString()
+    public function testExtractActivityBlock()
     {
         $expected = <<<'HTML'
 phase:     0,
@@ -38,7 +38,7 @@ source:  source_agileRetrospectives,
 duration:  "5-10 numberPeople",
 suitable:   "iteration, release, project, immature"
 HTML;
-        $this->assertEquals($expected, $this->importer->extractActivityString(0));
+        $this->assertEquals($expected, $this->importer->extractActivityBlock(0));
 
         $expected = <<<'HTML'
 phase:     0,
@@ -48,6 +48,6 @@ desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshi
 Each participant marks their mood on the sheet.",
 source:  source_agileRetrospectives,
 HTML;
-        $this->assertEquals($expected, $this->importer->extractActivityString(1));
+        $this->assertEquals($expected, $this->importer->extractActivityBlock(1));
     }
 }
