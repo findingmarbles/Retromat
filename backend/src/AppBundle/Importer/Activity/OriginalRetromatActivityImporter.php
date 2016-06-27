@@ -22,7 +22,7 @@ class OriginalRetromatActivityImporter
         $start = strpos($this->activities, $startMarker, $blockStart) + strlen($startMarker);
         $end = strpos($this->activities, $endMarker, $start);
 
-        return substr($this->activities, $start, $end-$start);
+        return substr($this->activities, $start, $end - $start);
     }
 
     public function extractActivityPhase($activityBlock)
