@@ -88,6 +88,15 @@ HTML;
         $this->assertEquals(0, $this->importer->extractActivityPhase($activityBlock));
     }
 
+    public function testExtractActivityPhaseWhenPhaseHasJSComment()
+    {
+        $activityBlock = <<<'HTML'
+phase:     4, // 5 geht auch
+name:      "SaMoLo (More of, Same of, Less of)",
+HTML;
+        $this->assertEquals(4, $this->importer->extractActivityPhase($activityBlock));
+    }
+
     public function testExtractActivityName()
     {
         $activityBlock = <<<'HTML'
