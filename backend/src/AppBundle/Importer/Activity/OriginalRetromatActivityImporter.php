@@ -27,12 +27,13 @@ class OriginalRetromatActivityImporter
 
     public function extractActivityPhase($activityBlock)
     {
-        if (0 === strpos($activityBlock, 'phase:')) {
-            $line0 = explode('\n', $activityBlock)[0];
-            $start = strpos($line0, 'phase:') + strlen('phase:');
-            $end = strpos($line0, ',', $start);
+        $line = explode("\n", $activityBlock)[0];
 
-            return intval(trim(substr($line0, $start, $end-$start)));
+        if (0 === strpos($line, 'phase:')) {
+            $start = strpos($line, 'phase:') + strlen('phase:');
+            $end = strpos($line, ',', $start);
+
+            return intval(trim(substr($line, $start, $end-$start)));
         } else {
             throw new ActivitySyntaxException('For simplicity, "phase:" is expected at the beginning block.');
         }
@@ -40,14 +41,14 @@ class OriginalRetromatActivityImporter
 
     public function extractActivityName($activityBlock)
     {
-        $line1 = explode("\n", $activityBlock)[1];
+        $line = explode("\n", $activityBlock)[1];
 
-        if (0 === strpos($line1, 'name:')) {
-            $startValue = strpos($line1, 'name:') + strlen('name:');
-            $start = strpos($line1, '"', $startValue) + strlen('"');
-            $end = strpos($line1, '"', $start);
+        if (0 === strpos($line, 'name:')) {
+            $startValue = strpos($line, 'name:') + strlen('name:');
+            $start = strpos($line, '"', $startValue) + strlen('"');
+            $end = strpos($line, '"', $start);
 
-            return trim(substr($line1, $start, $end-$start));
+            return trim(substr($line, $start, $end-$start));
         } else {
             throw new ActivitySyntaxException('For simplicity, "name:" is expected in line 2 of the block.');
         }
