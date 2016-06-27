@@ -33,7 +33,7 @@ class OriginalRetromatActivityImporter
         $line = explode("\n", $activityBlock)[$lineNumber];
 
         if (0 === strpos($line, $key)) {
-            $start = strpos($line, $key) + strlen($key);
+            $start = strlen($key);
             $end = strpos($line, ',', $start);
 
             return intval(trim(substr($line, $start, $end-$start)));
@@ -50,8 +50,7 @@ class OriginalRetromatActivityImporter
         $line = explode("\n", $activityBlock)[$lineNumber];
 
         if (0 === strpos($line, $key)) {
-            $startValue = strpos($line, $key) + strlen($key);
-            $start = strpos($line, '"', $startValue) + strlen('"');
+            $start = strpos($line, '"') + strlen('"');
             $end = strpos($line, '",', $start);
 
             return trim(substr($line, $start, $end-$start));
