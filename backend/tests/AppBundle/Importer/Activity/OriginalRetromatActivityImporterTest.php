@@ -87,4 +87,21 @@ summary:   "Ask one question that each participant answers in turn",
 HTML;
         $this->assertEquals(0, $this->importer->extractActivityPhase($activityBlock));
     }
+
+    public function testExtractActivityName()
+    {
+        $activityBlock = <<<'HTML'
+phase:     0,
+name:      "Check In - Amazon Review",
+HTML;
+        $this->assertEquals('Check In - Amazon Review', $this->importer->extractActivityName($activityBlock));
+    }
+    public function testExtractActivityNameWhenPhaseHasJSComment()
+    {
+        $activityBlock = <<<'HTML'
+phase:     4, // 5 geht auch
+name:      "SaMoLo (More of, Same of, Less of)",
+HTML;
+        $this->assertEquals('SaMoLo (More of, Same of, Less of)', $this->importer->extractActivityName($activityBlock));
+    }
 }

@@ -38,4 +38,18 @@ class OriginalRetromatActivityImporter
         }
     }
 
+    public function extractActivityName($activityBlock)
+    {
+        $line1 = explode("\n", $activityBlock)[1];
+
+        if (0 === strpos($line1, 'name:')) {
+            $startValue = strpos($line1, 'name:') + strlen('name:');
+            $start = strpos($line1, '"', $startValue) + strlen('"');
+            $end = strpos($line1, '"', $start);
+
+            return trim(substr($line1, $start, $end-$start));
+        } else {
+            throw new ActivitySyntaxException('For simplicity, "name:" is expected in line 2 of the block.');
+        }
+    }
 }
