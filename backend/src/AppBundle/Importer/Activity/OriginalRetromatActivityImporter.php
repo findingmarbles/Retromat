@@ -32,14 +32,14 @@ class OriginalRetromatActivityImporter
 
         $line = explode("\n", $activityBlock)[$lineNumber];
 
-        if (0 === strpos($line, $key)) {
-            $start = strlen($key);
-            $end = strpos($line, ',', $start);
-
-            return intval(trim(substr($line, $start, $end-$start)));
-        } else {
-            throw new ActivitySyntaxException('For simplicity, '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+        if (0 !== strpos($line, $key)) {
+            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
         }
+
+        $start = strlen($key);
+        $end = strpos($line, ',', $start);
+
+        return intval(trim(substr($line, $start, $end - $start)));
     }
 
     public function extractActivityName($activityBlock)
@@ -49,13 +49,13 @@ class OriginalRetromatActivityImporter
 
         $line = explode("\n", $activityBlock)[$lineNumber];
 
-        if (0 === strpos($line, $key)) {
-            $start = strpos($line, '"') + strlen('"');
-            $end = strpos($line, '",', $start);
-
-            return trim(substr($line, $start, $end-$start));
-        } else {
-            throw new ActivitySyntaxException('For simplicity, '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+        if (0 !== strpos($line, $key)) {
+            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
         }
+
+        $start = strpos($line, '"') + strlen('"');
+        $end = strpos($line, '",', $start);
+
+        return substr($line, $start, $end - $start);
     }
 }
