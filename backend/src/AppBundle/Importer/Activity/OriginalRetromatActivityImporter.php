@@ -25,6 +25,7 @@ class OriginalRetromatActivityImporter
         return substr($this->activities, $start, $end - $start);
     }
 
+    // this may later generalize into extractInteger
     public function extractActivityPhase($activityBlock)
     {
         $key = 'phase:';
@@ -42,6 +43,7 @@ class OriginalRetromatActivityImporter
         return intval(trim(substr($line, $start, $end - $start)));
     }
 
+    // this may later generalize into extractString
     public function extractActivityName($activityBlock)
     {
         $key = 'name:';
