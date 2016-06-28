@@ -60,6 +60,23 @@ class OriginalRetromatActivityImporter
 
         return substr($line, $start, $end - $start);
     }
+    
+    public function extractActivitySummary($activityBlock)
+    {
+        $key = 'summary:';
+        $lineNumber = 2;
+
+        $line = explode("\n", $activityBlock)[$lineNumber];
+
+        if (0 !== strpos($line, $key)) {
+            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+        }
+
+        $start = strpos($line, '"') + strlen('"');
+        $end = strpos($line, '",', $start);
+
+        return substr($line, $start, $end - $start);
+    }
 
     // this was introduced expecting that it may help unify extractActivityPhase and extractActivityName
     // not used yet, may need to be removed again
