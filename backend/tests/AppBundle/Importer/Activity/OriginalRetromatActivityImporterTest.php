@@ -115,16 +115,6 @@ HTML;
         $this->assertEquals('SaMoLo (More of, Same of, Less of)', $this->importer->extractActivityName($activityBlock));
     }
 
-    // this was introduced expecting that it may help unify extractActivityPhase and extractActivityName
-    // not used yet, may need to be removed again
-    public function testUnquoteIfHasQuotes()
-    {
-        $this->assertEquals('Foo', $this->importer->unquoteIfHasQuotes('Foo'));
-        $this->assertEquals('Foo"', $this->importer->unquoteIfHasQuotes('Foo"'));
-        $this->assertEquals('"Foo', $this->importer->unquoteIfHasQuotes('"Foo'));
-        $this->assertEquals('Foo', $this->importer->unquoteIfHasQuotes('"Foo"'));
-    }
-
     public function testExtractSummary()
     {
         $activityBlock = <<<'HTML'

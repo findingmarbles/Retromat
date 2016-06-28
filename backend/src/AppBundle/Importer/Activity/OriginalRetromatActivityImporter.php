@@ -73,15 +73,4 @@ class OriginalRetromatActivityImporter
 
         return substr($line, $start, $end - $start);
     }
-
-    // this was introduced expecting that it may help unify extractActivityPhase and extractActivityName
-    // not used yet, may need to be removed again
-    public function unquoteIfHasQuotes($string)
-    {
-        if (0 === strpos($string, '"') and 0 === strpos(strrev($string), '"')) {
-            return substr($string, 1, strlen($string) - 2);
-        } else {
-            return $string;
-        }
-    }
 }
