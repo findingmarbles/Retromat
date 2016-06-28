@@ -43,29 +43,25 @@ class OriginalRetromatActivityImporter
         return intval(trim(substr($line, $start, $end - $start)));
     }
 
-    // this may later generalize into extractString
     public function extractActivityName($activityBlock)
     {
-        $key = 'name:';
-        $lineNumber = 1;
-
-        $line = explode("\n", $activityBlock)[$lineNumber];
-
-        if (0 !== strpos($line, $key)) {
-            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
-        }
-
-        $start = strpos($line, '"') + strlen('"');
-        $end = strpos($line, '",', $start);
-
-        return substr($line, $start, $end - $start);
+        return $this->extractActivityStringValue($activityBlock, $key = 'name:', $lineNumber = 1);
     }
-    
+
     public function extractActivitySummary($activityBlock)
     {
-        $key = 'summary:';
-        $lineNumber = 2;
+        return $this->extractActivityStringValue($activityBlock, $key = 'summary:', $lineNumber = 2);
+    }
 
+    /**
+     * @param $activityBlock
+     * @param $lineNumber
+     * @param $key
+     * @return string
+     * @throws ActivitySyntaxException
+     */
+    private function extractActivityStringValue($activityBlock, $key, $lineNumber)
+    {
         $line = explode("\n", $activityBlock)[$lineNumber];
 
         if (0 !== strpos($line, $key)) {
