@@ -11,9 +11,9 @@ class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
      */
     private $importer;
 
-    public function setUp ()
+    public function setUp()
     {
-        $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
+        $activityFileName = __DIR__ . '/../../../../../lang/activities_en.php';
         $this->importer = new OriginalRetromatActivityImporter($activityFileName);
     }
 
@@ -51,7 +51,8 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityBlock(1));
     }
 
-    public function testExtractActivityPhaseMissing() {
+    public function testExtractActivityPhaseMissing()
+    {
         $activityBlock = <<<'HTML'
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
 summary:   "Ask one question that each participant answers in turn",
@@ -61,15 +62,16 @@ HTML;
     }
 
 
-        public function testExtractActivityPhaseNotFirstInBlock() {
-            $activityBlock = <<<'HTML'
+    public function testExtractActivityPhaseNotFirstInBlock()
+    {
+        $activityBlock = <<<'HTML'
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
 phase:     0,
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-            $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
-            $this->importer->extractActivityPhase($activityBlock);
-        }
+        $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
+        $this->importer->extractActivityPhase($activityBlock);
+    }
 
     public function testExtractActivityPhase()
     {

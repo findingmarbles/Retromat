@@ -18,7 +18,7 @@ class OriginalRetromatActivityImporter
         $startMarker = "{\n";
         $endMarker = "\n};";
 
-        $blockStart = strpos($this->activities, 'all_activities['.$id.']');
+        $blockStart = strpos($this->activities, 'all_activities[' . $id . ']');
         $start = strpos($this->activities, $startMarker, $blockStart) + strlen($startMarker);
         $end = strpos($this->activities, $endMarker, $start);
 
@@ -34,7 +34,7 @@ class OriginalRetromatActivityImporter
         $line = explode("\n", $activityBlock)[$lineNumber];
 
         if (0 !== strpos($line, $key)) {
-            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+            throw new ActivitySyntaxException('Key ' . $key . ' is expected at the beginning of line ' . $lineNumber . '.');
         }
 
         $start = strlen($key);
@@ -65,7 +65,7 @@ class OriginalRetromatActivityImporter
         $line = explode("\n", $activityBlock)[$lineNumber];
 
         if (0 !== strpos($line, $key)) {
-            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+            throw new ActivitySyntaxException('Key ' . $key . ' is expected at the beginning of line ' . $lineNumber . '.');
         }
 
         $start = strpos($line, '"') + strlen('"');
