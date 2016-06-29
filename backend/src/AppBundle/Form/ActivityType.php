@@ -37,17 +37,14 @@ class ActivityType extends AbstractType
             ->add('duration')
             ->add('source')
             ->add('more')
-            ->add('suitable')
-        ;
+            ->add('suitable');
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Activity'
-        ));
+        $resolver->setDefaults(['data_class' => 'AppBundle\Entity\Activity']);
     }
 }
