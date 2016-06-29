@@ -17,7 +17,19 @@ class ActivityType extends AbstractType
     {
         $builder
             ->add('retromatId')
-            ->add('language')
+            ->add(
+                'language',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'English' => 'en',
+                        'Deutsch' => 'de',
+                        'Español' => 'es',
+                        'Français' => 'fr',
+                        'Nederlands' => 'nl',
+                    ],
+                ]
+            )
             ->add('phase', ChoiceType::class, ['choices' => array_combine(range(1, 5), range(1, 5))])
             ->add('name')
             ->add('summary')
