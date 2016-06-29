@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +18,7 @@ class ActivityType extends AbstractType
         $builder
             ->add('retromatId')
             ->add('language')
-            ->add('phase')
+            ->add('phase', ChoiceType::class, ['choices' => array_combine(range(1, 5), range(1, 5))])
             ->add('name')
             ->add('summary')
             ->add('desc')
