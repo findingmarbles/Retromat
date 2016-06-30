@@ -72,4 +72,29 @@ class OriginalRetromatActivityImporter
         return substr($activityBlock, $start, $end - $start);
     }
 
+    public function extractActivitySource($activityBlock)
+    {
+        $key = 'source:';
+
+        $keyPosition = strpos($activityBlock, $key);
+        $endOfLine = strpos($activityBlock, "\n", $keyPosition);
+        if (false === $endOfLine) {
+            $endOfLine = strlen($activityBlock);
+        }
+
+        // identify the first non-whitespace after the key "source: "
+        for ($start = $keyPosition + strlen($key); $start <= $endOfLine; $start++) {
+            if (!ctype_space($activityBlock[$start])) {
+                break;
+            }
+        }
+
+        if (',' == $activityBlock[$endOfLine - 1]) {
+            $end = $endOfLine - 1;
+        } else {
+            $end = $endOfLine;
+        }
+
+        return substr($activityBlock, $start, $end - $start);
+    }
 }
