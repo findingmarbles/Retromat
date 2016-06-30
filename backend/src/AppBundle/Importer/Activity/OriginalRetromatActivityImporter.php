@@ -78,8 +78,18 @@ class OriginalRetromatActivityImporter
     {
         $key = 'desc:';
 
+        return $this->extractStringValue($activityBlock, $key);
+    }
+
+    /**
+     * @param $activityBlock
+     * @param $key
+     * @return string
+     */
+    public function extractStringValue($activityBlock, $key)
+    {
         $keyPosition = strpos($activityBlock, $key);
-        $start = strpos($activityBlock, '"', $keyPosition+strlen($key)) + strlen('"');
+        $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
         $end = strpos($activityBlock, '",', $start);
 
         return substr($activityBlock, $start, $end - $start);
