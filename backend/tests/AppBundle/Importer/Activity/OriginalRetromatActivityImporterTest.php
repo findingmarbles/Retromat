@@ -13,7 +13,7 @@ class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $activityFileName = __DIR__ . '/../../../../../lang/activities_en.php';
+        $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
         $this->importer = new OriginalRetromatActivityImporter($activityFileName);
     }
 
@@ -134,6 +134,9 @@ Address concerns, e.g. by writing it down and setting it - physically and mental
 Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
 source:  source_agileRetrospectives
 HTML;
-        $this->assertEquals('Ask one question that each participant answers in turn', $this->importer->extractActivitySummary($activityBlock));
+        $this->assertEquals(
+            'Ask one question that each participant answers in turn',
+            $this->importer->extractActivitySummary($activityBlock)
+        );
     }
 }
