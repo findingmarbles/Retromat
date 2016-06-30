@@ -73,4 +73,24 @@ class OriginalRetromatActivityImporter
 
         return substr($line, $start, $end - $start);
     }
+
+    public function extractActivityDescription($activityBlock)
+    {
+        $key = 'desc:';
+        $lineNumber = 3;
+
+        $line = explode("\n", $activityBlock)[$lineNumber];
+
+        if (0 !== strpos($line, $key)) {
+            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
+        }
+
+        $keyPosition = strpos($activityBlock, $key);
+
+        $start = strpos($activityBlock, '"', $keyPosition+strlen($key)) + strlen('"');
+        $end = strpos($activityBlock, '",', $start);
+
+        return substr($activityBlock, $start, $end - $start);
+    }
+
 }
