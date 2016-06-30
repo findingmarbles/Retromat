@@ -89,6 +89,7 @@ class OriginalRetromatActivityImporter
             }
         }
 
+        // if 'source:' is the last acitvity in the block, there's sometimes no comma
         if (',' == $activityBlock[$endOfLine - 1]) {
             $end = $endOfLine - 1;
         } else {
