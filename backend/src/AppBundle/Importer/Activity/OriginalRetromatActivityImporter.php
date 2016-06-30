@@ -55,9 +55,7 @@ class OriginalRetromatActivityImporter
 
     public function extractActivityDescription($activityBlock)
     {
-        $key = 'desc:';
-
-        return $this->extractStringValue($activityBlock, $key);
+        return $this->extractStringValue($activityBlock, $key = 'desc:');
     }
 
     /**
