@@ -139,4 +139,37 @@ HTML;
             $this->importer->extractActivitySummary($activityBlock)
         );
     }
+
+    public function testExtractDescription()
+    {
+        $activityBlock = <<<'HTML'
+phase:     0,
+name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
+summary:   "Ask one question that each participant answers in turn",
+desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
+Sample questions: <br>\
+<ul>\
+    <li>In one word - What do you need from this retrospective?</li>\
+Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
+    <li>In this retrospective - If you were a car, what kind would it be?</li>\
+    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
+</ul><br>\
+Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
+source:  source_agileRetrospectives
+HTML;
+
+        $expected = <<<'HTML'
+In round-robin each participant answers the same question (unless they say 'I pass'). \
+Sample questions: <br>\
+<ul>\
+    <li>In one word - What do you need from this retrospective?</li>\
+Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
+    <li>In this retrospective - If you were a car, what kind would it be?</li>\
+    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
+</ul><br>\
+Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
+HTML;
+
+        $this->assertEquals($expected, $this->importer->extractActivityDescription($activityBlock));
+    }
 }
