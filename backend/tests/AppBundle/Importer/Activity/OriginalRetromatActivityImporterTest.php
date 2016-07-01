@@ -273,4 +273,25 @@ HTML;
 
         $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
     }
+
+
+    public function testExtractSourceStringKeyCanAppearInValue()
+    {
+        $activityBlock = <<<'HTML'
+phase:     4, // 5 geht auch
+name:      "SaMoLo (More of, Same of, Less of)",
+summary:   "Get course corrections on what you do as a facilitator",
+desc:      "Use the source: This is important for Jedi knights.",
+source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
+more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
+duration:  "5-10",
+suitable: "iteration, release, project"
+HTML;
+
+        $expected = <<<'HTML'
+"<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>"
+HTML;
+
+        $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
+    }
 }
