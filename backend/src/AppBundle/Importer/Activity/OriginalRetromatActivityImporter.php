@@ -65,7 +65,7 @@ class OriginalRetromatActivityImporter
      */
     private function extractStringValue($activityBlock, $key)
     {
-        $keyPosition = strpos($activityBlock, $key);
+        $keyPosition = strpos($activityBlock, "\n".$key)+1;
         $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
         $end = strpos($activityBlock, '",', $start);
 
