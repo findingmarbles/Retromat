@@ -140,6 +140,19 @@ HTML;
         );
     }
 
+    public function testExtractSummaryKeyCanAppearInValue()
+    {
+        $activityBlock = <<<'HTML'
+phase:     0,
+name:      "Magic sprint summary: Quick Question",
+summary:   "Ask one question that each participant answers in turn",
+HTML;
+        $this->assertEquals(
+            'Ask one question that each participant answers in turn',
+            $this->importer->extractActivitySummary($activityBlock)
+        );
+    }
+
     public function testExtractDescription()
     {
         $activityBlock = <<<'HTML'
@@ -275,7 +288,7 @@ HTML;
     }
 
 
-    public function testExtractSourceStringKeyCanAppearInValue()
+    public function testExtractSourceKeyCanAppearInValue()
     {
         $activityBlock = <<<'HTML'
 phase:     4, // 5 geht auch
