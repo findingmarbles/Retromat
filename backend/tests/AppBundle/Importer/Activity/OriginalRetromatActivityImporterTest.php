@@ -359,4 +359,25 @@ HTML;
 
         $this->assertEquals($expected, $this->importer->extractActivityMore($activityBlock));
     }
+
+    public function testExtractSuitable()
+    {
+        $activityBlock = <<<'HTML'
+phase:     2,
+name:      "5 Whys",
+summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
+desc:      "Divide the participants into small groups (<= 4 people) and give \
+each group one of the top identified issues. Instructions for the group:\
+<ul>\
+    <li>One person asks the others 'Why did that happen?' repeatedly to find the root cause or a chain of events</li>\
+    <li>Record the root causes (often the answer to the 5th 'Why?')</li>\
+</ul>\
+Let the groups share their findings.",
+source:    source_agileRetrospectives,
+duration:  "15-20",
+suitable: "iteration, release, project, root_cause"
+HTML;
+
+        $this->assertEquals('iteration, release, project, root_cause', $this->importer->extractActivitySuitable($activityBlock));
+    }
 }
