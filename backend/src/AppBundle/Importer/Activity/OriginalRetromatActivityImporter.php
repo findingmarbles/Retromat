@@ -76,7 +76,7 @@ class OriginalRetromatActivityImporter
     {
         $key = 'source:';
 
-        $keyPosition = strpos($activityBlock, $key);
+        $keyPosition = strpos($activityBlock, "\n".$key)+1;
         $endOfLine = strpos($activityBlock, "\n", $keyPosition);
         if (false === $endOfLine) {
             $endOfLine = strlen($activityBlock);
