@@ -326,4 +326,37 @@ HTML;
 
         $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
     }
+
+    public function testExtractMore()
+    {
+        $activityBlock = <<<'HTML'
+phase:     2,
+name:      "Brainstorming / Filtering",
+summary:   "Generate lots of ideas and filter them against your criteria",
+desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas \
+which will be filtered <em>after</em> the brainstorming.\
+<ul>\
+    <li>Let people write down their ideas for 5-10 minutes</li>\
+    <li>Go around the table repeatedly always asking one idea each, until all ideas are on the flip chart</li>\
+    <li>Now ask for filters (e.g. cost, time investment, uniqueness of concept, brand appropriateness, ...). \
+Let the group choose 4.</li>\
+    <li>Apply each filter and mark ideas that pass all 4.</li>\
+    <li>Which ideas will the group carry forward? Does someone feel strongly about one of the ideas?\
+Otherwise use majority vote. </li>\
+</ul>\
+The selected ideas enter Phase 4.",
+source:    source_agileRetrospectives,
+more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
+    Nine Ways To Be A Great Brainstorm Lead</a>",
+duration:  "40-60",
+suitable: "iteration, release, project, introverts"
+HTML;
+
+        $expected = <<<'HTML'
+<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
+    Nine Ways To Be A Great Brainstorm Lead</a>
+HTML;
+
+        $this->assertEquals($expected, $this->importer->extractActivityMore($activityBlock));
+    }
 }
