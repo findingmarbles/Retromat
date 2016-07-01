@@ -186,6 +186,25 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityDescription($activityBlock));
     }
 
+
+    public function testExtractDuration()
+    {
+        $activityBlock = <<<'HTML'
+phase:     4,
+name:      "Appreciations",
+summary:   "Let team members appreciate each other and end positively",
+desc:      "Start by giving a sincere appreciation of one of the participants. \
+It can be anything they contributed: help to the team or you, a solved problem, ...\
+Then invite others and wait for someone to work up the nerve. Close, when no one \
+has talked for a minute.",
+source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
+duration:  "5-30 groupsize",
+suitable: "iteration, release, project"
+HTML;
+
+        $this->assertEquals('5-30 groupsize', $this->importer->extractActivityDuration($activityBlock));
+    }
+
     public function testExtractSourcePlaceholderLastLine()
     {
         $activityBlock = <<<'HTML'
