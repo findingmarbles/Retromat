@@ -12,7 +12,7 @@ use AppBundle\Form\ActivityType;
 /**
  * Activity controller.
  *
- * @Route("/activity")
+ * @Route("/inside/activity")
  */
 class ActivityController extends Controller
 {
