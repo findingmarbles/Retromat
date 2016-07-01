@@ -68,6 +68,11 @@ class OriginalRetromatActivityImporter
         return $this->extractStringValue($activityBlock, $key = 'more:');
     }
 
+    public function extractActivitySuitable($activityBlock)
+    {
+        return $this->extractStringValue($activityBlock, $key = 'suitable:');
+    }
+
     /**
      * @param $activityBlock
      * @param $key
@@ -77,7 +82,7 @@ class OriginalRetromatActivityImporter
     {
         $keyPosition = strpos($activityBlock, "\n".$key)+1;
         $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
-        $end = strpos($activityBlock, '",', $start);
+        $end = strpos($activityBlock, '"', $start);
 
         return substr($activityBlock, $start, $end - $start);
     }
