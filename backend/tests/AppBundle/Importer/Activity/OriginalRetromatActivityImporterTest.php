@@ -17,6 +17,39 @@ class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
         $this->importer = new OriginalRetromatActivityImporter($activityFileName);
     }
 
+    public function testExtractActivity()
+    {
+        $activityBlock = <<<'HTML'
+phase:     3,
+name:      "Take a Stand - Line Dance",
+summary:   "Get a sense of everyone's position and reach consensus",
+desc:      "When the team can't decide between two options, create a big scale (i.e. a long line) \
+on the floor with masking tape. Mark one end as option A) and the other as option B). \
+Team members position themselves on the scale according to their preference for either option. \
+Now tweak the options until one option has a clear majority.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
+duration:  "5-10 per decision",
+suitable: "iteration, release, project"
+HTML;
+
+        $expected = [
+            'phase' => 3,
+            'name' => "Take a Stand - Line Dance",
+            'summary' => "Get a sense of everyone's position and reach consensus",
+            'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) \
+on the floor with masking tape. Mark one end as option A) and the other as option B). \
+Team members position themselves on the scale according to their preference for either option. \
+Now tweak the options until one option has a clear majority.",
+            'source' => 'source_skycoach',
+            'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
+            'duration' => "5-10 per decision",
+            'suitable' => "iteration, release, project",
+        ];
+
+        $this->assertEquals($expected, $this->importer->extractActivity($activityBlock));
+    }
+
     public function testExtractActivityBlock()
     {
         $expected = <<<'HTML'
@@ -60,7 +93,6 @@ HTML;
         $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
         $this->importer->extractActivityPhase($activityBlock);
     }
-
 
     public function testExtractActivityPhaseNotFirstInBlock()
     {
@@ -186,7 +218,6 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityDescription($activityBlock));
     }
 
-
     public function testExtractDuration()
     {
         $activityBlock = <<<'HTML'
@@ -218,6 +249,7 @@ HTML;
 
         $this->assertEquals('source_unknown', $this->importer->extractActivitySource($activityBlock));
     }
+
     public function testExtractSourcePlaceholderLastLineNoComma()
     {
         $activityBlock = <<<'HTML'
@@ -306,7 +338,6 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
     }
 
-
     public function testExtractSourceKeyCanAppearInValue()
     {
         $activityBlock = <<<'HTML'
@@ -378,6 +409,9 @@ duration:  "15-20",
 suitable: "iteration, release, project, root_cause"
 HTML;
 
-        $this->assertEquals('iteration, release, project, root_cause', $this->importer->extractActivitySuitable($activityBlock));
+        $this->assertEquals(
+            'iteration, release, project, root_cause',
+            $this->importer->extractActivitySuitable($activityBlock)
+        );
     }
 }
