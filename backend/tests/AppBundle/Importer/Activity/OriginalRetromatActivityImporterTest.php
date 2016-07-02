@@ -89,16 +89,21 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityBlock(1));
     }
 
+    /**
+     * @expectedException \AppBundle\Importer\Activity\Exception\ActivitySyntaxException
+     */
     public function testExtractActivityPhaseMissing()
     {
         $activityBlock = <<<'HTML'
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-        $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
         $this->importer->extractActivityPhase($activityBlock);
     }
 
+    /**
+     * @expectedException \AppBundle\Importer\Activity\Exception\ActivitySyntaxException
+     */
     public function testExtractActivityPhaseNotFirstInBlock()
     {
         $activityBlock = <<<'HTML'
@@ -106,7 +111,6 @@ name:      "Check In - Quick Question", // TODO This can be expanded to at least
 phase:     0,
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-        $this->expectException('AppBundle\Importer\Activity\Exception\ActivitySyntaxException');
         $this->importer->extractActivityPhase($activityBlock);
     }
 
