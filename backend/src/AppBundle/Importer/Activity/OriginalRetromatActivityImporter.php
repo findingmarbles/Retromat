@@ -55,20 +55,6 @@ class OriginalRetromatActivityImporter
         return $this->extractStringValue($activityBlock, $key = 'suitable:');
     }
 
-    /**
-     * @param $activityBlock
-     * @param $key
-     * @return string
-     */
-    private function extractStringValue($activityBlock, $key)
-    {
-        $keyPosition = strpos($activityBlock, "\n".$key)+1;
-        $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
-        $end = strpos($activityBlock, '"', $start);
-
-        return substr($activityBlock, $start, $end - $start);
-    }
-
     public function extractActivityPhase($activityBlock)
     {
         $key = 'phase:';
@@ -87,7 +73,7 @@ class OriginalRetromatActivityImporter
     {
         $key = 'source:';
 
-        $keyPosition = strpos($activityBlock, "\n".$key)+1;
+        $keyPosition = strpos($activityBlock, "\n".$key) + 1;
         $endOfLine = strpos($activityBlock, "\n", $keyPosition);
         if (false === $endOfLine) {
             $endOfLine = strlen($activityBlock);
@@ -106,6 +92,20 @@ class OriginalRetromatActivityImporter
         } else {
             $end = $endOfLine;
         }
+
+        return substr($activityBlock, $start, $end - $start);
+    }
+
+    /**
+     * @param $activityBlock
+     * @param $key
+     * @return string
+     */
+    private function extractStringValue($activityBlock, $key)
+    {
+        $keyPosition = strpos($activityBlock, "\n".$key) + 1;
+        $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
+        $end = strpos($activityBlock, '"', $start);
 
         return substr($activityBlock, $start, $end - $start);
     }
