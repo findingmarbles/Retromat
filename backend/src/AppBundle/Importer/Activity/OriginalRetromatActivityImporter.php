@@ -13,6 +13,22 @@ class OriginalRetromatActivityImporter
         $this->activities = file_get_contents($fileName);
     }
 
+    public function extractActivity($activityBlock)
+    {
+        $activity = [
+            'phase' => $this->extractActivityPhase($activityBlock),
+            'name' => $this->extractActivityName($activityBlock),
+            'summary' => $this->extractActivitySummary($activityBlock),
+            'desc' => $this->extractActivityDescription($activityBlock),
+            'source' => $this->extractActivitySource($activityBlock),
+            'more' => $this->extractActivityMore($activityBlock),
+            'duration' => $this->extractActivityDuration($activityBlock),
+            'suitable' => $this->extractActivitySuitable($activityBlock),
+        ];
+
+        return $activity;
+    }
+
     public function extractActivityBlock($id)
     {
         $startMarker = "{\n";
