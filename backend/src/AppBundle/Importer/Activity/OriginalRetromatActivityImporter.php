@@ -25,24 +25,6 @@ class OriginalRetromatActivityImporter
         return substr($this->activities, $start, $end - $start);
     }
 
-    // this may later generalize into extractInteger
-    public function extractActivityPhase($activityBlock)
-    {
-        $key = 'phase:';
-        $lineNumber = 0;
-
-        $line = explode("\n", $activityBlock)[$lineNumber];
-
-        if (0 !== strpos($line, $key)) {
-            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of line '.$lineNumber.'.');
-        }
-
-        $start = strlen($key);
-        $end = strpos($line, ',', $start);
-
-        return intval(trim(substr($line, $start, $end - $start)));
-    }
-
     public function extractActivityName($activityBlock)
     {
         return $this->extractStringValue($activityBlock, $key = 'name:');
@@ -85,6 +67,20 @@ class OriginalRetromatActivityImporter
         $end = strpos($activityBlock, '"', $start);
 
         return substr($activityBlock, $start, $end - $start);
+    }
+
+    public function extractActivityPhase($activityBlock)
+    {
+        $key = 'phase:';
+
+        if (0 !== strpos($activityBlock, $key)) {
+            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of the activity block.');
+        }
+
+        $start = strlen($key);
+        $end = strpos($activityBlock, ',', $start);
+
+        return intval(trim(substr($activityBlock, $start, $end - $start)));
     }
 
     public function extractActivitySource($activityBlock)
