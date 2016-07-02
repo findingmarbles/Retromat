@@ -12,6 +12,17 @@ class OriginalRetromatActivityImporter
     {
         $this->activities = file_get_contents($fileName);
     }
+    
+    public function highestActivityNumber()
+    {
+        $key = 'all_activities[';
+        $keyPosition = strrpos($this->activities, "\n".$key) + 1;
+
+        $start = $keyPosition + strlen($key);
+        $end = strpos($this->activities, ']', $start);
+
+        return intval(trim(substr($this->activities, $start, $end - $start)));
+    }
 
     public function extractActivity($activityBlock)
     {
