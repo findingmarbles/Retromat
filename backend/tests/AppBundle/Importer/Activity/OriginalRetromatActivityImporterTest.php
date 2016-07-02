@@ -17,6 +17,11 @@ class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
         $this->importer = new OriginalRetromatActivityImporter($activityFileName);
     }
 
+    public function testHighestActivityNumber()
+    {
+        $this->assertEquals(122, $this->importer->highestActivityNumber());
+    }
+
     public function testExtractActivity()
     {
         $activityBlock = <<<'HTML'
