@@ -191,6 +191,11 @@ HTML;
         );
     }
 
+    public function testExtractActivitySummaryMissing()
+    {
+        $this->assertFalse($this->importer->extractActivitySummary(''));
+    }
+
     public function testExtractDescription()
     {
         $activityBlock = <<<'HTML'
@@ -224,6 +229,11 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityDescription($activityBlock));
     }
 
+    public function testExtractActivityDescriptionMissing()
+    {
+        $this->assertFalse($this->importer->extractActivityDescription(''));
+    }
+
     public function testExtractDuration()
     {
         $activityBlock = <<<'HTML'
@@ -240,6 +250,11 @@ suitable: "iteration, release, project"
 HTML;
 
         $this->assertEquals('5-30 groupsize', $this->importer->extractActivityDuration($activityBlock));
+    }
+
+    public function testExtractActivityDurationMissing()
+    {
+        $this->assertFalse($this->importer->extractActivityDuration(''));
     }
 
     public function testExtractSourcePlaceholderLastLine()
