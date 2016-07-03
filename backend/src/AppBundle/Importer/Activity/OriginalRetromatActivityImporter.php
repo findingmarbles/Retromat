@@ -12,7 +12,7 @@ class OriginalRetromatActivityImporter
     {
         $this->activities = file_get_contents($fileName);
     }
-    
+
     public function highestActivityNumber()
     {
         $key = 'all_activities[';
@@ -86,14 +86,14 @@ class OriginalRetromatActivityImporter
     {
         $key = 'phase:';
 
-        if (0 !== strpos($activityBlock, $key)) {
-            throw new ActivitySyntaxException('Key '.$key.' is expected at the beginning of the activity block.');
+        if (0 === strpos($activityBlock, $key)) {
+            $start = strlen($key);
+            $end = strpos($activityBlock, ',', $start);
+
+            return intval(trim(substr($activityBlock, $start, $end - $start)));
+        } else {
+            return false;
         }
-
-        $start = strlen($key);
-        $end = strpos($activityBlock, ',', $start);
-
-        return intval(trim(substr($activityBlock, $start, $end - $start)));
     }
 
     public function extractActivitySource($activityBlock)
