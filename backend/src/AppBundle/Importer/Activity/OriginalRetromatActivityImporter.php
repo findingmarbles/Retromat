@@ -129,18 +129,14 @@ class OriginalRetromatActivityImporter
     private function extractStringValue($activityBlock, $key)
     {
         $keyPosition = strpos($activityBlock, "\n".$key) + 1;
-        if (false !== $keyPosition) {
-            $offset = $keyPosition + strlen($key);
-            if ($offset < strlen($activityBlock)) {
-                $start = strpos($activityBlock, '"', $offset) + strlen('"');
-                $end = strpos($activityBlock, '"', $start);
+        $offset = $keyPosition + strlen($key);
+        if ((false !== $keyPosition) and ($offset < strlen($activityBlock))) {
+            $start = strpos($activityBlock, '"', $offset) + strlen('"');
+            $end = strpos($activityBlock, '"', $start);
 
-                return substr($activityBlock, $start, $end - $start);
-            } else {
-                return false;
-            }
-        } else {
-            return false;
+            return substr($activityBlock, $start, $end - $start);
         }
+
+        return false;
     }
 }
