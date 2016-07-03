@@ -450,4 +450,12 @@ HTML;
     {
         $this->assertFalse($this->importer->extractActivitySuitable(''));
     }
+
+    public function testExtractAllActivities()
+    {
+        $activity = $this->importer->extractAllActivities();
+
+        $this->assertEquals('Positive and True', $activity[121]['name']);
+        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]['summary']);
+    }
 }
