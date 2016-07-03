@@ -379,6 +379,12 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
     }
 
+
+    public function testExtractActivitySourceMissing()
+    {
+        $this->assertFalse($this->importer->extractActivitySource(''));
+    }
+
     public function testExtractMore()
     {
         $activityBlock = <<<'HTML'
