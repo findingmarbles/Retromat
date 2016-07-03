@@ -99,26 +99,31 @@ class OriginalRetromatActivityImporter
         $key = 'source:';
 
         $keyPosition = strpos($activityBlock, "\n".$key) + 1;
-        $endOfLine = strpos($activityBlock, "\n", $keyPosition);
-        if (false === $endOfLine) {
-            $endOfLine = strlen($activityBlock);
-        }
-
-        // identify the first non-whitespace after the key "source: "
-        for ($start = $keyPosition + strlen($key); $start <= $endOfLine; $start++) {
-            if (!ctype_space($activityBlock[$start])) {
-                break;
+        $offset = $keyPosition + strlen($key);
+        if ((false !== $keyPosition) and ($offset < strlen($activityBlock))) {
+            $endOfLine = strpos($activityBlock, "\n", $keyPosition);
+            if (false === $endOfLine) {
+                $endOfLine = strlen($activityBlock);
             }
+
+            // identify the first non-whitespace after the key "source: "
+            for ($start = $offset; $start <= $endOfLine; $start++) {
+                if (!ctype_space($activityBlock[$start])) {
+                    break;
+                }
+            }
+
+            // if 'source:' is the last acitvity in the block, there's sometimes no comma
+            if (',' == $activityBlock[$endOfLine - 1]) {
+                $end = $endOfLine - 1;
+            } else {
+                $end = $endOfLine;
+            }
+
+            return substr($activityBlock, $start, $end - $start);
         }
 
-        // if 'source:' is the last acitvity in the block, there's sometimes no comma
-        if (',' == $activityBlock[$endOfLine - 1]) {
-            $end = $endOfLine - 1;
-        } else {
-            $end = $endOfLine;
-        }
-
-        return substr($activityBlock, $start, $end - $start);
+        return false;
     }
 
     /**
