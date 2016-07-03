@@ -141,6 +141,11 @@ HTML;
         $this->assertEquals('Check In - Amazon Review', $this->importer->extractActivityName($activityBlock));
     }
 
+    public function testExtractActivityNameMissing()
+    {
+        $this->assertFalse($this->importer->extractActivityName(''));
+    }
+
     public function testExtractActivityNameWhenPhaseHasJSComment()
     {
         $activityBlock = <<<'HTML'
