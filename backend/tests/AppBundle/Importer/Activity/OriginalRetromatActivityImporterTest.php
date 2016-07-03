@@ -379,7 +379,6 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
     }
 
-
     public function testExtractActivitySourceMissing()
     {
         $this->assertFalse($this->importer->extractActivitySource(''));
@@ -418,6 +417,11 @@ HTML;
         $this->assertEquals($expected, $this->importer->extractActivityMore($activityBlock));
     }
 
+    public function testExtractActivityMoreMissing()
+    {
+        $this->assertFalse($this->importer->extractActivityMore(''));
+    }
+
     public function testExtractSuitable()
     {
         $activityBlock = <<<'HTML'
@@ -440,5 +444,10 @@ HTML;
             'iteration, release, project, root_cause',
             $this->importer->extractActivitySuitable($activityBlock)
         );
+    }
+
+    public function testExtractActivitySuitableMissing()
+    {
+        $this->assertFalse($this->importer->extractActivitySuitable(''));
     }
 }
