@@ -2,7 +2,6 @@
 
 namespace AppBundle\Importer\Activity;
 
-
 class OriginalRetromatActivityImporter
 {
     private $activities;
@@ -130,9 +129,18 @@ class OriginalRetromatActivityImporter
     private function extractStringValue($activityBlock, $key)
     {
         $keyPosition = strpos($activityBlock, "\n".$key) + 1;
-        $start = strpos($activityBlock, '"', $keyPosition + strlen($key)) + strlen('"');
-        $end = strpos($activityBlock, '"', $start);
+        if (false !== $keyPosition) {
+            $offset = $keyPosition + strlen($key);
+            if ($offset < strlen($activityBlock)) {
+                $start = strpos($activityBlock, '"', $offset) + strlen('"');
+                $end = strpos($activityBlock, '"', $start);
 
-        return substr($activityBlock, $start, $end - $start);
+                return substr($activityBlock, $start, $end - $start);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }
