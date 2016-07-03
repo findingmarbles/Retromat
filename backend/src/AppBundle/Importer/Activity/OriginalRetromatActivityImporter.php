@@ -2,7 +2,6 @@
 
 namespace AppBundle\Importer\Activity;
 
-use AppBundle\Importer\Activity\Exception\ActivitySyntaxException;
 
 class OriginalRetromatActivityImporter
 {
