@@ -2,7 +2,7 @@
 
 namespace AppBundle\Importer\Activity;
 
-class OriginalRetromatActivityImporter
+class ActivityReader
 {
     private $activities;
 

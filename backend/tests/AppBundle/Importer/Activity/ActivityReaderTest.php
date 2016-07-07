@@ -2,19 +2,19 @@
 
 namespace tests\AppBundle\Importer\Activity;
 
-use AppBundle\Importer\Activity\OriginalRetromatActivityImporter;
+use AppBundle\Importer\Activity\ActivityReader;
 
-class OriginalRetromatActivityImporterTest extends \PHPUnit_Framework_TestCase
+class ActivityReaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var OriginalRetromatActivityImporter
+     * @var ActivityReader
      */
     private $importer;
 
     public function setUp()
     {
         $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
-        $this->importer = new OriginalRetromatActivityImporter($activityFileName);
+        $this->importer = new ActivityReader($activityFileName);
     }
 
     public function testHighestActivityNumber()
