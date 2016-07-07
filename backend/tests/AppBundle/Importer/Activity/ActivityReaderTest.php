@@ -9,17 +9,17 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
     /**
      * @var ActivityReader
      */
-    private $importer;
+    private $reader;
 
     public function setUp()
     {
         $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
-        $this->importer = new ActivityReader($activityFileName);
+        $this->reader = new ActivityReader($activityFileName);
     }
 
     public function testHighestActivityNumber()
     {
-        $this->assertEquals(122, $this->importer->highestActivityNumber());
+        $this->assertEquals(122, $this->reader->highestActivityNumber());
     }
 
     public function testExtractActivity()
@@ -52,7 +52,7 @@ Now tweak the options until one option has a clear majority.",
             'suitable' => "iteration, release, project",
         ];
 
-        $this->assertEquals($expected, $this->importer->extractActivity($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivity($activityBlock));
     }
 
     public function testExtractActivityBlock()
@@ -76,7 +76,7 @@ source:  source_agileRetrospectives,
 duration:  "5-10 numberPeople",
 suitable:   "iteration, release, project, immature"
 HTML;
-        $this->assertEquals($expected, $this->importer->extractActivityBlock(0));
+        $this->assertEquals($expected, $this->reader->extractActivityBlock(0));
 
         $expected = <<<'HTML'
 phase:     0,
@@ -86,12 +86,12 @@ desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshi
 Each participant marks their mood on the sheet.",
 source:  source_agileRetrospectives,
 HTML;
-        $this->assertEquals($expected, $this->importer->extractActivityBlock(1));
+        $this->assertEquals($expected, $this->reader->extractActivityBlock(1));
     }
 
     public function testExtractActivityPhaseMissing()
     {
-        $this->assertFalse($this->importer->extractActivityPhase(''));
+        $this->assertFalse($this->reader->extractActivityPhase(''));
     }
 
     public function testExtractActivityPhaseNotFirstInBlock()
@@ -101,9 +101,9 @@ name:      "Check In - Quick Question", // TODO This can be expanded to at least
 phase:     0,
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-        $this->importer->extractActivityPhase($activityBlock);
+        $this->reader->extractActivityPhase($activityBlock);
 
-        $this->assertFalse($this->importer->extractActivityPhase($activityBlock));
+        $this->assertFalse($this->reader->extractActivityPhase($activityBlock));
     }
 
     public function testExtractActivityPhase()
@@ -113,14 +113,14 @@ phase:     3,
 name:      "foo",
 summary:   "bar",
 HTML;
-        $this->assertEquals(3, $this->importer->extractActivityPhase($activityBlock));
+        $this->assertEquals(3, $this->reader->extractActivityPhase($activityBlock));
 
         $activityBlock = <<<'HTML'
 phase:     0,
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-        $this->assertEquals(0, $this->importer->extractActivityPhase($activityBlock));
+        $this->assertEquals(0, $this->reader->extractActivityPhase($activityBlock));
     }
 
     public function testExtractActivityPhaseWhenPhaseHasJSComment()
@@ -129,7 +129,7 @@ HTML;
 phase:     4, // 5 geht auch
 name:      "SaMoLo (More of, Same of, Less of)",
 HTML;
-        $this->assertEquals(4, $this->importer->extractActivityPhase($activityBlock));
+        $this->assertEquals(4, $this->reader->extractActivityPhase($activityBlock));
     }
 
     public function testExtractActivityName()
@@ -138,12 +138,12 @@ HTML;
 phase:     0,
 name:      "Check In - Amazon Review",
 HTML;
-        $this->assertEquals('Check In - Amazon Review', $this->importer->extractActivityName($activityBlock));
+        $this->assertEquals('Check In - Amazon Review', $this->reader->extractActivityName($activityBlock));
     }
 
     public function testExtractActivityNameMissing()
     {
-        $this->assertFalse($this->importer->extractActivityName(''));
+        $this->assertFalse($this->reader->extractActivityName(''));
     }
 
     public function testExtractActivityNameWhenPhaseHasJSComment()
@@ -152,7 +152,7 @@ HTML;
 phase:     4, // 5 geht auch
 name:      "SaMoLo (More of, Same of, Less of)",
 HTML;
-        $this->assertEquals('SaMoLo (More of, Same of, Less of)', $this->importer->extractActivityName($activityBlock));
+        $this->assertEquals('SaMoLo (More of, Same of, Less of)', $this->reader->extractActivityName($activityBlock));
     }
 
     public function testExtractSummary()
@@ -174,7 +174,7 @@ source:  source_agileRetrospectives
 HTML;
         $this->assertEquals(
             'Ask one question that each participant answers in turn',
-            $this->importer->extractActivitySummary($activityBlock)
+            $this->reader->extractActivitySummary($activityBlock)
         );
     }
 
@@ -187,13 +187,13 @@ summary:   "Ask one question that each participant answers in turn",
 HTML;
         $this->assertEquals(
             'Ask one question that each participant answers in turn',
-            $this->importer->extractActivitySummary($activityBlock)
+            $this->reader->extractActivitySummary($activityBlock)
         );
     }
 
     public function testExtractActivitySummaryMissing()
     {
-        $this->assertFalse($this->importer->extractActivitySummary(''));
+        $this->assertFalse($this->reader->extractActivitySummary(''));
     }
 
     public function testExtractDescription()
@@ -226,12 +226,12 @@ Address concerns, e.g. by writing it down and setting it - physically and mental
 Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivityDescription($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivityDescription($activityBlock));
     }
 
     public function testExtractActivityDescriptionMissing()
     {
-        $this->assertFalse($this->importer->extractActivityDescription(''));
+        $this->assertFalse($this->reader->extractActivityDescription(''));
     }
 
     public function testExtractDuration()
@@ -249,12 +249,12 @@ duration:  "5-30 groupsize",
 suitable: "iteration, release, project"
 HTML;
 
-        $this->assertEquals('5-30 groupsize', $this->importer->extractActivityDuration($activityBlock));
+        $this->assertEquals('5-30 groupsize', $this->reader->extractActivityDuration($activityBlock));
     }
 
     public function testExtractActivityDurationMissing()
     {
-        $this->assertFalse($this->importer->extractActivityDuration(''));
+        $this->assertFalse($this->reader->extractActivityDuration(''));
     }
 
     public function testExtractSourcePlaceholderLastLine()
@@ -268,7 +268,7 @@ Each participant marks their mood on the sheet.",
 source:  source_unknown,
 HTML;
 
-        $this->assertEquals('source_unknown', $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals('source_unknown', $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractSourcePlaceholderLastLineNoComma()
@@ -289,7 +289,7 @@ Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
 source:  source_agileRetrospectives
 HTML;
 
-        $this->assertEquals('source_agileRetrospectives', $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals('source_agileRetrospectives', $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractSourceStringAndPlaceholder()
@@ -311,7 +311,7 @@ HTML;
 "ALE 2011, " + source_findingMarbles
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractSourcePlaceholderAndString()
@@ -333,7 +333,7 @@ HTML;
 source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'"
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractSourceString()
@@ -356,7 +356,7 @@ HTML;
 "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>"
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractSourceKeyCanAppearInValue()
@@ -376,12 +376,12 @@ HTML;
 "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>"
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivitySource($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivitySource($activityBlock));
     }
 
     public function testExtractActivitySourceMissing()
     {
-        $this->assertFalse($this->importer->extractActivitySource(''));
+        $this->assertFalse($this->reader->extractActivitySource(''));
     }
 
     public function testExtractMore()
@@ -414,12 +414,12 @@ HTML;
     Nine Ways To Be A Great Brainstorm Lead</a>
 HTML;
 
-        $this->assertEquals($expected, $this->importer->extractActivityMore($activityBlock));
+        $this->assertEquals($expected, $this->reader->extractActivityMore($activityBlock));
     }
 
     public function testExtractActivityMoreMissing()
     {
-        $this->assertFalse($this->importer->extractActivityMore(''));
+        $this->assertFalse($this->reader->extractActivityMore(''));
     }
 
     public function testExtractSuitable()
@@ -442,18 +442,18 @@ HTML;
 
         $this->assertEquals(
             'iteration, release, project, root_cause',
-            $this->importer->extractActivitySuitable($activityBlock)
+            $this->reader->extractActivitySuitable($activityBlock)
         );
     }
 
     public function testExtractActivitySuitableMissing()
     {
-        $this->assertFalse($this->importer->extractActivitySuitable(''));
+        $this->assertFalse($this->reader->extractActivitySuitable(''));
     }
 
     public function testExtractAllActivities()
     {
-        $activity = $this->importer->extractAllActivities();
+        $activity = $this->reader->extractAllActivities();
 
         $this->assertEquals('Positive and True', $activity[121]['name']);
         $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]['summary']);
