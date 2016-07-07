@@ -9,7 +9,6 @@ class ArrayToObjectMapperIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     public function testFillActivityFromArray()
     {
-        $mapper = new ArrayToObjectMapper();
         $inputArray = [
             'phase' => 1,
             'name' => 'Find your Focus Principle',
@@ -41,15 +40,12 @@ rather choose the second position, why?',
             'suitable' => 'iteration, project, release',
         ];
 
-
-        $activity = new Activity();
-        $mapper->fillObjectFromArray($inputArray, $activity);
-
         $expected = new Activity();
         $expected->setPhase(1);
         $expected->setName('Find your Focus Principle');
         $expected->setSummary('Discuss the 12 agile principles and pick one to work on');
-        $expected->setDesc('Print the <a href=\'http://www.agilemanifesto.org/principles.html\'>principles of the Agile Manifesto</a> \
+        $expected->setDesc(
+            'Print the <a href=\'http://www.agilemanifesto.org/principles.html\'>principles of the Agile Manifesto</a> \
 onto cards, one principle \
 per card. If the group is large, split it and provide each smaller group with \
 their own set of the principles. \
@@ -69,12 +65,16 @@ Now consider the card on top: This is presumeably the most needed and most urgen
 principle you should work on. How does the team feel about it? Does everyone still \
 agree? What are the reasons there is the biggest demand for change here? Should you \
 compare to the second or third most important issue again? If someone would now \
-rather choose the second position, why?');
+rather choose the second position, why?'
+        );
         $expected->setSource('"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"');
         $expected->setMore('Find your Focus Principle');
         $expected->setDuration('long');
         $expected->setSuitable('iteration, project, release');
 
+        $activity = new Activity();
+        $mapper = new ArrayToObjectMapper();
+        $mapper->fillObjectFromArray($inputArray, $activity);
 
         $this->assertEquals($expected, $activity);
     }
