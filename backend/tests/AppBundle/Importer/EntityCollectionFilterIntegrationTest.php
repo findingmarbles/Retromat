@@ -34,6 +34,52 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
         $this->assertTrue($this->filter->isValid($this->createFullActivity()));
     }
 
+    public function testSkipAndLogInvalidEmptyCollection()
+    {
+        $this->assertEquals([], $this->filter->skipAndLogInvalid([]));
+    }
+
+    public function testSkipAndLogInvalidSingleEmptyIsSkipped()
+    {
+        $collection = [
+            new Activity(),
+        ];
+
+        $this->assertEquals([], $this->filter->skipAndLogInvalid($collection));
+    }
+
+    public function testSkipAndLogInvalidMultipeEmptyAreSkipped()
+    {
+        $collection = [
+            new Activity(),
+            new Activity(),
+        ];
+
+        $this->assertEquals([], $this->filter->skipAndLogInvalid($collection));
+    }
+
+    public function testSkipAndLogInvalidSingleFullIsAccepted()
+    {
+        $collection = [
+            $this->createFullActivity(),
+        ];
+
+        $this->assertEquals($collection, $this->filter->skipAndLogInvalid($collection));
+    }
+
+    public function testSkipAndLogInvalidMixOnlyFullIsAccepted()
+    {
+        $collection = [
+            new Activity(),
+            new Activity(),
+            $this->createFullActivity(),
+            new Activity(),
+            new Activity(),
+        ];
+
+        $this->assertEquals([$this->createFullActivity()], $this->filter->skipAndLogInvalid($collection));
+    }
+
     /**
      * @return Activity
      */
