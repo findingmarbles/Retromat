@@ -18,10 +18,16 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
      */
     private $filter;
 
+    /**
+     * @var StringLogger $logger
+     */
+    private $logger;
+
     public function setUp()
     {
         $this->validator = $this->getContainer()->get('validator');
-        $this->filter = new EntityCollectionFilter($this->validator);
+        $this->logger = new StringLogger();
+        $this->filter = new EntityCollectionFilter($this->validator, $this->logger);
     }
 
     public function testIsValidActivityEmpty()
@@ -80,6 +86,37 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
         $this->assertEquals([$this->createFullActivity()], $this->filter->skipAndLogInvalid($collection));
     }
 
+
+    public function testSkipAndLogInvalidValidationsAreLogged()
+    {
+        $collection = [
+            $this->createFullActivity()->setPhase(-1),
+        ];
+        $this->assertEquals([], $this->filter->skipAndLogInvalid($collection));
+        $log = $this->logger->getLog();
+        $violations = substr($log, strrpos($log, 'validations:'));
+        $this->assertContains('phase', $violations);
+        $this->assertNotContains('summary', $violations);
+
+        $collection = [
+            $this->createFullActivity()->setSummary(''),
+        ];
+        $this->assertEquals([], $this->filter->skipAndLogInvalid($collection));
+        $log = $this->logger->getLog();
+        $violations = substr($log, strrpos($log, 'validations:'));
+        $this->assertContains('summary', $violations);
+        $this->assertNotContains('phase', $violations);
+
+        $collection = [
+            $this->createFullActivity()->setPhase(-1)->setSummary(''),
+        ];
+        $this->assertEquals([], $this->filter->skipAndLogInvalid($collection));
+        $log = $this->logger->getLog();
+        $violations = substr($log, strrpos($log, 'validations:'));
+        $this->assertContains('summary', $violations);
+        $this->assertContains('phase', $violations);
+    }
+
     /**
      * @return Activity
      */
@@ -120,5 +157,26 @@ rather choose the second position, why?'
         $activity->setSuitable('iteration, project, release');
 
         return $activity;
+    }
+}
+
+class StringLogger
+{
+    /**
+     * @var string $log
+     */
+    private $log;
+
+    public function log($level, $message)
+    {
+        $this->log .= $level . ': ' . $message;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLog()
+    {
+        return $this->log;
     }
 }

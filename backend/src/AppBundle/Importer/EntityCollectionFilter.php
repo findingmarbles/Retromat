@@ -11,9 +11,12 @@ class EntityCollectionFilter
      */
     private $validator;
 
-    public function __construct(ValidatorInterface $validator)
+    private $logger;
+
+    public function __construct(ValidatorInterface $validator, $logger)
     {
         $this->validator = $validator;
+        $this->logger = $logger;
     }
 
     public function skipAndLogInvalid(array $collectionInput)
@@ -23,6 +26,8 @@ class EntityCollectionFilter
             $violations = $this->validator->validate($entity);
             if (0 === count($violations)) {
                 $collectionOutput[] = $entity;
+            } else {
+                $this->logger->log('debug', "This entity:\n" . print_r($entity, true) . " has these validations:\n " . (string)$violations . "\n");
             }
         }
 
