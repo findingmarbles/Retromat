@@ -31,6 +31,14 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
 
     public function testIsValidActivityFull()
     {
+        $this->assertTrue($this->filter->isValid($this->createFullActivity()));
+    }
+
+    /**
+     * @return Activity
+     */
+    public function createFullActivity()
+    {
         $activity = new Activity();
         $activity->setRetromatId(122);
         $activity->setLanguage('en');
@@ -65,6 +73,6 @@ rather choose the second position, why?'
         $activity->setDuration('long');
         $activity->setSuitable('iteration, project, release');
 
-        $this->assertTrue($this->filter->isValid($activity));
+        return $activity;
     }
 }
