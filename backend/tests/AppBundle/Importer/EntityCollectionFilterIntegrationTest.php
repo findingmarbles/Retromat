@@ -13,24 +13,24 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
      */
     private $validator;
 
+    /**
+     * @var EntityCollectionFilter $filter
+     */
+    private $filter;
+
     public function setUp()
     {
         $this->validator = $this->getContainer()->get('validator');
+        $this->filter = new EntityCollectionFilter($this->validator);
     }
 
     public function testIsValidActivityEmpty()
     {
-        $filter = new EntityCollectionFilter($this->validator);
-        
-        $activity = new Activity();
-
-        $this->assertFalse($filter->isValid($activity));
+        $this->assertFalse($this->filter->isValid(new Activity()));
     }
 
     public function testIsValidActivityFull()
     {
-        $filter = new EntityCollectionFilter($this->validator);
-
         $activity = new Activity();
         $activity->setRetromatId(122);
         $activity->setLanguage('en');
@@ -65,6 +65,6 @@ rather choose the second position, why?'
         $activity->setDuration('long');
         $activity->setSuitable('iteration, project, release');
 
-        $this->assertTrue($filter->isValid($activity));
+        $this->assertTrue($this->filter->isValid($activity));
     }
 }
