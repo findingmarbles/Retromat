@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Activity
@@ -13,10 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Activity
 {
     /**
-     * @var int
-     *
      * Internal id used by the Doctine ORM.
      *
+     * @var int
      * @ORM\Column(name="doctrine_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,83 +24,87 @@ class Activity
     private $doctrineId;
 
     /**
-     * @var int
-     *
      * Retromat activity id which the original retromat uses both internally and publicly.
      *
+     * @var int
+     * @Assert\Type("integer")
+     * @Assert\NotBlank()
      * @ORM\Column(name="retromat_id", type="smallint", unique=true)
      */
     private $retromatId;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 2, max = 2)
      * @ORM\Column(name="language", type="string", length=2)
      */
     private $language;
 
     /**
      * @var int
-     *
+     * @Assert\Type("integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(min = 1, max = 5)
      * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
-     *
      * @ORM\Column(name="`phase`", type="smallint")
      */
     private $phase;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
      * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
-     *
      * @ORM\Column(name="`name`", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
      * @ORM\Column(name="summary", type="string", length=255)
      */
     private $summary;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
+     * @Assert\NotBlank()
      * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
-     *
      * @ORM\Column(name="`desc`", type="text")
      */
     private $desc;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
      * @ORM\Column(name="duration", type="string", length=255, nullable=true)
      */
     private $duration;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
      * @ORM\Column(name="source", type="text", nullable=true)
      */
     private $source;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
      * @ORM\Column(name="more", type="text", nullable=true)
      */
     private $more;
 
     /**
      * @var string
-     *
+     * @Assert\Type("string")
      * @ORM\Column(name="suitable", type="string", length=255, nullable=true)
      */
     private $suitable;
-
 
     /**
      * Set retromatId
