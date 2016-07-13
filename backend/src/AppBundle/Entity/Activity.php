@@ -368,4 +368,9 @@ class Activity
     {
         return $this->getDoctrineId();
     }
+
+    public function __toString()
+    {
+        return (string)$this->retromatId;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Importer;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class EntityCollectionFilter
@@ -13,7 +14,7 @@ class EntityCollectionFilter
 
     private $logger;
 
-    public function __construct(ValidatorInterface $validator, $logger)
+    public function __construct(ValidatorInterface $validator, LoggerInterface $logger)
     {
         $this->validator = $validator;
         $this->logger = $logger;
@@ -27,7 +28,7 @@ class EntityCollectionFilter
             if (0 === count($violations)) {
                 $collectionOutput[] = $entity;
             } else {
-                $this->logger->log('debug', "This entity:\n" . print_r($entity, true) . " has these validations:\n " . (string)$violations . "\n");
+                $this->logInvalid($entity, $violations);
             }
         }
 
@@ -39,5 +40,19 @@ class EntityCollectionFilter
         $violations = $this->validator->validate($entity);
 
         return 0 === count($violations);
+    }
+
+    public function logInvalid($entity, $violations)
+    {
+        if (method_exists($entity, '__toString')) {
+            $entityAsString = (string)$entity;
+        } else {
+            $entityAsString = print_r($entity, true);
+        }
+        
+        $this->logger->log(
+            'debug',
+            "This entity:\n".$entityAsString." has these validations:\n ".(string)$violations."\n"
+        );
     }
 }

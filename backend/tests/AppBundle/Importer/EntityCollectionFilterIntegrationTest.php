@@ -4,6 +4,7 @@ namespace AppBundle\Importer;
 
 use AppBundle\Entity\Activity;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class EntityCollectionFilterIntegrationTest extends WebTestCase
@@ -86,7 +87,6 @@ class EntityCollectionFilterIntegrationTest extends WebTestCase
         $this->assertEquals([$this->createFullActivity()], $this->filter->skipAndLogInvalid($collection));
     }
 
-
     public function testSkipAndLogInvalidValidationsAreLogged()
     {
         $collection = [
@@ -160,23 +160,52 @@ rather choose the second position, why?'
     }
 }
 
-class StringLogger
+class StringLogger implements LoggerInterface
 {
     /**
      * @var string $log
      */
     private $log;
 
-    public function log($level, $message)
-    {
-        $this->log .= $level . ': ' . $message;
-    }
-
-    /**
-     * @return string
-     */
     public function getLog()
     {
         return $this->log;
+    }
+
+    public function log($level, $message, array $context = array())
+    {
+        $this->log .= $level.': '.$message;
+    }
+
+    public function emergency($message, array $context = array())
+    {
+    }
+
+    public function alert($message, array $context = array())
+    {
+    }
+
+    public function critical($message, array $context = array())
+    {
+    }
+
+    public function error($message, array $context = array())
+    {
+    }
+
+    public function warning($message, array $context = array())
+    {
+    }
+
+    public function notice($message, array $context = array())
+    {
+    }
+
+    public function info($message, array $context = array())
+    {
+    }
+
+    public function debug($message, array $context = array())
+    {
     }
 }
