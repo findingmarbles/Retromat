@@ -114,7 +114,7 @@ class ActivityReader
 
             return intval(trim(substr($activityBlock, $start, $end - $start)));
         } else {
-            return false;
+            return null;
         }
     }
 
@@ -147,7 +147,7 @@ class ActivityReader
             return substr($activityBlock, $start, $end - $start);
         }
 
-        return false;
+        return null;
     }
 
     /**
@@ -157,8 +157,8 @@ class ActivityReader
      */
     private function extractStringValue($activityBlock, $key)
     {
-        $keyPosition = strpos($activityBlock, "\n".$key) + 1;
-        $offset = $keyPosition + strlen($key);
+        $keyPosition = strpos($activityBlock, "\n".$key);
+        $offset = $keyPosition + 1 + strlen($key); // +1 to compensate for linebreak ("\n") that was prepended
         if ((false !== $keyPosition) and ($offset < strlen($activityBlock))) {
             $start = strpos($activityBlock, '"', $offset) + strlen('"');
             $end = strpos($activityBlock, '"', $start);
@@ -166,6 +166,6 @@ class ActivityReader
             return substr($activityBlock, $start, $end - $start);
         }
 
-        return false;
+        return null;
     }
 }

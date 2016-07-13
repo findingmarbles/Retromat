@@ -39,7 +39,7 @@ Now tweak the options until one option has a clear majority.",
 
     public function testExtractActivityPhaseMissing()
     {
-        $this->assertFalse($this->reader->extractActivityPhase(''));
+        $this->assertNull($this->reader->extractActivityPhase(''));
     }
 
     public function testExtractActivityPhaseNotFirstInBlock()
@@ -49,9 +49,8 @@ name:      "Check In - Quick Question", // TODO This can be expanded to at least
 phase:     0,
 summary:   "Ask one question that each participant answers in turn",
 HTML;
-        $this->reader->extractActivityPhase($activityBlock);
 
-        $this->assertFalse($this->reader->extractActivityPhase($activityBlock));
+        $this->assertNull($this->reader->extractActivityPhase($activityBlock));
     }
 
     public function testExtractActivityPhase()
@@ -91,7 +90,7 @@ HTML;
 
     public function testExtractActivityNameMissing()
     {
-        $this->assertFalse($this->reader->extractActivityName(''));
+        $this->assertNull($this->reader->extractActivityName(''));
     }
 
     public function testExtractActivityNameWhenPhaseHasJSComment()
@@ -141,7 +140,7 @@ HTML;
 
     public function testExtractActivitySummaryMissing()
     {
-        $this->assertFalse($this->reader->extractActivitySummary(''));
+        $this->assertNull($this->reader->extractActivitySummary(''));
     }
 
     public function testExtractDescription()
@@ -179,7 +178,7 @@ HTML;
 
     public function testExtractActivityDescriptionMissing()
     {
-        $this->assertFalse($this->reader->extractActivityDescription(''));
+        $this->assertNull($this->reader->extractActivityDescription(''));
     }
 
     public function testExtractDuration()
@@ -202,7 +201,7 @@ HTML;
 
     public function testExtractActivityDurationMissing()
     {
-        $this->assertFalse($this->reader->extractActivityDuration(''));
+        $this->assertNull($this->reader->extractActivityDuration(''));
     }
 
     public function testExtractSourcePlaceholderLastLine()
@@ -329,7 +328,7 @@ HTML;
 
     public function testExtractActivitySourceMissing()
     {
-        $this->assertFalse($this->reader->extractActivitySource(''));
+        $this->assertNull($this->reader->extractActivitySource(''));
     }
 
     public function testExtractMore()
@@ -367,7 +366,27 @@ HTML;
 
     public function testExtractActivityMoreMissing()
     {
-        $this->assertFalse($this->reader->extractActivityMore(''));
+        $activityBlock = <<<'HTML'
+phase:     0,
+name:      "ESVP",
+summary:   "How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?",
+desc:      "Prepare a flipchart with areas for E, S, V, and P. Explain the concept: <br>\
+<ul>\
+    <li>Explorer: Eager to dive in and research what did and didn't work and how to improve.</li>\
+    <li>Shopper: Positive attitude. Happy if one good things comes out.</li>\
+    <li>Vacationer: Reluctant to actively take part but the retro beats the regular work.</li>\
+    <li>Prisoner: Only attend because they (feel they) must.</li>\
+</ul>\
+Take a poll (anonymously on slips of paper). Count out the answers and keep track on the flipchart \
+for all to see. If trust is low, deliberately destroy the votes afterwards to ensure privacy. Ask \
+what people make of the data. If there's a majority of Vacationers or Prisoners consider using the \
+retro to discuss this finding.",
+source:  source_agileRetrospectives,
+duration:  "5-10 numberPeople",
+suitable:   "iteration, release, project, immature"
+HTML;
+
+        $this->assertNull($this->reader->extractActivityMore($activityBlock));
     }
 
     public function testExtractSuitable()
@@ -396,7 +415,7 @@ HTML;
 
     public function testExtractActivitySuitableMissing()
     {
-        $this->assertFalse($this->reader->extractActivitySuitable(''));
+        $this->assertNull($this->reader->extractActivitySuitable(''));
     }
 
     public function testHighestActivityNumber()
@@ -442,7 +461,7 @@ agree? What are the reasons there is the biggest demand for change here? Should 
 compare to the second or third most important issue again? If someone would now \
 rather choose the second position, why?',
             'source' => '"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"',
-            'more' => 'Find your Focus Principle',
+            'more' => false,
             'duration' => 'long',
             'suitable' => 'iteration, project, release',
         ];
