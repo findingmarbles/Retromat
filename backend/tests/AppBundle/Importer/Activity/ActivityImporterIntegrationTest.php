@@ -1,0 +1,30 @@
+<?php
+
+namespace tests\AppBundle\Importer\Activity;
+
+use AppBundle\Importer\Activity\ActivityImporter;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
+use AppBundle\Importer\Activity\ActivityReader;
+use AppBundle\Importer\ArrayToObjectMapper;
+use AppBundle\Importer\EntityCollectionFilter;
+use AppBundle\Importer\StringLogger;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
+class ActivityImporterIntegrationTest extends WebTestCase
+{
+    public function testImport()
+    {
+        $reader = new ActivityReader($activityFileName = __DIR__.'/../../../../../lang/activities_en.php');
+
+        $mapper = new ArrayToObjectMapper();
+
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        $logger = new StringLogger();
+        $filter = new EntityCollectionFilter($validator, $logger);
+
+        $activityImporter = new ActivityImporter($reader, $mapper, $filter);
+        $activity = $activityImporter->import();
+        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', end($activity)->getSummary());
+    }
+}
