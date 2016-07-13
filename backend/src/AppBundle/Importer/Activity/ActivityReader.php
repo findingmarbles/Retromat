@@ -50,7 +50,7 @@ class ActivityReader
         return $activity;
     }
 
-    public function extractActivityBlock($id)
+    private function extractActivityBlock($id)
     {
         $startMarker = "{\n";
         $endMarker = "\n};";
