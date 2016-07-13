@@ -24,7 +24,8 @@ class Activity
     private $doctrineId;
 
     /**
-     * Retromat activity id which the original retromat uses both internally and publicly.
+     * $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+     * this differs by -1 from the internal ID in JS code, e.g. in lang/activities_en.php: all_activities[122]
      *
      * @var int
      * @Assert\Type("integer")

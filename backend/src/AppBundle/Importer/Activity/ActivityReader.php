@@ -15,7 +15,7 @@ class ActivityReader
     {
         $activity = [];
 
-        for ($i=0; $i <= $this->highestActivityNumber(); $i++)
+        for ($i=1; $i <= $this->highestRetromatId(); $i++)
         {
             $activity[$i] = $this->extractActivity($i);
         }
@@ -23,7 +23,7 @@ class ActivityReader
         return $activity;
     }
 
-    public function highestActivityNumber()
+    public function highestRetromatId()
     {
         $key = 'all_activities[';
         $keyPosition = strrpos($this->activities, "\n".$key) + 1;
@@ -31,12 +31,17 @@ class ActivityReader
         $start = $keyPosition + strlen($key);
         $end = strpos($this->activities, ']', $start);
 
-        return intval(trim(substr($this->activities, $start, $end - $start)));
+        // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+        // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
+        $highestJsArrayId = intval(trim(substr($this->activities, $start, $end - $start)));
+        $highestRetromatId = $highestJsArrayId +1;
+
+        return $highestRetromatId;
     }
 
-    public function extractActivity($id)
+    public function extractActivity($retromatId)
     {
-        $activityBlock = $this->extractActivityBlock($id);
+        $activityBlock = $this->extractActivityBlock($retromatId);
 
         $activity = [
             'phase' => $this->extractActivityPhase($activityBlock),
@@ -52,12 +57,16 @@ class ActivityReader
         return $activity;
     }
 
-    private function extractActivityBlock($id)
+    private function extractActivityBlock($retromatId)
     {
+        // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+        // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
+        $jsArrayId = $retromatId -1;
+
         $startMarker = "{\n";
         $endMarker = "\n};";
 
-        $blockStart = strpos($this->activities, 'all_activities['.$id.']');
+        $blockStart = strpos($this->activities, 'all_activities['.$jsArrayId.']');
         $start = strpos($this->activities, $startMarker, $blockStart) + strlen($startMarker);
         $end = strpos($this->activities, $endMarker, $start);
 

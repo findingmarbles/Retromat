@@ -17,11 +17,6 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
         $this->reader = new ActivityReader($activityFileName);
     }
 
-    public function testHighestActivityNumber()
-    {
-        $this->assertEquals(122, $this->reader->highestActivityNumber());
-    }
-
     public function testExtractActivity()
     {
         $expected = [
@@ -38,7 +33,7 @@ Now tweak the options until one option has a clear majority.",
             'suitable' => "iteration, release, project",
         ];
 
-        $this->assertEquals($expected, $this->reader->extractActivity(47));
+        $this->assertEquals($expected, $this->reader->extractActivity(48));
     }
 
     public function testExtractActivityPhaseMissing()
@@ -403,12 +398,21 @@ HTML;
         $this->assertFalse($this->reader->extractActivitySuitable(''));
     }
 
+    public function testHighestActivityNumber()
+    {
+        $activityFileName = __DIR__.'/TestData/activities_en_reduced_example.php';
+        $reader = new ActivityReader($activityFileName);
+
+        $this->assertEquals(123, $reader->highestRetromatId());
+    }
+
     public function testExtractAllActivities()
     {
         $activity = $this->reader->extractAllActivities();
 
-        $this->assertEquals('Positive and True', $activity[121]['name']);
-        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]['summary']);
+        $this->assertEquals('ESVP', $activity[1]['name']);
+        $this->assertEquals('Positive and True', $activity[122]['name']);
+        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[123]['summary']);
 
         $expected = [
             'phase' => 1,
@@ -440,6 +444,6 @@ rather choose the second position, why?',
             'duration' => 'long',
             'suitable' => 'iteration, project, release',
         ];
-        $this->assertEquals($expected, $activity[122]);
+        $this->assertEquals($expected, $activity[123]);
     }
 }
