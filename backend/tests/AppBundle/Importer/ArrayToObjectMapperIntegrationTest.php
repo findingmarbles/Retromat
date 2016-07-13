@@ -10,6 +10,8 @@ class ArrayToObjectMapperIntegrationTest extends \PHPUnit_Framework_TestCase
     public function testFillActivityFromArray()
     {
         $inputArray = [
+            'retromatId' => 123,
+            'language' => 'en',
             'phase' => 1,
             'name' => 'Find your Focus Principle',
             'summary' => 'Discuss the 12 agile principles and pick one to work on',
@@ -40,11 +42,13 @@ rather choose the second position, why?',
             'suitable' => 'iteration, project, release',
         ];
 
-        $expected = new Activity();
-        $expected->setPhase(1);
-        $expected->setName('Find your Focus Principle');
-        $expected->setSummary('Discuss the 12 agile principles and pick one to work on');
-        $expected->setDesc(
+        $entity = new Activity();
+        $entity->setRetromatId(123);
+        $entity->setLanguage('en');
+        $entity->setPhase(1);
+        $entity->setName('Find your Focus Principle');
+        $entity->setSummary('Discuss the 12 agile principles and pick one to work on');
+        $entity->setDesc(
             'Print the <a href=\'http://www.agilemanifesto.org/principles.html\'>principles of the Agile Manifesto</a> \
 onto cards, one principle \
 per card. If the group is large, split it and provide each smaller group with \
@@ -67,15 +71,15 @@ agree? What are the reasons there is the biggest demand for change here? Should 
 compare to the second or third most important issue again? If someone would now \
 rather choose the second position, why?'
         );
-        $expected->setSource('"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"');
-        $expected->setMore('Find your Focus Principle');
-        $expected->setDuration('long');
-        $expected->setSuitable('iteration, project, release');
+        $entity->setSource('"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"');
+        $entity->setMore('Find your Focus Principle');
+        $entity->setDuration('long');
+        $entity->setSuitable('iteration, project, release');
 
         $activity = new Activity();
         $mapper = new ArrayToObjectMapper();
         $mapper->fillObjectFromArray($inputArray, $activity);
 
-        $this->assertEquals($expected, $activity);
+        $this->assertEquals($activity, $entity);
     }
 }
