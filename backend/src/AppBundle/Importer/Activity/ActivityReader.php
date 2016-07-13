@@ -17,7 +17,7 @@ class ActivityReader
 
         for ($i=0; $i <= $this->highestActivityNumber(); $i++)
         {
-            $activity[$i] = $this->extractActivity($this->extractActivityBlock($i));
+            $activity[$i] = $this->extractActivity($i);
         }
 
         return $activity;
@@ -34,8 +34,10 @@ class ActivityReader
         return intval(trim(substr($this->activities, $start, $end - $start)));
     }
 
-    public function extractActivity($activityBlock)
+    public function extractActivity($id)
     {
+        $activityBlock = $this->extractActivityBlock($id);
+
         $activity = [
             'phase' => $this->extractActivityPhase($activityBlock),
             'name' => $this->extractActivityName($activityBlock),
