@@ -44,6 +44,7 @@ class ActivityReader
         $activityBlock = $this->extractActivityBlock($retromatId);
 
         $activity = [
+            'retromatId' => $retromatId,
             'phase' => $this->extractActivityPhase($activityBlock),
             'name' => $this->extractActivityName($activityBlock),
             'summary' => $this->extractActivitySummary($activityBlock),

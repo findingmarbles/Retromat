@@ -20,6 +20,7 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
     public function testExtractActivity()
     {
         $expected = [
+            'retromatId' => 48,
             'phase' => 3,
             'name' => "Take a Stand - Line Dance",
             'summary' => "Get a sense of everyone's position and reach consensus",
@@ -415,6 +416,7 @@ HTML;
         $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[123]['summary']);
 
         $expected = [
+            'retromatId' => 123,
             'phase' => 1,
             'name' => 'Find your Focus Principle',
             'summary' => 'Discuss the 12 agile principles and pick one to work on',
