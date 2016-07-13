@@ -37,7 +37,7 @@ agree? What are the reasons there is the biggest demand for change here? Should 
 compare to the second or third most important issue again? If someone would now \
 rather choose the second position, why?',
             'source' => '"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"',
-            'more' => 'Find your Focus Principle',
+            'more' => 'EMPTY_IN_ORIGINAL_ACTIVITY',
             'duration' => 'long',
             'suitable' => 'iteration, project, release',
         ];
@@ -72,7 +72,7 @@ compare to the second or third most important issue again? If someone would now 
 rather choose the second position, why?'
         );
         $entity->setSource('"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"');
-        $entity->setMore('Find your Focus Principle');
+        $entity->setMore('EMPTY_IN_ORIGINAL_ACTIVITY');
         $entity->setDuration('long');
         $entity->setSuitable('iteration, project, release');
 
