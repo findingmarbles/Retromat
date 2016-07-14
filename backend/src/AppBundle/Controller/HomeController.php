@@ -10,18 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="homepage_slash")
-     * @Route("/index.html", name="homepage_index")
+     * @Route("/", defaults={"_locale": "en"}, name="home_slash")
+     * @Route("/index.html", defaults={"_locale": "en"}, name="home_default")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl"}, name="home")
      */
-    public function indexAction(Request $request)
-    {
-        return $this->render('home/index_en.html.twig');
-    }
-
-    /**
-     * @Route("/index_{_locale}.html", requirements={"_locale": "de|fr|es|nl"}, name="homepage_languages")
-     */
-    public function indexDeAction(Request $request)
+    public function homeAction(Request $request)
     {
         return $this->render('home/index_'.$request->getLocale().'.html.twig');
     }
