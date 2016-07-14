@@ -16,6 +16,11 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
-        return $this->render('home/index_'.$request->getLocale().'.html.twig');
+        $activities = false;
+        if ('3-87-113-13-16' == $request->query->get('id')) {
+            $activities = true;
+        };
+
+        return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
     }
 }
