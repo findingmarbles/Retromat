@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -30,14 +31,14 @@ class ActivityType extends AbstractType
                     ],
                 ]
             )
-            ->add('phase', ChoiceType::class, ['choices' => array_combine(range(1, 5), range(1, 5))])
-            ->add('name')
-            ->add('summary')
-            ->add('desc')
-            ->add('duration')
-            ->add('source')
-            ->add('more')
-            ->add('suitable');
+            ->add('phase', ChoiceType::class, ['choices' => array_combine(range(0, 5), range(0, 5))])
+            ->add('name', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('summary', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('desc', TextareaType::class, ['label' => 'Description', 'attr' => ['cols' => '100', 'rows' => '10'],])
+            ->add('duration', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('source', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('more', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('suitable', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]]);
     }
 
     /**
