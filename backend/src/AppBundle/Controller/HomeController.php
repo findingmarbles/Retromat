@@ -19,34 +19,10 @@ class HomeController extends Controller
     }
 
     /**
-     * @Route("/index_de.html", name="homepage_index_de")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "de|fr|es|nl"}, name="homepage_languages")
      */
     public function indexDeAction(Request $request)
     {
-        return $this->render('home/index_de.html.twig');
-    }
-
-    /**
-     * @Route("/index_es.html", name="homepage_index_es")
-     */
-    public function indexEsAction(Request $request)
-    {
-        return $this->render('home/index_es.html.twig');
-    }
-
-    /**
-     * @Route("/index_fr.html", name="homepage_index_fr")
-     */
-    public function indexFrAction(Request $request)
-    {
-        return $this->render('home/index_fr.html.twig');
-    }
-
-    /**
-     * @Route("/index_nl.html", name="homepage_index_nl")
-     */
-    public function indexNlAction(Request $request)
-    {
-        return $this->render('home/index_nl.html.twig');
+        return $this->render('home/index_'.$request->getLocale().'.html.twig');
     }
 }
