@@ -10,7 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage_slash")
+     * @Route("/index.html", name="homepage_index")
      */
     public function indexAction(Request $request)
     {
