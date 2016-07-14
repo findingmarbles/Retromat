@@ -17,4 +17,12 @@ class HomeController extends Controller
     {
         return $this->render('home/index_en.html.twig');
     }
+
+    /**
+     * @Route("/index_de.html", name="homepage_index_de")
+     */
+    public function indexDeAction(Request $request)
+    {
+        return $this->render('home/index_de.html.twig');
+    }
 }
