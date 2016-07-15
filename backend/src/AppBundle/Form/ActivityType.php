@@ -35,10 +35,10 @@ class ActivityType extends AbstractType
             ->add('name', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
             ->add('summary', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
             ->add('desc', TextareaType::class, ['label' => 'Description', 'attr' => ['cols' => '100', 'rows' => '10'],])
-            ->add('duration', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('source', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('more', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('suitable', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]]);
+            ->add('duration', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('source', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('more', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('suitable', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]]);
     }
 
     /**
