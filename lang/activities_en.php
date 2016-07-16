@@ -1739,9 +1739,9 @@ duration:  "20-25 minutes",
 suitable:  "iteration, project, release"
 };
 all_activities[110] = {
-    phase:     5,
-    name:      "Feedback Sandwich",
-    summary:   "Learn how to raise constructive criticism with your team mates in a trusting and positive way",
+phase:     5,
+name:      "Feedback Sandwich",
+summary:   "Learn how to raise constructive criticism with your team mates in a trusting and positive way",
 desc:      "Try this activity to help teams that are only ever saying nice things to each other and seem reluctant to raise \
 concerns about each other. If they are always keeping the peace, they miss growth opportunities \
 and issues may fester. Feedback Sandwich is a way to learn how to give and receive potentially critical feedback. It goes like this: \
