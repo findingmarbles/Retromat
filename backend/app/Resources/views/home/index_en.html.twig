@@ -1790,9 +1790,9 @@ duration:  "20-25 minutes",
 suitable:  "iteration, project, release"
 };
 all_activities[110] = {
-    phase:     5,
-    name:      "Feedback Sandwich",
-    summary:   "Learn how to raise constructive criticism with your team mates in a trusting and positive way",
+phase:     5,
+name:      "Feedback Sandwich",
+summary:   "Learn how to raise constructive criticism with your team mates in a trusting and positive way",
 desc:      "Try this activity to help teams that are only ever saying nice things to each other and seem reluctant to raise \
 concerns about each other. If they are always keeping the peace, they miss growth opportunities \
 and issues may fester. Feedback Sandwich is a way to learn how to give and receive potentially critical feedback. It goes like this: \
@@ -2793,13 +2793,17 @@ function switchLanguage(new_lang) {
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de"  >Deutsch (39 Aktivit&auml;ten)</option>
-        <option value="en" selected >English (121 activities)</option>
+        <option value="en" selected >English (123 activities)</option>
         <option value="es"  >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr"  >Fran&ccedil;ais (47 activit&eacute;s)</option>
         <option value="nl"  >Nederlands (96 activiteiten)</option>
     </select>
 
       <span class="navi">
+      <a href="/about.html">About</a> |
+      <a href="/donate.html">Donate</a> |
+      <a href="/print/index.html">Book</a>
+        <!-- 
         <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a> |
         <a href="/print/index.html">Print Edition</a>		  <!-- PAUSED Until I've got more time
@@ -2812,14 +2816,16 @@ function switchLanguage(new_lang) {
     <div class="content">
         Planning your next <b>retrospective</b>? Get started with a random plan, tweak it, print it and share the URL. Or just browse around for new ideas!    </div>
 </div>
-<!--
+
     <div class="book">
-        <div class="content">
-                For an interesting new perspective on retrospectives why not try a
-                <a href="http://frontrowagile.com/themed">themed retrospective</a>?
+        <div class="content" style="text-align: center; line-height: 20px">
+                Has Retromat ever saved the day for and your team?
+                <a href="/donate.html" 
+                   style="margin-left: 20px; padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Support Retromat!
+                </a>
         </div>
     </div>
--->
+
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
@@ -2950,20 +2956,6 @@ function switchLanguage(new_lang) {
     </div><!-- .content -->
 </div><!-- .team -->
 
-<!-- Piwik -->
-<script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(["trackPageView"]);
-    _paq.push(["enableLinkTracking"]);
 
-    (function() {
-        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://finding-marbles.com/piwik/";
-        _paq.push(["setTrackerUrl", u+"piwik.php"]);
-        _paq.push(["setSiteId", "3"]);
-        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-    })();
-</script>
-<!-- End Piwik Code -->
 </body>
 </html>
