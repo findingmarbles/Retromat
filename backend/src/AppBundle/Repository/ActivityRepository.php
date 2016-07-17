@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Activity;
+
 /**
  * ActivityRepository
  *
@@ -10,4 +12,20 @@ namespace AppBundle\Repository;
  */
 class ActivityRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findOrdered($language, array $orderedIds)
+    {
+        $unOrderedActivities = $this->findBy(['language' => $language, 'retromatId' => $orderedIds]);
+        $orderedActivities = [];
+
+        // assign keys indicating correct position
+        foreach ($unOrderedActivities as $activity) {
+            /** @var Activity $activity */
+            $orderedActivities[array_search($activity->getRetromatId(), $orderedIds)] = $activity;
+        }
+
+        // order associative array by keys
+        ksort($orderedActivities);
+
+        return $orderedActivities;
+    }
 }

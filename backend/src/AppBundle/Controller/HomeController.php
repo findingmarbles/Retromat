@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $activities = false;
         if ('3-87-113-13-16' == $request->query->get('id')) {
-            $activities = true;
+            $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered($request->getLocale(), explode('-', $request->query->get('id')));
         };
 
         return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
