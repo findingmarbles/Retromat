@@ -174,7 +174,8 @@ all_photos[112] = [
 ];
 all_photos[113] = [
 {filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
-{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"}
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
 ];
 all_photos[114] = [
 {filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
