@@ -2002,8 +2002,8 @@ suitable:  "iteration"
 };
 all_activities[124] = {
 phase:     3,
-name:      "Idea Studio",
-summary:   "Build on each other's ideas to create a great action",
+name:      "Three by Three",
+summary:   "Build on each other's ideas to create a great action item",
 desc:      "This silent brainstorming technique helps the team come up with truly \
 creative solutions and gives quiet people equal footing: \
 <br><br> \
