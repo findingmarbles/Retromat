@@ -685,7 +685,7 @@ function switchLanguage(new_lang) {
       <span class="navi">
       <a href="/about.html">About</a> |
       <a href="/donate.html">Donate</a> |
-      <a href="/print/index.html">Book</a>
+      <a href="/books.html">Books</a>
         <!-- 
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
