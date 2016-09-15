@@ -666,6 +666,23 @@ function switchLanguage(new_lang) {
 <link rel="alternate" hreflang="de" href="index_de.html" />
 <link rel="alternate" hreflang="nl" href="index_nl.html" />
 
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.plans-for-retrospectives.com","*.retr-o-mat.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//finding-marbles.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//finding-marbles.com/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
 </head>
 
 <body onload="JavaScript:init()">
@@ -676,7 +693,7 @@ function switchLanguage(new_lang) {
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (39 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (123 activities)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (125 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (96 activiteiten)</option>
@@ -685,7 +702,7 @@ function switchLanguage(new_lang) {
       <span class="navi">
       <a href="/about.html">About</a> |
       <a href="/donate.html">Donate</a> |
-      <a href="/print/index.html">Book</a>
+      <a href="/books.html">Books</a>
         <!-- 
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |

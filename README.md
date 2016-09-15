@@ -35,10 +35,10 @@ Or send a photo illustrating an activity (see above for contact details).
 Besides the English original, there's a Spanish, French, German and Dutch version.
 Our team of awesome translators:
 
-* Thomas Wallet and Pedro Ángel Serrano - Spanish
-* Julien Dubois, Pierre Martin and Frank Taillandier - French
-* Patrick Zeising - German
-* Linda van der Pal - Dutch
+* Spanish: [Thomas Wallet](http://www.elproximopaso.net/) and [Pedro Ángel Serrano](https://twitter.com/pedroserranot)
+* French: [Julien Dubois](http://juliendubois.fr/), [Pierre Martin](https://twitter.com/pierremartin) and [Frank Taillandier](http://frank.taillandier.me/)
+* German: [Patrick Zeising](https://twitter.com/peezett)
+* Dutch: [Linda van der Pal](https://twitter.com/DuchessFounder)
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
@@ -52,14 +52,13 @@ Language files reside in the "lang/" directory. There's 2 files per language:
 * The  "activities_*.php"-files contain the activities (& phase titles) as a JS array
 
 You don't have to translate all activities at once. Just start at index 0 and work your
-way down. The first live version of Retr-O-Mat had 15 activities. So as soon as you've translated
+way down. The first live version of Retromat had 15 activities. So as soon as you've translated
 indexes 0-14, your language will go live :)
 
-(The indexes should stay the same across languages, so don't move activities around.
-Some of the attributes, e.g. 'duration' and 'suitable', never show up on the
-page the visitors see. No need to translate those.)
+The indexes should stay the same across languages, so don't move activities around. Some of the attributes, e.g. 'duration' and 'suitable', never show up on the
+page the visitors see. No need to translate those.
 
-Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &ntilde;)
+Please use HTML entitities for special characters, e.g. &uuml; &ccedil; &ntilde;)
 
 #### Technical setup
 
@@ -80,12 +79,12 @@ In your terminal run
 
 Then open index_cn.html in a browser.
 
-(Ah, the file "activities_cn.php" also has to exist or it won't work. Fortunately it
-doesn't have to be translated ;)
+Attention: "activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
 
-To test your translation of the "activities_*.php"-file you need a browser with JS enabled
-and either also PHP on the console or you save a local copy of index.html
-of the live Retromat version and replace activities in the code of that local copy.
+To test your translation of the "activities_*.php"-file you need a browser with JS enabled and either also PHP on the console. 
+
+(Alternatively you can save a local copy of index.html
+of the live Retromat and replace activities in the code of that local copy.)
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
@@ -100,18 +99,15 @@ Test in very small steps, because these errors are annoying to track down.
 
 ## Contribute something else
 
-You've got another idea? We're all ears! Especially if your idea fits with the
-overall vision:
+You've got another idea? We're all ears! Especially if your idea fits with the overall vision:
 
-### Vision for Retr-O-Mat
+### Vision for Retromat
 
 * Be useful
  * For more people => better
 * Be pleasant to use
  * Simple interface
  * Consistent
-  * Activities are written in short, straightforward language. For the time
-being this means that I edit all submitted activities. I could hand this over
-to other people at some point in the future.
+  * Activities are written in short, straightforward language. For the time being this means that I edit all submitted activities.
  * Pretty
 

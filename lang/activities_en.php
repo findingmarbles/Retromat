@@ -1949,7 +1949,7 @@ Then your neighbor asks their neighbor on the other side the same question and \
 so on until everyone has answered and asked. \
 <br><br> \
 This will give everyone a boost and lead to better results.",
-source:    "<a href='http://sinnvoll-fuehren.com/veronika-kotrba/'>Veronika Kotrba</a> adapted it from <a href='http://www.timetothink.com/meet-us/nancy-kline/'>Nancy Kline</a>",
+source:    "<a href='http://www.twitter.com/sinnvollFUEHREN'>Veronika Kotrba and Ralph Miarka</a>, adapted from <a href='http://www.timetothink.com/meet-us/nancy-kline/'>Nancy Kline</a>",
 duration:  "short",
 suitable:  "iteration, project, release"
 };
@@ -1982,5 +1982,44 @@ source:    "<a href='http://www.agilesproduktmanagement.de/'>Tobias Baier</a>",
 duration:  "long",
 suitable:  "iteration, project, release"
 };
+all_activities[123] = {
+phase:     3,
+name:      "Outside In",
+summary:   "Turn blaming others into actions owned by the team",
+desc:      "If your team has a tendency to see obstacles outside of their team and \
+influence and primarily wants others to change, you can try this activity: \
+<br><br> \
+Draw a big rectangle on the board and another rectangle inside of it, like a picture frame. \
+Hang all complaints and grievances that surfaced in previous phases into the frame. \
+<br><br> \
+Now comes the interesting twist: Explain that if they want anything in the outside frame \
+to change, they will have to do something themselves to affect that change. Ask the team to \
+come up with actions they can do. Put these actions into the inner rectangle (near the \
+outer sticky they are addressing).",
+source:    "<a href='http://www.twitter.com/sinnvollFUEHREN'>Ralph Miarka and Veronika Kotrba</a>",
+duration:  "middle",
+suitable:  "iteration"
+};
+all_activities[124] = {
+phase:     3,
+name:      "Three by Three",
+summary:   "Build on each other's ideas to create a great action item",
+desc:      "This silent brainstorming technique helps the team come up with truly \
+creative solutions and gives quiet people equal footing: \
+<br><br> \
+<ul> \
+<li>Everyone writes 3 sticky notes with 1 action idea each</li> \
+<li>Go around the room and pitch each idea in 15 seconds</li> \
+<li>Gather all stickies so that everyone can see them</li> \
+<li>Each team member adds their name to the sticky note that inspires them the most</li> \
+<li>Take off all ideas without a name on them</li> \
+</ul> \
+Repeat this process 2 more times. Afterwards, everyone can dot vote to determine which \
+action(s) the team is going to implement.",
+source:    "<a href='https://www.qeek.co/blog/collaborative-idea-exploration-and-the-end-of-the-loudest-voice'>Simon Tomes</a>",
+duration:  "middle",
+suitable:  "iteration, project, release"
+};
+
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
