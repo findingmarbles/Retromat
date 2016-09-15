@@ -2935,16 +2935,11 @@ function switchLanguage(new_lang) {
     </div>
 </div>
 
-<div class="js_plan">
-    <div class="activity_block bg1">
-        <div class="activity-wrapper">
-            <div class="activity-content">
-                    ... LOADING ACTIVITIES ...                    <noscript>
-                        Retromat relies heavily on JavaScript and doesn't work without it. Please enable JavaScript in your browser. Thanks!                    </noscript>
-            </div>
-        </div>
-    </div>
-</div><!-- END plan -->
+{% if activities %}
+    {% include 'home/plan/plan_3-87-113-13-16.html.twig' %}
+{% else %}
+    {% include 'home/plan/no_js.html.twig' %}
+{% endif %}
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">
     <div class="activity-wrapper">
