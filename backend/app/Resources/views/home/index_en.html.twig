@@ -2000,7 +2000,7 @@ Then your neighbor asks their neighbor on the other side the same question and \
 so on until everyone has answered and asked. \
 <br><br> \
 This will give everyone a boost and lead to better results.",
-source:    "<a href='http://sinnvoll-fuehren.com/veronika-kotrba/'>Veronika Kotrba</a> adapted it from <a href='http://www.timetothink.com/meet-us/nancy-kline/'>Nancy Kline</a>",
+source:    "<a href='http://www.twitter.com/sinnvollFUEHREN'>Veronika Kotrba and Ralph Miarka</a>, adapted from <a href='http://www.timetothink.com/meet-us/nancy-kline/'>Nancy Kline</a>",
 duration:  "short",
 suitable:  "iteration, project, release"
 };
@@ -2033,6 +2033,45 @@ source:    "<a href='http://www.agilesproduktmanagement.de/'>Tobias Baier</a>",
 duration:  "long",
 suitable:  "iteration, project, release"
 };
+all_activities[123] = {
+phase:     3,
+name:      "Outside In",
+summary:   "Turn blaming others into actions owned by the team",
+desc:      "If your team has a tendency to see obstacles outside of their team and \
+influence and primarily wants others to change, you can try this activity: \
+<br><br> \
+Draw a big rectangle on the board and another rectangle inside of it, like a picture frame. \
+Hang all complaints and grievances that surfaced in previous phases into the frame. \
+<br><br> \
+Now comes the interesting twist: Explain that if they want anything in the outside frame \
+to change, they will have to do something themselves to affect that change. Ask the team to \
+come up with actions they can do. Put these actions into the inner rectangle (near the \
+outer sticky they are addressing).",
+source:    "<a href='http://www.twitter.com/sinnvollFUEHREN'>Ralph Miarka and Veronika Kotrba</a>",
+duration:  "middle",
+suitable:  "iteration"
+};
+all_activities[124] = {
+phase:     3,
+name:      "Three by Three",
+summary:   "Build on each other's ideas to create a great action item",
+desc:      "This silent brainstorming technique helps the team come up with truly \
+creative solutions and gives quiet people equal footing: \
+<br><br> \
+<ul> \
+<li>Everyone writes 3 sticky notes with 1 action idea each</li> \
+<li>Go around the room and pitch each idea in 15 seconds</li> \
+<li>Gather all stickies so that everyone can see them</li> \
+<li>Each team member adds their name to the sticky note that inspires them the most</li> \
+<li>Take off all ideas without a name on them</li> \
+</ul> \
+Repeat this process 2 more times. Afterwards, everyone can dot vote to determine which \
+action(s) the team is going to implement.",
+source:    "<a href='https://www.qeek.co/blog/collaborative-idea-exploration-and-the-end-of-the-loudest-voice'>Simon Tomes</a>",
+duration:  "middle",
+suitable:  "iteration, project, release"
+};
+
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
 
@@ -2211,7 +2250,8 @@ all_photos[112] = [
 ];
 all_photos[113] = [
 {filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
-{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"}
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
 ];
 all_photos[114] = [
 {filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
@@ -2783,6 +2823,23 @@ function switchLanguage(new_lang) {
 <link rel="alternate" hreflang="de" href="index_de.html" />
 <link rel="alternate" hreflang="nl" href="index_nl.html" />
 
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.plans-for-retrospectives.com","*.retr-o-mat.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//finding-marbles.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//finding-marbles.com/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
 </head>
 
 <body onload="JavaScript:init()">
@@ -2793,7 +2850,7 @@ function switchLanguage(new_lang) {
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de"  >Deutsch (39 Aktivit&auml;ten)</option>
-        <option value="en" selected >English (123 activities)</option>
+        <option value="en" selected >English (125 activities)</option>
         <option value="es"  >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr"  >Fran&ccedil;ais (47 activit&eacute;s)</option>
         <option value="nl"  >Nederlands (96 activiteiten)</option>
@@ -2802,7 +2859,7 @@ function switchLanguage(new_lang) {
       <span class="navi">
       <a href="/about.html">About</a> |
       <a href="/donate.html">Donate</a> |
-      <a href="/print/index.html">Book</a>
+      <a href="/books.html">Books</a>
         <!-- 
         <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
         <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a> |
@@ -2878,12 +2935,16 @@ function switchLanguage(new_lang) {
     </div>
 </div>
 
-{% if activities %}
-    {% include 'home/plan/plan_3-87-113-13-16.html.twig' %}
-{% else %}
-    {% include 'home/plan/no_js.html.twig' %}
-{% endif %}
-<!-- END plan -->
+<div class="js_plan">
+    <div class="activity_block bg1">
+        <div class="activity-wrapper">
+            <div class="activity-content">
+                    ... LOADING ACTIVITIES ...                    <noscript>
+                        Retromat relies heavily on JavaScript and doesn't work without it. Please enable JavaScript in your browser. Thanks!                    </noscript>
+            </div>
+        </div>
+    </div>
+</div><!-- END plan -->
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">
     <div class="activity-wrapper">
