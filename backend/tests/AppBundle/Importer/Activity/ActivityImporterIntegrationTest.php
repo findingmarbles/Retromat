@@ -27,6 +27,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activity = $activityImporter->import();
         $this->assertEquals('ESVP', $activity[0]->getName());
         $this->assertNull($activity[0]->getMore());
-        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', end($activity)->getSummary());
+        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]->getSummary());
     }
 }
