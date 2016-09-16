@@ -77,4 +77,21 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_description')->text()
         );
     }
+
+    public function testHomeActionRendersActivityLinks()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=1');
+        $this->assertEquals(
+            '1',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_id')->text()
+        );
+
+        $crawler = $client->request('GET', '/?id=2');
+        $this->assertEquals(
+            '2',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_id')->text()
+        );
+    }
 }
