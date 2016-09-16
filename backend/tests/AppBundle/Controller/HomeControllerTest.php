@@ -16,7 +16,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(5, $activityBlocks->count());
     }
 
-    public function testHomeActionRendersSingleActivityBlock()
+    public function testHomeActionRendersActivityTitle()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=32');
@@ -24,7 +24,6 @@ class HomeControllerTest extends WebTestCase
         $jsPlan = $crawler->filter('.js_plan');
         $activityBlocks = $jsPlan->filter('.js_activity_block');
         $this->assertEquals(1, $activityBlocks->count());
-
-//        $this->assertEquals('Emoticon Project Gauge', $name);
+        $this->assertEquals('Emoticon Project Gauge', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
     }
 }
