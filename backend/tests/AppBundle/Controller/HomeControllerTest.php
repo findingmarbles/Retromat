@@ -16,7 +16,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(5, $activityBlocks->count());
     }
 
-    public function testHomeActionRendersActivityTitle()
+    public function testHomeActionRendersSingleActivityBlock()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=32');
@@ -24,7 +24,6 @@ class HomeControllerTest extends WebTestCase
         $jsPlan = $crawler->filter('.js_plan');
         $activityBlocks = $jsPlan->filter('.js_activity_block');
         $this->assertEquals(1, $activityBlocks->count());
-        $this->assertEquals('Emoticon Project Gauge', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
     }
 
     public function testHomeActionRendersActivityTitles()
@@ -32,16 +31,10 @@ class HomeControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=32');
-        $jsPlan = $crawler->filter('.js_plan');
-        $activityBlocks = $jsPlan->filter('.js_activity_block');
-        $this->assertEquals(1, $activityBlocks->count());
-        $this->assertEquals('Emoticon Project Gauge', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
+        $this->assertEquals('Emoticon Project Gauge', $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->text());
 
         $crawler = $client->request('GET', '/?id=59');
-        $jsPlan = $crawler->filter('.js_plan');
-        $activityBlocks = $jsPlan->filter('.js_activity_block');
-        $this->assertEquals(1, $activityBlocks->count());
-        $this->assertEquals('Happiness Histogram', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
+        $this->assertEquals('Happiness Histogram', $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->text());
     }
 
     public function testHomeActionRendersActivitySummaries()
