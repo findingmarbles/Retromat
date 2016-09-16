@@ -23,7 +23,7 @@
                         </span>
                     </div><!-- END summary -->
                     <div class="description">
-                        <span class="js_fill_description">Prepare a flipchart with faces expressing various emotions such as: <ul>    <li>shocked / surprised</li>    <li>nervous / stressed</li>    <li>unempowered / constrained</li>    <li>confused</li>    <li>happy</li>    <li>mad</li>    <li>overwhelmed</li></ul>Let each team member choose how they feel about the project. This is a fun and effective way to surface problems early. You can address them in the subsequent phases.</span>
+                        <span class="js_fill_description">{{ activities[0].desc | replace({"\\\n":''}) | replace({"<a href='":'<a href="'}) | replace({"'>":'">'}) }}</span>
                     </div><!-- END description -->
                 </div><!-- END js_item -->
                 <div class="js_photo_link photo_link">
