@@ -26,4 +26,21 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(1, $activityBlocks->count());
         $this->assertEquals('Emoticon Project Gauge', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
     }
+
+    public function testHomeActionRendersActivityTitles()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=32');
+        $jsPlan = $crawler->filter('.js_plan');
+        $activityBlocks = $jsPlan->filter('.js_activity_block');
+        $this->assertEquals(1, $activityBlocks->count());
+        $this->assertEquals('Emoticon Project Gauge', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
+
+        $crawler = $client->request('GET', '/?id=59');
+        $jsPlan = $crawler->filter('.js_plan');
+        $activityBlocks = $jsPlan->filter('.js_activity_block');
+        $this->assertEquals(1, $activityBlocks->count());
+        $this->assertEquals('Happiness Histogram', $activityBlocks->eq(0)->filter('.js_fill_name')->text());
+    }
 }

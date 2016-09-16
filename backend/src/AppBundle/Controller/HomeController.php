@@ -15,15 +15,16 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
-        $activities = false;
-        if ('32' == $request->query->get('id') or
-            '3-87-113-13-16' == $request->query->get('id')
-        ) {
+        $ids = explode('-', $request->query->get('id'));
+
+        if (1 == count($ids) or [3, 87, 113, 13, 16] == $ids) {
             $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
                 $request->getLocale(),
-                explode('-', $request->query->get('id'))
+                $ids
             );
-        };
+        } else {
+            $activities = false;
+        }
 
         return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
     }
