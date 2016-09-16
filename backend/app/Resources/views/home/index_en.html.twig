@@ -2935,7 +2935,9 @@ function switchLanguage(new_lang) {
     </div>
 </div>
 
-{% if activities %}
+{% if activities|length == 1 %}
+    {% include 'home/plan/plan_32.html.twig' %}
+{% elseif activities|length > 1 %}
     {% include 'home/plan/plan_3-87-113-13-16.html.twig' %}
 {% else %}
     {% include 'home/plan/no_js.html.twig' %}

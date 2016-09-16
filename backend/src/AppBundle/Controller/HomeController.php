@@ -6,7 +6,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-
 class HomeController extends Controller
 {
     /**
@@ -17,8 +16,13 @@ class HomeController extends Controller
     public function homeAction(Request $request)
     {
         $activities = false;
-        if ('3-87-113-13-16' == $request->query->get('id')) {
-            $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered($request->getLocale(), explode('-', $request->query->get('id')));
+        if ('32' == $request->query->get('id') or
+            '3-87-113-13-16' == $request->query->get('id')
+        ) {
+            $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
+                $request->getLocale(),
+                explode('-', $request->query->get('id'))
+            );
         };
 
         return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
