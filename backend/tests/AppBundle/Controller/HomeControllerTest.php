@@ -78,7 +78,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivityLinks()
+    public function testHomeActionRendersActivityLinksText()
     {
         $client = static::createClient();
 
@@ -92,6 +92,23 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(
             '2',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_id')->text()
+        );
+    }
+
+    public function testHomeActionRendersActivityLinksHref()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=1');
+        $this->assertEquals(
+            '?id=1',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_activity_link')->attr('href')
+        );
+
+        $crawler = $client->request('GET', '/?id=2');
+        $this->assertEquals(
+            '?id=2',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_activity_link')->attr('href')
         );
     }
 }
