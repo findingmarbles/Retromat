@@ -7,7 +7,15 @@
                 <div class="js_phase_title phase_title">
                     <a href="?id=1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122&amp;phase=0"
                        class="js_fill_phase_link">
-                        <span class="js_fill_phase_title">Set the stage</span>
+                        {# probaly need move this to a separate templete or macro later #}
+                        <span class="js_fill_phase_title">{{ activities[0].phase | replace ({
+                                "0": 'Set the stage',
+                                "1": 'Gather data',
+                                "2": 'Generate insights',
+                                "3": 'Decide what to do',
+                                "4": 'Close the retrospective',
+                                "5": 'Something completely different'
+                            }) }}</span>
                     </a>
                 </div>
                 <div class="js_item">

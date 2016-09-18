@@ -121,4 +121,22 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_activity_link')->attr('href')
         );
     }
+
+
+    public function testHomeActionRendersActivityPhaseText()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=3');
+        $this->assertEquals(
+            'Set the stage',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_title')->text()
+        );
+
+        $crawler = $client->request('GET', '/?id=4');
+        $this->assertEquals(
+            'Gather data',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_title')->text()
+        );
+    }
 }
