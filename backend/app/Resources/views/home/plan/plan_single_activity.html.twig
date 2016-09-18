@@ -23,7 +23,7 @@
                         </span>
                     </div><!-- END summary -->
                     <div class="description">
-                        <span class="js_fill_description">{{ activities[0].desc | replace({"\\\n":''}) | replace({"<a href='":'<a href="'}) | replace({"'>":'">'}) }}</span>
+                        <span class="js_fill_description">{{ activities[0].desc | replace({"\\\n":''}) | replace({"<a href='":'<a href="'}) | replace({"'>":'">'}) | raw }}</span>
                     </div><!-- END description -->
                 </div><!-- END js_item -->
                 <div class="js_photo_link photo_link">
