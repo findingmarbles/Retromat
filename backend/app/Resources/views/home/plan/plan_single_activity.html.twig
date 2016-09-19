@@ -27,7 +27,7 @@
                     <div class="summary">
                         <span class="js_fill_summary">{{ activities[0].summary }}</span>
                         <br>
-                        <span class="source">Source:                            <span class="js_fill_source">Andrew Ciccarelli</span>
+                        <span class="source">Source:                            <span class="js_fill_source">{{ activities[0].source | replace({'"':''}) | raw }}</span>
                         </span>
                     </div><!-- END summary -->
                     <div class="description">

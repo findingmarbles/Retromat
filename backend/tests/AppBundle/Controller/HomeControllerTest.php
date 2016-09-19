@@ -130,7 +130,6 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-
     public function testHomeActionRendersActivityPhaseText()
     {
         $client = static::createClient();
@@ -145,6 +144,23 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(
             'Gather data',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_title')->text()
+        );
+    }
+
+    public function testHomeActionRendersActivitySourceSimpleStringRawHtml()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=17');
+        $this->assertEquals(
+            '<a href="http://fairlygoodpractices.com/samolo.htm">Fairly good practices</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+
+        $crawler = $client->request('GET', '/?id=80');
+        $this->assertEquals(
+            '<a href="http://www.infoq.com/minibooks/agile-retrospectives-value">Luis Goncalves</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
         );
     }
 }
