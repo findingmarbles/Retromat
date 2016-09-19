@@ -181,7 +181,6 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-
     public function testHomeActionRendersActivitySourcePlaceholderAndStringRawHtml()
     {
         $client = static::createClient();
@@ -195,6 +194,23 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/?id=37');
         $this->assertEquals(
             '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann</a>, found at <a href="http://www.ayeconference.com/appreciativeretrospective/">Diana Larsen</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+    }
+
+    public function testHomeActionRendersActivitySourceStringAndPlaceholderRawHtml()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=14');
+        $this->assertEquals(
+            'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+
+        $crawler = $client->request('GET', '/?id=65');
+        $this->assertEquals(
+            '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
         );
     }
