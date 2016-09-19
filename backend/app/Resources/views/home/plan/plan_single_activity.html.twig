@@ -28,7 +28,7 @@
                         <span class="js_fill_summary">{{ activities[0].summary }}</span>
                         <br>
                         {# probaly need move this to a separate templete or macro or the database later #}
-                        <span class="source">Source:                            <span class="js_fill_source">{{ activities[0].source | replace({'"':''}) | replace ({
+                        <span class="source">Source:                            <span class="js_fill_source">{{ activities[0].source  | replace({' + "': ''})| replace({'"':''}) | replace ({
                                     "source_agileRetrospectives": '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>',
                                     "source_findingMarbles": '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>',
                                     "source_kalnin": '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>',

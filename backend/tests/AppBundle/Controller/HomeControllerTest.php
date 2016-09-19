@@ -180,4 +180,22 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
         );
     }
+
+
+    public function testHomeActionRendersActivitySourcePlaceholderAndStringRawHtml()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=15');
+        $this->assertEquals(
+            '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives</a> who took it from \'The Satir Model: Family Therapy and Beyond\'',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+
+        $crawler = $client->request('GET', '/?id=37');
+        $this->assertEquals(
+            '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann</a>, found at <a href="http://www.ayeconference.com/appreciativeretrospective/">Diana Larsen</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+    }
 }
