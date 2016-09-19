@@ -7,7 +7,7 @@
                 <div class="js_phase_title phase_title">
                     <a href="?id=1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122&amp;phase=0"
                        class="js_fill_phase_link">
-                        {# probaly need move this to a separate templete or macro later #}
+                        {# probaly need move this to a separate templete or macro or the database later #}
                         <span class="js_fill_phase_title">{{ activities[0].phase | replace ({
                                 "0": 'Set the stage',
                                 "1": 'Gather data',
@@ -27,7 +27,17 @@
                     <div class="summary">
                         <span class="js_fill_summary">{{ activities[0].summary }}</span>
                         <br>
-                        <span class="source">Source:                            <span class="js_fill_source">{{ activities[0].source | replace({'"':''}) | raw }}</span>
+                        {# probaly need move this to a separate templete or macro or the database later #}
+                        <span class="source">Source:                            <span class="js_fill_source">{{ activities[0].source | replace({'"':''}) | replace ({
+                                    "source_agileRetrospectives": '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>',
+                                    "source_findingMarbles": '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>',
+                                    "source_kalnin": '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>',
+                                    "source_innovationGames": '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann<\/a>',
+                                    "source_facilitatorsGuide": '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>',
+                                    "source_skycoach": '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>',
+                                    "source_judith": '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>',
+                                    "source_unknown": 'Unknown',
+                                }) | raw }}</span>
                         </span>
                     </div><!-- END summary -->
                     <div class="description">

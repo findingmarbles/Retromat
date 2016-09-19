@@ -163,4 +163,21 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
         );
     }
+
+    public function testHomeActionRendersActivitySourcePlaceholderRawHtml()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=77');
+        $this->assertEquals(
+            '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+
+        $crawler = $client->request('GET', '/?id=5');
+        $this->assertEquals(
+            '<a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
+        );
+    }
 }
