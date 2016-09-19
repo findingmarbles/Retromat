@@ -19,7 +19,7 @@
                     </a>
                 </div>
                 <div class="js_item">
-                    <h2><span class="js_fill_name">{{ activities[0].name }}</span>
+                    <h2><span class="js_fill_name">{{ activities[0].name | raw }}</span>
                         <span class="activity_id_wrapper">
                             (<a class="js_fill_activity_link" href="?id={{ activities[0].retromatId }}">#<span class="js_fill_id">{{ activities[0].retromatId }}</span></a>)
                     </span>

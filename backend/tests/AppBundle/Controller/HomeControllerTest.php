@@ -26,20 +26,28 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(1, $activityBlocks->count());
     }
 
-    public function testHomeActionRendersActivityTitles()
+    public function testHomeActionRendersActivityNameRawHtml()
     {
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=32');
         $this->assertEquals(
             'Emoticon Project Gauge',
-            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->text()
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->html()
         );
 
         $crawler = $client->request('GET', '/?id=59');
         $this->assertEquals(
             'Happiness Histogram',
-            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->text()
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->html()
+        );
+
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=80');
+        $this->assertEquals(
+            'Repeat &amp; Avoid', // raw HTML imported to DB from lang/activities_en.php
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->html()
         );
     }
 
