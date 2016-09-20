@@ -17,14 +17,10 @@ class HomeController extends Controller
     {
         $ids = explode('-', $request->query->get('id'));
 
-        if (1 == count($ids) or [3, 87, 113, 13, 16] == $ids) {
-            $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
-                $request->getLocale(),
-                $ids
-            );
-        } else {
-            $activities = false;
-        }
+        $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
+            $request->getLocale(),
+            $ids
+        );
 
         return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
     }

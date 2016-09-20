@@ -6,16 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HomeControllerTest extends WebTestCase
 {
-    public function testHomeActionRenders5ActivitiesForStaticHtmlExamplePlan()
-    {
-        $client = static::createClient();
-        $crawler = $client->request('GET', '/?id=3-87-113-13-16');
-
-        $jsPlan = $crawler->filter('.js_plan');
-        $activityBlocks = $jsPlan->filter('.js_activity_block');
-        $this->assertEquals(5, $activityBlocks->count());
-    }
-
     public function testHomeActionRendersSingleActivityBlock()
     {
         $client = static::createClient();
@@ -67,7 +57,6 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_summary')->text()
         );
     }
-
 
     public function testHomeActionRendersActivityDescriptionsRawHtml()
     {
@@ -213,5 +202,27 @@ class HomeControllerTest extends WebTestCase
             '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_source')->html()
         );
+    }
+
+    public function testHomeActionRendersAny5Activities()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/?id=3-87-113-13-16');
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
+        $this->assertEquals(5, $activities->count());
+        $this->assertEquals('3', $activities->eq(0)->filter('.js_fill_id')->text());
+        $this->assertEquals('87', $activities->eq(1)->filter('.js_fill_id')->text());
+        $this->assertEquals('113', $activities->eq(2)->filter('.js_fill_id')->text());
+        $this->assertEquals('13', $activities->eq(3)->filter('.js_fill_id')->text());
+        $this->assertEquals('16', $activities->eq(4)->filter('.js_fill_id')->text());
+
+        $crawler = $client->request('GET', '/?id=1-91-2-55-100');
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
+        $this->assertEquals(5, $activities->count());
+        $this->assertEquals('1', $activities->eq(0)->filter('.js_fill_id')->text());
+        $this->assertEquals('91', $activities->eq(1)->filter('.js_fill_id')->text());
+        $this->assertEquals('2', $activities->eq(2)->filter('.js_fill_id')->text());
+        $this->assertEquals('55', $activities->eq(3)->filter('.js_fill_id')->text());
+        $this->assertEquals('100', $activities->eq(4)->filter('.js_fill_id')->text());
     }
 }
