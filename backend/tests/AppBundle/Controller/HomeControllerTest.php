@@ -225,4 +225,31 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals('55', $activities->eq(3)->filter('.js_fill_id')->text());
         $this->assertEquals('100', $activities->eq(4)->filter('.js_fill_id')->text());
     }
+
+    public function testHomeActionRendersSuccessiveActivitiesInDifferentColors()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/?id=1-2-3-4-5-6-7');
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
+
+        $previousColorCode = $this->extractColorCode($activities->eq(0));
+        for($i = 1; $i++;  $activities->count()) {
+            $colorCode = $this->extractColorCode($activities->eq($i));
+
+            $this->assertNotEquals($colorCode, $previousColorCode);
+        }
+    }
+
+    /**
+     * @param $activity
+     * @return string
+     */
+    public function extractColorCode($activity)
+    {
+        $colorCodePrefix = ' bg';
+        $classesString = $activity->attr('class');
+        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix) + strlen($colorCodePrefix), 1);
+
+        return $colorCode;
+    }
 }
