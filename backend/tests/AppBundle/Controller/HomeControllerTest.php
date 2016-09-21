@@ -232,10 +232,11 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/?id=1-2-3-4-5-6-7');
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
 
-        $previousColorCode = $this->extractColorCode($activities->eq(0));
-        for($i = 1; $i++;  $activities->count()) {
+        $colorCode = $this->extractColorCode($activities->eq(0));
+        for($i = 1; $i < $activities->count(); $i++) {
+            $previousColorCode = $colorCode;
             $colorCode = $this->extractColorCode($activities->eq($i));
-
+            
             $this->assertNotEquals($colorCode, $previousColorCode);
         }
     }

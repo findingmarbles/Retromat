@@ -36,6 +36,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        color_variation: "@retromat.color_varation"
 
 # Doctrine Configuration
 doctrine:

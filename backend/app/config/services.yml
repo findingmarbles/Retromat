@@ -15,3 +15,5 @@ services:
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
         arguments: ["@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter"]
+    retromat.color_varation:
+        class: AppBundle\Twig\ColorVariation
