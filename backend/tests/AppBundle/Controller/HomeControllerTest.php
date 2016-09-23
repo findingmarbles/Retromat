@@ -253,4 +253,21 @@ class HomeControllerTest extends WebTestCase
 
         return $colorCode;
     }
+
+    public function testShowAllActivitiesInPhase0LongUrl()
+    {
+        $client = static::createClient();
+        $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
+        $crawler = $client->request('GET', '/?id='.$idsStringPhase0.'&phase=0');
+        $ids = explode('-', $idsStringPhase0);
+
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
+        $this->assertEquals(count($ids), $activities->count());
+        $this->assertEquals('3', $activities->eq(2)->filter('.js_fill_id')->text());
+        $this->assertEquals('18', $activities->eq(3)->filter('.js_fill_id')->text());
+        $this->assertEquals('22', $activities->eq(4)->filter('.js_fill_id')->text());
+        $this->assertEquals('122', $activities->eq(24)->filter('.js_fill_id')->text());
+
+        $this->assertEquals('All activities for SET THE STAGE', $crawler->filter('.js_fill_plan_title')->text());
+    }
 }

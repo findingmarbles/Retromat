@@ -16,12 +16,13 @@ class HomeController extends Controller
     public function homeAction(Request $request)
     {
         $ids = explode('-', $request->query->get('id'));
+        $phase = $request->query->get('phase');
 
         $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
             $request->getLocale(),
             $ids
         );
 
-        return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities]);
+        return $this->render('home/index_'.$request->getLocale().'.html.twig', ['activities' => $activities, 'phase' => $phase]);
     }
 }
