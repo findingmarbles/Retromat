@@ -2,8 +2,8 @@
 
 $_lang['HTML_TITLE'] = 'Inspiration &amp; plans for (agile) retrospectives';
 
-$_lang['INDEX_PITCH'] = 'Planning your next <b>retrospective</b>? Get started with a random plan, tweak it, print it and share the URL. Or just browse around for new ideas!';
-$_lang['INDEX_PLAN_ID'] = 'IDs:';
+$_lang['INDEX_PITCH'] = 'Planning your next agile <b>retrospective</b>? Start with a random plan, change it to fit the team\'s situation, print it and share the URL. Or browse around for new ideas!<br><br>Is this your first retrospective? <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">Start here!</a>';
+$_lang['INDEX_PLAN_ID'] = 'Current Plan ID:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Show!';
 $_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
 $_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
