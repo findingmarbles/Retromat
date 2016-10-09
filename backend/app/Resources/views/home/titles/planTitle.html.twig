@@ -5,7 +5,14 @@
 </div>
 {% else %}
 <div class="js_plan_title_container plan_title_container">
-    <div class="content"><span class="js_fill_plan_title">All activities for SET THE STAGE</span>
+    <div class="content"><span class="js_fill_plan_title">All activities for {{ phase | replace ({
+                "0": 'Set the stage',
+                "1": 'Gather data',
+                "2": 'Generate insights',
+                "3": 'Decide what to do',
+                "4": 'Close the retrospective',
+                "5": 'Something completely different'
+            }) | upper }}</span>
     </div>
 </div>
 {% endif %}

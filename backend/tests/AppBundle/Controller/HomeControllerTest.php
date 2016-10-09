@@ -277,4 +277,13 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertEquals('All activities for SET THE STAGE', $crawler->filter('.js_fill_plan_title')->text());
     }
+
+    public function testShowTitlePhase1LongUrl()
+    {
+        $client = static::createClient();
+        $idsStringPhase1 = '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123';
+        $crawler = $client->request('GET', '/?id='.$idsStringPhase1.'&phase=1');
+
+        $this->assertEquals('All activities for GATHER DATA', $crawler->filter('.js_fill_plan_title')->text());
+    }
 }
