@@ -317,4 +317,15 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertEquals('All activities for GATHER DATA', $crawler->filter('.js_fill_plan_title')->text());
     }
+
+    public function testRegressionAvoidUnlessNeededHeaderAllActivitiesFor()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=1-2-3&phase=0');
+        $this->assertStringStartsWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
+
+        $crawler = $client->request('GET', '/?id=1-2-3');
+        $this->assertStringStartsNotWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
+    }
 }
