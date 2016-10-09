@@ -6,19 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HomeControllerTest extends WebTestCase
 {
-    public function testHomeActionRedirectsToBeginnersPlan()
-    {
-        $client = static::createClient();
-
-        // Original retromat redirects from / to a random plan.
-        $client->request('GET', '/');
-        $response = $client->getResponse();
-        $this->assertTrue($response->isRedirect());
-
-        // Start with beginners plan for now: http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/
-        $this->assertEquals('/?id=122-9-51-39-60', $response->headers->get('location'));
-    }
-
     public function testHomeActionRendersSingleActivityBlock()
     {
         $client = static::createClient();
