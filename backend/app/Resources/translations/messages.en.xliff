@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="phase_title_0">
+                <source>phase_title_0</source>
+                <target>Set the stage</target>
+            </trans-unit>
+            <trans-unit id="phase_title_1">
+                <source>phase_title_1</source>
+                <target>Gather data</target>
+            </trans-unit>
+            <trans-unit id="phase_title_2">
+                <source>phase_title_2</source>
+                <target>Generate insights</target>
+            </trans-unit>
+            <trans-unit id="phase_title_3">
+                <source>phase_title_3</source>
+                <target>Decide what to do</target>
+            </trans-unit>
+            <trans-unit id="phase_title_4">
+                <source>phase_title_4</source>
+                <target>Close the retrospective</target>
+            </trans-unit>
+            <trans-unit id="phase_title_5">
+                <source>phase_title_5</source>
+                <target>Something completely different</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
