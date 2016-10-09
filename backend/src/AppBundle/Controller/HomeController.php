@@ -15,6 +15,12 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
+        if (empty($request->query->get('id'))) {
+            // Original retromat redirects from / to a random plan. Implementing static redirection to get started.
+            // Start with beginners plan for now: http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/
+            return $this->redirect('/?id=122-9-51-39-60', $status = 302);
+        }
+
         $ids = explode('-', $request->query->get('id'));
         $phase = $request->query->get('phase');
 
