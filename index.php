@@ -722,8 +722,8 @@ function switchLanguage(new_lang) {
 
 <?php if ($isEnglish) { ?>
     <div class="book">
-        <div class="content" style="text-align: center; line-height: 20px">
-                Has Retromat ever saved the day for and your team?
+        <div class="content" style="line-height: 20px">
+                Retromat needs your help to improve!
                 <a href="/donate.html" 
                    style="margin-left: 20px; padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Support Retromat!
                 </a>

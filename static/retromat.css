@@ -231,6 +231,8 @@ ul ul {
 .plan-header .content {
     background: #ecf8c8; /* The Fallback */
     background: rgba(255, 255, 255, 0.35);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .plan-header__wrapper {
@@ -304,8 +306,7 @@ ul ul {
 
 .ids-display__input {
     padding: 0 5px;
-    font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1em;
     background-color: transparent;
     border: none;
 }
