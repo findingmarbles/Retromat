@@ -1,29 +1,6 @@
 <div class="js_plan">
 {% if 0 == activities|length %}
-    <div class="js_plan"><div class="js_activity_block activity_block bg3">
-            <div class="activity-wrapper">
-                <div class="activity-content">
-                    <div class="js_item">
-                        <div class="summary">
-                            <span class="js_fill_summary">Here are some random retrospective plans:</span>
-                            <br>
-                        </div><!-- END summary -->
-                        <div class="description">
-                            <span class="js_fill_description">
-                                <ul>
-                                    <li><a href="/?id=122-9-51-39-60">122-9-51-39-60</a></li>
-                                    <li><a href="/?id=32-7-105-38-53">32-7-105-38-53</a></li>
-                                    <li><a href="/?id=43-65-26-124-23">43-65-26-124-23</a></li>
-                                    <li><a href="/?id=81-47-58-100-104">81-47-58-100-104</a></li>
-                                    <li><a href="/?id=22-110-105-124-83">22-110-105-124-83</a></li>
-                                </ul>
-                            </span>
-                        </div><!-- END description -->
-                    </div><!-- END js_item -->
-                </div><!-- END .activity-content -->
-            </div><!-- END .activity-wrapper -->
-        </div>
-    </div>
+    {% include 'home/activities/homeRandomPlans.html.twig' %}
 {% else %}
     {% for activity in activities %}
     <div class="js_activity_block activity_block bg{{ color_variation.nextColor() }} js_activity105 js_activity106 js_activity107 js_activity113 js_activity121 js_activity0 js_activity1 js_activity2 js_activity17 js_activity21 js_activity30 js_activity31 js_activity35 js_activity41 js_activity42 js_activity45">
