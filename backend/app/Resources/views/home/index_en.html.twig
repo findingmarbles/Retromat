@@ -2889,11 +2889,7 @@ function switchLanguage(new_lang) {
             Retromat <span class="finding_marbles">(plans-for-retrospectives.com) by Finding-Marbles.com</span>
         </div>
         <div class="plan-header__wrapper">
-            <div class="ids-display">
-                Current Plan ID:                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
-                    <input type="text" size="18" name="js_display" class="ids-display__input" value="">
-                </form>
-            </div>
+{% include 'home/header/idDisplay.html.twig' %}
             <div class="plan-navi">
                 <ul>
                     <li>

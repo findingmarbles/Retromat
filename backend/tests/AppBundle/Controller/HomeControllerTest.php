@@ -333,4 +333,14 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertEquals('Here are some random retrospective plans:', $crawler->filter('.js_fill_summary')->text());
     }
+
+    public function testShowIdsInInputField()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/?id=1-2-3-4-5');
+        $this->assertEquals('1-2-3-4-5', $crawler->filter('.ids-display__input')->attr('value'));
+
+        $crawler = $client->request('GET', '/?id=3-87-113-13-16');
+        $this->assertEquals('3-87-113-13-16', $crawler->filter('.ids-display__input')->attr('value'));
+    }
 }
