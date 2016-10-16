@@ -13,8 +13,10 @@ class ActivityByPhase
     {
         $this->activityByPhase = [
 
-            // !! need to be nested arrays instead of strings !!
-
+            // stopping work because train arrived.
+            // checking in for backup reasons.
+            //
+            // need nested arrays instead of strings !!
             '0' => '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122',
             '1' => '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123',
             '2' => '8-9-10-20-25-26-37-41-50-55-58-66-68-69-74-91-94-95-105-113-115-118',
