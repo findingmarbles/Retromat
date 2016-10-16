@@ -325,4 +325,12 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals('7792405', $footer->filter('.js_footer_no_of_combinations')->text());
         $this->assertEquals('25x28x22x22x23+5', $footer->filter('.js_footer_no_of_combinations_formula')->text());
     }
+
+    public function testShowRandomPlanLinksOnHome()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/');
+
+        $this->assertEquals('Here are some random retrospective plans:', $crawler->filter('.js_fill_summary')->text());
+    }
 }
