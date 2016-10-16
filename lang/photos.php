@@ -86,7 +86,7 @@ all_photos[48] = [
 ];
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
-{filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsay"},
+{filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsey"},
 {filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
 
 ];
