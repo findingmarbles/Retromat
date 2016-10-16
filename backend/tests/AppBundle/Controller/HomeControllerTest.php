@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HomeControllerTest extends WebTestCase
 {
-    public function testHomeActionRendersSingleActivityBlock()
+    public function testShowSingleActivityBlock()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=32');
@@ -16,7 +16,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(1, $activityBlocks->count());
     }
 
-    public function testHomeActionRendersActivityNameRawHtml()
+    public function testShowActivityNameRawHtml()
     {
         $client = static::createClient();
 
@@ -41,7 +41,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivitySummaries()
+    public function testShowActivitySummaries()
     {
         $client = static::createClient();
 
@@ -58,7 +58,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivityDescriptionsRawHtml()
+    public function testShowActivityDescriptionsRawHtml()
     {
         $client = static::createClient();
 
@@ -85,7 +85,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivityLinksText()
+    public function testShowActivityLinksText()
     {
         $client = static::createClient();
 
@@ -102,7 +102,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivityLinksHref()
+    public function testShowActivityLinksHref()
     {
         $client = static::createClient();
 
@@ -119,7 +119,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivityPhaseLinkText()
+    public function testShowActivityPhaseLinkText()
     {
         $client = static::createClient();
 
@@ -137,7 +137,7 @@ class HomeControllerTest extends WebTestCase
     }
 
 
-    public function testHomeActionRendersActivityPhaseLinkHref()
+    public function testShowActivityPhaseLinkHref()
     {
         $client = static::createClient();
 
@@ -154,7 +154,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivitySourceSimpleStringRawHtml()
+    public function testShowActivitySourceSimpleStringRawHtml()
     {
         $client = static::createClient();
 
@@ -171,7 +171,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivitySourcePlaceholderRawHtml()
+    public function testShowActivitySourcePlaceholderRawHtml()
     {
         $client = static::createClient();
 
@@ -188,7 +188,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivitySourcePlaceholderAndStringRawHtml()
+    public function testShowActivitySourcePlaceholderAndStringRawHtml()
     {
         $client = static::createClient();
 
@@ -205,7 +205,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersActivitySourceStringAndPlaceholderRawHtml()
+    public function testShowActivitySourceStringAndPlaceholderRawHtml()
     {
         $client = static::createClient();
 
@@ -222,7 +222,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testHomeActionRendersAny5Activities()
+    public function testShowAny5Activities()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=3-87-113-13-16');
@@ -244,7 +244,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals('100', $activities->eq(4)->filter('.js_fill_id')->text());
     }
 
-    public function testHomeActionRendersSuccessiveActivitiesInDifferentColors()
+    public function testShowSuccessiveActivitiesInDifferentColors()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=1-2-3-4-5-6-7');
