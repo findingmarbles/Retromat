@@ -10,14 +10,14 @@ var phase_titles = ['Set the stage', 'Gather data', 'Generate insights', 'Decide
 //  summary:   "",
 //  desc:      "Multiple \
 //              Lines",
-//  duration-detail:  "",
+//  durationDetail:  "",
 //  duration:    "Short | Medium | Long | Flexible",
 //  stage:    "All" or one or more of "Forming, Norming, Storming, Performing, Stagnating, Adjourning",
 //  source:    "",
 //  more:      "", // a link
 //  suitable:  "",
 //};
-// Values for duration-detail: "<minMinutes>-<maxMinutes> perPerson"
+// Values for durationDetail: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
 
 all_activities = [];
@@ -37,7 +37,7 @@ for all to see. If trust is low, deliberately destroy the votes afterwards to en
 what people make of the data. If there's a majority of Vacationers or Prisoners consider using the \
 retro to discuss this finding.",
 source:  source_agileRetrospectives,
-duration-detail:  "5-10 numberPeople",
+durationDetail:  "5-10 numberPeople",
 duration:    "Short",
 stage:    "Forming, Storming",
 suitable:   "iteration, release, project, immature"
@@ -84,7 +84,7 @@ Color Coding can help to see patterns, e.g.:<br>\
     <li>Function (tester, developer, manager, ...)</li>\
 </ul>",
 source:  source_agileRetrospectives,
-duration-detail:  "60-90 timeframe",
+durationDetail:  "60-90 timeframe",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, introverts"
@@ -123,7 +123,7 @@ Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality 
 cards wins. Debrief by asking for takeaways. <br>\
 (Game is based on 'Apples to Apples')",
 source:    source_agileRetrospectives,
-duration-detail:  "30-40",
+durationDetail:  "30-40",
 duration:    "Long",
 stage:    "All",
 suitable: "iteration, introverts"
@@ -144,7 +144,7 @@ Debrief by asking:\
     <li>Suggestions on how to continue?</li>\
 </ul>",
 source:    source_agileRetrospectives,
-duration-detail:  "15-25",
+durationDetail:  "15-25",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, project, introverts"
@@ -161,7 +161,7 @@ each group one of the top identified issues. Instructions for the group:\
 </ul>\
 Let the groups share their findings.",
 source:    source_agileRetrospectives,
-duration-detail:  "15-20",
+durationDetail:  "15-20",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project, root_cause"
@@ -179,7 +179,7 @@ desc:      "After discussing the data from Phase 2 show a flip chart with 4 quad
 </ul>\
 This list is your input for Phase 4.",
 source:    source_agileRetrospectives,
-duration-detail:  "20-25",
+durationDetail:  "20-25",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration"
@@ -203,7 +203,7 @@ The selected ideas enter Phase 4.",
 source:    source_agileRetrospectives,
 more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
     Nine Ways To Be A Great Brainstorm Lead</a>",
-duration-detail:  "40-60",
+durationDetail:  "40-60",
 duration:    "Long",
 stage:    "All",
 suitable: "iteration, release, project, introverts"
@@ -218,7 +218,7 @@ what you want to do as a group. You start by asking your neighbor the first ques
 neighbor answers and asks her neighbor a related question. Stop when consensus emerges or \
 the time is up. Go around at least once, so that everybody is heard!",
 source:    source_agileRetrospectives,
-duration-detail:  "30+ groupsize",
+durationDetail:  "30+ groupsize",
 duration:    "Medium",
 stage:    "Forming, Norming",
 suitable: "iteration, release, project, introverts"
@@ -237,7 +237,7 @@ The top 2 or 3 become your action items.\
 <br><br>\
 (Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
 source:    source_agileRetrospectives,
-duration-detail:  "15-30",
+durationDetail:  "15-30",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration"
@@ -255,7 +255,7 @@ Form groups around the issues the team wants to work on. Each group identifies 1
 concrete steps to reach the goal. Let each group present their results. All participants should agree \
 on the 'SMART-ness' of the goals. Refine and confirm.",
 source:    source_agileRetrospectives,
-duration-detail:  "20-60 groupsize",
+durationDetail:  "20-60 groupsize",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -269,7 +269,7 @@ desc:      "Put sticky notes on the door with the numbers 1 through 5 on them. 1
 When ending the retrospective, ask your participants to put a sticky to the number they feel \
 reflects the session. The sticky can be empty or have a comment or suggestion on it.",
 source:    "ALE 2011, " + source_findingMarbles,
-duration-detail:  "2-3",
+durationDetail:  "2-3",
 duration:    "Short",
 stage:    "Forming, Performing",
 suitable: "iteration, largeGroups"
@@ -283,7 +283,7 @@ It can be anything they contributed: help to the team or you, a solved problem, 
 Then invite others and wait for someone to work up the nerve. Close, when no one \
 has talked for a minute.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
-duration-detail:  "5-30 groupsize",
+durationDetail:  "5-30 groupsize",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -297,7 +297,7 @@ desc:      "Prepare 3 flip chart papers titled 'Helped', 'Hindered', and 'Hypoth
 Ask participants to help you grow and improve as a facilitator by writing \
 you sticky notes and signing their initials so that you may ask questions later.",
 source:    source_agileRetrospectives,
-duration-detail:  "5-10",
+durationDetail:  "5-10",
 duration:    "Medium",
 stage:    "Forming, Storming",
 suitable: "iteration, release"
@@ -312,7 +312,7 @@ with what you should do more, less and what is exactly right. Read out and brief
 discuss the stickies section-wise.",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
-duration-detail:  "5-10",
+durationDetail:  "5-10",
 duration:    "Medium",
 stage:    "Forming, Storming",
 suitable: "iteration, release, project"
@@ -330,7 +330,7 @@ desc:      "Each team member writes a short review with: \
 Everyone reads out their review. Record the star ratings on a flip chart.<br>\
 Can span whole retrospective by also asking what is recommended about the iteration and what not.",
 source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
-duration-detail:  "10",
+durationDetail:  "10",
 duration:    "Long",
 stage:    "All",
 suitable: "release, project"
@@ -347,7 +347,7 @@ Read out each one and discuss how you can increase 'motors' and cut 'anchors'. \
 Variation: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
 they already see coming.",
 source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
-duration-detail:  "10-15 groupSize",
+durationDetail:  "10-15 groupSize",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release"
@@ -375,7 +375,7 @@ up with their neighbor and both together must merge their actions into a single 
 two actions. The pairs form groups of 4. Then 8. Now collect every group's two action items \
 and have a vote on the final two.",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
-duration-detail:  "15-30 groupSize",
+durationDetail:  "15-30 groupSize",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, project, largeGroups"
@@ -398,7 +398,7 @@ desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against 
 When ending the retrospective, ask your participants to mark their satisfaction \
 with the session with an 'x' below the applicable smily.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
-duration-detail:  "2-3",
+durationDetail:  "2-3",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, largeGroups"
@@ -414,7 +414,7 @@ their name. <br>\
 If someone suggests an action for the whole team, the proposer needs to get \
 buy-in (and signatures) from the others.",
 source:    source_findingMarbles + ", inspired by <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>this list</a>",
-duration-detail:  "10-15 groupSize",
+durationDetail:  "10-15 groupSize",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, smallGroups"
@@ -432,7 +432,7 @@ Vicious circles are usually good starting points for actions. If you can break t
 influence, you can gain a lot.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
-duration-detail:  "20-60 complexity",
+durationDetail:  "20-60 complexity",
 duration:    "Long",
 stage:    "Storming, Norming",
 suitable: "release, project, smallGroups, complex"
@@ -451,7 +451,7 @@ until everyone has talked to everyone else. <br>\
 If the group has an odd number of members, the facilitator is part of a pair but the partner \
 gets all 10 minutes for their topic.",
 source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Thorsten Kalnin</a>",
-duration-detail:  "10 perPerson",
+durationDetail:  "10 perPerson",
 duration:    "Long",
 stage:    "Storming, Norming",
 suitable: "iteration, release, smallGroups"
@@ -472,7 +472,7 @@ discussing their content. Example 'fortunes': \
 You can <a href='http://weisbart.com/cookies/'>order retrospective cookies from Weisbart</a> \
 or bake your own, e.g. if English is not the team's native language.",
 source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
-duration-detail:  "90-120",
+durationDetail:  "90-120",
 duration:    "Long",
 stage:    "Performing, Stagnating, Adjourning",
 suitable: "iteration, release, smallGroups"
@@ -487,7 +487,7 @@ naturally revolve around work. This is a nice break from routine when things run
 you don't need visual documentation to support discussion. Mature teams can easily spread ideas and reach \
 consensus even in such an informal setting.",
 source:    source_findingMarbles,
-duration-detail:  "60-90",
+durationDetail:  "60-90",
 duration:    "Long",
 stage:    "Performing, Adjourning",
 suitable: "iteration, release, smallGroups, smoothSailing, mature"
@@ -516,7 +516,7 @@ desc:      "A dialogue sheet looks a little like a board game board. There are \
 <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>several different sheets available</a>. \
 Choose one, print it as large as possible (preferably A1) and follow its instructions.",
 source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
-duration-detail:  "90-120",
+durationDetail:  "90-120",
 duration:    "Long",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -536,7 +536,7 @@ Ask the team members to draw their answer. Post all drawings on a whiteboard. Fo
 let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
 source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
-duration-detail:  "5 + 3 per person",
+durationDetail:  "5 + 3 per person",
 duration:    "Medium",
 stage:    "Performing",
 suitable: "iteration, release, project"
@@ -558,7 +558,7 @@ desc:      "Prepare a flipchart with faces expressing various emotions such as: 
 Let each team member choose how they feel about the project. This is a fun and effective way to \
 surface problems early. You can address them in the subsequent phases.",
 source:    "Andrew Ciccarelli",
-duration-detail:  "10 for 5 people",
+durationDetail:  "10 for 5 people",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release"
@@ -576,7 +576,7 @@ Start a short conversation e.g. by asking:\
     <li>What patterns do you see? What do they mean for you as a team?</li>\
 </ul>",
 source:    source_agileRetrospectives,
-duration-detail:  "10-15",
+durationDetail:  "10-15",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release"
@@ -592,7 +592,7 @@ They may only say positive things and nothing that was said may be reduced in me
 anything said afterwards. <br>\
 Hold 3 rounds so that everyone sits in the shower seat once.",
 source:    "<a href='http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/'>Ralph Miarka</a>",
-duration-detail:  "10-15",
+durationDetail:  "10-15",
 duration:    "Short",
 stage:    "Norming, Performing",
 suitable: "iteration, release, matureTeam"
@@ -610,7 +610,7 @@ desc:      "Print out a checklist that appeals to you, e.g.:\
 Go through them in the team and discuss where you stand and if you're on the right track. <br>\
 This is a good activity after an iteration without major events.",
 source:    source_findingMarbles,
-duration-detail:  "10-25 minutes depending on the list",
+durationDetail:  "10-25 minutes depending on the list",
 duration:    "Medium",
 stage:    "All",
 suitable: "smallTeams, iteration, release, project, smoothGoing"
@@ -627,7 +627,7 @@ desc:      "Concentrate on positive aspects instead of problems by setting an af
     <li>We'll discover where we added the most value during our last iteration to increase the value we'll add during the next</li>\
 </ul>",
 source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
-duration-detail:  "3 minutes",
+durationDetail:  "3 minutes",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -659,7 +659,7 @@ Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by 
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.",
 source:    source_agileRetrospectives,
-duration-detail:  "15-30",
+durationDetail:  "15-30",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration"
@@ -676,7 +676,7 @@ Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by 
 or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
 The top 2 or 3 become your action items.",
 source:    source_agileRetrospectives,
-duration-detail:  "15-30",
+durationDetail:  "15-30",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration"
@@ -691,7 +691,7 @@ and 1 thing they would change (on different index cards). Post the index \
 cards and walk through them briefly to clarify the exact meaning and detect \
 the majority's preference when notes from different people point into opposite directions.",
 source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
-duration-detail:  "5-10",
+durationDetail:  "5-10",
 duration:    "Medium",
 stage:    "All",
 suitable: "release, project"
@@ -712,7 +712,7 @@ something you learned in the previous phase until someone joins. \
 End the activity when discussion dies down. \
 <br>This is a variant of 'Fish Bowl'. It's suited for groups of 10-25 people.",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
-duration-detail:  "15-30",
+durationDetail:  "15-30",
 duration:    "Medium",
 stage:    "All",
 suitable: "release, project, largeGroups"
@@ -727,7 +727,7 @@ represents their view of the last iteration. After choosing they write down thre
 describing the postcard, i.e. iteration, on index cards. In turn everyone hangs up their post- and \
 index cards and describes their choice.",
 source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
-duration-detail:  "15-20",
+durationDetail:  "15-20",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, project",
@@ -742,7 +742,7 @@ according to their satisfaction with the last iteration. Psychologically, \
 taking a stand physically is different from just saying something. It's more 'real'.<br> \
 You can reuse the scale if you close with activity #44.",
 source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
-duration-detail:  "2-5",
+durationDetail:  "2-5",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -757,7 +757,7 @@ according to their satisfaction with the retrospective. Psychologically, \
 taking a stand physically is different from just saying something. It's more 'real'.<br> \
 See activity #43 on how to begin the retrospective with the same scale.",
 source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
-duration-detail:  "2-5",
+durationDetail:  "2-5",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -769,7 +769,7 @@ summary:   "What pleased and / or surprised participants in the retrospective",
 desc:      "Just make a quick round around the group and let each participant point out one \
 finding of the retrospective that either surprised or pleased them (or both).",
 source:    source_unknown,
-duration-detail:  "5",
+durationDetail:  "5",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
@@ -781,7 +781,7 @@ summary:   "Ask 'Why do we do retrospectives?'",
 desc:      "Go back to the roots and start into the retrospective by asking 'Why do we do this?' \
 Write down all answers for everyone to see. You might be surprised.",
 source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
-duration-detail:  "5",
+durationDetail:  "5",
 duration:    "Short",
 stage:    "Forming, Performing, Stagnating",
 suitable: "iteration, release, project"
@@ -798,7 +798,7 @@ Go through the notes and discuss them.<br>\
 A mailbox is great for long iterations and forgetful teams.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
-duration-detail:  "15",
+durationDetail:  "15",
 duration:    "Medium",
 stage:    "All",
 suitable: "release, project"
@@ -813,7 +813,7 @@ Team members position themselves on the scale according to their preference for 
 Now tweak the options until one option has a clear majority.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
-duration-detail:  "5-10 per decision",
+durationDetail:  "5-10 per decision",
 duration:    "Short",
 stage:    "Storming, Norming",
 suitable: "iteration, release, project"
@@ -828,7 +828,7 @@ Participants write their proposals on sticky notes and put \
 them in the appropriate segment. After clustering stickies that capture the \
 same idea, dot vote on which suggestions to try.",
 source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
-duration-detail:  "15 min",
+durationDetail:  "15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, release, project"
@@ -845,7 +845,7 @@ What is different now?' If trust within the group is high, let everyone describe
 their 'Wish granted'-workplace. If not, just tell the participants to keep their \
 scenario in mind during the next phase and suggest actions that work towards making it real.",
 source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
-duration-detail:  "15 min",
+durationDetail:  "15 min",
 duration:    "Medium",
 stage:    "Storming, Norming",
 suitable:  "iteration"
@@ -865,7 +865,7 @@ desc:      "Say how much time you set aside for this phase, then explain the rul
 </ul> \
 Stop when the allotted time is over.",
 source:    "<a href='http://leancoffee.org/'>Original description</a> and <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
-duration-detail:  "20-40 min",
+durationDetail:  "20-40 min",
 duration:    "Flexible",
 stage:    "All",
 suitable:  "iteration"
@@ -886,7 +886,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 Watch the constellations unfold. Afterwards ask which constellations were surprising.<br>\
 This can also be a closing activity (#53).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
-duration-detail:  "10 min",
+durationDetail:  "10 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -907,7 +907,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 Watch the constellations unfold. Any surprising constellations?<br>\
 This can also be an opening activity (#52).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
-duration-detail:  "5 min",
+durationDetail:  "5 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -928,7 +928,7 @@ For each category: Dot-vote and announce the winner. \
 Ask the team why they think the user story won in this category \
 and let the team reflect on the process of completing the tasks - what went good or wrong.",
 source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
-duration-detail:  "30-40 min",
+durationDetail:  "30-40 min",
 duration:    "Short",
 stage:    "Forming, Storming, Norming",
 suitable:  "project, release",
@@ -946,7 +946,7 @@ desc:      "Norman Kerth, inventor of retrospectives, identified the following 4
 </ul>\
 What are the team's answers?",
 source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
-duration-detail:  "15 min",
+durationDetail:  "15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -965,7 +965,7 @@ Let the team ask ALL the questions:\
     <li>...</li>\
 </ul>",
 source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
-duration-detail:  "45 min",
+durationDetail:  "45 min",
 duration:    "Long",
 stage:    "Forming, Norming, Performing, Stagnating",
 suitable:  "iteration, project"
@@ -977,7 +977,7 @@ summary:   "Each team member appreciates someone else with a flower",
 desc:      "Buy one flower for each team member and reveal them at the end of the retrospective. \
 Everyone gets to give someone else a flower as a token of their appreciation.",
 source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
-duration-detail:  "5 min",
+durationDetail:  "5 min",
 duration:    "Short",
 stage:    "Norming, Performing",
 suitable:  "iteration, project"
@@ -990,7 +990,7 @@ desc:      "Imagine your boss had spent the last iteration - unrecognized - amon
 think about your interactions and results? What would she want you to change? \
 <br>This setting encourages the team to see themselves from a different angle.",
 source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1007,7 +1007,7 @@ to 5 (Happy).\
     <li>If someone else has the same score, they place their sticky above the placed one, effectively forming a histogram</li>\
 </ul>",
 source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
-duration-detail:  "2 min",
+durationDetail:  "2 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1025,7 +1025,7 @@ that people answer when they catch the ball, such as: \
 Depending on the question it might uncover events that are bugging people. If any alarm bells go off, dig a little deeper. With the '1 nice thing'-question \
 you usually close on a positive note.",
 source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
-duration-detail:  "5-10 min",
+durationDetail:  "5-10 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project",
@@ -1050,7 +1050,7 @@ which of the cards gets more points. This is an idea by \
 <a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam “Thiagi” Thiagarajan</a> via \
 <a href='https://twitter.com/ptevis'>Paul Tevis</a>",
 source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release, largeGroup"
@@ -1069,7 +1069,7 @@ paper to the left and start reviewing the sheet that was passed to them. In the 
 write what they personally expect from that person, sign it and pass it on.<br>\
 When the papers made it around the room, take some time to review and share observations.",
 source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "Forming, Storming, Norming",
 suitable:  "iteration, project, release, start"
@@ -1089,7 +1089,7 @@ participants' assessment:\
 The straightforward choice is to pick the bottom left fruit as action items. If this is not \
 consensus, you can either have a short discussion to agree on some actions or dot vote.",
 source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "Forming, Storming",
 suitable:  "iteration, project, release"
@@ -1109,7 +1109,7 @@ The long and dull stories are now nicely grouped to 'attack' in subsequent phase
 <a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>\
     adapt Quartering for lots of other 2-dimensional categorizations</a>.)",
 source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
-duration-detail:  "10",
+durationDetail:  "10",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project",
@@ -1134,7 +1134,7 @@ Questions proposed for Software Development teams:\
 <br>\
 ('Remember the Future' (#37) works well as the next step.)",
 source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, adapted for SW development by " + source_findingMarbles,
-duration-detail:  "20-25 min groupsize",
+durationDetail:  "20-25 min groupsize",
 duration:    "Medium",
 stage:    "Storming",
 suitable:  "iteration, project"
@@ -1152,7 +1152,7 @@ that's okay.) <br>\
 Pass the papers every 3 minutes until everyone had every paper. Pass one last time. Now everyone \
 reads their paper and picks the top 3 ideas. Collect all top 3's on a flip chart for the next phase.",
 source:    "Prof. Bernd Rohrbach",
-duration-detail:  "20 min groupsize",
+durationDetail:  "20 min groupsize",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release, introverts"
@@ -1164,7 +1164,7 @@ summary:   "Capture what participants learned during the retro",
 desc:      "Everyone writes a sticky note with the most remarkable thing they learned during the retro. Put \
 the notes against the door. In turn each participant reads out their own note.",
 source:     source_judith,
-duration-detail:  "5 min",
+durationDetail:  "5 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1177,7 +1177,7 @@ desc:      "Hand out pens and paper. Pose the question 'What if the company / de
 What would a map for it look like? What hints would you add for save travelling?' Let participants draw \
 for 5-10 minutes. Hang up the drawings. Walk through each one to clarify and discuss interesting metaphors.",
 source:     source_judith,
-duration-detail:  "15 min groupsize",
+durationDetail:  "15 min groupsize",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1191,7 +1191,7 @@ into a certain desaster - one idea per note. When everyone's finished writing, h
 and walk through them. Identify and discuss themes. <br>\
 In the next phase turn these negative actions into their opposite.",
 source:     source_findingMarbles,
-duration-detail:  "15 min groupsize",
+durationDetail:  "15 min groupsize",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1206,7 +1206,7 @@ and perceived touch points intersect - with an emoticon showing their mood (not 
 Discuss surprising variances and extreme moods.<br>\
 (Vary the X-axis to reflect current team topics, e.g. 'Number of times we pair programmed'.)",
 source:     source_judith,
-duration-detail:  "5 min groupsize",
+durationDetail:  "5 min groupsize",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1234,7 +1234,7 @@ important it is to them, the more they should spend. Make it more fun by bringin
 money from a board game such as Monopoly.\
 <br><br>Let them agree on prices. Consider the 2 or 3 highest amount action items as chosen.",
 source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
-duration-detail:  "10 min groupsize",
+durationDetail:  "10 min groupsize",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1253,7 +1253,7 @@ prefers her idea, it's swapped against the hanging one. This continues until eve
 both their cards. \
 <br><br>Try not to start the circle with dominant team members.",
 source:     source_judith,
-duration-detail:  "15 min groupsize",
+durationDetail:  "15 min groupsize",
 duration:    "Medium",
 stage:    "Performing",
 suitable:  "iteration"
@@ -1268,7 +1268,7 @@ Record it on another flip chart. Now ask participants to comment the items on th
 by posting sticky notes answering 'What keeps us from doing this?'. Hand out different colored \
 sticky notes to comment on the comments, asking 'Why is it like this?'.",
 source:     source_judith,
-duration-detail:  "25 min groupsize",
+durationDetail:  "25 min groupsize",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1286,7 +1286,7 @@ When everyone's done, they pass their paper to their left-hand neighbors. The ne
 and may add comments. Papers are passed on and on until they return to their authors. One last \
 read. Then all pages are ceremoniously shredded or (if you're outside) burned.",
 source:     "Unknown, via Vanessa",
-duration-detail:  "10 min groupsize",
+durationDetail:  "10 min groupsize",
 duration:    "Short",
 stage:    "Storming, Stagnating",
 suitable:  "iteration, project, release"
@@ -1300,7 +1300,7 @@ most about you is ...' Then your neighbour says what she admires about \
 her neighbour and so on until the last participants admires you. Feels great, \
 doesn't it?",
 source:     source_judith,
-duration-detail:  "5 min",
+durationDetail:  "5 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1316,7 +1316,7 @@ everyone to place their sticky according to their confidence in their \
 follow through as a team. <br>Discuss interesting results such as low probability \
 or bad mood.",
 source:     source_judith,
-duration-detail:  "5-10 min",
+durationDetail:  "5-10 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1336,7 +1336,7 @@ Collect the answers, either stickies on flip charts or in a digital tool if you'
 Form 4 subgroups, on for each L, read all notes, identify patterns and report their findings to the group. \
 Use this as input for the next phase.",
 source:     "<a href='http://ebgconsulting.com/blog/the-4l%E2%80%99s-a-retrospective-technique/'>Mary Gorman &amp; Ellen Gottesdiener</a> probably via <a href='http://www.groupmap.com/portfolio-posts/agile-retrospective/'>groupmap.com</a>",
-duration-detail:  "30 min",
+durationDetail:  "30 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release, distributed"
@@ -1353,7 +1353,7 @@ view of a single user story. If necessary, ask them to break into small groups, 
 facilitate the process if they need it. Look at the finished map. Where are long delays, \
 choke points and bottlenecks?",
 source:    "<a href='http://pragprog.com/book/ppmetr/metaprogramming-ruby'>Paolo 'Nusco' Perrotta</a>, inspired by <a href='http://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20'>Mary &amp; Tom Poppendieck</a>",
-duration-detail:  "20-30 min",
+durationDetail:  "20-30 min",
 duration:    "Medium",
 stage:    "Forming, Storming, Norming",
 more:      "http://leadinganswers.typepad.com/leading_answers/2011/09/pmi-acp-value-stream-mapping.html",
@@ -1370,7 +1370,7 @@ Let everyone read out their notes and post them to the appropriate column. \
 Are all issues unanimous?",
 source:     "<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>",
 more:       "http://www.funretrospectives.com/repeat-avoid/",
-duration-detail:  "15-30",
+durationDetail:  "15-30",
 duration:    "Medium",
 stage:    "All",
 suitable: "iteration, project, remote"
@@ -1394,7 +1394,7 @@ people's needs they can ask for an Alignment Check. Then everyone says a number 
 how much they are getting what they want. The person with the lowest number takes over to get nearer to \
 what they want.]",
 source:     "Inspired by <a href='http://liveingreatness.com/additional-protocols/meet/'>Jim &amp; Michele McCarthy</a>",
-duration-detail:  "5 min groupsize",
+durationDetail:  "5 min groupsize",
 duration:    "Forming, Storming, Norming",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1408,7 +1408,7 @@ Give them a minute to come up with something, then go around the team. \
 This helps people recall the last iteration so that they have some ground to \
 start from.",
 source:     "Yurii Liholat",
-duration-detail:  "5 min groupsize",
+durationDetail:  "5 min groupsize",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1427,7 +1427,7 @@ Write a question next to each dartboard, e.g. \
 Participants mark their opinion with a sticky. Smack in the middle is 100% \
 agreement. Outside the disc is 0% agreement.",
 source:   "<a href='http://www.philippflenker.de/'>Philipp Flenker</a>",
-duration-detail:  "2-5",
+durationDetail:  "2-5",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release"
@@ -1448,7 +1448,7 @@ facilitate a short discussion for each action, e.g. asking: \
     <li>Why do opinions vary that much?</li> \
 </ul>",
 source:    "<a href='https://sven-winkler.squarespace.com/blog-en/2014/2/5/the-starfish'>Sven Winkler</a>",
-duration-detail:  "5-10",
+durationDetail:  "5-10",
 duration:    "Short",
 stage:    "All",
 suitable: "iteration, release"
@@ -1468,7 +1468,7 @@ a postcard to a person the whole team knows (i.e. an ex-colleague). \
 When the time is up, collect and shuffle the cards before re-distributing them. \
 Team members take turns to read out loud the postcards they got.",
 source: "<a href='http://uk.linkedin.com/in/alberopomar'>Filipe Albero Pomar</a>",
-duration-detail:  "15 min",
+durationDetail:  "15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1485,7 +1485,7 @@ Value Stream Mapping (#79). For messier situations try something akin to \
 Cause-Effect-Diagrams (#25). <br>\
 Look at the finished drawing. Where are delays or dead ends?",
 source:    "<a href='https://www.linkedin.com/in/bleadof'>Tarmo Aidantausta</a>",
-duration-detail:  "20-30 min",
+durationDetail:  "20-30 min",
 duration:    "Medium",
 stage:    "Forming, Storming, Norming",
 suitable:  "iteration, project, release"
@@ -1502,7 +1502,7 @@ for each of these meetings. Let the team discuss why some meetings do not have a
 You can discuss improvements as part of this activity or in a later activity such as \
 Perfection Game (#20) or Plus \& Delta (#40).",
 source:    "<a href='https://www.linkedin.com/profile/view?id=6689187'>Fanny Santos</a>",
-duration-detail:  "10-20 min",
+durationDetail:  "10-20 min",
 duration:    "Medium",
 stage:    "Storming, Norming, Stagnating",
 suitable:  "iteration, project, release"
@@ -1519,7 +1519,7 @@ action to the next round until you have a winner of the impediments cup. \
 <br><br>\
 If you want to take on more than one or two actions you can play the match for third place.",
 source:    "<a href='http://obivandamme.wordpress.com'>Pascal Martin</a>, inspired by <a href='http://borisgloger.com/'>Boris Gloger's 'Bubble Up'</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1546,7 +1546,7 @@ One example per sticky note. There's only one rule: If someone contributes to th
 s/he must also have a positive comment in at least 1 other column.<br><br> \
 Everyone posts their stickies in the appropriate column on the board and describes it briefly.",
 source:    "<a href='http://scalablenotions.wordpress.com/2014/05/15/retrospective-technique-retro-wedding/'>Jordan Morris</a>, via Todd Galloway",
-duration-detail:  "5-10 min",
+durationDetail:  "5-10 min",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1567,7 +1567,7 @@ one of the values - 1 cheerful sticky note per example. In turn, let \
 everyone post their note in the corresponding bubble and read them out loud. \
 Rejoice in how you embody agile core values :)",
 source:    "<a href='http://agileinpills.wordpress.com'>Jesus Mendez</a>",
-duration-detail:  "10-15 min",
+durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "Storming, Norming, Stagnating",
 suitable:  "iteration, project, release"
@@ -1593,7 +1593,7 @@ Give the teams guidelines about what the posters should cover / answer, such as:
 The groups have 15-20 minutes to discuss and create their posters. Afterwards \
 gather and each group gets 2 minutes to present their results.",
 source:    "Unknown, adapted by " + source_findingMarbles + ", inspired by Michal Grzeskowiak",
-duration-detail:  "30 min",
+durationDetail:  "30 min",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1610,7 +1610,7 @@ desc:      "Take each of your action items and create a funny poster for it (see
 </ol>\
 Print your master piece as big as possible (A4 at the very least) and display it prominently.",
 source:    "<a href='http://fr.slideshare.net/romaintrocherie/agitational-posters-english-romain-trocherie-20140911'>Romain Trocherie</a>",
-duration-detail:  "30 min per topic / poster",
+durationDetail:  "30 min per topic / poster",
 duration:    "Long",
 stage:    "Performing",
 suitable:  "release"
@@ -1634,7 +1634,7 @@ Now each participant writes a story of no more than 100 words about last iterati
 word at least once. Timebox this to 5-10 minutes. <br> \
 When everyone's finished, they read out their stories. Afterwards lead a discussion about common themes of the stories.",
 source:    "<a href='https://medium.com/p/agile-retrospective-technique-1-7cac5cb4302a'>Philip Rogers</a>",
-duration-detail:  "20-30 minutes",
+durationDetail:  "20-30 minutes",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1654,7 +1654,7 @@ Ask them to silently write down one trait per note. Let participants explain the
 </li></ul>\
 You can adapt this activity for other roles, e.g. BYOProductOwner.",
 source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
-duration-detail:  "30 minutes",
+durationDetail:  "30 minutes",
 duration:    "Long",
 stage:    "Forming, Storming, Norming",
 suitable:  "iteration, project, release"
@@ -1672,7 +1672,7 @@ Then in turn all participants read their stickies and give them to the correspon
 The affected group rates it from 0 ('It was not a problem') to 5 ('It was a big problem'). \
 Thus you get insights and shared understanding about problems and can select some of them to work on.",
 source:    "<a href='http://www.elproximopaso.net/2011/10/dinamica-de-retrospectiva-si-fuera-vos.html'>Thomas Wallet</a>",
-duration-detail:  "25-40 minutes",
+durationDetail:  "25-40 minutes",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1691,7 +1691,7 @@ problem solving tree.<br><br> \
 Once you have lower levels that are well understood and easy to implement in a single iteration, \
 dot vote to decide which to tackle in the next iteration. ",
 source:    "<a href='https://www.scrumalliance.org/community/profile/bsarni'>Bob Sarni</a>, described by <a href='http://growingagile.co.za/2012/01/the-problem-solving-tree-a-free-exercise/'>Karen Greaves</a>",
-duration-detail:  "30 minutes",
+durationDetail:  "30 minutes",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1706,7 +1706,7 @@ completed. Tweets could be on the iteration as a whole, on individual stories, a
 write the tweets, then arrange them in a timeline and discuss themes, trends etc. Now invite participants to favorite, \
 retweet and write replies to the tweets, again following up with discussion.",
 source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
-duration-detail:  "40 minutes for 2 week iteration with team of 6",
+durationDetail:  "40 minutes for 2 week iteration with team of 6",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1731,7 +1731,7 @@ Ask the team now to write items onto index cards for each of the categories. \
 Hang up the notes with clothespins and re-arrange them into clusters. \
 Now the team picks 2 'dirty' and 2 'clean' topics they want to talk about, e.g. by dot voting.",
 source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
-duration-detail:  "10 minutes",
+durationDetail:  "10 minutes",
 duration:    "Short",
 stage:    "Forming, Storming, Norming",
 suitable:  "iteration, project, release"
@@ -1759,7 +1759,7 @@ If you have more actions than poker values the players can show 'no card' (count
 <br><br> \
 Implement the action with the highest sum in the next iteration. Add more actions only if there's team consensus to do so.",
 source:    "<a href='https://www.xing.com/profile/Andreas_Ratsch'>Andreas Ratsch</a>",
-duration-detail:  "15 minutes",
+durationDetail:  "15 minutes",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1781,7 +1781,7 @@ Which are more long term? \
 <br><br> \
 Choose 2 actions from the simple / ordered area of the map or 1 action from the complex area.",
 source:    "<a href='http://www.futureworksconsulting.com/who-we-are/diana-larsen'>Diana Larsen</a> adapted it from <a href='http://wiki.hsdinstitute.org'>Human Systems Dynamics Institute</a>",
-duration-detail:  "25 minutes",
+durationDetail:  "25 minutes",
 duration:    "Medium",
 stage:    "Forming, Storming, Norming",
 suitable:  "iteration, project, release"
@@ -1815,7 +1815,7 @@ behavior in the next iteration. It can be something really small. \
 Once everyone is finisihed, do a round for each person to present their \
 stickies and post them to the board.",
 source:    "Mike B.",
-duration-detail:  "10 minutes",
+durationDetail:  "10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1831,7 +1831,7 @@ Draw a table with the voters in the left-most column and proposals on top. Now e
 fill in their resistance towards each proposal. 0 means 'no resistance - this is what I want', \
 up to 10, meaning 'shoot me now'. Give the least hated solution a try.",
 source:    "Georg Paulus, Siegfried Schrotta \& Erich Visotschnig via <a href='http://finding-marbles.com/2012/01/12/systemic-consensus/'>Corinna Baldauf</a>",
-duration-detail:  "10 minutes",
+durationDetail:  "10 minutes",
 duration:    "Short",
 stage:    "Storming",
 suitable:  "iteration, project"
@@ -1846,7 +1846,7 @@ during the next iteration. It's for quiet self reflection and is not shared with
 They take their respective sticky notes with them to their desktop and put it in a place they \
 will look at often.",
 source:    "<a href='http://www.funretrospectives.com/note-to-self/'>Fun Retrospectives</a>",
-duration-detail:  "3 minutes",
+durationDetail:  "3 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -1864,7 +1864,7 @@ Afterwards the parties meet again and their leaders present their manifestos. Be
 Now plan for a better world! Summarise the manifestos with sticky notes, one color per party. What do the parties agree on? \
 Which promises are unrealistic and which can you achieve?",
 source:    "<a href='http://wordaligned.org/'>Thomas Guest</a>",
-duration-detail:  "45 minutes",
+durationDetail:  "45 minutes",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1880,7 +1880,7 @@ Write them down with the name of the person who said them. \
 Read out the quotes at the beginning of the retro, and ask the team to guess who said it - the source may not self-identify! \
 Often the team will not only know who said it, but also talk about what was going on at the time.",
 source:    "Beccy Stafford",
-duration-detail:  "5-10 minutes",
+durationDetail:  "5-10 minutes",
 duration:    "Short",
 stage:    "Norming, Performing",
 suitable:  "iteration, project, release, familiarTeam"
@@ -1892,7 +1892,7 @@ summary:   "Imagine yourself as a superhero! What is your superpower?",
 desc:      "Each participant creates a superhero version of themselves based on how they see themselves in the team / project - \
 Complete with appropriate superpowers, weaknesses and possibly an arch-nemesis.",
 source:    "<a href='http://pietrotull.com/2015/01/26/a-retro-in-practise/'>Pietari Kettunen</a>",
-duration-detail:  "10 minutes",
+durationDetail:  "10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1909,7 +1909,7 @@ how the communication is flowing in your team and if people are aware of the fee
 <br><br> \
 Consider closing with activity #109.",
 source:    "<a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
-duration-detail:  "5-10 minutes",
+durationDetail:  "5-10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration"
@@ -1923,7 +1923,7 @@ of their time and why. Their neighbour confirms or corrects their guess. \
 <br><br> \
 If you have set the stage with activity #108, make sure to go around the other direction this time.",
 source:    "Inspired by <a href='https://www.linkedin.com/in/fabilewk'>Fabián Lewkowicz</a>",
-duration-detail:  "5-10 minutes",
+durationDetail:  "5-10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration"
@@ -1953,7 +1953,7 @@ Afterwards look at the finished table and lead a discussion about \
 <li>Suggestions on how to continue?</li> \
 </ul>",
 source:    "Isabel Corniche",
-duration-detail:  "20-25 minutes",
+durationDetail:  "20-25 minutes",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -1988,7 +1988,7 @@ away to work on. It is up to you what you take away from it, you are free to ign
 you do not agree with them. Please deliver your feedback kindly and remember to thank your team for their \
 feedback about you.'",
 source:    "<a href='http://www.silverstripe.com/who-we-are/our-team/diana-hennessy'>Diana Hennessy</a>",
-duration-detail:  "60 minutes",
+durationDetail:  "60 minutes",
 duration:    "Long",
 stage:    "Performing, Stagnating",
 suitable:  "iteration, project, release, intervention, liftoff"
@@ -2006,7 +2006,7 @@ throughout the next iteration to make someone's day. \
 Variation: Use normal paper and let participants fold the paper into little <a href='http://www.origami-fun.com/origami-crane.html'>cranes</a> for some origami fun. \
 (Suggestion by Virginia Brassesco)",
 source:    "<a href='https://medium.com/agile-outside-the-box/retrospective-technique-appreciation-post-cards-e53ef3d67425'>Philip Rogers</a>",
-duration-detail:  "5-10 minutes",
+durationDetail:  "5-10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -2024,7 +2024,7 @@ Ask the crew the following questions: \
 <li>            Change course for... (What existing processes go badly)</li> \
 </ol>",
 source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
-duration-detail:  "30 minutes",
+durationDetail:  "30 minutes",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration, project"
@@ -2037,7 +2037,7 @@ desc:      "Each team member gets a sharpie and a tangerine with a sticky note a
 'How do you feel? Please give me a face'. After all are done drawing you go around and \
 compare the works of art and emotions. It's a light-hearted way to set the stage.",
 source:    "<a href='http://se-co.de/index.php/das-sind-wir/'>Afagh Zadeh</a>",
-duration-detail:  "5 minutes",
+durationDetail:  "5 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -2060,7 +2060,7 @@ factors, 2 for inhibitors. Tally the votes and mark the top 2x2 factors with big
 Spend the last 15-20 mins of the session brainstorming ways to increase the top driving factors \
 and decrease the top restraining factors.",
 source:    "<a href='http://derekneighbors.com/2009/02/agile-retrospective-using-force-field-analysis/'>Derek Neighbors</a>, via <a href='http://www.silverstripe.com/about-us/team/project-management/joel-edwards/'>Joel Edwards</a>",
-duration-detail:  "60 minutes",
+durationDetail:  "60 minutes",
 duration:    "Long",
 stage:    "Storming, Stagnating",
 suitable:  "iteration, project"
@@ -2080,7 +2080,7 @@ Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
 <br><br> \
 Let everybody present their wishes. Optionally you can then dot-vote on the best or most appreciated wishes.",
 source:    "&Ouml;zer &Ouml;zker &amp; Anke Bartels",
-duration-detail:  "10-15 minutes",
+durationDetail:  "10-15 minutes",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project"
@@ -2102,7 +2102,7 @@ Read out each action and fill in the other columns by asking: \
 </ul> \
 Actions do not require all of the above. But if there are no suggestions for any of the columns, ask the team if they really think they will do it.",
 source:    "<a href='https://twitter.com/nespera'>Chris Rimmer</a>",
-duration-detail:  "15 minutes",
+durationDetail:  "15 minutes",
 duration:    "Medium",
 stage:    "Storming",
 suitable:  "iteration"
@@ -2121,7 +2121,7 @@ Example: If the mountain is flat, the kid might be bored. If you're facing a wal
 <br><br> \
 You can then discuss the team's reaction facing their own burndowns.",
 source:    "Olivier Fortier",
-duration-detail:  "30 minutes",
+durationDetail:  "30 minutes",
 duration:    "Long",
 stage:    "All",
 suitable:  "iteration"
@@ -2139,7 +2139,7 @@ Encourage short, punchy headlines. \
 Stick the completed headlines to a whiteboard. If any cover the same news item, combine them. \
 If any are unclear, ask the reporter for details. Vote on which news items to discuss and analyse in more depth.",
 source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
-duration-detail:  "15-20 minutes",
+durationDetail:  "15-20 minutes",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
@@ -2170,7 +2170,7 @@ desc:      "Put up three sections labeled ‘The Good’, ‘The Bad’ and ‘T
 5 minutes to note down one or more things per category from the last sprint. One aspect per post-it. \
 When the time is up, have everyone stick their post-its to the appropriate labels. Cluster as you collect, if possible.",
 source:    "<a href='http://qualityswdev.com/2016/02/04/wild-wild-west-retrospective/'>Manuel Küblböck</a>",
-duration-detail:  "10 minutes",
+durationDetail:  "10 minutes",
 duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project"
@@ -2265,6 +2265,43 @@ duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
 };
-
+all_activities[125] = {
+phase:     1,
+name:      "I like, I wish",
+summary:   "Give positive, as well as non-threatening, constructive feedback",
+desc:      "Hang up two flip charts, one headed 'I like' and the other 'I wish'. \
+Give the participants 5-10 minutes to silently write down what they liked about the \
+past iteration and the team and what they wish was different (and how it should be \
+different) – one point per sticky note. \
+When everyone is finished, go around the circle and everybody reads out their 'I like' \
+items and hangs them up. Repeat the same for the 'I wish' stickies. Either debrief or use the stickies \
+as input for the next phase.",
+source:    "Inspired by <a href='http://ilikeiwish.org/'>Satu Rekonen</a>",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[126] = {
+phase:     1,
+name:      "Delay Display",
+summary:   "What's the current delay? And where are we going again?",
+desc:      "Draw a table with 3 columns. Head the first one 'Destination', \
+the second one 'Delay' and the last one 'Announcement'. \
+<br><br> \
+Introduce the scenario: 'You are at a train station. Where is your train going?. \
+(It can be anything, a fictional or a real 'place'.) How much of a delay does the \
+train currently have? And what is the announcement? Why is there a delay? (This can \
+be the 'real' reason or modeled after the typical announcements.)' \
+Each team member fills out 3 sticky notes, 1 for each column. \
+Going around the circle, each team member posts their notes and explains briefly, why \
+they're going to destination X and why there's a delay (or not). \
+<br><br> \
+Trains and train delays are very familiar in Germany. Depending on your country and culture \
+you might want to pick a different mode of transportation.",
+source:    "<a href='https://www.slacktime.org'>Christian Schafmeister</a>",
+duration:    "Medium",
+stage:    "Storming, Performing",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
