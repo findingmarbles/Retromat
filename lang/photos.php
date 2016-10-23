@@ -19,6 +19,9 @@ all_photos[6] = [
 {filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
 {filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
 ];
+all_photos[7] = [
+{filename:    path + "8_5Whys.jpg", contributor: "Stefan Wolpers"}
+];
 all_photos[8] = [
 {filename:    path + "9_Learning-Matrix.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "9_Learning-Matrix-2.jpg", contributor: "Simon Sablowski"}
@@ -34,11 +37,10 @@ all_photos[17] = [
 ];
 all_photos[18] = [
 {filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
-{filename:    path + "19_sailboat.jpg", contributor: "David Johnson"},
-{filename:    path + "19_Speedboat.jpg", contributor: "Corinna Baldauf"}
+{filename:    path + "19_Sailboat2.jpg", contributor: "Manuel Küblböck"},
+{filename:    path + "19_sailboat.jpg", contributor: "David Johnson"}
 ];
 all_photos[19] = [
-{filename: path + "20_Perfection-Game.jpg", contributor: "Pieter Versteijnen"},
 {filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
 ];
 all_photos[20] = [{
@@ -57,6 +59,9 @@ all_photos[24] = [
 {filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
 {filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
 ];
+all_photos[28] = [
+{filename:    path + "29_Circle-of-influence.jpg", contributor: "Stefan Wolpers"}
+];
 all_photos[30] = [
 {filename:    path + "31_Draw-Iteration.jpg", contributor: "Eric Lannemajou"}
 ];
@@ -64,6 +69,9 @@ all_photos[31] = [
 {filename:    path + "32_Emoticons.jpg", contributor: "Simon Sablowski"},
 {filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
 {filename:    path + "32_Emoticons-3.jpg", contributor: "Eric van der Meulen"}
+];
+all_photos[32] = [
+{filename:    path + "33_proud_sorry.jpg", contributor: "Andy Rosslau"}
 ];
 all_photos[34] = [
 {filename:    path + "35_Agile-Self-Assessment.jpg", contributor: "Philipp Flenker"}
@@ -135,6 +143,12 @@ all_photos[82] = [
 {filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
 ];
+all_photos[84] = [
+{filename:    path + "85_Greetings-from-iteration.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[86] = [
+{filename:    path + "87_Meeting-Satisfaction.jpg", contributor: "Stefan Wolpers"}
+];
 all_photos[87] = [
 {filename:    path + "88_impediments-cup.jpg", contributor: "Manuel Zaforas Martín"}
 ];
@@ -145,7 +159,7 @@ all_photos[88] = [
 ];
 all_photos[89] = [
 {filename:    path + "90_Agile-Values-Cheerup.jpg", contributor: "Daryl Praeker"},
-{filename:    path + "90_Agile-Values-Cheerup-2.jpg", contributor: "Virginia Brassesco"}
+{filename:    path + "90_agile_cheer_up.jpg", contributor: "Andy Rosslau"}
 ];
 all_photos[91] = [
 {filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
@@ -182,4 +196,7 @@ all_photos[114] = [
 ];
 all_photos[117] = [
 {filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
+];
+all_photos[122] = [
+{filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"},
 ];
