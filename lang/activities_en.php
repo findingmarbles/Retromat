@@ -1952,7 +1952,7 @@ Afterwards look at the finished table and lead a discussion about \
 <li>What patterns do you see? What do they mean for you as a team?</li> \
 <li>Suggestions on how to continue?</li> \
 </ul>",
-source:    "Isabel Corniche",
+source:    "<a href='https://twitter.com/tuedelu'>Isabel Corniche</a>",
 durationDetail:  "20-25 minutes",
 duration:    "Medium",
 stage:    "All",
