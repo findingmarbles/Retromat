@@ -36,6 +36,11 @@ class ActivityByPhase
     {
         $currentKey = array_search($id, $this->activityByPhase[$phase]);
 
+        // if we are on the last activity of the phase, the next one is the first
+        if ($currentKey == count($this->activityByPhase[$phase])-1) {
+            return $this->activityByPhase[$phase][0];
+        }
+
         return $this->activityByPhase[$phase][$currentKey+1];
     }
 
