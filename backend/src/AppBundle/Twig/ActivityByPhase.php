@@ -31,4 +31,11 @@ class ActivityByPhase
     {
         return implode('-', $this->activityByPhase[$phase]);
     }
+
+    public function nextActivityIdInPhase($phase, $id)
+    {
+        $currentKey = array_search($id, $this->activityByPhase[$phase]);
+
+        return $this->activityByPhase[$phase][$currentKey+1];
+    }
 }
