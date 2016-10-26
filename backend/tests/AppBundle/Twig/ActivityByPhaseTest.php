@@ -20,4 +20,12 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(14, $activitiesByPhase[4][0]);
         $this->assertEquals(27, $activitiesByPhase[5][0]);
     }
+
+    public function testGetActivitiesString()
+    {
+        $activityByPhase = new ActivityByPhase;
+
+        $this->assertEquals('1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122', $activityByPhase->getActivitiesString(0));
+        $this->assertEquals('27-28-30-56-111', $activityByPhase->getActivitiesString(5));
+    }
 }

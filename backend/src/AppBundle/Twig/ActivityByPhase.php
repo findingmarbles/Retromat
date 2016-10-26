@@ -26,4 +26,9 @@ class ActivityByPhase
     {
         return $this->activityByPhase;
     }
+
+    public function getActivitiesString($phase)
+    {
+        return implode('-', $this->activityByPhase[$phase]);
+    }
 }
