@@ -17,3 +17,5 @@ services:
         arguments: ["@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
+    retromat.activity_by_phase:
+        class: AppBundle\Twig\ActivityByPhase

@@ -38,6 +38,7 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         color_variation: "@retromat.color_varation"
+        activity_by_phase: "@retromat.activity_by_phase"
 
 # Doctrine Configuration
 doctrine:
