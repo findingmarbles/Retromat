@@ -45,4 +45,11 @@ class ActivityByPhase
 
         return $this->activityByPhase[$phase][$currentKey-1];
     }
+
+    public function nextIds(array $ids, $phase)
+    {
+        $ids[$phase] = $this->nextActivityIdInPhase($phase, $ids[$phase]);
+
+        return $ids;
+    }
 }
