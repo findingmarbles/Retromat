@@ -36,4 +36,12 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('31', $activityByPhase->nextActivityIdInPhase(0, 22));
         $this->assertEquals('24', $activityByPhase->nextActivityIdInPhase(3, 21));
     }
+
+    public function testPreviousActivityIdInPhase()
+    {
+        $activityByPhase = new ActivityByPhase;
+
+        $this->assertEquals('18', $activityByPhase->previousActivityIdInPhase(0, 22));
+        $this->assertEquals('13', $activityByPhase->previousActivityIdInPhase(3, 21));
+    }
 }
