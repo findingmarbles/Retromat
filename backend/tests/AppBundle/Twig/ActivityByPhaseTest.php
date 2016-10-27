@@ -35,6 +35,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('31', $activityByPhase->nextActivityIdInPhase(0, 22));
         $this->assertEquals('24', $activityByPhase->nextActivityIdInPhase(3, 21));
+        $this->assertEquals('1', $activityByPhase->nextActivityIdInPhase(0, 122));
     }
 
     public function testPreviousActivityIdInPhase()
@@ -49,8 +50,8 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
     {
         $activityByPhase = new ActivityByPhase;
 
-        $this->assertEquals([18, 87, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 0));
-        $this->assertEquals([1, 87, 113, 13, 16], $activityByPhase->nextIds([122, 87, 113, 13, 16], 0));
-        $this->assertEquals([3, 89, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 1));
+        $this->assertEquals([18, 87, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 3, 0));
+        $this->assertEquals([1, 87, 113, 13, 16], $activityByPhase->nextIds([122, 87, 113, 13, 16], 122, 0));
+        $this->assertEquals([3, 89, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 87, 1));
     }
 }

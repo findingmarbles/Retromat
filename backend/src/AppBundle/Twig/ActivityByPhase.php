@@ -51,9 +51,11 @@ class ActivityByPhase
         return $this->activityByPhase[$phase][$currentKey-1];
     }
 
-    public function nextIds(array $ids, $phase)
+    public function nextIds(array $ids, $id, $phase)
     {
-        $ids[$phase] = $this->nextActivityIdInPhase($phase, $ids[$phase]);
+        $idKey = array_search($id, $ids);
+
+        $ids[$idKey] = $this->nextActivityIdInPhase($phase, $id);
 
         return $ids;
     }
