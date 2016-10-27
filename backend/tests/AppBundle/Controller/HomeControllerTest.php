@@ -372,6 +372,17 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
+    public function testShowPhaseStepperPreviousSingleActivity()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=18');
+        $this->assertEquals(
+            '?id=3',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_prev_button')->attr('href')
+        );
+    }
+
     public function testShowPhaseStepperNextMultipleActivities()
     {
         $client = static::createClient();
