@@ -360,4 +360,15 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/?id=3-87-113-13-16');
         $this->assertEquals('3-87-113-13-16', $crawler->filter('.ids-display__input')->attr('value'));
     }
+
+    public function testShowPhaseStepperNextSingleActivity()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/?id=3');
+        $this->assertEquals(
+            '?id=18',
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_next_button')->attr('href')
+        );
+    }
 }

@@ -50,6 +50,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
     {
         $activityByPhase = new ActivityByPhase;
 
+        $this->assertEquals([18], $activityByPhase->nextIds([3], 3, 0));
         $this->assertEquals([18, 87, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 3, 0));
         $this->assertEquals([1, 87, 113, 13, 16], $activityByPhase->nextIds([122, 87, 113, 13, 16], 122, 0));
         $this->assertEquals([3, 89, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 87, 1));

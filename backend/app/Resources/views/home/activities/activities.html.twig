@@ -48,7 +48,7 @@
                     -->
                 </div><!-- END .js_photo_link -->
             </div><!-- END .activity-content -->
-            <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
+            <a href="?id={{ activity_by_phase.nextIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
                title="Show other activity for this phase">►</a>
         </div><!-- END .activity-wrapper -->
     </div>
