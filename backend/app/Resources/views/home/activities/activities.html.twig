@@ -5,7 +5,7 @@
     {% for activity in activities %}
     <div class="js_activity_block activity_block bg{{ color_variation.nextColor() }}">
         <div class="activity-wrapper">
-            <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell"
+            <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell{% if phase is not null %} hidden{% endif %}"
                title="Show other activity for this phase">◄</a>
             <div class="activity-content">
                 <div class="js_phase_title phase_title">
@@ -48,7 +48,7 @@
                     -->
                 </div><!-- END .js_photo_link -->
             </div><!-- END .activity-content -->
-            <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell"
+            <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
                title="Show other activity for this phase">►</a>
         </div><!-- END .activity-wrapper -->
     </div>
