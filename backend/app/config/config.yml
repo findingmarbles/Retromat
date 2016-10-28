@@ -39,6 +39,7 @@ twig:
     globals:
         color_variation: "@retromat.color_varation"
         activity_by_phase: "@retromat.activity_by_phase"
+        activity_source: "%retormat.activity.source%"
 
 # Doctrine Configuration
 doctrine:
