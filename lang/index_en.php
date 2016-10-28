@@ -35,7 +35,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     You can <a href="mailto:corinna@finding-marbles.com">email her</a> or
     <a href="https://twitter.com/findingmarbles">follow her on Twitter</a>.
     <br><br>
-    PS: If you like Retromat you might also like <a href="http://wall-skills.com">Wall-Skills.com</a>
+    PS: If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her visual summaries on <a href="http://wall-skills.com">Wall-Skills.com</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
