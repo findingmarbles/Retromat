@@ -30,7 +30,7 @@ Team members position themselves on the scale according to their preference for 
 Now tweak the options until one option has a clear majority.",
             'source' => 'source_skycoach',
             'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
-            'duration' => "5-10 per decision",
+            'duration' => "Short",
             'suitable' => "iteration, release, project",
         ];
 
@@ -461,8 +461,8 @@ agree? What are the reasons there is the biggest demand for change here? Should 
 compare to the second or third most important issue again? If someone would now \
 rather choose the second position, why?',
             'source' => '"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"',
-            'more' => false,
-            'duration' => 'long',
+            'more' => null,
+            'duration' => 'Long',
             'suitable' => 'iteration, project, release',
         ];
         $this->assertEquals($expected, $activity[123]);

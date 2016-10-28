@@ -338,9 +338,9 @@ class HomeControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/?id=3-87-113-13-16');
         $footer = $crawler->filter('.about')->filter('.content');
-        $this->assertEquals('125', $footer->filter('.js_footer_no_of_activities')->text());
-        $this->assertEquals('7792405', $footer->filter('.js_footer_no_of_combinations')->text());
-        $this->assertEquals('25x28x22x22x23+5', $footer->filter('.js_footer_no_of_combinations_formula')->text());
+        $this->assertEquals('127', $footer->filter('.js_footer_no_of_activities')->text());
+        $this->assertEquals('8349005', $footer->filter('.js_footer_no_of_combinations')->text());
+        $this->assertEquals('25x30x22x22x23+5', $footer->filter('.js_footer_no_of_combinations_formula')->text());
     }
 
     public function testShowRandomPlanLinksOnHome()
