@@ -1,4 +1,5 @@
 backend
 =======
 
-A Symfony project created on June 23, 2016, 1:40 pm.
+[![Build Status](https://travis-ci.org/fiddike/Retromat.svg?branch=backend)](https://travis-ci.org/fiddike/Retromat)
+The button above indicates the status of 70+ tests with 250+ assettions. For details see: https://travis-ci.org/fiddike/Retromat
