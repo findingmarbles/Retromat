@@ -1,0 +1,16 @@
+language: php
+
+php:
+    - 5.6
+    - 7.0
+    - 7.1
+
+before_script:
+  - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
+  - composer install --working-dir=backend
+  - php backend/bin/console doctrine:database:create --env=test
+  - php backend/bin/console doctrine:schema:create --env=test
+  - php backend/bin/console doctrine:fixtures:load -n --env=test
+
+script:
+  - phpunit -c backend
