@@ -3,11 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
-parameters:
-    locale: en
-
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }
@@ -70,3 +65,19 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+    # probably put this into the database later:
+    retormat.activity.source:
+        source_agileRetrospectives: "<a href=\"http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/\">Agile Retrospectives<\/a>"
+        source_findingMarbles: "<a href=\"http://www.finding-marbles.com/\">Corinna Baldauf<\/a>"
+        source_kalnin: "<a href=\"http://vinylbaustein.net/tag/retrospective/\">Thorsten Kalnin<\/a>"
+        source_innovationGames: "<a href=\"http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/\">Luke Hohmann<\/a>"
+        source_facilitatorsGuide: "<a href=\"http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/\">Facilitator's Guide to Participatory Decision-Making<\/a>"
+        source_skycoach: "<a href=\"http://skycoach.be/ss/\">Nick Oostvogels</a>"
+        source_judith: "<a href=\"https://leanpub.com/ErfolgreicheRetrospektiven\">Judith Andresen</a>"
+        source_unknown: "Unknown"
