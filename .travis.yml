@@ -14,3 +14,10 @@ before_script:
 
 script:
   - phpunit -c backend
+
+notifications:
+  email:
+    recipients:
+      - timon.fiddike@agile.coach
+    on_success: always
+    on_failure: always
