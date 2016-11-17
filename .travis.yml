@@ -21,3 +21,13 @@ notifications:
       - timon.fiddike@agile.coach
     on_success: always
     on_failure: always
+
+deploy:
+    on:
+        branch: travis
+        condition: $TRAVIS_PHP_VERSION = 5.6
+    skip_cleanup: true
+    provider: script
+    script:
+        curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=1"
+        curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=2"
