@@ -6,21 +6,14 @@ php:
     - 7.1
 
 before_script:
-  - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
-  - composer install --working-dir=backend
-  - php backend/bin/console doctrine:database:create --env=test
-  - php backend/bin/console doctrine:schema:create --env=test
-  - php backend/bin/console doctrine:fixtures:load -n --env=test
+    - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
+    - composer install --working-dir=backend
+    - php backend/bin/console doctrine:database:create --env=test
+    - php backend/bin/console doctrine:schema:create --env=test
+    - php backend/bin/console doctrine:fixtures:load -n --env=test
 
 script:
-  - phpunit -c backend
-
-notifications:
-  email:
-    recipients:
-      - timon.fiddike@agile.coach
-    on_success: always
-    on_failure: always
+    - phpunit -c backend
 
 deploy:
     on:
@@ -31,3 +24,10 @@ deploy:
     script:
         curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=1"
         curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=2"
+
+notifications:
+    on_success: always
+    on_failure: always
+    email:
+        recipients:
+            - timon.fiddike@agile.coach
