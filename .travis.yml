@@ -21,7 +21,11 @@ script:
 
 before_deploy:
     - php backend/bin/console cache:clear --env=prod
-    - curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=before_deploy"
+    - openssl aes-256-cbc -d -a -in .travis/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $rsa_travis_timon_phrase
+    - chmod 600 .travis/rsa_travis_timon
+    - eval "$(ssh-agent -s)"
+    - ssh-add .travis/rsa_travis_timon
+    - rm -rf .travis/
 
 deploy:
     on:
@@ -30,12 +34,8 @@ deploy:
     skip_cleanup: true
     provider: script
     script:
-        curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-first"
-        fail
+        ssh timon@vega.uberspace.de "touch ~/travis-touched" \
         curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-last"
-
-after_deploy:
-    curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=before_deploy"
 
 notifications:
     on_success: always
