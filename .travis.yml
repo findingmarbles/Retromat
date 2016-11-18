@@ -34,7 +34,10 @@ deploy:
     skip_cleanup: true
     provider: script
     script:
-        ssh timon@vega.uberspace.de "touch ~/travis-touched" \
+        chmod u+w ~/.ssh/known_hosts ;
+        echo 'vega.uberspace.de,95.143.172.245 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7dYaOcJGBeXhHMG6AflOnZVNnm8iJn/qVwDcbcLjWJ' >> ~/.ssh/known_hosts ;
+        echo 'vega.uberspace.de,2001:1a50:11::5f:8f:ac:f5 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7dYaOcJGBeXhHMG6AflOnZVNnm8iJn/qVwDcbcLjWJ' >> ~/.ssh/known_hosts ;
+        ssh timon@vega.uberspace.de "touch ~/travis-touched" ;
         curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-last"
 
 notifications:
