@@ -5,15 +5,23 @@ php:
     - 7.0
     - 7.1
 
-before_script:
+before_install:
     - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
+
+install:
     - composer install --working-dir=backend
+
+before_script:
     - php backend/bin/console doctrine:database:create --env=test
     - php backend/bin/console doctrine:schema:create --env=test
     - php backend/bin/console doctrine:fixtures:load -n --env=test
 
 script:
     - phpunit -c backend
+
+before_deploy:
+    - php backend/bin/console cache:clear --env=prod
+    - curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=before_deploy"
 
 deploy:
     on:
@@ -22,8 +30,12 @@ deploy:
     skip_cleanup: true
     provider: script
     script:
-        curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=1"
-        curl -k "https://scrum.berlin/retromat/log.php?php=$TRAVIS_PHP_VERSION&commit=$TRAVIS_COMMIT&line=2"
+        curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-first"
+        fail
+        curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-last"
+
+after_deploy:
+    curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=before_deploy"
 
 notifications:
     on_success: always
