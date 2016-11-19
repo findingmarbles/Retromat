@@ -23,14 +23,13 @@ script:
     - phpunit -c backend
     - php backend/bin/console cache:clear --env=prod
 
-before_deploy:
+after_success:
     - mkdir -p .travis/
     - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $rsa_travis_timon_phrase
     - chmod 600 .travis/rsa_travis_timon
     - eval "$(ssh-agent -s)"
     - ssh-add .travis/rsa_travis_timon
     - rm -rf .travis/
-    - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 
 deploy:
     on:
@@ -38,9 +37,10 @@ deploy:
         condition: $TRAVIS_PHP_VERSION = 5.6
     skip_cleanup: true
     provider: script
-    script:
-        ssh timon@vega.uberspace.de "echo 'travis was here' > ~/travis-touched-deploy" ;
-        curl -k "https://scrum.berlin/retromat/log.php?commit=$TRAVIS_COMMIT&line=deploy-last"
+    script: /bin/true
+
+before_deploy:
+    - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 
 notifications:
     on_success: always

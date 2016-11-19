@@ -5,24 +5,53 @@ $TRAVIS_COMMIT = $argv[1];
 
 // local settings
 $buildDirPrefix = 'travis-build/';
-$buildDir = $buildDirPrefix.$TRAVIS_COMMIT;
+$buildDir = $TRAVIS_COMMIT;
 $artifactFileName = $TRAVIS_COMMIT.'.tar.gz ';
 
-// remote setting
+// remote settings
 $sshDestination = 'timon@vega.uberspace.de';
 $webSpaceDirPrefix = '/var/www/virtual/timon/';
 $artifactDestinationDir = $webSpaceDirPrefix.'travis-ci-artifacts/';
 
-// locally create artifact
-system('mkdir -p '.$buildDir);
-system('mv * '.$buildDir);
-system('tar cfz '.$artifactFileName.' '.$buildDir);
+// create artifact
+system('mkdir -p '.$buildDirPrefix.$buildDir);
+system('mv * '.$buildDirPrefix.$buildDir);
+system('cd '.$buildDirPrefix.' ; tar cfz '.$artifactFileName.' '.$buildDir);
 
 // transfer artifact
 system('ssh '.$sshDestination.' mkdir -p '.$artifactDestinationDir);
-system('rsync '.$artifactFileName.' '.$sshDestination.':'.$artifactDestinationDir);
-$remoteMd5sum = system('ssh '.$sshDestination.' md5sum '.$artifactDestinationDir.$artifactFileName);
+system('rsync '.$buildDirPrefix.$artifactFileName.' '.$sshDestination.':'.$artifactDestinationDir);
 
-echo $remoteMd5sum;
+// obtain local md5
+$output = array();
+$exitCode = '';
+$command = 'cd '.$buildDirPrefix.' ; md5sum '.$artifactFileName;
+exec($command, $output, $exitCode);
+if (0 === $exitCode) {
+    $md5Local = $output[0];
+} else {
+    exit(1);
+}
 
-// compare md5sum local vs md5sum remote
+// obtain remote md5
+$output = array();
+$exitCode = '';
+$command = 'ssh '.$sshDestination.' "cd '.$artifactDestinationDir.' ; md5sum '.$artifactFileName.' "';
+exec($command, $output, $exitCode);
+if (0 === $exitCode) {
+    $md5Remote = $output[0];
+} else {
+    exit(2);
+}
+
+// notify about success
+echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
+if (0 === strcmp($md5Local, $md5Remote)) {
+    exit(0);
+} else {
+    exit(3);
+}
+
+// unpack
+
+// create / update symlink to make backend/web visible to the outside
