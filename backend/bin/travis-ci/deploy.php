@@ -11,7 +11,8 @@ $artifactFileName = $TRAVIS_COMMIT.'.tar.gz ';
 // remote settings
 $sshDestination = 'timon@vega.uberspace.de';
 $webSpaceDirPrefix = '/var/www/virtual/timon/';
-$artifactDestinationDir = $webSpaceDirPrefix.'travis-ci-artifacts/';
+$artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
+$deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
 
 // create artifact
 system('mkdir -p '.$buildDirPrefix.$buildDir);
@@ -46,12 +47,12 @@ if (0 === $exitCode) {
 
 // notify about success
 echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
-if (0 === strcmp($md5Local, $md5Remote)) {
-    exit(0);
-} else {
+if (0 !== strcmp($md5Local, $md5Remote)) {
     exit(3);
 }
 
-// unpack
+// unpack artifact
+system('ssh '.$sshDestination.' mkdir -p '.$deploymentDestinationDir);
+system('ssh '.$sshDestination.' "cd '.$deploymentDestinationDir . ' ; tar xfz ' . $artifactDestinationDir.$artifactFileName . ' "');
 
 // create / update symlink to make backend/web visible to the outside
