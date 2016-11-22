@@ -1,6 +1,3 @@
-addons:
-    ssh_known_hosts: vega.uberspace.de
-
 language: php
 
 php:
@@ -40,6 +37,7 @@ deploy:
     script: /bin/true
 
 before_deploy:
+    - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/multiplexing-experiment.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 
