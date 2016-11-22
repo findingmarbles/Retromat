@@ -34,13 +34,12 @@ deploy:
         condition: $TRAVIS_PHP_VERSION = 5.6
     skip_cleanup: true
     provider: script
-    script: /bin/true
+    script: ssh -O exit vega.uberspace.de
 
 before_deploy:
     - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/multiplexing-experiment.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
-    - ssh -O exit vega.uberspace.de
 
 notifications:
     on_success: always
