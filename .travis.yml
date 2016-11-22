@@ -34,7 +34,7 @@ deploy:
         condition: $TRAVIS_PHP_VERSION = 5.6
     skip_cleanup: true
     provider: script
-    script: fuser -HUP -k /tmp/ssh_mux_*
+    script: /bin/true
 
 before_deploy:
     - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
