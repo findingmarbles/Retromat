@@ -13,6 +13,11 @@ $sshDestination = 'timon@vega.uberspace.de';
 $webSpaceDirPrefix = '/var/www/virtual/timon/';
 $artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
 $deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
+$deploymentDir = $webSpaceDirPrefix.'retromat-deployments/'.$TRAVIS_COMMIT;
+$deploymentDomain = 'retromat-branch-backend.timon.vega.uberspace.de ';
+
+// mark deployment
+system('echo '.$TRAVIS_COMMIT .' > '.'backend/web/commit.txt');
 
 // create artifact
 system('mkdir -p '.$buildDirPrefix.$buildDir);
@@ -55,4 +60,9 @@ if (0 !== strcmp($md5Local, $md5Remote)) {
 system('ssh '.$sshDestination.' mkdir -p '.$deploymentDestinationDir);
 system('ssh '.$sshDestination.' "cd '.$deploymentDestinationDir . ' ; tar xfz ' . $artifactDestinationDir.$artifactFileName . ' "');
 
+// update DB schema and load fixtures (as long as DB is readonly, this will be O.K.)
+system('ssh '.$sshDestination.' "cd '.$deploymentDir . ' ; php backend/bin/console doctrine:schema:update --force --env=dev "');
+system('ssh '.$sshDestination.' "cd '.$deploymentDir . ' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "');
+
 // create / update symlink to make backend/web visible to the outside
+system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix . ' ; rm '.$deploymentDomain.' ; ln -s ' . $deploymentDir . '/backend/web/ '.$deploymentDomain.' "');

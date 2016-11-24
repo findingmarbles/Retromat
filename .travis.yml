@@ -30,13 +30,14 @@ after_success:
 
 deploy:
     on:
-        branch: travis-experiments
+        branch: backend
         condition: $TRAVIS_PHP_VERSION = 5.6
     skip_cleanup: true
     provider: script
     script: /bin/true
 
 before_deploy:
+    - cp backend/app/config/parameters.yml.vega backend/app/config/parameters.yml
     - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 

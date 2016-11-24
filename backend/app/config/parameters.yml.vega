@@ -1,10 +1,10 @@
 parameters:
-    database_host:      127.0.0.1
+    database_host:      localhost
     database_port:      ~
-    database_socket:    ~
-    database_name:      retromat
-    database_user:      travis
-    database_password:  ~
+    database_socket:    /var/lib/mysql/mysql.sock
+    database_name:      timon_retromat-branch-backend
+    database_user:      timon
+    database_password:  EiPheiMox4xahR3ju
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
