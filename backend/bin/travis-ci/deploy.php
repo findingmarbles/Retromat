@@ -22,6 +22,7 @@ system('echo '.$TRAVIS_COMMIT .' > '.'backend/web/commit.txt');
 // create artifact
 system('mkdir -p '.$buildDirPrefix.$buildDir);
 system('mv * '.$buildDirPrefix.$buildDir);
+system('chmod -R 755 '.$buildDirPrefix.$buildDir);
 system('cd '.$buildDirPrefix.' ; tar cfz '.$artifactFileName.' '.$buildDir);
 
 // transfer artifact
