@@ -5,8 +5,8 @@ $TRAVIS_COMMIT = $argv[1];
 
 // local settings
 $buildDirPrefix = 'travis-build/';
-$buildDir = $TRAVIS_COMMIT;
-$artifactFileName = $TRAVIS_COMMIT.'.tar.gz ';
+$buildDirName = date_format(date_create(), 'Y-m-d_H-i-s__').$TRAVIS_COMMIT;
+$artifactFileName = $buildDirName.'.tar.gz ';
 
 // remote settings
 $sshDestination = 'timon@vega.uberspace.de';
@@ -20,10 +20,10 @@ $deploymentDomain = 'retromat-branch-backend.timon.vega.uberspace.de ';
 system('echo '.$TRAVIS_COMMIT .' > '.'backend/web/commit.txt');
 
 // create artifact
-system('mkdir -p '.$buildDirPrefix.$buildDir);
-system('mv * '.$buildDirPrefix.$buildDir);
-system('chmod -R 755 '.$buildDirPrefix.$buildDir);
-system('cd '.$buildDirPrefix.' ; tar cfz '.$artifactFileName.' '.$buildDir);
+system('mkdir -p '.$buildDirPrefix.$buildDirName);
+system('mv * '.$buildDirPrefix.$buildDirName);
+system('chmod -R 755 '.$buildDirPrefix.$buildDirName);
+system('cd '.$buildDirPrefix.' ; tar cfz '.$artifactFileName.' '.$buildDirName);
 
 // transfer artifact
 system('ssh '.$sshDestination.' mkdir -p '.$artifactDestinationDir);
