@@ -5,7 +5,7 @@ $TRAVIS_COMMIT = $argv[1];
 
 // local settings
 $buildDirPrefix = 'travis-build/';
-$buildDirName = date_format(date_create(), 'Y-m-d__H:i:s__').$TRAVIS_COMMIT;
+$buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$TRAVIS_COMMIT;
 $artifactFileName = $buildDirName.'.tar.gz ';
 
 // remote settings
