@@ -75,4 +75,4 @@ system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDom
 system('ssh '.$sshDestination.' killall php-cgi ');
 
 // ensure that php-cgi starts and caches to most needed php files right now
-system('curl -k https://'.$deploymentDomain);
+system('curl -k https://'.$deploymentDomain.' -o /dev/null');
