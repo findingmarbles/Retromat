@@ -65,5 +65,8 @@ system('ssh '.$sshDestination.' "cd '.$deploymentDestinationDir . ' ; tar xfz ' 
 system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "');
 system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "');
 
+// clear and prefill production cache
+system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console cache:clear --env=prod "');
+
 // create / update symlink to make backend/web visible to the outside
 system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "');
