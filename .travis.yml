@@ -22,7 +22,7 @@ script:
 
 after_success:
     - mkdir -p .travis/
-    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $rsa_travis_timon_phrase
+    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
     - chmod 600 .travis/rsa_travis_timon
     - eval "$(ssh-agent -s)"
     - ssh-add .travis/rsa_travis_timon
@@ -37,6 +37,7 @@ deploy:
     script: /bin/true
 
 before_deploy:
+    - openssl aes-256-cbc -d -a -in backend/app/config/parameters.yml.vega.enc -out backend/app/config/parameters.yml.vega -k $rsa_travis_timon_phrase
     - cp backend/app/config/parameters.yml.vega backend/app/config/parameters.yml
     - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
