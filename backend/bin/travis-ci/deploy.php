@@ -70,3 +70,7 @@ system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console
 
 // create / update symlink to make backend/web visible to the outside
 system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "');
+
+// php-cgi seems to chace php files under certain conditions, kill it to refresh the cache, the restart by visiting it
+system('ssh '.$sshDestination.' killall php-cgi ');
+system('curl -k https://'.$deploymentDomain);
