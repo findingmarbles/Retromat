@@ -18,7 +18,6 @@ before_script:
 
 script:
     - phpunit -c backend
-    - php backend/bin/console cache:clear --env=prod
 
 after_success:
     - mkdir -p .travis/
@@ -38,6 +37,7 @@ deploy:
 
 before_deploy:
     - cp backend/app/config/parameters.yml.vega backend/app/config/parameters.yml
+    - php backend/bin/console cache:clear --env=prod
     - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 
