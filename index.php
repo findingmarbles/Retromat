@@ -864,15 +864,16 @@ function switchLanguage(new_lang) {
    <div class="content">
 
 <?php if (!$isEnglish) { ?>
-       <div class="team__translator">
-           <h2>
-               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-           </h2>
+       
            <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+
+            <div style="clear:both">    
                <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
                    <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
                </a>
+
                 <h3 style="margin-bottom: 10px">
+                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
                    <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
                        <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
                    </a>
@@ -881,24 +882,41 @@ function switchLanguage(new_lang) {
                <div class="team-text">
                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
                </div>
-           <?php } ?>
        </div><!-- .team--translator -->
+           <?php } ?>
 <?php } ?>
 
-       <div>
-           <h2><?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-           </h2>
+        <div style="clear:both">
            <a href="http://finding-marbles.com/">
                <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
                <a href="http://finding-marbles.com/">
                    Corinna Baldauf
                </a>
            </h3>
            <div class="team-text" style="margin-right:0">
-               <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>
-           </div>
+                   <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>       
+            </div>
+       </div><!-- .team--corinna -->
+
+
+       <div style="clear:both">
+           <a href="https://fiddike.com/">
+               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
+               <a href="https://fiddike.com/">
+                   Timon Fiddike
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                  <?php echo($_lang['INDEX_TEAM_TIMON_TEXT']); ?>
+            </div>
+       </div><!-- .team--timon-->
+
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
