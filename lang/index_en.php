@@ -30,12 +30,11 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wished for something like Retromat during her Scrummaster years.
-    Eventually she built it herself in the hope that it would be useful to others, too.
+    Eventually she just built it herself in the hope that it would be useful to others, too.
     Any questions, suggestions or encouragement?
     You can <a href="mailto:corinna@finding-marbles.com">email her</a> or
     <a href="https://twitter.com/findingmarbles">follow her on Twitter</a>.
-    <br><br>
-    PS: If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her visual summaries on <a href="http://wall-skills.com">Wall-Skills.com</a>.
+    If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her <a href="http://wall-skills.com">summaries on Wall-Skills.com</a>.  
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
