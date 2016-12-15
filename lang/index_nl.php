@@ -34,7 +34,7 @@ $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Gemaakt door: ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wenste tijdens haar Scrummasterjaren vaak genoeg dat er iets als Retromat  was.
     Uiteindelijk bouwde ze het zelf maar, in de hoop dat anderen het ook nuttig zouden vinden.
-    Heb je nog vragen, suggesties of aanmoedidingen?
+    Heb je nog vragen, suggesties of aanmoedigingen?
     Je kunt het haar <a href="mailto:corinna@finding-marbles.com">mailen</a> of
     <a href="https://twitter.com/findingmarbles">vertellen op Twitter</a>.
 EOT;
