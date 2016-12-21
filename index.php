@@ -35,7 +35,7 @@ function print_if_selected($candidate, $chosen) {
 
 function get_url_to_index() {
     global $isEnglish;
-    $res = 'http://plans-for-retrospectives.com/';
+    $res = '/';
     if (!$isEnglish) {
         global $lang;
         $res .= 'index_' . $lang . '.html';
@@ -57,7 +57,7 @@ function get_url_to_index() {
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
 <link rel="shortcut icon" href="static/images/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
@@ -725,7 +725,7 @@ function switchLanguage(new_lang) {
         <div class="content" style="line-height: 20px">
                 All activities in Retromat on your ebook reader?
 <br><br>
-                <a href="http://plans-for-retrospectives.com/ebook/index.html" 
+                <a href="/ebook/index.html"
                    style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
                 </a>
         </div>
