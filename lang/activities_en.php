@@ -109,7 +109,7 @@ all_activities[5] = {
 phase:     1,
 name:      "Like to like",
 summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words\
+desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
 such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
 Each team member has to write at least 9 index cards: 3 each with things to \
 start doing, keep doing and stop doing. Choose one person to be the first judge. \
@@ -513,9 +513,9 @@ phase:     5,
 name:      "Dialogue Sheets",
 summary:   "A structured approach to a discussion",
 desc:      "A dialogue sheet looks a little like a board game board. There are \
-<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>several different sheets available</a>. \
+<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
 Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
 duration:    "Long",
 stage:    "All",

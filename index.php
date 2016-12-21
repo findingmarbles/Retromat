@@ -35,7 +35,7 @@ function print_if_selected($candidate, $chosen) {
 
 function get_url_to_index() {
     global $isEnglish;
-    $res = 'http://plans-for-retrospectives.com/';
+    $res = '/';
     if (!$isEnglish) {
         global $lang;
         $res .= 'index_' . $lang . '.html';
@@ -57,7 +57,7 @@ function get_url_to_index() {
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
 <link rel="shortcut icon" href="static/images/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
@@ -725,7 +725,7 @@ function switchLanguage(new_lang) {
         <div class="content" style="line-height: 20px">
                 All activities in Retromat on your ebook reader?
 <br><br>
-                <a href="http://plans-for-retrospectives.com/ebook/index.html" 
+                <a href="/ebook/index.html"
                    style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
                 </a>
         </div>
@@ -864,15 +864,16 @@ function switchLanguage(new_lang) {
    <div class="content">
 
 <?php if (!$isEnglish) { ?>
-       <div class="team__translator">
-           <h2>
-               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-           </h2>
+       
            <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+
+            <div style="clear:both">    
                <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
                    <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
                </a>
+
                 <h3 style="margin-bottom: 10px">
+                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
                    <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
                        <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
                    </a>
@@ -881,24 +882,41 @@ function switchLanguage(new_lang) {
                <div class="team-text">
                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
                </div>
-           <?php } ?>
        </div><!-- .team--translator -->
+           <?php } ?>
 <?php } ?>
 
-       <div>
-           <h2><?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-           </h2>
+        <div style="clear:both">
            <a href="http://finding-marbles.com/">
                <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
                <a href="http://finding-marbles.com/">
                    Corinna Baldauf
                </a>
            </h3>
            <div class="team-text" style="margin-right:0">
-               <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>
-           </div>
+                   <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>       
+            </div>
+       </div><!-- .team--corinna -->
+
+
+       <div style="clear:both">
+           <a href="https://fiddike.com/">
+               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
+               <a href="https://fiddike.com/">
+                   Timon Fiddike
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                  <?php echo($_lang['INDEX_TEAM_TIMON_TEXT']); ?>
+            </div>
+       </div><!-- .team--timon-->
+
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->

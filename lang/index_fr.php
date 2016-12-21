@@ -48,6 +48,12 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     <a href="https://twitter.com/findingmarbles">la contacter sur Twitter</a>.
 EOT;
 
+$_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
+$_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
+As developer, product owner, scrum master and agile coach, Timon has been a Retromat user and fan for more than three years. He had quite a few feature ideas. In 2016 he started to build some of those features himself. You can <a href="mailto:timon.fiddike@agile.coach">email him</a> or
+    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>.
+EOT;
+
 $_lang['PRINT_HEADER'] = 'par Finding-Marbles.com';
 
 $_lang['ACTIVITY_SOURCE'] = 'Source :';
