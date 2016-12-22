@@ -16,7 +16,11 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more.'; // Do you know a great activity?
+if (is_output_format_twig($argv)) {
+    $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
+} else {
+    $_lang['INDEX_ABOUT'] = 'Retromat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more.'; // Do you know a great activity?
+}
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
 //$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
