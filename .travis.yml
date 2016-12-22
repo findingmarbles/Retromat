@@ -3,3 +3,10 @@ language: php
 # do nothing on master for now.
 # action comes when backend is merged :-)
 script: true
+
+notifications:
+    on_success: always
+    on_failure: always
+    email:
+        recipients:
+            - timon.fiddike@agile.coach
