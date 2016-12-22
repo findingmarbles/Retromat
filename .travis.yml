@@ -1,0 +1,5 @@
+language: php
+
+# do nothing on master for now.
+# action comes when backend is merged :-)
+script: true
