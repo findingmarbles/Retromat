@@ -24,7 +24,7 @@ class HomeController extends Controller
         );
 
         return $this->render(
-            'home/index_'.$request->getLocale().'.html.twig',
+            'home/generated/index_'.$request->getLocale().'.html.twig',
             ['ids' => $ids, 'activities' => $activities, 'phase' => $phase]
         );
     }
