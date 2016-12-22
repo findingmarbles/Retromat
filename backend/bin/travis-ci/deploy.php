@@ -9,12 +9,12 @@ $buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$TRAVIS_COMMIT;
 $artifactFileName = $buildDirName.'.tar.gz ';
 
 // remote settings
-$sshDestination = 'timon@vega.uberspace.de';
-$webSpaceDirPrefix = '/var/www/virtual/timon/';
+$sshDestination = 'retromat@avior.uberspace.de';
+$webSpaceDirPrefix = '/var/www/virtual/retromat/';
 $artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
 $deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
 $deploymentDir = $webSpaceDirPrefix.'retromat-deployments/'.$buildDirName;
-$deploymentDomain = 'retromat-branch-backend.timon.vega.uberspace.de ';
+$deploymentDomain = 'retromat.avior.uberspace.de';
 
 // mark deployment
 system('echo '.$TRAVIS_COMMIT .' > '.'backend/web/commit.txt');

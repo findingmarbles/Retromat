@@ -1,7 +1,7 @@
 <?php
 
 $config = "
-Host vega.uberspace.de
+Host avior.uberspace.de
 \tStrictHostKeyChecking no
 \tControlMaster auto
 \tControlPath ~/.ssh/master-%r@%h:%p
