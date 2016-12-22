@@ -1,11 +1,20 @@
 <?php
 
+// run as follows: php index.php [langage] [format]
+// language: [de, en, es, fr, nl], default: en
+// format: [html, twig], default: html
+
 $lang = 'en';
 
 if (isset($argv[1])) {
     $lang = $argv[1];
 } else if (array_key_exists('lang', $_GET)) {
     $lang = $_GET['lang'];
+}
+
+function is_output_format_twig($argv)
+{
+    return (isset($argv[2]) and 'twig' === $argv[2]);
 }
 
 $isEnglish = false;
@@ -749,12 +758,16 @@ function switchLanguage(new_lang) {
             Retromat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div class="plan-header__wrapper">
+        <?php if (is_output_format_twig($argv)) { ?>
+        {% include 'home/header/idDisplay.html.twig' %}
+        <?php } else { ?>
             <div class="ids-display">
                 <?php echo($_lang['INDEX_PLAN_ID']); ?>
                 <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
                     <input type="text" size="18" name="js_display" class="ids-display__input" value="">
                 </form>
             </div>
+        <?php } ?>
             <div class="plan-navi">
                 <ul>
                     <li>
@@ -794,23 +807,31 @@ function switchLanguage(new_lang) {
     </div><!-- content -->
 </div>
 
-<div class="js_plan_title_container plan_title_container display_none">
-    <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+<?php if (is_output_format_twig($argv)) { ?>
+    {% include 'home/titles/planTitle.html.twig' %}
+<?php } else { ?>
+    <div class="js_plan_title_container plan_title_container display_none">
+        <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+        </div>
     </div>
-</div>
+<?php } ?>
 
-<div class="js_plan">
-    <div class="activity_block bg1">
-        <div class="activity-wrapper">
-            <div class="activity-content">
+<?php if (is_output_format_twig($argv)) { ?>
+    {% include 'home/activities/activities.html.twig' %}
+<?php } else { ?>
+    <div class="js_plan">
+        <div class="activity_block bg1">
+            <div class="activity-wrapper">
+                <div class="activity-content">
                     <?php echo($_lang['INDEX_LOADING']); ?>
                     <noscript>
                         <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
                     </noscript>
+                </div>
             </div>
         </div>
-    </div>
-</div><!-- END plan -->
+    </div><!-- END plan -->
+<?php } ?>
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">
     <div class="activity-wrapper">
