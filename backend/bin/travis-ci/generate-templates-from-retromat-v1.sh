@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p backend/app/Resources/views/home/generated/
+
 php index.php en twig   > backend/app/Resources/views/home/generated/index_en.html.twig
 php index.php de        > backend/app/Resources/views/home/generated/index_de.html.twig
 php index.php es        > backend/app/Resources/views/home/generated/index_es.html.twig

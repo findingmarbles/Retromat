@@ -15,10 +15,10 @@ before_script:
     - php backend/bin/console doctrine:database:create --env=test
     - php backend/bin/console doctrine:schema:create --env=test
     - php backend/bin/console doctrine:fixtures:load -n --env=test
+    - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 
 script:
     - phpunit -c backend
-    - php backend/bin/console cache:clear --env=prod
 
 after_success:
     - mkdir -p .travis/
