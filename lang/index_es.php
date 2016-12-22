@@ -9,6 +9,7 @@ $_lang['INDEX_RANDOM_RETRO'] = 'Nuevo plan de retrospectiva aleatorio';
 $_lang['INDEX_ENTER_ID'] = 'Ingresar IDs a visualizar';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Buscar actividades por palabra clave';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Todas las actividades para';
+$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/10/que-es-una-retrospectiva.html">¿Qué es una retrospectiva?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/09/retr-o-mat-en-espanol.html">Sobre Retromat</a>';
