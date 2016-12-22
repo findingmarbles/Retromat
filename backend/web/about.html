@@ -10,6 +10,24 @@
     <link rel="stylesheet" type="text/css" href="http://plans-for-retrospectives.com/print/styles.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
+    <script>
+        var default_value = 'Your email address';
+
+        function removeDefaultText(){
+            var email_field = document.getElementById("email_address");
+            if(email_field.value == default_value){
+                email_field.value = "";
+            }
+        }
+
+        function setDefaultText(){
+            var email_field = document.getElementById("email_address");
+            if(email_field.value == ''){
+                email_field.value = default_value;
+            }
+        }
+    </script>
+
     <style>
 
     #header {
@@ -58,6 +76,17 @@
             font-size: larger;
         }
 
+        .subscribe .orange-button {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            background-color: darkorange;
+            border-radius: 10px;
+            border: 2px white solid;
+            color: white;
+            font-size: 18px;
+        }
+
     </style>
 
 </head>
@@ -90,7 +119,7 @@
         <div class="activity-wrapper">
             <div class="activity-content">
                  <h1 style="font-weight: bold"> New to Retromat?</h1><br>
-                 Retromat generates random plans for agile retrospectives: Out of a pool of many activities it selects 1 for each of the <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/" target="_blank">5 phases</a>. Use the arrows to exchange activities and make sure that all 5 activities fit together. (They are unlikely to fit together in a truly random plan.)
+                 Retromat generates random plans for agile retrospectives: Out of a pool of many activities it selects 1 for each of the <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/" target="_blank">5 phases</a>. Use the arrows to exchange activities and make sure that all 5 activities fit together. They are unlikely to fit together in a truly random plan.
                  <br><br>
                 <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/" target="_blank">More about Retromat's history<br><br>
                 <span style="font-size: small;">Spanish version: <a href="http://thomaswallet.blogspot.com.ar/2014/09/retr-o-mat-en-espanol.html" target="_blank">Sobre Retromat
@@ -109,15 +138,26 @@
         </div>
     </div>
 
+<div class="bg3">
+    <div class="activity-wrapper">
+        <div class="activity-content">
+        <h1 style="font-weight: bold;">Need an App?</h1>
+        
+        <br>
+        Retrotimer is the companion app for Retromat that helps you stay on time. It's build and maintained by <a href="https://twitter.com/ksotomski" target="_blank">Karol Sotomski</a> and you can <a href="https://itunes.apple.com/de/app/retrotimer/id1148319217" target="_blank">find it here</a>.
+        </div>
+    </div>
+</div>
+
 <div class="subscribe">
     <div class="content">
         <div style="text-align: left;">
         <h1 style="font-weight: bold;">Want to get new activities and other information via email?</h1>
         <br>
         Subscribe to the Retromat newsletter (1-2 mails per month): <br><br>
-            <form action="http://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
+            <form action="http://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&INTEREST=About" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
                 <input type="email" id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();"><br><br>
-                <input type="submit" class="subscribe_submit" value="Sign me up!">
+                <input type="submit" class="orange-button" value="Sign me up!">
             </form>
         </div>
     </div>
@@ -145,9 +185,9 @@ photos
 <div class="about">
     <div class="content">
 
-        <h1 style="font-size: large">Questions?</h1>
+        <h1 style="font-size: large">Any Questions?</h1>
     <br>
-        Please don't hesitate to ask! You can contact me via <a href="mailto:corinna@finding-marbles.com">email</a> or
+        Please don't hesitate to ask! You can contact Corinna Baldauf via <a href="mailto:corinna@finding-marbles.com">email</a> or
         <a href="http://www.twitter.com/findingmarbles">Twitter</a>.
     </div>
 </div>
