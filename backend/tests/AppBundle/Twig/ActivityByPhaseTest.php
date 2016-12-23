@@ -64,4 +64,16 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals([3], $activityByPhase->previousIds([18], 18, 0));
         $this->assertEquals([122], $activityByPhase->previousIds([1], 1, 0));
     }
+
+    public function testActiviyIdsUnique()
+    {
+        $activityByPhase = new ActivityByPhase;
+
+        $activities = [];
+        foreach ($activityByPhase->getAllActivitiesByPhase() as $activitiesInPhase) {
+            $activities = array_merge($activities, $activitiesInPhase);
+        }
+
+        $this->assertEquals(array_unique($activities), $activities);
+    }
 }

@@ -149,7 +149,7 @@ class HomeControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/?id=5');
         $this->assertEquals(
-            '?id=4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123-125-126&phase=1',
+            '?id=4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123-126&phase=1',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_link')->attr('href')
         );
     }
