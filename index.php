@@ -678,18 +678,20 @@ function switchLanguage(new_lang) {
 <!-- Piwik -->
 <script type="text/javascript">
     var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(["setCookieDomain", "*.plans-for-retrospectives.com"]);
+    _paq.push(["setDomains", ["*.plans-for-retrospectives.com"]]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
         var u="//plans-for-retrospectives.com/piwik/";
         _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', '1']);
+        _paq.push(['setSiteId', '2']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
     })();
 </script>
 <!-- End Piwik Code -->
-
 </head>
 
 <body onload="JavaScript:init()">
@@ -940,7 +942,7 @@ function switchLanguage(new_lang) {
     </div><!-- .content -->
 </div><!-- .team -->
 <!-- Piwik -->
-<noscript><img src="https://plans-for-retrospectives.com/piwik/piwik.php?idsite=1&rec=1&bots=1" style="border:0" alt="" /></noscript>
+<noscript><img src="//plans-for-retrospectives.com/piwik/piwik.php?idsite=1&rec=1&bots=1" style="border:0;" alt="" /></noscript>
 <!-- End Piwik Code -->
 </body>
 </html>
