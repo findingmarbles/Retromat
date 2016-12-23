@@ -14,7 +14,7 @@ $webSpaceDirPrefix = '/var/www/virtual/retromat/';
 $artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
 $deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
 $deploymentDir = $webSpaceDirPrefix.'retromat-deployments/'.$buildDirName;
-$deploymentDomain = 'retromat.avior.uberspace.de';
+$deploymentDomain = 'plans-for-retrospectives.com';
 
 // mark deployment
 system('echo '.$TRAVIS_COMMIT .' > '.'backend/web/commit.txt');
@@ -70,6 +70,7 @@ system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console
 
 // create / update symlink to make backend/web visible to the outside
 system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "');
+system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "');
 
 // php-cgi caches php files beyond deployments, therefore kill it
 system('ssh '.$sshDestination.' killall php-cgi ');
