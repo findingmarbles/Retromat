@@ -30,7 +30,7 @@ after_success:
 
 deploy:
     on:
-        branch: backend
+        branch: master
         condition: $TRAVIS_PHP_VERSION = 7.0
     skip_cleanup: true
     provider: script
