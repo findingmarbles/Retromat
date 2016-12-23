@@ -677,19 +677,17 @@ function switchLanguage(new_lang) {
 
 <!-- Piwik -->
 <script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.plans-for-retrospectives.com","*.retr-o-mat.com"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//finding-marbles.com/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 3]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//plans-for-retrospectives.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
 </script>
-<noscript><p><img src="//finding-marbles.com/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 
 </head>
@@ -941,7 +939,8 @@ function switchLanguage(new_lang) {
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
-
-
+<!-- Piwik -->
+<noscript><img src="https://plans-for-retrospectives.com/piwik/piwik.php?idsite=1&rec=1&bots=1" style="border:0" alt="" /></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>
