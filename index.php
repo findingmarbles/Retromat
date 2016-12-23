@@ -61,7 +61,7 @@ function get_url_to_index() {
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
 
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
