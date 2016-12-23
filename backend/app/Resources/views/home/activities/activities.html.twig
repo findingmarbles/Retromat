@@ -6,7 +6,7 @@
     <div class="js_activity_block activity_block bg{{ color_variation.nextColor() }}">
         <div class="activity-wrapper">
             <a href="?id={{ activity_by_phase.previousIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_prev_button display_table-cell{% if phase is not null %} hidden{% endif %}"
-               title="Show other activity for this phase" rel="nofollow">◄</a>
+               title="Show other activity for this phase">◄</a>
             <div class="activity-content">
                 <div class="js_phase_title phase_title">
                     <a href="?id={{ activity_by_phase.getActivitiesString(activity.phase) }}&phase={{ activity.phase }}"
@@ -40,7 +40,7 @@
                 </div><!-- END .js_photo_link -->
             </div><!-- END .activity-content -->
             <a href="?id={{ activity_by_phase.nextIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
-               title="Show other activity for this phase" rel="nofollow">►</a>
+               title="Show other activity for this phase">►</a>
         </div><!-- END .activity-wrapper -->
     </div>
     {% endfor %}
