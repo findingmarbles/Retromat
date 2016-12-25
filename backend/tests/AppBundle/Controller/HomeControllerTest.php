@@ -156,14 +156,16 @@ class HomeControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=1');
-        $this->assertEquals(
-            '?id=1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122&phase=0',
+        // .* in expression allows this to succeed on live data even when new activities are added
+        $this->assertRegExp(
+            '#\?id=1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-.*&phase=0#',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_link')->attr('href')
         );
 
         $crawler = $client->request('GET', '/?id=5');
-        $this->assertEquals(
-            '?id=4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123-126&phase=1',
+        // .* in expression allows this to succeed on live data even when new activities are added
+        $this->assertRegExp(
+            '#\?id=4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-.*&phase=1#',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_link')->attr('href')
         );
     }

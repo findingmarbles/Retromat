@@ -8,7 +8,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Activity
  *
- * @ORM\Table(name="activity")
+ * @ORM\Table(name="activity",
+ *     indexes={
+ *          @ORM\Index(name="retromatId_index", columns={"retromat_id"}),
+ *          @ORM\Index(name="phase_index", columns={"phase"})}
+ *     )
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ActivityRepository")
  */
 class Activity

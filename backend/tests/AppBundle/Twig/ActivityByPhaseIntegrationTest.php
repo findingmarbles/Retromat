@@ -3,12 +3,26 @@
 namespace tests\AppBundle\Twig;
 
 use AppBundle\Twig\ActivityByPhase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
-class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
+// @Todo: Avoid integration test by mocking the repository
+class ActivityByPhaseIntegrationTest extends WebTestCase
 {
+    /**
+     * @var ActivityByPhase
+     */
+    private $activityByPhase;
+
+    public function setUp() {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $this->activityByPhase = new ActivityByPhase($entityManager);
+    }
+
     public function testGetAllActivitiesByPhase()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
+        
         $activitiesByPhase = $activityByPhase->getAllActivitiesByPhase();
 
         $this->assertEquals(3, $activitiesByPhase[0][2]);
@@ -23,7 +37,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testGetActivitiesString()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $this->assertEquals('1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122', $activityByPhase->getActivitiesString(0));
         $this->assertEquals('27-28-30-56-111', $activityByPhase->getActivitiesString(5));
@@ -31,7 +45,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testNextActivityIdInPhase()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $this->assertEquals('31', $activityByPhase->nextActivityIdInPhase(0, 22));
         $this->assertEquals('24', $activityByPhase->nextActivityIdInPhase(3, 21));
@@ -40,7 +54,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testPreviousActivityIdInPhase()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $this->assertEquals('18', $activityByPhase->previousActivityIdInPhase(0, 22));
         $this->assertEquals('13', $activityByPhase->previousActivityIdInPhase(3, 21));
@@ -49,7 +63,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testNextIds()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $this->assertEquals([18], $activityByPhase->nextIds([3], 3, 0));
         $this->assertEquals([18, 87, 113, 13, 16], $activityByPhase->nextIds([3, 87, 113, 13, 16], 3, 0));
@@ -59,7 +73,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testPreviousIds()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $this->assertEquals([3], $activityByPhase->previousIds([18], 18, 0));
         $this->assertEquals([122], $activityByPhase->previousIds([1], 1, 0));
@@ -67,7 +81,7 @@ class ActivityByPhaseTest extends \PHPUnit_Framework_TestCase
 
     public function testActiviyIdsUnique()
     {
-        $activityByPhase = new ActivityByPhase;
+        $activityByPhase = $this->activityByPhase;
 
         $activities = [];
         foreach ($activityByPhase->getAllActivitiesByPhase() as $activitiesInPhase) {
