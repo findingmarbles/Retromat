@@ -2,10 +2,17 @@
 
 namespace tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class HomeControllerTest extends WebTestCase
 {
+    public function setUp()
+    {
+        // empty database before each test.
+        // any test that needs data to function has to specify the data needed explicitly.
+        $this->loadFixtures([]);
+    }
+
     public function testShowSingleActivityBlock()
     {
         $client = static::createClient();
@@ -18,6 +25,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityNameRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=32');
@@ -43,6 +51,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySummaries()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=76');
@@ -60,6 +69,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityDescriptionsRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=22');
@@ -87,6 +97,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityLinksText()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=1');
@@ -104,6 +115,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityLinksHref()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=1');
@@ -121,6 +133,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityPhaseLinkText()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=3');
@@ -139,6 +152,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityPhaseLinkHref()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=1');
@@ -156,6 +170,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourceSimpleStringRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=17');
@@ -173,6 +188,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourcePlaceholderRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=77');
@@ -190,6 +206,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourcePlaceholderAndStringRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=15');
@@ -207,6 +224,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourceStringAndPlaceholderRawHtml()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=14');
@@ -224,7 +242,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowAny5Activities()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/?id=3-87-113-13-16');
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
         $this->assertEquals(5, $activities->count());
@@ -274,7 +294,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowAllActivitiesInPhase0LongUrl()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
+
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/?id='.$idsStringPhase0.'&phase=0');
         $ids = explode('-', $idsStringPhase0);
@@ -318,6 +340,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testHideSteppersPhase0LongUrl()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         // must not be hidden when phase is not specified in URL
@@ -363,6 +386,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperNextSingleActivity()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=3');
@@ -374,6 +398,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperPreviousSingleActivity()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=18');
@@ -385,6 +410,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperNextMultipleActivities()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/?id=3-87-113-13-16');

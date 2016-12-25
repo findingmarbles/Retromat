@@ -8,6 +8,7 @@ class ActivityRepositoryTest extends WebTestCase
 {
     public function testFindOrdered()
     {
+        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
         $repo = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
         $ordered = $repo->findOrdered($language = 'en', $id = [3, 87, 113, 13, 16]);
 
