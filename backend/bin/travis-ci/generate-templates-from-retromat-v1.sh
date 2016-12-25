@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# How to:
+# Execute this comand from the toplevel directory of your Retromat repository,
+# which is where index.php is currently located.
+
+# Background:
+# No cd ... or absolute paths here, because
+# this command needs to work on local machines and on trvais-ci, too.
+
 mkdir -p backend/app/Resources/views/home/generated/
 
 php index.php en twig   > backend/app/Resources/views/home/generated/index_en.html.twig
