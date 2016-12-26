@@ -85,7 +85,7 @@ contributor: "Corinna Baldauf"
 }];
 all_photos[46] = [
 {filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"},
-{filename:    path + "47_Retro-Mailbox.jpg", contributor: "Sarah Schmid"}
+{filename:    path + "47_retro-box-3.jpg", contributor: "Bernhard Kreuz"}
 ];
 all_photos[48] = [
 {filename:    path + "49_Starfish_3.jpg", contributor: "Eric van der Meulen"},
