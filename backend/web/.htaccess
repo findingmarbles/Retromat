@@ -20,6 +20,16 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # retromat: without www
+    RewriteCond %{HTTP_HOST} www\.plans-for-retrospectives\.com
+    RewriteRule ^(.*)$ https://plans-for-retrospectives.com/$1 [R=301,L]
+
+    # retromat: always https on plans-for-retrospectives.com (but allow localhost etc. on http)
+    RewriteCond %{HTTP_HOST} plans-for-retrospectives\.com
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{ENV:HTTPS} !=on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
