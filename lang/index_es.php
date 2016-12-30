@@ -31,23 +31,26 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Pedro Serrano';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/pedroserranot';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/pedro_angel_serrano.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-CSM y PMP apasionado de las metodologías ágiles. Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+
+Agile Believer y Agente de Cambio, apasionado de las metodolog&iacute;as &aacute;giles (CSM, PSM y ACP). Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+
 <br> <br>
 Agradecimientos a Mauro Strione, Sebastian Sabato, Mauro Tresguerras, Martin Contuci, Hiroshi Hiromoto, Lucho Salazar y Jos&eacute; Mar&iacute;a Bl&aacute;zquez.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
-Corinna necesitaba algo como Retromat en sus a&ntilde;os de Scrummaster. 
-Finalmente lo desarroll&oacute; ella misma, esperando que sea de utilidad para otros tambi&eacute;n.
+
+Corinna ech&oacute; en falta algo como Retromat en sus a&ntilde;os de Scrummaster.
+Finalmente lo desarroll&oacute; ella misma, esperando que tambi&eacute;n sea de utilidad para otros.
 &iquest;Preguntas, sugerencias o aliento?
 Puede <a href="mailto:corinna@finding-marbles.com">escribirle</a> o <a href="https://twitter.com/findingmarbles">seguirla en Twitter</a>.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-As developer, product owner, scrum master and agile coach, Timon has been a Retromat user and fan for more than three years. He had quite a few feature ideas. In 2016 he started to build some of those features himself. You can <a href="mailto:timon.fiddike@agile.coach">email him</a> or
-    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>.
+Tanto como Desarrollador, Product Owner, Scrum Master y Agile Coach, Timon ha sido usuario y fan de Retromat durante m&aacute;s de tres a&ntilde;os. Se le ocurrieron bastantes ideas al respecto y en 2016 comenz&oacute; a desarrollar &eacute;l mismo algunas de ellas. Puedes <a href="mailto:timon.fiddike@agile.coach">mandarle un email</a> o
+    <a href="https://twitter.com/TimonFiddike">seguirle en Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'por Finding-Marbles.com';
