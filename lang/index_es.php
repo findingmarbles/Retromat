@@ -31,13 +31,16 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Pedro Serrano';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/pedroserranot';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/pedro_angel_serrano.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-Agile Beleiver y Agente de Cambio, apasionado de las metodolog&iacute;as &aacute;giles (CSM, PSM y ACP). Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+
+Agile Believer y Agente de Cambio, apasionado de las metodolog&iacute;as &aacute;giles (CSM, PSM y ACP). Puede <a href="https://twitter.com/Pedroserranot">seguirlo en Twitter</a>.
+
 <br> <br>
 Agradecimientos a Mauro Strione, Sebastian Sabato, Mauro Tresguerras, Martin Contuci, Hiroshi Hiromoto, Lucho Salazar y Jos&eacute; Mar&iacute;a Bl&aacute;zquez.
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Creado por ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
+
 Corinna ech&oacute; en falta algo como Retromat en sus a&ntilde;os de Scrummaster.
 Finalmente lo desarroll&oacute; ella misma, esperando que tambi&eacute;n sea de utilidad para otros.
 &iquest;Preguntas, sugerencias o aliento?
@@ -73,3 +76,4 @@ $_lang['POPUP_SEARCH_INFO']= 'Buscar en t&iacute;tulos, res&uacute;menes &amp; d
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Disculpa, no se encontr&oacute; nada para';
 
 ?>
+

@@ -1,11 +1,20 @@
 <?php
 
+// run as follows: php index.php [langage] [format]
+// language: [de, en, es, fr, nl], default: en
+// format: [html, twig], default: html
+
 $lang = 'en';
 
 if (isset($argv[1])) {
     $lang = $argv[1];
 } else if (array_key_exists('lang', $_GET)) {
     $lang = $_GET['lang'];
+}
+
+function is_output_format_twig($argv)
+{
+    return (isset($argv[2]) and 'twig' === $argv[2]);
 }
 
 $isEnglish = false;
@@ -16,6 +25,7 @@ if ($lang == 'en') {
 require(get_language_file_path($lang));
 
 $activities_file = 'lang/activities_' . $lang . '.php';
+$activities_photos_file = 'lang/photos.php';
 
 // PHP FUNCTIONS
 
@@ -32,21 +42,31 @@ function print_if_selected($candidate, $chosen) {
     return $res;
 }
 
+function get_url_to_index() {
+    global $isEnglish;
+    $res = '/';
+    if (!$isEnglish) {
+        global $lang;
+        $res .= 'index_' . $lang . '.html';
+    }
+    return $res;
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retr-O-Mat - <?php echo($_lang['HTML_TITLE']); ?></title>
+<title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
 
 <link rel="stylesheet" type="text/css" href="static/retromat.css" />
 
-<link rel="shortcut icon" href="images/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="http://plans-for-retrospectives.com/images/apple-touch-icon.png" />
+<link rel="shortcut icon" href="static/images/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
@@ -68,25 +88,26 @@ function print_if_selected($candidate, $chosen) {
 //<![CDATA[
 
 // "CONFIG"
-const NUMBER_OF_REGULAR_PHASES = 5;
-const PHASE_SOMETHING_DIFFERENT = 5;
-const INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
+var NUMBER_OF_REGULAR_PHASES = 5;
+var PHASE_SOMETHING_DIFFERENT = 5;
+var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
 
 // Frequent sources for activities
-const source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
-const source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
-const source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
-const source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Innovation Games<\/a>';
-const source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
-const source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
-const source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
-const source_unknown = 'Unknown';
+var source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
+var source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
+var source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
+var source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann<\/a>';
+var source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
+var source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
+var source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
+var source_unknown = 'Unknown';
 
-const PHASE_ID_TAG = 'phase';
+var PHASE_ID_TAG = 'phase';
 
 <?php
 
     require($activities_file);
+    require($activities_photos_file);
 
 ?>
 
@@ -96,11 +117,14 @@ last_block_bg = -1; // Stores bg of last block so that no consecutive blocks hav
 
 /************* FUNCTIONS ******************************************************************/
 
+
+
 function init() {
     var urlParams = getUrlVars();
     var plan_id = urlParams.id;
+    var phase = urlParams.phase;
     if(plan_id) {
-        publish_plan(plan_id);
+        publish_plan(plan_id, phase);
     } else {
         publish_random_plan();
     }
@@ -122,16 +146,20 @@ function getUrlVars() {
 }
 
 //Input: String
-function publish_plan(plan_id) {
+function publish_plan(plan_id, phase) {
     var plan_id = sanitize_plan_id(plan_id);
-
     if (plan_id) {
         empty_plan();
         publish_activity_blocks(plan_id);
         enable_phase_browsing();
 
-        show_phase_stepper();
-        hide_plan_title();
+        if (phase != undefined) {
+            publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase].toUpperCase());
+            hide_phase_stepper();
+        } else {
+            show_phase_stepper();
+            hide_plan_title();
+        }
         publish_plan_id(plan_id);
     }
 }
@@ -189,16 +217,19 @@ function get_random_integer(upper_limit) {
 
 function populate_activity_block(activity_index, activity_block) {
     var activity = get_activity_array(activity_index);
+    var id = convert_index_to_id(activity_index);
 
     $(activity_block).addClass('js_activity' + activity_index);
 
     $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
     $(activity_block).find('.js_fill_name').html(activity.name);
-    $(activity_block).find('.js_fill_id').html(convert_index_to_id(activity_index));
+    $(activity_block).find('.js_fill_activity_link').prop('href','?id=' + id);
+    $(activity_block).find('.js_fill_id').html(id);
     $(activity_block).find('.js_fill_summary').html(activity.summary);
     $(activity_block).find('.js_fill_source').html(activity.source);
     $(activity_block).find('.js_fill_description').html(activity.desc);
-    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity.photo));
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity_index));
 
 }
 
@@ -214,13 +245,29 @@ function convert_index_to_id(index) {
     return parseInt(index) + 1;
 }
 
-/* Param: activity.photo
- * Returns: String (empty or link to photo)
+/* Param: activity index
+ * Returns: String (empty or link to photo(s))
  */
-function get_photo_string(photo) {
+function get_photo_string(index) {
     res = "";
-    if (photo != null) {
-        res = photo + " | ";
+    if (all_photos[index] != null) {
+        for (var i=0; i<all_photos[index].length; i++) {
+            res += "<a href='";
+            res += all_photos[index][i]['filename'];
+            res += "' rel='lightbox[activity" + index + "]' ";
+            res += "title='<?php echo($_lang['ACTIVITY_PHOTO_BY']); ?>";
+            res += all_photos[index][i]['contributor'];
+            res += "'>";
+            if (i == 0) {
+                if (all_photos[index].length < 2) {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTO']); ?>";
+                } else {
+                    res += "<?php echo($_lang['ACTIVITY_PHOTO_VIEW_PHOTOS']); ?>";
+                }
+            }
+            res += "</a>";
+        }
+//        res += " | "; PAUSED Until I've got more time
     }
     return res;
 }
@@ -230,7 +277,6 @@ function get_photo_string(photo) {
 function enable_phase_browsing() {
     enable_prev();
     enable_next();
-    enable_phase_link();
 }
 
 function enable_prev() {
@@ -341,28 +387,7 @@ function get_index_of_next_activity_in_phase(activity_index, phase_index) {
     return found_index;
 }
 
-function enable_phase_link() {
-
-    $('.js_phase_link').click(function() {
-
-        var activity_id = read_activity_id($(this).parent().parent());
-        var activity = get_activity_array(convert_id_to_index(activity_id));
-
-        show_activities_in_phase(activity.phase);
-
-    });
-}
-
 /************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
-
-
-function show_activities_in_phase(phase_index) {
-    var plan_id = get_activities_in_phase_as_plan_id(phase_index);
-    publish_plan(plan_id);
-    publish_plan_title("<?php echo($_lang['INDEX_ALL_ACTIVITIES']); ?> " + phase_titles[phase_index].toUpperCase());
-    enable_phase_browsing();
-    hide_phase_stepper();
-}
 
 /* Returns: String of all activities in this phase formatted as plan id
  */
@@ -477,6 +502,14 @@ function generate_random_regular_plan_id() {
 
 /************ BEGIN Footer Functions ************/
 
+function create_link_to_all_activities(number_of_activities) {
+	var link_string = "<a href='/index<?php if(!$isEnglish) echo("_" . $lang); ?>.html?id=1";
+	for (i=2; i<=number_of_activities; i++) {
+		link_string += "-" + i;
+	}
+	return link_string + "&all=yes'>" + number_of_activities + "</a>";
+}
+
 function get_number_of_activities_in_phase(phase_index) {
     var activities = get_indexes_of_activities_in_phase(phase_index);
     return activities.length;
@@ -504,7 +537,7 @@ function get_combinations_string() {
 }
 
 function publish_footer_stats() {
-    $(".js_footer_no_of_activities").html(all_activities.length);
+    $(".js_footer_no_of_activities").html(create_link_to_all_activities(all_activities.length));
     $(".js_footer_no_of_combinations").html(get_number_of_combinations());
     $(".js_footer_no_of_combinations_formula").html(get_combinations_string());
 }
@@ -547,21 +580,19 @@ function hide_popup(popup_name) {
  */
 function search_activities_for_keyword(keyword) {
     var plan_id = '';
-    var isFirst = true;
     var isMatch = false;
     for (var i=0; i<all_activities.length; i++) {
         isMatch = has_found_match(all_activities[i], keyword);
-
         if (isMatch) {
-            if (isFirst) {
-                isFirst = false;
-            } else {
-                plan_id += "-";
-            }
-            plan_id += convert_index_to_id(i);
+            plan_id += convert_index_to_id(i) + '-';
         }
     }
-    return plan_id + find_ids_in_keyword(keyword, isFirst);
+    if (plan_id.length > 0) {
+        plan_id = plan_id.substr(0, plan_id.length-1)
+    }
+
+    return plan_id; // Remove trailing '-'
+
 }
 
 function has_found_match(activity, keyword) {
@@ -584,17 +615,29 @@ function has_found_match(activity, keyword) {
     return isMatch;
 }
 
-function find_ids_in_keyword(keyword, isFirst) {
+function find_ids_in_keyword(keyword) {
     var res = sanitize_plan_id(keyword);
-    if (res != "null" && !isFirst) { // FIXME "null" is sooo ugly
-        res = "-" + res;
+    if (res == "null") {
+        res = '';
+    } else {
+        res = '-' + res;
     }
     return res;
 }
 
-function publish_activities_for_keyword(keyword) {
+function publish_activities_for_keywords(keywords) {
 
-    var plan_id = search_activities_for_keyword(keyword);
+    var keywords_array = keywords.split(' ');
+    var plan_id = '';
+    for (var i=0; i<keywords_array.length; i++) {
+        var sub_ids = search_activities_for_keyword(keywords_array[i]);
+        if (sub_ids.length > 0) {
+            plan_id += sub_ids + '-';
+        }
+    }
+    plan_id = plan_id.substr(0, plan_id.length-1); // Remove trailing '-'
+
+    plan_id += find_ids_in_keyword(keywords);
 
     var text = '<?php echo($_lang["INDEX_ALL_ACTIVITIES"]) ?>';
     if (plan_id != '') {
@@ -607,7 +650,7 @@ function publish_activities_for_keyword(keyword) {
         text = '<?php echo($_lang["POPUP_SEARCH_NO_RESULTS"]) ?>';
     }
 
-    publish_plan_title(text +  " '" + keyword + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
+    publish_plan_title(text +  " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
 }
 
 /************ END PopUps Plan Navigation ************/
@@ -626,30 +669,57 @@ function switchLanguage(new_lang) {
 //]]>
 </script>
 
+<link rel="alternate" hreflang="en" href="index.html" />
+<link rel="alternate" hreflang="es" href="index_es.html" />
+<link rel="alternate" hreflang="fr" href="index_fr.html" />
+<link rel="alternate" hreflang="de" href="index_de.html" />
+<link rel="alternate" hreflang="nl" href="index_nl.html" />
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(["setCookieDomain", "*.plans-for-retrospectives.com"]);
+    _paq.push(["setDomains", ["*.plans-for-retrospectives.com"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//plans-for-retrospectives.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Piwik Code -->
 </head>
 
 <body onload="JavaScript:init()">
 
 <div class="header">
-    <img class="header__logo" src="static/images/logo_white.png" alt="Retr-O-Mat" title="Retr-O-Mat">
+    <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (82 activities)</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (27 activit&eacute;s)</option>
-<!--        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch</option>
-        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands</option>
-        -->
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (39 Aktivit&auml;ten)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (127 activities)</option>
+        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
+        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
+        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (96 activiteiten)</option>
     </select>
 
-      <span class="navi"><a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What is a retrospective?</a> |
-        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retr-O-Mat</a> |
-          <!--
-          <a href="http://plans-for-retrospectives.com/getting-started-with-retrospectives-book/index.html">Getting Started with Retrospectives</a> |
-          <a href="http://finding-marbles.com">By Finding-Marbles.com</a> |
-          -->
-         <a href="/print/index.html">Print Edition</a> |
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>
+      <span class="navi">
+      <a href="/about.html">About</a> |
+      <a href="/donate.html">Donate</a> |
+      <a href="/books.html">Books</a>
+        <!-- 
+        <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
+        <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
+        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>
+		  <!-- PAUSED Until I've got more time
+		  |
+        <?php echo($_lang['INDEX_NAVI_ADD_ACTIVITY']); ?>
+        -->
       </span>
 </div>
 
@@ -661,25 +731,43 @@ function switchLanguage(new_lang) {
 
 <?php if ($isEnglish) { ?>
     <div class="book">
-        <div class="content">
-                Did you know there's a
-                <a href="/print/index.html">Print Editon of the Retr-O-Mat</a>?
+        <div class="content" style="line-height: 20px">
+                All activities in Retromat on your ebook reader?
+<br><br>
+                <a href="/ebook/index.html"
+                   style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
+                </a>
         </div>
     </div>
+
+<!--
+    <div class="book">
+        <div class="content" style="line-height: 20px">
+                Retromat needs your help to improve!
+                <a href="/donate.html" 
+                   style="margin-left: 20px; padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Support Retromat!
+                </a>
+        </div>
+    </div>
+-->
 <?php } ?>
 
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
-            Retr-O-Mat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
+            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div class="plan-header__wrapper">
+        <?php if (is_output_format_twig($argv)) { ?>
+        {% include 'home/header/idDisplay.html.twig' %}
+        <?php } else { ?>
             <div class="ids-display">
                 <?php echo($_lang['INDEX_PLAN_ID']); ?>
-                <form name="js_ids-display__form" class="ids-display__form">
+                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
                     <input type="text" size="18" name="js_display" class="ids-display__input" value="">
                 </form>
             </div>
+        <?php } ?>
             <div class="plan-navi">
                 <ul>
                     <li>
@@ -705,7 +793,7 @@ function switchLanguage(new_lang) {
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
                         <div class="js_popup--search popup--search popup display_none">
-                            <form action="JavaScript:publish_activities_for_keyword($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
                                 <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
                                 <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
                                 <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
@@ -719,29 +807,46 @@ function switchLanguage(new_lang) {
     </div><!-- content -->
 </div>
 
-<div class="js_plan_title_container plan_title_container display_none">
-    <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+<?php if (is_output_format_twig($argv)) { ?>
+    {% include 'home/titles/planTitle.html.twig' %}
+<?php } else { ?>
+    <div class="js_plan_title_container plan_title_container display_none">
+        <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+        </div>
     </div>
-</div>
+<?php } ?>
 
-<div class="js_plan">
-    <noscript>
-        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
-    </noscript>
-</div><!-- END plan -->
+<?php if (is_output_format_twig($argv)) { ?>
+    {% include 'home/activities/activities.html.twig' %}
+<?php } else { ?>
+    <div class="js_plan">
+        <div class="activity_block bg1">
+            <div class="activity-wrapper">
+                <div class="activity-content">
+                    <?php echo($_lang['INDEX_LOADING']); ?>
+                    <noscript>
+                        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </div><!-- END plan -->
+<?php } ?>
 
 <div class="js_activity_block_template js_activity_block activity_block display_none">
     <div class="activity-wrapper">
         <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;</a>
         <div class="activity-content">
             <div class="js_phase_title phase_title">
-                <a href="#" onclick="JavaScript:All_activities_in_phase" class="js_phase_link">
+                <a href="#" class="js_fill_phase_link">
                     <span class="js_fill_phase_title"></span>
                 </a>
             </div>
             <div class="js_item">
                 <h2><span class="js_fill_name"></span>
-                    <span class="activity_id_wrapper">(#<span class="js_fill_id"></span>)</span>
+                    <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                    </span>
                 </h2>
                 <div class="summary">
                     <span class="js_fill_summary"></span>
@@ -756,9 +861,11 @@ function switchLanguage(new_lang) {
             </div><!-- END js_item -->
             <div class="js_photo_link photo_link">
                 <span class="js_fill_photo-link"></span>
+				<!-- PAUSED Until I've got more time
                 <a href="mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']) ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']) ?>" class="less_pronounced">
                     <?php echo($_lang['ACTIVITY_PHOTO_ADD']) ?>
                 </a>
+                -->
             </div><!-- END .js_photo_link -->
         </div><!-- END .activity-content -->
         <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="<?php echo($_lang['ACTIVITY_NEXT']) ?>">&#9658;</a>
@@ -768,7 +875,9 @@ function switchLanguage(new_lang) {
 <div class="about">
     <div class="content">
         <?php echo($_lang['INDEX_ABOUT']); ?>
+<!-- PAUSED Until I've got more time
         <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_ABOUT_SUGGEST']); ?></a>!
+-->
     </div>
 </div>
 
@@ -776,51 +885,64 @@ function switchLanguage(new_lang) {
    <div class="content">
 
 <?php if (!$isEnglish) { ?>
-       <div class="team__translator">
-           <h2><?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>
+       
+           <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+
+            <div style="clear:both">    
+               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                   <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>" class="team-photo">
                </a>
-           </h2>
-           <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK']); ?>">
-               <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE']); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME']); ?>" class="team-photo">
-           </a>
-           <div class="team-text">
-               <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT']); ?>
-           </div>
+
+                <h3 style="margin-bottom: 10px">
+                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
+                   <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                       <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
+                   </a>
+                </h3>
+
+               <div class="team-text">
+                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
+               </div>
        </div><!-- .team--translator -->
+           <?php } ?>
 <?php } ?>
 
-       <div>
-           <h2><?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-               <a href="http://finding-marbles.com/">
-                   Corinna Baldauf
-               </a>
-           </h2>
+        <div style="clear:both">
            <a href="http://finding-marbles.com/">
                <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
+           <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
+               <a href="http://finding-marbles.com/">
+                   Corinna Baldauf
+               </a>
+           </h3>
            <div class="team-text" style="margin-right:0">
-               <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>
-           </div>
+                   <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>       
+            </div>
+       </div><!-- .team--corinna -->
+
+
+       <div style="clear:both">
+           <a href="https://fiddike.com/">
+               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
+               <a href="https://fiddike.com/">
+                   Timon Fiddike
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                  <?php echo($_lang['INDEX_TEAM_TIMON_TEXT']); ?>
+            </div>
+       </div><!-- .team--timon-->
+
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
-
 <!-- Piwik -->
-<script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(["trackPageView"]);
-    _paq.push(["enableLinkTracking"]);
-
-    (function() {
-        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://finding-marbles.com/piwik/";
-        _paq.push(["setTrackerUrl", u+"piwik.php"]);
-        _paq.push(["setSiteId", "3"]);
-        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-    })();
-</script>
+<noscript><img src="//plans-for-retrospectives.com/piwik/piwik.php?idsite=2&rec=1&bots=1" style="border:0;" alt="" /></noscript>
 <!-- End Piwik Code -->
 </body>
 </html>

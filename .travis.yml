@@ -1,0 +1,49 @@
+language: php
+
+php:
+    - 5.6
+    - 7.0
+    - 7.1
+
+before_install:
+    - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
+
+install:
+    - composer install --working-dir=backend
+
+before_script:
+    - php backend/bin/console doctrine:database:create --env=test
+    - php backend/bin/console doctrine:schema:create --env=test
+    - php backend/bin/console doctrine:fixtures:load -n --env=test
+    - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
+
+script:
+    - phpunit -c backend
+
+after_success:
+    - mkdir -p .travis/
+    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
+    - chmod 600 .travis/rsa_travis_timon
+    - eval "$(ssh-agent -s)"
+    - ssh-add .travis/rsa_travis_timon
+    - rm -rf .travis/
+
+deploy:
+    on:
+        branch: master
+        condition: $TRAVIS_PHP_VERSION = 7.0
+    skip_cleanup: true
+    provider: script
+    script: /bin/true
+
+before_deploy:
+    - openssl aes-256-cbc -d -a -in backend/app/config/parameters.yml.avior.enc -out backend/app/config/parameters.yml -k $travis_key
+    - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
+    - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
+
+notifications:
+    on_success: always
+    on_failure: always
+    email:
+        recipients:
+            - timon.fiddike@agile.coach

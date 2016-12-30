@@ -1,0 +1,84 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+        color_variation: "@retromat.color_varation"
+        activity_by_phase: "@retromat.activity_by_phase"
+        activity_source: "%retormat.activity.source%"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        unix_socket: "%database_socket%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+    # probably put this into the database later:
+    retormat.activity.source:
+        source_agileRetrospectives: "<a href=\"http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/\">Agile Retrospectives<\/a>"
+        source_findingMarbles: "<a href=\"http://www.finding-marbles.com/\">Corinna Baldauf<\/a>"
+        source_kalnin: "<a href=\"http://vinylbaustein.net/tag/retrospective/\">Thorsten Kalnin<\/a>"
+        source_innovationGames: "<a href=\"http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/\">Luke Hohmann<\/a>"
+        source_facilitatorsGuide: "<a href=\"http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/\">Facilitator's Guide to Participatory Decision-Making<\/a>"
+        source_skycoach: "<a href=\"http://skycoach.be/ss/\">Nick Oostvogels</a>"
+        source_judith: "<a href=\"https://leanpub.com/ErfolgreicheRetrospektiven\">Judith Andresen</a>"
+        source_unknown: "Unknown"

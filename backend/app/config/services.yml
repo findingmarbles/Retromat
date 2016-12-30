@@ -1,0 +1,22 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    array_to_object_mapper:
+        class: AppBundle\Importer\ArrayToObjectMapper
+    entity_collection_filter:
+        class: AppBundle\Importer\EntityCollectionFilter
+        arguments: ["@validator", "@logger"]
+    retromat.activity_reader:
+        class: AppBundle\Importer\Activity\ActivityReader
+        arguments: ["%kernel.root_dir%/../../lang/activities_en.php"]
+    retromat.activity_importer:
+        class: AppBundle\Importer\Activity\ActivityImporter
+        arguments: ["@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter"]
+    retromat.color_varation:
+        class: AppBundle\Twig\ColorVariation
+    retromat.activity_by_phase:
+        class: AppBundle\Twig\ActivityByPhase
+        arguments: ["@doctrine.orm.entity_manager"]

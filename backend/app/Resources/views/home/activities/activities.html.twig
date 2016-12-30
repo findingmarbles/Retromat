@@ -1,0 +1,48 @@
+<div class="js_plan">
+{% if 0 == activities|length %}
+    {% include 'home/activities/homeRandomPlans.html.twig' %}
+{% else %}
+    {% for activity in activities %}
+    <div class="js_activity_block activity_block bg{{ color_variation.nextColor() }}">
+        <div class="activity-wrapper">
+            <a href="?id={{ activity_by_phase.previousIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_prev_button display_table-cell{% if phase is not null %} hidden{% endif %}"
+               title="Show other activity for this phase">◄</a>
+            <div class="activity-content">
+                <div class="js_phase_title phase_title">
+                    <a href="?id={{ activity_by_phase.getActivitiesString(activity.phase) }}&phase={{ activity.phase }}"
+                       class="js_fill_phase_link">
+                        <span class="js_fill_phase_title">{{ ('phase_title_'~activity.phase) | trans }}</span>
+                    </a>
+                </div>
+                <div class="js_item">
+                    <h2><span class="js_fill_name">{{ activity.name | raw }}</span>
+                        <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="?id={{ activity.retromatId }}">#<span class="js_fill_id">{{ activity.retromatId }}</span></a>)
+                    </span>
+                    </h2>
+                    <div class="summary">
+                        <span class="js_fill_summary">{{ activity.summary }}</span>
+                        <br>
+                        {# probaly need move this to a separate templete or macro or the database later #}
+                        <span class="source">Source:                            <span class="js_fill_source">{{ activity.source  | replace({' + "': ''}) | replace({'" + ': ''}) | replace({'"':''}) | replace (activity_source) | raw }}</span>
+                        </span>
+                    </div><!-- END summary -->
+                    <div class="description">
+                        <span class="js_fill_description">{{ activity.desc | replace({"\\\n":''}) | replace({"<a href='":'<a href="'}) | replace({"'>":'">'}) | raw }}</span>
+                    </div><!-- END description -->
+                </div><!-- END js_item -->
+                <div class="js_photo_link photo_link">
+                    <span class="js_fill_photo-link"></span>
+                    <!-- PAUSED Until I've got more time
+                    <a href="mailto:corinna@finding-marbles.com?subject=Photos%20for%20Activity%3A%20ID&body=Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name" class="less_pronounced">
+                        Add Photo                </a>
+                    -->
+                </div><!-- END .js_photo_link -->
+            </div><!-- END .activity-content -->
+            <a href="?id={{ activity_by_phase.nextIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
+               title="Show other activity for this phase">►</a>
+        </div><!-- END .activity-wrapper -->
+    </div>
+    {% endfor %}
+{% endif %}
+</div>

@@ -1,18 +1,18 @@
 Retromat
 ========
 
-Retr-O-Mat: Create, tweak, print & share plans for (agile) retrospectives
+Retromat: Create, tweak, print & share plans for (agile) retrospectives
             A collection of activities / methods to inspire scrummasters
             and facilitators in general
 
 See it live at:
-http://plans-for-retrospectives.com (or http://retr-o-mat.com)
+http://plans-for-retrospectives.com
 
 ---
 
 # Contact
 
-Retr-O-Mat is primarily run by me, Corinna Baldauf, so if you've got questions, suggestions,
+Retromat is primarily run by me, Corinna Baldauf, so if you've got questions, suggestions,
 etc. please get in touch:
 
 * corinna@finding-marbles.com
@@ -21,7 +21,7 @@ etc. please get in touch:
 
 # Contribute
 
-You'd like to get involved with Retr-O-Mat? Great!
+You'd like to get involved with Retromat? Great!
 
 ## Submit an activity or photo
 
@@ -32,14 +32,13 @@ Or send a photo illustrating an activity (see above for contact details).
 
 ## Translate
 
-The French translation is already live. Additionally there are a couple of translations
-under construction. Our team of awesome translators:
+Besides the English original, there's a Spanish, French, German and Dutch version.
+Our team of awesome translators:
 
-* Pierre Martin and Frank Taillandier - French
-* Tobias Ranft and Judith Andresen - German
-* Linda van der Pal - Dutch
-* Pedro Ángel Serrano and Xavier Verges - Spanish (and possibly Catalan)
-* Weronika Kedzierska - Polish
+* Spanish: [Thomas Wallet](http://www.elproximopaso.net/) and [Pedro Ángel Serrano](https://twitter.com/pedroserranot)
+* French: [Julien Dubois](http://juliendubois.fr/), [Pierre Martin](https://twitter.com/pierremartin) and [Frank Taillandier](http://frank.taillandier.me/)
+* German: [Patrick Zeising](https://twitter.com/peezett)
+* Dutch: [Linda van der Pal](https://twitter.com/DuchessFounder)
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
@@ -53,29 +52,39 @@ Language files reside in the "lang/" directory. There's 2 files per language:
 * The  "activities_*.php"-files contain the activities (& phase titles) as a JS array
 
 You don't have to translate all activities at once. Just start at index 0 and work your
-way down. The first live version of Retr-O-Mat had 15 activities. So as soon as you've translated
+way down. The first live version of Retromat had 15 activities. So as soon as you've translated
 indexes 0-14, your language will go live :)
 
-(The indexes should stay the same across language, so don't move activities around.)
+The indexes should stay the same across languages, so don't move activities around. Some of the attributes, e.g. 'duration' and 'suitable', never show up on the
+page the visitors see. No need to translate those.
 
-Please use HTML entitities for special characters (Examples: &uuml; &ccedil; &ntilde;)
+Please use HTML entitities for special characters, e.g. &uuml; &ccedil; &ntilde;)
 
 #### Technical setup
 
-To test your translation of the "index_*.php"-file you need a server with PHP. To make the
-index.php load your language, you add the parameter "lang" to the URL. Example:
+To test your translation of the "index_*.php"-file you need php installed. In a terminal run
+
+```
+ php index.php en > index.html
+```
+
+to generate the English page.
+
 Let's say you translate into Chinese and have created "index_cn.php" in the "lang"-directory.
-Then you type into your browser something like:
+In your terminal run
 
-http://localhost:8080/?lang=cn or
-http://localhost:8080/?id=2-6-10-11-15&lang=cn
+```
+ php index.php cn > index_cn.html
+```
 
-(Ah, the file "activities_cn.php" also has to exist or it won't work. Fortunately it
-doesn't have to be translated ;)
+Then open index_cn.html in a browser.
 
-To test your translatation of the "activities_*.php"-file you need a browser with JS enabled
-and either also the PHP running server or you save a local copy of index.html
-of the live Retr-O-Mat version and replace activities in that local copy.
+Attention: "activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
+
+To test your translation of the "activities_*.php"-file you need a browser with JS enabled and either also PHP on the console. 
+
+(Alternatively you can save a local copy of index.html
+of the live Retromat and replace activities in the code of that local copy.)
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
@@ -90,18 +99,15 @@ Test in very small steps, because these errors are annoying to track down.
 
 ## Contribute something else
 
-You've got another idea? We're all ears! Especially if your idea fits with the
-overall vision:
+You've got another idea? We're all ears! Especially if your idea fits with the overall vision:
 
-### Vision for Retr-O-Mat
+### Vision for Retromat
 
 * Be useful
-** For more people => better
+ * For more people => better
 * Be pleasant to use
-** Simple interface
-** Consistent
-*** Activities are written in short, straightforward language. For the time
-being this means that I edit all submitted activities. In the future this
-could be handled by a committee at one point.
-** Pretty
+ * Simple interface
+ * Consistent
+  * Activities are written in short, straightforward language. For the time being this means that I edit all submitted activities.
+ * Pretty
 
