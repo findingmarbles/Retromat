@@ -12,6 +12,7 @@ class HomeController extends Controller
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_default")
      * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl"}, name="home")
+     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl"}, name="activities_by_id")
      */
     public function homeAction(Request $request)
     {
