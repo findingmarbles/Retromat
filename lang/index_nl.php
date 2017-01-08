@@ -22,7 +22,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Stel het voor';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Vertaling: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Linda van der Pal';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/DuchessFounder';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/lvdpal.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/lvdpal.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
                                               Linda is Java ontwikkelaar en Scrum master bij <a href="http://iprofs.nl/">iProfs</a>. Ze is de oprichter van <a href="http://jduchess.org/">Duchess</a>
                                           	en een van de organisatoren van <a href="http://www.devoxx4kids.org/">Devoxx4Kids</a> in Nederland. Ze is groot fan van zowel Java als Agile conferenties

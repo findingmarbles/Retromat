@@ -21,7 +21,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung von ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Patrick Zeising';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/peezett';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/patrick_zeising.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Patrick arbeitet in verschiedenen Rollen in der Softwareentwicklung in einem fantastischen <a href="http://www.team-neusta.de/">Team</a>. Seine Leidenschaft wird dabei geweckt von agilen Methoden. G&auml;be es in seinem Leben keine IT, so st&uuml;nde er jetzt mit seiner Gitarre vor einem Mikro auf einer B&uuml;hne. Du kannst ihm <a href="mailto:patrick.zeising@posteo.de">schreiben</a> oder
     ihm <a href="https://twitter.com/peezett">auf Twitter folgen</a>.

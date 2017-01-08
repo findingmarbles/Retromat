@@ -43,13 +43,9 @@ function print_if_selected($candidate, $chosen) {
 }
 
 function get_url_to_index() {
-    global $isEnglish;
-    $res = '/';
-    if (!$isEnglish) {
-        global $lang;
-        $res .= 'index_' . $lang . '.html';
-    }
-    return $res;
+    global $lang;
+
+    return '/' . $lang . '/';
 }
 
 ?>
@@ -658,22 +654,18 @@ function publish_activities_for_keywords(keywords) {
 
 
 function switchLanguage(new_lang) {
-    new_url = location.protocol + '//' + location.host + '/index';
-    if (new_lang != 'en') {
-        new_url += '_' + new_lang;
-    }
-    new_url += '.html',
+    new_url = location.protocol + '//' + location.host + '/' + new_lang + '/';
     window.open(new_url, "_self");
 }
 
 //]]>
 </script>
 
-<link rel="alternate" hreflang="en" href="/index.html" />
-<link rel="alternate" hreflang="es" href="/index_es.html" />
-<link rel="alternate" hreflang="fr" href="/index_fr.html" />
-<link rel="alternate" hreflang="de" href="/index_de.html" />
-<link rel="alternate" hreflang="nl" href="/index_nl.html" />
+<link rel="alternate" hreflang="en" href="/en/" />
+<link rel="alternate" hreflang="es" href="/es/" />
+<link rel="alternate" hreflang="fr" href="/fr/" />
+<link rel="alternate" hreflang="de" href="/de/" />
+<link rel="alternate" hreflang="nl" href="/nl/" />
 
 <!-- Piwik -->
 <script type="text/javascript">

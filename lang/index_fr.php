@@ -22,7 +22,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Pierre Martin';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://www.occitech.fr/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = 'static/images/team/pierre_martin.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/pierre_martin.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Lead developer et co-gérant d'<a href="http://www.occitech.fr/">Occitech</a>.<br>
 	Gazouille aussi sur <a href="https://twitter.com/pierremartin">Twitter</a>!
@@ -31,7 +31,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Julien Dubois';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'http://juliendubois.fr/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = 'static/images/team/julien_dubois.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/julien_dubois.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 	Co-fondateur d'<a href="http://happyculture.coop/">Happyculture</a>, Julien est un lead développeur agile passionné par les gens.
 	Curieux? Direction twitter: <a href="https://twitter.com/Artusamak">@Artusamak</a>.
