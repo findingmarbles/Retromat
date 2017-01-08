@@ -63,16 +63,16 @@ function get_url_to_index() {
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
 
-<link rel="stylesheet" type="text/css" href="static/retromat.css" />
+<link rel="stylesheet" type="text/css" href="/static/retromat.css" />
 
-<link rel="shortcut icon" href="static/images/favicon.ico" />
+<link rel="shortcut icon" href="/static/images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/static/jquery.min.js"><\/script>')</script>
 
-<script src="static/lightbox/lightbox.js"></script>
-<link href="static/lightbox/lightbox.css" rel="stylesheet" />
+<script src="/static/lightbox/lightbox.js"></script>
+<link href="/static/lightbox/lightbox.css" rel="stylesheet" />
 
 <!-- Detect IE9 - It has problems, probably because of history.pushState -->
 <script>
@@ -669,11 +669,11 @@ function switchLanguage(new_lang) {
 //]]>
 </script>
 
-<link rel="alternate" hreflang="en" href="index.html" />
-<link rel="alternate" hreflang="es" href="index_es.html" />
-<link rel="alternate" hreflang="fr" href="index_fr.html" />
-<link rel="alternate" hreflang="de" href="index_de.html" />
-<link rel="alternate" hreflang="nl" href="index_nl.html" />
+<link rel="alternate" hreflang="en" href="/index.html" />
+<link rel="alternate" hreflang="es" href="/index_es.html" />
+<link rel="alternate" hreflang="fr" href="/index_fr.html" />
+<link rel="alternate" hreflang="de" href="/index_de.html" />
+<link rel="alternate" hreflang="nl" href="/index_nl.html" />
 
 <!-- Piwik -->
 <script type="text/javascript">
@@ -698,7 +698,7 @@ function switchLanguage(new_lang) {
 
 <div class="header">
     <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
-        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
+        <img class="header__logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (39 Aktivit&auml;ten)</option>
@@ -909,7 +909,7 @@ function switchLanguage(new_lang) {
 
         <div style="clear:both">
            <a href="http://finding-marbles.com/">
-               <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
+               <img src="/static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
                <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
@@ -925,7 +925,7 @@ function switchLanguage(new_lang) {
 
        <div style="clear:both">
            <a href="https://fiddike.com/">
-               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+               <img src="/static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
                <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
