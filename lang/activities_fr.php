@@ -699,9 +699,9 @@ suitable: "iteration, release, project"
 all_activities[45] = {
 phase:     0,
 name:      "Pourquoi des rétrospectives ?",
-summary:   "Demandez 'Pourquoi faisons-nous des rétrospectives ?'",
-desc:      "Revenons aux sources et commençons la rétrospective en nous demandant 'Pourquoi faisons nous ça ?' \
-Écrivez toutes les réponses pour qu'elles soient visibles par tout le monde. Vous pourriez être surpris.",
+summary:   "Demander \"Pourquoi faisons-nous des rétrospectives ?\"",
+desc:      "Revenir aux sources et commencer la rétrospective en demandant \"Pourquoi faisons nous ça ?\" \
+Écrire toutes les réponses pour qu'elles soient visibles par tout le monde. Vous pourriez être surpris.",
 source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
 duration:  "5",
 suitable: "iteration, release, project"
@@ -709,12 +709,12 @@ suitable: "iteration, release, project"
 all_activities[46] = {
 phase:     1,
 name:      "Vider la boîte aux lettres",
-summary:   "Jetons un coup d'œil aux notes collectées pendant le sprint",
-desc:      "Mettez en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
+summary:   "Jetons un coup d'&#156;il aux notes collectées pendant le sprint",
+desc:      "Mettre en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
 d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit. \
-et le 'poste'. (La 'boîte aux lettres' peut être également un endroit visible. Celà peut initier \
+et le 'poste'. (La 'boîte aux lettres' peut être également un endroit visible. Cela peut initier \
 une discussion pendant l'itération.) <br>\
-Parcourez toutes les notes et discutez-en.<br>\
+Parcourir toutes les notes et en discuter.<br>\
 Une boîte aux lettres est bien pour les longues itérations et les équipes distraites.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
@@ -725,10 +725,10 @@ all_activities[47] = {
 phase:     3,
 name:      "Prenez position - Dancez sur le fil",
 summary:   "Faites vous une idée de l'opinion de tout le monde et atteignez le consensus",
-desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créez une grande échelle (ex : une longue ligne) \
+desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créer une grande échelle (ex : une longue ligne) \
 au sol avec du scotch de peintre. Marquez une extrémité comme étant l'option A) et l'autre comme étant l'option B). \
 Les membres de l'équipe se répartissent le long de l'échelle selon leur position entre les deux options. \
-Ensuite, reformulez les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
+Ensuite, reformuler les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
 durationDetail:  "5 à 10' par décision",
@@ -741,14 +741,30 @@ phase:     3,
 name:      "Vote par gommette - Etoile de mer",
 summary:   "Collect what to start, stop, continue, do more and less of",
 summary:   "Collectez quoi commencer, arrêter, continuer, faire plus et faire moins de",
-desc:      "Dessinez 5 rayons sur un tableau, afin de former 5 sections. \
+desc:      "Dessiner 5 rayons sur un tableau, afin de former 5 sections. \
 Nommez les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
 Les participants notent leurs propositions sur des post-its et les collent \
 dans les sections appropriées. Après avoir regroupé les notes selon les idées \
-faites un vote par gommette pour les propositions à tenter.",
+faire un vote par gommettes pour les propositions à tenter.",
 source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
 durationDetail:  "15 min",
 duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "V&#156;u accordé",
+summary:   "Une féé vous accorde un v&#156;u, comment réalisez-vous qu'il a été exaucé ?",
+desc:      "Donner 2 minutes à chaque participant pour trancher la réponse qu'ils donneraient à la question suivante :<br /> \
+\"Une fée vous accorde un v&#156;u qui résoudra votre plus gros problème au travail au cours de la nuit. Que lui demandez-vous ?\"<br /> \
+Poursuivre par : \"Vous arrivez au travail le lendemain matin. Vous constatez que la fée a exaucé votre v&#156;u. Comment pouvez-vous le dire ? \
+Qu'est ce qui a changé ? \"<br /> \
+Si la confiance au sein du group est importante, laisser chacun décrire son environnement de travail \"féérique\".<br /> \
+Si tel n'est pas le cas, demander à chacun de garder son souhait à l'esprit pour la prochaine étape et de suggérer des actions qui aideraient à d'approcher son souhait.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "Storming, Norming",
+suitable:  "iteration"
 };
