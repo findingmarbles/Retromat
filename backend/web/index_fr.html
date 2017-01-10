@@ -1,0 +1,1826 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Retromat - Inspiration &amp; plans pour rétrospectives (agile)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
+
+<link rel="stylesheet" type="text/css" href="static/retromat.css" />
+
+<link rel="shortcut icon" href="static/images/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
+
+<script src="static/lightbox/lightbox.js"></script>
+<link href="static/lightbox/lightbox.css" rel="stylesheet" />
+
+<!-- Detect IE9 - It has problems, probably because of history.pushState -->
+<script>
+    var is_ie = false;
+</script>
+<!--[if lt IE 10 ]>
+<script>
+    var is_ie = true;
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+
+// "CONFIG"
+var NUMBER_OF_REGULAR_PHASES = 5;
+var PHASE_SOMETHING_DIFFERENT = 5;
+var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
+
+// Frequent sources for activities
+var source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
+var source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
+var source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
+var source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann<\/a>';
+var source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
+var source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
+var source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
+var source_unknown = 'Unknown';
+
+var PHASE_ID_TAG = 'phase';
+
+var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Générer des idées', 'Décider des actions', 'Clore la rétrospective', 'Quelque chose de complètement différent'];
+
+// BIG ARRAY OF ALL ACTIVITIES
+// Mandatory: id, phase, name, summary, desc
+// Example:
+//all_activities[i] = {
+//  id:        i+1,
+//  phase:     int in {1-5},
+//  name:      "",
+//  alternativeName: "",
+//  summary:   "",
+//  desc:      "Multiple \
+//              Lines",
+//  duration:  "",
+//  source:    "",
+//  more:      "", // a link
+//  suitable:  "",
+//};
+// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
+
+all_activities = [];
+all_activities[0] = {
+	phase: 0,
+	name: "ECVP",
+	summary: "Comment se sentent les participants de la rétro : Explorateur, Client, Vacancier, ou Prisonnier ?",
+	desc: "Préparer un paper-board avec des zones pour E, C, V, et P. Expliquer les concepts : <br>\
+<ul>\
+    <li>Explorateur : Désireux de se lancer, de rechercher ce qui a et n'a pas fonctionné et comment améliorer.</li>\
+    <li>Client : Attitude positive. Content si de bonnes choses en ressortent.</li>\
+    <li>Vacancier : Hésitant à participer activement mais la rétro vaut mieux que le travail habituel.</li>\
+    <li>Prisonnier : Participe seulement car il (sent qu'il) le doit.</li>\
+</ul>\
+Faire un sondage (anonyme sur des bouts de papier). Compter les réponses et assurer le suivi sur le tableau \
+pour que tous voient. Si la confiance est faible, détruire délibérément les votes pour assurer la confidentialité. \
+Demander ce que les participants pensent des résultats. S'il y a une majorité de Vacanciers ou Prisonniers \
+envisager d'utiliser la rétro pour discuter de ce constat.",
+	duration: "5-10 numberPeople",
+	source: source_agileRetrospectives,
+	suitable: "iteration, release, project, immature"
+};
+all_activities[1] = {
+	phase: 0,
+	name: "Bulletin météo",
+	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
+	desc: "Préparer un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
+Chaque participant marque son humeur sur le tableau.",
+	source: source_agileRetrospectives
+};
+all_activities[2] = {
+	phase: 0,
+	name: "Lancement - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
+	summary: "Poser une question à laquelle chacun des participants répond à son tour.",
+	desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
+Exemples de questions: <br>\
+<ul>\
+    <li>En un mot - Qu'attendez-vous de cette rétrospective ?</li>\
+    <li>En un mot - Qu'avez vous en tête ?<br>\
+        Traitez les préoccupations, par exemple en les écrivants et en les mettant - physiquement et mentalement - de côté</li>\
+    <li>Dans cette rétrospective - Si vous étiez une voiture, quel genre serait-elle ?</li>\
+    <li>Dans quel état émotionnel êtes-vous ? (par exemple, «heureux», «en colère», «triste», «effrayé»)</li>\
+</ul><br>\
+Évitez l'évaluation des commentaires, par exemple avec «Très Bien». «Merci» est suffisant.",
+	source: source_agileRetrospectives
+};
+all_activities[3] = {
+	phase: 1,
+	name: "Frise chronologie",
+	summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement.",
+	desc: "Diviser en groupes de 5 personnes ou moins. Distribuer des cartes et des marqueurs. \
+Donner aux participants 10 minutes pour noter des événements mémorables et / ou personnellement significatifs. \
+Il s'agit de recueillir plusieurs points de vue. Un consensus serait préjudiciable. Tous les participants \
+affichent leurs cartes et les ordonnent. Il est normal d'ajouter des cartes à la volée. Analyser.<br>\
+Des codes couleurs peuvent aider à faire ressortir des modèles, par exemple :<br>\
+<ul>\
+    <li>Émotions</li>\
+    <li>Évènements (techniques, organisation, personnes, ...)</li>\
+    <li>Fonctions (testeur, développeur, manager, ...)</li>\
+</ul>",
+	duration: "60-90 timeframe",
+	source: source_agileRetrospectives,
+	suitable: "iteration, introverts"
+};
+all_activities[4] = {
+	phase: 1,
+	name: "Analyse des fonctionnalités utilisateur",
+	summary: "Passer sur chaque fonctionnalité utilisateur traitée par l'équipe et chercher des améliorations possibles",
+	desc: "Préparation : Rassembler toutes les fonctionnalités utilisateur traitées lors de l'itération et les amener à \
+la rétrospective. <br> \
+En groupe (10 personnes max.) lire chaque fonctionnalité utilisateur. Pour chacune d'elles se demander si \
+elle s'est bien passée ou non. Si tout s'est bien passé, saisir pourquoi. Sinon discuter de ce qu'il est possible de \
+faire différemment à l'avenir. <br> \
+Variantes : Vous pouvez effectuer cela pour les tickets de support, les bugs ou toute autre tâche \
+effectuée par l'équipe.",
+	source: source_findingMarbles,
+	suitable: "iteration, max10people"
+};
+all_activities[5] = {
+	phase: 1,
+	name: "Aimer à aimer",
+	summary: "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\".",
+	desc: "Préparation: 20 cartes qualité, càd des fiches cartonnées colorées avec un unique mot \
+comme <i>drôle, claire, sérieuse, géniale, dangereuse, désagréable</i>.<br> \
+Chaque membre de l'équipe doit écrire au moins 9 cartes : 3 de chaque pour les choses \
+à commencer à faire, à continuer et à arrêter. Choisir une personne qui sera le premier juge. \
+Le juge retourne la première carte qualité. Chaque membre sélectionne alors parmi ses cartes \
+celle qui correspond le mieux à ce mot et la pose face cachée sur la table. \
+Le dernier à se décider doit remettre la carte dans son jeu. Le juge mélange toutes \
+les cartes proposées, les retourne une par une et décide laquelle correspond le plus = la gagnante. \
+Toutes les cartes sont jetées. La personne ayant proposée la carte gagnante reçoit \
+la carte qualité. La personne à la gauche du juge devient alors le nouveau juge.<br> \
+Arrêter lorsque tout le monde est à court de cartes (6-9 tours). Celui qui a le plus \
+de cartes qualité gagne. Débriefer en demandant quelles sont les principales conclusions. \
+<br>(Basé sur le jeu 'Apples to Apples')",
+	source: source_agileRetrospectives,
+	duration: "30-40",
+	suitable: "iteration, introverts"
+};
+all_activities[6] = {
+	phase: 1,
+	name: "Mad Sad Glad",
+	summary: "Collecter les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), tristes (sad), ou contents (glad) et trouver les raisons.",
+	desc: "Affichez trois affiches intitulées 'en colère' (mad), 'triste' (sad), et 'content' (glad) ou '>:), :(, :)'. \
+Les membres de l'equipe écrivent un évènement par carte lorsqu'ils ont ressenti ce sentiment, avec un code couleur pour chaque type de sentiment. \
+Lorsque le temps est écoulé demander à chacun de placer ses cartes sur les affiches appropriées. Regrouper les cartes sur \
+chaque affiche puis demander au groupe de nommer chaque regroupement. <br>\
+Terminer en demandant :\
+<ul>\
+    <li>Qu'en ressort-il ? Qu'est-ce qui est inattendu ?</li>\
+    <li>Qu'est-ce qui a rendu cette tâche difficile ? Qu'est-ce qui a été amusant ?</li>\
+    <li>Reconnaissez vous des motifs / modèles ? Que signifient-ils pour vous en tant qu'équipe ?</li>\
+    <li>Des suggestions sur comment continuer ?</li>\
+</ul>",
+	source: source_agileRetrospectives,
+	duration: "15-25",
+	suitable: "iteration, release, project, introverts"
+};
+all_activities[7] = {
+	phase: 2,
+	name: "5 Pourquoi",
+	alternativeName: "La source des maux",
+	summary: "Examiner de près la cause racine de problèmes en vous demandant à plusieurs reprises 'Pourquoi ?'",
+	desc: "Diviser les participants en petits groupes (<= 4 personnes) et donner à chaque groupe \
+l'un des problèmes le plus identifié précédemment. Instructions pour le groupe :\
+<ul>\
+    <li>Une personne demande aux autres 'Pourquoi est-ce arrivé ?' à plusieurs reprises pour trouver la cause racine ou une suite d'évènements</li>\
+    <li>Notez la cause racine trouvée (souvent la réponse au 5ème 'Pourquoi ?')</li>\
+</ul>\
+Laisser le groupe partager ses conclusions.",
+	source: source_agileRetrospectives,
+	duration: "15-20",
+	suitable: "iteration, release, project, root_cause"
+};
+all_activities[8] = {
+	phase: 2,
+	name: "Matrice d'apprentissage",
+	summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes.",
+	desc: "Après avoir discuté des données de la Phase 2, afficher un tableau à 4 quadrants intitulés \
+':)', ':(', 'Idée !', et 'Appréciation'. Distribuez des post-its. \
+<ul>\
+    <li>Les membres de l'équipe peuvent contribuer à chaque quadrant. Une idée par post-it.</li>\
+    <li>Regrouper les notes.</li>\
+    <li>Distribuer 6 à 10 points aux participants pour voter et élire les idées les plus importantes.</li>\
+</ul>\
+Cette liste sera celle utilisée pour la Phase 4.",
+	source: source_agileRetrospectives,
+	duration: "20-25",
+	suitable: "iteration"
+};
+all_activities[9] = {
+	phase: 2,
+	name: "Brainstorming / Filtrage",
+	summary: "Générer de nombreuses idées et filtrer les suivant vos critères.",
+	desc: "Exposer les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
+qui seront filtrées <em>après</em> le brainstorming.\
+<ul>\
+    <li>Laisser les participants écrire leurs idées pendant 5 à 10 minutes</li>\
+    <li>Faire des tours de table en demandant de façon répétée une idée à chacun, jusqu'à ce que toutes les idées soient au tableau</li>\
+    <li>Demander ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité, ...). \
+        Laisser le groupe en choisir 4.</li>\
+    <li>Appliquer chaque filtre et marquer les idées qui passent les 4 filtres.</li>\
+    <li>Quelles idées le groupe veut-il faire avancer ? Est-ce que quelqu'un se sent particulièrement concerné par une de ces idées ? \
+        Autrement prendre une décision à la majorité.</li>\
+</ul>\
+Les idées sélectionnées rentrent en Phase 4.",
+	source: source_agileRetrospectives,
+	more: "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
+    Nine Ways To Be A Great Brainstorm Lead</a>",
+	duration: "40-60",
+	suitable: "iteration, release, project, introverts"
+};
+all_activities[10] = {
+	phase: 3,
+	name: "Le Cercle des Questions",
+	summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
+	desc: "Tout le monde s'asseoit en cercle. Commencer en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
+ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
+'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
+voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
+que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse entendre tout le monde !",
+	source: source_agileRetrospectives,
+	duration: "30+ groupsize",
+	suitable: "iteration, release, project, introverts"
+};
+all_activities[11] = {
+	phase: 3,
+	name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
+	summary: "R&eacute;fl&eacute;chir ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et garder les propositions les mieux not&eacute;es.",
+	desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
+Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
+id&eacute;e par carte. LEs laisser &eacute;crire en silence pendant quelques minutes. \
+Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
+Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Voter en distribuant des points \
+ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
+Les 2 ou 3 meilleures seront les actions &agrave; mener.\
+<br><br>\
+(Voir <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité.)",
+	source: source_agileRetrospectives,
+	duration: "15-30",
+	suitable: "iteration"
+};
+all_activities[12] = {
+	phase: 3,
+	name: "Objectifs SMART",
+	summary: "Formuler un plan d'action spécifique et mesurable.",
+	desc: "Présenter les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
+(Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
+plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
+product owner tous les mercredi à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
+ne soit ajoutées au backlog du sprint'. <br>\
+Créer des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5 \
+étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
+s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
+	source: source_agileRetrospectives,
+	duration: "20-60 groupsize",
+	suitable: "iteration, release, project"
+};
+all_activities[13] = {
+	phase: 4,
+	name: "La porte des retours - les chiffres",
+	summary: "Évaluer la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
+	desc: "Placer des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
+A la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
+correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
+	source: "ALE 2011, " + source_findingMarbles,
+	duration: "2-3",
+	suitable: "iteration, largeGroups"
+};
+all_activities[14] = {
+	phase: 4,
+	name: "Appréciations",
+	summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
+	desc: "Commencer en remerciant de manière sincère l'un des participants. \
+Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
+Inviter alors les autres à faire de même et attendre que quelqu'un se jette à l'eau. Arrêter quand personne n'a parlé pendant plus d'une minute.",
+	source: source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
+	duration: "5-30 groupsize",
+	suitable: "iteration, release, project"
+};
+all_activities[15] = {
+	phase: 4,
+	name: "Aide, Gêne, Hypothèse",
+	summary: "Obtenir des retours concrets sur votre manière de faciliter.",
+	desc: "Préparer 3 feuilles de papier intitulées 'Aide', 'Gêne', et 'Hypothèse' \
+(des suggestions de choses à essayer). \
+Demander aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its \
+et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
+	source: source_agileRetrospectives,
+	duration: "5-10",
+	suitable: "iteration, release"
+};
+all_activities[16] = {
+	phase: 4, // marche aussi pour 5
+	name: "SaMoLo (Plus de, Autant de, Moins de)",
+	summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
+	desc: "Dessiner au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
+Demander aux participants un coup de main pour vous aider à améliorer votre comportement : Écrire sur des post-its \
+ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
+discuter un court moment des post-its collés dans chaque partie.",
+	more: "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
+	source: "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
+	duration: "5-10",
+	suitable: "iteration, release, project"
+};
+all_activities[17] = {
+phase:     0,
+name:      "Lancement - Commentaires Amazon",
+summary:   "Commenter l'itération sur Amazon. Ne pas oublier l'évaluation !",
+desc:      "Chaque membre écrit un rapide commentaire qui comporte : \
+<ul>\
+    <li>Un titre</li>\
+    <li>Un commentaire</li>\
+    <li>Une évaluation (5 étoiles pour le meilleur score) </li>\
+</ul>\
+Chacun lit son commentaire. Noter les évaluations sur un tableau.<br>\
+Peut s'étendre à la rétrospective entière en demandant également ce qui est recommandé de faire et de ne pas faire pour l'itération.",
+source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
+duration:  "10",
+suitable: "release, project"
+};
+all_activities[18] = {
+phase:     1,
+name:      "Hors-Bord / Voilier",
+summary:   "Analyser les forces qui vous vont avancer et qui vous ralentissent.",
+desc:      "Dessiner un bateau sur un tableau à feuilles. Le doter d'un bon moteur \
+ainsi que d'une ancre très lourde. Les membres de l'équipe écrivent en silence sur des post-its ce qui a propulsé l'équipe vers l'avant \
+et ce qui lui a fait faire du surplace. Une idée par post-it. Coller les post-its respectivement sur le moteur et l'ancre. \
+Tous les lire et discuter de comment booster le 'moteur' et comment se passer de l’'ancre'.",
+source:    source_innovationGames + ", trouvé à <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
+duration:  "10-15 par groupe",
+suitable: "iteration, release"
+};
+all_activities[19] = {
+phase:     2,
+name:      "Le jeu de la perfection",
+summary:   "Qu'est-ce qui pourrait faire que la prochaine itération obtienne une note de 10 sur 10 ?",
+desc:      "Dessiner deux colonnes sur une feuille du tableau, une petite pour 'Évaluation' et une grande pour 'Actions'. \
+Tout le monde évalue la dernière itération sur une échelle de 1 à 10. Ensuite chacun suggère quelles action(s) \
+feraient que la prochaine itération obtienne un score de 10 sur 10.",
+source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
+suitable: "iteration, release"
+};
+all_activities[20] = {
+phase:     3,
+name:      "Fusion",
+summary:   "Réduire le nombre d'actions possibles à seulement deux qui seront expérimentées par l'équipe.",
+desc:      "Distribuer des cartes et des marqueurs. Dire à tout le monde d'écrire les deux actions qu'ils \
+veulent essayer à la prochaine itération - aussi précises que possible \
+(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Ensuite tout le monde paire \
+avec son voisin et ensemble ils doivent fusionner leurs actions en une seule liste avec \
+deux actions. Les paires forment des groupes de 4. Puis 8. Maitenant ramasser les deux actions de tous les groupes \
+et voter pour les deux finales.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+duration:  "15-30 groupSize",
+suitable: "iteration, release, project, largeGroups"
+};
+all_activities[21] = {
+    phase:     0,
+    name:      "Prise de température",
+    summary:   "Les participants marquent leur 'température' (humeur) sur un tableau",
+    desc:      "Préparer un tableau avec un dessin de thermomètre allant de glacé à chaud \
+    en passant par la température du corps. \
+    Chaque participant marque son humeur au tableau.",
+    source:  source_unknown
+};
+all_activities[22] = {
+    phase:     4,
+    name:      "La porte des retours - Smileys",
+    summary:   "Mesurer la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
+    desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
+    À la fin de la rétrospective, demander aux participants de marquer leur niveau \
+    de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
+    source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
+    duration:  "2-3",
+    suitable: "iteration, largeGroups"
+};
+all_activities[23] = {
+    phase:     3,
+    name:      "Liste des choses à faire",
+    summary:   "Les participants proposent et s'engagent sur des actions",
+    desc:      "Préparer un tableau avec 3 colonnes 'Quoi', 'Qui' et 'Échéance'. \
+    Demander à chaque participant à tour de rôle ce qu'ils souhaitent faire pour faire \
+    avancer l'équipe. Écrire la tâche, se mettre d'accord sur une date d'échéance \
+    et les laisser signer de leur nom. <br>\
+    Si quelqu'un suggère une action pour l'équipe entière, cette personne doit obtenir \
+    l'adhésion (et les signatures) des autres.",
+    source:    source_findingMarbles + ", inspiré par <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>cette liste</a>",
+    duration:  "10-15 groupSize",
+    suitable: "iteration, release, smallGroups"
+};
+all_activities[24] = {
+    phase:     2,
+    name:      "Diagramme-Causes-Effets",
+    summary:   "Trouver la source des problèmes dont les origines sont difficiles à localiser \
+        et amènent à des discussions sans fin",
+    desc:      "Écrire le problème que vous souhaitez explorer sur un post-it et le coller au milieu d'un tableau blanc. \
+        Découvrir en quoi c'est un problème en demandant continuellement 'Et alors ?'. \
+        Découvrir les causes racines de ce problème en demandant continuellement 'Pourquoi (est-ce que cela se produit) ?'. \
+        Documenter vos conclusions en ajoutant des post-its et en explicitant la relation \
+        cause à effet avec des flèches. Chaque post-it peut avoir plus d'une raison et plus \
+        d'une conséquence.<br>\
+        Les cercles vicieux sont généralement de bons points de départ pour la prise d'actions. \
+        Si vous parvenez à casser leur mauvaise influence, vous pouvez gagner énormément.",
+    source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
+    more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
+    duration:  "20-60 complexity",
+    suitable: "release, project, smallGroups, complex"
+};
+all_activities[25] = {
+    phase:     2,
+    name:      "Speed Dating",
+    summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête à tête",
+    desc:      "Chaque participant écrit un sujet qu'il souhaite approfondir, càd quelque chose \
+    qu'il aimerait voir changer. Former ensuite des paires et répartissez vous à travers la salle. \
+    Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minute par\
+    participant (sujet) - l'un après l'autre. \
+    Après 10 minutes les paires se séparent et forment de nouvelles paires. Continuer \
+    jusqu'à ce que tout le monde ait discuté avec tout le monde. <br>\
+    Si le groupe a un nombre impair de membres, le facilitateur devient membre d'une paire \
+    mais son partenaire dispose de l'intégralité des 10 minutes sur son sujet.",
+    source:    source_kalnin,
+    duration:  "10 perPerson",
+    suitable: "iteration, release, smallGroups"
+};
+all_activities[26] = {
+    phase:     5,
+    name:      "Biscuits Chinois de Rétrospective",
+    summary:   "Amener l'équipe à manger à l'extérieur et susciter des discussions avec des biscuits chinois de rétrospective ('retrospective cookies')",
+    desc:      "Inviter l'équipe à manger à l'extérieur, de préférence Chinois si vous souhaitez \
+    rester dans le thème ;)<br>\
+    Distribuer des 'fortune cookies' (biscuits chinois renfermant un mot dans leur emballage) \
+    et faire un tour de table en ouvrant les biscuits et en discutant leur contenu. \
+    Quelques exemples de 'fortunes' :\
+<ul>\
+    <li>Quelle a été la chose la plus efficace que vous ayez fait durant le Sprint, et pourquoi \
+    est-ce que cela a été si réussi ?</li>\
+    <li>Est-ce que le burndown reflète la réalité ? Pourquoi ?</li>\
+    <li>Que contribuez vous au sein de votre entreprise à la communauté de développeurs ? \
+    Que pourriez vous contribuer ?</li>\
+    <li>Quel a été le plus gros obstacle à l'équipe durant ce Sprint ?</li>\
+</ul>\
+Vous pouvez <a href='http://weisbart.com/cookies/'>commander des biscuits chinois de rétrospective chez Weisbart</a> \
+ou cuisiner les vôtre, par exemple si l'Anglais n'est pas la langue natale de votre équipe.",
+    source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
+    duration:  "90-120",
+    suitable: "iteration, release, smallGroups"
+};
+all_activities[27] = {
+phase:     5,
+name:      "Allez prendre l'air !",
+summary:   "Allez dans le parc le plus proche, posez-vous des questions et parlez.",
+desc:      "Fait-il beau dehors ? Oui ? Alors pourquoi rester enfermés quand on peut s'aérer les poumons \
+et voir les choses sous un autre angle.<br /> \
+Aller dehors et faire un tour dans le parc le plus proche. \
+Vous parlerez naturellement du travail. C'est une bonne façon de changer vos habitudes lorsque tout fonctionne \
+et que vous n'avez pas besoin de projeter des documents pour échanger.<br /> \
+Les équipes matures peuvent très bien partager des idées et trouver des consensus malgré le contexte bien plus informel.",
+source:    source_findingMarbles,
+duration:  "60-90",
+suitable: "iteration, release, smallGroups, smoothSailing, mature"
+};
+all_activities[28] = {
+phase:     3,
+name:      "Cercles d'Influence",
+summary:   "Identifier des actions selon le niveau de contrôle que l'équipe souhaite avoir.",
+desc:      "Preparer un tableau avec 3 cercles concentriques, chacun étant assez grand pour y coller des post-its.<br /> \
+Nommer les cercles de l'intérieur vers l'extérieur :<br /> \
+<ul>\
+  <li>L'équipe contrôle - Actions directes</li>\
+  <li>L'équipe influence - Actions de recommandation</li>\
+  <li>Le reste - Actions de réponse/réaction</li>\
+</ul> \
+(\"Le reste\" représente l'environnement dans lequel l'équipe est embarquée.)<br /> \
+Reprendre la liste des idées identifiée à l'étape précédente et les placer dans le cercle approprié. <br /> \
+Les participants rédigent en binôme les actions possibles. Les encourager à se concentrer en priorité sur les éléments dans leur cercle d'influence.<br /> \
+Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lise à voix haute. <br /> \
+Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc).",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
+qui l'a adapté de \"Seven Habits of Highly Effective People\" par Stephen Covey et \
+'<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' par Jim Bullock",
+suitable: "iteration, release, project, stuck, immature"
+};
+all_activities[29] = {
+phase:     5,
+name:      "Plateau de discussion",
+summary:   "Une approche structurée pour une discussion.",
+desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>plusieurs grilles disponibles (EN)</a>.<br />\
+En choisir une, l'imprimer dans le plus grand format possible (idéalement en A1) et suivre ses instructions.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly chez Software Strategy</a>",
+duration:  "90-120",
+suitable: "iteration, release, project"
+};
+all_activities[30] = {
+phase:     0,
+name:      "Lancement - Dessinez l'itération",
+summary:   "Les participants dessinent certains aspects de l'itération.",
+desc:      "Distribuee des cartes et des marqueurs et choisir le sujet. Exemples de sujet : \
+<ul> \
+  <li>Comment avez-vous vécu l'itération ?</li>\
+  <li>Quel a été le moment le plus marquant ?</li>\
+  <li>Quel a été le plus gros problème ?</li>\
+  <li>Qu'auriez-vous désiré ?</li>\
+</ul>\
+Demander à chaque membre de l'équipe de dessiner sa réponse. Coller tous les dessins sur un tableau. <br />\
+Pour chaque dessin, laisser les gens deviner ce qu'il représente avant que son auteur ne l'explique.<br />\
+Les métaphores apportent un nouvel éclairage et créent une compréhension partagée.",
+source:    source_findingMarbles + ", adapté de \
+<a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> \
+et Olivier Gourment",
+duration:  "5 + 3 par personne",
+suitable: "iteration, release, project"
+};
+all_activities[31] = {
+phase:     0,
+name:      "Gauge du projet par émoticônes",
+summary:   "Aider les membres de l'équipe à exprimer leur sentiment vis à vis du projet et en traiter les causes au plus tôt.",
+desc:      "Preparer un tableau avec des visages exprimant diverses émotions telles que :\
+<ul>\
+  <li>choc / surprise</li>\
+  <li>nervosité / stress</li>\
+  <li>impuissance / contrainte</li>\
+  <li>confusion</li>\
+  <li>joie</li>\
+  <li>colère</li>\
+  <li>dépassement</li>\
+</ul>\
+Laisser chaque membre de l'équipe choisir comment il se sent à propos du projet, c'est un moyen fun et efficace de faire remonter plus tôt les problèmes. <br />\
+Vous pourrez en trouver les solutions dans les étapes qui suivent.",
+source:    "Andrew Ciccarelli",
+duration:  "10 pour 5 personnes",
+suitable: "iteration, release"
+};
+all_activities[32] = {
+phase:     1,
+name:      "Fier(ère) & Désolé(e)",
+summary:   "De quoi les membres de l'équipe sont ils fiers ou désolés ?",
+desc:      "Afficher deux feuilles \"fier(e)\" et \"désolé(e)\".<br />\
+Les membres de l'équipe listent un commentaire pour chaque feuille.<br />\
+Lorsque le temps est écoulé, faire un tour de table pour que chacun lise ses notes et les colle sous le thème approprié. <br/>\
+Démarrer une courte conversation en demandant :\
+<ul>\
+  <li>Est ce que quelque chose vous a surpris ?</li>\
+  <li>Quels motifs peut-on constater ? Que cela signifie-t-il en tant qu'équipe ?</li>\
+</ul>",
+source:    source_agileRetrospectives,
+duration:  "10-15",
+suitable: "iteration, release"
+};
+all_activities[33] = {
+phase:     4,
+name:      "La douche de l'appréciation",
+summary:   "Ecouter les gens parler dans votre dos (et uniquement des bonnes choses) !",
+desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos.\
+Quelque chose comme ça : >^<.<br />\
+Les deux personnes dans les chaises qui se font face parlent de la troisième personne pendant qu'elle se douche durant 2 minutes.<br />\
+Elles ne peuvent dire que des choses positives et rien de ce qu'il se dit ne peut être minimisé en en reparlant par la suite.<br />\
+Faire trois tours pour que chacun puisse se doucher une fois !",
+source:    '<a href="http://www.miarka.com/de/2010/11/shower-of-appreciation-or-talking-behind-ones-back/">Ralph Miarka</a>',
+duration:  "10-15",
+suitable: "iteration, release, matureTeam"
+};
+all_activities[34] = {
+phase:     1,
+name:      "L'auto-évaluation Agile",
+summary:   "Evaluer où vous en êtes via une checklist.",
+desc:      "Imprimer une checklist qui vous convient, exemples :\
+<ul>\
+  <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>L'excellente checklist Scrum de Henrik Kniberg</a></li>\
+  <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>L'auto-évaluation des pratiques agiles d'ingénierie (EN)</a></li>\
+  <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Test Nokia (EN)</a></li>\
+</ul>\
+Les parcourir avec l'équipe et échanger pour savoir là où vous en êtes et si vous êtes sur la bonne voie. <br />\
+C'est une bonne activité à pratiquer lorsque qu'une itération s'est déroulée sans événement majeur.",
+source:    source_findingMarbles,
+duration:  "10-25 minutes selon la liste",
+suitable: "smallTeams, iteration, release, project, smoothGoing"
+};
+all_activities[35] = {
+phase:     0,
+name:      "Objectif reconnaissance",
+summary:   "Formuler un objectif positif pour la session.",
+desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en définissant un objectif positif. Exemples : \
+<ul>\
+  <li>Trouvons plusieurs façons de renforcer notre travail d'équipe et nos process</li>\
+  <li>Trouvons comment étendre nos bonnes pratiques et méthodes d'ingénierie</li>\
+  <li>Nous identifierons et tenterons de trouver plus de rapports dans le travail qui fonctionnent</li>\
+  <li>Nous identifierons là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'agumenter celle que nous fournirons lors du prochain</li>\
+</ul>",
+source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+duration:  "3 minutes",
+suitable: "iteration, release, project"
+};
+all_activities[36] = {
+phase:     2,
+name:      "Souvenons-nous de l'avenir",
+summary:   "Imaginer que la prochaine itération est parfaite. A quoi ressemble-t-elle ? Qu'avez-vous fait ?",
+desc:      "<p>Imaginer que vous puissez voyager à travers le temps jusqu'à la fin de la prochaine itération (ou release).<br />\
+Vous y apprenez que ça a été la meilleure itération et la plus productive que vous ayez fait !<br />\
+Comment vos futurs vous vous la décrivent ? Qu'y voyez-vous et entendez-vous ?</p>\
+<p>Donner un peu de temps à l'équipe pour imaginer cette situation et prendre quelques notes / mots clés pour aider leur mémoire.<br />\
+  Ensuite, laisser chacun décrire sa vision de l'itération parfaite.<br />\
+  Pousuivre ensuite avec la question \"Quels changements avons-nous réalisés pour atteindre un avenir si productif et satisfaisant ?\"<br />\
+  Noter les réponses sur des cartes pour s'en servir dans la phase suivante.</p>",
+source:    source_innovationGames + ", trouvé à <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
+suitable: "iteration, release, project"
+};
+all_activities[37] = {
+phase:     3,
+name:      "Vote par gommette - Garder, Abandonner, Démarrer",
+summary:   "Phosphorer sur les comportements à garder, abandonner et démarrer et en garder les principaux.",
+desc:      "Séparer un tableau en trois ensembles intitulés :\
+<ul><li>Garder</li>\
+  <li>Abandonner</li>\
+  <li>Démarrer</li>\
+</ul>\
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Les laisser écrire en silence pendant quelques minutes. <br />\
+Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Mener la conversation pour identifiez 20% des idées qui seraient les plus bénéfiques. <br />\
+Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
+Les 2 ou 3 principales idées seront votre plan d'actions.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[38] = {
+phase:     3,
+name:      "Vote par gommette - Fonctionne bien, Faire différemment",
+summary:   "Phosphorer sur ce qui a bien fonctionné et ce qu'il faudrait faire différemment et gardez les meilleurs idées.",
+desc:      "Intituler respectivement deux tableaux \"Fonctionne bien\" et \"Faire différemment\".<br /> \
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Les laisser écrire en silence pendant quelques minutes.<br />\
+Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
+Les 2 ou 3 principales idées seront votre plan d'actions.",
+source:    source_agileRetrospectives,
+duration:  "15-30",
+suitable: "iteration"
+};
+all_activities[39] = {
+phase:     4,
+name:      "Plus & Delta",
+summary:   "Chaque participant note une chose qu'il aime et une qu'il voudrait changer à propos de la rétro.",
+desc:      "Préparer une tableau avec deux colonnes \"Plus\" et \"Delta\". \
+Demander à chaque participant d'écrire un aspect de la rétrospective qu'il a aimé et un qu'il souhaiterait modifier sur des cartes différentes. <br />\
+Afficher et passer rapidement en revue les cartes en clarifiant leur sens exact \
+et en identifiant la tendance majoritaire lorsque des notes vont dans deux directions opposées pour un même point.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+duration:  "5-10",
+suitable: "release, project"
+};
+all_activities[40] = {
+phase:     2,
+name:      "Le banc du parc",
+summary:   "Discussion de groupe avec un nombre variable de sous-groupes de participants.",
+desc:      "Placer au moins 4 et au maximum 6 chaises en ligne afin qu'elles fassent face au groupe. <br />\
+Expliquer les règles :<ul>\
+  <li>Vous asseoir sur le banc lorsque vous voulez contribuer à la discussion</li>\
+  <li>Le banc doit toujours avoir une place de libre</li>\
+  <li>Lorsque la dernière place du banc est prise, quelqu'un doit obligatoirement partir et retourner dans le public</li>\
+</ul>\
+Démarrer en vous asseyant sur le \"banc\" et en vous demandant à voix haute \
+ce que vous avez appris au cours de la phase précédente jusqu'à ce que quelqu'un vous rejoigne.<br />\
+Arrêter l'activité lorsque vous voyez que les discussions cessent.<br />\
+C'est une variante du \"bocal à poisson\". C'est adapté pour les groupes de 10-25 personnes.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+duration:  "15-30",
+suitable: "release, project, largeGroups"
+};
+all_activities[41] = {
+phase:     0,
+name:      "Cartes postales",
+summary:   "Les participants choissisent une carte postale qui représente leurs pensées / sentiments",
+desc:      "Amener un lot de cartes postales variées - au moins quatre fois plus que de participants. \
+Les éparpiller dans la pièce et demander aux membre de l'équipe de choisir la carte postale qui représente \
+le mieux leur vision de la dernière itération. Après avoir choisi, ils écrivent 3 mots-clefs qui \
+décrivent la carte postale, par exemple sprint, sur une petite fiche. Tour à tour tout le monde accroche sa carte \
+postale ainsi que sa fiche et explique son choix.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+duration:  "15-20",
+suitable: "iteration, release, project",
+};
+all_activities[42] = {
+phase:     0,
+name:      "Prise de position - Ouverture",
+summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à l'itération",
+desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définir une extrémité \
+comme 'Génial' et l'autre comme 'Nul'. Inviter les participants à se positionner sur l'échelle \
+en fonction de leur satisfaction à propos de la dernière itération. Psychologiquement, \
+prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
+Vous pouvez réutiliser cette échelle de valeurs si vous terminez avec l'activité #44.",
+source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[43] = {
+phase:     4,
+name:      "Prise de position - Conclusion",
+summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
+desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définir une extrémité \
+comme 'Génial' et l'autre comme 'Nul'. Invitez les participants à se positionner sur l'échelle \
+en fonction de leur satisfaction à propos de la rétrospective. Psychologiquement, \
+prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
+Voir l'activité #43 pour voir comment la retrospective avec la même échelle de valeurs",
+source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+duration:  "2-5",
+suitable: "iteration, release, project"
+};
+all_activities[44] = {
+phase:     4,
+name:      "Ravi & Surpris",
+summary:   "Qu'est-ce qui a plu et/ou supris les participants pendant la retrospective",
+desc:      "Faire simplement un rapide tour du groupe et inviter chaque participant à pointer du doigt une \
+constatation de la retrospective qui les a soit surpris soit ravi (ou les deux).",
+source:    source_unknown,
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[45] = {
+phase:     0,
+name:      "Pourquoi des rétrospectives ?",
+summary:   "Demander \"Pourquoi faisons-nous des rétrospectives ?\"",
+desc:      "Revenir aux sources et commencer la rétrospective en demandant \"Pourquoi faisons nous ça ?\" \
+Écrire toutes les réponses pour qu'elles soient visibles par tout le monde. Vous pourriez être surpris.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+duration:  "5",
+suitable: "iteration, release, project"
+};
+all_activities[46] = {
+phase:     1,
+name:      "Vider la boîte aux lettres",
+summary:   "Jetons un coup d'&#156;il aux notes collectées pendant le sprint",
+desc:      "Mettre en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
+d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit. \
+et le 'poste'. (La 'boîte aux lettres' peut être également un endroit visible. Cela peut initier \
+une discussion pendant l'itération.) <br>\
+Parcourir toutes les notes et en discuter.<br>\
+Une boîte aux lettres est bien pour les longues itérations et les équipes distraites.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
+duration:  "15",
+suitable: "release, project"
+};
+all_activities[47] = {
+phase:     3,
+name:      "Prenez position - Dancez sur le fil",
+summary:   "Faites vous une idée de l'opinion de tout le monde et atteignez le consensus",
+desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créer une grande échelle (ex : une longue ligne) \
+au sol avec du scotch de peintre. Marquez une extrémité comme étant l'option A) et l'autre comme étant l'option B). \
+Les membres de l'équipe se répartissent le long de l'échelle selon leur position entre les deux options. \
+Ensuite, reformuler les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
+durationDetail:  "5 à 10' par décision",
+duration:    "Courte",
+stage:    "Storming, Norming",
+suitable: "iteration, release, project"
+}
+all_activities[48] = {
+phase:     3,
+name:      "Vote par gommette - Etoile de mer",
+summary:   "Collect what to start, stop, continue, do more and less of",
+summary:   "Collectez quoi commencer, arrêter, continuer, faire plus et faire moins de",
+desc:      "Dessiner 5 rayons sur un tableau, afin de former 5 sections. \
+Nommez les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
+Les participants notent leurs propositions sur des post-its et les collent \
+dans les sections appropriées. Après avoir regroupé les notes selon les idées \
+faire un vote par gommettes pour les propositions à tenter.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "V&#156;u accordé",
+summary:   "Une féé vous accorde un v&#156;u, comment réalisez-vous qu'il a été exaucé ?",
+desc:      "Donner 2 minutes à chaque participant pour trancher la réponse qu'ils donneraient à la question suivante :<br /> \
+\"Une fée vous accorde un v&#156;u qui résoudra votre plus gros problème au travail au cours de la nuit. Que lui demandez-vous ?\"<br /> \
+Poursuivre par : \"Vous arrivez au travail le lendemain matin. Vous constatez que la fée a exaucé votre v&#156;u. Comment pouvez-vous le dire ? \
+Qu'est ce qui a changé ? \"<br /> \
+Si la confiance au sein du group est importante, laisser chacun décrire son environnement de travail \"féérique\".<br /> \
+Si tel n'est pas le cas, demander à chacun de garder son souhait à l'esprit pour la prochaine étape et de suggérer des actions qui aideraient à d'approcher son souhait.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "Storming, Norming",
+suitable:  "iteration"
+};
+
+var path = 'static/images/activities/';
+
+all_photos = [];
+all_photos[0] = [
+{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"},
+{filename:    path + "1_ESVP_2.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[1] = [
+{filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
+];
+all_photos[3] = [
+{filename:    path + "4_Timeline-2.jpg", contributor: "Martín Salías"},
+{filename:    path + "4_Timeline.jpg", contributor: "Virginia Brassesco"}
+];
+all_photos[6] = [
+{filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
+{filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
+];
+all_photos[7] = [
+{filename:    path + "8_5Whys.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[8] = [
+{filename:    path + "9_Learning-Matrix.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "9_Learning-Matrix-2.jpg", contributor: "Simon Sablowski"}
+];
+all_photos[11] = [
+{filename:    path + "12_Start-Stop-Continue.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[12] = [
+{filename:    path + "13_Smart-Goals.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[17] = [
+{filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[18] = [
+{filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "19_Sailboat2.jpg", contributor: "Manuel Küblböck"},
+{filename:    path + "19_sailboat.jpg", contributor: "David Johnson"}
+];
+all_photos[19] = [
+{filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[20] = [{
+filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG",
+contributor: "Paulo Caroli"
+}];
+all_photos[21] = [{
+filename:    path + "22_Temperature-Reading.jpg",
+contributor: "Weronika Kedzierska"
+}];
+all_photos[22] = [
+{filename:    path + "23_Feedback-Door-Smilies.jpg",contributor: "Philipp Flenker"},
+{filename:    path + "23_Feedback-Door-Smilies_2.jpg",contributor: "Manuel Küblböck"}
+];
+all_photos[24] = [
+{filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
+{filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[28] = [
+{filename:    path + "29_Circle-of-influence.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[30] = [
+{filename:    path + "31_Draw-Iteration.jpg", contributor: "Eric Lannemajou"}
+];
+all_photos[31] = [
+{filename:    path + "32_Emoticons.jpg", contributor: "Simon Sablowski"},
+{filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
+{filename:    path + "32_Emoticons-3.jpg", contributor: "Eric van der Meulen"}
+];
+all_photos[32] = [
+{filename:    path + "33_proud_sorry.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[34] = [
+{filename:    path + "35_Agile-Self-Assessment.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[37] = [
+{filename:    path + "38_keep-drop-add.jpg", contributor: "Tracy Kuhlman"}
+];
+all_photos[41] = [{
+filename:    "http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg",
+contributor: "Corinna Baldauf"
+}];
+all_photos[46] = [
+{filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "47_retro-box-3.jpg", contributor: "Bernhard Kreuz"}
+];
+all_photos[48] = [
+{filename:    path + "49_Starfish_3.jpg", contributor: "Eric van der Meulen"},
+{filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "49_Starfish_2.jpg", contributor: "Rollup Consulting"}
+];
+all_photos[53] = [
+{filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
+{filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsey"},
+{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
+
+];
+all_photos[58] = [
+{filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
+{filename:    path + "59_Happiness-Histogram-2.jpg", contributor: "Weronika Kedzierska"},
+{filename:    path + "59_Happiness-Histogram-3.jpg", contributor: "Stefanie Kreidler"}
+];
+all_photos[59] = [
+{filename:    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf",
+contributor: "Amber Haley"
+}];
+all_photos[60] = [{
+filename:    path + "61_Chaos-Cocktail-Party.jpg",
+contributor: "Philipp Flenker"
+}];
+all_photos[62] = [
+{filename:    path + "63_Low-Hanging-Fruit.jpg", contributor: "Pedro Ángel Serrano"},
+{filename:    path + "63_low-hanging-fruit_2.jpg", contributor: "Virginia Brassesco"},
+{filename:    path + "63_low-hanging-fruit_3.jpg", contributor: "Virginia Brassesco"}
+];
+all_photos[63] = [{
+filename:    "http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450",
+contributor: "Wayne D. Grant"
+}];
+all_photos[67] = [
+{filename:    path + "68_Company-Map.jpg", contributor: "Annette Harder"},
+{filename:    path + "68_Company-Map-2.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[69] = [
+{filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[77] = [
+{filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
+{filename:    path + "78_Four-Ls.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "78_Four-Ls_2.jpg", contributor: "Geert van der Ploeg"}
+];
+all_photos[79] = [
+{filename:    path + "80_Repeat-Avoid.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "80_Repeat-Avoid_2.jpg", contributor: "Martín Salías"}
+];
+all_photos[80] = [
+{filename:    path + "81_Outcome-Expectations.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[82] = [
+{filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
+];
+all_photos[84] = [
+{filename:    path + "85_Greetings-from-iteration.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[86] = [
+{filename:    path + "87_Meeting-Satisfaction.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[87] = [
+{filename:    path + "88_impediments-cup.jpg", contributor: "Manuel Zaforas Martín"}
+];
+all_photos[88] = [
+{filename:    path + "89_Retro_Wedding_1.jpg", contributor: "Manuel Zaforas Martín"},
+{filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
+{filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[89] = [
+{filename:    path + "90_Agile-Values-Cheerup.jpg", contributor: "Daryl Praeker"},
+{filename:    path + "90_agile_cheer_up.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[91] = [
+{filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational_Poster-3.jpg", contributor: "Sarah Schmid"},
+{filename:    path + "92_Motivational_Poster-4.jpg", contributor: "Sarah Schmid"}
+];
+all_photos[96] = [
+{filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
+];
+all_photos[97] = [
+{filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
+{filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"},
+{filename:    path + "98_Laundry-Day_3.jpg", contributor: "Lionel Secousse"},
+{filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
+];
+all_photos[106] = [
+{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
+];
+all_photos[109] = [
+{filename:    path + "110_movie-critic.jpg", contributor: "Ana Maria Betancur Vargas"},
+{filename:    path + "110_movie-critic_2.jpg", contributor: "Ana Maria Betancur Vargas"}
+];
+all_photos[112] = [
+{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
+];
+all_photos[113] = [
+{filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
+];
+all_photos[114] = [
+{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
+];
+all_photos[117] = [
+{filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
+];
+all_photos[122] = [
+{filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"},
+];
+last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
+
+
+
+/************* FUNCTIONS ******************************************************************/
+
+
+
+function init() {
+    var urlParams = getUrlVars();
+    var plan_id = urlParams.id;
+    var phase = urlParams.phase;
+    if(plan_id) {
+        publish_plan(plan_id, phase);
+    } else {
+        publish_random_plan();
+    }
+    publish_footer_stats();
+}
+
+// From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html
+// Read a page's GET URL variables and return them as an associative array
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i=0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+//Input: String
+function publish_plan(plan_id, phase) {
+    var plan_id = sanitize_plan_id(plan_id);
+    if (plan_id) {
+        empty_plan();
+        publish_activity_blocks(plan_id);
+        enable_phase_browsing();
+
+        if (phase != undefined) {
+            publish_plan_title("Toutes les activités pour " + phase_titles[phase].toUpperCase());
+            hide_phase_stepper();
+        } else {
+            show_phase_stepper();
+            hide_plan_title();
+        }
+        publish_plan_id(plan_id);
+    }
+}
+
+function sanitize_plan_id(plan_id) {
+    return String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
+}
+
+function empty_plan() {
+    $('.js_plan').html("");
+}
+
+function publish_activity_blocks(plan_id) {
+    var ids = String(plan_id).split("-");
+    var activity_block;
+    for(var i=0; i<ids.length; i++) {
+        if (ids[i] != '') { // ignore incorrect single '-' at beginning or end of plan_id
+            activity_block = get_activity_block(parseInt(ids[i])-1, i);
+            activity_block.appendTo($('.js_plan'));
+        }
+    }
+}
+
+/* Param: Index of activity
+ * Returns: Object containing "activity_block"-div
+ */
+function get_activity_block(activity_index) {
+    var activity_block = $('.js_activity_block_template').clone()
+    activity_block.removeClass('js_activity_block_template');
+
+    activity_block.addClass('bg' + get_contrasting_bg());
+
+    populate_activity_block(activity_index, activity_block);
+
+    activity_block.removeClass('display_none');
+
+    return activity_block;
+}
+
+function get_contrasting_bg() {
+    var bg;
+    do {
+        bg = get_random_integer(5);
+    } while (last_block_bg == bg);
+    last_block_bg = bg;
+
+    return bg;
+}
+
+// Input: int - lowest integer that shall NOT be returned
+// Returns: Random number between 0 and (upper_limit-1)
+function get_random_integer(upper_limit) {
+    return Math.floor(Math.random()*upper_limit);
+}
+
+function populate_activity_block(activity_index, activity_block) {
+    var activity = get_activity_array(activity_index);
+    var id = convert_index_to_id(activity_index);
+
+    $(activity_block).addClass('js_activity' + activity_index);
+
+    $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
+    $(activity_block).find('.js_fill_name').html(activity.name);
+    $(activity_block).find('.js_fill_activity_link').prop('href','?id=' + id);
+    $(activity_block).find('.js_fill_id').html(id);
+    $(activity_block).find('.js_fill_summary').html(activity.summary);
+    $(activity_block).find('.js_fill_source').html(activity.source);
+    $(activity_block).find('.js_fill_description').html(activity.desc);
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity_index));
+
+}
+
+function get_activity_array(index) {
+    var activity_array = all_activities[index];
+    if (activity_array == null) {
+        alert("Désolé, impossible de trouver une activité avec l'ID " + convert_index_to_id(index));
+    }
+    return activity_array;
+}
+
+function convert_index_to_id(index) {
+    return parseInt(index) + 1;
+}
+
+/* Param: activity index
+ * Returns: String (empty or link to photo(s))
+ */
+function get_photo_string(index) {
+    res = "";
+    if (all_photos[index] != null) {
+        for (var i=0; i<all_photos[index].length; i++) {
+            res += "<a href='";
+            res += all_photos[index][i]['filename'];
+            res += "' rel='lightbox[activity" + index + "]' ";
+            res += "title='Photo par ";
+            res += all_photos[index][i]['contributor'];
+            res += "'>";
+            if (i == 0) {
+                if (all_photos[index].length < 2) {
+                    res += "Voir la photo";
+                } else {
+                    res += "Voir les photos";
+                }
+            }
+            res += "</a>";
+        }
+//        res += " | "; PAUSED Until I've got more time
+    }
+    return res;
+}
+
+    /************ BEGIN Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+function enable_phase_browsing() {
+    enable_prev();
+    enable_next();
+}
+
+function enable_prev() {
+    $('.js_prev_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
+    });
+}
+
+function convert_id_to_index(id) {
+    return parseInt(id) - 1;
+}
+
+function read_activity_id(div_js_item_jquery_object) {
+    return $(div_js_item_jquery_object.html()).find('.js_fill_id').text();
+}
+
+function get_index_of_prev_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index-1; i>=0; i--) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=all_activities.length-1; i>=activity_index; i--) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+function enable_phase_stepper(activity_index, get_neighbor_function) {
+    var phase_index = get_phase_from_activity_index(activity_index);
+
+    var next = get_neighbor_function(activity_index, phase_index);
+
+    var old_identifier = '.js_activity' + activity_index;
+    var activity_block = $(old_identifier);
+
+    populate_activity_block(next, activity_block);
+    activity_block.removeClass(old_identifier);
+
+    publish_plan_id(format_plan_id());
+}
+
+function get_phase_from_activity_index(activity_index) {
+    return get_activity_array(activity_index).phase;
+}
+
+// Returns string (e.g. 'd-d-d') of activity_ids of shown activities
+function format_plan_id() {
+    var current_activities = get_ids_of_current_activities();
+    var id = '';
+    var activity;
+
+    for (var i=0; i<current_activities.length; i++) {
+        if (i != 0) {
+            id += "-";
+        }
+        activity = current_activities[i];
+        id += $(activity).text();
+    }
+
+    return id;
+}
+
+function get_ids_of_current_activities() {
+    return $('.js_plan').find('.js_fill_id');
+}
+
+function enable_next() {
+
+    $('.js_next_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
+    });
+}
+
+function get_index_of_next_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index+1; i<all_activities.length; i++) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=0; i<activity_index; i++) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+/************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+/* Returns: String of all activities in this phase formatted as plan id
+ */
+function get_activities_in_phase_as_plan_id(phase_index) {
+    // TODO Fehlerbehandlung - Phase nicht gefunden oder leer
+    var res = '';
+    var phase_activities = get_indexes_of_activities_in_phase(phase_index);
+
+    for(var i=0; i<phase_activities.length; i++) {
+        if (i != 0) {
+            res += '-';
+        }
+        res += convert_index_to_id(phase_activities[i]);
+    }
+    return res;
+}
+
+function publish_plan_title(title) {
+    $('.js_fill_plan_title').html(title);
+    show_plan_title();
+}
+
+function show_plan_title() {
+    $('.js_plan_title_container').removeClass('display_none');
+}
+
+
+function hide_phase_stepper() {
+    $('.js_phase-stepper').addClass('hidden');
+}
+
+function show_phase_stepper() {
+    $('.js_phase-stepper').removeClass('hidden');
+}
+
+function hide_plan_title() {
+    $('.js_plan_title_container').addClass('display_none');
+}
+
+function publish_plan_id(plan_id) {
+    // On page
+    var form = document.forms['js_ids-display__form'];
+    form.elements['js_display'].value = plan_id;
+
+    // URL
+    var param = '?id=' + plan_id;
+
+    // history.push doesn't work in IEs < v10 and seems to break IE9 and IE8 works but throws errors - so suppress it for >=IE9
+    if (!is_ie) {
+        history.pushState(param, plan_id, param); // pushState(state object, a title (ignored), URL)
+    }
+}
+
+function publish_random_plan() {
+    var plan_id = '';
+    if(is_time_for_something_different()) {
+        plan_id += pick_random_activity_id_in_phase(PHASE_SOMETHING_DIFFERENT);
+    } else {
+        plan_id += generate_random_regular_plan_id();
+    }
+    publish_plan(plan_id);
+}
+
+/* Returns: Boolean
+ */
+function is_time_for_something_different() {
+    res = false;
+    if (get_random_integer(INVERTED_CHANCE_OF_SOMETHING_DIFFERENT) == 0) {
+        res = true;
+    }
+    return res;
+}
+
+function pick_random_activity_id_in_phase(phase_index) {
+    return convert_index_to_id(pick_random_activity_index_in_phase(phase_index));
+}
+
+// Input: int phase_id
+// Returns: int activity_index - randomly chosen activity from given phase
+function pick_random_activity_index_in_phase(phase_index) {
+    var indexes = get_indexes_of_activities_in_phase(phase_index);
+    return indexes[get_random_integer(indexes.length)];
+}
+
+function get_indexes_of_activities_in_phase(phase_index) {
+    var activities = new Array();
+    var tmp_activity;
+    for (var i=0; i<all_activities.length; i++) {
+        candidate_activity = get_activity_array(i);
+        if (candidate_activity.phase == phase_index) {
+            activities.push(i);
+        }
+    }
+    return activities;
+}
+
+/* Returns: String, example: 14-3-77-34-22
+ * Digits are IDs of activities from the 5 different phases
+ */
+function generate_random_regular_plan_id() {
+    var plan_id = '';
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        if (i != 0) {
+            plan_id += '-';
+        }
+        plan_id += pick_random_activity_id_in_phase(i);
+    }
+    return plan_id;
+}
+
+
+
+/************ BEGIN Footer Functions ************/
+
+function create_link_to_all_activities(number_of_activities) {
+	var link_string = "<a href='/index_fr.html?id=1";
+	for (i=2; i<=number_of_activities; i++) {
+		link_string += "-" + i;
+	}
+	return link_string + "&all=yes'>" + number_of_activities + "</a>";
+}
+
+function get_number_of_activities_in_phase(phase_index) {
+    var activities = get_indexes_of_activities_in_phase(phase_index);
+    return activities.length;
+}
+
+function get_number_of_combinations() {
+    var res = 1;
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        res *= get_number_of_activities_in_phase(i);
+    }
+    res += get_number_of_activities_in_phase(PHASE_SOMETHING_DIFFERENT);
+    return res;
+}
+
+function get_combinations_string() {
+    var res = '';
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        if (i != 0) {
+            res += "x";
+        }
+        res += get_number_of_activities_in_phase(i);
+    }
+    res += '+' + get_number_of_activities_in_phase(PHASE_SOMETHING_DIFFERENT);
+    return res;
+}
+
+function publish_footer_stats() {
+    $(".js_footer_no_of_activities").html(create_link_to_all_activities(all_activities.length));
+    $(".js_footer_no_of_combinations").html(get_number_of_combinations());
+    $(".js_footer_no_of_combinations_formula").html(get_combinations_string());
+}
+
+/************ END Footer Functions ************/
+
+
+
+/************ BEGIN PopUps Plan Navigation (Search) ************/
+
+function get_input_field(popup_name) {
+    var form = document.forms['js_' + popup_name + '_form'];
+    var element_name = 'js_popup--' + popup_name + '__input';
+    return form.elements[element_name];
+}
+
+function reset_input_field(input_field) {
+    input_field.value = "";
+}
+
+function focus_input_field(input_field) {
+    input_field.focus();
+}
+
+function show_popup(popup_name) {
+    $('.js_popup--' + popup_name).removeClass('display_none');
+
+    var input = get_input_field(popup_name);
+    reset_input_field(input);
+    focus_input_field(input);
+}
+
+function hide_popup(popup_name) {
+    $('.js_popup--' + popup_name).addClass('display_none');
+}
+
+/* Returns: String
+ * Success: Ids of activities containing $keyword in name, summary or description
+ * Failure: Nothing found -> Empty string
+ */
+function search_activities_for_keyword(keyword) {
+    var plan_id = '';
+    var isMatch = false;
+    for (var i=0; i<all_activities.length; i++) {
+        isMatch = has_found_match(all_activities[i], keyword);
+        if (isMatch) {
+            plan_id += convert_index_to_id(i) + '-';
+        }
+    }
+    if (plan_id.length > 0) {
+        plan_id = plan_id.substr(0, plan_id.length-1)
+    }
+
+    return plan_id; // Remove trailing '-'
+
+}
+
+function has_found_match(activity, keyword) {
+    var regEx = new RegExp(keyword,"i");
+    var isMatch = false;
+    var haystack = activity.name;
+    if (haystack.search(regEx) != -1) {
+        isMatch = true;
+    } else {
+        haystack = activity.summary;
+        if (haystack.search(regEx) != -1) {
+            isMatch = true;
+        } else {
+            haystack = activity.desc;
+            if (haystack.search(regEx) != -1) {
+                isMatch = true;
+            }
+        }
+    }
+    return isMatch;
+}
+
+function find_ids_in_keyword(keyword) {
+    var res = sanitize_plan_id(keyword);
+    if (res == "null") {
+        res = '';
+    } else {
+        res = '-' + res;
+    }
+    return res;
+}
+
+function publish_activities_for_keywords(keywords) {
+
+    var keywords_array = keywords.split(' ');
+    var plan_id = '';
+    for (var i=0; i<keywords_array.length; i++) {
+        var sub_ids = search_activities_for_keyword(keywords_array[i]);
+        if (sub_ids.length > 0) {
+            plan_id += sub_ids + '-';
+        }
+    }
+    plan_id = plan_id.substr(0, plan_id.length-1); // Remove trailing '-'
+
+    plan_id += find_ids_in_keyword(keywords);
+
+    var text = 'Toutes les activités pour';
+    if (plan_id != '') {
+        publish_plan(plan_id);
+        hide_phase_stepper();
+        hide_popup('search');
+    } else {
+        publish_plan_id(plan_id);
+        empty_plan();
+        text = 'Désolé, rien de trouvé pour';
+    }
+
+    publish_plan_title(text +  " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
+}
+
+/************ END PopUps Plan Navigation ************/
+
+
+
+function switchLanguage(new_lang) {
+    new_url = location.protocol + '//' + location.host + '/index';
+    if (new_lang != 'en') {
+        new_url += '_' + new_lang;
+    }
+    new_url += '.html',
+    window.open(new_url, "_self");
+}
+
+//]]>
+</script>
+
+<link rel="alternate" hreflang="en" href="index.html" />
+<link rel="alternate" hreflang="es" href="index_es.html" />
+<link rel="alternate" hreflang="fr" href="index_fr.html" />
+<link rel="alternate" hreflang="de" href="index_de.html" />
+<link rel="alternate" hreflang="nl" href="index_nl.html" />
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(["setCookieDomain", "*.plans-for-retrospectives.com"]);
+    _paq.push(["setDomains", ["*.plans-for-retrospectives.com"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//plans-for-retrospectives.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Piwik Code -->
+</head>
+
+<body onload="JavaScript:init()">
+
+<div class="header">
+    <a href="/index_fr.html" class="header__logo">
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
+
+    <select class="languageswitcher" onChange="switchLanguage(this.value)">
+        <option value="de"  >Deutsch (39 Aktivit&auml;ten)</option>
+        <option value="en"  >English (127 activities)</option>
+        <option value="es"  >Espa&ntilde;ol (95 actividades)</option>
+        <option value="fr" selected >Fran&ccedil;ais (47 activit&eacute;s)</option>
+        <option value="nl"  >Nederlands (96 activiteiten)</option>
+    </select>
+
+      <span class="navi">
+      <a href="/about.html">About</a> |
+      <a href="/donate.html">Donate</a> |
+      <a href="/books.html">Books</a>
+        <!-- 
+        <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
+        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a> |
+        <a href="/print/index.html">Print Edition</a>		  <!-- PAUSED Until I've got more time
+		  |
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>        -->
+      </span>
+</div>
+
+<div class="pitch">
+    <div class="content">
+        Vous planifiez votre prochaine <b>rétrospective</b>? Commencez avec un plan aléatoire, adaptez le, imprimez le et partagez son URL. Ou naviguez simplement pour avoir de nouvelles idées !    </div>
+</div>
+
+
+<div class="plan-header">
+    <div class="content">
+        <div class="print-header">
+            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) par Finding-Marbles.com</span>
+        </div>
+        <div class="plan-header__wrapper">
+                    <div class="ids-display">
+                ID du plan :                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
+                    <input type="text" size="18" name="js_display" class="ids-display__input" value="">
+                </form>
+            </div>
+                    <div class="plan-navi">
+                <ul>
+                    <li>
+                        <a class="plan-navi__random" title="Nouveau plan aléatoire de rétrospective" href="JavaScript:publish_random_plan()">
+                            Nouveau plan aléatoire de rétrospective                        </a>
+                    </li>
+                    <li>
+                        <a class="plan-navi__ids" title="Saisissez des IDs à afficher" href="JavaScript:show_popup('ids');">
+                            Saisissez des IDs à afficher                        </a>
+                        <div class="js_popup--ids popup--ids popup display_none">
+                            <form action="JavaScript:publish_plan($('.js_popup--ids__input').val());hide_popup('ids');" name="js_ids_form" class="ids_form">
+                                <input type="text" size="12" name="js_popup--ids__input" class="js_popup--ids__input popup__input" value="">
+                                <input type="submit" class="popup__submit" value="Afficher !">
+                                <a href="JavaScript:hide_popup('ids');" class="popup__close-link">Fermer</a>
+                            </form>
+                            <div class="popup__info">ID d'exemple : 3-33-20-13-45</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="plan-navi__search" title="Cherchez des activités pour le mot-clé" href="JavaScript:show_popup('search');">
+                            Cherchez des activités pour le mot-clé                        </a>
+                        <div class="js_popup--search popup--search popup display_none">
+                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                                <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
+                                <input type="submit" class="popup__submit" value="Chercher">
+                                <a href="JavaScript:hide_popup('search');" class="popup__close-link">Fermer</a>
+                            </form>
+                            <div class="popup__info">Rechercher dans les titres, résumés et descriptions</div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- plan-navi -->
+        </div><!-- plan-header__wrapper -->
+    </div><!-- content -->
+</div>
+
+    <div class="js_plan_title_container plan_title_container display_none">
+        <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+        </div>
+    </div>
+
+    <div class="js_plan">
+        <div class="activity_block bg1">
+            <div class="activity-wrapper">
+                <div class="activity-content">
+                    ... LOADING ACTIVITIES ...                    <noscript>
+                        Retromat est principalement basé sur JavaScript et ne fonctionne pas sans. Veuillez donc activer JavaScript dans votre navigateur. Merci !                    </noscript>
+                </div>
+            </div>
+        </div>
+    </div><!-- END plan -->
+
+<div class="js_activity_block_template js_activity_block activity_block display_none">
+    <div class="activity-wrapper">
+        <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="Afficher une autre activité pour cette phase">&#9668;</a>
+        <div class="activity-content">
+            <div class="js_phase_title phase_title">
+                <a href="#" class="js_fill_phase_link">
+                    <span class="js_fill_phase_title"></span>
+                </a>
+            </div>
+            <div class="js_item">
+                <h2><span class="js_fill_name"></span>
+                    <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                    </span>
+                </h2>
+                <div class="summary">
+                    <span class="js_fill_summary"></span>
+                    <br>
+                        <span class="source">Source :                            <span class="js_fill_source"></span>
+                        </span>
+                </div><!-- END summary -->
+                <div class="description">
+                    <span class="js_fill_description"></span>
+                </div><!-- END description -->
+            </div><!-- END js_item -->
+            <div class="js_photo_link photo_link">
+                <span class="js_fill_photo-link"></span>
+				<!-- PAUSED Until I've got more time
+                <a href="mailto:corinna@finding-marbles.com?subject=Photos%20for%20Activity%3A%20ID&body=Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name" class="less_pronounced">
+                    Ajouter une Photo                </a>
+                -->
+            </div><!-- END .js_photo_link -->
+        </div><!-- END .activity-content -->
+        <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="Afficher une autre activité pour cette phase">&#9658;</a>
+    </div><!-- END .activity-wrapper -->
+</div>
+
+<div class="about">
+    <div class="content">
+        Retromat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus.<!-- PAUSED Until I've got more time
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Suggérez la </a>!
+-->
+    </div>
+</div>
+
+<div class="team">
+   <div class="content">
+
+       
+           
+            <div style="clear:both">    
+               <a href="http://www.occitech.fr/">
+                   <img src="static/images/team/pierre_martin.jpg" width="70" height="93" title="Pierre Martin" class="team-photo">
+               </a>
+
+                <h3 style="margin-bottom: 10px">
+                    Traduction:                    <a href="http://www.occitech.fr/">
+                       Pierre Martin                   </a>
+                </h3>
+
+               <div class="team-text">
+                   	Lead developer et co-gérant d'<a href="http://www.occitech.fr/">Occitech</a>.<br>
+	Gazouille aussi sur <a href="https://twitter.com/pierremartin">Twitter</a>!
+	<br><br><br>               </div>
+       </div><!-- .team--translator -->
+           
+            <div style="clear:both">    
+               <a href="http://juliendubois.fr/">
+                   <img src="static/images/team/julien_dubois.jpg" width="70" height="93" title="Julien Dubois" class="team-photo">
+               </a>
+
+                <h3 style="margin-bottom: 10px">
+                    Traduction:                    <a href="http://juliendubois.fr/">
+                       Julien Dubois                   </a>
+                </h3>
+
+               <div class="team-text">
+                   	Co-fondateur d'<a href="http://happyculture.coop/">Happyculture</a>, Julien est un lead développeur agile passionné par les gens.
+	Curieux? Direction twitter: <a href="https://twitter.com/Artusamak">@Artusamak</a>.
+	<br><br>
+	Merci aussi à <a href="http://frank.taillandier.me/">Frank Taillandier</a>!               </div>
+       </div><!-- .team--translator -->
+           
+        <div style="clear:both">
+           <a href="http://finding-marbles.com/">
+               <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               Version originale:                <a href="http://finding-marbles.com/">
+                   Corinna Baldauf
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                       Corinna souhaitait quelque chose comme Retromat pendant ses années de Scrummaster.
+    Finalement elle le construit elle même dans l'espoir que cela serait utile à d'autres également.
+    Des questions, suggestions ou encouragements ?
+    Vous pouvez lui écrire à <a href="mailto:corinna@finding-marbles.com">un e-mail</a> ou
+    <a href="https://twitter.com/findingmarbles">la contacter sur Twitter</a>.       
+            </div>
+       </div><!-- .team--corinna -->
+
+
+       <div style="clear:both">
+           <a href="https://fiddike.com/">
+               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               Co-développé par                <a href="https://fiddike.com/">
+                   Timon Fiddike
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                  En tant que développeur, product owner, scrum master et coach agile, timon a été un utilisateur et fan de Retromat depuis plus de trois ans. Il a eu quelques idées de fonctionnalités. En 2016 il a commencé à construire quelques unes de ces fonctionnalités lui même. Vous pouvez <a href="mailto:timon.fiddike@agile.coach">lui envoyer un email</a> ou
+    <a href="https://twitter.com/TimonFiddike">le suivre sur Twitter</a>.            </div>
+       </div><!-- .team--timon-->
+
+       </div><!-- .team--corinna -->
+    </div><!-- .content -->
+</div><!-- .team -->
+<!-- Piwik -->
+<noscript><img src="//plans-for-retrospectives.com/piwik/piwik.php?idsite=2&rec=1&bots=1" style="border:0;" alt="" /></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
