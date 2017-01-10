@@ -721,3 +721,34 @@ more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>
 duration:  "15",
 suitable: "release, project"
 };
+all_activities[47] = {
+phase:     3,
+name:      "Prenez position - Dancez sur le fil",
+summary:   "Faites vous une idée de l'opinion de tout le monde et atteignez le consensus",
+desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créez une grande échelle (ex : une longue ligne) \
+au sol avec du scotch de peintre. Marquez une extrémité comme étant l'option A) et l'autre comme étant l'option B). \
+Les membres de l'équipe se répartissent le long de l'échelle selon leur position entre les deux options. \
+Ensuite, reformulez les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
+durationDetail:  "5 à 10' par décision",
+duration:    "Courte",
+stage:    "Storming, Norming",
+suitable: "iteration, release, project"
+}
+all_activities[48] = {
+phase:     3,
+name:      "Vote par gommette - Etoile de mer",
+summary:   "Collect what to start, stop, continue, do more and less of",
+summary:   "Collectez quoi commencer, arrêter, continuer, faire plus et faire moins de",
+desc:      "Dessinez 5 rayons sur un tableau, afin de former 5 sections. \
+Nommez les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
+Les participants notent leurs propositions sur des post-its et les collent \
+dans les sections appropriées. Après avoir regroupé les notes selon les idées \
+faites un vote par gommette pour les propositions à tenter.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, release, project"
+};
