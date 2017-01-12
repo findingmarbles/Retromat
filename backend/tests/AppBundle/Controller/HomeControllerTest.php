@@ -438,7 +438,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testRedirectToIndexNewUrlDe()
+    public function testRedirectIndexToNewUrlDe()
     {
         $client = static::createClient();
         $client->request('GET', '/index_de.html?id=32');
