@@ -1,12 +1,14 @@
+[![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
+
 Retromat
 ========
 
-Retromat: Create, tweak, print & share plans for (agile) retrospectives
+Retromat: Create, tweak, print & share plans for (agile) retrospectives.
             A collection of activities / methods to inspire scrummasters
             and facilitators in general
 
 See it live at:
-http://plans-for-retrospectives.com
+https://plans-for-retrospectives.com
 
 ---
 
@@ -62,10 +64,14 @@ Please use HTML entitities for special characters, e.g. &uuml; &ccedil; &ntilde;
 
 #### Technical setup
 
-To test your translation of the "index_*.php"-file you need php installed. In a terminal run
+To test your translation of the "index_*.php"-file you need a local webserver with PHP installed. Previously it was possible to test translations with PHP only, but [@TimonFiddike](https://twitter.com/TimonFiddike) is currently building some features that are easier to implement in this new way. In the medium term, there will be a web based translation tool for Retromat. If you want to locally test translations NOW and running a local webserver is not an option, please contact Timon and let him know you system setup (Windows, Linux, Mac). We'll find a way to make this work for you.
+
+Set up your local webserver to use Retromat/backend/web/ as it's document root. If you need your local webserver for multiple proejcts, the easiest solution is to add a virtual host to your local webserver config (and to your hosts file) so that e.g. http://retromal.local uses Retromat/backend/web/ as it's document root. Retromat enforces https connections only for the live domain (plans-for-retrospectives.com), so http will be enough if you choose a different name for you local installation.
+
+In a terminal run
 
 ```
- php index.php en > index.html
+ php index.php en > backend/web/index.html
 ```
 
 to generate the English page.
@@ -74,17 +80,14 @@ Let's say you translate into Chinese and have created "index_cn.php" in the "lan
 In your terminal run
 
 ```
- php index.php cn > index_cn.html
+ php index.php cn > backend/web/index_cn.html
 ```
 
-Then open index_cn.html in a browser.
+Then open http://retromal.local/index_cn.html in a browser.
 
 Attention: "activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
 
-To test your translation of the "activities_*.php"-file you need a browser with JS enabled and either also PHP on the console. 
-
-(Alternatively you can save a local copy of index.html
-of the live Retromat and replace activities in the code of that local copy.)
+To test your translation of the "activities_*.php"-file you need a browser with JS enabled.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 

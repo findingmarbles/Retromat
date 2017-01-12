@@ -1,3 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Retromat - Inspiration &amp; plans pour rétrospectives (agile)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
+
+<link rel="stylesheet" type="text/css" href="static/retromat.css" />
+
+<link rel="shortcut icon" href="static/images/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="static/jquery.min.js"><\/script>')</script>
+
+<script src="static/lightbox/lightbox.js"></script>
+<link href="static/lightbox/lightbox.css" rel="stylesheet" />
+
+<!-- Detect IE9 - It has problems, probably because of history.pushState -->
+<script>
+    var is_ie = false;
+</script>
+<!--[if lt IE 10 ]>
+<script>
+    var is_ie = true;
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+
+// "CONFIG"
+var NUMBER_OF_REGULAR_PHASES = 5;
+var PHASE_SOMETHING_DIFFERENT = 5;
+var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
+
+// Frequent sources for activities
+var source_agileRetrospectives = '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives<\/a>';
+var source_findingMarbles = '<a href="http://www.finding-marbles.com/">Corinna Baldauf<\/a>';
+var source_kalnin = '<a href="http://vinylbaustein.net/tag/retrospective/">Thorsten Kalnin<\/a>';
+var source_innovationGames = '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann<\/a>';
+var source_facilitatorsGuide = '<a href="http://www.amazon.de/Facilitators-Participatory-Decision-Making-Jossey-Bass-Management/dp/0787982660/">Facilitator\'s Guide to Participatory Decision-Making<\/a>';
+var source_skycoach = '<a href="http://skycoach.be/ss/">Nick Oostvogels</a>';
+var source_judith = '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>';
+var source_unknown = 'Unknown';
+
+var PHASE_ID_TAG = 'phase';
+
 var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Générer des idées', 'Décider des actions', 'Clore la rétrospective', 'Quelque chose de complètement différent'];
 
 // BIG ARRAY OF ALL ACTIVITIES
@@ -768,3 +819,1008 @@ duration:    "Medium",
 stage:    "Storming, Norming",
 suitable:  "iteration"
 };
+
+var path = 'static/images/activities/';
+
+all_photos = [];
+all_photos[0] = [
+{filename:    path + "1_ESVP.jpg", contributor: "Reguel Wermelinger"},
+{filename:    path + "1_ESVP_2.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[1] = [
+{filename:    path + "2_Weather-Report.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "2_Weather-Report-2.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "2_Weather-Report-3.jpg", contributor: "Cornelia Jost"}
+];
+all_photos[3] = [
+{filename:    path + "4_Timeline-2.jpg", contributor: "Martín Salías"},
+{filename:    path + "4_Timeline.jpg", contributor: "Virginia Brassesco"}
+];
+all_photos[6] = [
+{filename:    path + "7_Mad-Sad-Glad.jpg", contributor: "Andy Rosslau"},
+{filename:    path + "7_Mad-Sad-Glad_2.jpg", contributor: "Chloe Gachet"}
+];
+all_photos[7] = [
+{filename:    path + "8_5Whys.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[8] = [
+{filename:    path + "9_Learning-Matrix.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "9_Learning-Matrix-2.jpg", contributor: "Simon Sablowski"}
+];
+all_photos[11] = [
+{filename:    path + "12_Start-Stop-Continue.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[12] = [
+{filename:    path + "13_Smart-Goals.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[17] = [
+{filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[18] = [
+{filename:    path + "19_Sailboat.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "19_Sailboat2.jpg", contributor: "Manuel Küblböck"},
+{filename:    path + "19_sailboat.jpg", contributor: "David Johnson"}
+];
+all_photos[19] = [
+{filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[20] = [{
+filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG",
+contributor: "Paulo Caroli"
+}];
+all_photos[21] = [{
+filename:    path + "22_Temperature-Reading.jpg",
+contributor: "Weronika Kedzierska"
+}];
+all_photos[22] = [
+{filename:    path + "23_Feedback-Door-Smilies.jpg",contributor: "Philipp Flenker"},
+{filename:    path + "23_Feedback-Door-Smilies_2.jpg",contributor: "Manuel Küblböck"}
+];
+all_photos[24] = [
+{filename:    path + "25_Cause-Effect-Diagramm.jpg", contributor: "Corinna Baldauf"},
+{filename: path + "25_Cause-Effect-Diagram-2.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[28] = [
+{filename:    path + "29_Circle-of-influence.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[30] = [
+{filename:    path + "31_Draw-Iteration.jpg", contributor: "Eric Lannemajou"}
+];
+all_photos[31] = [
+{filename:    path + "32_Emoticons.jpg", contributor: "Simon Sablowski"},
+{filename:    path + "32_Emoticons-2.jpg", contributor: "Ruud Rietveld"},
+{filename:    path + "32_Emoticons-3.jpg", contributor: "Eric van der Meulen"}
+];
+all_photos[32] = [
+{filename:    path + "33_proud_sorry.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[34] = [
+{filename:    path + "35_Agile-Self-Assessment.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[37] = [
+{filename:    path + "38_keep-drop-add.jpg", contributor: "Tracy Kuhlman"}
+];
+all_photos[41] = [{
+filename:    "http://findingmarblesdotcom.files.wordpress.com/2012/03/retrospective-with-postcards3.jpg",
+contributor: "Corinna Baldauf"
+}];
+all_photos[46] = [
+{filename:    path + "47_Empty-Mailbox.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "47_retro-box-3.jpg", contributor: "Bernhard Kreuz"}
+];
+all_photos[48] = [
+{filename:    path + "49_Starfish_3.jpg", contributor: "Eric van der Meulen"},
+{filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"},
+{filename:    path + "49_Starfish_2.jpg", contributor: "Rollup Consulting"}
+];
+all_photos[53] = [
+{filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
+{filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsey"},
+{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
+
+];
+all_photos[58] = [
+{filename:    path + "59_Happiness-Histogram.jpg", contributor: "Weronika Kedzierska"},
+{filename:    path + "59_Happiness-Histogram-2.jpg", contributor: "Weronika Kedzierska"},
+{filename:    path + "59_Happiness-Histogram-3.jpg", contributor: "Stefanie Kreidler"}
+];
+all_photos[59] = [
+{filename:    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrZZvgbLqG_3Tr5TOZr4HAuy0f4JlKtpoF5uOTe9HCtC3IbzIf",
+contributor: "Amber Haley"
+}];
+all_photos[60] = [{
+filename:    path + "61_Chaos-Cocktail-Party.jpg",
+contributor: "Philipp Flenker"
+}];
+all_photos[62] = [
+{filename:    path + "63_Low-Hanging-Fruit.jpg", contributor: "Pedro Ángel Serrano"},
+{filename:    path + "63_low-hanging-fruit_2.jpg", contributor: "Virginia Brassesco"},
+{filename:    path + "63_low-hanging-fruit_3.jpg", contributor: "Virginia Brassesco"}
+];
+all_photos[63] = [{
+filename:    "http://waynedgrant.files.wordpress.com/2012/08/quartering41.jpg?w=413&h=450",
+contributor: "Wayne D. Grant"
+}];
+all_photos[67] = [
+{filename:    path + "68_Company-Map.jpg", contributor: "Annette Harder"},
+{filename:    path + "68_Company-Map-2.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[69] = [
+{filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[77] = [
+{filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
+{filename:    path + "78_Four-Ls.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "78_Four-Ls_2.jpg", contributor: "Geert van der Ploeg"}
+];
+all_photos[79] = [
+{filename:    path + "80_Repeat-Avoid.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "80_Repeat-Avoid_2.jpg", contributor: "Martín Salías"}
+];
+all_photos[80] = [
+{filename:    path + "81_Outcome-Expectations.jpg", contributor: "Philipp Flenker"}
+];
+all_photos[82] = [
+{filename:    path + "83_Retro-Dart.jpg", contributor: "Philipp Flenker"},
+{filename:    path + "83_Retro-Dart-2.jpg", contributor: "Stefanie Kreidler"}
+];
+all_photos[84] = [
+{filename:    path + "85_Greetings-from-iteration.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[86] = [
+{filename:    path + "87_Meeting-Satisfaction.jpg", contributor: "Stefan Wolpers"}
+];
+all_photos[87] = [
+{filename:    path + "88_impediments-cup.jpg", contributor: "Manuel Zaforas Martín"}
+];
+all_photos[88] = [
+{filename:    path + "89_Retro_Wedding_1.jpg", contributor: "Manuel Zaforas Martín"},
+{filename:    "http://scalablenotions.files.wordpress.com/2014/05/ideas.jpg?w=615", contributor: "Jordan Morris"},
+{filename:    path + "89_Retro-Wedding.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[89] = [
+{filename:    path + "90_Agile-Values-Cheerup.jpg", contributor: "Daryl Praeker"},
+{filename:    path + "90_agile_cheer_up.jpg", contributor: "Andy Rosslau"}
+];
+all_photos[91] = [
+{filename:    path + "92_Motivational-Poster_INVEST.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational-Poster_Pairing.png", contributor: "Romain Trocherie"},
+{filename:    path + "92_Motivational_Poster-3.jpg", contributor: "Sarah Schmid"},
+{filename:    path + "92_Motivational_Poster-4.jpg", contributor: "Sarah Schmid"}
+];
+all_photos[96] = [
+{filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
+];
+all_photos[97] = [
+{filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
+{filename:    path + "98_Laundry-Day_2.jpg", contributor: "Dimitris Baltas"},
+{filename:    path + "98_Laundry-Day_3.jpg", contributor: "Lionel Secousse"},
+{filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
+];
+all_photos[106] = [
+{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
+];
+all_photos[109] = [
+{filename:    path + "110_movie-critic.jpg", contributor: "Ana Maria Betancur Vargas"},
+{filename:    path + "110_movie-critic_2.jpg", contributor: "Ana Maria Betancur Vargas"}
+];
+all_photos[112] = [
+{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
+];
+all_photos[113] = [
+{filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Tangerine-2.jpg", contributor: "Afagh Zadeh"},
+{filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
+];
+all_photos[114] = [
+{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
+];
+all_photos[117] = [
+{filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
+];
+all_photos[122] = [
+{filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"},
+];
+last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
+
+
+
+/************* FUNCTIONS ******************************************************************/
+
+
+
+function init() {
+    var urlParams = getUrlVars();
+    var plan_id = urlParams.id;
+    var phase = urlParams.phase;
+    if(plan_id) {
+        publish_plan(plan_id, phase);
+    } else {
+        publish_random_plan();
+    }
+    publish_footer_stats();
+}
+
+// From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html
+// Read a page's GET URL variables and return them as an associative array
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i=0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+//Input: String
+function publish_plan(plan_id, phase) {
+    var plan_id = sanitize_plan_id(plan_id);
+    if (plan_id) {
+        empty_plan();
+        publish_activity_blocks(plan_id);
+        enable_phase_browsing();
+
+        if (phase != undefined) {
+            publish_plan_title("Toutes les activités pour " + phase_titles[phase].toUpperCase());
+            hide_phase_stepper();
+        } else {
+            show_phase_stepper();
+            hide_plan_title();
+        }
+        publish_plan_id(plan_id);
+    }
+}
+
+function sanitize_plan_id(plan_id) {
+    return String(plan_id.match(/[0-9-]+/)); // Ignore everything that's not a digit or '-'
+}
+
+function empty_plan() {
+    $('.js_plan').html("");
+}
+
+function publish_activity_blocks(plan_id) {
+    var ids = String(plan_id).split("-");
+    var activity_block;
+    for(var i=0; i<ids.length; i++) {
+        if (ids[i] != '') { // ignore incorrect single '-' at beginning or end of plan_id
+            activity_block = get_activity_block(parseInt(ids[i])-1, i);
+            activity_block.appendTo($('.js_plan'));
+        }
+    }
+}
+
+/* Param: Index of activity
+ * Returns: Object containing "activity_block"-div
+ */
+function get_activity_block(activity_index) {
+    var activity_block = $('.js_activity_block_template').clone()
+    activity_block.removeClass('js_activity_block_template');
+
+    activity_block.addClass('bg' + get_contrasting_bg());
+
+    populate_activity_block(activity_index, activity_block);
+
+    activity_block.removeClass('display_none');
+
+    return activity_block;
+}
+
+function get_contrasting_bg() {
+    var bg;
+    do {
+        bg = get_random_integer(5);
+    } while (last_block_bg == bg);
+    last_block_bg = bg;
+
+    return bg;
+}
+
+// Input: int - lowest integer that shall NOT be returned
+// Returns: Random number between 0 and (upper_limit-1)
+function get_random_integer(upper_limit) {
+    return Math.floor(Math.random()*upper_limit);
+}
+
+function populate_activity_block(activity_index, activity_block) {
+    var activity = get_activity_array(activity_index);
+    var id = convert_index_to_id(activity_index);
+
+    $(activity_block).addClass('js_activity' + activity_index);
+
+    $(activity_block).find('.js_fill_phase_title').html(phase_titles[activity.phase]);
+    $(activity_block).find('.js_fill_phase_link').prop('href','?id=' + get_activities_in_phase_as_plan_id(activity.phase) + '&phase=' + activity.phase);
+    $(activity_block).find('.js_fill_name').html(activity.name);
+    $(activity_block).find('.js_fill_activity_link').prop('href','?id=' + id);
+    $(activity_block).find('.js_fill_id').html(id);
+    $(activity_block).find('.js_fill_summary').html(activity.summary);
+    $(activity_block).find('.js_fill_source').html(activity.source);
+    $(activity_block).find('.js_fill_description').html(activity.desc);
+    $(activity_block).find('.js_fill_photo-link').html(get_photo_string(activity_index));
+
+}
+
+function get_activity_array(index) {
+    var activity_array = all_activities[index];
+    if (activity_array == null) {
+        alert("Désolé, impossible de trouver une activité avec l'ID " + convert_index_to_id(index));
+    }
+    return activity_array;
+}
+
+function convert_index_to_id(index) {
+    return parseInt(index) + 1;
+}
+
+/* Param: activity index
+ * Returns: String (empty or link to photo(s))
+ */
+function get_photo_string(index) {
+    res = "";
+    if (all_photos[index] != null) {
+        for (var i=0; i<all_photos[index].length; i++) {
+            res += "<a href='";
+            res += all_photos[index][i]['filename'];
+            res += "' rel='lightbox[activity" + index + "]' ";
+            res += "title='Photo par ";
+            res += all_photos[index][i]['contributor'];
+            res += "'>";
+            if (i == 0) {
+                if (all_photos[index].length < 2) {
+                    res += "Voir la photo";
+                } else {
+                    res += "Voir les photos";
+                }
+            }
+            res += "</a>";
+        }
+//        res += " | "; PAUSED Until I've got more time
+    }
+    return res;
+}
+
+    /************ BEGIN Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+function enable_phase_browsing() {
+    enable_prev();
+    enable_next();
+}
+
+function enable_prev() {
+    $('.js_prev_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
+    });
+}
+
+function convert_id_to_index(id) {
+    return parseInt(id) - 1;
+}
+
+function read_activity_id(div_js_item_jquery_object) {
+    return $(div_js_item_jquery_object.html()).find('.js_fill_id').text();
+}
+
+function get_index_of_prev_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index-1; i>=0; i--) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=all_activities.length-1; i>=activity_index; i--) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+function enable_phase_stepper(activity_index, get_neighbor_function) {
+    var phase_index = get_phase_from_activity_index(activity_index);
+
+    var next = get_neighbor_function(activity_index, phase_index);
+
+    var old_identifier = '.js_activity' + activity_index;
+    var activity_block = $(old_identifier);
+
+    populate_activity_block(next, activity_block);
+    activity_block.removeClass(old_identifier);
+
+    publish_plan_id(format_plan_id());
+}
+
+function get_phase_from_activity_index(activity_index) {
+    return get_activity_array(activity_index).phase;
+}
+
+// Returns string (e.g. 'd-d-d') of activity_ids of shown activities
+function format_plan_id() {
+    var current_activities = get_ids_of_current_activities();
+    var id = '';
+    var activity;
+
+    for (var i=0; i<current_activities.length; i++) {
+        if (i != 0) {
+            id += "-";
+        }
+        activity = current_activities[i];
+        id += $(activity).text();
+    }
+
+    return id;
+}
+
+function get_ids_of_current_activities() {
+    return $('.js_plan').find('.js_fill_id');
+}
+
+function enable_next() {
+
+    $('.js_next_button').click(function() {
+        var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
+        enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
+    });
+}
+
+function get_index_of_next_activity_in_phase(activity_index, phase_index) {
+    var found_index = -1;
+    var candidate;
+    for (var i=activity_index+1; i<all_activities.length; i++) {
+        candidate = get_activity_array(i);
+        if (candidate.phase == phase_index) {
+            found_index = i;
+            break;
+        }
+    }
+    if (found_index == -1) { // Not found in rest of array -> Continue at beginning
+        for (var i=0; i<activity_index; i++) {
+            candidate = get_activity_array(i);
+            if (candidate.phase == phase_index) {
+                found_index = i;
+                break;
+            }
+        }
+    }
+
+    return found_index;
+}
+
+/************ END Phase Navigation (Prev, Next, All activities in Phase) ************/
+
+/* Returns: String of all activities in this phase formatted as plan id
+ */
+function get_activities_in_phase_as_plan_id(phase_index) {
+    // TODO Fehlerbehandlung - Phase nicht gefunden oder leer
+    var res = '';
+    var phase_activities = get_indexes_of_activities_in_phase(phase_index);
+
+    for(var i=0; i<phase_activities.length; i++) {
+        if (i != 0) {
+            res += '-';
+        }
+        res += convert_index_to_id(phase_activities[i]);
+    }
+    return res;
+}
+
+function publish_plan_title(title) {
+    $('.js_fill_plan_title').html(title);
+    show_plan_title();
+}
+
+function show_plan_title() {
+    $('.js_plan_title_container').removeClass('display_none');
+}
+
+
+function hide_phase_stepper() {
+    $('.js_phase-stepper').addClass('hidden');
+}
+
+function show_phase_stepper() {
+    $('.js_phase-stepper').removeClass('hidden');
+}
+
+function hide_plan_title() {
+    $('.js_plan_title_container').addClass('display_none');
+}
+
+function publish_plan_id(plan_id) {
+    // On page
+    var form = document.forms['js_ids-display__form'];
+    form.elements['js_display'].value = plan_id;
+
+    // URL
+    var param = '?id=' + plan_id;
+
+    // history.push doesn't work in IEs < v10 and seems to break IE9 and IE8 works but throws errors - so suppress it for >=IE9
+    if (!is_ie) {
+        history.pushState(param, plan_id, param); // pushState(state object, a title (ignored), URL)
+    }
+}
+
+function publish_random_plan() {
+    var plan_id = '';
+    if(is_time_for_something_different()) {
+        plan_id += pick_random_activity_id_in_phase(PHASE_SOMETHING_DIFFERENT);
+    } else {
+        plan_id += generate_random_regular_plan_id();
+    }
+    publish_plan(plan_id);
+}
+
+/* Returns: Boolean
+ */
+function is_time_for_something_different() {
+    res = false;
+    if (get_random_integer(INVERTED_CHANCE_OF_SOMETHING_DIFFERENT) == 0) {
+        res = true;
+    }
+    return res;
+}
+
+function pick_random_activity_id_in_phase(phase_index) {
+    return convert_index_to_id(pick_random_activity_index_in_phase(phase_index));
+}
+
+// Input: int phase_id
+// Returns: int activity_index - randomly chosen activity from given phase
+function pick_random_activity_index_in_phase(phase_index) {
+    var indexes = get_indexes_of_activities_in_phase(phase_index);
+    return indexes[get_random_integer(indexes.length)];
+}
+
+function get_indexes_of_activities_in_phase(phase_index) {
+    var activities = new Array();
+    var tmp_activity;
+    for (var i=0; i<all_activities.length; i++) {
+        candidate_activity = get_activity_array(i);
+        if (candidate_activity.phase == phase_index) {
+            activities.push(i);
+        }
+    }
+    return activities;
+}
+
+/* Returns: String, example: 14-3-77-34-22
+ * Digits are IDs of activities from the 5 different phases
+ */
+function generate_random_regular_plan_id() {
+    var plan_id = '';
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        if (i != 0) {
+            plan_id += '-';
+        }
+        plan_id += pick_random_activity_id_in_phase(i);
+    }
+    return plan_id;
+}
+
+
+
+/************ BEGIN Footer Functions ************/
+
+function create_link_to_all_activities(number_of_activities) {
+	var link_string = "<a href='/index_fr.html?id=1";
+	for (i=2; i<=number_of_activities; i++) {
+		link_string += "-" + i;
+	}
+	return link_string + "&all=yes'>" + number_of_activities + "</a>";
+}
+
+function get_number_of_activities_in_phase(phase_index) {
+    var activities = get_indexes_of_activities_in_phase(phase_index);
+    return activities.length;
+}
+
+function get_number_of_combinations() {
+    var res = 1;
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        res *= get_number_of_activities_in_phase(i);
+    }
+    res += get_number_of_activities_in_phase(PHASE_SOMETHING_DIFFERENT);
+    return res;
+}
+
+function get_combinations_string() {
+    var res = '';
+    for (var i=0; i<NUMBER_OF_REGULAR_PHASES; i++) {
+        if (i != 0) {
+            res += "x";
+        }
+        res += get_number_of_activities_in_phase(i);
+    }
+    res += '+' + get_number_of_activities_in_phase(PHASE_SOMETHING_DIFFERENT);
+    return res;
+}
+
+function publish_footer_stats() {
+    $(".js_footer_no_of_activities").html(create_link_to_all_activities(all_activities.length));
+    $(".js_footer_no_of_combinations").html(get_number_of_combinations());
+    $(".js_footer_no_of_combinations_formula").html(get_combinations_string());
+}
+
+/************ END Footer Functions ************/
+
+
+
+/************ BEGIN PopUps Plan Navigation (Search) ************/
+
+function get_input_field(popup_name) {
+    var form = document.forms['js_' + popup_name + '_form'];
+    var element_name = 'js_popup--' + popup_name + '__input';
+    return form.elements[element_name];
+}
+
+function reset_input_field(input_field) {
+    input_field.value = "";
+}
+
+function focus_input_field(input_field) {
+    input_field.focus();
+}
+
+function show_popup(popup_name) {
+    $('.js_popup--' + popup_name).removeClass('display_none');
+
+    var input = get_input_field(popup_name);
+    reset_input_field(input);
+    focus_input_field(input);
+}
+
+function hide_popup(popup_name) {
+    $('.js_popup--' + popup_name).addClass('display_none');
+}
+
+/* Returns: String
+ * Success: Ids of activities containing $keyword in name, summary or description
+ * Failure: Nothing found -> Empty string
+ */
+function search_activities_for_keyword(keyword) {
+    var plan_id = '';
+    var isMatch = false;
+    for (var i=0; i<all_activities.length; i++) {
+        isMatch = has_found_match(all_activities[i], keyword);
+        if (isMatch) {
+            plan_id += convert_index_to_id(i) + '-';
+        }
+    }
+    if (plan_id.length > 0) {
+        plan_id = plan_id.substr(0, plan_id.length-1)
+    }
+
+    return plan_id; // Remove trailing '-'
+
+}
+
+function has_found_match(activity, keyword) {
+    var regEx = new RegExp(keyword,"i");
+    var isMatch = false;
+    var haystack = activity.name;
+    if (haystack.search(regEx) != -1) {
+        isMatch = true;
+    } else {
+        haystack = activity.summary;
+        if (haystack.search(regEx) != -1) {
+            isMatch = true;
+        } else {
+            haystack = activity.desc;
+            if (haystack.search(regEx) != -1) {
+                isMatch = true;
+            }
+        }
+    }
+    return isMatch;
+}
+
+function find_ids_in_keyword(keyword) {
+    var res = sanitize_plan_id(keyword);
+    if (res == "null") {
+        res = '';
+    } else {
+        res = '-' + res;
+    }
+    return res;
+}
+
+function publish_activities_for_keywords(keywords) {
+
+    var keywords_array = keywords.split(' ');
+    var plan_id = '';
+    for (var i=0; i<keywords_array.length; i++) {
+        var sub_ids = search_activities_for_keyword(keywords_array[i]);
+        if (sub_ids.length > 0) {
+            plan_id += sub_ids + '-';
+        }
+    }
+    plan_id = plan_id.substr(0, plan_id.length-1); // Remove trailing '-'
+
+    plan_id += find_ids_in_keyword(keywords);
+
+    var text = 'Toutes les activités pour';
+    if (plan_id != '') {
+        publish_plan(plan_id);
+        hide_phase_stepper();
+        hide_popup('search');
+    } else {
+        publish_plan_id(plan_id);
+        empty_plan();
+        text = 'Désolé, rien de trouvé pour';
+    }
+
+    publish_plan_title(text +  " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
+}
+
+/************ END PopUps Plan Navigation ************/
+
+
+
+function switchLanguage(new_lang) {
+    new_url = location.protocol + '//' + location.host + '/index';
+    if (new_lang != 'en') {
+        new_url += '_' + new_lang;
+    }
+    new_url += '.html',
+    window.open(new_url, "_self");
+}
+
+//]]>
+</script>
+
+<link rel="alternate" hreflang="en" href="index.html" />
+<link rel="alternate" hreflang="es" href="index_es.html" />
+<link rel="alternate" hreflang="fr" href="index_fr.html" />
+<link rel="alternate" hreflang="de" href="index_de.html" />
+<link rel="alternate" hreflang="nl" href="index_nl.html" />
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(["setCookieDomain", "*.plans-for-retrospectives.com"]);
+    _paq.push(["setDomains", ["*.plans-for-retrospectives.com"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//plans-for-retrospectives.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Piwik Code -->
+</head>
+
+<body onload="JavaScript:init()">
+
+<div class="header">
+    <a href="/index_fr.html" class="header__logo">
+        <img class="header__logo" src="static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
+
+    <select class="languageswitcher" onChange="switchLanguage(this.value)">
+        <option value="de"  >Deutsch (39 Aktivit&auml;ten)</option>
+        <option value="en"  >English (127 activities)</option>
+        <option value="es"  >Espa&ntilde;ol (95 actividades)</option>
+        <option value="fr" selected >Fran&ccedil;ais (47 activit&eacute;s)</option>
+        <option value="nl"  >Nederlands (96 activiteiten)</option>
+    </select>
+
+      <span class="navi">
+      <a href="/about.html">About</a> |
+      <a href="/donate.html">Donate</a> |
+      <a href="/books.html">Books</a>
+        <!-- 
+        <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What's a retrospective?</a> |
+        <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a> |
+        <a href="/print/index.html">Print Edition</a>		  <!-- PAUSED Until I've got more time
+		  |
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>        -->
+      </span>
+</div>
+
+<div class="pitch">
+    <div class="content">
+        Vous planifiez votre prochaine <b>rétrospective</b>? Commencez avec un plan aléatoire, adaptez le, imprimez le et partagez son URL. Ou naviguez simplement pour avoir de nouvelles idées !    </div>
+</div>
+
+
+<div class="plan-header">
+    <div class="content">
+        <div class="print-header">
+            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) par Finding-Marbles.com</span>
+        </div>
+        <div class="plan-header__wrapper">
+                    <div class="ids-display">
+                ID du plan :                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
+                    <input type="text" size="18" name="js_display" class="ids-display__input" value="">
+                </form>
+            </div>
+                    <div class="plan-navi">
+                <ul>
+                    <li>
+                        <a class="plan-navi__random" title="Nouveau plan aléatoire de rétrospective" href="JavaScript:publish_random_plan()">
+                            Nouveau plan aléatoire de rétrospective                        </a>
+                    </li>
+                    <li>
+                        <a class="plan-navi__ids" title="Saisissez des IDs à afficher" href="JavaScript:show_popup('ids');">
+                            Saisissez des IDs à afficher                        </a>
+                        <div class="js_popup--ids popup--ids popup display_none">
+                            <form action="JavaScript:publish_plan($('.js_popup--ids__input').val());hide_popup('ids');" name="js_ids_form" class="ids_form">
+                                <input type="text" size="12" name="js_popup--ids__input" class="js_popup--ids__input popup__input" value="">
+                                <input type="submit" class="popup__submit" value="Afficher !">
+                                <a href="JavaScript:hide_popup('ids');" class="popup__close-link">Fermer</a>
+                            </form>
+                            <div class="popup__info">ID d'exemple : 3-33-20-13-45</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="plan-navi__search" title="Cherchez des activités pour le mot-clé" href="JavaScript:show_popup('search');">
+                            Cherchez des activités pour le mot-clé                        </a>
+                        <div class="js_popup--search popup--search popup display_none">
+                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                                <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
+                                <input type="submit" class="popup__submit" value="Chercher">
+                                <a href="JavaScript:hide_popup('search');" class="popup__close-link">Fermer</a>
+                            </form>
+                            <div class="popup__info">Rechercher dans les titres, résumés et descriptions</div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- plan-navi -->
+        </div><!-- plan-header__wrapper -->
+    </div><!-- content -->
+</div>
+
+    <div class="js_plan_title_container plan_title_container display_none">
+        <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+        </div>
+    </div>
+
+    <div class="js_plan">
+        <div class="activity_block bg1">
+            <div class="activity-wrapper">
+                <div class="activity-content">
+                    ... LOADING ACTIVITIES ...                    <noscript>
+                        Retromat est principalement basé sur JavaScript et ne fonctionne pas sans. Veuillez donc activer JavaScript dans votre navigateur. Merci !                    </noscript>
+                </div>
+            </div>
+        </div>
+    </div><!-- END plan -->
+
+<div class="js_activity_block_template js_activity_block activity_block display_none">
+    <div class="activity-wrapper">
+        <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="Afficher une autre activité pour cette phase">&#9668;</a>
+        <div class="activity-content">
+            <div class="js_phase_title phase_title">
+                <a href="#" class="js_fill_phase_link">
+                    <span class="js_fill_phase_title"></span>
+                </a>
+            </div>
+            <div class="js_item">
+                <h2><span class="js_fill_name"></span>
+                    <span class="activity_id_wrapper">
+                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                    </span>
+                </h2>
+                <div class="summary">
+                    <span class="js_fill_summary"></span>
+                    <br>
+                        <span class="source">Source :                            <span class="js_fill_source"></span>
+                        </span>
+                </div><!-- END summary -->
+                <div class="description">
+                    <span class="js_fill_description"></span>
+                </div><!-- END description -->
+            </div><!-- END js_item -->
+            <div class="js_photo_link photo_link">
+                <span class="js_fill_photo-link"></span>
+				<!-- PAUSED Until I've got more time
+                <a href="mailto:corinna@finding-marbles.com?subject=Photos%20for%20Activity%3A%20ID&body=Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name" class="less_pronounced">
+                    Ajouter une Photo                </a>
+                -->
+            </div><!-- END .js_photo_link -->
+        </div><!-- END .activity-content -->
+        <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="Afficher une autre activité pour cette phase">&#9658;</a>
+    </div><!-- END .activity-wrapper -->
+</div>
+
+<div class="about">
+    <div class="content">
+        Retromat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus.<!-- PAUSED Until I've got more time
+        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Suggérez la </a>!
+-->
+    </div>
+</div>
+
+<div class="team">
+   <div class="content">
+
+       
+           
+            <div style="clear:both">    
+               <a href="http://www.occitech.fr/">
+                   <img src="static/images/team/pierre_martin.jpg" width="70" height="93" title="Pierre Martin" class="team-photo">
+               </a>
+
+                <h3 style="margin-bottom: 10px">
+                    Traduction:                    <a href="http://www.occitech.fr/">
+                       Pierre Martin                   </a>
+                </h3>
+
+               <div class="team-text">
+                   	Lead developer et co-gérant d'<a href="http://www.occitech.fr/">Occitech</a>.<br>
+	Gazouille aussi sur <a href="https://twitter.com/pierremartin">Twitter</a>!
+	<br><br><br>               </div>
+       </div><!-- .team--translator -->
+           
+            <div style="clear:both">    
+               <a href="http://juliendubois.fr/">
+                   <img src="static/images/team/julien_dubois.jpg" width="70" height="93" title="Julien Dubois" class="team-photo">
+               </a>
+
+                <h3 style="margin-bottom: 10px">
+                    Traduction:                    <a href="http://juliendubois.fr/">
+                       Julien Dubois                   </a>
+                </h3>
+
+               <div class="team-text">
+                   	Co-fondateur d'<a href="http://happyculture.coop/">Happyculture</a>, Julien est un lead développeur agile passionné par les gens.
+	Curieux? Direction twitter: <a href="https://twitter.com/Artusamak">@Artusamak</a>.
+	<br><br>
+	Merci aussi à <a href="http://frank.taillandier.me/">Frank Taillandier</a>!               </div>
+       </div><!-- .team--translator -->
+           
+        <div style="clear:both">
+           <a href="http://finding-marbles.com/">
+               <img src="static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               Version originale:                <a href="http://finding-marbles.com/">
+                   Corinna Baldauf
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                       Corinna souhaitait quelque chose comme Retromat pendant ses années de Scrummaster.
+    Finalement elle le construit elle même dans l'espoir que cela serait utile à d'autres également.
+    Des questions, suggestions ou encouragements ?
+    Vous pouvez lui écrire à <a href="mailto:corinna@finding-marbles.com">un e-mail</a> ou
+    <a href="https://twitter.com/findingmarbles">la contacter sur Twitter</a>.       
+            </div>
+       </div><!-- .team--corinna -->
+
+
+       <div style="clear:both">
+           <a href="https://fiddike.com/">
+               <img src="static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+           </a>
+           <h3 style="margin-bottom: 10px">
+               Co-développé par                <a href="https://fiddike.com/">
+                   Timon Fiddike
+               </a>
+           </h3>
+           <div class="team-text" style="margin-right:0">
+                  En tant que développeur, product owner, scrum master et coach agile, timon a été un utilisateur et fan de Retromat depuis plus de trois ans. Il a eu quelques idées de fonctionnalités. En 2016 il a commencé à construire quelques unes de ces fonctionnalités lui même. Vous pouvez <a href="mailto:timon.fiddike@agile.coach">lui envoyer un email</a> ou
+    <a href="https://twitter.com/TimonFiddike">le suivre sur Twitter</a>.            </div>
+       </div><!-- .team--timon-->
+
+       </div><!-- .team--corinna -->
+    </div><!-- .content -->
+</div><!-- .team -->
+<!-- Piwik -->
+<noscript><img src="//plans-for-retrospectives.com/piwik/piwik.php?idsite=2&rec=1&bots=1" style="border:0;" alt="" /></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
