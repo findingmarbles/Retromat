@@ -9,9 +9,6 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", defaults={"_locale": "en"}, name="home_slash")
-     * @Route("/index.html", defaults={"_locale": "en"}, name="home_default")
-     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl"}, name="home")
      * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl"}, name="activities_by_id")
      */
     public function homeAction(Request $request)
@@ -28,5 +25,15 @@ class HomeController extends Controller
             'home/generated/index_'.$request->getLocale().'.html.twig',
             ['ids' => $ids, 'activities' => $activities, 'phase' => $phase]
         );
+    }
+
+    /**
+     * @Route("/", defaults={"_locale": "en"}, name="home_slash")
+     * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl"}, name="home")
+     */
+    public function redirectAction(Request $request)
+    {
+        return $this->redirectToRoute('activities_by_id', array('id' => $request->query->get('id')), 301);
     }
 }

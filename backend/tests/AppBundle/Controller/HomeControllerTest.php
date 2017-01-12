@@ -371,7 +371,7 @@ class HomeControllerTest extends WebTestCase
     public function testShowRandomPlanLinksOnHome()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/en/');
 
         $this->assertEquals('Here are some random retrospective plans:', $crawler->filter('.js_fill_summary')->text());
     }
@@ -424,6 +424,39 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals(
             '?id=3-89-113-13-16',
             $crawler->filter('.js_activity_block')->eq(1)->filter('.js_next_button')->attr('href')
+        );
+    }
+
+    public function testRedirectIndexToNewUrlEn()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/index.html?id=32');
+        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/en/?id=32'),
+            'Response is a redirect to the correct new URL.'
+        );
+    }
+
+    public function testRedirectToIndexNewUrlDe()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/index_de.html?id=32');
+        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/de/?id=32'),
+            'Response is a redirect to the correct new URL.'
+        );
+    }
+
+    public function testRedirectSlashToNewUrl()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/?id=70-4-69-29-71');
+        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/en/?id=70-4-69-29-71'),
+            'Response is a redirect to the correct new URL.'
         );
     }
 }
