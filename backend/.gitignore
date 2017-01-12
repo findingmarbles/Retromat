@@ -17,3 +17,5 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/web/index.html
+/web/index_*.html
