@@ -1,7 +1,9 @@
+[![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
+
 Retromat
 ========
 
-Retromat: Create, tweak, print & share plans for (agile) retrospectives
+Retromat: Create, tweak, print & share plans for (agile) retrospectives.
             A collection of activities / methods to inspire scrummasters
             and facilitators in general
 
@@ -85,10 +87,7 @@ Then open http://retromal.local/index_cn.html in a browser.
 
 Attention: "activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
 
-To test your translation of the "activities_*.php"-file you need a browser with JS enabled. 
-
-(Alternatively you can save a local copy of index.html
-of the live Retromat and replace activities in the code of that local copy.)
+To test your translation of the "activities_*.php"-file you need a browser with JS enabled.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 
