@@ -273,10 +273,10 @@ class HomeControllerTest extends WebTestCase
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
 
         $colorCode = $this->extractColorCode($activities->eq(0));
-        for($i = 1; $i < $activities->count(); $i++) {
+        for ($i = 1; $i < $activities->count(); $i++) {
             $previousColorCode = $colorCode;
             $colorCode = $this->extractColorCode($activities->eq($i));
-            
+
             $this->assertNotEquals($colorCode, $previousColorCode);
         }
     }
