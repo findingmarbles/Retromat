@@ -459,4 +459,16 @@ class HomeControllerTest extends WebTestCase
             'Response is a redirect to the correct new URL.'
         );
     }
+
+    public function testRedirectPhase0ToNewUrl()
+    {
+        $client = static::createClient();
+        $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
+        $client->request('GET', '/index.html?id='.$idsStringPhase0.'&phase=0');
+        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/en/?id=1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122&phase=0'),
+            'Response is a redirect to the correct new URL.'
+        );
+    }
 }

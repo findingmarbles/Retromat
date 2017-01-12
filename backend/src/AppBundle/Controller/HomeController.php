@@ -34,6 +34,10 @@ class HomeController extends Controller
      */
     public function redirectAction(Request $request)
     {
-        return $this->redirectToRoute('activities_by_id', array('id' => $request->query->get('id')), 301);
+        return $this->redirectToRoute(
+            'activities_by_id',
+            ['id' => $request->query->get('id'), 'phase' => $request->query->get('phase')],
+            301
+        );
     }
 }
