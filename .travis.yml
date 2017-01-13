@@ -18,7 +18,7 @@ before_script:
     - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 
 script:
-    - phpunit -c backend
+    - backend/vendor/bin/simple-phpunit -c backend
 
 after_success:
     - mkdir -p .travis/
