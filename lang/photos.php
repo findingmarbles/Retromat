@@ -1,5 +1,5 @@
 
-var path = 'static/images/activities/';
+var path = '/static/images/activities/';
 
 all_photos = [];
 all_photos[0] = [
