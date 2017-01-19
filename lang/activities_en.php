@@ -262,7 +262,7 @@ suitable: "iteration, release, project"
 };
 all_activities[13] = {
 phase:     4,
-name:      "Feedback Door - Numbers",
+name:      "Feedback Door - Numbers (ROTI)",
 summary:   "Gauge participants' satisfaction with the retro on a scale from 1 to 5 in minimum time",
 desc:      "Put sticky notes on the door with the numbers 1 through 5 on them. 1 is the topmost and best, \
 5 the lowest and worst.\
@@ -2301,6 +2301,20 @@ you might want to pick a different mode of transportation.",
 source:    "<a href='https://www.slacktime.org'>Christian Schafmeister</a>",
 duration:    "Medium",
 stage:    "Storming, Performing",
+suitable:  "iteration, project, release"
+};
+all_activities[127] = {
+phase:     1,
+name:      "Learning Wish List",
+summary:   "Create a list of learning objectives for the team",
+desc:      "Hand out pens and paper. Each participant writes down what they \
+wish their coworkers would learn (as a team - no need to name individual \
+people). When everyone is done, collect all items on a board and count how \
+often each one appears. Pick the top three things as learning objectives, \
+unless the team's discussion leads somewhere else.",
+source:    "<a href='https://twitter.com/tottinge'>Tim Ottinger</a>",
+duration:    "Medium",
+stage:    "All",
 suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
