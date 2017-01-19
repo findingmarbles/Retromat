@@ -2333,8 +2333,8 @@ work remotely. These stand about 5 feet away from the circle. \
 Hand a ball of yarn to a random player and tell them to hold on tight to the end \
 of the yarn with their non-dominant hand and the ball in the dominant one. The \
 yarn holder starts the game by saying something about themselves that is not \
-work-related such as "I have a daughter" or "I play the guitar". If this statement \
-is true for any other team member they raise their hand and say "Yes, that's me". \
+work-related such as 'I have a daughter' or 'I play the guitar'. If this statement \
+is true for any other team member they raise their hand and say 'Yes, that's me'. \
 The yarn holder passes the ball to the person who raised their hand. If there's \
 more than one, the yarn holder can choose one. If no one shares the statement the \
 yarn holder has to make another statement. \
