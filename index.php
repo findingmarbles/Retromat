@@ -724,7 +724,7 @@ function switchLanguage(new_lang) {
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content" style="line-height: 20px">
-                All activities in Retromat on your ebook reader?
+                Run great agile retrospectives: Get all activities and more for your ebook reader!
 <br><br>
                 <a href="/ebook/index.html"
                    style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
