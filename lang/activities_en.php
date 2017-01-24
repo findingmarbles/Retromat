@@ -2327,8 +2327,8 @@ so that team members can build closer bonds than possible with just \
 work-related stuff. \
 <br><br> \
 Have the team form a circle with everyone looking inwards. Leave about a \
-foot of space between people, unless you've got colleagues with you that usually \
-work remotely. These stand about 5 feet away from the circle. \
+foot of space between people. Depending on what you want to stress with this activity, you can ask colleagues that usually \
+work remotely to stand about 5 feet away from the circle. \
 <br><br> \
 Hand a ball of yarn to a random player and tell them to hold on tight to the end \
 of the yarn with their non-dominant hand and the ball in the dominant one. The \
@@ -2344,8 +2344,8 @@ This is the first connection in a network of shared traits. The new yarn holder 
 now makes a statement about themselves, passes the ball while holding on to their \
 part of the yarn and so on. \
 <br><br> \
-The game ends when time is up or everybody has at least two connections or the \
-yarn ends. \
+The game ends when time is up OR everybody has at least two connections OR the \
+yarn runs out. \
 <br><br> \
 You can debrief with some of these questions: \
 <ul> \
@@ -2358,7 +2358,7 @@ You can debrief with some of these questions: \
 How would it affect the team?</li> \
 <li>Is there anything you will do differently at work now?</li> \
 </ul> \
-<br><br> \
+<br> \
 This activity is only the first part of a \
 <a href='https://dl.dropboxusercontent.com/u/440419/Stringtheory%20-%20Hidden%20Connections%20-%20Exercise.pdf'>longer game</a>.",
 source:    "<a href='https://twitter.com/ebstar'>Eben Halford</a>",
