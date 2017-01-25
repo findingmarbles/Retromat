@@ -373,7 +373,7 @@ class HomeControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/en/');
 
-        $this->assertEquals('Here are some random retrospective plans:', $crawler->filter('.js_fill_summary')->text());
+        $this->assertEquals('Is loading taking too long? Here are some random plans:', $crawler->filter('.js_fill_summary')->text());
     }
 
     public function testShowIdsInInputField()
