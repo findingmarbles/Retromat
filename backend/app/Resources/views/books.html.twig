@@ -32,7 +32,7 @@
 <body class="subpage">
 
 <div id="header">
-    <a href="/">Back to <img id="logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
+    <a href="{{ path('activities_by_id') }}">Back to <img id="logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 </div>
 
 <div class="pitch">
@@ -54,15 +54,15 @@
             <div class="activity-content">
                 <div style="display: flex">
                     <div style="justify-content: space-between">
-                        <a href="ebook/index.html">
+                        <a href="{{ path('ebook') }}">
                         <img src="/static/images/ebook/book-cover_all-activities-from-retromat.jpg" width="180" height="250" style="margin-right: 20px"></a>
                     </div>
                     <div style="">
-                        <h2><a href="/ebook/index.html">The eBook</a></h2>
+                        <h2><a href="{{ path('ebook') }}">The eBook</a></h2>
                         <br>
                         This book contains all 120+ activities from the digital version. I update it regularly. It's perfect for getting the full spectrum of what ideas are out there. Perfect for reading during your commute or your on your sofa.
                         <br><br>
-                        <a href="/ebook/index.html">
+                        <a href="{{ path('ebook') }}">
                         More about the Retromat ebook
                         </a>
                     </div>
@@ -76,15 +76,15 @@
             <div class="activity-content">
                 <div style="display: flex">
                     <div style="justify-content: space-between">
-                        <a href="/print/index.html">
+                        <a href="{{ path('print') }}">
                         <img src="/static/images/print/retromat_fan.png" width="142" height="252" style="margin-right: 20px"></a>
                     </div>
                     <div style="">
-                        <h2><a href="/print/index.html">The Print Edition</a></h2>
+                        <h2><a href="{{ path('print') }}">The Print Edition</a></h2>
                         <br>
                         This – real, physical – book lets you flip through and combine 50 activities from Retromat. It's perfect for getting inspired by its playfulness or for intriguing others to check it out.
                         <br><br>
-                        <a href="/print/index.html">
+                        <a href="{{ path('print') }}">
                         More about the Retromat Print Edition
                         </a>
                     </div>

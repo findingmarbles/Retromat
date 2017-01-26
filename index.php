@@ -701,9 +701,9 @@ function switchLanguage(new_lang) {
     </select>
 
       <span class="navi">
-      <a href="/about.html">About</a> |
-      <a href="/donate.html">Donate</a> |
-      <a href="/books.html">Books</a>
+      <a href="{{ path('about') }}">About</a> |
+      <a href="{{ path('donate') }}">Donate</a> |
+      <a href="{{ path('books') }}">Books</a>
         <!-- 
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |

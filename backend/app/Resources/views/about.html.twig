@@ -111,7 +111,7 @@
 <body>
 
 <div id="header">
-    <a href="/">Back to <img id="logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
+    <a href="{{ path('activities_by_id') }}">Back to <img id="logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 </div>
 
 <div class="pitch">
@@ -150,7 +150,7 @@
             <div class="activity-content">
                 <h1 style="font-weight: bold;">Are you a fan of Retromat?</h1>
                 <br>
-                <a href="/donate.html">Please consider a donation</a> :)
+                <a href="{{ path('donate') }}">Please consider a donation</a> :)
             </div>
         </div>
     </div>
