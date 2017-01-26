@@ -1,3 +1,33 @@
+about:
+    path: /about.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    about.html.twig
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+books:
+    path: /books.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    books.html.twig
+donate:
+    path: /donate.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    donate.html.twig
+ebook:
+    path: /ebook/index.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    /ebook/index.html.twig
+print:
+    path: /print/index.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    print/index.html.twig
+sources:
+    path: /print/sources.html
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    print/sources.html.twig
