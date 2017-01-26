@@ -1,4 +1,9 @@
 about:
+    path: /en/about
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    about.html.twig
+about_old:
     path: /about.html
     defaults:
         _controller: FrameworkBundle:Template:template
@@ -7,26 +12,51 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 books:
+    path: /en/books
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    books.html.twig
+books_old:
     path: /books.html
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    books.html.twig
 donate:
+    path: /en/donate
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    donate.html.twig
+donate_old:
     path: /donate.html
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    donate.html.twig
 ebook:
+    path: /en/ebook
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    /ebook/index.html.twig
+ebook_old:
     path: /ebook/index.html
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    /ebook/index.html.twig
 print:
+    path: /en/print
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    print/index.html.twig
+print_old:
     path: /print/index.html
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    print/index.html.twig
 sources:
+    path: /en/sources
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    print/sources.html.twig
+sources_old:
     path: /print/sources.html
     defaults:
         _controller: FrameworkBundle:Template:template
