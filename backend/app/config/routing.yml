@@ -6,8 +6,9 @@ about:
 about_old:
     path: /about.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    about.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: about
+        permanent: true
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
@@ -19,8 +20,9 @@ books:
 books_old:
     path: /books.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    books.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: books
+        permanent: true
 donate:
     path: /en/donate
     defaults:
@@ -29,8 +31,9 @@ donate:
 donate_old:
     path: /donate.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    donate.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: donate
+        permanent: true
 ebook:
     path: /en/ebook
     defaults:
@@ -39,8 +42,9 @@ ebook:
 ebook_old:
     path: /ebook/index.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    /ebook/index.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: ebook
+        permanent: true
 print:
     path: /en/print
     defaults:
@@ -49,8 +53,9 @@ print:
 print_old:
     path: /print/index.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    print/index.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: print
+        permanent: true
 sources:
     path: /en/sources
     defaults:
@@ -59,5 +64,6 @@ sources:
 sources_old:
     path: /print/sources.html
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    print/sources.html.twig
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sources
+        permanent: true
