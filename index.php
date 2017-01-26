@@ -726,7 +726,7 @@ function switchLanguage(new_lang) {
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
 <br><br>
-                <a href="/ebook/index.html"
+                <a href="{{ path('ebook') }}"
                    style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
                 </a>
         </div>
