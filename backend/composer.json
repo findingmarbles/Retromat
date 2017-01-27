@@ -28,7 +28,8 @@
         "symfony/polyfill-apcu": "^1.0",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0"
+        "incenteev/composer-parameter-handler": "^2.0",
+        "presta/sitemap-bundle": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

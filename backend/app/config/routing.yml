@@ -3,6 +3,8 @@ about:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    about.html.twig
+    options:
+        sitemap: true
 about_old:
     path: /about.html
     defaults:
@@ -67,3 +69,6 @@ sources_old:
         _controller: FrameworkBundle:Redirect:redirect
         route: sources
         permanent: true
+PrestaSitemapBundle:
+    resource: "@PrestaSitemapBundle/Resources/config/routing.yml"
+    prefix:   /
