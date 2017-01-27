@@ -7,6 +7,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
+use Presta\SitemapBundle\Service\UrlContainerInterface;
+use AppBundle\Entity\Activity;
 
 class SitemapPopulateSubscriber implements EventSubscriberInterface
 {
@@ -45,16 +47,22 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
      */
     public function populate(SitemapPopulateEvent $event)
     {
-        $this->populateHome($event);
+        /*
+         * @var UrlContainerInterface
+         */
+        $urlContainer = $event->getUrlContainer();
+
+        $this->populateHome($urlContainer);
+        $this->populateActivities($urlContainer);
     }
 
     /**
-     * @param SitemapPopulateEvent $event
+     * @param UrlContainerInterface $urlContainer
      */
-    private function populateHome(SitemapPopulateEvent $event)
+    private function populateHome(UrlContainerInterface $urlContainer)
     {
         foreach (['en', 'de', 'fr', 'es', 'nl'] as $locale) {
-            $event->getUrlContainer()->addUrl(
+            $urlContainer->addUrl(
                 new UrlConcrete(
                     $this->urlGenerator->generate(
                         'activities_by_id',
@@ -63,6 +71,31 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                     )
                 ),
                 'home'
+            );
+        }
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populateActivities(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+        $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
+
+        foreach ($activities as $activity) {
+            $urlContainer->addUrl(
+                new UrlConcrete(
+                    $this->urlGenerator->generate(
+                        'activities_by_id',
+                        [
+                            'id' => $activity->getRetromatId(),
+                            '_locale' => $language,
+                        ],
+                        UrlGeneratorInterface::ABSOLUTE_URL
+                    )
+                ),
+                'activities'
             );
         }
     }
