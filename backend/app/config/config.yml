@@ -67,10 +67,16 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+presta_sitemap:
+    timetolive: 3600
+
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    # added for the presta sitemap, but used by others as well: http://symfony.com/doc/current/console/request_context.html
+    router.request_context.host:   plans-for-retrospectives.com/
+    router.request_context.scheme: https
 
     # probably put this into the database later:
     retormat.activity.source:
