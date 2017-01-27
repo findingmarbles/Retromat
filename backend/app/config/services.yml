@@ -20,3 +20,8 @@ services:
     retromat.activity_by_phase:
         class: AppBundle\Twig\ActivityByPhase
         arguments: ["@doctrine.orm.entity_manager"]
+    retromat.sitemap.populate_subscriber:
+        class: AppBundle\EventListener\SitemapPopulateSubscriber
+        arguments: ["@router", "@doctrine.orm.entity_manager"]
+        tags:
+            - { name: "kernel.event_subscriber" }
