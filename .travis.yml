@@ -11,9 +11,9 @@ install:
     - composer install --working-dir=backend
 
 before_script:
-    - php backend/bin/console doctrine:database:create --env=test
-    - php backend/bin/console doctrine:schema:create --env=test
-    - php backend/bin/console doctrine:fixtures:load -n --env=test
+    - php backend/bin/console doctrine:database:create
+    - php backend/bin/console doctrine:schema:create
+    - php backend/bin/console doctrine:fixtures:load -n
     - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 
 script:

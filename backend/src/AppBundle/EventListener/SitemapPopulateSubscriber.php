@@ -54,6 +54,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
 
         $this->populateHome($urlContainer);
         $this->populateActivities($urlContainer);
+        // $this->populatePlans($urlContainer);
     }
 
     /**
@@ -95,8 +96,42 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                         UrlGeneratorInterface::ABSOLUTE_URL
                     )
                 ),
-                'activities'
+                'activity'
             );
+        }
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populatePlans(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+        $activitiesByPhase = $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases();
+
+        $ids = [];
+        foreach ($activitiesByPhase[4] as $ids[4]) {
+            foreach ($activitiesByPhase[3] as $ids[3]) {
+                foreach ($activitiesByPhase[2] as $ids[2]) {
+                    foreach ($activitiesByPhase[1] as $ids[1]) {
+                        foreach ($activitiesByPhase[0] as $ids[0]) {
+                            $urlContainer->addUrl(
+                                new UrlConcrete(
+                                    $this->urlGenerator->generate(
+                                        'activities_by_id',
+                                        [
+                                            'id' => implode('-', $ids),
+                                            '_locale' => $language,
+                                        ],
+                                        UrlGeneratorInterface::ABSOLUTE_URL
+                                    )
+                                ),
+                                'plan'
+                            );
+                        }
+                    }
+                }
+            }
         }
     }
 }

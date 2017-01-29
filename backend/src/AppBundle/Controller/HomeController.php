@@ -23,7 +23,14 @@ class HomeController extends Controller
 
         return $this->render(
             'home/generated/index_'.$request->getLocale().'.html.twig',
-            ['ids' => $ids, 'activities' => $activities, 'phase' => $phase]
+            [
+                'ids' => $ids,
+                'phase' => $phase,
+                'activities' => $activities,
+                'color_variation' => $this->get('retromat.color_varation'),
+                'activity_by_phase' => $this->get('retromat.activity_by_phase'),
+                'activity_source' => $this->getParameter('retormat.activity.source'),
+            ]
         );
     }
 
