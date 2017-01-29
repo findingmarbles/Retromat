@@ -2,6 +2,7 @@
 
 namespace AppBundle\EventListener;
 
+use AppBundle\Sitemap\PlanGenerator;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -23,13 +24,22 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private $objectManager;
 
     /**
+     * @var PlanGenerator
+     */
+    private $planGenerator;
+
+    /**
      * @param UrlGeneratorInterface $urlGenerator
      * @param ObjectManager $objectManager
      */
-    public function __construct(UrlGeneratorInterface $urlGenerator, ObjectManager $objectManager)
-    {
+    public function __construct(
+        UrlGeneratorInterface $urlGenerator,
+        ObjectManager $objectManager,
+        PlanGenerator $planGenerator
+    ) {
         $this->urlGenerator = $urlGenerator;
         $this->objectManager = $objectManager;
+        $this->planGenerator = $planGenerator;
     }
 
     /**
@@ -54,7 +64,11 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
 
         $this->populateHome($urlContainer);
         $this->populateActivities($urlContainer);
-        // $this->populatePlans($urlContainer);
+        $this->planGenerator->populatePlans(
+            $urlContainer,
+            $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases(),
+            'en'
+        );
     }
 
     /**
@@ -98,40 +112,6 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                 ),
                 'activity'
             );
-        }
-    }
-
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
-    private function populatePlans(UrlContainerInterface $urlContainer)
-    {
-        $language = 'en';
-        $activitiesByPhase = $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases();
-
-        $ids = [];
-        foreach ($activitiesByPhase[4] as $ids[4]) {
-            foreach ($activitiesByPhase[3] as $ids[3]) {
-                foreach ($activitiesByPhase[2] as $ids[2]) {
-                    foreach ($activitiesByPhase[1] as $ids[1]) {
-                        foreach ($activitiesByPhase[0] as $ids[0]) {
-                            $urlContainer->addUrl(
-                                new UrlConcrete(
-                                    $this->urlGenerator->generate(
-                                        'activities_by_id',
-                                        [
-                                            'id' => implode('-', $ids),
-                                            '_locale' => $language,
-                                        ],
-                                        UrlGeneratorInterface::ABSOLUTE_URL
-                                    )
-                                ),
-                                'plan'
-                            );
-                        }
-                    }
-                }
-            }
         }
     }
 }
