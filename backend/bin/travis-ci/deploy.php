@@ -13,6 +13,7 @@ $sshDestination = 'retromat@avior.uberspace.de';
 $webSpaceDirPrefix = '/var/www/virtual/retromat/';
 $artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
 $deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
+$sitemapDir = $webSpaceDirPrefix.'retromat-sitemaps/';
 $deploymentDir = $webSpaceDirPrefix.'retromat-deployments/'.$buildDirName;
 $deploymentDomain = 'plans-for-retrospectives.com';
 
@@ -74,6 +75,9 @@ system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm www.'.$deploymen
 
 // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
 system('ssh '.$sshDestination.' "cd '.$deploymentDestinationDir.' ; rm -f current ; ln -s '.$deploymentDir.' current "');
+
+// make the sitemap files availabe inside each new deployment directory
+system('ssh '.$sshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.$webSpaceDirPrefix.$deploymentDomain.'/ "');
 
 // php-cgi caches php files beyond deployments, therefore kill it
 system('ssh '.$sshDestination.' killall php-cgi ');
