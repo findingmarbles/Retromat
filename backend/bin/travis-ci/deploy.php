@@ -68,9 +68,12 @@ system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console
 // clear and prefill production cache
 system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console cache:clear --env=prod "');
 
-// create / update symlink to make backend/web visible to the outside
+// make backend/web of the current deployment directory visible to the outside
 system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "');
 system('ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "');
+
+// mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
+system('ssh '.$sshDestination.' "cd '.$deploymentDestinationDir.' ; rm -f current ; ln -s '.$deploymentDir.' current "');
 
 // php-cgi caches php files beyond deployments, therefore kill it
 system('ssh '.$sshDestination.' killall php-cgi ');
