@@ -2,8 +2,8 @@
 
 $_lang['HTML_TITLE'] = 'Inspiratie &amp; plannen voor (agile) retrospectives';
 
-$_lang['INDEX_PITCH'] = 'Ben je bezig om je volgende <b>retrospective</b> voor te bereiden? Begin met een random plan, pas het aan, printen het uit en deel de URL. Of browse wat rond voor nieuwe ideeen!';
-$_lang['INDEX_PLAN_ID'] = 'Plan-ID:';
+$_lang['INDEX_PITCH'] = 'Ben je bezig om je volgende <b>retrospective</b> voor te bereiden? Begin met een random plan, pas het aan, printen het uit en deel de URL. Of browse wat rond voor nieuwe ideeen!<br><br>Is dit je eerste retrospective? <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">Begin dan hier!</a>';
+$_lang['INDEX_PLAN_ID'] = 'ID van het huidige plan:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Toon!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nieuw random retrospective plan';
 $_lang['INDEX_ENTER_ID'] = 'Voer IDs om weer te geven in';
@@ -16,7 +16,11 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"></span> activiteiten, waarmee <span class="js_footer_no_of_combinations"></span> combinaties gemaakt kunnen worden(<span class="js_footer_no_of_combinations_formula"></span>) en er worden er steeds meer aan toegevoegd.'; // Weet jij nog een geweldige activiteit?
+if (is_output_format_twig($argv)) {
+    $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
+} else {
+    $_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"></span> activiteiten, waarmee <span class="js_footer_no_of_combinations"></span> combinaties gemaakt kunnen worden(<span class="js_footer_no_of_combinations_formula"></span>) en er worden er steeds meer aan toegevoegd.'; // Weet jij nog een geweldige activiteit?
+}
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Stel het voor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Vertaling: ';
@@ -24,7 +28,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Linda van der Pal';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/DuchessFounder';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/lvdpal.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-                                              Linda is Java ontwikkelaar en Scrum master bij <a href="http://iprofs.nl/">iProfs</a>. Ze is de oprichter van <a href="http://jduchess.org/">Duchess</a>
+                                              Linda is Java ontwikkelaar en Scrum master bij <a href="http://finalist.nl/">Finalist</a>. Ze is de oprichter van <a href="http://jduchess.org/">Duchess</a>
                                           	en een van de organisatoren van <a href="http://www.devoxx4kids.org/">Devoxx4Kids</a> in Nederland. Ze is groot fan van zowel Java als Agile conferenties
                                           	en fanatiek Sketchnoter.
                                           	Je kunt haar vinden op <a href="https://twitter.com/DuchessFounder">Twitter</a>.
@@ -32,17 +36,17 @@ EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Gemaakt door: ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
-    Corinna wenste tijdens haar Scrummasterjaren vaak genoeg dat er iets als Retromat  was.
+    Corinna wenste tijdens haar Scrummasterjaren vaak genoeg dat er iets als Retromat was.
     Uiteindelijk bouwde ze het zelf maar, in de hoop dat anderen het ook nuttig zouden vinden.
     Heb je nog vragen, suggesties of aanmoedigingen?
     Je kunt het haar <a href="mailto:corinna@finding-marbles.com">mailen</a> of
-    <a href="https://twitter.com/findingmarbles">vertellen op Twitter</a>.
+    <a href="https://twitter.com/findingmarbles">vertellen op Twitter</a> Als je Retromat leuk vindt, dan vind je misschien <a href="http://finding-marbles.com">Corinna's blog</a> en haar <a href="http://wall-skills.com">samenvattingen op Wall-Skills.com</a> ook leuk.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-As developer, product owner, scrum master and agile coach, Timon has been a Retromat user and fan for more than three years. He had quite a few feature ideas. In 2016 he started to build some of those features himself. You can <a href="mailto:timon.fiddike@agile.coach">email him</a> or
-    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>.
+Als ontwikkelaar, product owner, scrum master en agile coach, was Timon al meer dan drie jaar een Retromat gebruikeren fan. Hij had nogal wat ideeën voor nieuwe features. In 2016 begon hij enkele van die ideeën zelf te bouwen. Je kunt hem <a href="mailto:timon.fiddike@agile.coach">mailen</a> of
+    <a href="https://twitter.com/TimonFiddike">volgen op Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'door Finding-Marbles.com';
@@ -57,7 +61,7 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Bekijk foto';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Bekijke foto\'s';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Foto door ';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retr-O-Mat werkt niet zonder JavaScript. Enable alsjeblieft JavaScript in je browser als je de site wilt uitproberen.';
+$_lang['ERROR_NO_SCRIPT'] = 'Retromat werkt niet zonder JavaScript. Enable alsjeblieft JavaScript in je browser als je de site wilt uitproberen.';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, er is geen activiteit met ID';
 
 $_lang['POPUP_CLOSE'] = 'Sluiten';
