@@ -71,8 +71,9 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
         $urlContainer = $event->getUrlContainer();
 
         $this->populateHome($urlContainer);
-        $this->populateActivities($urlContainer);
         $this->populatePhases($urlContainer);
+        $this->populateAllActivitiesPage($urlContainer);
+        $this->populateIndividualActivities($urlContainer);
         $this->planGenerator->populatePlans(
             $urlContainer,
             $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases(),
@@ -119,7 +120,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                         UrlGeneratorInterface::ABSOLUTE_URL
                     )
                 ),
-                'phase'
+                'home'
             );
         }
     }
@@ -127,7 +128,36 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     /**
      * @param UrlContainerInterface $urlContainer
      */
-    private function populateActivities(UrlContainerInterface $urlContainer)
+    private function populateAllActivitiesPage(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+        $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
+
+        $activityIds = [];
+        foreach ($activities as $activity) {
+            $activityIds[] = $activity->getRetromatId();
+        }
+
+        $urlContainer->addUrl(
+            new UrlConcrete(
+                $this->urlGenerator->generate(
+                    'activities_by_id',
+                    [
+                        'id' => implode('-', $activityIds),
+                        'all' => 'yes',
+                        '_locale' => $language,
+                    ],
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                )
+            ),
+            'home'
+        );
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populateIndividualActivities(UrlContainerInterface $urlContainer)
     {
         $language = 'en';
         $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
