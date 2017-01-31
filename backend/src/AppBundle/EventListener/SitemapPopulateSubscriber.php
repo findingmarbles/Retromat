@@ -3,6 +3,7 @@
 namespace AppBundle\EventListener;
 
 use AppBundle\Sitemap\PlanGenerator;
+use AppBundle\Activity\ActivityByPhase;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -29,17 +30,24 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private $planGenerator;
 
     /**
+     * @var ActivityByPhase
+     */
+    private $activityByPhase;
+
+    /**
      * @param UrlGeneratorInterface $urlGenerator
      * @param ObjectManager $objectManager
      */
     public function __construct(
         UrlGeneratorInterface $urlGenerator,
         ObjectManager $objectManager,
-        PlanGenerator $planGenerator
+        PlanGenerator $planGenerator,
+        ActivityByPhase $activityByPhase
     ) {
         $this->urlGenerator = $urlGenerator;
         $this->objectManager = $objectManager;
         $this->planGenerator = $planGenerator;
+        $this->activityByPhase = $activityByPhase;
     }
 
     /**
@@ -64,6 +72,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
 
         $this->populateHome($urlContainer);
         $this->populateActivities($urlContainer);
+        $this->populatePhases($urlContainer);
         $this->planGenerator->populatePlans(
             $urlContainer,
             $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases(),
@@ -86,6 +95,30 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                     )
                 ),
                 'home'
+            );
+        }
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populatePhases(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+
+        foreach (range(0,5) as $phase) {
+            $urlContainer->addUrl(
+                new UrlConcrete(
+                    $this->urlGenerator->generate(
+                        'activities_by_id',
+                        [
+                            'id' => $this->activityByPhase->getActivitiesString($phase),
+                            '_locale' => $language,
+                        ],
+                        UrlGeneratorInterface::ABSOLUTE_URL
+                    )
+                ),
+                'phase'
             );
         }
     }

@@ -18,13 +18,13 @@ services:
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
     retromat.activity_by_phase:
-        class: AppBundle\Twig\ActivityByPhase
+        class: AppBundle\Activity\ActivityByPhase
         arguments: ["@doctrine.orm.entity_manager"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator
         arguments: ["@router"]
     retromat.sitemap.populate_subscriber:
         class: AppBundle\EventListener\SitemapPopulateSubscriber
-        arguments: ["@router", "@doctrine.orm.entity_manager", "@retromat.sitemap.plan_generator"]
+        arguments: ["@router", "@doctrine.orm.entity_manager", "@retromat.sitemap.plan_generator", "@retromat.activity_by_phase"]
         tags:
             - { name: "kernel.event_subscriber" }
