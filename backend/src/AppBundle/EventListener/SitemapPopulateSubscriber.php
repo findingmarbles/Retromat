@@ -113,6 +113,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                         'activities_by_id',
                         [
                             'id' => $this->activityByPhase->getActivitiesString($phase),
+                            'phase' => $phase,
                             '_locale' => $language,
                         ],
                         UrlGeneratorInterface::ABSOLUTE_URL
