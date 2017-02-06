@@ -50,8 +50,8 @@ Or "open" your own language.
 
 Language files reside in the "lang/" directory. There's 2 files per language:
 
-* The "index_*.php"-files contain the general text on the page as PHP variables
-* The  "activities_*.php"-files contain the activities (& phase titles) as a JS array
+* The "lang/index_*.php"-files contain the general text on the page as PHP variables
+* The  "backend/web/static/lang/activities_*.js"-files contain the activities (& phase titles) as a JS array
 
 You don't have to translate all activities at once. Just start at index 0 and work your
 way down. The first live version of Retromat had 15 activities. So as soon as you've translated
@@ -64,7 +64,7 @@ Please use HTML entitities for special characters, e.g. &uuml; &ccedil; &ntilde;
 
 #### Technical setup
 
-To test your translation of the "index_*.php"-file you need a local webserver with PHP installed. Previously it was possible to test translations with PHP only, but [@TimonFiddike](https://twitter.com/TimonFiddike) is currently building some features that are easier to implement in this new way. In the medium term, there will be a web based translation tool for Retromat. If you want to locally test translations NOW and running a local webserver is not an option, please contact Timon and let him know you system setup (Windows, Linux, Mac). We'll find a way to make this work for you.
+To test your translation of the "lang/index_*.php"-file you need a local webserver with PHP installed. Previously it was possible to test translations with PHP only, but [@TimonFiddike](https://twitter.com/TimonFiddike) is currently building some features that are easier to implement in this new way. In the medium term, there will be a web based translation tool for Retromat. If you want to locally test translations NOW and running a local webserver is not an option, please contact Timon and let him know your system setup (Windows, Linux, Mac). We'll find a way to make this work for you.
 
 Set up your local webserver to use Retromat/backend/web/ as it's document root. If you need your local webserver for multiple proejcts, the easiest solution is to add a virtual host to your local webserver config (and to your hosts file) so that e.g. http://retromal.local uses Retromat/backend/web/ as it's document root. Retromat enforces https connections only for the live domain (plans-for-retrospectives.com), so http will be enough if you choose a different name for you local installation.
 
@@ -85,9 +85,9 @@ In your terminal run
 
 Then open http://retromal.local/index_cn.html in a browser.
 
-Attention: "activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
+Attention: "lang/activities_cn.php" also has to exist or it won't work. Fortunately it doesn't have to be translated ;)
 
-To test your translation of the "activities_*.php"-file you need a browser with JS enabled.
+To test your translation of the "backend/web/static/lang/activities_*.js"-file you need a browser with JS enabled.
 
 I'm aware that this is not super much information, so please don't hesitate to ask any questions.
 

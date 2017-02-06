@@ -24,9 +24,6 @@ if ($lang == 'en') {
 
 require(get_language_file_path($lang));
 
-$activities_file = 'lang/activities_' . $lang . '.php';
-$activities_photos_file = 'lang/photos.php';
-
 // PHP FUNCTIONS
 
 function get_language_file_path($lang) {
@@ -100,12 +97,12 @@ var source_unknown = 'Unknown';
 
 var PHASE_ID_TAG = 'phase';
 
-<?php
+</script>
 
-    require($activities_file);
-    require($activities_photos_file);
+<script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
+<script src="/static/lang/photos.js"></script>
 
-?>
+<script type="text/javascript">
 
 last_block_bg = -1; // Stores bg of last block so that no consecutive blocks have the same background
 
