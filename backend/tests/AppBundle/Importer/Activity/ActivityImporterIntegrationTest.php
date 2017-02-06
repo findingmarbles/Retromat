@@ -14,7 +14,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
 {
     public function testImport()
     {
-        $reader = new ActivityReader($activityFileName = __DIR__.'/../../../../../lang/activities_en.php');
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
 
         $mapper = new ArrayToObjectMapper();
 
