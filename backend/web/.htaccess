@@ -1,3 +1,13 @@
+# Cache JavaScript files for 1 day
+<filesMatch ".(js)$">
+    Header set Cache-Control "max-age=86400, public"
+</filesMatch>
+
+# Cache static assets for 1 month
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico|txt)$">
+    Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
