@@ -1472,3 +1472,109 @@ source:    "<a href='https://www.scrumalliance.org/community/profile/bsarni'>Bob
 duration:  "30 minutes",
 suitable:  "iteration, project, release"
 };
+all_activities[96] = {
+phase:     1,
+name:      "#tweetmijnsprint",
+summary:   "Produceer de twitter tijdlijn van het team voor deze iteratie",
+desc:      "Vraag de deelnemers om 3 of meer tweets op een stickie te schrijven over de iteratie die niet afgerond is. \
+Tweets mogen over de gehele iteratie gaan, over individuele stories, een klacht of een schaamteloze zelf-promotie bevatten, \
+- zo lang ze maar kort zijn. Hash tags, emoticons, bijgevoegde foto's, @usernames, alles is toegestaan. \
+Geef tien minuten om de tweets te schrijven, en hang ze dan op volgorde in de tijdslijn en bespreek de thema's, trends etc. \
+Vraag nu de deelnemers om hun favoriete tweets te retweeten en om antwoorden op de tweets te schrijven. Volg dit wederom op met een discussie.",
+source:    "<a href='http://wordaligned.org'>Thomas Guest</a>",
+durationDetail:  "40 minutes for 2 week iteration with team of 6",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project"
+};
+all_activities[97] = {
+phase:     1,
+name:      "Wasdag",
+summary:   "Welke dingen waren duidelijk en voelen goed, en welke dingen waren vaag en impliciet?",
+desc:      "Gebruik deze activiteit als je vermoedt dat het team veel onbewuste besluiten maakt en bijna nooit ergens vragen over stellen. \
+Hiermee kun je er achter komen welke dingen besproken moeten worden om er expliciet grip op te krijgen. \
+<br><br> \
+Je hebt nodig: \
+<ul> \
+<li> ongeveer 3 meter touw als waslijn</li> \
+<li> ongeveer 20 knijpers</li> \
+<li> een wit shirt (uit papier geknipt)</li> \
+<li> een vuile broek (uit papier geknipt)</li> \
+</ul> \
+Hang de waslijn op en markeer het midden, bijvoorbeeld met een lintje. \
+Hang het schone shirt aan de ene kant en de vuile broek aan de andere kant. \
+Vraag het team om items op indexkaartjes te schrijven voor beide categorieen. \
+Hang de notities op met de knijpers en verhang ze daarna in clusters. \
+Laat het team nu 2 'vuilen' en 2 'schone' onderwerpen kiezen die ze willen bespreken, bijvoorbeeld door te stemmen met stippen (dotvoting).",
+source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
+durationDetail:  "10 minutes",
+duration:    "Short",
+stage:    "Forming, Storming, Norming",
+suitable:  "iteration, project, release"
+};
+all_activities[98] = {
+phase:     3,
+name:      "Planningspoker Stemmen",
+summary:   "Gebruik je Planningspoker kaarten om onbeinvloed te stemmen",
+desc:      "Als je een aantal zeer invloedrijke en/of verlegen teamleden hebt, dan kun je planningspokerkaarten gebruike om simultaan te stemmen: \
+<br><br> \
+Schrijf alle voorgestelde acties op stickies en hang ze op de muur. Deel een gesorteerde set \
+planningspokerkaarten uit aan iedere deelnemer. Tel de voorstellen en verwijder dat aantal kaarten uit de set. \
+Als je 5 voorstellen hebt, dan krijgt iedereen dus de kaarten '1', '2', '3', '5', and '8'. (afhankelijk van je kaartenset natuurlijk, \
+sommige hebben bijvoorbeeld ook een '1/2' kaart). Het maakt niet uit, zolang alle deelnemers maar dezelfde kaarten hebben. \
+<br><br> \
+Leg de regels uit: Kies een kaart voor iedere suggestie. Kies een lage waarde als je de actie niet de moeite van het uitvoeren waard vindt. \
+Kies een hoge waarde als de actie meteen in de volgende iteratie uitgevoerd moet worden. \
+<br><br> \
+Geef iedereen een minuut om de sortering te bedenken en behandel dan de eerste suggestie. \
+Iedereen kiest een kaart en toont die tegelijkertijd. \
+Tel de getallen van alle kaarten bij elkaar op en schrijf de som op de actie. \
+Verwijder de gebruikte pokerkaarten. Herhaal dit voor alle acties. \
+Als er meer acties dan pokerkaarten zijn, dan kunnen de deelnemers 'geen kaart' (met waarde 0) het toepasselijk aantal keren laten zien. \
+<br><br> \
+Voer de actie met de hoogste waarde in de volgende iteratie uit.  Voeg alleen meer acties toe als het hele team het daar mee eens is.",
+source:    "<a href='https://www.xing.com/profile/Andreas_Ratsch'>Andreas Ratsch</a>",
+durationDetail:  "15 minutes",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[99] = {
+phase:     3,
+name:      "Landschapsdiagram",
+summary:   "Beoordeel acties gebaseerd op hoe duidelijk zijn en maak daar een keuze uit",
+desc:      "Deze activiteit is nuttig als het team een set onduidelijke, wijzigende, onzekere of complexe problemen tegenkomt \
+en veel voorgestelde acties heeft om uit te kiezen. \
+<br><br> \
+Teken een <a href='http://wiki.hsdinstitute.org/landscape_diagram'>Landschapsdiagram</a>, m.a.w. een x-as gelabeld 'zekerheid over aanpak' \
+en een y-as gelabeld 'Eenstemming over issue' Beide gaan van laag in de oorsprong tot hoog in de rechterbovenhoek. \
+Bepaal voor ieder item waar in de grafiek het thuishoort. 'Hoe eens zijn we het erover dat als we dit probleem oplossen dat het een positieve invloed heeft? \
+Hoe zeker zijn we over de eerste stappen naar een oplossing? \
+<br> \
+Zodra alle acties geplaatst zijn, bespreek je kort de 'kaart' die je gecreëerd hebt. Welke acties leveren het grootste voordeel op in de volgende iteratie? \
+Welke zijn meer voor de lange termijn? \
+<br><br> \
+Kies 2 acties uit de simpel/eenduidige deel van de kaart of 1 actie uit het complexe gebied.",
+source:    "<a href='http://www.futureworksconsulting.com/who-we-are/diana-larsen'>Diana Larsen</a> adapted it from <a href='http://wiki.hsdinstitute.org'>Human Systems Dynamics Institute</a>",
+durationDetail:  "25 minutes",
+duration:    "Medium",
+stage:    "Forming, Storming, Norming",
+suitable:  "iteration, project, release"
+};
+all_activities[100] = {
+phase:     4,
+name:      "Eindeloze Zegeningen",
+summary:   "Zegen de komende iteratie met al je goede wensen",
+desc:      "Ga in een cirkel staan. Leg uit dat je alle goede wensen voor de volgende iteratie veramelt, waarbij je voortborduurt op elkaar's wensen. \
+Als je dit voor de eerste keer doet, begin dan door zelf de eerste wens te geven. Ga dan de kring rond om daar wensen aan toe te voegen. \
+Sla de mensen over die niets kunnen bedenken. Zodra je vaart mindert, vraag dan om de volgende wens en begin de ronde opnieuw. \
+Ga net zo lang door totdat niemand meer een wens kan bedenken. <br><br>\
+Voorbeeld:<br>\
+Begin met 'Mogen we alle stories in de volgende iteratie afmaken.' Je buur voegt daar dan aan toe 'en mogen ze onze klanten verblijden'. \
+Hun buur wenst vervolgens 'en dat we maar al onze features automatisch mogen testen'. En zo voort, tot niemand meer ideeën heeft om hier aan toe te voegen.<br> \
+Dan begint iemand de volgende ronde, bijvoorbeeld met 'Mogen we maar prachtige code schrijven in de volgende iteratie'.",
+source:    "<a href='http://www.deepfun.com/bernie/'>Bernie DeKoven</a> via <a href='http://www.futureworksconsulting.com/who-we-are/diana-larsen'>Diana Larsen</a>",
+duration:    "Short",
+stage:    "Norming, Performing, Adjourning",
+suitable:  "iteration, project, release"
+};

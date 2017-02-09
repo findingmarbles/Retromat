@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Twig;
+namespace AppBundle\Activity;
 
 use Doctrine\ORM\EntityManagerInterface;
 

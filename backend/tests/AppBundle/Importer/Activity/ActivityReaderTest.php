@@ -13,7 +13,7 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $activityFileName = __DIR__.'/../../../../../lang/activities_en.php';
+        $activityFileName = __DIR__.'/TestData/activities_en.js';
         $this->reader = new ActivityReader($activityFileName);
     }
 
@@ -420,7 +420,7 @@ HTML;
 
     public function testHighestActivityNumber()
     {
-        $activityFileName = __DIR__.'/TestData/activities_en_reduced_example.php';
+        $activityFileName = __DIR__.'/TestData/activities_en_reduced_example.js';
         $reader = new ActivityReader($activityFileName);
 
         $this->assertEquals(123, $reader->highestRetromatId());

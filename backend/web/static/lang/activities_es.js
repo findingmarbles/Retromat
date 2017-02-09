@@ -146,7 +146,7 @@ phase:     2,
 name:      "Matriz de Aprendizaje",
 summary:   "El equipo hace una tormenta de ideas en 4 categor&iacute;as para enumerar r&aacute;pidamente asuntos",
 desc:      "Despu&eacute;s de haber debatido los datos de la fase 2, mostrar un rotafolio con 4 cuadrantes: \
-':)', ':(', 'Idea', y 'Apreciaci&oacute;n'. Repartir post-its. \
+':)', ':(', 'Idea', y 'Reconocimiento'. Repartir post-its. \
 <ul>\
     <li>Los miembros del equipo pueden agregar sus entradas en cualquier cuadrante. Un tema por post-it. </li>\
     <li>Agrupar post-its relacionados.</li>\

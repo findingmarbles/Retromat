@@ -2,7 +2,7 @@
 
 namespace tests\AppBundle\Twig;
 
-use AppBundle\Twig\ActivityByPhase;
+use AppBundle\Activity\ActivityByPhase;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Liip\FunctionalTestBundle\Test\WebTestCase;

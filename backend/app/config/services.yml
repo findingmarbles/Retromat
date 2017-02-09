@@ -11,17 +11,20 @@ services:
         arguments: ["@validator", "@logger"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
-        arguments: ["%kernel.root_dir%/../../lang/activities_en.php"]
+        arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
         arguments: ["@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
     retromat.activity_by_phase:
-        class: AppBundle\Twig\ActivityByPhase
+        class: AppBundle\Activity\ActivityByPhase
         arguments: ["@doctrine.orm.entity_manager"]
+    retromat.sitemap.plan_generator:
+        class: AppBundle\Sitemap\PlanGenerator
+        arguments: ["@router"]
     retromat.sitemap.populate_subscriber:
         class: AppBundle\EventListener\SitemapPopulateSubscriber
-        arguments: ["@router", "@doctrine.orm.entity_manager"]
+        arguments: ["@router", "@doctrine.orm.entity_manager", "@retromat.sitemap.plan_generator", "@retromat.activity_by_phase"]
         tags:
             - { name: "kernel.event_subscriber" }

@@ -2,6 +2,8 @@
 
 namespace AppBundle\EventListener;
 
+use AppBundle\Sitemap\PlanGenerator;
+use AppBundle\Activity\ActivityByPhase;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -23,13 +25,29 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private $objectManager;
 
     /**
+     * @var PlanGenerator
+     */
+    private $planGenerator;
+
+    /**
+     * @var ActivityByPhase
+     */
+    private $activityByPhase;
+
+    /**
      * @param UrlGeneratorInterface $urlGenerator
      * @param ObjectManager $objectManager
      */
-    public function __construct(UrlGeneratorInterface $urlGenerator, ObjectManager $objectManager)
-    {
+    public function __construct(
+        UrlGeneratorInterface $urlGenerator,
+        ObjectManager $objectManager,
+        PlanGenerator $planGenerator,
+        ActivityByPhase $activityByPhase
+    ) {
         $this->urlGenerator = $urlGenerator;
         $this->objectManager = $objectManager;
+        $this->planGenerator = $planGenerator;
+        $this->activityByPhase = $activityByPhase;
     }
 
     /**
@@ -53,7 +71,14 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
         $urlContainer = $event->getUrlContainer();
 
         $this->populateHome($urlContainer);
-        $this->populateActivities($urlContainer);
+        $this->populatePhases($urlContainer);
+        $this->populateAllActivitiesPage($urlContainer);
+        $this->populateIndividualActivities($urlContainer);
+        $this->planGenerator->populatePlans(
+            $urlContainer,
+            $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases(),
+            'en'
+        );
     }
 
     /**
@@ -78,7 +103,61 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     /**
      * @param UrlContainerInterface $urlContainer
      */
-    private function populateActivities(UrlContainerInterface $urlContainer)
+    private function populatePhases(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+
+        foreach (range(0,5) as $phase) {
+            $urlContainer->addUrl(
+                new UrlConcrete(
+                    $this->urlGenerator->generate(
+                        'activities_by_id',
+                        [
+                            'id' => $this->activityByPhase->getActivitiesString($phase),
+                            'phase' => $phase,
+                            '_locale' => $language,
+                        ],
+                        UrlGeneratorInterface::ABSOLUTE_URL
+                    )
+                ),
+                'home'
+            );
+        }
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populateAllActivitiesPage(UrlContainerInterface $urlContainer)
+    {
+        $language = 'en';
+        $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
+
+        $activityIds = [];
+        foreach ($activities as $activity) {
+            $activityIds[] = $activity->getRetromatId();
+        }
+
+        $urlContainer->addUrl(
+            new UrlConcrete(
+                $this->urlGenerator->generate(
+                    'activities_by_id',
+                    [
+                        'id' => implode('-', $activityIds),
+                        'all' => 'yes',
+                        '_locale' => $language,
+                    ],
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                )
+            ),
+            'home'
+        );
+    }
+
+    /**
+     * @param UrlContainerInterface $urlContainer
+     */
+    private function populateIndividualActivities(UrlContainerInterface $urlContainer)
     {
         $language = 'en';
         $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
@@ -95,7 +174,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
                         UrlGeneratorInterface::ABSOLUTE_URL
                     )
                 ),
-                'activities'
+                'activity'
             );
         }
     }
