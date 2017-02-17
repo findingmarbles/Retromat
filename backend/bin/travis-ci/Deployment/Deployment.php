@@ -125,57 +125,52 @@ class Deployment
         }
     }
 
+    private function remote($command)
+    {
+        system('ssh '.self::SshDestination.' "'.$command.' "');
+    }
+
     private function remoteUnpackArtifact()
     {
-        system('ssh '.self::SshDestination.' mkdir -p '.$this->deploymentDestinationDir);
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; tar xfz '.$this->artifactDestinationDir.$this->artifactFileName.' "'
+        $this->remote('mkdir -p '.$this->deploymentDestinationDir);
+        $this->remote(
+            'cd '.$this->deploymentDestinationDir.' ; tar xfz '.$this->artifactDestinationDir.$this->artifactFileName
         );
     }
 
     private function remoteUpdateDatabase()
     {
-        system('ssh '.self::SshDestination.' "svc -a /home/retromat/service/dump_mysql"');
+        $this->remote('svc -a /home/retromat/service/dump_mysql');
 
         // force update schema and load fixtures (as long as DB is readonly, this will be O.K.)
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
-        );
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
-        );
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev');
     }
 
     private function remoteCacheClearAndWarm()
     {
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
-        );
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod');
     }
 
     private function remoteExpose()
     {
         // make backend/web of the current deployment directory visible to the outside
-        system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain.' "'
+        $this->remote(
+            'cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain
         );
-        system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain.' "'
+        $this->remote(
+            'cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current "'
-        );
+        $this->remote('cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current');
 
         // make the sitemap files availabe inside each new deployment directory
         $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
-        system(
-            'ssh '.self::SshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.self::WebSpaceDirPrefix.$this->deploymentDomain.'/ "'
-        );
+        $this->remote('ln -s '.$sitemapDir.'/sitemap.* '.self::WebSpaceDirPrefix.$this->deploymentDomain.'/');
 
         // php-cgi caches php files beyond deployments, therefore kill it
-        system('ssh '.self::SshDestination.' killall php-cgi ');
+        $this->remote('killall php-cgi');
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl -k https://'.$this->deploymentDomain.' -o /dev/null');
