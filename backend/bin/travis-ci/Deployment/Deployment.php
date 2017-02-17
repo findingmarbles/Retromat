@@ -5,17 +5,30 @@
  */
 class Deployment
 {
+    const BuildDirPrefix = 'travis-build/';
+    const SshDestination = 'retromat@avior.uberspace.de';
+    const WebSpaceDirPrefix = '/var/www/virtual/retromat/';
+
     /**
      * @var string
      */
-    private $travisCommit;
+    private $buildDirName;
+
+    /**
+     * @var string
+     */
+    private $artifactFileName;
 
     /**
      * @param $TRAVIS_COMMIT
      */
-    public function __construct($TRAVIS_COMMIT)
+    public function __construct($travisCommit)
     {
-        $this->travisCommit = $TRAVIS_COMMIT;
+        system('echo '.$travisCommit.' > '.'backend/web/commit.txt');
+
+        // local settings
+        $this->buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$travisCommit;
+        $this->artifactFileName = $this->buildDirName.'.tar.gz ';
     }
 
     /**
@@ -25,37 +38,29 @@ class Deployment
     {
         $this->enableSshConnectionMultiplexing();
 
-        // local settings
-        $buildDirPrefix = 'travis-build/';
-        $buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$this->travisCommit;
-        $artifactFileName = $buildDirName.'.tar.gz ';
-
         // remote settings
-        $sshDestination = 'retromat@avior.uberspace.de';
-        $webSpaceDirPrefix = '/var/www/virtual/retromat/';
-        $artifactDestinationDir = $webSpaceDirPrefix.'retromat-artifacts/';
-        $deploymentDestinationDir = $webSpaceDirPrefix.'retromat-deployments/';
-        $sitemapDir = $webSpaceDirPrefix.'retromat-sitemaps/';
-        $deploymentDir = $webSpaceDirPrefix.'retromat-deployments/'.$buildDirName;
+        $artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
+        $deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
+        $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
+        $deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
         $deploymentDomain = 'plans-for-retrospectives.com';
 
-        // mark deployment
-        system('echo '.$this->travisCommit.' > '.'backend/web/commit.txt');
-
         // create artifact
-        system('mkdir -p '.$buildDirPrefix.$buildDirName);
-        system('mv * '.$buildDirPrefix.$buildDirName);
-        system('chmod -R 755 '.$buildDirPrefix.$buildDirName);
-        system('cd '.$buildDirPrefix.' ; tar cfz '.$artifactFileName.' '.$buildDirName);
+        system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
+        system('mv * '.self::BuildDirPrefix.$this->buildDirName);
+        system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
+        system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
 
         // transfer artifact
-        system('ssh '.$sshDestination.' mkdir -p '.$artifactDestinationDir);
-        system('rsync '.$buildDirPrefix.$artifactFileName.' '.$sshDestination.':'.$artifactDestinationDir);
+        system('ssh '.self::SshDestination.' mkdir -p '.$artifactDestinationDir);
+        system(
+            'rsync '.self::BuildDirPrefix.$this->artifactFileName.' '.self::SshDestination.':'.$artifactDestinationDir
+        );
 
         // obtain local md5
         $output = array();
         $exitCode = '';
-        $command = 'cd '.$buildDirPrefix.' ; md5sum '.$artifactFileName;
+        $command = 'cd '.self::BuildDirPrefix.' ; md5sum '.$this->artifactFileName;
         exec($command, $output, $exitCode);
         if (0 === $exitCode) {
             $md5Local = $output[0];
@@ -66,7 +71,7 @@ class Deployment
         // obtain remote md5
         $output = array();
         $exitCode = '';
-        $command = 'ssh '.$sshDestination.' "cd '.$artifactDestinationDir.' ; md5sum '.$artifactFileName.' "';
+        $command = 'ssh '.self::SshDestination.' "cd '.$artifactDestinationDir.' ; md5sum '.$this->artifactFileName.' "';
         exec($command, $output, $exitCode);
         if (0 === $exitCode) {
             $md5Remote = $output[0];
@@ -81,40 +86,44 @@ class Deployment
         }
 
         // unpack artifact
-        system('ssh '.$sshDestination.' mkdir -p '.$deploymentDestinationDir);
+        system('ssh '.self::SshDestination.' mkdir -p '.$deploymentDestinationDir);
         system(
-            'ssh '.$sshDestination.' "cd '.$deploymentDestinationDir.' ; tar xfz '.$artifactDestinationDir.$artifactFileName.' "'
+            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; tar xfz '.$artifactDestinationDir.$this->artifactFileName.' "'
         );
 
         // update DB schema and load fixtures (as long as DB is readonly, this will be O.K.)
         system(
-            'ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
+            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
         );
         system(
-            'ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
+            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
         );
 
         // clear and prefill production cache
-        system('ssh '.$sshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console cache:clear --env=prod "');
+        system(
+            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
+        );
 
         // make backend/web of the current deployment directory visible to the outside
         system(
-            'ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "'
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "'
         );
         system(
-            'ssh '.$sshDestination.' "cd '.$webSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "'
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "'
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
         system(
-            'ssh '.$sshDestination.' "cd '.$deploymentDestinationDir.' ; rm -f current ; ln -s '.$deploymentDir.' current "'
+            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; rm -f current ; ln -s '.$deploymentDir.' current "'
         );
 
         // make the sitemap files availabe inside each new deployment directory
-        system('ssh '.$sshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.$webSpaceDirPrefix.$deploymentDomain.'/ "');
+        system(
+            'ssh '.self::SshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.self::WebSpaceDirPrefix.$deploymentDomain.'/ "'
+        );
 
         // php-cgi caches php files beyond deployments, therefore kill it
-        system('ssh '.$sshDestination.' killall php-cgi ');
+        system('ssh '.self::SshDestination.' killall php-cgi ');
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl -k https://'.$deploymentDomain.' -o /dev/null');
