@@ -35,6 +35,11 @@ class Deployment
     private $deploymentDir;
 
     /**
+     * @var string
+     */
+    private $deploymentDomain;
+
+    /**
      * @param $TRAVIS_COMMIT
      */
     public function __construct($travisCommit)
@@ -49,6 +54,7 @@ class Deployment
         $this->artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
         $this->deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
         $this->deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
+        $this->deploymentDomain = 'plans-for-retrospectives.com';
     }
 
     /**
@@ -62,40 +68,8 @@ class Deployment
 
         $this->remoteUnpackArtifact();
         $this->remoteUpdateDatabase();
-
-        // remote settings
-        $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
-        $deploymentDomain = 'plans-for-retrospectives.com';
-
-
-        // clear and prefill production cache
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
-        );
-
-        // make backend/web of the current deployment directory visible to the outside
-        system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$deploymentDomain.' "'
-        );
-        system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "'
-        );
-
-        // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
-        system(
-            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current "'
-        );
-
-        // make the sitemap files availabe inside each new deployment directory
-        system(
-            'ssh '.self::SshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.self::WebSpaceDirPrefix.$deploymentDomain.'/ "'
-        );
-
-        // php-cgi caches php files beyond deployments, therefore kill it
-        system('ssh '.self::SshDestination.' killall php-cgi ');
-
-        // ensure that php-cgi starts and caches to most needed php files right now
-        system('curl -k https://'.$deploymentDomain.' -o /dev/null');
+        $this->remoteCacheClearAndWarm();
+        $this->remoteExpose();
     }
 
     private function createArtifact()
@@ -172,5 +146,40 @@ Host avior.uberspace.de
         system(
             'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
         );
+    }
+
+    private function remoteCacheClearAndWarm()
+    {
+        system(
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
+        );
+    }
+
+    private function remoteExpose()
+    {
+// make backend/web of the current deployment directory visible to the outside
+        system(
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain.' "'
+        );
+        system(
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain.' "'
+        );
+
+        // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
+        system(
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current "'
+        );
+
+        // make the sitemap files availabe inside each new deployment directory
+        $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
+        system(
+            'ssh '.self::SshDestination.' "ln -s '.$sitemapDir.'/sitemap.* '.self::WebSpaceDirPrefix.$this->deploymentDomain.'/ "'
+        );
+
+        // php-cgi caches php files beyond deployments, therefore kill it
+        system('ssh '.self::SshDestination.' killall php-cgi ');
+
+        // ensure that php-cgi starts and caches to most needed php files right now
+        system('curl -k https://'.$this->deploymentDomain.' -o /dev/null');
     }
 }
