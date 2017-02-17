@@ -23,6 +23,8 @@ class Deployment
      */
     public function run()
     {
+        $this->enableSshConnectionMultiplexing();
+
         // local settings
         $buildDirPrefix = 'travis-build/';
         $buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$this->travisCommit;
@@ -116,5 +118,18 @@ class Deployment
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl -k https://'.$deploymentDomain.' -o /dev/null');
+    }
+
+    private function enableSshConnectionMultiplexing()
+    {
+        $config = "
+Host avior.uberspace.de
+\tStrictHostKeyChecking no
+\tControlMaster auto
+\tControlPath ~/.ssh/master-%r@%h:%p
+\tControlPersist 15
+";
+
+        file_put_contents(getenv('HOME').'/.ssh/config', $config, FILE_APPEND);
     }
 }

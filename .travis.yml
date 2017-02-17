@@ -37,7 +37,6 @@ deploy:
 
 before_deploy:
     - openssl aes-256-cbc -d -a -in backend/app/config/parameters.yml.avior.enc -out backend/app/config/parameters.yml -k $travis_key
-    - php backend/bin/travis-ci/enable-ssh-connection-multiplexing.php
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
 
 notifications:
