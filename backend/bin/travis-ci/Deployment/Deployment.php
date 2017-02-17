@@ -82,7 +82,11 @@ class Deployment
 
     private function enableSshConnectionMultiplexing()
     {
-        file_put_contents(getenv('HOME').'/.ssh/config', "Host avior.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n", FILE_APPEND);
+        file_put_contents(
+            getenv('HOME').'/.ssh/config',
+            "Host avior.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n",
+            FILE_APPEND
+        );
     }
 
     private function transferArtifact()
@@ -149,7 +153,7 @@ class Deployment
 
     private function remoteExpose()
     {
-// make backend/web of the current deployment directory visible to the outside
+        // make backend/web of the current deployment directory visible to the outside
         system(
             'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain.' "'
         );
