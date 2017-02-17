@@ -20,6 +20,11 @@ class Deployment
     private $artifactFileName;
 
     /**
+     * @var string
+     */
+    private $artifactDestinationDir;
+
+    /**
      * @param $TRAVIS_COMMIT
      */
     public function __construct($travisCommit)
@@ -29,6 +34,9 @@ class Deployment
         // local settings
         $this->buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$travisCommit;
         $this->artifactFileName = $this->buildDirName.'.tar.gz ';
+
+        // remote settings
+        $this->artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
     }
 
     /**
@@ -36,59 +44,21 @@ class Deployment
      */
     public function run()
     {
+        $this->createArtifact();
         $this->enableSshConnectionMultiplexing();
+        $this->transferArtifact();
 
         // remote settings
-        $artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
         $deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
         $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
         $deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
         $deploymentDomain = 'plans-for-retrospectives.com';
 
-        // create artifact
-        system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
-        system('mv * '.self::BuildDirPrefix.$this->buildDirName);
-        system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
-        system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
-
-        // transfer artifact
-        system('ssh '.self::SshDestination.' mkdir -p '.$artifactDestinationDir);
-        system(
-            'rsync '.self::BuildDirPrefix.$this->artifactFileName.' '.self::SshDestination.':'.$artifactDestinationDir
-        );
-
-        // obtain local md5
-        $output = array();
-        $exitCode = '';
-        $command = 'cd '.self::BuildDirPrefix.' ; md5sum '.$this->artifactFileName;
-        exec($command, $output, $exitCode);
-        if (0 === $exitCode) {
-            $md5Local = $output[0];
-        } else {
-            exit(1);
-        }
-
-        // obtain remote md5
-        $output = array();
-        $exitCode = '';
-        $command = 'ssh '.self::SshDestination.' "cd '.$artifactDestinationDir.' ; md5sum '.$this->artifactFileName.' "';
-        exec($command, $output, $exitCode);
-        if (0 === $exitCode) {
-            $md5Remote = $output[0];
-        } else {
-            exit(2);
-        }
-
-        // notify about success
-        echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
-        if (0 !== strcmp($md5Local, $md5Remote)) {
-            exit(3);
-        }
 
         // unpack artifact
         system('ssh '.self::SshDestination.' mkdir -p '.$deploymentDestinationDir);
         system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; tar xfz '.$artifactDestinationDir.$this->artifactFileName.' "'
+            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; tar xfz '.$this->artifactDestinationDir.$this->artifactFileName.' "'
         );
 
         // update DB schema and load fixtures (as long as DB is readonly, this will be O.K.)
@@ -129,6 +99,14 @@ class Deployment
         system('curl -k https://'.$deploymentDomain.' -o /dev/null');
     }
 
+    private function createArtifact()
+    {
+        system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
+        system('mv * '.self::BuildDirPrefix.$this->buildDirName);
+        system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
+        system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
+    }
+
     private function enableSshConnectionMultiplexing()
     {
         $config = "
@@ -140,5 +118,41 @@ Host avior.uberspace.de
 ";
 
         file_put_contents(getenv('HOME').'/.ssh/config', $config, FILE_APPEND);
+    }
+
+    private function transferArtifact()
+    {
+        system('ssh '.self::SshDestination.' mkdir -p '.$this->artifactDestinationDir);
+        system(
+            'rsync '.self::BuildDirPrefix.$this->artifactFileName.' '.self::SshDestination.':'.$this->artifactDestinationDir
+        );
+
+        // obtain local md5
+        $output = array();
+        $exitCode = '';
+        $command = 'cd '.self::BuildDirPrefix.' ; md5sum '.$this->artifactFileName;
+        exec($command, $output, $exitCode);
+        if (0 === $exitCode) {
+            $md5Local = $output[0];
+        } else {
+            exit(1);
+        }
+
+        // obtain remote md5
+        $output = array();
+        $exitCode = '';
+        $command = 'ssh '.self::SshDestination.' "cd '.$this->artifactDestinationDir.' ; md5sum '.$this->artifactFileName.' "';
+        exec($command, $output, $exitCode);
+        if (0 === $exitCode) {
+            $md5Remote = $output[0];
+        } else {
+            exit(2);
+        }
+
+        // notify about success
+        echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
+        if (0 !== strcmp($md5Local, $md5Remote)) {
+            exit(3);
+        }
     }
 }
