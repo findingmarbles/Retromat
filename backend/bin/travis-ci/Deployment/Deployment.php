@@ -25,6 +25,16 @@ class Deployment
     private $artifactDestinationDir;
 
     /**
+     * @var string
+     */
+    private $deploymentDestinationDir;
+
+    /**
+     * @var string
+     */
+    private $deploymentDir;
+
+    /**
      * @param $TRAVIS_COMMIT
      */
     public function __construct($travisCommit)
@@ -37,6 +47,8 @@ class Deployment
 
         // remote settings
         $this->artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
+        $this->deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
+        $this->deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
     }
 
     /**
@@ -48,43 +60,30 @@ class Deployment
         $this->enableSshConnectionMultiplexing();
         $this->transferArtifact();
 
+        $this->remoteUnpackArtifact();
+        $this->remoteUpdateDatabase();
+
         // remote settings
-        $deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
         $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
-        $deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
         $deploymentDomain = 'plans-for-retrospectives.com';
 
 
-        // unpack artifact
-        system('ssh '.self::SshDestination.' mkdir -p '.$deploymentDestinationDir);
-        system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; tar xfz '.$this->artifactDestinationDir.$this->artifactFileName.' "'
-        );
-
-        // update DB schema and load fixtures (as long as DB is readonly, this will be O.K.)
-        system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
-        );
-        system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
-        );
-
         // clear and prefill production cache
         system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod "'
         );
 
         // make backend/web of the current deployment directory visible to the outside
         system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ '.$deploymentDomain.' "'
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm '.$deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$deploymentDomain.' "'
         );
         system(
-            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "'
+            'ssh '.self::SshDestination.' "cd '.self::WebSpaceDirPrefix.' ; rm www.'.$deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$deploymentDomain.' "'
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
         system(
-            'ssh '.self::SshDestination.' "cd '.$deploymentDestinationDir.' ; rm -f current ; ln -s '.$deploymentDir.' current "'
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current "'
         );
 
         // make the sitemap files availabe inside each new deployment directory
@@ -154,5 +153,24 @@ Host avior.uberspace.de
         if (0 !== strcmp($md5Local, $md5Remote)) {
             exit(3);
         }
+    }
+
+    private function remoteUnpackArtifact()
+    {
+        system('ssh '.self::SshDestination.' mkdir -p '.$this->deploymentDestinationDir);
+        system(
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDestinationDir.' ; tar xfz '.$this->artifactDestinationDir.$this->artifactFileName.' "'
+        );
+    }
+
+    private function remoteUpdateDatabase()
+    {
+        // force update schema and load fixtures (as long as DB is readonly, this will be O.K.)
+        system(
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
+        );
+        system(
+            'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev "'
+        );
     }
 }
