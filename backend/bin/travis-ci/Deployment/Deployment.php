@@ -135,6 +135,8 @@ class Deployment
 
     private function remoteUpdateDatabase()
     {
+        system('ssh '.self::SshDestination.' "svc -a /home/retromat/service/dump_mysql"');
+
         // force update schema and load fixtures (as long as DB is readonly, this will be O.K.)
         system(
             'ssh '.self::SshDestination.' "cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev "'
