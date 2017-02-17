@@ -21,7 +21,7 @@ class LoadActivityData implements FixtureInterface, ContainerAwareInterface
 
     public function load(ObjectManager $manager)
     {
-        $activities = $this->container->get('retromat.activity_importer')->import();
+        $activities = $this->container->get('retromat.activity_importer')->getAllValidActivities();
 
         foreach ($activities as $activity) {
             $manager->persist($activity);

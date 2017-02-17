@@ -24,7 +24,7 @@ class ActivityImporter
         $this->filter = $filter;
     }
 
-    public function import()
+    public function getAllValidActivities()
     {
         $activity = [];
         foreach ($this->reader->extractAllActivities() as $activityArray) {
