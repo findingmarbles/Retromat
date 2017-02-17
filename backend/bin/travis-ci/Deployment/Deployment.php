@@ -140,7 +140,7 @@ class Deployment
 
     private function remoteUpdateDatabase()
     {
-        $this->remote('svc -a /home/retromat/service/dump_mysql');
+        $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
 
         // force update schema and load fixtures (as long as DB is readonly, this will be O.K.)
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev');
