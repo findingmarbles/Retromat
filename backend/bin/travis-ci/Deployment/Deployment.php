@@ -82,15 +82,7 @@ class Deployment
 
     private function enableSshConnectionMultiplexing()
     {
-        $config = "
-Host avior.uberspace.de
-\tStrictHostKeyChecking no
-\tControlMaster auto
-\tControlPath ~/.ssh/master-%r@%h:%p
-\tControlPersist 15
-";
-
-        file_put_contents(getenv('HOME').'/.ssh/config', $config, FILE_APPEND);
+        file_put_contents(getenv('HOME').'/.ssh/config', "Host avior.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n", FILE_APPEND);
     }
 
     private function transferArtifact()
