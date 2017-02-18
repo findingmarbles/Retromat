@@ -15,4 +15,4 @@ parameters:
 
     secret:            ThisIsAutomaticallyChangedOnDeployment
 
-    retromat_backend_mail: ~
+    retromat_backend_mail: cannot-be-empty@example.org
