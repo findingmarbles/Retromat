@@ -11,11 +11,25 @@ monolog:
     handlers:
         main:
             type:         fingers_crossed
-            action_level: error
-            handler:      nested
-        nested:
+            action_level: critical
+            handler:      grouped
+        grouped:
+            type:    group
+            members: [streamed, deduplicated]
+        streamed:
             type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            path:  '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
+        deduplicated:
+            type:    deduplication
+            handler: swift
+        swift:
+            type:       swift_mailer
+            from_email: '%retromat_backend_mail%'
+            to_email:   '%retromat_backend_mail%'
+            subject:    '[retomat-backend] Error: %%message%%'
+            level:      debug
+            formatter:  monolog.formatter.html
+            content_type: text/html
         console:
             type:  console

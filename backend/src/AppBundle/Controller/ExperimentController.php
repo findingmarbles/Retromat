@@ -6,10 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @Route("/{_locale}/inside")
+ */
 class ExperimentController extends Controller
 {
     /**
-     * @Route("/{_locale}/inside/experiment/email")
+     * @Route("/experiment/email")
      */
     public function emailExperimentAction()
     {
@@ -26,5 +29,13 @@ class ExperimentController extends Controller
         $this->get('mailer')->send($message);
 
         return $this->render('inside/experiment/emailExperiment.html.twig', ['subject' => $subject]);
+    }
+
+    /**
+     * @Route("/experiment/error")
+     */
+    public function errorExperimentAction()
+    {
+        throw new \Exception('The ErrorExperiment has been triggered.');
     }
 }
