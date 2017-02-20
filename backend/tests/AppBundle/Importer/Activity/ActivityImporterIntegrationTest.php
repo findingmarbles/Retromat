@@ -22,7 +22,13 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $validator = $this->getContainer()->get('validator');
         $logger = new StringLogger();
         $filter = new EntityCollectionFilter($validator, $logger);
-        $activityImporter = new ActivityImporter($this->getMock(ObjectManager::class), $reader, $mapper, $filter, $validator);
+        $activityImporter = new ActivityImporter(
+            $this->getMock(ObjectManager::class),
+            $reader,
+            $mapper,
+            $filter,
+            $validator
+        );
 
         $activity = $activityImporter->getAllValidActivities();
 
@@ -31,7 +37,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]->getSummary());
     }
 
-    public function testImport()
+    public function testImportOnEmptyDb()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
@@ -46,6 +52,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
 
         $activityImporter->import();
 
+        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
@@ -66,13 +73,15 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
 
         $activityImporter->import();
-
         $activity = $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123]);
         $entityManager->remove($activity);
         $entityManager->flush();
 
+        $this->assertCount(128, $entityManager->getRepository('AppBundle:Activity')->findAll());
+
         $activityImporter->import();
 
+        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
@@ -82,8 +91,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportSkipInvalid()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
-
+        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -100,14 +108,12 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity')->findAll(),
             'When skipping invalid acitivities, there should only be a single valid activity in this import.'
         );
-
     }
 
     public function testImportUpdatesExisting()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
-
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -124,8 +130,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
         );
 
-        $reader2 = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid_updated_1.js');
+        $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_updated_1.js');
         $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $filter, $validator);
+
         $activityImporter2->import();
 
         $this->assertEquals(

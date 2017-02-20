@@ -54,24 +54,18 @@ class ActivityImporter
     {
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity');
 
-        $activities = [];
         foreach ($this->reader->extractAllActivities() as $activityArray) {
+            $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, new Activity());
+            $activityFromReader->setLanguage('en');
 
-            $activityFromImport = $this->mapper->fillObjectFromArray($activityArray, new Activity());
-            $activityFromImport->setLanguage('en');
-
-            $violations = $this->validator->validate($activityFromImport);
-            if (0 !== count($violations)) {
-                break;
-            }
-
-            $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
-            if (!isset($activityFromDb)) {
-                $this->objectManager->persist($activityFromImport);
-                $activities [] = $activityFromImport;
-            } else {
-                $activityFromDbUpdated = $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
-                $activities [] = $activityFromDbUpdated;
+            $violations = $this->validator->validate($activityFromReader);
+            if (0 === count($violations)) {
+                $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
+                if (isset($activityFromDb)) {
+                    $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
+                } else {
+                    $this->objectManager->persist($activityFromReader);
+                }
             }
         }
 
