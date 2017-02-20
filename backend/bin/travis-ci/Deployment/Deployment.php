@@ -141,10 +141,7 @@ class Deployment
     private function remoteUpdateDatabase()
     {
         $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
-
-        // force update schema and load fixtures (as long as DB is readonly, this will be O.K.)
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:schema:update --force --env=dev');
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:fixtures:load -n --env=dev');
+        $this->remote('cd '.$this->deploymentDir.' ; php php backend/bin/console retromat:import:activities');
     }
 
     private function remoteCacheClearAndWarm()
