@@ -3,6 +3,7 @@
 namespace AppBundle\Importer\Activity;
 
 use AppBundle\Entity\Activity;
+use AppBundle\Importer\Activity\Exception\InvalidActivityException;
 use AppBundle\Importer\ArrayToObjectMapper;
 use AppBundle\Importer\EntityCollectionFilter;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -66,6 +67,10 @@ class ActivityImporter
                 } else {
                     $this->objectManager->persist($activityFromReader);
                 }
+            } else {
+                $message = " This activity:\n ".(string)$activityFromReader."\n has these validations:\n ".(string)$violations."\n";
+
+                throw new InvalidActivityException($message);
             }
         }
 

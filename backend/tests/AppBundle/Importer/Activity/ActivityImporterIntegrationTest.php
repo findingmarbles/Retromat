@@ -3,6 +3,7 @@
 namespace tests\AppBundle\Importer\Activity;
 
 use AppBundle\Importer\Activity\ActivityImporter;
+use AppBundle\Importer\Activity\Exception\InvalidActivityException;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 use AppBundle\Importer\Activity\ActivityReader;
 use AppBundle\Importer\ArrayToObjectMapper;
@@ -88,7 +89,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         );
     }
 
-    public function testImportSkipInvalid()
+    public function testImportThrowsExceptionOnInvalid()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
@@ -101,13 +102,13 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
 
-        $activityImporter->import();
+        try {
+            $activityImporter->import();
+        } catch (InvalidActivityException $exception) {
+            return;
+        }
 
-        $this->assertCount(
-            1,
-            $entityManager->getRepository('AppBundle:Activity')->findAll(),
-            'When skipping invalid acitivities, there should only be a single valid activity in this import.'
-        );
+        $this->fail('Expected exception not thrown: InvalidActivityException.');
     }
 
     public function testImportUpdatesExisting()
