@@ -42,15 +42,5 @@ duration:    "Short",
 stage:    "Forming, Storming",
 suitable:   "iteration, release, project, immature"
 };
-all_activities[1] = {
-phase:     9,
-name:      "",
-summary:   "",
-desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshine.\
-Each participant marks their mood on the sheet.",
-duration:    "Short",
-stage:    "All",
-source:  source_agileRetrospectives,
-};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"

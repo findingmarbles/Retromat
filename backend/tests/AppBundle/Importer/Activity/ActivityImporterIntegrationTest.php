@@ -113,7 +113,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportUpdatesExisting()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_esvp.js');
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -130,7 +130,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
         );
 
-        $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_updated_1.js');
+        $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_esvp_updated.js');
         $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $filter, $validator);
 
         $activityImporter2->import();
