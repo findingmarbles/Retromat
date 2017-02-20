@@ -70,8 +70,8 @@ class ActivityImporter
                 $this->objectManager->persist($activityFromImport);
                 $activities [] = $activityFromImport;
             } else {
-//                $activityFromDbUpdated = $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
-//                $activities [] = $activityFromDbUpdated;
+                $activityFromDbUpdated = $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
+                $activities [] = $activityFromDbUpdated;
             }
         }
 

@@ -82,7 +82,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportSkipInvalid()
     {
         $this->loadFixtures([]);
-        // $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_only_1_valid.js');
         $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
 
         $mapper = new ArrayToObjectMapper();
@@ -102,5 +101,36 @@ class ActivityImporterIntegrationTest extends WebTestCase
             'When skipping invalid acitivities, there should only be a single valid activity in this import.'
         );
 
+    }
+
+    public function testImportUpdatesExisting()
+    {
+        $this->loadFixtures([]);
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
+
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        $logger = new StringLogger();
+        $filter = new EntityCollectionFilter($validator, $logger);
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+
+        $activityImporter->import();
+
+        $this->assertEquals(
+            'ESVP',
+            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
+        );
+
+        $reader2 = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid_updated_1.js');
+        $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $filter, $validator);
+        $activityImporter2->import();
+
+        $this->assertEquals(
+            'ESVPupdated',
+            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
+        );
     }
 }
