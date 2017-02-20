@@ -22,7 +22,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $validator = $this->getContainer()->get('validator');
         $logger = new StringLogger();
         $filter = new EntityCollectionFilter($validator, $logger);
-        $activityImporter = new ActivityImporter($this->getMock(ObjectManager::class), $reader, $mapper, $filter);
+        $activityImporter = new ActivityImporter($this->getMock(ObjectManager::class), $reader, $mapper, $filter, $validator);
 
         $activity = $activityImporter->getAllValidActivities();
 
@@ -42,7 +42,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
 
         $activityImporter->import();
 
@@ -63,7 +63,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
 
         $activityImporter->import();
 
@@ -77,5 +77,30 @@ class ActivityImporterIntegrationTest extends WebTestCase
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
         );
+    }
+
+    public function testImportSkipInvalid()
+    {
+        $this->loadFixtures([]);
+        // $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_only_1_valid.js');
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
+
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        $logger = new StringLogger();
+        $filter = new EntityCollectionFilter($validator, $logger);
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+
+        $activityImporter->import();
+
+        $this->assertCount(
+            1,
+            $entityManager->getRepository('AppBundle:Activity')->findAll(),
+            'When skipping invalid acitivities, there should only be a single valid activity in this import.'
+        );
+
     }
 }

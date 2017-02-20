@@ -14,7 +14,7 @@ services:
         arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
-        arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter"]
+        arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@entity_collection_filter", "@validator"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
     retromat.activity_by_phase:
