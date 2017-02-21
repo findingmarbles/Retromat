@@ -2,6 +2,9 @@
 
 namespace tests\AppBundle\Controller;
 
+// tests directory is not available to the autoloader, so we have to manually require these files:
+require 'DataFixtures/LoadActivityData.php';
+
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class HomeControllerTest extends WebTestCase
@@ -25,7 +28,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityNameRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=32');
@@ -51,7 +54,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySummaries()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=76');
@@ -69,7 +72,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityDescriptionsRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=22');
@@ -97,7 +100,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityLinksText()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1');
@@ -115,7 +118,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityLinksHref()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1');
@@ -133,7 +136,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityPhaseLinkText()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3');
@@ -152,7 +155,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivityPhaseLinkHref()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1');
@@ -172,7 +175,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourceSimpleStringRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=17');
@@ -190,7 +193,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourcePlaceholderRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=77');
@@ -208,7 +211,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourcePlaceholderAndStringRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=15');
@@ -226,7 +229,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowActivitySourceStringAndPlaceholderRawHtml()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=14');
@@ -244,7 +247,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowAny5Activities()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
@@ -296,7 +299,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowAllActivitiesInPhase0LongUrl()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
@@ -342,7 +345,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testHideSteppersPhase0LongUrl()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         // must not be hidden when phase is not specified in URL
@@ -388,7 +391,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperNextSingleActivity()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3');
@@ -400,7 +403,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperPreviousSingleActivity()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=18');
@@ -412,7 +415,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPhaseStepperNextMultipleActivities()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
