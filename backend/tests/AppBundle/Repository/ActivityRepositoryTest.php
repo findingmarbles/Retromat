@@ -2,15 +2,18 @@
 
 namespace tests\AppBundle\Repository;
 
-// tests directory is not available to the autoloader, so we have to manually require the fixture
+// tests directory is not available to the autoloader, so we have to manually require these files:
+require 'DataFixtures/LoadActivityData.php';
 require 'DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhases.php';
+
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class ActivityRepositoryTest extends WebTestCase
 {
     public function testFindOrdered()
     {
-        $this->loadFixtures(['AppBundle\DataFixtures\ORM\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+
         $repo = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
         $ordered = $repo->findOrdered($language = 'en', $id = [3, 87, 113, 13, 16]);
 
