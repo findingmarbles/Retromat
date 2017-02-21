@@ -14,30 +14,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class ActivityImporterIntegrationTest extends WebTestCase
 {
-    public function testGetAllValidActivities()
-    {
-        $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
-        $mapper = new ArrayToObjectMapper();
-        /** @var ValidatorInterface $validator */
-        $validator = $this->getContainer()->get('validator');
-        $logger = new StringLogger();
-        $filter = new EntityCollectionFilter($validator, $logger);
-        $activityImporter = new ActivityImporter(
-            $this->getMock(ObjectManager::class),
-            $reader,
-            $mapper,
-            $filter,
-            $validator
-        );
-
-        $activity = $activityImporter->getAllValidActivities();
-
-        $this->assertEquals('ESVP', $activity[0]->getName());
-        $this->assertNull($activity[0]->getMore());
-        $this->assertEquals('Discuss the 12 agile principles and pick one to work on', $activity[122]->getSummary());
-    }
-
     public function testImportOnEmptyDb()
     {
         $this->loadFixtures([]);
@@ -45,11 +21,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
-        $logger = new StringLogger();
-        $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
 
@@ -67,11 +41,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
-        $logger = new StringLogger();
-        $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
         $activity = $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123]);
@@ -96,11 +68,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
-        $logger = new StringLogger();
-        $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         try {
             $activityImporter->import();
@@ -118,11 +88,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
-        $logger = new StringLogger();
-        $filter = new EntityCollectionFilter($validator, $logger);
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $filter, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
 
@@ -132,7 +100,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         );
 
         $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_esvp_updated.js');
-        $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $filter, $validator);
+        $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $validator);
 
         $activityImporter2->import();
 

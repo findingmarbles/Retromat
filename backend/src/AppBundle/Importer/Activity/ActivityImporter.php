@@ -5,7 +5,6 @@ namespace AppBundle\Importer\Activity;
 use AppBundle\Entity\Activity;
 use AppBundle\Importer\Activity\Exception\InvalidActivityException;
 use AppBundle\Importer\ArrayToObjectMapper;
-use AppBundle\Importer\EntityCollectionFilter;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -17,8 +16,6 @@ class ActivityImporter
 
     private $mapper;
 
-    private $filter;
-
     private $validator;
 
     /**
@@ -28,13 +25,11 @@ class ActivityImporter
         ObjectManager $objectManager,
         ActivityReader $reader,
         ArrayToObjectMapper $mapper,
-        EntityCollectionFilter $filter,
         ValidatorInterface $validator
     ) {
         $this->objectManager = $objectManager;
         $this->reader = $reader;
         $this->mapper = $mapper;
-        $this->filter = $filter;
         $this->validator = $validator;
     }
 
