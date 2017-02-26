@@ -12,7 +12,7 @@ install:
 
 before_script:
     - php backend/bin/console doctrine:database:create
-    - php backend/bin/console doctrine:schema:create
+    - php backend/bin/console doctrine:migrations:migrate --no-interaction
     - php backend/bin/console retromat:import:activities
     - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 
