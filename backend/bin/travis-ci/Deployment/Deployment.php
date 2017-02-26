@@ -141,7 +141,8 @@ class Deployment
     private function remoteUpdateDatabase()
     {
         $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
-        $this->remote('cd '.$this->deploymentDir.' ; php php backend/bin/console retromat:import:activities');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console retromat:import:activities');
     }
 
     private function remoteCacheClearAndWarm()
