@@ -65,6 +65,9 @@ ebook_old:
         _controller: FrameworkBundle:Redirect:redirect
         route: ebook
         permanent: true
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /{_locale}
 print:
     path: /en/print
     defaults:

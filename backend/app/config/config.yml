@@ -74,6 +74,17 @@ swiftmailer:
 presta_sitemap:
     timetolive: 3600
 
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "%retromat_backend_mail%"
+        sender_name: "%retromat_backend_mail%"
+    registration:
+        confirmation:
+            enabled: true
+
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
