@@ -6,9 +6,6 @@ parameters:
 services:
     array_to_object_mapper:
         class: AppBundle\Importer\ArrayToObjectMapper
-    entity_collection_filter:
-        class: AppBundle\Importer\EntityCollectionFilter
-        arguments: ["@validator", "@logger"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
         arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
