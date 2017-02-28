@@ -1,0 +1,9 @@
+sequence_of_groups:
+    0: [0, 1, 2]
+    1: [0, 1]
+    2: [1, 2]
+
+groups_of_terms:
+    0: [Agile, Scrum]
+    1: [Retrospective]
+    2: [Plan]
