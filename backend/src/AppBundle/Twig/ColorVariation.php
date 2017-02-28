@@ -4,13 +4,9 @@ namespace AppBundle\Twig;
 
 class ColorVariation
 {
-    private $allColors;
     private $colors;
     private $previousColor = -1;
-
-    public function __construct(){
-        $this->allColors = [0, 1, 2, 3, 4];
-    }
+    private $allColors = [0, 1, 2, 3, 4];
 
     public function nextColor()
     {
