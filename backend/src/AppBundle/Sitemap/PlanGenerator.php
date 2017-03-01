@@ -28,6 +28,8 @@ class PlanGenerator
      */
     public function populatePlans(UrlContainerInterface $urlContainer, array $activitiesByPhase, $language)
     {
+        // @todo investigate if id generation can be replaced by AppBundle\Plan\PlanIdGenerator -> generateAll() + callback
+
         foreach ($activitiesByPhase[4] as $id4) {
             foreach ($activitiesByPhase[3] as $id3) {
                 foreach ($activitiesByPhase[2] as $id2) {
