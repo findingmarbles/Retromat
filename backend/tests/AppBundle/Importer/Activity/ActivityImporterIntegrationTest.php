@@ -7,8 +7,6 @@ use AppBundle\Importer\Activity\Exception\InvalidActivityException;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 use AppBundle\Importer\Activity\ActivityReader;
 use AppBundle\Importer\ArrayToObjectMapper;
-use AppBundle\Importer\EntityCollectionFilter;
-use AppBundle\Importer\StringLogger;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
