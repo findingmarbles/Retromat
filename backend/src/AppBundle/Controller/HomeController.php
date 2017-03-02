@@ -29,7 +29,7 @@ class HomeController extends Controller
                 'activities' => $activities,
                 'color_variation' => $this->get('retromat.color_varation'),
                 'activity_by_phase' => $this->get('retromat.activity_by_phase'),
-                'activity_source' => $this->getParameter('retormat.activity.source'),
+                'activity_source' => $this->getParameter('retromat.activity.source'),
             ]
         );
     }

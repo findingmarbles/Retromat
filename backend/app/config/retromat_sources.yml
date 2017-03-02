@@ -1,6 +1,6 @@
 parameters:
     # probably put this into the database later
-    retormat.activity.source:
+    retromat.activity.source:
         source_agileRetrospectives: "<a href=\"http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/\">Agile Retrospectives<\/a>"
         source_findingMarbles: "<a href=\"http://www.finding-marbles.com/\">Corinna Baldauf<\/a>"
         source_kalnin: "<a href=\"http://vinylbaustein.net/tag/retrospective/\">Thorsten Kalnin<\/a>"

@@ -1,13 +1,13 @@
 parameters:
     # maybe put this into the database later
-    retormat.plan.titles:
+    retromat.plan.titles:
         en:
             sequence_of_groups:
                 0: [0, 1, 2, 4, 5, 6, 7] # how to encode that some groups may be skipped?
             groups_of_terms:
                 0: ["Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program"]
                 1: ["Iteration", "Sprint", "Release"]
-                2: ["Retrospective", "Retro", "Post Mortem", "A3"
+                2: ["Retrospective", "Retro", "Post Mortem", "A3"]
                 3: ["Meeting", "Event", "Discussion"]
                 4: ["Plan", "Guide", "Agenda"]
                 5: ["Example", "Examples", "Activities"]
@@ -15,7 +15,7 @@ parameters:
                 7: ["5 Activities", "5 Stages", "5 Steps"]
 
                 # more ideas, where could they fit?
-                
+
                 # Be Inspired while you ...
                 # Plan, Organize, Create, Discover, Find, Be Inspired while ...
 
