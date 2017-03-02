@@ -3,6 +3,7 @@
 namespace tests\AppBundle\Plan;
 
 use AppBundle\Plan\PlanIdGenerator;
+use AppBundle\Activity\ActivityByPhase;
 
 class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,7 +18,16 @@ class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
             3 => [4],
             4 => [5],
         ];
-        $planGenerator = new PlanIdGenerator($activitiesByPhase);
+        $activitiyByPhase = $this
+            ->getMockBuilder(ActivityByPhase::class)
+            ->setMethods(['getAllActivitiesByPhase'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $activitiyByPhase->expects($this->any())
+            ->method('getAllActivitiesByPhase')
+            ->will($this->returnValue($activitiesByPhase));
+
+        $planGenerator = new PlanIdGenerator($activitiyByPhase);
 
         $planGenerator->generateAll([$this, 'collect']);
 

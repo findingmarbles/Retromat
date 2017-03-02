@@ -2,6 +2,7 @@
 
 namespace tests\AppBundle\Plan;
 
+use AppBundle\Activity\ActivityByPhase;
 use AppBundle\Entity\Plan;
 use AppBundle\Plan\PlanGenerator;
 use AppBundle\Plan\PlanIdGenerator;
@@ -20,7 +21,17 @@ class PlanGeneratorIntegrationTest extends WebTestCase
             3 => [4],
             4 => [5],
         ];
-        $planIdGenerator = new PlanIdGenerator($activitiesByPhase);
+        $activitiyByPhase = $this
+            ->getMockBuilder(ActivityByPhase::class)
+            ->setMethods(['getAllActivitiesByPhase'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $activitiyByPhase->expects($this->any())
+            ->method('getAllActivitiesByPhase')
+            ->will($this->returnValue($activitiesByPhase));
+
+
+        $planIdGenerator = new PlanIdGenerator($activitiyByPhase);
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
         $repo = $entityManager->getRepository('AppBundle:Plan');
         $planGenerator = new PlanGenerator($planIdGenerator, $entityManager);
