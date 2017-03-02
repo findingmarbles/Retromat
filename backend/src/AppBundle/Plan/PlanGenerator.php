@@ -17,7 +17,7 @@ class PlanGenerator
         $this->objectManager = $objectManager;
     }
 
-    public function generateAll($activitiesByPhase)
+    public function generateAll()
     {
         $objectManager = $this->objectManager;
         $createAndPersist = function ($id) use ($objectManager) {
@@ -27,6 +27,6 @@ class PlanGenerator
             $objectManager->detach($plan);
         };
 
-        $this->planIdGenerator->generateAll($createAndPersist, $activitiesByPhase);
+        $this->planIdGenerator->generateAll($createAndPersist);
     }
 }

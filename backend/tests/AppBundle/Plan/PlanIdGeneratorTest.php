@@ -10,7 +10,6 @@ class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function testGenerateAll()
     {
-        $planGenerator = new PlanIdGenerator();
         $activitiesByPhase = [
             0 => [1, 6],
             1 => [2, 7],
@@ -18,8 +17,9 @@ class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
             3 => [4],
             4 => [5],
         ];
+        $planGenerator = new PlanIdGenerator($activitiesByPhase);
 
-        $planGenerator->generateAll([$this, 'collect'], $activitiesByPhase);
+        $planGenerator->generateAll([$this, 'collect']);
 
         $this->assertEquals('1-2-3-4-5', $this->ids[0]);
         $this->assertEquals('6-2-3-4-5', $this->ids[1]);

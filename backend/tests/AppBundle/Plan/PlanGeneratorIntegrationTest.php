@@ -13,10 +13,6 @@ class PlanGeneratorIntegrationTest extends WebTestCase
     public function testGenerateAll()
     {
         $this->loadFixtures([]);
-        $planIdGenerator = new PlanIdGenerator();
-        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $repo = $entityManager->getRepository('AppBundle:Plan');
-        $planGenerator = new PlanGenerator($planIdGenerator, $entityManager);
         $activitiesByPhase = [
             0 => [1, 6],
             1 => [2, 7],
@@ -24,8 +20,12 @@ class PlanGeneratorIntegrationTest extends WebTestCase
             3 => [4],
             4 => [5],
         ];
+        $planIdGenerator = new PlanIdGenerator($activitiesByPhase);
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $repo = $entityManager->getRepository('AppBundle:Plan');
+        $planGenerator = new PlanGenerator($planIdGenerator, $entityManager);
 
-        $planGenerator->generateAll($activitiesByPhase);
+        $planGenerator->generateAll();
 
         $this->assertCount(4, $entityManager->getRepository('AppBundle:Plan')->findAll());
         $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $repo->findOneBy(['retromatId' => '1-2-3-4-5'])->getTitleId());

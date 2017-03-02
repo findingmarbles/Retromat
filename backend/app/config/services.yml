@@ -6,6 +6,9 @@ parameters:
 services:
     array_to_object_mapper:
         class: AppBundle\Importer\ArrayToObjectMapper
+    retromat.activity_by_phase:
+        class: AppBundle\Activity\ActivityByPhase
+        arguments: ["@doctrine.orm.entity_manager"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
         arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
@@ -14,9 +17,12 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
-    retromat.activity_by_phase:
-        class: AppBundle\Activity\ActivityByPhase
-        arguments: ["@doctrine.orm.entity_manager"]
+    retromat.plan.plan_generator:
+        class: AppBundle\Plan\PlanGenerator
+        arguments: ["@retromat.plan.plan_id_generator", "@doctrine.orm.entity_manager"]
+    retromat.plan.plan_id_generator:
+        class: AppBundle\Plan\PlanIdGenerator
+        arguments: ["@retromat.activity_by_phase"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator
         arguments: ["@router"]
