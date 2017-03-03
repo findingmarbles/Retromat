@@ -21,6 +21,19 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/experiment/titles", name="titles-experiment")
+     */
+    public function titlesExperimentAction()
+    {
+        $titles = $this->getParameter('retromat.plan.titles');
+
+        return $this->render(
+            'team/experiment/titles.html.twig',
+            ['titles' => $titles]
+        );
+    }
+
+    /**
      * @Route("/experiment/email")
      */
     public function emailExperimentAction()
