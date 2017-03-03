@@ -3,10 +3,10 @@ parameters:
     retromat.plan.titles:
         en:
             sequence_of_groups:
-                0: [0, 1, 2, 4, 5, 6, 7] # how to encode that some groups may be skipped?
+                0: [0, 1, 2, 4, 5, 6, 7] # how to encode that some groups may be skipped? Maybe include "" inside the group?
             groups_of_terms:
-                0: ["Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program"]
-                1: ["Iteration", "Sprint", "Release"]
+                0: ["Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program", "Over All" ]
+                1: ["Iteration", "Sprint", "Release", "Team", "Process"]
                 2: ["Retrospective", "Retro", "Post Mortem", "A3"]
                 3: ["Meeting", "Event", "Discussion"]
                 4: ["Plan", "Guide", "Agenda"]
@@ -14,7 +14,13 @@ parameters:
                 6: ["with", "containing", "including"]
                 7: ["5 Activities", "5 Stages", "5 Steps"]
 
+                # Titles should have 50-60 characters https://moz.com/learn/seo/title-tag
+
                 # more ideas, where could they fit?
+
+                # Scaled , Large Scale
+
+                # Scrum Tool(s)
 
                 # Be Inspired while you ...
                 # Plan, Organize, Create, Discover, Find, Be Inspired while ...
