@@ -7,11 +7,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
- * @Route("/{_locale}/inside")
+ * @Route("/{_locale}/team")
  * @Security("has_role('ROLE_ADMIN')")
  */
-class ExperimentController extends Controller
+class TeamController extends Controller
 {
+    /**
+     * @Route("/dashboard")
+     */
+    public function dashboardAction()
+    {
+        return $this->render('team/dashboard/dashboard.html.twig');
+    }
+
     /**
      * @Route("/experiment/email")
      */
@@ -29,7 +37,7 @@ class ExperimentController extends Controller
             );
         $this->get('mailer')->send($message);
 
-        return $this->render('inside/experiment/emailExperiment.html.twig', ['subject' => $subject]);
+        return $this->render('team/experiment/emailExperiment.html.twig', ['subject' => $subject]);
     }
 
     /**

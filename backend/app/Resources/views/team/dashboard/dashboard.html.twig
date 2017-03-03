@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Retromat Team Dashboard{% endblock %}
+
+{% block body %}
+    <h1>Retromat Team Dashboard</h1>
+    <h2>Tools: External</h2>
+    <ul>
+        <li>Collaboation
+            <ul>
+                <li><a href="https://github.com/findingmarbles/Retromat">Github Repo</a></li>
+                <li><a href="https://drive.google.com/drive/u/0/folders/0B6hEusnRormEdVlBZXQ5dnRmQUk">Google Drive
+                        Folder</a></li>
+                <li><a href="https://trello.com/b/xZgU7IFd/retromat">Trello Board</a></li>
+            </ul>
+        </li>
+        <li>Deployment
+            <ul>
+                <li><a href="https://travis-ci.org/findingmarbles/Retromat">Travis-CI Dashboard</a></li>
+            </ul>
+        </li>
+        <li>Uberspace
+            <ul>
+                <li><a href="https://stats.avior.uberspace.de/retromat/">Traffic Stats</a></li>
+                <li><a href="https://uberspace.de/dashboard/datasheet">Quota (Disk + Database)</a></li>
+            </ul>
+        </li>
+        <li>Analytics
+            <ul>
+                <li><a href="https://plans-for-retrospectives.com/piwik/index.php">Piwik (current)</a></li>
+                <li><a href="http://finding-marbles.com/piwik/">Piwik (historic)</a></li>
+            </ul>
+        </li>
+        <li>Webmaster Tools
+            <ul>
+                <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Google Search Console</a>
+                <li><a href="https://webmaster.yandex.com/">Yandex Webmaster Tools</a></li>
+            </ul>
+        </li>
+        <li>Research
+            <ul>
+                <li><a href="https://adwords.google.com/">Adwords (Keyword Recherche)</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Tools: Internal</h2>
+    <ul>
+        <li>Deployment
+            <ul>
+                <li><a href="https://plans-for-retrospectives.com/commit.txt">Current Live Commit Hash</a></li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}
