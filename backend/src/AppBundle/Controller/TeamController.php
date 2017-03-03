@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class TeamController extends Controller
 {
     /**
-     * @Route("/dashboard")
+     * @Route("/dashboard", name="team_dashboard")
      */
     public function dashboardAction()
     {
