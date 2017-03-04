@@ -146,4 +146,42 @@ groups_of_terms:
 
         $this->assertEquals(['0:0-0-0', '0:1-0-0'], $generator->generateIds(0));
     }
+
+    public function testGenerateIdsMultipleTermsInMultipleGroups()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+'
+        );
+        $generator = new TitleIdGenerator($titleParts);
+
+        $this->assertEquals(
+            [
+                '0:0-0-0',
+                '0:1-0-0',
+                '0:2-0-0',
+                '0:3-0-0',
+                '0:0-1-0',
+                '0:1-1-0',
+                '0:2-1-0',
+                '0:3-1-0',
+                '0:0-0-1',
+                '0:1-0-1',
+                '0:2-0-1',
+                '0:3-0-1',
+                '0:0-1-1',
+                '0:1-1-1',
+                '0:2-1-1',
+                '0:3-1-1',
+            ],
+            $generator->generateIds(0)
+        );
+    }
 }
