@@ -32,4 +32,23 @@ class TitleIdGenerator
 
         return $numberOfCombinations;
     }
+
+    public function generateIds($sequenceId)
+    {
+        $termIdsInCombination = [];
+
+        foreach ($this->sequenceOfGroups[$sequenceId] as $groupId) {
+            // foreach ($this->groupsOfTerms[$groupId] as $termId => $term) {
+            // we can skip the loop, as long as each group only has one term:
+            $termId = 0;
+
+                $termIdsInCombination[] = $termId;
+
+            // we can skip collectiong multiple combinations, as long as each group only has one term:
+            // $combinations[] = ...
+            // }
+        }
+
+        return $sequenceId.':'.implode('-', $termIdsInCombination);
+    }
 }
