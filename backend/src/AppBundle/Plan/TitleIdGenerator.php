@@ -50,6 +50,6 @@ class TitleIdGenerator
             // }
         }
 
-        return $sequenceId.':'.implode('-', $termIdsInCombination);
+        return [$sequenceId.':'.implode('-', $termIdsInCombination)];
     }
 }

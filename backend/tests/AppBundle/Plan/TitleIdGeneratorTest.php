@@ -108,6 +108,6 @@ groups_of_terms:
         );
         $generator = new TitleIdGenerator($titleParts);
 
-        $this->assertEquals('0:0-0-0', $generator->generateIds(0));
+        $this->assertEquals(['0:0-0-0'], $generator->generateIds(0));
     }
 }
