@@ -40,15 +40,10 @@ class TitleIdGenerator
 
         foreach ($this->sequenceOfGroups[$sequenceId] as $groupId) {
             if (1 === count($this->groupsOfTerms[$groupId])) {
-                $termId = 0;
-                $this->allCombinationsAppendSingleTermId($termId);
+                $this->allCombinationsAppendSingleTermId(0);
+            } else {
+                $this->allCombinationsMultiplyAndAppendMultipleTermIds($this->groupsOfTerms[$groupId]);
             }
-            // foreach ($this->groupsOfTerms[$groupId] as $termId => $term) {
-            // we can skip the loop, as long as each group only has one term:
-
-            // we can skip collectiong multiple combinations, as long as each group only has one term:
-            // $combinations[] = ...
-            // }
         }
 
         $combinationIds = [];
@@ -66,6 +61,19 @@ class TitleIdGenerator
         } else {
             for ($i =0 ; $i < count($this->allCombinations) ; $i++) {
                 $this->allCombinations[$i][] = $termId;
+            }
+        }
+    }
+
+    private function allCombinationsMultiplyAndAppendMultipleTermIds($termsAndIds)
+    {
+        $previousAllCombinations = $this->allCombinations;
+        $this->allCombinations = [];
+        
+        foreach ($termsAndIds as $termId => $term) {
+            foreach ($previousAllCombinations as $combination) {
+                $combination[] = $termId;
+                $this->allCombinations[] = $combination;
             }
         }
     }
