@@ -55,6 +55,9 @@ class TitleIdGenerator
     private function allCombinationsAppend($termsAndIds)
     {
         if (1 === count($termsAndIds)) {
+            if (0 === count($this->allCombinations)) {
+                $this->allCombinations[0] = [];
+            };
             $this->allCombinationsAppendSingleTermId(0);
         } else {
             $this->allCombinationsMultiplyAndAppendMultipleTermIds($termsAndIds);
@@ -63,12 +66,8 @@ class TitleIdGenerator
 
     private function allCombinationsAppendSingleTermId($termId)
     {
-        if (0 === count($this->allCombinations)) {
-            $this->allCombinations[0] = [$termId];
-        } else {
-            for ($i = 0; $i < count($this->allCombinations); $i++) {
-                $this->allCombinations[$i][] = $termId;
-            }
+        for ($i = 0; $i < count($this->allCombinations); $i++) {
+            $this->allCombinations[$i][] = $termId;
         }
     }
 
