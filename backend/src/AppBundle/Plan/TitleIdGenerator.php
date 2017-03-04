@@ -36,10 +36,19 @@ class TitleIdGenerator
         return $numberOfCombinations;
     }
 
+    public function generateIdsForAllSequences()
+    {
+        $allCombinationIds = [];
+        foreach ($this->sequenceOfGroups as $sequenceId => $group) {
+            $allCombinationIds = array_merge($allCombinationIds, $this->generateIds($sequenceId));
+        }
+
+        return $allCombinationIds;
+    }
+
     public function generateIds($sequenceId)
     {
         $this->allCombinations = [];
-
         foreach ($this->sequenceOfGroups[$sequenceId] as $groupId) {
             $this->allCombinationsAppend($this->groupsOfTerms[$groupId]);
         }
@@ -76,7 +85,6 @@ class TitleIdGenerator
     {
         $previousAllCombinations = $this->allCombinations;
         $this->allCombinations = [];
-
         foreach ($termsAndIds as $termId => $term) {
             foreach ($previousAllCombinations as $combination) {
                 $combination[] = $termId;
