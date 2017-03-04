@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: retromat_plan_titles_en.yml }
+    - { resource: retromat_plan_titles.yml }
     - { resource: retromat_sources.yml }
 
 framework:
