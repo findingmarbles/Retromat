@@ -35,6 +35,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/experiment/titles/all-ids", name="titles-experiment-all-ids")
+     */
+    public function titlesExperimentAllIdsAction()
+    {
+        return $this->render(
+            'team/experiment/titlesAllIds.html.twig',
+            ['allIds' => $this->get('retromat.plan.title_id_generator')->generateIdsForAllSequences()]
+        );
+    }
+
+    /**
      * @Route("/experiment/email")
      */
     public function emailExperimentAction()
