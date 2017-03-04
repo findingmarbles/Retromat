@@ -39,9 +39,15 @@ class TeamController extends Controller
      */
     public function titlesExperimentAllIdsAction()
     {
+        $generator = $this->get('retromat.plan.title_id_generator');
+
         return $this->render(
-            'team/experiment/titlesAllIds.html.twig',
-            ['allIds' => $this->get('retromat.plan.title_id_generator')->generateIdsForAllSequences()]
+            'team/experiment/titlesAll.html.twig',
+            [
+                'title_renderer' => $this->get('retromat.plan.title_renderer'),
+                'totalCombinations' => $generator->countCombinationsInAllSequences(),
+                'allIds' => $generator->generateIdsForAllSequences(),
+            ]
         );
     }
 

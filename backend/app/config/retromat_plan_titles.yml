@@ -2,37 +2,26 @@ parameters:
     # maybe put this into the database later
     retromat.plan.titles:
         sequence_of_groups:
-            0: [0, 1, 2, 4, 5, 6, 7] # how to encode that some groups may be skipped? Maybe include "" inside the group?
+            0: [               1, 2,     3, 4, 5,       0]
+#           Too much memory needed to compute all of them at once. Will investigate later.
+#           0: [        8, 10, 1, 2, 10, 3, 4, 5,       0]
+#           1: [        8, 10, 1, 2, 10, 3, 4, 5, 6, 7, 0]
+#           2: [12, 13, 8, 10, 1, 2, 10, 3, 4, 5,       0]
         groups_of_terms:
-            0: ["Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program", "Over All" ]
-            1: ["Iteration", "Sprint", "Release", "Team", "Process"]
-            2: ["Retrospective", "Retro", "Post Mortem", "A3"]
-            3: ["Meeting", "Event", "Discussion"]
-            4: ["Plan", "Guide", "Agenda"]
-            5: ["Example", "Examples", "Activities"]
-            6: ["with", "containing", "including"]
-            7: ["5 Activities", "5 Stages", "5 Steps"]
+            0: ["129-128-118-125-120"]
+            1: ["", "Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program"]
+            2: ["", "Iteration", "Sprint", "Release", "Process"]
+            3: ["Retrospective", "Retro", "Post Mortem", "A3"] # either this or 8
+            4: ["", "Meeting", "Event", "Discussion"]
+            5: ["", "Plan", "Guide", "Agenda", "Example", "Activities", "Inspiration", "Ideas", "Experiment"]
+            6: ["with", "containing", "using", "including"]
+            7: ["5 Activities:", "5 Stages:", "5 Steps:"]
+            8: ["", "Retromat |", "Retrospective Generator", "Retromat Retrospective Generator |"] # either this or 3
+            10: ["", "Scaled", "Large Scale"] # this requires a variant of 1 that can not be empty
+            11: ["", "Team", "Over All"]
+            12: ["Plan", "Organize", "Create", "Find", "Discover"]
+            13: ["your", "a", "any"]
 
-            # more ideas, where could they fit?
-
-            # Scaled , Large Scale
-
-            # Scrum Tool(s)
-
-            # Be Inspired while you ...
-            # Plan, Organize, Create, Discover, Find, Be Inspired while ...
-
-            # set the stage
-            # gather data
-            # generate insight
-            # decide what to do
-            # close the retrospective
-            # something completely different
-
-            # with
-            # using
-
-            8: ["CURRENT_PLAN_ID"] # how to encode this properly?
 #        de:
 #            groups_of_terms:
 #                0: ["Qualitätszirkel"]

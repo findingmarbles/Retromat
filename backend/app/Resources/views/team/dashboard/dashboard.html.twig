@@ -5,18 +5,19 @@
 {% block body %}
     <h1>Retromat Team Dashboard</h1>
     <ul>
-        <li>Welcome <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></li>
+        <li>Welcome :-)</li>
+        <li><a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></li>
         <ul>
             <li><a href="{{ path('fos_user_profile_show') }}">Profile show</a></li>
             <li><a href="{{ path('fos_user_profile_edit') }}">Profile edit</a></li>
             <li><a href="{{ path('fos_user_change_password') }}">Password change</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
         </ul>
-        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
     </ul>
     <h2>Tools: Internal</h2>
     <ul>
+        <li><a href="{{ path('titles-experiment') }}">Titles experiment</a></li>
         <li><a href="https://plans-for-retrospectives.com/commit.txt">Commit Hash</a> of current live Retromat</li>
-        <li><a href="{{ path('titles-experiment') }}">Titles experiment</a> (work in progress)</li>
     </ul>
     <h2>Tools: External</h2>
     <ul>

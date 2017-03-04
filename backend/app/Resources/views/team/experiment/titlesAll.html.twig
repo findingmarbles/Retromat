@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan Title Experiment: All IDs{% endblock %}
+
+{% block body %}
+    <h1>Plan Title Experiment: All IDs</h1>
+    <ul>
+        <li>Input is read from <i>backend/app/config/retromat_plan_titles.yml</i></li>
+        <li>Total number of titles: {{ totalCombinations }}
+        </li>
+        <li>The <a href="https://moz.com/learn/seo/title-tag">limit of 50-60 characters</a> is not enforced yet, still
+            need to extract the ones we can really use.
+        </li>
+        <li>Having many more terms and combinations would be wonderful, and most of them should make sense of course :-)</li>
+    </ul>
+    <table>
+        <tr>
+            <th style="text-align: left;">Title ID</th>
+            <th style="text-align: left;">&nbsp;&nbsp;Length</th>
+            <th style="text-align: left;">Title</th>
+        </tr>
+        {% for id in allIds %}
+            <tr>
+                <td>{{ id }}</td>
+                <td style="text-align: center;">{{ title_renderer.render(id)|length }}</td>
+                <td>{{ title_renderer.render(id) }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+

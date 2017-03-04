@@ -26,6 +26,9 @@ services:
     retromat.plan.title_id_generator:
         class: AppBundle\Plan\TitleIdGenerator
         arguments: ["%retromat.plan.titles%"]
+    retromat.plan.title_renderer:
+        class: AppBundle\Twig\Title
+        arguments: ["%retromat.plan.titles%"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator
         arguments: ["@router"]
