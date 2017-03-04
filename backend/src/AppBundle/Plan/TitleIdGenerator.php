@@ -38,11 +38,12 @@ class TitleIdGenerator
         $termIdsInCombination = [];
 
         foreach ($this->sequenceOfGroups[$sequenceId] as $groupId) {
+            if (1 === count($this->groupsOfTerms[$groupId])) {
+                $termId = 0;
+                $termIdsInCombination[] = $termId;
+            }
             // foreach ($this->groupsOfTerms[$groupId] as $termId => $term) {
             // we can skip the loop, as long as each group only has one term:
-            $termId = 0;
-
-                $termIdsInCombination[] = $termId;
 
             // we can skip collectiong multiple combinations, as long as each group only has one term:
             // $combinations[] = ...
