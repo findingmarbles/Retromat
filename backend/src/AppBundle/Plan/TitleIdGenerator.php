@@ -22,4 +22,14 @@ class TitleIdGenerator
 
         return $numberOfCombinations;
     }
+
+    public function countCombinationsInAllSequences()
+    {
+        $numberOfCombinations = 0;
+        foreach ($this->sequenceOfGroups as $id => $value) {
+            $numberOfCombinations += $this->countCombinationsInSequence($id);
+        }
+
+        return $numberOfCombinations;
+    }
 }

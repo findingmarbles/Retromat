@@ -50,4 +50,46 @@ groups_of_terms:
         $this->assertEquals(8, $generator->countCombinationsInSequence(2));
         $this->assertEquals(16, $generator->countCombinationsInSequence(3));
     }
+
+    public function testCountCombinationsInAllSequencesTwo()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1]
+    1: [1, 2]
+
+groups_of_terms:
+    0: [Agile]
+    1: [Retrospective]
+    2: [Plan]
+'
+        );
+        $generator = new TitleIdGenerator($titleParts);
+
+        $this->assertEquals(2, $generator->countCombinationsInAllSequences());
+    }
+
+    public function testCountCombinationsInAllSequencesMany()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1]
+    1: [0, 1, 2]
+    2: [2, 3, 4]
+    3: [0, 1, 2, 3, 4]
+
+groups_of_terms:
+    0: [Agile, Scrum]
+    1: [Retrospective]
+    2: [Plan, Agenda]
+    3: [Number]
+    4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
+'
+        );
+        $generator = new TitleIdGenerator($titleParts);
+
+        $this->assertEquals(30, $generator->countCombinationsInAllSequences());
+    }
 }
