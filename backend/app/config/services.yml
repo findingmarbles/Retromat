@@ -23,6 +23,9 @@ services:
     retromat.plan.plan_id_generator:
         class: AppBundle\Plan\PlanIdGenerator
         arguments: ["@retromat.activity_by_phase"]
+    retromat.plan.title_id_generator:
+        class: AppBundle\Plan\TitleIdGenerator
+        arguments: ["%retromat.plan.titles%"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator
         arguments: ["@router"]

@@ -26,10 +26,11 @@ class TeamController extends Controller
     public function titlesExperimentAction()
     {
         $titles = $this->getParameter('retromat.plan.titles');
+        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
 
         return $this->render(
             'team/experiment/titles.html.twig',
-            ['titles' => $titles]
+            ['titles' => $titles, 'totalCombinations' => $totalCombinations]
         );
     }
 

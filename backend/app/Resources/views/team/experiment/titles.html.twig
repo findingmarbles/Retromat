@@ -5,9 +5,13 @@
 {% block body %}
     <h1>Plan Title Experiment</h1>
 <ul>
-    <li>Count sequence_of_groups: {{ titles.en.sequence_of_groups|length }}</li>
-    <li>Count groups_of_terms: {{ titles.en.groups_of_terms|length }}</li>
-    <li>Count of all combinations: @todo</li>
+    <li>Count sequence_of_groups: {{ titles.sequence_of_groups|length }}</li>
+    <li>Count groups_of_terms: {{ titles.groups_of_terms|length }}</li>
+    <li>Count combinations: {{ totalCombinations }}
+    <ul>
+        <li>The limit of 50-60 characters is not enforced yet, still need to extract the ones we can really use.</li>
+    </ul>
+    </li>
 </ul>
 {% endblock %}
 
