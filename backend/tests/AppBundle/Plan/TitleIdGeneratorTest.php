@@ -128,4 +128,22 @@ groups_of_terms:
 
         $this->assertEquals(['0:0-0-0', '0:0-1-0'], $generator->generateIds(0));
     }
+
+    public function testGenerateIdsMultipleTermsInFirstGroup()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile, Scrum]
+    1: [Retro]
+    2: [Plan]
+'
+        );
+        $generator = new TitleIdGenerator($titleParts);
+
+        $this->assertEquals(['0:0-0-0', '0:1-0-0'], $generator->generateIds(0));
+    }
 }

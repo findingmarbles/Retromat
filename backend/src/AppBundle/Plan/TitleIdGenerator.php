@@ -5,7 +5,9 @@ namespace AppBundle\Plan;
 class TitleIdGenerator
 {
     private $sequenceOfGroups;
+
     private $groupsOfTerms;
+
     private $allCombinations;
 
     public function __construct(array $titleParts)
@@ -59,7 +61,7 @@ class TitleIdGenerator
         if (0 === count($this->allCombinations)) {
             $this->allCombinations[0] = [$termId];
         } else {
-            for ($i =0 ; $i < count($this->allCombinations) ; $i++) {
+            for ($i = 0; $i < count($this->allCombinations); $i++) {
                 $this->allCombinations[$i][] = $termId;
             }
         }
@@ -67,13 +69,19 @@ class TitleIdGenerator
 
     private function allCombinationsMultiplyAndAppendMultipleTermIds($termsAndIds)
     {
-        $previousAllCombinations = $this->allCombinations;
-        $this->allCombinations = [];
-        
-        foreach ($termsAndIds as $termId => $term) {
-            foreach ($previousAllCombinations as $combination) {
-                $combination[] = $termId;
-                $this->allCombinations[] = $combination;
+        if (0 === count($this->allCombinations)) {
+            foreach ($termsAndIds as $termId => $term) {
+                $this->allCombinations[] = [$termId];
+            }
+        } else {
+            $previousAllCombinations = $this->allCombinations;
+            $this->allCombinations = [];
+
+            foreach ($termsAndIds as $termId => $term) {
+                foreach ($previousAllCombinations as $combination) {
+                    $combination[] = $termId;
+                    $this->allCombinations[] = $combination;
+                }
             }
         }
     }
