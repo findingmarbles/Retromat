@@ -84,4 +84,30 @@ groups_of_terms:
         $titleId2 = $chooser->chooseTitleId('1-2-3-4-7');
         $this->assertNotEquals($titleId2, $titleId1);
     }
+
+    public function testPlanAlwaysGetsSameTitle()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+    1: [   1, 2]
+    2: [0, 1   ]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+'
+        );
+        $chooser = new TitleIdChooser($titleParts);
+
+        $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
+
+        // if it works 100 times in a row, we believe it always works
+        for($i =0 ; $i < 100; $i++) {
+            $titleId2 = $chooser->chooseTitleId('1-2-3-4-5');
+            $this->assertEquals($titleId2, $titleId1);
+        }
+    }
 }
