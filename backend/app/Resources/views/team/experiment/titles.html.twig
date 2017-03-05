@@ -6,9 +6,10 @@
     <h1>Plan Title Experiment</h1>
     <ul>
         <li>Input is read from <i>backend/app/config/retromat_plan_titles.yml</i></li>
-        <li>Count sequence_of_groups: {{ titles.sequence_of_groups|length }}</li>
-        <li>Count groups_of_terms: {{ titles.groups_of_terms|length }}</li>
-        <li>Generate and show all <a href="{{ path('titles-experiment-all-ids') }}">{{ totalCombinations }} titles</a>
+        <li>Count sequence_of_groups: {{ titleParts.sequence_of_groups|length }}</li>
+        <li>Count groups_of_terms: {{ titleParts.groups_of_terms|length }}</li>
+        <li>Count total combinations: {{ totalCombinations }}</li>
+        <li>Generate and show <a href="{{ path('titles-experiment-sequence', {sequenceId: 0}) }}">titles from each sequence</a>
             (this can take several seconds)
         </li>
     </ul>

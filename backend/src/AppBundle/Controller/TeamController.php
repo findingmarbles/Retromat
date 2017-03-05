@@ -25,28 +25,32 @@ class TeamController extends Controller
      */
     public function titlesExperimentAction()
     {
-        $titles = $this->getParameter('retromat.plan.titles');
+        $titleParts = $this->getParameter('retromat.plan.titles');
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
 
         return $this->render(
             'team/experiment/titles.html.twig',
-            ['titles' => $titles, 'totalCombinations' => $totalCombinations]
+            ['titleParts' => $titleParts, 'totalCombinations' => $totalCombinations]
         );
     }
 
     /**
-     * @Route("/experiment/titles/all-ids", name="titles-experiment-all-ids")
+     * @Route("/experiment/titles/sequence/{sequenceId}", name="titles-experiment-sequence")
      */
-    public function titlesExperimentAllIdsAction()
+    public function titlesExperimentBySequenceAction($sequenceId)
     {
+        $titleParts = $this->getParameter('retromat.plan.titles');
         $generator = $this->get('retromat.plan.title_id_generator');
 
         return $this->render(
-            'team/experiment/titlesAll.html.twig',
+            'team/experiment/titlesBySequence.html.twig',
             [
                 'title_renderer' => $this->get('retromat.plan.title_renderer'),
                 'totalCombinations' => $generator->countCombinationsInAllSequences(),
-                'allIds' => $generator->generateIdsForAllSequences(),
+                'ids' => $generator->generateIds($sequenceId),
+                'titleParts' => $titleParts,
+                'sequenceId' => $sequenceId,
+                'combinationsInSequence' => $generator->countCombinationsInSequence($sequenceId),
             ]
         );
     }

@@ -2,25 +2,25 @@ parameters:
     # maybe put this into the database later
     retromat.plan.titles:
         sequence_of_groups:
-            0: [               1, 2,     3, 4, 5,       0]
-#           Too much memory needed to compute all of them at once. Will investigate later.
-#           0: [        8, 10, 1, 2, 10, 3, 4, 5,       0]
-#           1: [        8, 10, 1, 2, 10, 3, 4, 5, 6, 7, 0]
-#           2: [12, 13, 8, 10, 1, 2, 10, 3, 4, 5,       0]
+            0: [ 0, 1, 2, 3, 4, 5,       14]
+            1: [    1, 2, 3,    5, 6, 7, 14] # leaving out 0 and 4 to avoid consuming too much memory
+#           2: [    1, 2, 3, 4, 5, 6, 7, 14] # generating all at once consumes too much memory
+#           3: [ 0, 1, 2, 3, 4, 5, 6, 7, 14] # generating all at once consumes too much memory
         groups_of_terms:
-            0: ["129-128-118-125-120"]
-            1: ["", "Agile", "Scrum", "Kanban", "XP", "Extreme Programming", "Project", "Program"]
-            2: ["", "Iteration", "Sprint", "Release", "Process"]
-            3: ["Retrospective", "Retro", "Post Mortem", "A3"] # either this or 8
-            4: ["", "Meeting", "Event", "Discussion"]
-            5: ["", "Plan", "Guide", "Agenda", "Example", "Activities", "Inspiration", "Ideas", "Experiment"]
+            0: ["", "Retromat: "]
+            1: ["", "Agile", "Scrum", "Kanban", "Lean", "XP", "Extreme Programming"] # Framework / Worldview
+            2: ["", "Iteration", "Sprint", "Cycle", "Release", "Project", "Program", "Process", "Team", "Over All"] # What we inspect + adapt on
+            3: ["Retrospective", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflection", "Inspect & Adapt"]
+            4: ["", "Meeting", "Event", "Discussion", "Ceremony", "Analysis"] # what we do, either this or 8
+            5: ["", "Plan", "Agenda", "Example", "Activities", "Inspiration", "Ideas", "Experiment"]
             6: ["with", "containing", "using", "including"]
             7: ["5 Activities:", "5 Stages:", "5 Steps:"]
-            8: ["", "Retromat |", "Retrospective Generator", "Retromat Retrospective Generator |"] # either this or 3
-            10: ["", "Scaled", "Large Scale"] # this requires a variant of 1 that can not be empty
-            11: ["", "Team", "Over All"]
+            8: ["", "Generator: ", "Tool: ", "Guide: ", "Directory: "] # tool that helps prepare, either this or 4
+            10: ["", "Scaled", "Large Scale"] # can be inserted before 1
+            11: ["Quickly", "Easily"]
             12: ["Plan", "Organize", "Create", "Find", "Discover"]
             13: ["your", "a", "any"]
+            14: ["129-128-118-125-120"]
 
 #        de:
 #            groups_of_terms:
