@@ -12,6 +12,6 @@ class TitleIdChooser
             return '';
         }
 
-        return 'foo';
+        return '0:0-0-0';
     }
 }
