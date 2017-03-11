@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Plan;
 
@@ -37,7 +38,7 @@ class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('6-7-3-4-5', $this->ids[3]);
     }
 
-    public function collect($id)
+    public function collect(string $id)
     {
         $this->ids[] = $id;
     }
