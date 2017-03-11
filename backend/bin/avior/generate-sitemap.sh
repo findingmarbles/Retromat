@@ -5,7 +5,7 @@
 # export into the "generating-now" directory, then publish all files at once.
 mkdir -p /var/www/virtual/retromat/retromat-sitemaps/generating-now/
 
-php /var/www/virtual/retromat/retromat-deployments/current/backend/bin/console presta:sitemaps:dump --gzip \
+php /var/www/virtual/retromat/retromat-deployments/current/backend/bin/console --env=prod presta:sitemaps:dump --gzip \
   /var/www/virtual/retromat/retromat-sitemaps/generating-now/
 mv /var/www/virtual/retromat/retromat-sitemaps/generating-now/* /var/www/virtual/retromat/retromat-sitemaps
 

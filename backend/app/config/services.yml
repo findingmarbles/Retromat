@@ -31,7 +31,7 @@ services:
         arguments: ["%retromat.plan.titles%"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator
-        arguments: ["@router"]
+        arguments: ["@router", '@retromat.plan.plan_id_generator']
     retromat.sitemap.populate_subscriber:
         class: AppBundle\EventListener\SitemapPopulateSubscriber
         arguments: ["@router", "@doctrine.orm.entity_manager", "@retromat.sitemap.plan_generator", "@retromat.activity_by_phase"]

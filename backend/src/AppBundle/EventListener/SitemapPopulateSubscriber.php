@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace AppBundle\EventListener;
 
@@ -74,11 +75,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
         $this->populatePhases($urlContainer);
         $this->populateAllActivitiesPage($urlContainer);
         $this->populateIndividualActivities($urlContainer);
-        $this->planGenerator->populatePlans(
-            $urlContainer,
-            $this->objectManager->getRepository('AppBundle:Activity')->findAllActivitiesByPhases(),
-            'en'
-        );
+        $this->planGenerator->populatePlans($urlContainer);
     }
 
     /**
