@@ -22,15 +22,21 @@ class PlanIdGenerator
 
     /**
      * @param callable $callback
+     * @param int $limit
      */
-    public function generateAll(callable $callback)
+    public function generate(callable $callback, int $limit = PHP_INT_MAX)
     {
+        $total = 0;
         foreach ($this->activitiesByPhase[4] as $id4) {
             foreach ($this->activitiesByPhase[3] as $id3) {
                 foreach ($this->activitiesByPhase[2] as $id2) {
                     foreach ($this->activitiesByPhase[1] as $id1) {
                         foreach ($this->activitiesByPhase[0] as $id0) {
-                            call_user_func($callback, $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4);
+                            if (++$total > $limit) {
+                                return;
+                            } else {
+                                call_user_func($callback, $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4);
+                            }
                         }
                     }
                 }

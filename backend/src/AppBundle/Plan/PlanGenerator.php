@@ -27,6 +27,6 @@ class PlanGenerator
             $objectManager->detach($plan);
         };
 
-        $this->planIdGenerator->generateAll($createAndPersist);
+        $this->planIdGenerator->generate($createAndPersist);
     }
 }

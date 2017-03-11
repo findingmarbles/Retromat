@@ -43,7 +43,7 @@ class PlanGenerator
     {
         // Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
         $this->urlContainer = $urlContainer;
-        $this->idGenerator->generateAll([$this, 'addToUrlContainer']);
+        $this->idGenerator->generate([$this, 'addToUrlContainer']);
     }
 
     /**
