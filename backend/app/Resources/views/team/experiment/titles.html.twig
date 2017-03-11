@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Plan Title Experiment{% endblock %}
+{% set pageTitle = 'Plan Title Experiments' %}
+
+{% block title %}{{ pageTitle }}{% endblock %}
 
 {% block body %}
-    <h1>Plan Title Experiment</h1>
+    <h1>{{ pageTitle }}</h1>
     <ul>
-        <li>Input is read from <i>backend/app/config/retromat_plan_titles.yml</i></li>
-        <li>Count sequence_of_groups: {{ titleParts.sequence_of_groups|length }}</li>
-        <li>Count groups_of_terms: {{ titleParts.groups_of_terms|length }}</li>
-        <li>Count total combinations: {{ totalCombinations }}</li>
-        <li>Generate and show <a href="{{ path('titles-experiment-sequence', {sequenceId: 0}) }}">titles from each sequence</a>
-            (this can take several seconds)
+        <li>Generate and show <a href="{{ path('titles-experiment-sequence', {sequenceId: 0}) }}">titles from each
+                sequence</a> (this can take several seconds, total combinations: {{ totalCombinations }})
+        </li>
+        <li>Generate and show <a href="{{ path('titles-experiment-planids', {skip: 0, max: 15}) }}">titles for each
+                plan id</a> (very quick)
         </li>
     </ul>
 {% endblock %}

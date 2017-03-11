@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/{_locale}/team")
@@ -12,6 +13,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
  */
 class TeamController extends Controller
 {
+    private $ids = [];
+
     /**
      * @Route("/dashboard", name="team_dashboard")
      */
@@ -56,6 +59,25 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/experiment/titles/by-plan-id", name="titles-experiment-planids")
+     */
+    public function titlesExperimentByPlanId(Request $request)
+    {
+        $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
+        $planIdGenerator->generate([$this, 'collect'], $request->get('max'), $skip = $request->get('skip'));
+        $titleIdChooser = $this->get('retromat.plan.title_id_chooser');
+
+        return $this->render(
+            'team/experiment/titlesByPlanId.html.twig',
+            [
+                'planIds' => $this->ids,
+                'titleIdChooser' => $titleIdChooser,
+                'title_renderer' => $this->get('retromat.plan.title_renderer'),
+            ]
+        );
+    }
+
+    /**
      * @Route("/experiment/email")
      */
     public function emailExperimentAction()
@@ -81,5 +103,13 @@ class TeamController extends Controller
     public function errorExperimentAction()
     {
         throw new \Exception('The ErrorExperiment has been triggered.');
+    }
+
+    /**
+     * @param string $id
+     */
+    public function collect(string $id)
+    {
+        $this->ids[] = $id;
     }
 }

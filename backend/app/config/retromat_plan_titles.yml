@@ -2,12 +2,12 @@ parameters:
     # maybe put this into the database later
     retromat.plan.titles:
         sequence_of_groups:
-            0: [ 0, 1, 2, 3, 4, 5,       14]
-            1: [    1, 2, 3,    5, 6, 7, 14] # leaving out 0 and 4 to avoid consuming too much memory
-#           2: [    1, 2, 3, 4, 5, 6, 7, 14] # generating all at once consumes too much memory
-#           3: [ 0, 1, 2, 3, 4, 5, 6, 7, 14] # generating all at once consumes too much memory
+            0: [ 0, 1, 2, 3, 4, 5,      ]
+            1: [    1, 2, 3,    5, 6, 7 ] # leaving out 0 and 4 to avoid consuming too much memory
+#           2: [    1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
+#           3: [ 0, 1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
         groups_of_terms:
-            0: ["", "Retromat: "]
+            0: ["", "Retromat:"]
             1: ["", "Agile", "Scrum", "Kanban", "Lean", "XP", "Extreme Programming"] # Framework / Worldview
             2: ["", "Iteration", "Sprint", "Cycle", "Release", "Project", "Program", "Process", "Team", "Over All"] # What we inspect + adapt on
             3: ["Retrospective", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflection", "Inspect & Adapt"]
@@ -20,7 +20,6 @@ parameters:
             11: ["Quickly", "Easily"]
             12: ["Plan", "Organize", "Create", "Find", "Discover"]
             13: ["your", "a", "any"]
-            14: ["129-128-118-125-120"]
 
 #        de:
 #            groups_of_terms:

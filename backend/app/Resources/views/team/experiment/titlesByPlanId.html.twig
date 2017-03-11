@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% set pageTitle = 'Titles for each Plan ID' %}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block body %}
+    <h1>{{ pageTitle }}</h1>
+    <ul>
+        <li>Use the <i>skip</i> parameter in the URL to look at different plan ids and their titles.</li>
+        <li>Title Elements are read from <i>backend/app/config/retromat_plan_titles.yml</i></li>
+        <li>The <a href="https://moz.com/learn/seo/title-tag">limit of 50-60 characters</a> is not enforced yet, still
+            need to extract the ones we can really use.
+        </li>
+        <li>Need to use the respective plan ID instead of placeholder 129-128-118-125-120</li>
+    </ul>
+    <h2>Plans &amp; Titles</h2>
+    <table>
+        <tr>
+            <th style="text-align: left;">Plan ID</th>
+            <th style="text-align: left;">Title ID</th>
+            <th style="text-align: left;">&nbsp;&nbsp;Length</th>
+            <th style="text-align: left;">Title</th>
+        </tr>
+        {% for planId in planIds %}
+            <tr>
+                <td>{{ planId }}</td>
+                {% set titleId = titleIdChooser.chooseTitleId(planId) %}
+                <td>{{ titleId }}</td>
+                {% set title = title_renderer.render(titleId) ~ ' ' ~ planId %}
+                <td style="text-align: center;">{{ title|length }}</td>
+                <td>{{ title }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
