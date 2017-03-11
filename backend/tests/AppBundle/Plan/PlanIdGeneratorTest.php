@@ -50,13 +50,13 @@ class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('6-7-3-4-5', $this->ids[3]);
     }
 
-    public function testGenerateLimit()
+    public function testGenerateMaxResults()
     {
-        $limit = 2;
+        $maxResults = 2;
 
-        $this->planIdGenerator->generate([$this, 'collect'], $limit);
+        $this->planIdGenerator->generate([$this, 'collect'], $maxResults);
 
-        $this->assertCount($limit, $this->ids);
+        $this->assertCount($maxResults, $this->ids);
         $this->assertEquals('1-2-3-4-5', $this->ids[0]);
         $this->assertEquals('6-2-3-4-5', $this->ids[1]);
     }

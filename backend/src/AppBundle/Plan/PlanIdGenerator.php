@@ -22,9 +22,9 @@ class PlanIdGenerator
 
     /**
      * @param callable $callback
-     * @param int $limit
+     * @param int $maxResults
      */
-    public function generate(callable $callback, int $limit = PHP_INT_MAX)
+    public function generate(callable $callback, int $maxResults = PHP_INT_MAX)
     {
         $total = 0;
         foreach ($this->activitiesByPhase[4] as $id4) {
@@ -32,7 +32,7 @@ class PlanIdGenerator
                 foreach ($this->activitiesByPhase[2] as $id2) {
                     foreach ($this->activitiesByPhase[1] as $id1) {
                         foreach ($this->activitiesByPhase[0] as $id0) {
-                            if (++$total > $limit) {
+                            if (++$total > $maxResults) {
                                 return;
                             } else {
                                 call_user_func($callback, $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4);
