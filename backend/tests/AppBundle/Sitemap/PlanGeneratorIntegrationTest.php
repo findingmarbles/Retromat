@@ -1,9 +1,11 @@
 <?php
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Sitemap;
 
+use AppBundle\Activity\ActivityByPhase;
+use AppBundle\Plan\PlanIdGenerator;
 use AppBundle\Sitemap\PlanGenerator;
-use Liip\FunctionalTestBundle\Test\WebTestCase;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\Url;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -12,7 +14,8 @@ use Symfony\Component\Routing\RequestContext;
 /*
  * Self shunt pattern as described by Kent Beck: Test class implements interfaces to mock and injects $this
  */
-class PlanGeneratorTest extends \PHPUnit_Framework_TestCase implements UrlContainerInterface, UrlGeneratorInterface
+
+class PlanGeneratorIntegrationTest extends \PHPUnit_Framework_TestCase implements UrlContainerInterface, UrlGeneratorInterface
 {
     private $urlContainer;
 
@@ -20,8 +23,6 @@ class PlanGeneratorTest extends \PHPUnit_Framework_TestCase implements UrlContai
 
     public function testPopulatePlans()
     {
-        $planGenerator = new PlanGenerator($this);
-
         $activitiesByPhase = [
             0 => [1, 6],
             1 => [2, 7],
@@ -29,9 +30,19 @@ class PlanGeneratorTest extends \PHPUnit_Framework_TestCase implements UrlContai
             3 => [4],
             4 => [5],
         ];
+        $activitiyByPhase = $this
+            ->getMockBuilder(ActivityByPhase::class)
+            ->setMethods(['getAllActivitiesByPhase'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $activitiyByPhase->expects($this->any())
+            ->method('getAllActivitiesByPhase')
+            ->will($this->returnValue($activitiesByPhase));
+        $idGenerator = new PlanIdGenerator($activitiyByPhase);
+        $planGenerator = new PlanGenerator($this, $idGenerator);
 
         $this->urlContainer = [];
-        $planGenerator->populatePlans($this, $activitiesByPhase, 'en');
+        $planGenerator->populatePlans($this);
 
         $this->assertEquals($this->baseUrl.'1-2-3-4-5', $this->urlContainer[0]->getLoc());
         $this->assertEquals($this->baseUrl.'6-2-3-4-5', $this->urlContainer[1]->getLoc());

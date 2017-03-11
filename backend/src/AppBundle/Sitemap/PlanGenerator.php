@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 
 namespace AppBundle\Sitemap;
 
-use Doctrine\Common\Persistence\ObjectManager;
+use AppBundle\Plan\PlanIdGenerator;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -10,48 +11,59 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 class PlanGenerator
 {
     /**
+     * @var PlanIdGenerator
+     */
+    private $idGenerator;
+
+    /**
      * @var UrlGeneratorInterface
      */
     private $urlGenerator;
 
     /**
-     * @param UrlGeneratorInterface $urlGenerator
-     * @param ObjectManager $objectManager
+     * @var UrlContainerInterface
+     * Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
      */
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    private $urlContainer;
+
+    /**
+     * @param UrlGeneratorInterface $urlGenerator
+     * @param PlanIdGenerator $idGenerator
+     */
+    public function __construct(UrlGeneratorInterface $urlGenerator, PlanIdGenerator $idGenerator)
     {
         $this->urlGenerator = $urlGenerator;
+        $this->idGenerator = $idGenerator;
     }
 
     /**
      * @param UrlContainerInterface $urlContainer
      */
-    public function populatePlans(UrlContainerInterface $urlContainer, array $activitiesByPhase, $language)
+    public function populatePlans(UrlContainerInterface $urlContainer)
     {
-        // @todo investigate if id generation can be replaced by AppBundle\Plan\PlanIdGenerator -> generateAll() + callback
+        // Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
+        $this->urlContainer = $urlContainer;
+        $this->idGenerator->generateAll([$this, 'addToUrlContainer']);
+    }
 
-        foreach ($activitiesByPhase[4] as $id4) {
-            foreach ($activitiesByPhase[3] as $id3) {
-                foreach ($activitiesByPhase[2] as $id2) {
-                    foreach ($activitiesByPhase[1] as $id1) {
-                        foreach ($activitiesByPhase[0] as $id0) {
-                            $urlContainer->addUrl(
-                                new UrlConcrete(
-                                    $this->urlGenerator->generate(
-                                        'activities_by_id',
-                                        [
-                                            'id' => $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4,
-                                            '_locale' => $language,
-                                        ],
-                                        UrlGeneratorInterface::ABSOLUTE_URL
-                                    )
-                                ),
-                                'plan'
-                            );
-                        }
-                    }
-                }
-            }
-        }
+    /**
+     * @param string $id
+     * Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
+     */
+    public function addToUrlContainer(string $id)
+    {
+        $this->urlContainer->addUrl(
+            new UrlConcrete(
+                $this->urlGenerator->generate(
+                    'activities_by_id',
+                    [
+                        'id' => $id,
+                        '_locale' => 'en',
+                    ],
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                )
+            ),
+            'plan'
+        );
     }
 }
