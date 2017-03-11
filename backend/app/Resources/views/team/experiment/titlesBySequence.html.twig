@@ -25,8 +25,9 @@
         {% for id in ids %}
             <tr>
                 <td>{{ id }}</td>
-                <td style="text-align: center;">{{ title_renderer.render(id)|length }}</td>
-                <td>{{ title_renderer.render(id) }}</td>
+                {% set title = title_renderer.render(id) %}
+                <td style="text-align: center;">{{ title|length }}</td>
+                <td>{{ title }}</td>
             </tr>
         {% endfor %}
     </table>
