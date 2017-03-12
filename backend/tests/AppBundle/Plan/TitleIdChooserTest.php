@@ -223,4 +223,35 @@ groups_of_terms:
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId4);
         $this->assertNotEquals($titleId2, $titleId4);
     }
+
+    public function testDropOptionalTermsUntilShortEnough()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+groups_of_terms:
+    0: ["foo"]
+    1: ["", "bar1"]
+    2: ["", "bar2"]
+    3: ["", "bar3"]
+    4: ["", "bar4"]
+    5: ["", "bar5"]
+    6: ["", "bar6"]
+    7: ["", "bar7"]
+    8: ["", "bar8"]
+    9: ["", "bar9"]
+'
+        );
+        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        
+        $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
+
+        $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
+    }
 }

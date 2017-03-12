@@ -112,4 +112,18 @@ class TitleIdChooser
 
         return $sequenceOfGroupsId.':'.implode('-', $fragmentIds);
     }
+
+    /**
+     * @param string $titleId
+     * @param string $planId
+     * @return string
+     */
+    public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId): string
+    {
+        while (!$this->isShortEnough($titleId, $planId)) {
+            $titleId = $this->dropOneOptionalTerm($titleId);
+        }
+
+        return $titleId;
+    }
 }
