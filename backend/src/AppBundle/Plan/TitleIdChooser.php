@@ -9,10 +9,13 @@ class TitleIdChooser
 
     private $groupsOfTerms;
 
-    public function __construct(array $titleParts)
+    private $maxLengthIncludingPlanId;
+
+    public function __construct(array $titleParts, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];
+        $this->maxLengthIncludingPlanId = $maxLengthIncludingPlanId;
     }
 
     public function chooseTitleId(string $activityIdsString): string
@@ -35,5 +38,10 @@ class TitleIdChooser
         }
 
         return $chosenSequenceId.':'.implode('-', $chosenTermIds);
+    }
+
+    public function isShortEnough(int $chosenSequenceId, array $chosenTermIds, string $activityIdsString)
+    {
+        return false;
     }
 }
