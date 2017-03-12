@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace AppBundle\Twig;
 
@@ -6,13 +7,25 @@ use AppBundle\Twig\Exception\InconsistentInputException;
 
 class Title
 {
+    /**
+     * @var array
+     */
     private $parts = [];
 
+    /**
+     * Title constructor.
+     * @param array $parts
+     */
     function __construct(array $parts)
     {
         $this->parts = $parts;
     }
 
+    /**
+     * @param $idString
+     * @return string
+     * @throws InconsistentInputException
+     */
     public function render($idString)
     {
         $idStringParts = explode(':', $idString);
