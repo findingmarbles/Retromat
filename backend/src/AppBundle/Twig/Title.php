@@ -26,7 +26,7 @@ class Title
      * @return string
      * @throws InconsistentInputException
      */
-    public function render($idString)
+    public function render(string $idString): string
     {
         $idStringParts = explode(':', $idString);
         $sequenceOfGroups = $this->parts['sequence_of_groups'][$idStringParts[0]];
@@ -41,7 +41,10 @@ class Title
 
         $fragments = [];
         for ($i = 0; $i < count($fragmentIds); $i++) {
-            $fragments[] = $this->parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
+            $fragment = $this->parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
+            if (0 < strlen($fragment)) {
+                $fragments[] = $fragment;
+            }
         }
 
         return implode(' ', $fragments);

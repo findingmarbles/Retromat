@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Twig;
 
@@ -34,5 +35,22 @@ class TitleTest extends \PHPUnit_Framework_TestCase
         $title = new Title($titleParts);
 
         $title->render('1:0-0-0');
+    }
+
+    public function testRenderNoSuperfluousWhitespace()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+'
+        );
+        $title = new Title($titleParts);
+        $this->assertEquals('Plan', $title->render('0:0-0-0'));
     }
 }
