@@ -163,4 +163,23 @@ groups_of_terms:
         $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
         $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
     }
+
+    public function testDropOneOptionalTerm()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+'
+        );
+        $chooser = new TitleIdChooser($titleParts);
+        $titleId1 = '0:0-2-0';
+        $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
+        $this->assertEquals('0:0-0-0', $titleId2);
+    }
 }

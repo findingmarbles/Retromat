@@ -7,14 +7,32 @@ use AppBundle\Twig\Title;
 
 class TitleIdChooser
 {
+    /**
+     * @var array
+     */
     private $sequenceOfGroups;
 
+    /**
+     * @var array
+     */
     private $groupsOfTerms;
 
+    /**
+     * @var Title
+     */
     private $title;
 
+    /**
+     * @var int
+     */
     private $maxLengthIncludingPlanId;
 
+    /**
+     * TitleIdChooser constructor.
+     * @param array $titleParts
+     * @param Title|null $title
+     * @param int $maxLengthIncludingPlanId
+     */
     public function __construct(array $titleParts, Title $title = null, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
@@ -23,6 +41,10 @@ class TitleIdChooser
         $this->maxLengthIncludingPlanId = $maxLengthIncludingPlanId;
     }
 
+    /**
+     * @param string $activityIdsString
+     * @return string
+     */
     public function chooseTitleId(string $activityIdsString): string
     {
         $activityIds = explode('-', $activityIdsString);
@@ -45,8 +67,45 @@ class TitleIdChooser
         return $chosenSequenceId.':'.implode('-', $chosenTermIds);
     }
 
-    public function isShortEnough(string $titleId, string $activityIdsString)
+    /**
+     * @param string $titleId
+     * @param string $activityIdsString
+     * @return bool
+     */
+    public function isShortEnough(string $titleId, string $activityIdsString): bool
     {
         return $this->maxLengthIncludingPlanId >= strlen($this->title->render($titleId).' '.$activityIdsString);
+    }
+
+    /**
+     * @param string $titleId
+     * @return string
+     */
+    public function dropOneOptionalTerm(string $titleId): string
+    {
+        // parse titleId
+        $idStringParts = explode(':', $titleId);
+        $sequenceOfGroupsId = $idStringParts[0];
+        $sequenceOfGroups = $this->sequenceOfGroups[$sequenceOfGroupsId];
+        $fragmentIds = explode('-', $idStringParts[1]);
+        unset($titleId, $idStringParts);
+
+        // find non-empty optional terms
+        $nonEmptyOptionalGroupIds = [];
+        for ($i = 0; $i < count($fragmentIds); $i++) {
+            // non-empty (by convention, empty string must be listed first and therefore are id == 0)
+            if (0 != $fragmentIds[$i]) {
+                // by convention, optional groups are marked by having an empty string as their first term
+                if (0 == strlen($this->groupsOfTerms[$sequenceOfGroups[$i]][0])) {
+                    $nonEmptyOptionalGroupIds[] = $i;
+                }
+            }
+        }
+
+        // drop one term (random choice)
+        $termIdToDrop = $nonEmptyOptionalGroupIds[mt_rand(0, count($nonEmptyOptionalGroupIds) - 1)];
+        $fragmentIds[$termIdToDrop] = 0;
+
+        return $sequenceOfGroupsId.':'.implode('-', $fragmentIds);
     }
 }

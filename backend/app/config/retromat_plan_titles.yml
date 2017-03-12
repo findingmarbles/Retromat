@@ -7,6 +7,7 @@ parameters:
 #           2: [    1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
 #           3: [ 0, 1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
         groups_of_terms:
+            # a "" at the beginning of a group marks the group as optional (may be skipped, even if listed in a sequence of groups)
             0: ["", "Retromat:"]
             1: ["", "Agile", "Scrum", "Kanban", "Lean", "XP", "Extreme Programming"] # Framework / Worldview
             2: ["", "Iteration", "Sprint", "Cycle", "Release", "Project", "Program", "Process", "Team", "Over All"] # What we inspect + adapt on
