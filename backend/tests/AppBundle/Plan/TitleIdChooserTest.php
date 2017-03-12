@@ -182,4 +182,45 @@ groups_of_terms:
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertEquals('0:0-0-0', $titleId2);
     }
+
+    public function testDropOneOptionalTermDeterministicRandomness()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+groups_of_terms:
+    0: ["foo"]
+    1: ["", "bar1"]
+    2: ["", "bar2"]
+    3: ["", "bar3"]
+    4: ["", "bar4"]
+    5: ["", "bar5"]
+    6: ["", "bar6"]
+    7: ["", "bar7"]
+    8: ["", "bar8"]
+    9: ["", "bar9"]
+'
+        );
+        $chooser = new TitleIdChooser($titleParts);
+        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
+
+        // some term is dropped
+        mt_srand(0);
+        $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId2);
+
+        // same seed, same term dropped
+        mt_srand(0);
+        $titleId3 = $chooser->dropOneOptionalTerm($titleId1);
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId3);
+        $this->assertEquals($titleId2, $titleId3);
+
+        // different seed, different terms dropped
+        mt_srand(1);
+        $titleId4 = $chooser->dropOneOptionalTerm($titleId1);
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId4);
+        $this->assertNotEquals($titleId2, $titleId4);
+    }
 }
