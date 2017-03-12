@@ -145,26 +145,35 @@ groups_of_terms:
         );
     }
 
-    public function testIsShortEnough()
+    public function testDropOptionalTermsUntilShortEnough()
     {
         $titleParts = Yaml::parse(
             '
 sequence_of_groups:
-    0: [0, 1, 2]
+    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+    0: ["foo"]
+    1: ["", "bar1"]
+    2: ["", "bar2"]
+    3: ["", "bar3"]
+    4: ["", "bar4"]
+    5: ["", "bar5"]
+    6: ["", "bar6"]
+    7: ["", "bar7"]
+    8: ["", "bar8"]
+    9: ["", "bar9"]
 '
         );
-        $maxLengthIncludingPlanId = 14;
+        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
         $title = new Title($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
-        $planId = '1-2-3-4-5';
 
-        $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
-        $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
+        $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
+
+        $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
     }
 
     public function testDropOneOptionalTerm()
@@ -229,34 +238,25 @@ groups_of_terms:
         $this->assertNotEquals($titleId2, $titleId4);
     }
 
-    public function testDropOptionalTermsUntilShortEnough()
+    public function testIsShortEnough()
     {
         $titleParts = Yaml::parse(
             '
 sequence_of_groups:
-    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    0: [0, 1, 2]
 
 groups_of_terms:
-    0: ["foo"]
-    1: ["", "bar1"]
-    2: ["", "bar2"]
-    3: ["", "bar3"]
-    4: ["", "bar4"]
-    5: ["", "bar5"]
-    6: ["", "bar6"]
-    7: ["", "bar7"]
-    8: ["", "bar8"]
-    9: ["", "bar9"]
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
 '
         );
-        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
-        $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
+        $maxLengthIncludingPlanId = 14;
         $title = new Title($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $planId = '1-2-3-4-5';
 
-        $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
-
-        $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
+        $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
+        $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
     }
 }

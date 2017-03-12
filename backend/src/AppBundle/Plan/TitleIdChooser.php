@@ -77,12 +77,16 @@ class TitleIdChooser
 
     /**
      * @param string $titleId
-     * @param string $activityIdsString
-     * @return bool
+     * @param string $planId
+     * @return string
      */
-    public function isShortEnough(string $titleId, string $activityIdsString): bool
+    public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId): string
     {
-        return $this->maxLengthIncludingPlanId >= strlen($this->title->render($titleId).' '.$activityIdsString);
+        while (!$this->isShortEnough($titleId, $planId)) {
+            $titleId = $this->dropOneOptionalTerm($titleId);
+        }
+
+        return $titleId;
     }
 
     /**
@@ -119,15 +123,11 @@ class TitleIdChooser
 
     /**
      * @param string $titleId
-     * @param string $planId
-     * @return string
+     * @param string $activityIdsString
+     * @return bool
      */
-    public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId): string
+    public function isShortEnough(string $titleId, string $activityIdsString): bool
     {
-        while (!$this->isShortEnough($titleId, $planId)) {
-            $titleId = $this->dropOneOptionalTerm($titleId);
-        }
-
-        return $titleId;
+        return $this->maxLengthIncludingPlanId >= strlen($this->title->render($titleId).' '.$activityIdsString);
     }
 }
