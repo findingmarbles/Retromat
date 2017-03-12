@@ -60,7 +60,7 @@ groups_of_terms:
         }
     }
 
-    public function testDifferentPlansGetDifferentTitles()
+    public function testChooseTitleIdDifferentPlansGetDifferentTitles()
     {
         $titleParts = Yaml::parse(
             '
@@ -85,7 +85,7 @@ groups_of_terms:
         $this->assertNotEquals($titleId2, $titleId1);
     }
 
-    public function testPlanAlwaysGetsSameTitle()
+    public function testChooseTitleIdPlanAlwaysGetsSameTitle()
     {
         $titleParts = Yaml::parse(
             '
