@@ -3,18 +3,23 @@ declare(strict_types = 1);
 
 namespace AppBundle\Plan;
 
+use AppBundle\Twig\Title;
+
 class TitleIdChooser
 {
     private $sequenceOfGroups;
 
     private $groupsOfTerms;
 
+    private $title;
+
     private $maxLengthIncludingPlanId;
 
-    public function __construct(array $titleParts, int $maxLengthIncludingPlanId = PHP_INT_MAX)
+    public function __construct(array $titleParts, Title $title = null, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];
+        $this->title = $title;
         $this->maxLengthIncludingPlanId = $maxLengthIncludingPlanId;
     }
 
@@ -40,8 +45,8 @@ class TitleIdChooser
         return $chosenSequenceId.':'.implode('-', $chosenTermIds);
     }
 
-    public function isShortEnough(int $chosenSequenceId, array $chosenTermIds, string $activityIdsString)
+    public function isShortEnough(string $titleId, string $activityIdsString)
     {
-        return false;
+        return $this->maxLengthIncludingPlanId >= strlen($this->title->render($titleId).' '.$activityIdsString);
     }
 }

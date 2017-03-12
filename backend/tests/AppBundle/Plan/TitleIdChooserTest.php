@@ -7,7 +7,7 @@ use AppBundle\Plan\TitleIdChooser;
 use AppBundle\Twig\Title;
 use Symfony\Component\Yaml\Yaml;
 
-class TitleIdChooserTest extends \PHPUnit_Framework_TestCase
+class TitleIdChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     public function testChooseTitleIdEmptyUnless5Activities()
     {
@@ -156,13 +156,11 @@ groups_of_terms:
 '
         );
         $maxLengthIncludingPlanId = 14;
-        $chooser = new TitleIdChooser($titleParts, $maxLengthIncludingPlanId);
         $title = new Title($titleParts);
-
+        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
         $planId = '1-2-3-4-5';
-        $this->assertFalse($chooser->isShortEnough(0, [1, 1, 1], $planId));
 
-        $planId = '1-2-3-4-5';
-        $this->assertTrue($chooser->isShortEnough(0, [0, 0, 0], $planId));
+        $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
+        $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
     }
 }
