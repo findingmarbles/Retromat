@@ -33,7 +33,7 @@ class TitleIdChooser
      * @param Title|null $title
      * @param int $maxLengthIncludingPlanId
      */
-    public function __construct(array $titleParts, Title $title = null, int $maxLengthIncludingPlanId = PHP_INT_MAX)
+    public function __construct(array $titleParts, Title $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];
@@ -68,7 +68,11 @@ class TitleIdChooser
             $chosenTermIds[] = mt_rand(0, count($groupOfTerms) - 1);
         }
 
-        return $chosenSequenceId.':'.implode('-', $chosenTermIds);
+        // take care of $maxLengthIncludingPlanId
+        $titleId = $chosenSequenceId.':'.implode('-', $chosenTermIds);
+        $titleId = $this->dropOptionalTermsUntilShortEnough($titleId, $activityIdsString);
+
+        return $titleId;
     }
 
     /**

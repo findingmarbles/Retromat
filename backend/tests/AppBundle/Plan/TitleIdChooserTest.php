@@ -22,7 +22,8 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
 
         $this->assertEquals('', $chooser->chooseTitleId('1'));
         $this->assertEquals('', $chooser->chooseTitleId('1-2-3-4'));
@@ -42,7 +43,8 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId = $chooser->chooseTitleId('1-2-3-4-5');
 
@@ -76,7 +78,8 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
         $titleId2 = $chooser->chooseTitleId('1-2-3-4-6');
@@ -101,7 +104,8 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
 
@@ -114,7 +118,6 @@ groups_of_terms:
 
     public function testChooseTitleIdMaxLength()
     {
-        $this->markTestSkipped();
         $titleParts = Yaml::parse(
             '
 sequence_of_groups:
@@ -126,11 +129,11 @@ groups_of_terms:
     2: ["Plan", "Agenda"]
 '
         );
-        $maxLengthIncludingPlanId = 14;
-        $chooser = new TitleIdChooser($titleParts);
-        $title = new Title($titleParts);
-
         $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = strlen('Agenda'.' '.'1-2-3-4-5');
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
         $titleId = $chooser->chooseTitleId($planId);
         $titleString = $title->render($titleId);
         $fullTitle = $titleString.' '.$planId;
@@ -177,7 +180,8 @@ groups_of_terms:
     2: ["Plan", "Agenda"]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertEquals('0:0-0-0', $titleId2);
@@ -203,7 +207,8 @@ groups_of_terms:
     9: ["", "bar9"]
 '
         );
-        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
 
         // some term is dropped
@@ -249,7 +254,7 @@ groups_of_terms:
         $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
         $title = new Title($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
-        
+
         $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
 
         $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
