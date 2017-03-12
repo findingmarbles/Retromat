@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace tests\AppBundle\Plan;
 
 use AppBundle\Plan\TitleIdChooser;
+use AppBundle\Twig\Title;
 use Symfony\Component\Yaml\Yaml;
 
 class TitleIdChooserTest extends \PHPUnit_Framework_TestCase
@@ -109,5 +110,30 @@ groups_of_terms:
             $titleId2 = $chooser->chooseTitleId('1-2-3-4-5');
             $this->assertEquals($titleId2, $titleId1);
         }
+    }
+    
+    public function testChooseTitleIdMaxLength()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+'
+        );
+        $maxLengthIncludingPlanId = 14;
+        $chooser = new TitleIdChooser($titleParts);
+        $title = new Title($titleParts);
+
+        $planId = '1-2-3-4-5';
+        $titleId = $chooser->chooseTitleId($planId);
+        $titleString = $title->render($titleId);
+        $fullTitle = $titleString . ' ' . $planId;
+
+        $this->assertLessThanOrEqual($maxLengthIncludingPlanId, strlen($fullTitle), 'This is longer than '.$maxLengthIncludingPlanId.': '.$fullTitle);
     }
 }
