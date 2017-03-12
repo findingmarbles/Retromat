@@ -47,17 +47,21 @@ class TitleIdChooser
      */
     public function chooseTitleId(string $activityIdsString): string
     {
+        // parse input
         $activityIds = explode('-', $activityIdsString);
         if (5 !== count($activityIds)) {
             return '';
         }
 
+        // use input to seed the random number generator so we get deterministic randomness
         $planNumber = (int)implode('0', $activityIds);
         mt_srand($planNumber);
 
+        // randomly choose a squence to use and identify the groups of terms in it
         $chosenSequenceId = mt_rand(0, count($this->sequenceOfGroups) - 1);
         $groupIds = $this->sequenceOfGroups[$chosenSequenceId];
 
+        // randomly choose one term from each group in the sequence
         $chosenTermIds = [];
         foreach ($groupIds as $groupId) {
             $groupOfTerms = $this->groupsOfTerms[$groupId];
