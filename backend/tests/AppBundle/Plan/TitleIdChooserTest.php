@@ -145,6 +145,28 @@ groups_of_terms:
         );
     }
 
+    /**
+     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
+     */
+    public function testChooseTitleIdMaxLengthNotFeasible()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0]
+
+groups_of_terms:
+    0: ["Foo"]
+'
+        );
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = 2;
+        $title = new Title($titleParts);
+        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
+        $chooser->chooseTitleId($planId);
+    }
+
     public function testDropOptionalTermsUntilShortEnough()
     {
         $titleParts = Yaml::parse(

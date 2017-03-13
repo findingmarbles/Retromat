@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace AppBundle\Plan;
 
+use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 use AppBundle\Twig\Title;
 
 class TitleIdChooser
@@ -112,6 +113,9 @@ class TitleIdChooser
                     $nonEmptyOptionalGroupIds[] = $i;
                 }
             }
+        }
+        if (empty($nonEmptyOptionalGroupIds)) {
+            throw new NoGroupLeftToDrop('Cannot drop enough groups to satisfy maximum length requirement.');
         }
 
         // drop one term (random choice)
