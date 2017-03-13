@@ -2,26 +2,33 @@ parameters:
     # maybe put this into the database later
     retromat.plan.titles:
         sequence_of_groups:
-            0: [ 0, 1, 2, 3, 4, 5,      ]
-            1: [    1, 2, 3,    5, 6, 7 ] # leaving out 0 and 4 to avoid consuming too much memory
-#           2: [    1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
-#           3: [ 0, 1, 2, 3, 4, 5, 6, 7 ] # generating all at once consumes too much memory
-        groups_of_terms:
-            # a "" at the beginning of a group marks the group as optional (may be skipped, even if listed in a sequence of groups)
-            0: ["", "Retromat:"]
-            1: ["", "Agile", "Scrum", "Kanban", "Lean", "XP", "Extreme Programming"] # Framework / Worldview
-            2: ["", "Iteration", "Sprint", "Cycle", "Release", "Project", "Program", "Process", "Team", "Over All"] # What we inspect + adapt on
-            3: ["Retrospective", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflection", "Inspect & Adapt"]
-            4: ["", "Meeting", "Event", "Discussion", "Ceremony", "Analysis"] # what we do, either this or 8
-            5: ["", "Plan", "Agenda", "Example", "Activities", "Inspiration", "Ideas", "Experiment"]
-            6: ["with", "containing", "using", "including"]
-            7: ["5 Activities:", "5 Stages:", "5 Steps:"]
-            8: ["", "Generator: ", "Tool: ", "Guide: ", "Directory: "] # tool that helps prepare, either this or 4
-            10: ["", "Scaled", "Large Scale"] # can be inserted before 1
-            11: ["Quickly", "Easily"]
-            12: ["Plan", "Organize", "Create", "Find", "Discover"]
-            13: ["your", "a", "any"]
+            0:  [  0, 1,    3,    5, 6, 7, 8,    10     ]
+            1:  [  0,    2,    4, 5, 6, 7,    9         ]
+            2:  [  0, 1,    3,    5, 6, 7, 8,    10     ]
+            3:  [  0,    2,    4, 5, 6, 7,    9         ]
+            4:  [  0, 1,          5,    7,           11 ]
+            5:  [  0, 1,          5,       8,        11 ]
+            6:  [  0,    2,       5,    7,           11 ]
+            7:  [  0,    2,       5,       8,        11 ]
+            8:  [ 12, 1,    3,    5, 6,           10    ]
+            9:  [ 12,    2,    4, 5, 6,        9        ]
+            10: [ 12, 1,    3,    5, 6,           10    ]
+            11: [ 12,    2,    4, 5, 6,        9        ]
 
-#        de:
-#            groups_of_terms:
-#                0: ["Qualitätszirkel"]
+        groups_of_terms:
+            # "" as first element marks the group as optional (may be skipped to satisfy length constraints)
+            0:  ["", "Retromat:"]
+            1:  ["", "Kanban", "Lean"] # either 1+3 (without iterations) or 2+4 (with iteration)
+            2:  ["", "Agile", "Scrum", "XP", "Extreme Programming"]
+            3:  ["", "Release", "Project", "Program", "Process", "Team", "Over All"]
+            4:  ["", "Release", "Project", "Program", "Process", "Team", "Over All", "Iteration", "Sprint", "Cycle"]
+            5:  ["Retrospective", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflection", "Inspect & Adapt", "Analysis"]
+            6:  ["", "Meeting", "Event", "Discussion", "Ceremony"]
+            7:  ["", "Plan", "Agenda", "Structure", "Experiment"]
+            8:  ["", "Ideas", "Inspiration", "Example"]
+            9:  ["", "Activities"] # either 9 or 10
+            10: ["", "with 5 Activities:", "with 5 Stages:", "with 5 Steps:", "with 5 Ideas", "with 5 Activity Ideas", "with 5 Activity Examples"]
+            11: ["", "Generator: ", "Tool: ", "Guide: ", "Directory: "]
+            12: ["", "Plan Your", "Organize Your", "Create Your", "Find Your", "Discover Your"]
+
+#           # later: de: ["Qualitätszirkel"]
