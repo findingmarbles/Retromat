@@ -28,13 +28,7 @@ class TeamController extends Controller
      */
     public function titlesExperimentAction()
     {
-        $titleParts = $this->getParameter('retromat.plan.titles');
-        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
-
-        return $this->render(
-            'team/experiment/titles.html.twig',
-            ['titleParts' => $titleParts, 'totalCombinations' => $totalCombinations]
-        );
+        return $this->render('team/experiment/titles.html.twig');
     }
 
     /**
@@ -66,6 +60,7 @@ class TeamController extends Controller
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], $request->get('max'), $skip = $request->get('skip'));
         $titleIdChooser = $this->get('retromat.plan.title_id_chooser');
+        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
 
         return $this->render(
             'team/experiment/titlesByPlanId.html.twig',
@@ -73,6 +68,7 @@ class TeamController extends Controller
                 'planIds' => $this->ids,
                 'titleIdChooser' => $titleIdChooser,
                 'title_renderer' => $this->get('retromat.plan.title_renderer'),
+                'totalCombinations' => $totalCombinations,
             ]
         );
     }

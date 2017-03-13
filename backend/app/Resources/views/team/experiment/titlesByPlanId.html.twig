@@ -9,8 +9,8 @@
     <ul>
         <li>Use the <i>skip</i> parameter in the URL to look at different plan ids and their titles.</li>
         <li>Use the <i>max</i> parameter in the URL to limit how many to generate.</li>
-        <li>Title elements are read from: <i>backend/app/config/retromat_plan_titles.yml</i></li>
-        <li>Each title is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>.</li>
+        <li>Title elements from the current version of <i>backend/app/config/retromat_plan_titles.yml</i> allow for {{ totalCombinations }} combinations (not considering length restrictions).</li>
+        <li>Each title shown below is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>, because the TitleIdChooser only chooses short enough titles (considering the length of the respective plan id).</li>
     </ul>
     <h2>Plans &amp; Titles</h2>
     <table>
