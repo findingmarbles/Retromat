@@ -23,8 +23,8 @@ services:
     retromat.plan.plan_id_generator:
         class: AppBundle\Plan\PlanIdGenerator
         arguments: ["@retromat.activity_by_phase"]
-    retromat.plan.title_id_chooser:
-        class: AppBundle\Plan\TitleIdChooser
+    retromat.plan.title_chooser:
+        class: AppBundle\Plan\TitleChooser
         arguments: ["%retromat.plan.titles%", "@retromat.plan.title_renderer", 60]
     retromat.plan.title_id_generator:
         class: AppBundle\Plan\TitleIdGenerator

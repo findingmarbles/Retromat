@@ -10,7 +10,7 @@
         <li>Use the <i>skip</i> parameter in the URL to look at different plan ids and their titles.</li>
         <li>Use the <i>max</i> parameter in the URL to limit how many to generate.</li>
         <li>Title elements from the current version of <i>backend/app/config/retromat_plan_titles.yml</i> allow for {{ totalCombinations }} combinations (not considering length restrictions and possible duplication between sequences).</li>
-        <li>Each title shown below is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>, because the TitleIdChooser only chooses short enough titles (considering the length of the respective plan id).</li>
+        <li>Each title shown below is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>, because the TitleChooser only chooses short enough titles (considering the length of the respective plan id).</li>
     </ul>
     <h2>Plans &amp; Titles</h2>
     <table>
@@ -23,9 +23,9 @@
         {% for planId in planIds %}
             <tr>
                 <td>{{ planId }}</td>
-                {% set titleId = titleIdChooser.chooseTitleId(planId) %}
+                {% set titleId = titleChooser.chooseTitleId(planId) %}
                 <td>{{ titleId }}</td>
-                {% set title = title_renderer.render(titleId) ~ ' ' ~ planId %}
+                {% set title = title_renderer.render(titleId) ~ ': ' ~ planId %}
                 <td style="text-align: center;">{{ title|length }}</td>
                 <td>{{ title }}</td>
             </tr>

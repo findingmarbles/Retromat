@@ -6,7 +6,7 @@ namespace AppBundle\Plan;
 use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 use AppBundle\Plan\TitleRenderer;
 
-class TitleIdChooser
+class TitleChooser
 {
     /**
      * @var array
@@ -21,7 +21,7 @@ class TitleIdChooser
     /**
      * @var TitleRenderer
      */
-    private $title;
+    private $titleRenderer;
 
     /**
      * @var int
@@ -38,10 +38,19 @@ class TitleIdChooser
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];
-        $this->title = $title;
+        $this->titleRenderer = $title;
         $this->maxLengthIncludingPlanId = $maxLengthIncludingPlanId;
     }
 
+    /**
+     * @param string $activityIdsString
+     * @return string
+     */
+    public function renderTitle(string $activityIdsString): string
+    {
+        return $this->titleRenderer->render($this->chooseTitleId($activityIdsString)).': '.$activityIdsString;
+    }
+    
     /**
      * @param string $activityIdsString
      * @return string
@@ -115,7 +124,10 @@ class TitleIdChooser
             }
         }
         if (empty($nonEmptyOptionalGroupIds)) {
-            throw new NoGroupLeftToDrop('Cannot drop enough groups to satisfy maximum length requirement.');
+            throw new NoGroupLeftToDrop(
+                'Cannot drop enough groups to satisfy maximum length requirement: '.
+                $sequenceOfGroupsId.':'.implode('-', $fragmentIds)
+            );
         }
 
         // drop one term (random choice)
@@ -132,6 +144,8 @@ class TitleIdChooser
      */
     public function isShortEnough(string $titleId, string $activityIdsString): bool
     {
-        return $this->maxLengthIncludingPlanId >= strlen($this->title->render($titleId).' '.$activityIdsString);
+        return $this->maxLengthIncludingPlanId >= strlen(
+                $this->titleRenderer->render($titleId).' '.$activityIdsString
+            );
     }
 }

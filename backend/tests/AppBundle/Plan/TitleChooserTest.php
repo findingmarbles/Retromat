@@ -3,11 +3,11 @@ declare(strict_types = 1);
 
 namespace tests\AppBundle\Plan;
 
-use AppBundle\Plan\TitleIdChooser;
+use AppBundle\Plan\TitleChooser;
 use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
 
-class TitleIdChooserIntegrationTest extends \PHPUnit_Framework_TestCase
+class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     public function testChooseTitleIdEmptyUnless5Activities()
     {
@@ -23,7 +23,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
 
         $this->assertEquals('', $chooser->chooseTitleId('1'));
         $this->assertEquals('', $chooser->chooseTitleId('1-2-3-4'));
@@ -44,7 +44,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
 
         $titleId = $chooser->chooseTitleId('1-2-3-4-5');
 
@@ -79,7 +79,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
         $titleId2 = $chooser->chooseTitleId('1-2-3-4-6');
@@ -105,7 +105,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
 
@@ -132,7 +132,7 @@ groups_of_terms:
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('Agenda'.' '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $titleId = $chooser->chooseTitleId($planId);
         $titleString = $title->render($titleId);
@@ -162,7 +162,7 @@ groups_of_terms:
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = 2;
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $chooser->chooseTitleId($planId);
     }
@@ -191,7 +191,7 @@ groups_of_terms:
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
 
@@ -212,7 +212,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertEquals('0:0-0-0', $titleId2);
@@ -239,7 +239,7 @@ groups_of_terms:
 '
         );
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title);
+        $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
 
         // some term is dropped
@@ -275,7 +275,7 @@ groups_of_terms:
         );
         $maxLengthIncludingPlanId = 14;
         $title = new TitleRenderer($titleParts);
-        $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
         $planId = '1-2-3-4-5';
 
         $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
