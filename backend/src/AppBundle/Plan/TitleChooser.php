@@ -145,7 +145,7 @@ class TitleChooser
     public function isShortEnough(string $titleId, string $activityIdsString): bool
     {
         return $this->maxLengthIncludingPlanId >= strlen(
-                $this->titleRenderer->render($titleId).' '.$activityIdsString
+                $this->titleRenderer->render($titleId).': '.$activityIdsString
             );
     }
 }

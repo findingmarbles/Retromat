@@ -130,7 +130,7 @@ groups_of_terms:
 '
         );
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('Agenda'.' '.'1-2-3-4-5');
+        $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -189,7 +189,7 @@ groups_of_terms:
         );
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
+        $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -273,7 +273,7 @@ groups_of_terms:
     2: ["Plan", "Agenda"]
 '
         );
-        $maxLengthIncludingPlanId = 14;
+        $maxLengthIncludingPlanId = 15;
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
         $planId = '1-2-3-4-5';
