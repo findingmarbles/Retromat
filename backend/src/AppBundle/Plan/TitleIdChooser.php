@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace AppBundle\Plan;
 
 use AppBundle\Plan\Exception\NoGroupLeftToDrop;
-use AppBundle\Twig\Title;
+use AppBundle\Plan\TitleRenderer;
 
 class TitleIdChooser
 {
@@ -19,7 +19,7 @@ class TitleIdChooser
     private $groupsOfTerms;
 
     /**
-     * @var Title
+     * @var TitleRenderer
      */
     private $title;
 
@@ -31,10 +31,10 @@ class TitleIdChooser
     /**
      * TitleIdChooser constructor.
      * @param array $titleParts
-     * @param Title|null $title
+     * @param TitleRenderer|null $title
      * @param int $maxLengthIncludingPlanId
      */
-    public function __construct(array $titleParts, Title $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
+    public function __construct(array $titleParts, TitleRenderer $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];

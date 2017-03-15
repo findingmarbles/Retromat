@@ -30,7 +30,7 @@ services:
         class: AppBundle\Plan\TitleIdGenerator
         arguments: ["%retromat.plan.titles%"]
     retromat.plan.title_renderer:
-        class: AppBundle\Twig\Title
+        class: AppBundle\Plan\TitleRenderer
         arguments: ["%retromat.plan.titles%"]
     retromat.sitemap.plan_generator:
         class: AppBundle\Sitemap\PlanGenerator

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace tests\AppBundle\Plan;
 
 use AppBundle\Plan\TitleIdChooser;
-use AppBundle\Twig\Title;
+use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
 
 class TitleIdChooserIntegrationTest extends \PHPUnit_Framework_TestCase
@@ -22,7 +22,7 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
 
         $this->assertEquals('', $chooser->chooseTitleId('1'));
@@ -43,7 +43,7 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId = $chooser->chooseTitleId('1-2-3-4-5');
@@ -78,7 +78,7 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
@@ -104,7 +104,7 @@ groups_of_terms:
     2: [Plan, Agenda]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
 
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
@@ -131,7 +131,7 @@ groups_of_terms:
         );
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('Agenda'.' '.'1-2-3-4-5');
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $titleId = $chooser->chooseTitleId($planId);
@@ -161,7 +161,7 @@ groups_of_terms:
         );
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = 2;
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $chooser->chooseTitleId($planId);
@@ -190,7 +190,7 @@ groups_of_terms:
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('foo'.' '.$planId);
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId);
@@ -211,7 +211,7 @@ groups_of_terms:
     2: ["Plan", "Agenda"]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
@@ -238,7 +238,7 @@ groups_of_terms:
     9: ["", "bar9"]
 '
         );
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
 
@@ -274,7 +274,7 @@ groups_of_terms:
 '
         );
         $maxLengthIncludingPlanId = 14;
-        $title = new Title($titleParts);
+        $title = new TitleRenderer($titleParts);
         $chooser = new TitleIdChooser($titleParts, $title, $maxLengthIncludingPlanId);
         $planId = '1-2-3-4-5';
 

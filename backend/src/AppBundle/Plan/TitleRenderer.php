@@ -1,11 +1,11 @@
 <?php
 declare(strict_types = 1);
 
-namespace AppBundle\Twig;
+namespace AppBundle\Plan;
 
 use AppBundle\Twig\Exception\InconsistentInputException;
 
-class Title
+class TitleRenderer
 {
     /**
      * @var array
