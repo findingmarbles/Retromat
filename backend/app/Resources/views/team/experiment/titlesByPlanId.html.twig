@@ -25,7 +25,7 @@
                 <td>{{ planId }}</td>
                 {% set titleId = titleChooser.chooseTitleId(planId) %}
                 <td>{{ titleId }}</td>
-                {% set title = title_renderer.render(titleId) ~ ': ' ~ planId %}
+                {% set title = titleChooser.renderTitle(planId) %}
                 <td style="text-align: center;">{{ title|length }}</td>
                 <td>{{ title }}</td>
             </tr>
