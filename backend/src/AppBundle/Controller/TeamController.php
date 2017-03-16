@@ -59,7 +59,7 @@ class TeamController extends Controller
     public function titlesExperimentByPlanId(Request $request)
     {
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
-        $planIdGenerator->generate([$this, 'collect'], $request->get('max'), $skip = $request->get('skip'));
+        $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
         $titleChooser = $this->get('retromat.plan.title_chooser');
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
 
