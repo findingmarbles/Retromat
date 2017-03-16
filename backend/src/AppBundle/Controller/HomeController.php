@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace AppBundle\Controller;
 
@@ -13,7 +14,11 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
-        $ids = explode('-', $request->query->get('id'));
+        if ($request->query->has('id')) {
+            $ids = explode('-', $request->query->get('id'));
+        } else {
+            $ids = [];
+        }
         $phase = $request->query->get('phase');
 
         $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
