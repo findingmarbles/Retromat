@@ -14,17 +14,16 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
+        $ids = [];
+        $title = '';
+        $activities = [];
         if ($request->query->has('id')) {
             $ids = explode('-', $request->query->get('id'));
-        } else {
-            $ids = [];
+            $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
+            $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
+            $activities = $repo->findOrdered($request->getLocale(), $ids);
         }
         $phase = $request->query->get('phase');
-
-        $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->findOrdered(
-            $request->getLocale(),
-            $ids
-        );
 
         return $this->render(
             'home/generated/index_'.$request->getLocale().'.html.twig',
@@ -35,6 +34,7 @@ class HomeController extends Controller
                 'color_variation' => $this->get('retromat.color_varation'),
                 'activity_by_phase' => $this->get('retromat.activity_by_phase'),
                 'activity_source' => $this->getParameter('retromat.activity.source'),
+                'title' => $title,
             ]
         );
     }

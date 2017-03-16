@@ -50,8 +50,15 @@ function get_url_to_index() {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
-
+<?php if (is_output_format_twig($argv)) { ?>
+    {% if title is not empty %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
+    {% endif %}
+<?php } else { ?>
+    <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
+<?php } ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />

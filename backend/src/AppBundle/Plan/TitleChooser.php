@@ -48,9 +48,13 @@ class TitleChooser
      */
     public function renderTitle(string $activityIdsString): string
     {
+        if (5 !== count(explode('-', $activityIdsString))) {
+            return '';
+        }
+
         return $this->titleRenderer->render($this->chooseTitleId($activityIdsString)).': '.$activityIdsString;
     }
-    
+
     /**
      * @param string $activityIdsString
      * @return string

@@ -28,6 +28,26 @@ groups_of_terms:
         $this->assertEquals('Agile Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5'));
     }
 
+    public function testRenderTitleEmptyUnless5Activities()
+    {
+        $titleParts = Yaml::parse(
+            '
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile]
+    1: [Retro]
+    2: [Plan]
+'
+        );
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $this->assertEquals('', $chooser->renderTitle('1-2-3-4'));
+        $this->assertEquals('', $chooser->renderTitle('1-2-3-4-5-6'));
+    }
+
     public function testChooseTitleIdEmptyUnless5Activities()
     {
         $titleParts = Yaml::parse(

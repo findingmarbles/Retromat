@@ -34,7 +34,7 @@ parameters:
             9:  ["", "Activities"] # either 9 or 10
             10: ["", "with 5 Activities", "with 5 Stages", "with 5 Steps", "with 5 Ideas", "with 5 Activity Ideas", "with 5 Activity Examples"]
             11: ["", "Generator", "Tool", "Guide", "Directory"]
-            12: ["", "Plan Your", "Organize Your", "Create Your", "Find Your", "Discover Your", "Prepare Your"]
+            12: ["", "Plan Your", "Organize Your", "Create Your", "Prepare Your"]
             13: ["", "Scrum Master Tools:", "ScrumMaster Toolbox:", "Facilitator's Tools:", "Facilitation Toolbox:"]
 
 #           # later: de: ["Qualitätszirkel"]
