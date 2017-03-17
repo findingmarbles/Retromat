@@ -429,6 +429,9 @@ function hide_plan_title() {
 
 function publish_plan_id(plan_id) {
     // On page
+    if (0 != document.title.indexOf('Retromat')) {
+        document.title = 'Retromat: ' + document.title;
+    }
     var form = document.forms['js_ids-display__form'];
     form.elements['js_display'].value = plan_id;
 
