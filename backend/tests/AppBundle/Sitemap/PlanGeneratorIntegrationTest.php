@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace tests\AppBundle\Sitemap;
 
 use AppBundle\Activity\ActivityByPhase;
-use AppBundle\Plan\PlanIdGenerator;
+use AppBundle\Sitemap\PlanIdGenerator;
 use AppBundle\Sitemap\PlanGenerator;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\Url;

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace tests\AppBundle\Plan;
+namespace tests\AppBundle\Sitemap;
 
-use AppBundle\Plan\PlanIdGenerator;
+use AppBundle\Sitemap\PlanIdGenerator;
 use AppBundle\Activity\ActivityByPhase;
 
 class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase

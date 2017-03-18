@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace AppBundle\Plan;
+namespace AppBundle\Sitemap;
 
 use AppBundle\Activity\ActivityByPhase;
 

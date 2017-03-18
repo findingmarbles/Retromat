@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace AppBundle\Sitemap;
 
-use AppBundle\Plan\PlanIdGenerator;
+use AppBundle\Sitemap\PlanIdGenerator;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
