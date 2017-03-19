@@ -1,16 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% set pageTitle = 'Titles for each Plan ID (+ Description Dummy Text (for now))' %}
+{% set pageTitle = 'Titles and Descriptions for each Plan ID' %}
 
 {% block title %}{{ pageTitle }}{% endblock %}
 
 {% block body %}
+    <p><a href="{{ path('team_dashboard') }}">Dashboard</a></p>
     <h1>{{ pageTitle }}</h1>
     <ul>
         <li>Use the <i>skip</i> parameter in the URL to look at different plan ids and their titles.</li>
         <li>Use the <i>max</i> parameter in the URL to limit how many to generate.</li>
-        <li>Title elements from the current version of <i>backend/app/config/retromat_plan_titles.yml</i> allow for {{ totalCombinations }} combinations (not considering length restrictions and possible duplication between sequences).</li>
-        <li>Each title shown below is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>, because the TitleChooser only chooses short enough titles (considering the length of the respective plan id).</li>
+        <li>Title elements from the current version of <i>backend/app/config/retromat_plan_titles.yml</i> allow
+            for {{ totalCombinations }} combinations (not considering length restrictions and possible duplication
+            between sequences).
+        </li>
+        <li>Each title shown below is <a href="https://moz.com/learn/seo/title-tag">60 characters or less</a>, because
+            the TitleChooser only chooses short enough titles (considering the length of the respective plan id).
+        </li>
+        <li>Descriptions should be <a href="https://moz.com/learn/seo/meta-description">150 - 160 characters long</a>.
+            This is currently not guaranteed.
+        </li>
     </ul>
     <h2>Plans &amp; Titles</h2>
     <table>
@@ -27,7 +36,7 @@
         {% for planId in planIds %}
             {% set titleId = titleChooser.chooseTitleId(planId) %}
             {% set title = titleChooser.renderTitle(planId) %}
-            {% set description = descriptionRenderer.render() %}
+            {% set description = descriptionRenderer.render(activityRepository.findOrdered('en', planId|split('-') )) %}
             <tr>
                 <th style="text-align: left;">{{ planId }}</th>
                 <td style="text-align: center;">{{ title|length }}</td>

@@ -54,21 +54,23 @@ class TeamController extends Controller
     }
 
     /**
-     * @Route("/experiment/titles/by-plan-id", name="titles-experiment-planids")
+     * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      */
-    public function titlesExperimentByPlanId(Request $request)
+    public function titlesAndDescriptionsExperimentByPlanId(Request $request)
     {
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
+        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
 
         return $this->render(
-            'team/experiment/titlesByPlanId.html.twig',
+            'team/experiment/titlesAndDescriptionsByPlanId.html.twig',
             [
                 'planIds' => $this->ids,
                 'titleChooser' => $titleChooser = $this->get('retromat.plan.title_chooser'),
                 'descriptionRenderer' => $this->get('retromat.plan.description_renderer'),
                 'totalCombinations' => $totalCombinations,
+                'activityRepository' => $activityRepository,
             ]
         );
     }

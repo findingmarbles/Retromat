@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% set pageTitle = 'Plan Title Experiments' %}
+{% set pageTitle = 'Plan Title and Description Experiments' %}
 
 {% block title %}{{ pageTitle }}{% endblock %}
 
 {% block body %}
     <h1>{{ pageTitle }}</h1>
     <ul>
-        <li><a href="{{ path('titles-experiment-planids', {skip: 0, max: 1000}) }}">Titles for each
+        <li><a href="{{ path('titles-descriptions-experiment', {skip: 0, max: 1000}) }}">Titles and Descriptions for each
                 plan id</a>
         </li>
     </ul>
