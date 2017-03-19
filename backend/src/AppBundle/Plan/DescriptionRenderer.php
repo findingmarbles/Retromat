@@ -15,6 +15,11 @@ class DescriptionRenderer
             return '';
         }
 
-        return '1, 4: Participants write down significant events and order them chronologically , 8: Drill down to the root cause of problems by repeatedly asking \'Why?\', 11, 14';
+        return
+            $activities[0]->getRetromatId().', '.
+            $activities[1]->getRetromatId().': '.$activities[1]->getSummary().', '.
+            $activities[2]->getRetromatId().': '.$activities[2]->getSummary().', '.
+            $activities[3]->getRetromatId().', '.
+            $activities[4]->getRetromatId();
     }
 }
