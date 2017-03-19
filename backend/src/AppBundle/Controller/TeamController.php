@@ -60,15 +60,14 @@ class TeamController extends Controller
     {
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
-        $titleChooser = $this->get('retromat.plan.title_chooser');
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
 
         return $this->render(
             'team/experiment/titlesByPlanId.html.twig',
             [
                 'planIds' => $this->ids,
-                'titleChooser' => $titleChooser,
-                'title_renderer' => $this->get('retromat.plan.title_renderer'),
+                'titleChooser' => $titleChooser = $this->get('retromat.plan.title_chooser'),
+                'descriptionRenderer' => $this->get('retromat.plan.description_renderer'),
                 'totalCombinations' => $totalCombinations,
             ]
         );

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% set pageTitle = 'Titles for each Plan ID' %}
+{% set pageTitle = 'Titles for each Plan ID (+ Description Dummy Text (for now))' %}
 
 {% block title %}{{ pageTitle }}{% endblock %}
 
@@ -16,18 +16,27 @@
     <table>
         <tr>
             <th style="text-align: left;">Plan ID</th>
-            <th style="text-align: left;">Title ID</th>
-            <th style="text-align: left;">&nbsp;&nbsp;Length</th>
+            <td style="text-align: left;">Title Length</td>
             <th style="text-align: left;">Title</th>
         </tr>
+        <tr>
+            <td style="text-align: left;">Title ID</td>
+            <td style="text-align: left;">Description Length</td>
+            <td style="text-align: left;">Description (Dummy text for now)</td>
+        </tr>
         {% for planId in planIds %}
+            {% set titleId = titleChooser.chooseTitleId(planId) %}
+            {% set title = titleChooser.renderTitle(planId) %}
+            {% set description = descriptionRenderer.render() %}
             <tr>
-                <td>{{ planId }}</td>
-                {% set titleId = titleChooser.chooseTitleId(planId) %}
-                <td>{{ titleId }}</td>
-                {% set title = titleChooser.renderTitle(planId) %}
+                <th style="text-align: left;">{{ planId }}</th>
                 <td style="text-align: center;">{{ title|length }}</td>
-                <td>{{ title }}</td>
+                <th style="text-align: left;">{{ title }}</th>
+            </tr>
+            <tr>
+                <td style="text-align: left;">{{ titleId }}</td>
+                <td style="text-align: center;">{{ description|length }}</td>
+                <td>{{ description }}</td>
             </tr>
         {% endfor %}
     </table>

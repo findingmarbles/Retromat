@@ -18,6 +18,8 @@ services:
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
         arguments: ["@retromat.plan.plan_id_generator", "@doctrine.orm.entity_manager"]
+    retromat.plan.description_renderer:
+        class: AppBundle\Plan\DescriptionRenderer
     retromat.plan.plan_id_generator:
         class: AppBundle\Sitemap\PlanIdGenerator
         arguments: ["@retromat.activity_by_phase"]
