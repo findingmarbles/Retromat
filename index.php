@@ -56,6 +56,9 @@ function get_url_to_index() {
     {% else %}
         <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
     {% endif %}
+    {% if description is not empty %}
+        <meta name="description" content="{{ description }}">
+    {% endif %}
 <?php } else { ?>
     <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
 <?php } ?>
