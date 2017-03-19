@@ -63,8 +63,14 @@ ebook:
             lastmod: "2017-01-31T21:11:16+01:00"
             changefreq: weekly
             section: meta
-ebook_old:
+ebook_old1:
     path: /ebook/index.html
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: ebook
+        permanent: true
+ebook_old2:
+    path: /ebook/
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: ebook
@@ -83,8 +89,14 @@ print:
             lastmod: "2017-01-31T21:11:16+01:00"
             changefreq: weekly
             section: meta
-print_old:
+print_old1:
     path: /print/index.html
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: print
+        permanent: true
+print_old2:
+    path: /print/
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: print
