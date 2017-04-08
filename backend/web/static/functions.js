@@ -109,6 +109,7 @@ function enable_prev() {
     $('.js_prev_button').click(function () {
         var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
         enable_phase_stepper(activity_index, get_index_of_prev_activity_in_phase);
+        prefix_html_title();
     });
 }
 
@@ -183,10 +184,10 @@ function get_ids_of_current_activities() {
 }
 
 function enable_next() {
-
     $('.js_next_button').click(function () {
         var activity_index = convert_id_to_index(read_activity_id($(this).parent().parent()));
         enable_phase_stepper(activity_index, get_index_of_next_activity_in_phase);
+        prefix_html_title();
     });
 }
 
@@ -253,11 +254,14 @@ function hide_plan_title() {
     $('.js_plan_title_container').addClass('display_none');
 }
 
-function publish_plan_id(plan_id) {
-    // On page
+function prefix_html_title() {
     if (0 != document.title.indexOf('Retromat')) {
         document.title = 'Retromat: ' + document.title;
     }
+}
+
+function publish_plan_id(plan_id) {
+    // On page
     var form = document.forms['js_ids-display__form'];
     form.elements['js_display'].value = plan_id;
 
