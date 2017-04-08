@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
@@ -22,6 +22,13 @@ class HomeController extends Controller
 
         if ($request->query->has('id')) {
             $ids = explode('-', $request->query->get('id'));
+            if (array_filter($ids) !== $ids) {
+                return $this->redirectToRoute(
+                    'activities_by_id',
+                    ['id' => implode('-', array_filter($ids)), 'phase' => $phase],
+                    301
+                );
+            }
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
             $activities = $repo->findOrdered($request->getLocale(), $ids);
             $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
