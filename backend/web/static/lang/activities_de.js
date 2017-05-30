@@ -534,6 +534,195 @@ source:    source_agileRetrospectives,
 duration:  "15-30",
 suitable: "iteration"
 };
+all_activities[39] = {
+phase:     4,
+name:      "Plus & Delta",
+summary:   "Lasst die Teilnehmer jeweils eine Sache aufschreiben, die ihnen an der Retrospektive gefallen hat, und eine, die sie ändern wollen",
+desc:       "Bereite ein Flipchart vor mit zwei Spalten mit den Titeln 'Plus' and 'Delta'. \ 
+Bitte die Teilnehmer, je einen Aspekt der Retrospektive aufzuschreiben, der ihnen gefallen hat \
+und einen Aspekt, den sie ändern möchten (auf unterschiedlichen Karten). Sammle die Karten auf dem Flipchart. \
+Spreche die Karten einzeln durch, damit alle genau wissen, was jeweils gemeint ist. Bei Themen, für die sowohl \
+'Plus' als auch 'Delta' Karten geschrieben wurden, kannst Du so auch feststellen, wohin die Mehrheit tendiert.",
+source:    "<a href='http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta'>Rob Bowley</a>",
+durationDetail:  "5-10",
+duration:    "Medium",
+stage:    "All",
+suitable: "release, project"
+};
+all_activities[40] = {
+phase:     2,
+name:      "Parkbank",
+summary:   "Gruppendiskussion mit wechselnden Teilnehmern",
+desc:      "Stelle mindestens 4 und höchstens 6 Stühle vor der Gruppe auf (die 'Parkbank'). \
+Erkläre die Regeln: \
+        <ul>\
+    <li>Setze Dich auf einen der freien Stühle, wenn Du Dich an der Diskussion beteiligen möchtest.</li>\
+    <li>Ein Platz auf der Bank muss immer frei sein.</li>\
+    <li>Wenn der letzte freie Platz auf der Bank besetzt wurde, muss ein anderer von der Bank wieder ins Publikum zurückkehren.</li>\
+</ul>\
+Starte die Diskussion indem Du Dich auf die Bank setzt und spreche einen Punkt an, \
+der in einer früheren Phase diskutiert wurde, bis jemand sich zu Dir setzt und die \
+Diskussion weiterführt. Beende das Ganze, wenn die Diskussion einschläft. \
+<br>Das ist eine Variante von 'Fish Bowl', die gut mit Gruppen von 10 bis 25 Leuten funktioniert.",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/08/24/park-bench/'>Diana Larsen</a>",
+durationDetail:  "15-30",
+duration:    "Medium",
+stage:    "All",
+suitable: "release, project, largeGroups"
+};
+all_activities[41] = {
+phase:     0,
+name:      "Postkarten",
+summary:   "Teilnehmer wählen Postkarten aus, die ihren Gedanken bzw. Gefühle entsprechen",
+desc:      "Bringe viele unterschiedliche Postkarten mit, mindestens viermal so viele wie \
+Teilnehmer da sind. Verteile die Postkarten im Raum und sage den Teilnehmern, sie sollen \
+die Postkarte auswählen, die am besten darstellt, was sie über die letzte Iteration denken. \
+Bitte sie, dann drei Stichworte auf Karten zu schreiben, die die Postkarte bzw. die letzte \
+Iteration beschreiben. Nacheinander hängen die Teilnehmer ihre Postkarten und die Karten mit \
+den Stichworten auf und erklären den anderen Teilnehmern ihre Wahl.",
+source:    "<a href='http://finding-marbles.com/2012/03/19/retrospective-with-postcards/'>Corinna Baldauf</a>",
+durationDetail:  "15-20",
+duration:    "Medium",
+stage:    "All",
+suitable: "iteration, release, project",
+};
+all_activities[42] = {
+phase:     0,
+name:      "Steh zu deiner Meinung - Beginn",
+summary:   "Teilnehmer zeigen ihre Zufriedenheit mit der letzten Iteration, indem sie sich \
+an einer Skala aufstellen",
+desc:      "Klebe aus Malerkrepp eine Skala auf den Boden (eine lange Linie). Markiere das \
+eine Ende mit 'Großartig' und das andere mit 'Mies'. Bitte die Teilnehmer sich an die Stelle \
+der Skale zu stellen, die ihrer Zufriedenheit mit der letzten Iteration entspricht. Sich im \
+Raum zu Positionieren ist im Vergleich zu dem, was Teilnehmer 'nur' sagen, oft ein stärkeres 'Bekenntnis'.<br> \
+Du kannst die Skala wiederverwenden, wenn Du mit mit Aktivität #44 abschließt.",
+source:    source_findingMarbles + ", inspiriert von <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+durationDetail:  "2-5",
+duration:    "Short",
+stage:    "All",
+suitable: "iteration, release, project"
+};
+all_activities[43] = {
+phase:     4,
+name:      "Steh zu deiner Meinung - Abschluss",
+summary:   "Teilnehmer zeigen ihre Zufriedenheit mit der Retrospektive, indem sie sich \
+an einer Skala aufstellen",
+desc:      "Klebe aus Malerkrepp eine Skala auf den Boden (eine lange Linie). Markiere das \
+eine Ende mit 'Großartig' und das andere mit 'Mies'. Bitte die Teilnehmer sich an die Stelle \
+der Skale zu stellen, die ihrer Zufriedenheit mit der Retrospektive entspricht. Sich im \
+Raum zu Positionieren ist im Vergleich zu dem, was Teilnehmer 'nur' sagen, oft ein stärkeres 'Bekenntnis'.<br> \
+Mit Aktivität #43 kannst Du die Retrospektive mit derselben Skala auch eröffnen.",
+source:    source_findingMarbles + ", inspiriert von <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+durationDetail:  "2-5",
+duration:    "Short",
+stage:    "All",
+suitable: "iteration, release, project"
+};
+all_activities[44] = {
+phase:     4,
+name:      "Gut & überraschend",
+summary:   "Was fanden die Teilnehmenden gut und was hat sie überrascht in der Retrospektive",
+desc:      "Lass jeden Teilnehmer in einer schnellen Runde eine Sache beschreiben, die sie bezogen auf die \
+Retrospektive gut fanden oder die sie überrascht hat (oder beides).",
+source:    source_unknown,
+durationDetail:  "5",
+duration:    "Short",
+stage:    "All",
+suitable: "iteration, release, project"
+};
+all_activities[45] = {
+phase:     0,
+name:      "Warum Retrospektiven?",
+summary:   "Frage 'Warum machen wir Retrospektiven?'",
+desc:      "Gehe nochmal zurück zu den Grundlagen und beginne die Retrospektive mit der Frage: 'Warum machen \
+wir das eigentlich?' Schreibe die Antworten für alle sichtbar auf. Das Ergebnis kann sehr überraschend sein.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
+durationDetail:  "5",
+duration:    "Short",
+stage:    "Forming, Performing, Stagnating",
+suitable: "iteration, release, project"
+};
+all_activities[46] = {
+phase:     1,
+name:      "Briefkasten leeren",
+summary:   "Seht Euch die Notizen an, die ihr während der Iteration gesammelt habt",
+desc:      "Stelle zu Beginn der Iteration einen 'Retrospektive-Briefkasten' an einer gut sichtbaren Stelle auf. Jedem, dem \
+etwas wesentliches auffällt oder der eine Idee zur Verbesserung hat, schreibt es auf einen Zettel und wirft es \
+in den Briefkasten. (Alternativ kann der Briefkasten auch ein Platz sein, an dem die Notizen für alle sichtbar \
+befestigt werden, was schon während der Iteration Gespräche auslösen kann.) <br>\
+Nehme jede einzelne Notiz aus dem Briefkasten und diskutiere sie mit dem Team.<br>\
+Der Briefkasten ist eine gute Sache bei langen Iterationen und vergesslichen Teams.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
+durationDetail:  "15",
+duration:    "Medium",
+stage:    "All",
+suitable: "release, project"
+};
+all_activities[47] = {
+phase:     3,
+name:      "Stellung beziehen - Line Dance",
+summary:   "Bekomme ein Gefühl für die Meinungen im Team und stelle einen Konsens her",
+desc:      "Wenn ein Team sich zwischen zwei Optionen nicht entscheiden kann, klebe aus Malerkrepp eine Skala \
+auf den Boden (also eine lange Linie). Markiere die eine Seite mit 'Option A' und die andere Seite mit 'Option B'. Die Teilnehmer stellen sich entsprechend ihrer Präferenzen für eine der beiden Optionen an der Linie auf. Diskutiere und modifiziere jetzt die Optionen, bis eine Option eine Mehrheit hat.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
+durationDetail:  "5-10 per decision",
+duration:    "Short",
+stage:    "Storming, Norming",
+suitable: "iteration, release, project"
+};
+all_activities[48] = {
+phase:     3,
+name:      "Dot Voting - Seestern",
+summary:   "Schreibt auf, was begonnen, beendet, weitergeführt, häufiger oder weniger häufig gemacht werden soll",
+desc:      "Male fünf Speichen auf ein Flipchart, so dass Du fünf Segmente hast. Beschrifte sie mit 'Start', 'Stop', 'Weiter', \
+'Häufiger' and 'Seltener'. Die Teilnehmer schreiben ihre Vorschläge auf Haftnotizen und kleben sie in das entsprechende \
+Segment. Nachdem ihr die Notizen, die die gleiche Idee enthalten, zusammengefasst habt, lass das Team mit Punkten über die \
+Vorschläge abstimmen, die ihr ausprobiert wollt.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "Wünsch Dir was",
+summary:   "Eine gute Fee will Dir einen Wunsch erfüllen - woran merkst Du, das er sich erfüllt hat?",
+desc:      "Lass die Teilnehmer zwei Minuten über folgende Frage nachdenken: \
+'Eine Fee gewährt Dir einen Wunsch, der Dein größtes Problem in Deinem Job über Nacht beheben wird. Was wünschst Du Dir?' \
+Und weiter: 'Du kommst am nächsten Morgen zur Arbeit. Du spürst, dass die Fee Deinen Wunsch erfüllt hat. Woran merkst Du das? Was ist jetzt anders?' \
+Wenn das gegenseitige Vertrauen in der Gruppe hoch ist, dann lasse jeden Teilnehmer seinen 'Wunsch-Arbeitsplatz' beschreiben. \
+Wenn nicht, bitte die Teilnehmer, ihr Szenario im Kopf zu behalten und in der nächsten Phase Dinge vorzuschlagen, mit denen das \
+Team dem Wunsch-Arbeitsplatz näher kommt.",
+source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "Storming, Norming",
+suitable:  "iteration"
+};
+all_activities[50] = {
+phase:     1,
+name:      "Lean Coffee",
+summary:   "Nutze das Lean Coffee-Format für eine fokussierte Diskussion der wichtigsten Themen",
+desc:      "Sage dem Team, wieviel Zeit ihr für diese Phase verwenden wollt, erkläre dann die Regeln des Lean Coffee für Retrospektiven: \
+        <ul> \
+    <li>Die Teilnehmer schreiben die Themen, die sie besprechen möchten, auf Haftnotizen - ein Thema pro Notiz</li>\
+    <li>Klebe die Notizen auf ein Whiteboard oder ein Flipchart. Lasse jede Notiz von denen, die sie geschrieben haben, kurz in 1 oder 2 Sätzen erklären</li>\
+    <li>Wenn es mehrere Notizen zum selben Thema gibt, hänge sie zusammen</li>\
+    <li>Lasse die Teilnehmer jetzt mit jeweils zwei Punkten abstimmen, über welche beiden Themen sie diskutieren möchten</li>\
+    <li>Sortiere die Themen nach Anzahl der Stimmen</li>\
+    <li>Beginne mit dem Thema, das die meisten Stimmen bekommen hat. Stelle den Timer auf 5 Minuten ein. Wenn der Timer piept, lass schnell per Daumen hoch/Daumen runter abstimmen: Mehrheit für Daumen hoch - das Thema wird weitere 5 Minuten diskutiert. Mehrheit für Daumen runter - Nächstes Thema auf der Liste</li>\
+</ul> \
+Beende die Diskussion, wenn die anfangs angesetzte Zeit vorbei ist.",
+source:    "<a href='http://leancoffee.org/'>Original-Beschreibung</a> und <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>Erfahrungsbericht</a>",
+durationDetail:  "20-40 min",
+duration:    "Flexible",
+stage:    "All",
+suitable:  "iteration"
+};
+
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
