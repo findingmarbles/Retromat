@@ -66,24 +66,26 @@ stage:    "All",
 source:  source_agileRetrospectives,
 };
 
-// I am here
+
 all_activities[2] = {
 phase:     0,
-name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
-summary:   "Ask one question that each participant answers in turn",
-desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
-Sample questions: <br>\
+name:      "Check In - короткий вопрос", // TODO This can be expanded to at least 10 different variants - how?
+summary:   "Задаётся один вопрос, на который участники поочереди отвечают",
+desc:      "Поочереди каждый участник отвечает на заданный вопрос или пассует - пропускает очередь.\
+Примеры вопросов: <br>\
 <ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
+    <li>Одним словом - чего ты ожидаешь от этой ретроспективы?</li>\
+Учитывай проявлящиеся опасения, например напиши и отложи их - физически и ментально -  в сторону.</li>\
+    <li>Во время этой ретроспективы - если бы вы были автомобилем, какой бы это был?</li>\
+    <li>В каком эмоциональном состояние вы сейчас находитесь? (Например, 'радость', 'гнев', 'грусть', 'страх'?)</li>\
 </ul><br>\
-Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
-duration:    "Short",
+Избегай оценочных комментариев к ответам, как 'Отлично!'. Простого 'Спасибо'- достаточно.",
+duration:    "Короткая",
 stage:    "All",
 source:  source_agileRetrospectives
 };
+
+// I am here
 all_activities[3] = {
 phase:     1,
 name:      "Timeline",
