@@ -49,17 +49,24 @@ duration:    "Короткая",
 stage:    "Формирование, Бурление",
 };
 
-// I am here
+
+резюме: "",
+описание: "подготовить ватман с чертежом шторм, дождь, облака и солнце.\
+Каждый участник отмечает свое настроение на листе".,
+Продолжительность: "Короткая",
+
 all_activities[1] = {
 phase:     0,
-name:      "Weather Report",
-summary:   "Participants mark their 'weather' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of storm, rain, clouds and sunshine.\
-Each participant marks their mood on the sheet.",
+name:      "Прогноз Погоды",
+summary:   "Участники отмечают свою 'погоду' (настроение) на флипчарте.",
+desc:      "Подготовь флипчарт с символом шторма, дождя, облаков и солнца.\
+Каждый участник отмечает свое настроение на флипчатре".,
 duration:    "Короткая",
 stage:    "All",
 source:  source_agileRetrospectives,
 };
+
+// I am here
 all_activities[2] = {
 phase:     0,
 name:      "Check In - Quick Question", // TODO This can be expanded to at least 10 different variants - how?
