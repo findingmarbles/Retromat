@@ -303,21 +303,23 @@ source:    source_agileRetrospectives + " who took it from 'The Satir Model: Fam
 durationDetail:  "5-30 groupsize",
 duration:    "Short",
 stage:    "All",
-suitable: "iteration, release, project"
+suitable: "итерация, релиз, проект"
 };
+
+
 all_activities[15] = {
 phase:     4,
-name:      "Helped, Hindered, Hypothesis",
-summary:   "Get concrete feedback on how you facilitated",
-desc:      "Prepare 3 flip chart papers titled 'Helped', 'Hindered', and 'Hypothesis' \
-(suggestions for things to try out). \
-Ask participants to help you grow and improve as a facilitator by writing \
-you sticky notes and signing their initials so that you may ask questions later.",
+name:      "Помагает, Мешает, Гипотеза",
+summary:   "Получить конкретный отзыв о том, как ты содействуешь команде",
+desc:      "Подготовь 3 флипчарта с названиями 'Помагает', 'Мешает', и 'Гипотеза' \
+(предложения о том, что можно попробовать). \
+"Попроси участиков помочь тебе повысить и улучшить свои навыки в качестве посредника. Участники пишут\
+на стикерах свои предложения и подписывают их, чтобы ты мог потом задать уточняющие вопросы",
 source:    source_agileRetrospectives,
 durationDetail:  "5-10",
-duration:    "Medium",
-stage:    "Forming, Storming",
-suitable: "iteration, release"
+duration:    "Средняя",
+stage:    "Формирование, Бурление",
+suitable: "итерация, релиз"
 };
 all_activities[16] = {
 phase:     4, // 5 geht auch
