@@ -18,7 +18,7 @@ var phase_titles = ['Создание атмосферы', 'Сбор инфор�
 //  suitable:  "",
 //};
 // Values for durationDetail: "<minMinutes>-<maxMinutes> perPerson"
-// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup" итерация, релиз, проект, интроверты, до10человек, кореннаяПричина, несформировавшийся
 
 
 
@@ -85,27 +85,28 @@ stage:    "All",
 source:  source_agileRetrospectives
 };
 
-
 all_activities[3] = {
 phase:     1,
-name:      "Timeline",
-summary:   "Participants write down significant events and order them chronologically",
-desc:      "Divide into groups with 5 or less people each. Distribute cards and markers. \
-Give participants 10min to note down memorable and / or personally significant events. \
-It's about gathering many perspectives. Consensus would be detrimental. All participants \
-post their cards and order them. It's okay to add cards on the fly. Analyze.<br>\
-Color Coding can help to see patterns, e.g.:<br>\
+name:      "Таймлайн - Хронология",
+summary:   "Участники записывают важные события в хронологическом порядке",
+desc:      "Разделитесь на группы по 5 или меньше человек. Раздайте карточки и маркеры.\
+Дайте участникам 10 минут, чтобы записать памятные и для них значимые события. Важно собрать \
+много перспектив. Стремление к единогласию может этому помешать. Все участиники выкладывают или \
+приклеиваютсвои карточки на хронологически подходящюю позицию. Можно и сейчас добавлять новые  \
+карточки. Анализируйте сформировавшуюся картину.<br>\
+Можно использовать карточки разных цветов чтобы распознать закономерности, например:<br>\
 <ul>\
-    <li>Emotions</li>\
-    <li>Events (technical, organization, people, ...)</li>\
-    <li>Function (tester, developer, manager, ...)</li>\
+    <li>Чувства/Эмоции</li>\
+    <li>События (технические, организационные, ..) </li>\
+    <li>Функции (тестер, разработчик, менеджер, ...)</li>\
 </ul>",
 source:  source_agileRetrospectives,
-durationDetail:  "60-90 timeframe",
-duration:    "Medium",
+durationDetail:  "60-90 минут",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, introverts"
+suitable: "итерация, релиз, интроверты"
 };
+
 // Anton's here
 all_activities[4] = {
 phase:     1,
