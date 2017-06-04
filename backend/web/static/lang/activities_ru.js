@@ -85,7 +85,7 @@ stage:    "All",
 source:  source_agileRetrospectives
 };
 
-// I am here
+
 all_activities[3] = {
 phase:     1,
 name:      "Timeline",
@@ -106,6 +106,7 @@ duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, introverts"
 };
+// Anton's here
 all_activities[4] = {
 phase:     1,
 name:      "Analyze Stories",
@@ -313,14 +314,15 @@ name:      "Помагает, Мешает, Гипотеза",
 summary:   "Получить конкретный отзыв о том, как ты содействуешь команде",
 desc:      "Подготовь 3 флипчарта с названиями 'Помагает', 'Мешает', и 'Гипотеза' \
 (предложения о том, что можно попробовать). \
-"Попроси участиков помочь тебе повысить и улучшить свои навыки в качестве посредника. Участники пишут\
-на стикерах свои предложения и подписывают их, чтобы ты мог потом задать уточняющие вопросы",
+"Попроси участиков помочь тебе профессионально рости и улучшить свои навыки фасилитатора. Участники пишут\
+на стикерах свои отзывы и имена, чтобы ты мог потом им задать уточняющие вопросы.",
 source:    source_agileRetrospectives,
 durationDetail:  "5-10",
 duration:    "Средняя",
 stage:    "Формирование, Бурление",
 suitable: "итерация, релиз"
 };
+
 all_activities[16] = {
 phase:     4, // 5 geht auch
 name:      "SaMoLo (More of, Same of, Less of)",
