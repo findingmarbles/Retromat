@@ -279,30 +279,32 @@ suitable: "iteration, release, project"
 };
 all_activities[13] = {
 phase:     4,
-name:      "Feedback Door - Numbers (ROTI)",
-summary:   "Gauge participants' satisfaction with the retro on a scale from 1 to 5 in minimum time",
-desc:      "Put sticky notes on the door with the numbers 1 through 5 on them. 1 is the topmost and best, \
-5 the lowest and worst.\
-When ending the retrospective, ask your participants to put a sticky to the number they feel \
-reflects the session. The sticky can be empty or have a comment or suggestion on it.",
+name:      "Дверь отзывов - Числа",
+summary:   "Всего за несколько минут получи отзыв о том, насколько участники довольны ретроспективой", 
+desc:      "Приклей на дверь стикеры с цифрами от 1 до 5. Объясни, что циФры представляют шкалу, \
+где 1 означает прекрасно или отлично, а 5 - плохо.\
+Когда ретроспектива подойдет к концу, попроси всех наклеить стикер около цифры, которая по их мнению \
+наиболее точно отобржает, насколько участник доволен ретроспективой.\
+Стикер может быть как пустым, так и содержать комментарии или предложения по улучшению ретроспективы.", 
 source:    "ALE 2011, " + source_findingMarbles,
 durationDetail:  "2-3",
-duration:    "Short",
-stage:    "Forming, Performing",
-suitable: "iteration, largeGroups"
+duration:    "Короткая",
+stage:    "Формирование, Функционирование",
+suitable: "итерация, большие группы"
 };
 all_activities[14] = {
 phase:     4,
-name:      "Appreciations",
-summary:   "Let team members appreciate each other and end positively",
-desc:      "Start by giving a sincere appreciation of one of the participants. \
-It can be anything they contributed: help to the team or you, a solved problem, ...\
-Then invite others and wait for someone to work up the nerve. Close, when no one \
-has talked for a minute.",
+name:      "Благодарность",
+summary:   "Позволь участникам команды поблагодарить друг друга",
+desc:	   "Начни выражать искренюю благодарность одному из участников.\ 
+Похвала может оноситься к любому действию или событию, которое например внесло вклад или способствовало команде или тебе в решении проблемы, ... \ 
+Затем пригласи участников присоединиться и высказать благодарность или похвалу друг другу. \
+Молчи некоторое время, чтобы создать небольшое напряжение и побудить участников к действию.\ 
+Закончи, когда молчание длиться больше 1 минуты и никто из участников больше не хочет высказаться.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
 durationDetail:  "5-30 groupsize",
-duration:    "Short",
-stage:    "All",
+duration:    "Короткая",
+stage:    "Любая",
 suitable: "итерация, релиз, проект"
 };
 
@@ -313,8 +315,8 @@ name:      "Помагает, Мешает, Гипотеза",
 summary:   "Получить конкретный отзыв о том, как ты содействуешь команде",
 desc:      "Подготовь 3 флипчарта с названиями 'Помагает', 'Мешает', и 'Гипотеза' \
 (предложения о том, что можно попробовать). \
-"Попроси участиков помочь тебе повысить и улучшить свои навыки в качестве посредника. Участники пишут\
-на стикерах свои предложения и подписывают их, чтобы ты мог потом задать уточняющие вопросы",
+Попроси участиков помочь тебе повысить и улучшить свои навыки в качестве посредника. Участники пишут\
+на стикерах свои предложения и подписывают их, чтобы ты мог потом задать уточняющие вопросы.",
 source:    source_agileRetrospectives,
 durationDetail:  "5-10",
 duration:    "Средняя",
