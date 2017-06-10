@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl"}, name="activities_by_id")
+     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="activities_by_id")
      */
     public function homeAction(Request $request)
     {
