@@ -115,30 +115,7 @@ stage:    "Бурление, Нормирование",
 source:    source_findingMarbles,
 suitable: "итерации, max10people"
 };
-// Anton's here
-all_activities[5] = {
-phase:     1,
-name:      "Like to like",
-summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
-such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
-Each team member has to write at least 9 index cards: 3 each with things to \
-start doing, keep doing and stop doing. Choose one person to be the first judge. \
-The judge turns the first quality card. From their own cards each member \
-chooses the best match for this word and places it face down on the table.\
-The last one to choose has to take their card back on their hand. The judge shuffles all \
-submitted cards, turns them one by one and rules the best fit = winning card. \
-All submitted cards are discarded. The submitter of the winning card receives \
-the quality card. The person left of the judge becomes the new judge.<br> \
-Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
-cards wins. Debrief by asking for takeaways. <br>\
-(Game is based on 'Apples to Apples')",
-source:    source_agileRetrospectives,
-durationDetail:  "30-40",
-duration:    "Long",
-stage:    "All",
-suitable: "iteration, introverts"
-};
+
 all_activities[6] = {
 phase:     1,
 name:      "Mad Sad Glad",
