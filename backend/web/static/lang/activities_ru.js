@@ -11,7 +11,7 @@ var phase_titles = ['Создание атмосферы', 'Сбор инфор�
 //  desc:      "Multiple \
 //              Lines",
 //  durationDetail:  "",
-//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Долгая, Гибкая
+//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Длительная, Гибкая
 //  stage:    "All" or one or more of "Forming, Norming, Storming, Performing, Stagnating, Adjourning" Формирование, Бурление, Нормирование, Функционирование
 //  source:    "",
 //  more:      "", // a link
@@ -99,23 +99,23 @@ stage:    "All",
 suitable: "итерация, релиз, интроверты"
 };
 
-// Anton's here
 all_activities[4] = {
 phase:     1,
-name:      "Analyze Stories",
-summary:   "Walk through each story handled by the team and look for possible improvements",
-desc:      "Preparation: Collect all stories handled during the iteration and bring them along to \
-the retrospective.<br> \
-In a group (10 people max.) read out each story. For each one discuss whether it went \
-well or not. If it went well, capture why. If not discuss what you could do differently  \
-in the future.<br>\
-Variants: You can use this for support tickets, bugs or any combination of work \
-done by the team.",
-duration:    "Long",
-stage:    "Storming, Norming",
+name:      "Анализ историй",
+summary:   "Анализ всех историй обработанных командой и поиск возможных улучшений.",
+desc:      "Подготовка: собрать все истории обработанные во время итерации и взять их с собой \
+на ретроспективу.<бр> \
+В группе (до 10 человек) прочитать каждую историю и обсудить, что было удачно, а что нет.\
+Если история хорошо удалась, запишите почему. Если были сложности, обсудите, что можно сделать \
+по-другому в слудующий раз.<br>\
+Варианты: Вместо историй вы можете использовать обработанные дефекты, запросы или любую другую комбинацию\
+заданий выполненных командой.",
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
 source:    source_findingMarbles,
-suitable: "iteration, max10people"
+suitable: "итерации, max10people"
 };
+// Anton's here
 all_activities[5] = {
 phase:     1,
 name:      "Like to like",
