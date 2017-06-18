@@ -757,7 +757,7 @@ zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees 
 Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
 Dit kan ook een afsluitende activiteit zijn (#53).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+<a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>",
 duration:  "10 min",
 suitable:  "iteration, project, release"
 };
@@ -777,7 +777,7 @@ zo niet moeten ze er zo ver vandaan bewegen als ze het er mee oneens zijn. Lees 
 Zie hoe de sterrenbeelden zich ontplooien. Vraag na afloop welke sterrenbeelden verrassend waren.<br>\
 Dit kan ook een openingsactiviteit zijn (#52).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>, \
 <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 duration:  "5 min",
 suitable:  "iteration, project, release"

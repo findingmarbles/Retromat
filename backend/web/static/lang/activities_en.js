@@ -42,6 +42,27 @@ duration:    "Short",
 stage:    "Forming, Storming",
 suitable:   "iteration, release, project, immature"
 };
+all_activities[0] = {
+phase:     0,
+name:      "ИПОЗ (англ. ESVP)",
+summary:   "Как чувствуют себя учасники ретроспективы, как Исследователи, Покупатели, Отдыхающие или Заключённые?",
+desc:      "Подготовьте флипчарт с зонами для И, П, О, З. Обьясните принцип активности:<br>\
+<ul>\
+    <li>Исследователи: стремятся полностью погрузиться и исследовать что произошло и улучшить работу команды.</li>\
+    <li>Покупатель: Позитивно настроены, будут рады если вынесут хотя бы одну полезную для себя вещь.</li>\
+    <li>Отдыхающие: Не хотят активно участвовать, но рады отвечению от обычной работы.</li>\
+    <li>Заключенный: Только тут потому, что чувствуют обязанность здесь быть.</li>\
+</ul>\
+Проведи опрос (анонимно, на листочках бумаги). Посчитай ответы и покажи результат на флипчарте,  \
+так чтобы все видели.Если доверие в команде низкое, сознательно уничтожь бумажки с голосами,  \
+чтобы обеспечить конфиденциальность. Спроси что участники думают о получинных данных. Если \
+большинство Отдыхающие и Заключенные рассмотри возможность использовать всю ретроспективу для \
+обсуждения этого выявления.",
+source:  source_agileRetrospectives,
+durationDetail:  "5-10 numberPeople",
+duration:    "Короткая",
+stage:    "Формирование, Бурление",
+};
 all_activities[1] = {
 phase:     0,
 name:      "Weather Report",
@@ -885,7 +906,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Afterwards ask which constellations were surprising.<br>\
 This can also be a closing activity (#53).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>",
 durationDetail:  "10 min",
 duration:    "Short",
 stage:    "All",
@@ -906,7 +927,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Any surprising constellations?<br>\
 This can also be an opening activity (#52).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 durationDetail:  "5 min",
 duration:    "Short",
 stage:    "All",
