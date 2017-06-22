@@ -11,14 +11,14 @@ var phase_titles = ['Создание атмосферы', 'Сбор инфор�
 //  desc:      "Multiple \
 //              Lines",
 //  durationDetail:  "",
-//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Долгая, Гибкая
+//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Длительная, Гибкая
 //  stage:    "All" or one or more of "Forming, Norming, Storming, Performing, Stagnating, Adjourning" Формирование, Бурление, Нормирование, Функционирование
 //  source:    "",
 //  more:      "", // a link
 //  suitable:  "",
 //};
 // Values for durationDetail: "<minMinutes>-<maxMinutes> perPerson"
-// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup" итерация, релиз, проект, интроверты, до10человек, кореннаяПричина, несформировавшийся
 
 
 
@@ -41,31 +41,23 @@ desc:      "Подготовьте флипчарт с зонами для И, �
 так чтобы все видели.Если доверие в команде низкое, сознательно уничтожь бумажки с голосами,  \
 чтобы обеспечить конфиденциальность. Спроси что участники думают о получинных данных. Если \
 большинство Отдыхающие и Заключенные рассмотри возможность использовать всю ретроспективу для \
-обсуждения этого познания.\",
-
+обсуждения этого познания.",
 source:  source_agileRetrospectives,
 durationDetail:  "5-10 numberPeople",
 duration:    "Короткая",
 stage:    "Формирование, Бурление",
 };
 
-
-резюме: "",
-описание: "подготовить ватман с чертежом шторм, дождь, облака и солнце.\
-Каждый участник отмечает свое настроение на листе".,
-Продолжительность: "Короткая",
-
 all_activities[1] = {
 phase:     0,
 name:      "Прогноз Погоды",
 summary:   "Участники отмечают свою 'погоду' (настроение) на флипчарте.",
 desc:      "Подготовь флипчарт с символом шторма, дождя, облаков и солнца.\
-Каждый участник отмечает свое настроение на флипчатре".,
+Каждый участник отмечает свое настроение на флипчатре",
 duration:    "Короткая",
 stage:    "All",
 source:  source_agileRetrospectives,
 };
-
 
 all_activities[2] = {
 phase:     0,
@@ -85,87 +77,67 @@ stage:    "All",
 source:  source_agileRetrospectives
 };
 
-// I am here
 all_activities[3] = {
 phase:     1,
-name:      "Timeline",
-summary:   "Participants write down significant events and order them chronologically",
-desc:      "Divide into groups with 5 or less people each. Distribute cards and markers. \
-Give participants 10min to note down memorable and / or personally significant events. \
-It's about gathering many perspectives. Consensus would be detrimental. All participants \
-post their cards and order them. It's okay to add cards on the fly. Analyze.<br>\
-Color Coding can help to see patterns, e.g.:<br>\
+name:      "Таймлайн - Хронология",
+summary:   "Участники записывают важные события в хронологическом порядке",
+desc:      "Разделитесь на группы по 5 или меньше человек. Раздайте карточки и маркеры.\
+Дайте участникам 10 минут, чтобы записать памятные и для них значимые события. Важно собрать \
+много перспектив. Стремление к единогласию может этому помешать. Все участиники выкладывают или \
+приклеиваютсвои карточки на хронологически подходящюю позицию. Можно и сейчас добавлять новые  \
+карточки. Анализируйте сформировавшуюся картину.<br>\
+Можно использовать карточки разных цветов чтобы распознать закономерности, например:<br>\
 <ul>\
-    <li>Emotions</li>\
-    <li>Events (technical, organization, people, ...)</li>\
-    <li>Function (tester, developer, manager, ...)</li>\
+    <li>Чувства/Эмоции</li>\
+    <li>События (технические, организационные, ..) </li>\
+    <li>Функции (тестер, разработчик, менеджер, ...)</li>\
 </ul>",
 source:  source_agileRetrospectives,
-durationDetail:  "60-90 timeframe",
-duration:    "Medium",
+durationDetail:  "60-90 минут",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, introverts"
+suitable: "итерация, релиз, интроверты"
 };
+
 all_activities[4] = {
 phase:     1,
-name:      "Analyze Stories",
-summary:   "Walk through each story handled by the team and look for possible improvements",
-desc:      "Preparation: Collect all stories handled during the iteration and bring them along to \
-the retrospective.<br> \
-In a group (10 people max.) read out each story. For each one discuss whether it went \
-well or not. If it went well, capture why. If not discuss what you could do differently  \
-in the future.<br>\
-Variants: You can use this for support tickets, bugs or any combination of work \
-done by the team.",
-duration:    "Long",
-stage:    "Storming, Norming",
+name:      "Анализ историй",
+summary:   "Анализ всех историй обработанных командой и поиск возможных улучшений.",
+desc:      "Подготовка: собрать все истории обработанные во время итерации и взять их с собой \
+на ретроспективу.<бр> \
+В группе (до 10 человек) прочитать каждую историю и обсудить, что было удачно, а что нет.\
+Если история хорошо удалась, запишите почему. Если были сложности, обсудите, что можно сделать \
+по-другому в слудующий раз.<br>\
+Варианты: Вместо историй вы можете использовать обработанные дефекты, запросы или любую другую комбинацию\
+заданий выполненных командой.",
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
 source:    source_findingMarbles,
-suitable: "iteration, max10people"
+suitable: "итерация, max10people"
 };
-all_activities[5] = {
-phase:     1,
-name:      "Like to like",
-summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
-such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
-Each team member has to write at least 9 index cards: 3 each with things to \
-start doing, keep doing and stop doing. Choose one person to be the first judge. \
-The judge turns the first quality card. From their own cards each member \
-chooses the best match for this word and places it face down on the table.\
-The last one to choose has to take their card back on their hand. The judge shuffles all \
-submitted cards, turns them one by one and rules the best fit = winning card. \
-All submitted cards are discarded. The submitter of the winning card receives \
-the quality card. The person left of the judge becomes the new judge.<br> \
-Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
-cards wins. Debrief by asking for takeaways. <br>\
-(Game is based on 'Apples to Apples')",
-source:    source_agileRetrospectives,
-durationDetail:  "30-40",
-duration:    "Long",
-stage:    "All",
-suitable: "iteration, introverts"
-};
+
 all_activities[6] = {
 phase:     1,
-name:      "Mad Sad Glad",
-summary:   "Collect events when team members felt mad, sad, or glad and find the sources",
-desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or '>:), :(, :) alternatively). Team members write down \
-one event per color coded card, when they've felt that way. When the time is up \
-have everyone post their cards to the appropriate posters. Cluster the cards on \
-each poster. Ask the group for cluster names. <br>\
-Debrief by asking:\
+name:      "Гнев, грусть и радость",
+summary:   "Поиск и анализ событий, по поводу которых члены команды испытывали гнев, грусть или радость.",
+desc:      "Повесте три флипчарта с названиями: 'Гнев', 'Грусть' и 'Радость' (или альтенативно '>:), :(, :) ). Подготовьте карточки \
+определенного цвета для каждого чувства. Члены команды записывают события по одному на карточку цвета, подходящего к испытанному чувству. \
+Когда время истекло, все прикрепляют свои карточки к соответствующим плакатам. Попросите сгруппировать карточки на каждом флипчарте и дать \
+сформировавшимся группам названия. <br>\
+Разберите спрашивая:\
 <ul>\
-    <li>What's standing out? What's unexpected?</li>\
-    <li>What was difficult about this task? What was fun?</li>\
-    <li>What patterns do you see? What do they mean for you as a team?</li>\
-    <li>Suggestions on how to continue?</li>\
+    <li>Что выделяется? Что неожиданно?</li>\
+    <li>Что было сложным? Что достовляло удовольствие?</li>\
+    <li>Какие закономерности видны? Что они значат для команды?</li>\
+    <li>Что теперь нужно сделать?</li>\
 </ul>",
 source:    source_agileRetrospectives,
 durationDetail:  "15-25",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project, introverts"
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[7] = {
 phase:     2,
 name:      "5 Whys",
@@ -292,6 +264,7 @@ duration:    "Короткая",
 stage:    "Формирование, Функционирование",
 suitable: "итерация, большие группы"
 };
+
 all_activities[14] = {
 phase:     4,
 name:      "Благодарность",
@@ -308,21 +281,21 @@ stage:    "Любая",
 suitable: "итерация, релиз, проект"
 };
 
-
 all_activities[15] = {
 phase:     4,
 name:      "Помагает, Мешает, Гипотеза",
 summary:   "Получить конкретный отзыв о том, как ты содействуешь команде",
 desc:      "Подготовь 3 флипчарта с названиями 'Помагает', 'Мешает', и 'Гипотеза' \
 (предложения о том, что можно попробовать). \
-Попроси участиков помочь тебе повысить и улучшить свои навыки в качестве посредника. Участники пишут\
-на стикерах свои предложения и подписывают их, чтобы ты мог потом задать уточняющие вопросы.",
+Попроси участиков помочь тебе профессионально рости и улучшить свои навыки фасилитатора. Участники пишут\
+на стикерах свои отзывы и имена, чтобы ты мог потом им задать уточняющие вопросы.",
 source:    source_agileRetrospectives,
 durationDetail:  "5-10",
 duration:    "Средняя",
 stage:    "Формирование, Бурление",
 suitable: "итерация, релиз"
 };
+
 all_activities[16] = {
 phase:     4, // 5 geht auch
 name:      "SaMoLo (More of, Same of, Less of)",
