@@ -147,7 +147,8 @@ class Deployment
 
     private function remoteCacheClearAndWarm()
     {
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
     }
 
     private function remoteExpose()
