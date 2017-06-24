@@ -31,8 +31,12 @@ class HomeController extends Controller
             }
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
             $activities = $repo->findOrdered($request->getLocale(), $ids);
-            $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
-            $description = $this->get('retromat.plan.description_renderer')->render($activities);
+            if ((1 === count($activities)) and (1 === count($ids))) {
+                $title = ($activities[0])->getName() . ' (#' . ($activities[0])->getRetromatId() . ')';
+            } else {
+                $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
+                $description = $this->get('retromat.plan.description_renderer')->render($activities);
+            }
         }
 
         return $this->render(

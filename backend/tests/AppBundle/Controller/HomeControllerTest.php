@@ -510,6 +510,16 @@ class HomeControllerTest extends WebTestCase
         $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
     }
 
+    public function testShowPageTitle1Activitiy()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=1');
+
+        $this->assertEquals('ESVP (#1)', $crawler->filter('title')->text());
+    }
+
     public function testShowMetaDescription5Activities()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
