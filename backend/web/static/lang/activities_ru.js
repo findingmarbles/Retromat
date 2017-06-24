@@ -116,6 +116,30 @@ source:    source_findingMarbles,
 suitable: "итерация, max10people"
 };
 
+all_activities[5] = {
+    phase:     1,
+    name:      "Like to like",
+    summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
+    desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
+such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
+Each team member has to write at least 9 index cards: 3 each with things to \
+start doing, keep doing and stop doing. Choose one person to be the first judge. \
+The judge turns the first quality card. From their own cards each member \
+chooses the best match for this word and places it face down on the table.\
+The last one to choose has to take their card back on their hand. The judge shuffles all \
+submitted cards, turns them one by one and rules the best fit = winning card. \
+All submitted cards are discarded. The submitter of the winning card receives \
+the quality card. The person left of the judge becomes the new judge.<br> \
+Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
+cards wins. Debrief by asking for takeaways. <br>\
+(Game is based on 'Apples to Apples')",
+    source:    source_agileRetrospectives,
+    durationDetail:  "30-40",
+    duration:    "Long",
+    stage:    "All",
+    suitable: "iteration, introverts"
+};
+
 all_activities[6] = {
 phase:     1,
 name:      "Гнев, грусть и радость",
@@ -269,10 +293,10 @@ all_activities[14] = {
 phase:     4,
 name:      "Благодарность",
 summary:   "Позволь участникам команды поблагодарить друг друга",
-desc:	   "Начни выражать искренюю благодарность одному из участников.\ 
-Похвала может оноситься к любому действию или событию, которое например внесло вклад или способствовало команде или тебе в решении проблемы, ... \ 
+desc:	   "Начни выражать искренюю благодарность одному из участников.\
+Похвала может оноситься к любому действию или событию, которое например внесло вклад или способствовало команде или тебе в решении проблемы, ... \
 Затем пригласи участников присоединиться и высказать благодарность или похвалу друг другу. \
-Молчи некоторое время, чтобы создать небольшое напряжение и побудить участников к действию.\ 
+Молчи некоторое время, чтобы создать небольшое напряжение и побудить участников к действию.\
 Закончи, когда молчание длиться больше 1 минуты и никто из участников больше не хочет высказаться.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
 durationDetail:  "5-30 groupsize",
