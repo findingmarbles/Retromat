@@ -510,4 +510,16 @@ class HomeControllerTest extends WebTestCase
         $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
     }
 
+    public function testShowMetaDescription5Activities()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
+
+        $this->assertEquals(
+            '3, 126: Give positive, as well as non-threatening, constructive feedback, 9: Team members brainstorm in 4 categories to quickly list issues, 39, 60',
+            $crawler->filter('meta[name="description"]')->attr('content')
+        );
+    }
 }
