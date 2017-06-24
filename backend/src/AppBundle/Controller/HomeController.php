@@ -33,6 +33,7 @@ class HomeController extends Controller
             $activities = $repo->findOrdered($request->getLocale(), $ids);
             if ((1 === count($activities)) and (1 === count($ids))) {
                 $title = ($activities[0])->getName() . ' (#' . ($activities[0])->getRetromatId() . ')';
+                $description = ($activities[0])->getSummary();
             } else {
                 $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
                 $description = $this->get('retromat.plan.description_renderer')->render($activities);

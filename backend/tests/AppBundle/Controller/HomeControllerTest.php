@@ -532,4 +532,17 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
+
+    public function testShowMetaDescription1Activitiy()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=1');
+
+        $this->assertEquals(
+            'How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?',
+            $crawler->filter('meta[name="description"]')->attr('content')
+        );
+    }
 }
