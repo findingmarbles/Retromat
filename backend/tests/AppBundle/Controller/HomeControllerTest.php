@@ -500,4 +500,14 @@ class HomeControllerTest extends WebTestCase
             'Response is a redirect to the correct URL.'
         );
     }
+
+    public function testShowPageTitle5Activities()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
+
+        $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
+    }
+
 }
