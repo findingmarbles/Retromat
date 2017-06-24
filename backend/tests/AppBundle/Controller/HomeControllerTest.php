@@ -436,7 +436,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectIndexToNewUrlEn()
     {
         $client = static::createClient();
+
         $client->request('GET', '/index.html?id=32');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=32'),
@@ -447,7 +449,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectIndexToNewUrlDe()
     {
         $client = static::createClient();
+
         $client->request('GET', '/index_de.html?id=32');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/de/?id=32'),
@@ -458,7 +462,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectSlashToNewUrl()
     {
         $client = static::createClient();
+
         $client->request('GET', '/?id=70-4-69-29-71');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=70-4-69-29-71'),
@@ -469,8 +475,10 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectPhase0ToNewUrl()
     {
         $client = static::createClient();
+
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $client->request('GET', '/index.html?id='.$idsStringPhase0.'&phase=0');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect(
@@ -483,7 +491,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectMalformedId()
     {
         $client = static::createClient();
+
         $client->request('GET', '/en/?id=-59-7-50-63-14');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=59-7-50-63-14'),
