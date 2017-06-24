@@ -11,7 +11,7 @@ var phase_titles = ['Создание атмосферы', 'Сбор инфор�
 //  desc:      "Multiple \
 //              Lines",
 //  durationDetail:  "",
-//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Долгая, Гибкая
+//  duration:    "Short | Medium | Long | Flexible", Короткая, Средняя, Длительная, Гибкая
 //  stage:    "All" or one or more of "Forming, Norming, Storming, Performing, Stagnating, Adjourning" Формирование, Бурление, Нормирование, Функционирование
 //  source:    "",
 //  more:      "", // a link
@@ -99,67 +99,45 @@ stage:    "All",
 suitable: "итерация, релиз, интроверты"
 };
 
-// Anton's here
 all_activities[4] = {
 phase:     1,
-name:      "Analyze Stories",
-summary:   "Walk through each story handled by the team and look for possible improvements",
-desc:      "Preparation: Collect all stories handled during the iteration and bring them along to \
-the retrospective.<br> \
-In a group (10 people max.) read out each story. For each one discuss whether it went \
-well or not. If it went well, capture why. If not discuss what you could do differently  \
-in the future.<br>\
-Variants: You can use this for support tickets, bugs or any combination of work \
-done by the team.",
-duration:    "Long",
-stage:    "Storming, Norming",
+name:      "Анализ историй",
+summary:   "Анализ всех историй обработанных командой и поиск возможных улучшений.",
+desc:      "Подготовка: собрать все истории обработанные во время итерации и взять их с собой \
+на ретроспективу.<бр> \
+В группе (до 10 человек) прочитать каждую историю и обсудить, что было удачно, а что нет.\
+Если история хорошо удалась, запишите почему. Если были сложности, обсудите, что можно сделать \
+по-другому в слудующий раз.<br>\
+Варианты: Вместо историй вы можете использовать обработанные дефекты, запросы или любую другую комбинацию\
+заданий выполненных командой.",
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
 source:    source_findingMarbles,
-suitable: "iteration, max10people"
+suitable: "итерация, max10people"
 };
-all_activities[5] = {
-phase:     1,
-name:      "Like to like",
-summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
-such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
-Each team member has to write at least 9 index cards: 3 each with things to \
-start doing, keep doing and stop doing. Choose one person to be the first judge. \
-The judge turns the first quality card. From their own cards each member \
-chooses the best match for this word and places it face down on the table.\
-The last one to choose has to take their card back on their hand. The judge shuffles all \
-submitted cards, turns them one by one and rules the best fit = winning card. \
-All submitted cards are discarded. The submitter of the winning card receives \
-the quality card. The person left of the judge becomes the new judge.<br> \
-Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
-cards wins. Debrief by asking for takeaways. <br>\
-(Game is based on 'Apples to Apples')",
-source:    source_agileRetrospectives,
-durationDetail:  "30-40",
-duration:    "Long",
-stage:    "All",
-suitable: "iteration, introverts"
-};
+
 all_activities[6] = {
 phase:     1,
-name:      "Mad Sad Glad",
-summary:   "Collect events when team members felt mad, sad, or glad and find the sources",
-desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or '>:), :(, :) alternatively). Team members write down \
-one event per color coded card, when they've felt that way. When the time is up \
-have everyone post their cards to the appropriate posters. Cluster the cards on \
-each poster. Ask the group for cluster names. <br>\
-Debrief by asking:\
+name:      "Гнев, грусть и радость",
+summary:   "Поиск и анализ событий, по поводу которых члены команды испытывали гнев, грусть или радость.",
+desc:      "Повесте три флипчарта с названиями: 'Гнев', 'Грусть' и 'Радость' (или альтенативно '>:), :(, :) ). Подготовьте карточки \
+определенного цвета для каждого чувства. Члены команды записывают события по одному на карточку цвета, подходящего к испытанному чувству. \
+Когда время истекло, все прикрепляют свои карточки к соответствующим плакатам. Попросите сгруппировать карточки на каждом флипчарте и дать \
+сформировавшимся группам названия. <br>\
+Разберите спрашивая:\
 <ul>\
-    <li>What's standing out? What's unexpected?</li>\
-    <li>What was difficult about this task? What was fun?</li>\
-    <li>What patterns do you see? What do they mean for you as a team?</li>\
-    <li>Suggestions on how to continue?</li>\
+    <li>Что выделяется? Что неожиданно?</li>\
+    <li>Что было сложным? Что достовляло удовольствие?</li>\
+    <li>Какие закономерности видны? Что они значат для команды?</li>\
+    <li>Что теперь нужно сделать?</li>\
 </ul>",
 source:    source_agileRetrospectives,
 durationDetail:  "15-25",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project, introverts"
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[7] = {
 phase:     2,
 name:      "5 Whys",
@@ -273,31 +251,33 @@ suitable: "iteration, release, project"
 };
 all_activities[13] = {
 phase:     4,
-name:      "Feedback Door - Numbers (ROTI)",
-summary:   "Gauge participants' satisfaction with the retro on a scale from 1 to 5 in minimum time",
-desc:      "Put sticky notes on the door with the numbers 1 through 5 on them. 1 is the topmost and best, \
-5 the lowest and worst.\
-When ending the retrospective, ask your participants to put a sticky to the number they feel \
-reflects the session. The sticky can be empty or have a comment or suggestion on it.",
+name:      "Дверь отзывов - Числа",
+summary:   "Всего за несколько минут получи отзыв о том, насколько участники довольны ретроспективой", 
+desc:      "Приклей на дверь стикеры с цифрами от 1 до 5. Объясни, что циФры представляют шкалу, \
+где 1 означает прекрасно или отлично, а 5 - плохо.\
+Когда ретроспектива подойдет к концу, попроси всех наклеить стикер около цифры, которая по их мнению \
+наиболее точно отобржает, насколько участник доволен ретроспективой.\
+Стикер может быть как пустым, так и содержать комментарии или предложения по улучшению ретроспективы.", 
 source:    "ALE 2011, " + source_findingMarbles,
 durationDetail:  "2-3",
-duration:    "Short",
-stage:    "Forming, Performing",
-suitable: "iteration, largeGroups"
+duration:    "Короткая",
+stage:    "Формирование, Функционирование",
+suitable: "итерация, большие группы"
 };
 
 all_activities[14] = {
 phase:     4,
-name:      "Appreciations",
-summary:   "Let team members appreciate each other and end positively",
-desc:      "Start by giving a sincere appreciation of one of the participants. \
-It can be anything they contributed: help to the team or you, a solved problem, ...\
-Then invite others and wait for someone to work up the nerve. Close, when no one \
-has talked for a minute.",
+name:      "Благодарность",
+summary:   "Позволь участникам команды поблагодарить друг друга",
+desc:	   "Начни выражать искренюю благодарность одному из участников.\ 
+Похвала может оноситься к любому действию или событию, которое например внесло вклад или способствовало команде или тебе в решении проблемы, ... \ 
+Затем пригласи участников присоединиться и высказать благодарность или похвалу друг другу. \
+Молчи некоторое время, чтобы создать небольшое напряжение и побудить участников к действию.\ 
+Закончи, когда молчание длиться больше 1 минуты и никто из участников больше не хочет высказаться.",
 source:    source_agileRetrospectives + " who took it from 'The Satir Model: Family Therapy and Beyond'",
 durationDetail:  "5-30 groupsize",
-duration:    "Short",
-stage:    "All",
+duration:    "Короткая",
+stage:    "Любая",
 suitable: "итерация, релиз, проект"
 };
 
