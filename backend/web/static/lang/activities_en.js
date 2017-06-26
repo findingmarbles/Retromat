@@ -2360,7 +2360,7 @@ How would it affect the team?</li> \
 </ul> \
 <br> \
 This activity is only the first part of a \
-<a href='https://dl.dropboxusercontent.com/u/440419/Stringtheory%20-%20Hidden%20Connections%20-%20Exercise.pdf'>longer game</a>.",
+<a href='https://www.dropbox.com/s/e4wv43gw82p409i/Stringtheory%20-%20Team%20Exercise.pdf'>longer game</a>.",
 source:    "<a href='https://twitter.com/ebstar'>Eben Halford</a>",
 duration:    "Medium",
 stage:    "Forming",
