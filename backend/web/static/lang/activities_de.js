@@ -722,7 +722,153 @@ duration:    "Flexible",
 stage:    "All",
 suitable:  "iteration"
 };
-
+all_activities[51] = {
+phase:     0,
+name:      "Konstellationen - Eröffnung",
+summary:   "Lasse die Teilnehmer Aussagen bestätigen oder ablehnen, indem Sie sich im Raum bewegen",
+desc:      "Lege eine Scheibe oder eine Kugel in die Mitte eines freien Raumes und versammle das Team darum. \
+Die Scheibe ist der Punkt der höchsten Zustimmung: Wenn sie einer Aussage zustimmen, sollten sie sich \
+darauf zu bewegen, wenn sie es nicht tun, sollten sie sich - dem Ausmaß ihrer Ablehnung entsprechend - \
+davon entfernen. Formuliere jetzt Aussagen, z.B. \
+<ul>\
+<li> Ich glaube, ich kann in dieser Retrospektive offen sprechen </li>\
+<li> Ich bin mit der letzten Iteration zufrieden </li>\
+<li> Die Qualität unseres Codes finde ich gut</li>\
+<li> Unser kontinuierlicher Integrationsprozess ist ausgereift </li>\
+</ul>\
+Beobachte nun, welche Konstellationen sich ergeben. Frage das Team, welche Konstellationen sie am meisten überrascht hat. \
+<br><br>\
+Kann auch als Abschluss verwendet werden (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>",
+durationDetail:  "10 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[52] = {
+phase:     4,
+name:      "Konstellationen - Abschluss",
+summary:   "Lasse die Teilnehmer Aussagen bestätigen oder ablehnen, indem Sie sich im Raum bewegen",
+desc:      "Lege eine Scheibe oder eine Kugel in die Mitte eines freien Raumes und versammle das Team darum. \
+Die Scheibe ist der Punkt der höchsten Zustimmung: Wenn sie einer Aussage zustimmen, sollten sie sich darauf \
+zu bewegen, wenn sie es nicht tun, sollten sie sich - dem Ausmaß ihrer Ablehnung entsprechend - davon entfernen. \
+Formuliere jetzt Aussagen, z.B. \
+ <ul>\
+<li>Wir haben über die wichtigsten Dinge gesprochen</li>\ 
+<li> Ich habe heute offen gesprochen</li>\
+<li> Die Zeit für die Retrospektive war gut investiert </li>\
+<li> Ich bin zuversichtlich, dass wir die besprochenen Maßnahmen umsetzen werden </li>\
+<\ul>\
+Beobachte nun, welche Konstellationen sich ergeben. Welche Konstellation überrascht dich?\
+<br><br>\
+Kann auch als Beginn verwendet werden (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+durationDetail:  "5 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[53] = {
+phase:     1,
+name:      "Oscar für Stories ",
+summary:   "Das Team nominiert Stories für Kategorien und diskutiert die Gewinner ",
+desc:      "Zeige alle in der letzten Iteration abgeschlossenen Stories auf dem Board.\
+Schaffe drei Kategorien (d.h. Felder auf der Tafel): \
+<ul>\
+<li> Beste Story </li>\
+<li> Die nervigste Story </li>\
+<li> ... eine dritte Kategorie, die das Team definiert ... </li>\
+</ul>\
+Bitten Sie das Team, nun Stories in den drei Kategorien zu 'nominieren', indem sie sie \
+in eine der drei Felder setzen. Lasse jetzt in jeder Kategorie per Klebepunkte abstimmen und verkünde die Gewinner. \
+<br><br>\
+Frage das Team, warum aus ihrer Sicht die Story in der jeweiligen Kategorie gewonnen hat \
+und lasse das Team über die Arbeit bis zum Abschluss der Story diskutieren  - was lief gut \
+und was lief schlecht.",
+source:    "<a href='http://www.touch-code-magazine.com'>Marin Todorov</a>",
+durationDetail:  "30-40 min",
+duration:    "Short",
+stage:    "Forming, Storming, Norming",
+suitable:  "project, release",
+};
+all_activities[54] = {
+phase:     2,
+name:      "Die originalen Vier",
+summary:   "Frage die vier Kernfragen von Norman Kerth",
+desc:      "Für Norman Kerth, Erfinder der Retrospektiven, sind das die vier Kernfragen: \
+<ul>\
+    <li>Was müssen wir uns merken, was gut lief, damit wir es nicht vergessen?</li>\
+    <li>Was haben wir gelernt?</li>\
+    <li>Was sollten wir beim nächsten Mal anders machen?</li>\
+    <li>Was überrascht uns immer noch? </li>\
+</ul>\
+Welche Antworten hat das Team?",
+source:    "<a href='http://www.retrospectives.com/pages/RetrospectiveKeyQuestions.html'>Norman Kerth</a>",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[55] = {
+phase:     5,
+name:      "Lade den Kunden ein",
+summary:   "Stelle direkten Kontakt zwischen Team und Stakeholder her",
+desc:      "Lade einen Kunden oder internen Stakeholder zur Retrospektive ein.\
+Lasse das Team wirklich ALLE Fragen an den Gast stellen:\
+<ul>\
+    <li>Wie benutzt der Kunde das Produkt?</li>\
+    <li>Was regt ihn am meisten auf? </li>\
+    <li>Welche Funktion macht ihm das Leben leichter? </li>\
+    <li>Lasse den Kunden auch seine typischen Arbeitsabläufe darstellen.</li>\
+    <li>...</li>\
+</ul>",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+durationDetail:  "45 min",
+duration:    "Long",
+stage:    "Forming, Norming, Performing, Stagnating",
+suitable:  "iteration, project"
+};
+all_activities[56] = {
+phase:     4,
+name:      "Sag‘s mit Blumen",
+summary:   "Jedes Teammitglied bedankt sich bei einem anderen Teammitglied mit einer Blume",
+desc:      "Kaufe eine Blume für jedes Teammitglied und hole sie am Ende der Retrospektive hervor.\
+Jedes Teammitglied überreicht einem anderen Teammitglied eine Blume als Zeichen der Wertschätzung.",
+source:    "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Nick Oostvogels</a>",
+durationDetail:  "5 min",
+duration:    "Short",
+stage:    "Norming, Performing",
+suitable:  "iteration, project"
+};
+all_activities[57] = {
+phase:     2,
+name:      "Verdeckter Boss",
+summary:   "Wenn Eure Chefin die letzte Iteration mit Euch erlebt hätte, was würde sie ändern wollen?",
+desc:      "Stellt Euch vor, Eure Chefin hätte  - unerkannt - in der letzten Iteration mit Euch gearbeitet. \
+Was würde sie über Eure Zusammenarbeit und die Ergebnisse denken? Was würde sie Euch bitten zu ändern? \
+Das Team wird so ermutigt, sich aus einem anderen Blickwinkel zu betrachten.",
+source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
+durationDetail:  "10-15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[58] = {
+phase:     0,
+name:      "Happiness Histogram",
+summary:   "Erstelle ein Happiness Histogramm, um die Leute zum reden zu bringen",
+desc:      "Bereite ein Flip-Chart mit einer horizontalen Skala von 1 (Unglücklich) bis 5 (Happy) vor. \
+<ul>\
+    <li>Die Teammitglieder platzieren der Reihe nach eine Haftnotiz entsprechend ihrer „Happiness“ über der Skala und kommentieren ihre Platzierung</li>\
+    <li>Wenn in der Begründung etwa bemerkenswertes erwähnt wird, lass das Team entscheiden, ob es sofort oder zu einem späteren Zeitpunkt in der Retrospektive diskutiert werden soll</li>\
+    <li>Wenn jemand den gleichen „Happiness“-Wert wie ein Vorgänger hat, klebt die Haftnotiz über die schon platzierten Haftnotizen, so das ein Histogramm (Häufigkeitsverteilung) entsteht</li>\
+</ul>",
+source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
+durationDetail:  "2 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
 
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
