@@ -753,7 +753,7 @@ desc:      "Lege eine Scheibe oder eine Kugel in die Mitte eines freien Raumes u
 Die Scheibe ist der Punkt der höchsten Zustimmung: Wenn sie einer Aussage zustimmen, sollten sie sich darauf \
 zu bewegen, wenn sie es nicht tun, sollten sie sich - dem Ausmaß ihrer Ablehnung entsprechend - davon entfernen. \
 Formuliere jetzt Aussagen, z.B. \
- <ul>\
+<ul>\
 <li>Wir haben über die wichtigsten Dinge gesprochen</li>\ 
 <li> Ich habe heute offen gesprochen</li>\
 <li> Die Zeit für die Retrospektive war gut investiert </li>\
@@ -844,8 +844,8 @@ all_activities[57] = {
 phase:     2,
 name:      "Verdeckter Boss",
 summary:   "Wenn Eure Chefin die letzte Iteration mit Euch erlebt hätte, was würde sie ändern wollen?",
-desc:      "Stellt Euch vor, Eure Chefin hätte  - unerkannt - in der letzten Iteration mit Euch gearbeitet. \
-Was würde sie über Eure Zusammenarbeit und die Ergebnisse denken? Was würde sie Euch bitten zu ändern? \
+desc:      "'Stellt Euch vor, Eure Chefin hätte  - unerkannt - in der letzten Iteration mit Euch gearbeitet. \
+Was würde sie über Eure Zusammenarbeit und die Ergebnisse denken? Was würde sie Euch bitten zu ändern?' \
 Das Team wird so ermutigt, sich aus einem anderen Blickwinkel zu betrachten.",
 source:    "<a href='http://loveagile.com/retrospectives/undercover-boss'>Love Agile</a>",
 durationDetail:  "10-15 min",
@@ -859,9 +859,9 @@ name:      "Happiness Histogram",
 summary:   "Erstelle ein Happiness Histogramm, um die Leute zum reden zu bringen",
 desc:      "Bereite ein Flip-Chart mit einer horizontalen Skala von 1 (Unglücklich) bis 5 (Happy) vor. \
 <ul>\
-    <li>Die Teammitglieder platzieren der Reihe nach eine Haftnotiz entsprechend ihrer „Happiness“ über der Skala und kommentieren ihre Platzierung</li>\
+    <li>Die Teammitglieder platzieren der Reihe nach eine Haftnotiz entsprechend ihrer 'Happiness' über der Skala und kommentieren ihre Platzierung</li>\
     <li>Wenn in der Begründung etwa bemerkenswertes erwähnt wird, lass das Team entscheiden, ob es sofort oder zu einem späteren Zeitpunkt in der Retrospektive diskutiert werden soll</li>\
-    <li>Wenn jemand den gleichen „Happiness“-Wert wie ein Vorgänger hat, klebt die Haftnotiz über die schon platzierten Haftnotizen, so das ein Histogramm (Häufigkeitsverteilung) entsteht</li>\
+    <li>Wenn jemand den gleichen 'Happiness'-Wert wie ein Vorgänger hat, klebt die Haftnotiz über die schon platzierten Haftnotizen, so das ein Histogramm (Häufigkeitsverteilung) entsteht </li>\
 </ul>",
 source:    "<a href='http://nomad8.com/chart-your-happiness/'>Mike Lowery</a> via <a href='https://twitter.com/nfelger'>Niko Felger</a>",
 durationDetail:  "2 min",
