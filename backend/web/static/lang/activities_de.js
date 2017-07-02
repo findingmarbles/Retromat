@@ -754,7 +754,7 @@ Die Scheibe ist der Punkt der höchsten Zustimmung: Wenn sie einer Aussage zusti
 zu bewegen, wenn sie es nicht tun, sollten sie sich - dem Ausmaß ihrer Ablehnung entsprechend - davon entfernen. \
 Formuliere jetzt Aussagen, z.B. \
 <ul>\
-<li>Wir haben über die wichtigsten Dinge gesprochen</li>\ 
+<li>Wir haben über die wichtigsten Dinge gesprochen</li>\
 <li> Ich habe heute offen gesprochen</li>\
 <li> Die Zeit für die Retrospektive war gut investiert </li>\
 <li> Ich bin zuversichtlich, dass wir die besprochenen Maßnahmen umsetzen werden </li>\
