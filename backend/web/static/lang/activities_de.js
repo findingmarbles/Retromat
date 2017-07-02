@@ -758,7 +758,7 @@ Formuliere jetzt Aussagen, z.B. \
 <li> Ich habe heute offen gesprochen</li>\
 <li> Die Zeit für die Retrospektive war gut investiert </li>\
 <li> Ich bin zuversichtlich, dass wir die besprochenen Maßnahmen umsetzen werden </li>\
-<\ul>\
+</ul>\
 Beobachte nun, welche Konstellationen sich ergeben. Welche Konstellation überrascht dich?\
 <br><br>\
 Kann auch als Beginn verwendet werden (#52).",
