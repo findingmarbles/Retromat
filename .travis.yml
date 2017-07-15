@@ -1,4 +1,5 @@
 dist: precise
+sudo: false
 
 language: php
 
@@ -21,14 +22,6 @@ before_script:
 script:
     - backend/vendor/bin/simple-phpunit -c backend
 
-after_success:
-    - mkdir -p .travis/
-    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
-    - chmod 600 .travis/rsa_travis_timon
-    - eval "$(ssh-agent -s)"
-    - ssh-add .travis/rsa_travis_timon
-    - rm -rf .travis/
-
 deploy:
     on:
         branch: master
@@ -38,8 +31,15 @@ deploy:
     script: /bin/true
 
 before_deploy:
+    - mkdir -p .travis/
+    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
+    - chmod 600 .travis/rsa_travis_timon
+    - eval "$(ssh-agent -s)"
+    - ssh-add .travis/rsa_travis_timon
+    - rm -rf .travis/
     - openssl aes-256-cbc -d -a -in backend/app/config/parameters.yml.avior.enc -out backend/app/config/parameters.yml -k $travis_key
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
+    - ssh-agent -k
 
 notifications:
     on_success: always
@@ -47,4 +47,3 @@ notifications:
     email:
         recipients:
             - timon.fiddike@agile.coach
-            - corinna@finding-marbles.com
