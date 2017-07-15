@@ -26,7 +26,7 @@ after_success:
     - eval "$(ssh-agent -s)"
     - ssh-add .travis/rsa_travis_timon
     - rm -rf .travis/
-    - ssh-agent -k
+    - killall ssh-agent
 
 notifications:
     on_success: always
