@@ -3,7 +3,7 @@ parameters:
     database_port:      ~
     database_socket:    ~
     database_name:      retromat
-    database_user:      travis
+    database_user:      root
     database_password:  ~
 
     mailer_transport:  smtp
