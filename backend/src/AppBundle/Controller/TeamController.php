@@ -33,27 +33,6 @@ class TeamController extends Controller
     }
 
     /**
-     * @Route("/experiment/titles/sequence/{sequenceId}", name="titles-experiment-sequence")
-     */
-    public function titlesExperimentBySequenceAction($sequenceId)
-    {
-        $titleParts = $this->getParameter('retromat.plan.titles');
-        $generator = $this->get('retromat.plan.title_id_generator');
-
-        return $this->render(
-            'team/experiment/titlesBySequence.html.twig',
-            [
-                'title_renderer' => $this->get('retromat.plan.title_renderer'),
-                'totalCombinations' => $generator->countCombinationsInAllSequences(),
-                'ids' => $generator->generateIds($sequenceId),
-                'titleParts' => $titleParts,
-                'sequenceId' => $sequenceId,
-                'combinationsInSequence' => $generator->countCombinationsInSequence($sequenceId),
-            ]
-        );
-    }
-
-    /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
