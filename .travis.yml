@@ -1,5 +1,7 @@
-dist: precise
+dist: trusty
 sudo: false
+services:
+  - mysql
 
 language: php
 
@@ -47,4 +49,3 @@ notifications:
     email:
         recipients:
             - timon.fiddike@agile.coach
-            - corinna@finding-marbles.com
