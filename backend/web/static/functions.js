@@ -5,26 +5,27 @@ function init() {
     var plan_id = urlParams.id;
     var phase = urlParams.phase;
 
-// AJAX proof of concept
-    // empty activity array
-    all_activities = [];
-
-    // load activities via AJAX request
-    $.getJSON("/activities", {_locale: "en"})
-        .fail(function (jqxhr, textStatus, error) {
-            console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
-        })
-        .done(function (json) {
-            all_activities = json;
-
-            // do everything else we need to do after successfully loading activities
+// AJAX proof of concept: Uncomment the next 20 lines to activate
+//
+//     // empty activity array
+//     all_activities = [];
+//
+//     // load activities via AJAX request
+//     $.getJSON("/activities", {_locale: "en"})
+//         .fail(function (jqxhr, textStatus, error) {
+//             console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
+//         })
+//         .done(function (json) {
+//             all_activities = json;
+//
+//             // do everything else we need to do after successfully loading activities
             if (plan_id) {
                 publish_plan(plan_id, phase);
             } else {
                 publish_random_plan();
             }
             publish_footer_stats();
-        });
+//         });
 }
 
 // From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html
