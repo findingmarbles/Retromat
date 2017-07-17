@@ -82,7 +82,6 @@ fos_user:
 fos_rest:
     routing_loader:
         default_format: json
-#        allowed_methods_listener: true
     format_listener: true
     view:
         view_response_listener: 'force'
