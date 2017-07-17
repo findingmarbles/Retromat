@@ -4,6 +4,24 @@ function init() {
     var urlParams = getUrlVars();
     var plan_id = urlParams.id;
     var phase = urlParams.phase;
+
+// AJAX proof of concept
+    console.log("all_activities should be full at this point: " + all_activities);
+    // empty activity array
+    all_activities = [];
+    console.log("all_activities should be empty at this point: " + all_activities);
+
+    // load activities via AJAX request
+    $.getJSON("/activities", {_locale: "en"})
+        .done(function (json) {
+            console.log("Activity data should be loaded at this point: " + json);
+        })
+        .fail(function (jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.log("Request Failed: " + err);
+        });
+
+
     if (plan_id) {
         publish_plan(plan_id, phase);
     } else {
