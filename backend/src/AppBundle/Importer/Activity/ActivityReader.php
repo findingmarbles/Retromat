@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AppBundle\Importer\Activity;
 
@@ -15,8 +16,7 @@ class ActivityReader
     {
         $activity = [];
 
-        for ($i=1; $i <= $this->highestRetromatId(); $i++)
-        {
+        for ($i = 1; $i <= $this->highestRetromatId(); $i++) {
             $activity[$i] = $this->extractActivity($i);
         }
 
@@ -34,7 +34,7 @@ class ActivityReader
         // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
         // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
         $highestJsArrayId = intval(trim(substr($this->activities, $start, $end - $start)));
-        $highestRetromatId = $highestJsArrayId +1;
+        $highestRetromatId = $highestJsArrayId + 1;
 
         return $highestRetromatId;
     }
@@ -62,7 +62,7 @@ class ActivityReader
     {
         // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
         // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
-        $jsArrayId = $retromatId -1;
+        $jsArrayId = $retromatId - 1;
 
         $startMarker = "{\n";
         $endMarker = "\n};";
@@ -86,7 +86,12 @@ class ActivityReader
 
     public function extractActivityDescription($activityBlock)
     {
-        return $this->extractStringValue($activityBlock, $key = 'desc:');
+        $description = $this->extractStringValue($activityBlock, $key = 'desc:');
+        if (empty($description)) {
+            return null;
+        } else {
+            return str_replace(["<a href='", "'>", "\\\n"], ['<a href="', '">', ''], $description);
+        }
     }
 
     public function extractActivityDuration($activityBlock)

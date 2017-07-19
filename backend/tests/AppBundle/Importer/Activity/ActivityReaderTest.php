@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace tests\AppBundle\Importer\Activity;
 
@@ -24,10 +25,7 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
             'phase' => 3,
             'name' => "Take a Stand - Line Dance",
             'summary' => "Get a sense of everyone's position and reach consensus",
-            'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) \
-on the floor with masking tape. Mark one end as option A) and the other as option B). \
-Team members position themselves on the scale according to their preference for either option. \
-Now tweak the options until one option has a clear majority.",
+            'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) on the floor with masking tape. Mark one end as option A) and the other as option B). Team members position themselves on the scale according to their preference for either option. Now tweak the options until one option has a clear majority.",
             'source' => 'source_skycoach',
             'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
             'duration' => "Short",
@@ -162,15 +160,21 @@ source:  source_agileRetrospectives
 HTML;
 
         $expected = <<<'HTML'
-In round-robin each participant answers the same question (unless they say 'I pass'). \
-Sample questions: <br>\
-<ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
-</ul><br>\
-Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
+In round-robin each participant answers the same question (unless they say 'I pass'). Sample questions: <br><ul>    <li>In one word - What do you need from this retrospective?</li>Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>    <li>In this retrospective - If you were a car, what kind would it be?</li>    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li></ul><br>Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
+HTML;
+
+        $this->assertEquals($expected, $this->reader->extractActivityDescription($activityBlock));
+    }
+
+    public function testExtractDescriptionWithHref()
+    {
+        $activityBlock = <<<'HTML'
+summary:   "foo",
+desc:      "... <a href='http://www.agilemanifesto.org/principles.html'>principles of the Agile Manifesto</a> ...",
+HTML;
+
+        $expected = <<<'HTML'
+... <a href="http://www.agilemanifesto.org/principles.html">principles of the Agile Manifesto</a> ...
 HTML;
 
         $this->assertEquals($expected, $this->reader->extractActivityDescription($activityBlock));
@@ -439,27 +443,7 @@ HTML;
             'phase' => 1,
             'name' => 'Find your Focus Principle',
             'summary' => 'Discuss the 12 agile principles and pick one to work on',
-            'desc' => 'Print the <a href=\'http://www.agilemanifesto.org/principles.html\'>principles of the Agile Manifesto</a> \
-onto cards, one principle \
-per card. If the group is large, split it and provide each smaller group with \
-their own set of the principles. \
-<br><br> \
-Explain that you want to order the principles according to the following question: \
-\'How much do we need to improve regarding this principle?\'. In the end the \
-principle that is the team\'s weakest spot should be on top of the list. \
-<br><br> \
-Start with a random principle, discuss what it means and how much need for \
-improvement you see, then place it in the middle. \
-Pick the next principle, discuss what it means and sort it relatively to the other \
-principles. You can propose a position depending on the previous discussion and \
-move from there by comparison. \
-Repeat this until all cards are sorted. \
-<br><br> \
-Now consider the card on top: This is presumeably the most needed and most urgent \
-principle you should work on. How does the team feel about it? Does everyone still \
-agree? What are the reasons there is the biggest demand for change here? Should you \
-compare to the second or third most important issue again? If someone would now \
-rather choose the second position, why?',
+            'desc' => 'Print the <a href="http://www.agilemanifesto.org/principles.html">principles of the Agile Manifesto</a> onto cards, one principle per card. If the group is large, split it and provide each smaller group with their own set of the principles. <br><br> Explain that you want to order the principles according to the following question: \'How much do we need to improve regarding this principle?\'. In the end the principle that is the team\'s weakest spot should be on top of the list. <br><br> Start with a random principle, discuss what it means and how much need for improvement you see, then place it in the middle. Pick the next principle, discuss what it means and sort it relatively to the other principles. You can propose a position depending on the previous discussion and move from there by comparison. Repeat this until all cards are sorted. <br><br> Now consider the card on top: This is presumeably the most needed and most urgent principle you should work on. How does the team feel about it? Does everyone still agree? What are the reasons there is the biggest demand for change here? Should you compare to the second or third most important issue again? If someone would now rather choose the second position, why?',
             'source' => '"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"',
             'more' => null,
             'duration' => 'Long',
