@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace tests\AppBundle\Controller;
 
 // tests directory is not available to the autoloader, so we have to manually require these files:
-require 'DataFixtures/LoadActivityData.php';
+require_once 'DataFixtures/LoadActivityData.php';
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
@@ -43,8 +43,6 @@ class HomeControllerTest extends WebTestCase
             'Happiness Histogram',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->html()
         );
-
-        $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=80');
         $this->assertEquals(
