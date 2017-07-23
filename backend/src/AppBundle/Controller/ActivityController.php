@@ -22,11 +22,16 @@ class ActivityController extends FOSRestController implements ClassResourceInter
     public function cgetAction()
     {
         $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
-        $activities = $repo->findOrdered('en', range(1, 1000));
+        $activities = $repo->findOrdered('en', range(1, 200));
+        /** @var $activity Activity */
+        foreach ($activities as $activity) {
+            $activity->setSource($this->expandSource($activity->getSource()));
+        }
 
         return new View($activities);
     }
 
+    // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig
     private function expandSource(string $source): string
     {
         $sources = $this->getParameter('retromat.activity.source');
