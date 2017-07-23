@@ -12,17 +12,9 @@ class ActivityController extends FOSRestController implements ClassResourceInter
 {
     public function getAction($id)
     {
-        $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
         /** @var $activity Activity */
-        $activity = $repo->find($id);
-        $sources = $this->getParameter('retromat.activity.source');
-
-        $source = $activity->getSource();
-        $source = str_replace(' + "', '', $source);
-        $source = str_replace('"', '', $source);
-        $source = str_replace(["='", "'>"], ['="', '">'], $source);
-        $source = str_replace(array_keys($sources), $sources, $source);
-        $activity->setSource($source);
+        $activity = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->find($id);
+        $activity->setSource($this->expandSource($activity->getSource()));
 
         return new View($activity);
     }
@@ -33,5 +25,17 @@ class ActivityController extends FOSRestController implements ClassResourceInter
         $activities = $repo->findOrdered('en', range(1, 1000));
 
         return new View($activities);
+    }
+
+    private function expandSource(string $source): string
+    {
+        $sources = $this->getParameter('retromat.activity.source');
+
+        $source = str_replace([' + "', '" + '], '', $source);
+        $source = str_replace('"', '', $source);
+        $source = str_replace(["='", "'>"], ['="', '">'], $source);
+        $source = str_replace(array_keys($sources), $sources, $source);
+
+        return $source;
     }
 }

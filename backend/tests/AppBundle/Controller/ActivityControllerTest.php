@@ -112,4 +112,26 @@ class ActivityControllerTest extends WebTestCase
             $activity['source']
         );
     }
+
+    public function testActivitySourceStringAndPlaceholder()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/activities/14');
+        $activity = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(
+            'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
+            $activity['source']
+        );
+
+        $client->request('GET', '/activities/65');
+        $activity = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(
+            '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
+            $activity['source']
+        );
+    }
 }
