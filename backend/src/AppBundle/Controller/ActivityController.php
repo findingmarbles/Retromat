@@ -18,8 +18,9 @@ class ActivityController extends FOSRestController implements ClassResourceInter
         $sources = $this->getParameter('retromat.activity.source');
 
         $source = $activity->getSource();
+        $source = str_replace(' + "', '', $source);
         $source = str_replace('"', '', $source);
-        $source = str_replace("'", '"', $source);
+        $source = str_replace(["='", "'>"], ['="', '">'], $source);
         $source = str_replace(array_keys($sources), $sources, $source);
         $activity->setSource($source);
 
@@ -29,7 +30,7 @@ class ActivityController extends FOSRestController implements ClassResourceInter
     public function cgetAction()
     {
         $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
-        $activities = $repo->findOrdered('en', range(1,1000));
+        $activities = $repo->findOrdered('en', range(1, 1000));
 
         return new View($activities);
     }
