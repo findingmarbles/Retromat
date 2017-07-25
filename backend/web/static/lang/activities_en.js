@@ -132,7 +132,7 @@ all_activities[6] = {
 phase:     1,
 name:      "Mad Sad Glad",
 summary:   "Collect events when team members felt mad, sad, or glad and find the sources",
-desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or '>:), :(, :) alternatively). Team members write down \
+desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or >:(, :(, :) alternatively). Team members write down \
 one event per color coded card, when they've felt that way. When the time is up \
 have everyone post their cards to the appropriate posters. Cluster the cards on \
 each poster. Ask the group for cluster names. <br>\
