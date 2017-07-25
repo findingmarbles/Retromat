@@ -202,3 +202,6 @@ all_photos[117] = [
 all_photos[122] = [
 {filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"},
 ];
+all_photos[129] = [
+{filename:    "https://agilehunter.files.wordpress.com/2017/06/elephant_safari.jpg?w=740", contributor: "Willem Larsen"},
+];
