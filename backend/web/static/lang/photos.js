@@ -194,7 +194,7 @@ all_photos[114] = [
 { filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards" }
 ];
 all_photos[116] = [
-{ filename:    "117_maximize-follow-through.png", contributor: "Karen Castillo Inoa" }
+{ filename:    path + "117_maximize-follow-through.png", contributor: "Karen Castillo Inoa" }
 ];
 all_photos[117] = [
 {filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
