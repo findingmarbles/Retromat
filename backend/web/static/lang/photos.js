@@ -42,10 +42,10 @@ all_photos[18] = [
 ];
 all_photos[19] = [
 { filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano" },
-{ filename:    "20_perfection-game-2.png", contributor: "Karen Castillo Inoa" }
+{ filename: path + "20_perfection-game-2.png", contributor: "Karen Castillo Inoa" }
 ];
 all_photos[20] = [
-{ filename:    path + "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG", contributor: "Paulo Caroli" }
+{ filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG", contributor: "Paulo Caroli" }
 ];
 all_photos[21] = [{
 filename:    path + "22_Temperature-Reading.jpg",
