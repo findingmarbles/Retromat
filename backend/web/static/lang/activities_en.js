@@ -59,10 +59,11 @@ summary:   "Ask one question that each participant answers in turn",
 desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
 Sample questions: <br>\
 <ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
+    <li>In one word - What do you need from this retrospective?</li> \
+Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li> \
+    <li>In this retrospective - If you were a car, what kind would it be?</li> \
+    <li>What's something that caused problems last sprint?</li> \
+    <li>If you could change one thing about the last sprint what would it be?</li> \
 </ul><br>\
 Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
 duration:    "Short",
@@ -531,11 +532,12 @@ desc:      "Distribute index cards and markers. Set a topic, e.g. one of the fol
     <li>What was the most remarkable moment?</li>\
     <li>What was the biggest problem?</li>\
     <li>What did you long for?</li>\
+    <li>If the last iteration had been a circus performance, what part did you play? Juggler, funambulist, clown, knife-thrower, ...</li> \
 </ul>\
 Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
 let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
+source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a>, Olivier Gourment; <a href='https://twitter.com/thomasguest'>Thomas Guest</a>",
 durationDetail:  "5 + 3 per person",
 duration:    "Medium",
 stage:    "Performing",
