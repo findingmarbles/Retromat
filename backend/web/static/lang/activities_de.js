@@ -401,7 +401,7 @@ all_activities[29] = {
 phase:     5,
 name:      "Gespr&auml;chsb&ouml;gen",
 summary:   "Ein strukturierter Ansatz f&uuml;r Diskussionen",
-desc:      "Gespr&auml;chsb&ouml;gen (engl. dialogue sheet) sehen ein wenig so aus wie ein Spielbrett von einem Gesellschaftsspiel. Es sind schon <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>einige Gespr&auml;chsb&ouml;gen online verf&uuml;gbar</a>. <br /> \
+desc:      "Gespr&auml;chsb&ouml;gen (engl. dialogue sheet) sehen ein wenig so aus wie ein Spielbrett von einem Gesellschaftsspiel. Es sind schon <a href='http://allankelly.net/dlgsheets/'>einige Gespr&auml;chsb&ouml;gen online verf&uuml;gbar</a>. <br /> \
 W&auml;hle einen aus, drucke ihn so gro&szlig; wie m&ouml;glich aus (am besten in DIN A1) und befolge anschlie&szlig;end die Anweisungen auf dem Gespr&auml;chsbogen.",
 source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 duration:  "90-120",

@@ -464,7 +464,7 @@ all_activities[29] = {
 phase:     5,
 name:      "Plateau de discussion",
 summary:   "Une approche structurée pour une discussion.",
-desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>plusieurs grilles disponibles (EN)</a>.<br />\
+desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://allankelly.net/dlgsheets/'>plusieurs grilles disponibles (EN)</a>.<br />\
 En choisir une, l'imprimer dans le plus grand format possible (idéalement en A1) et suivre ses instructions.",
 source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly chez Software Strategy</a>",
 duration:  "90-120",

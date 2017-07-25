@@ -427,7 +427,7 @@ phase:     5,
 name:      "Dialoogvellen",
 summary:   "Een gestructureerde aanpak om te discussiëren",
 desc:      "Een dialoogvel lijkt een beetje op een spelbord. Er zijn \
-<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>verschillende vellen beschikbaar</a>. \
+<a href='http://allankelly.net/dlgsheets/'>verschillende vellen beschikbaar</a>. \
 Kies er een, print het zo groot mogelijk uit (bij voorkeur op A1) en volg de instructies.",
 source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 duration:  "90-120",
