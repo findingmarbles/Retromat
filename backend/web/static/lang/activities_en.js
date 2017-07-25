@@ -515,7 +515,7 @@ summary:   "A structured approach to a discussion",
 desc:      "A dialogue sheet looks a little like a board game board. There are \
 <a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
 Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
+source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
 duration:    "Long",
 stage:    "All",

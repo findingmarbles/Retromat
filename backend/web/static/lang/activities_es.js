@@ -485,7 +485,7 @@ summary:   "Un enfoque estructurado para el debate",
 desc:      "Una hoja de di&aacute;logo se parece a un juego de mesa. \
 Existen <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'> varias hojas de dialogo disponibles</a>. \
 Eligir una, imprimirla lo m&aacute;s grande posible (tama&ntilde;o A1 si puede ser) y seguir las instrucciones.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 duration:  "90-120",
 suitable: "iteraci&iacute;n, entrega, proyecto"
 };
