@@ -41,12 +41,12 @@ all_photos[18] = [
 {filename:    path + "19_sailboat.jpg", contributor: "David Johnson"}
 ];
 all_photos[19] = [
-{filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
+{ filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano" },
+{ filename:    "20_perfection-game-2.png", contributor: "Karen Castillo Inoa" }
 ];
-all_photos[20] = [{
-filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG",
-contributor: "Paulo Caroli"
-}];
+all_photos[20] = [
+{ filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG", contributor: "Paulo Caroli" }
+];
 all_photos[21] = [{
 filename:    path + "22_Temperature-Reading.jpg",
 contributor: "Weronika Kedzierska"
@@ -128,7 +128,6 @@ all_photos[69] = [
 {filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
 ];
 all_photos[77] = [
-{filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
 {filename:    path + "78_Four-Ls.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "78_Four-Ls_2.jpg", contributor: "Geert van der Ploeg"}
 ];
@@ -192,7 +191,10 @@ all_photos[113] = [
 {filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
 ];
 all_photos[114] = [
-{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
+{ filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards" }
+];
+all_photos[116] = [
+{ filename:    "117_maximize-follow-through.png", contributor: "Karen Castillo Inoa" }
 ];
 all_photos[117] = [
 {filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
