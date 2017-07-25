@@ -2366,5 +2366,39 @@ duration:    "Medium",
 stage:    "Forming",
 suitable:  "iteration, project, release"
 };
+all_activities[129] = {
+phase:     0,
+name:      "Spot the Elephant",
+summary:   "Are there problems nobody talks about?",
+desc:      "Prepare a set of cards for each team member. A set of cards contains \
+1 elephant card, 1 boot card, 1 happy sun card, and 1 moon card. Explain how to they each choose one card from their set: \
+<ul>\
+<li>If a team member thinks there is at least one 'Elephant in the room' (unspoken but important problem) for this team, then choose the Elephant card. \
+Choosing this card doesn't mean that they have to talk about the Elephant or even say what they think the problem is.</li> \
+<li>If there are no Elephants, but they got their feelings hurt in an interaction at least once since the last retrospective \
+(and didn't mention it), choose the Boot crushing flower card.</li>\
+<li>If everything is hunky dory for them, choose the Happy Sun.</li> \
+<li>If they're uncomfortable sharing, or don't feel like any other card fits, choose the neutral Moon.</li> \
+</ul> \
+Who chose which card stays anonymous because everyone places their chosen card face down in the feedback pile, and put the rest of \
+their set face down on a discard pile. Shuffle the discard pile to ensure anonymity and put it aside. \
+Shuffle the feedback pile and then reveal the cards one at a time. \
+<br><br>\
+If your team has 1 or more Elephants in the room, you have some serious issues with psychological safety. \
+Let the team sit with their new knowledge and offer a larger retrospective soon to make space for them to share \
+if they wish, but do not ask directly who chose what. Preserve the anonymity and do not coerce explanations of the \
+    chosen card! This is a critical opportunity to build trust and preserve your ability to gain insight into the state \
+of the team. \
+<br><br> \
+In the same way, depending on the size of your team, two or more hurt feelings suggest that you may have safety issues. \
+Two or more Moons also suggests a lack of psychological safety. \
+Take this feedback into consideration when designing your next retro. \
+There are lots of great ways to more thoroughly dive into and surface learnings, this activity just points out when such \
+a retrospective is needed.",
+source:    "<a href='https://agilehunter.wordpress.com/2017/06/13/elephant-safari/'>Willem Larsen</a>",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
