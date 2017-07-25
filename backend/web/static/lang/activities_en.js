@@ -2370,8 +2370,8 @@ all_activities[129] = {
 phase:     0,
 name:      "Spot the Elephant",
 summary:   "Are there problems nobody talks about?",
-desc:      "Prepare a set of cards for each team member. A set of cards contains \
-1 elephant card, 1 boot card, 1 happy sun card, and 1 moon card. Explain how to they each choose one card from their set: \
+desc:      "Prepare 1 set of cards per team member. A set of cards contains \
+1 elephant card, 1 boot card, 1 happy sun card, and 1 moon card. Explain how they each choose one card from their set: \
 <ul>\
 <li>If a team member thinks there is at least one 'Elephant in the room' (unspoken but important problem) for this team, then choose the Elephant card. \
 Choosing this card doesn't mean that they have to talk about the Elephant or even say what they think the problem is.</li> \
