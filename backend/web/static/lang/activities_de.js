@@ -869,6 +869,54 @@ duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
 };
-
+all_activities[59] = {
+phase:     4,
+name:      "AHA!",
+summary:   "Lasse einen Ball werfen und entdecke neu Gelerntes auf",
+desc:      "Lasse einen Ball (z.B. einen <a href='https://de.wikipedia.org/wiki/Koosh_Ball'>Koosh Ball</a>) \
+im Team hin- und herwerfen und decke so positive Wahrnehmungen und Lernerfahrungen auf. Gebe zu Beginn eine \
+Frage vor, die man beantwortet, wenn man den Ball fängt, zum Beispiel: \
+<ul>\
+    <li>Was habe ich in der letzten Iteration gelernt?</li>\
+    <li>Welche nette Sache hat jemand aus dem Team für mich getan?</li>\
+</ul>\
+Je nach Frage könnten auch Dinge zur Sprache kommen, die die Leute stören oder ärgern. Wenn \
+also irgendwelche Alarmglocken klingeln, frage nach und gehe darauf ein. Mit der 'eine nette \
+Sache'-Frage findest du in der Regel einen positiven Abschluss.",
+source:    "<a href='http://scrumfoundation.com/about/catherine-louis'>Catherine Louis</a> and <a href='http://blog.haaslab.net/'>Stefan Haas</a> via <a href='https://www.linkedin.com/in/misshaley'>Amber Haley</a>",
+durationDetail:  "5-10 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project",
+};
+all_activities[60] = {
+phase:     3,
+name:      "Chaos Cocktail Party",
+summary:   "Identifiziere, diskutiere, konkretisiere und priorisiere Aktivitäten",
+desc:      "Alle schreiben eine Karteikarte mit einer Aktivität, die sie für wichtig halten \
+umso spezifischer ((<a href='https://de.wikipedia.org/wiki/SMART_(Projektmanagement)'>SMART</a>) \
+umso besser. \
+<br><br> \
+Dann beginnt die Cocktailparty: Die Teammitglieder sprechen paarweise über die Karten. Jedes \
+Paar spricht nur über die beiden Aktivitäten auf ihren Karten. Beende die Diskussionen nach \
+iner Minute. Jedes Paar teilt nun fünf Klebepunkte auf die beiden Karten auf - umso wichtiger \
+die Aktivität, umso mehr Punkte. Nun kommen neue Paare zusammen und diskutieren ihre beiden \
+Karten. Wiederhole dies, bis jeder alle Karten diskutieren konnte. Am Ende addiert jeder die \
+Punkte auf seiner Karte. Die Karten werden dann nach Anzahl der Punkte absteigend sortiert. \
+Das Team entscheidet, von der Aktivität mit der größten Punktzahl herunter, welche Aktivitäten \
+in der nächsten Iteration angegangen werden sollen. \
+<br><br> \
+Addendum: Du kannst überlegen, ob Du die Karten am Anfang und zwischen den einzelnen \
+Diskussionen zufällig im Team austauschen lässt. Auf diese Weise hat keiner bei der \
+Punkteverteilung einen Anreiz, 'seiner' Aktivität mehr Punkte zu sichern. \
+Diese Idee stammt von  \
+<a href='http://www.thiagi.com/archived-games/2015/2/22/thirty-five-for-debriefing'>Dr. Sivasailam 'Thiagi' Thiagarajan</a> via \
+<a href='https://twitter.com/ptevis'>Paul Tevis</a>",
+source:    "Suzanne Garcia via <a href='http://www.wibas.com'>Malte Foegen</a>",
+durationDetail:  "10-15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release, largeGroup"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
