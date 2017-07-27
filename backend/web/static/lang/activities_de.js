@@ -941,15 +941,15 @@ suitable:  "iteration, project, release, start"
 };
 all_activities[62] = {
 phase:     3,
-name:      "Niedrig hängende Früchte ",
+name:      "Niedrig h&auml;ngende Fr&uuml;chte",
 summary:   "Veranschauliche, was mögliche Aktionen bringen und wie schwer sie zu erreichen sind, um die Auswahl zu unterstützen",
 desc:      "Zeige einen zuvor gezeichneten Baum. Verteile runde Karten und bitte die Teilnehmer \
 die Aktionen aufzuschreiben, die Sie gerne angehen würden - eine Aktion pro Karte. Wenn \
 alle fertig sind, sammle die Karten ein, mische sie und lese sie eine nach der anderen vor. Hänge \
-nun die „Frucht“ an den Baum, und zwar entsprechend der folgenden Einschätzungen der Teilnehmer:\
+nun die „Frucht“ an den Baum, und zwar entsprechend der folgenden Einschätzungen der Teilnehmer: \
 <ul>\
     <li>Ist es einfach? Platziere die Karte niedriger. Ist es schwer? Dann höher auf den Baum.</li>\
-    <li>Scheint es sehr vorteilhaft? Platziere die Karte auf der linken Seite des Baums. Aktion bringt eher weniger? Eher rechts. </li>\
+    <li>Scheint es sehr vorteilhaft? Platziere die Karte auf der linken Seite des Baums. Aktion bringt eher weniger? Eher rechts.</li>\
 </ul>\
 Jetzt sind die Früchte links unten am Baum die erste Wahl als nächste Aktion. Wenn dies nicht Konsens ist, diskutiere kurz über \
 mögliche Aktionen oder lasse mit Klebepunkten abstimmen.",
@@ -959,5 +959,3 @@ duration:    "Medium",
 stage:    "Forming, Storming",
 suitable:  "iteration, project, release"
 };
-// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
-// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
