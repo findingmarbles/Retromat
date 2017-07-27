@@ -1012,8 +1012,8 @@ all_activities[65] = {
 phase:     2,
 name:      "Brainstorming in Schriftform",
 summary:   "Durch schriftliches Brainstorming können Introvertierte mehr beitragen ",
-desc:      "Stelle eine zentrale Frage, z.B. "Mit welchen Maßnahmen können wir uns in der nächsten Iteration \
-verbessern?". Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
+desc:      "Stelle eine zentrale Frage, z.B. 'Mit welchen Maßnahmen können wir uns in der nächsten Iteration \
+verbessern?'. Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
 Seite an den Nachbarn weiter und schreibt weiter auf der, die er bekommen hat. Wenn Dir die eigenen Ideen \
 ausgehen, lese die Ideen, die sich bereits auf dem Papier befinden und ergänze sie. Und es gibt Regeln: Keine \
 negativen Kommentare, jeder schreibt seine Ideen nur einmal auf. (Wenn mehrere Leute die gleiche Idee notieren, \
