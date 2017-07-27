@@ -980,7 +980,7 @@ source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retr
 durationDetail:  "10",
 duration:    "Short",
 stage:    "All",
-suitable:  "iteration, project",
+suitable:  "iteration, project"
 };
 all_activities[64] = {
 phase:     1,
@@ -1008,3 +1008,5 @@ duration:    "Medium",
 stage:    "Storming",
 suitable:  "iteration, project"
 };
+// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
