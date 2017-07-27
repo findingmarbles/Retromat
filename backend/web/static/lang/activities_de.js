@@ -999,9 +999,9 @@ Folgende Fragen k&ouml;nntest Du Softwareentwicklungs-Teams stellen: \
     <li>Was war Dein wichtigster Beitrag zur Entwickler-Community (dieser Firma)? Wie hast Du das gemacht?</li>\
     <li>Lasst Eure Bescheidenheit jetzt mal außen vor: Was ist Deine wertvollste Fachkenntnis / Charaktereigenschaften, die Du zum Team beiträgst? Beispiele?</li>\
     <li>Was ist das wichtigste Merkmal Deines Teams? Was zeichnet Dich dabei aus?</li>\
-</ol>\
-<br>\
-('Zurück in die Zukunft' (# 37) funktioniert gut als nächster Schritt.)",
+</ol> \
+<br> \ 
+('Zurück in die Zukunft' (#37) funktioniert gut als nächster Schritt.)",
 source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, adapted for SW development by " + source_findingMarbles,
 durationDetail:  "20-25 min groupsize",
 duration:    "Medium",
@@ -1011,15 +1011,15 @@ suitable:  "iteration, project"
 all_activities[65] = {
 phase:     2,
 name:      "Brainstorming in Schriftform",
-summary:   "Durch schriftliches Brainstorming können Introvertierte mehr beitragen",
-desc:      "Stelle eine zentrale Frage, z.B. 'Mit welchen Maßnahmen können wir uns in der nächsten Iteration \
-verbessern?'. Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
+summary:   "Durch schriftliches Brainstorming k&ouml;nnen Introvertierte mehr beitragen",
+desc:      "Stelle eine zentrale Frage, z.B. 'Mit welchen Maßnahmen können wir uns in der nächsten Iteration verbessern?'. \
+Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
 Seite an den Nachbarn weiter und schreibt weiter auf der, die er bekommen hat. Wenn Dir die eigenen Ideen \
 ausgehen, lese die Ideen, die sich bereits auf dem Papier befinden und ergänze sie. Und es gibt Regeln: Keine \
 negativen Kommentare, jeder schreibt seine Ideen nur einmal auf. (Wenn mehrere Leute die gleiche Idee notieren, \
-ist das in Ordnung.)  Lasse die Seite alle drei Minuten weitergeben, bis jeder alle Seiten einmal gesehen hat. \
+ist das in Ordnung.) Lasse die Seite alle drei Minuten weitergeben, bis jeder alle Seiten einmal gesehen hat. \
 Wenn alle dann wieder die Seite haben, mit der sie begonnen haben, lasse sie die Top 3-Ideen auswählen. Sammle \
-un alle Top 3s auf einem Flipchart für die nächste Phase.",
+nun alle Top 3s auf einem Flipchart für die nächste Phase.",
 source:    "Prof. Bernd Rohrbach",
 durationDetail:  "20 min groupsize",
 duration:    "Medium",
