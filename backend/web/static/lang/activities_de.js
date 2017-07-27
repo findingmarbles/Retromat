@@ -998,7 +998,7 @@ Folgende Fragen k&ouml;nntest Du Softwareentwicklungs-Teams stellen: \
     <li>Wann war Deine Einbindung und die Zusammenarbeit mit dem Team am besten?</li>\
     <li>Was war Dein wichtigster Beitrag zur Entwickler-Community (dieser Firma)? Wie hast Du das gemacht?</li>\
     <li>Lasst Eure Bescheidenheit jetzt mal außen vor: Was ist Deine wertvollste Fachkenntnis / Charaktereigenschaften, die Du zum Team beiträgst? Beispiele?</li>\
-    <li>Was ist das wichtigste Merkmal Deines Teams? Was zeichnet Dich dabei aus?</li>\
+    <li>Was ist das wichtigste Merkmal Deines Teams? Was zeichnet Dich dabei aus?</li> \
 </ol> \
 <br> \ 
 ('Zurück in die Zukunft' (#37) funktioniert gut als nächster Schritt.)",
@@ -1008,165 +1008,3 @@ duration:    "Medium",
 stage:    "Storming",
 suitable:  "iteration, project"
 };
-all_activities[65] = {
-phase:     2,
-name:      "Brainstorming in Schriftform",
-summary:   "Durch schriftliches Brainstorming k&ouml;nnen Introvertierte mehr beitragen",
-desc:      "Stelle eine zentrale Frage, z.B. 'Mit welchen Maßnahmen können wir uns in der nächsten Iteration verbessern?'. \
-Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
-Seite an den Nachbarn weiter und schreibt weiter auf der, die er bekommen hat. Wenn Dir die eigenen Ideen \
-ausgehen, lese die Ideen, die sich bereits auf dem Papier befinden und ergänze sie. Und es gibt Regeln: Keine \
-negativen Kommentare, jeder schreibt seine Ideen nur einmal auf. (Wenn mehrere Leute die gleiche Idee notieren, \
-ist das in Ordnung.) Lasse die Seite alle drei Minuten weitergeben, bis jeder alle Seiten einmal gesehen hat. \
-Wenn alle dann wieder die Seite haben, mit der sie begonnen haben, lasse sie die Top 3-Ideen auswählen. Sammle \
-nun alle Top 3s auf einem Flipchart für die nächste Phase.",
-source:    "Prof. Bernd Rohrbach",
-durationDetail:  "20 min groupsize",
-duration:    "Medium",
-stage:    "All",
-suitable:  "iteration, project, release, introverts"
-};
-all_activities[66] = {
-phase:     4,
-name:      "Was ich mitnehme",
-summary:   "Sammeln, was die Teilnehmer während der Retro gelernt haben",
-desc:      "Lasse alle auf eine Haftnotiz die bemerkenswerteste Sache schreiben, die sie während der Retro \
-gelernt haben. Klebe die Notizen an die Tür. Lasse die Teilnehmer reihum ihre Notizen vorlesen.",
-source:     source_judith,
-durationDetail:  "5 min",
-duration:    "Short",
-stage:    "All",
-suitable:  "iteration, project, release"
-};
-all_activities[67] = {
-phase:     2,
-name:      "Unternehmens-Landkarte",
-summary:   "Male eine Landkarte Deines Unternehmens als wäre es ein Land",
-desc:      "Verteile Papier und Stifte. Stelle folgende Frage: 'Was wäre, wenn Dein Unternehmen / \
-Bereich / Deine Abteilung ein Land wäre?' Wie würde die Landkarte aussehen? Welche Tipps wären \
-wichtig für eine sichere Reise? Lasse die Teilnehmer für 5 - 10 Minuten zeichnen. Hänge die \
-Zeichnungen auf. Bespreche jede Landkarte, um interessante Metaphern zu erklären und zu diskutieren.",
-source:     source_judith,
-durationDetail:  "15 min groupsize",
-duration:    "Medium",
-stage:    "All",
-suitable:  "iteration, project, release"
-};
-all_activities[68] = {
-phase:     2,
-name:      "Das Schlimmste was wir machen können",
-summary:   "Finde heraus, was die nächste Iteration mit Sicherheit ruiniert",
-desc:      "Verteile Stifte und Haftnotizen. Frage nach Ideen, wie die nächste Iteration mit \
-Sicherheit zu einem Desaster wird - pro Haftnotiz eine Idee. Wenn alle fertig sind, hänge die \
-Haftnotizen auf. Gehe sie gemeinsam mit dem Team durch und identifiziere wichtige Themenfelder. \
-<br> \
-Wende in der nächsten Phase diese Themen genau ins Gegenteil.",
-source:     source_findingMarbles,
-durationDetail:  "15 min groupsize",
-duration:    "Medium",
-stage:    "All",
-suitable:  "iteration, project, release"
-};
-all_activities[69] = {
-phase:     0,
-name:      "3 für 1 - Beginn",
-summary:   "Kläre, wie zufrieden das Team ist mit den Ergebnissen der Iteration, der Kommunikation und der Stimmung im Team ist - alles in einem",
-desc:      "Bereite ein Flipchart vor mit einem Koordinatensystem. Beschrifte die y-Achse mit \
-'Zufriedenheit mit den Ergebnissen der Iteration', die x-Achse mit 'Häufigkeit mit der wir uns koordinieren'. \
-Bitte alle Teilnehmer, den Punkt der Zufriedenheit (y-Achse) und der wahrgenommenen Häufigkeit (x-Achse) zu \
-markieren - und zwar mit einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt).<br>\
-Diskutiere überraschende Ausreißer und extreme Stimmungen. (Variiere die x-Achse, um andere Themen im Team zu reflektieren, z. B. 'Häufigkeit, in der wir als Zweiter-Team programmieren (Pairing)'.)",
-source:     source_judith,
-durationDetail:  "5 min groupsize",
-duration:    "Short",
-stage:    "All",
-suitable:  "iteration, project"
-};
-all_activities[70] = {
-phase:     4,
-name:      "3 für 1 - Abschluss: Wurde jeder gehört?",
-summary:   "Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war",
-desc:      "Bereite ein Flipchart vor mit einem Koordinatensystem. Beschrifte die y-Achse mit \
-'Zufriedenheit mit dem Ergebnis der Iteration' und die x-Achse mit 'Faire Verteilung der Redezeit' \
-je gleichmäßiger die Verteilung, umso weiter rechts). Bitte alle Teilnehmer, den Punkt ihrer \
-Zufriedenheit (y-Achse) und die Verteilung der Redezeit (x-Achse) zu markieren - und zwar mit \
-einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt). Diskutiere ungleiche \
-Redezeiten (und extreme Stimmungen).",
-source:     source_judith,
-duration:    "Short",
-stage:    "All",
-suitable:  "iteration, project, release"
-};
-all_activities[71] = {
-phase:     3,
-name:      "Teilt den Euro ",
-summary:   "Wie viel ist eine Aktion dem Team wert?  ",
-desc:      "Zeige auf einem Flipchart eine Liste möglicher Aktionen. Zeichne eine Spalte daneben \
-mit dem Titel 'Bedeutung (in €)'. Das Team kann 100 (virtuelle) Euro für die Aktionen ausgeben. Je \
-wichtiger eine Aktionen ist, umso mehr sollten sie ausgeben. Mit Spielgeld aus einem Brettspiel \
-wie Monopoly macht es noch mehr Spaß. \
-<br><br> \
- Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 'teuersten' Aktionen als ausgewählt.",
-source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
-durationDetail:  "10 min groupsize",
-duration:    "Short",
-stage:    "All",
-suitable:  "iteration, project, release"
-};
-all_activities[72] = {
-phase:     3,
-name:      "Pitchen",
-summary:   "Ideen für Aktivitäten im Wettbwerb um zwei 'Wird umgesetzt'-Slots",
-desc:      "[Achtung: Dieses Spiel schafft "Gewinner" und "Verlierer". Verwende es nicht, wenn im \
-Team größere Machtungleichgewichte bestehen.]   \
-<br><br> \
-Bitte alle, an die beiden Aktionen zu denken, die aus ihrer Sicht implementiert werden sollten, \
-und lasse sie einzeln auf Karteikarten schreiben. Zeichne zwei Rechtecke auf das Board, dies sind \
-die 'Wird umgesetzt'-Slots. Das erste Teammitglied setzt ihre bevorzugte Idee in den ersten Slot. \
-Das nächste Teammitglied im Kreis setzt seinen Favoriten in den zweiten Slot. Das nächste Mitglied \
-muss nun ihre Lieblingsidee gegen die Idee in den beiden Slots pitchen, die sie für die die \
-weniger gute hält. Wenn das Team ihr folgt, wir ihre Idee gegen die dort hängende Idee \
-ausgetauscht. So geht es weiter, bis alle ihre Karten vorgestellt haben.   \
-<br><br> \
-Starte möglichst nicht mit einem dominanten Teammitglied.",
-source:     source_judith,
-durationDetail:  "15 min groupsize",
-duration:    "Medium",
-stage:    "Performing",
-suitable:  "iteration"
-};
-all_activities[73] = {
-phase:     2,
-name:      "Pessimieren",
-summary:   "Hätten wir die letzte Iteration ruiniert, wie hätten wir das gemacht?  ",
-desc:      "Beginne die Phase mit der Frage: 'Wenn wir die letzte Iteration völlig ruiniert hätten, was \
-hätten wir getan?' Notiere die Antworten auf einem Flipchart. Frage dann: 'Was wäre denn jeweils das Gegenteil \
-davon?' Notiere dies auf einem weiteren Flipchart. Bitte jetzt die Teilnehmer, die Punkte auf dem \
-'Gegenteil'-Chart zu kommentieren, indem sie auf Haftnotizen die Frage beantworten: 'Was hält uns davon ab?' \
-In einer weiteren Runde nutzen sie Haftnotizen in einer anderen Farbe, um nun diese Kommentare zu kommentieren \
-indem sie die Frage beantworten: 'Warum ist das so?'",
-source:     source_judith,
-durationDetail:  "25 min groupsize",
-duration:    "Long",
-stage:    "All",
-suitable:  "iteration, project"
-};
-all_activities[74] = {
-phase:     1,
-name:      "Schreibe das Unaussprechliche",
-summary:   "Schreibe auf was Du niemals sagen könntest",
-desc:      "Vermutest Du, das es im Team unausgesprochene Tabus gibt, die die Zusammenarbeit behindern? \
-Vielleicht hilft diese Methode: Verpflichte alle zu Vertraulichkeit ('Alles was gesagt wird bleibt hier im Raum') \
-und sage an, dass alle Notizen am Ende zerstört werden. Erst dann gebe ein Blatt Papier an jeden Teilnehmer aus, \
-um das größte Tabu im Team bzw. im Unternehmen zu notieren. \
-Wenn alle fertig sind, geben alle das Blatt an den linken Nachbarn weiter. Die Nachbarn lesen und können \
-Kommentare hinzufügen. Lasse die Seiten solange weitergegeben, bis sie zu ihren Autoren zurückgekehrt sind. \
-Jeder liest noch einmal durch. Dann werden alle Blätter feierlich zerkleinert oder verbrannt (wenn Sie draußen sind).",
-source:     "Unknown, via Vanessa",
-durationDetail:  "10 min groupsize",
-duration:    "Short",
-stage:    "Storming, Stagnating",
-suitable:  "iteration, project, release"
-};
-// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
-// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
