@@ -1008,3 +1008,21 @@ duration:    "Medium",
 stage:    "Storming",
 suitable:  "iteration, project"
 };
+all_activities[65] = {
+phase:     2,
+name:      "Brainstorming in Schriftform",
+summary:   "Durch schriftliches Brainstorming können Introvertierte mehr beitragen",
+desc:      "Stelle eine zentrale Frage, z.B. 'Mit welchen Maßnahmen können wir uns in der nächesten \
+Iteration verbessern?'. Verteile Papier und Stifte. Jeder schreibt seine Ideen auf. Nach drei Minuten gibt jeder seine \
+Seite an den Nachbarn weiter und schreibt weiter auf der, die er bekommen hat. Wenn Dir die eigenen Ideen \
+ausgehen, lese die Ideen, die sich bereits auf dem Papier befinden und ergänze sie. Und es gibt Regeln: Keine \
+negativen Kommentare, jeder schreibt seine Ideen nur einmal auf. (Wenn mehrere Leute die gleiche Idee notieren, \
+ist das in Ordnung.)  Lasse die Seite alle drei Minuten weitergeben, bis jeder alle Seiten einmal gesehen hat. \
+Wenn alle dann wieder die Seite haben, mit der sie begonnen haben, lasse sie die Top 3-Ideen auswählen. Sammle \
+nun alle Top 3's auf einem Flipchart für die nächste Phase.",
+source:    "Prof. Bernd Rohrbach",
+durationDetail:  "20 min groupsize",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release, introverts"
+};
