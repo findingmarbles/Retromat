@@ -2406,16 +2406,16 @@ all_activities[130] = {
 phase:     5,
 name:      "Sacred Cow",
 summary:   "What is the organization clinging to that doesn't make sense anymore?",
-desc:      "This activity is great for places that do things the way they've always done them. \
-Introduce it by telling the story of the sacred cows, preferably the \
-<a href=‘http://www.solutionsiq.com/agile-companies-slaughterhouses/'>long epic version here</a>. Here the gist: \
+desc:      "This activity is great for shaking up routine in places that do things \
+the way they've always done them. Introduce it by telling the story of the sacred cows, preferably the \
+<a href=‘http://www.solutionsiq.com/agile-companies-slaughterhouses/'>long epic version here</a>. Here's the gist: \
 <br><br> \
-'In some cultures cows are sacred, never to be killed for food or any other reason. \
+'In some cultures cows were sacred, never to be killed for food or any other reason. \
 The cows roamed free, leading a happy life and usually died of old age. With rare \
 exceptions such as one fateful spring in a city far, far away ...\
 <br><br> \
-This particular city came under siege by a superior enemy force. All the citizens were \
-safe inside the city walls but there was nothing going in or out of the city. Days \
+This particular city came under siege by a superior enemy force. All the citizens withdrew \
+into the safety of the city walls but there was nothing going in or out of the city. Days \
 turned into weeks and the citizens grew hungry and desperate. There was hardly any \
 food left. They did, however, have a lot of sacred cows. Unfortunately, the idea of \
 killing a sacred cow was taboo and also a horrible crime. \
@@ -2423,14 +2423,14 @@ killing a sacred cow was taboo and also a horrible crime. \
 But these were not ordinary times. If the attackers were to succeed they would certainly \
 kill the cows. So wasn’t it a better if the soldiers ate some of the cows to defend the \
 town and maybe safe the people and the rest of the cows? In the end, the town had to \
-re-evaluate their stance on cows. They thought and did thinks that were unthinkable before. \
+re-evaluate their stance on cows. They thought and acted in ways that were unthinkable before. \
 And it worked. They saved their town and the people in it. Not all the cows, though.’ \
 <br><br> \
 Hand out sticky notes and ask the participants to write down the sacred cows of their \
-organisation: Those things they have always done a certain way without ever asking why. \
+organisation: Things they have always done a certain way without ever asking why. \
 <br><br> \
 Go around the group and invite the team to describe their ‘cows’. For big groups, it works \
-better if they break into smaller groups for the discussion and share conclusion later with \
+best if they break into smaller groups for the discussion and share conclusions later with \
 everyone. \
 <br><br> \
 Now it’s time to grab the cow by its horns. What can you do to slaughter a sacred cow? Every \
@@ -2440,7 +2440,7 @@ are discarded. \
 <br><br> \
 To close the retrospective, invite the group to gather in a round. Set the \
 timer to 10 minutes and prepare a token. Ask them to share what they've \
-gotten from the retrospective using a token. Sharing is voluntary: if someone \
+gotten from the retrospective. Sharing is voluntary: if someone \
 wants to share they have to ask for the token.",
 source:    "<a href='https://twitter.com/ani_angelini'>Ani Angelini</a>",
 duration:    "Short",
