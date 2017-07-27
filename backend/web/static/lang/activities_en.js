@@ -2382,8 +2382,8 @@ Choosing this card doesn't mean that they have to talk about the Elephant or eve
 <li>If everything is hunky dory for them, choose the Happy Sun.</li> \
 <li>If they're uncomfortable sharing, or don't feel like any other card fits, choose the neutral Moon.</li> \
 </ul> \
-Who chose which card stays anonymous because everyone places their chosen card face down in the feedback pile, and put the rest of \
-their set face down on a discard pile. Shuffle the discard pile to ensure anonymity and put it aside. \
+To preserve anonymity, everyone places their chosen card face down on the feedback pile and \
+the rest of their sets face down on a discard pile. Shuffle the discard pile to ensure anonymity and put it aside. \
 Shuffle the feedback pile and then reveal the cards one at a time. \
 <br><br>\
 If your team has 1 or more Elephants in the room, you have some serious issues with psychological safety. \
