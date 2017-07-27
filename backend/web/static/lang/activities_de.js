@@ -984,7 +984,7 @@ suitable:  "iteration, project",
 };
 all_activities[64] = {
 phase:     1,
-name:      "Wertschätzendes Nachfragen",
+name:      "Wertsch&auml;tzendes Nachfragen",
 summary:   "Verbessere die Stimmung im Team durch positive Fragen",
 desc:      "Gebe dem Team in mehreren Runden jeweils eine Frage, die Teilnehmer notieren ihre Antworten \
 (gebe ihnen ausreichend Zeit zum Nachdenken) und lese sie dann den anderen vor. \
@@ -992,7 +992,7 @@ desc:      "Gebe dem Team in mehreren Runden jeweils eine Frage, die Teilnehmer 
 Folgende Fragen k&ouml;nntest Du Softwareentwicklungs-Teams stellen: \
 <ol>\
     <li>Wann warst Du das letzte Mal wirklich engagiert / motiviert / produktiv? Was hast Du gemacht? Was war passiert? Wie fühlte es sich an?</li>\
-    <li>Aus einer Applikations- / Code-Perspektive: Was war der „heisseste Scheiss“, den Du zusammengebaut hast? Warum ist es so gut?</li>\
+    <li>Aus einer Applikations- / Code-Perspektive: Was war der 'heisseste Scheiss', den Du zusammengebaut hast? Warum ist es so gut?</li>\
     <li>Was von den Dingen, die du für diese Firma gemacht hast, hat den höchsten Wert? Warum?</li>\
     <li>Wann hast Du am besten mit dem <Product Owner> zusammengearbeitet? Was war gut daran?</li>\
     <li>Wann war Deine Einbindung und die Zusammenarbeit mit dem Team am besten?</li>\
