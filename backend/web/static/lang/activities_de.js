@@ -958,6 +958,27 @@ durationDetail:  "10-15 min",
 duration:    "Medium",
 stage:    "Forming, Storming",
 suitable:  "iteration, project, release"
+};all_activities[63] = {
+phase:     1,
+name:      "Vierteln - Langweilige Stories finden",
+summary:   "Kategorisiere Stories in zwei Dimensionen, um die langweiligen zu identifizieren",
+desc:      "Zeichne ein großes Quadrat und teile es in 2 Spalten. Beschrifte sie mit \
+'Interessant' und 'Langweilig'. Lasse das Team alles auf Haftnotizen aufschreiben, was sie in \
+der letzte Iteration gemacht haben, zusammen mit einer groben Schätzung, wie lange sie daran \
+gearbeitet haben, und klebt es in die passende Spalte. \
+<br><br> \
+Füge jetzt eine waagerechte Linie hinzu, so dass vier Quadranten entstehen. Beschrifte die \
+oberen Quadranten mit 'Schlank' (brauchte einige Stunden) und die untere Reihe 'Aufwändig' \
+(brauchte Tage). Sortiere die Notizen nun in in den beiden Spalten um. Jetzt hast Du alle \
+aufwändigen und langweiligen Stories zusammen, um sie in den folgenden Phasen anzugehen. \
+<br><br> \
+(Es verbessert den Fokus, wenn Bewertungen in mehrere Schritte durchgeführt werden. Du kannst \
+<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Vierteln auch für viele andere zwei-dimensionale Kategorisierungen anpassen</a>.)",
+source:    "<a href='http://waynedgrant.wordpress.com/2012/08/12/diy-sprint-retrospective-techniques/'>Wayne D. Grant</a>",
+durationDetail:  "10",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
