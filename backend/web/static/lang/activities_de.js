@@ -1073,8 +1073,10 @@ summary:   "Kläre, wie zufrieden das Team ist mit den Ergebnissen der Iteration
 desc:      "Bereite ein Flipchart vor mit einem Koordinatensystem. Beschrifte die y-Achse mit \
 'Zufriedenheit mit den Ergebnissen der Iteration', die x-Achse mit 'Häufigkeit mit der wir uns koordinieren'. \
 Bitte alle Teilnehmer, den Punkt der Zufriedenheit (y-Achse) und der wahrgenommenen Häufigkeit (x-Achse) zu \
-markieren - und zwar mit einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt).<br>\
-Diskutiere überraschende Ausreißer und extreme Stimmungen. (Variiere die x-Achse, um andere Themen im Team zu reflektieren, z. B. 'Häufigkeit, in der wir als Zweiter-Team programmieren (Pairing)'.)",
+markieren - und zwar mit einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt).\
+<br> \
+Diskutiere überraschende Ausreißer und extreme Stimmungen. (Variiere die x-Achse, um andere Themen \
+im Team zu reflektieren, z. B. 'Häufigkeit, in der wir als Zweiter-Team programmieren (Pairing)'.)",
 source:     source_judith,
 durationDetail:  "5 min groupsize",
 duration:    "Short",
@@ -1098,14 +1100,14 @@ suitable:  "iteration, project, release"
 };
 all_activities[71] = {
 phase:     3,
-name:      "Teilt den Euro ",
-summary:   "Wie viel ist eine Aktion dem Team wert?  ",
+name:      "Teilt den Euro",
+summary:   "Wie viel ist eine Aktion dem Team wert?",
 desc:      "Zeige auf einem Flipchart eine Liste möglicher Aktionen. Zeichne eine Spalte daneben \
 mit dem Titel 'Bedeutung (in €)'. Das Team kann 100 (virtuelle) Euro für die Aktionen ausgeben. Je \
 wichtiger eine Aktionen ist, umso mehr sollten sie ausgeben. Mit Spielgeld aus einem Brettspiel \
 wie Monopoly macht es noch mehr Spaß. \
 <br><br> \
- Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 'teuersten' Aktionen als ausgewählt.",
+Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 'teuersten' Aktionen als ausgewählt.",
 source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
 durationDetail:  "10 min groupsize",
 duration:    "Short",
