@@ -918,5 +918,46 @@ duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release, largeGroup"
 };
+all_activities[61] = {
+phase:     1,
+name:      "Erwartungen",
+summary:   "Was können andere von Dir erwarten?  Was kannst Du von den anderen erwarten?",
+desc:      "Gib jedem Teammitglied ein Stück Papier. Die untere Hälfte ist leer. Die obere Hälfte ist in zwei \
+Abschnitte unterteilt:\
+<ul>\
+    <li>Was meine Teamkollegen von mir erwarten können</li>\
+    <li>Was ich von meinen Teamkollegen erwarte</li>\
+</ul>\
+Jeder füllt die obere Hälfte für sich selbst aus. Wenn alle fertig sind, geben alle die Seite an den Nachbarn zur \
+linken weiter und lesen die Seite, die sie bekommen haben. Nun schreiben alle in der unteren Hälfte auf, was sie \
+persönlich von der jeweiligen Person erwarten, unterschreiben und geben es an den Nachbarn weiter. Wenn die Papiere \
+eine Runde gemacht haben, schauen sich alle die Erwartungen an, die die Teammitglieder an sie haben, und diskutieren \
+ihre Beobachtungen.",
+source:    "<a href='http://agileyammering.com/2013/01/25/expectations/'>Valerie Santillo</a>",
+durationDetail:  "10-15 min",
+duration:    "Medium",
+stage:    "Forming, Storming, Norming",
+suitable:  "iteration, project, release, start"
+};
+all_activities[62] = {
+phase:     3,
+name:      "Niedrig h&auml;ngende Fr&uuml;chte",
+summary:   "Veranschauliche, was mögliche Aktionen bringen und wie schwer sie zu erreichen sind, um die Auswahl zu unterstützen",
+desc:      "Zeige einen zuvor gezeichneten Baum. Verteile runde Karten und bitte die Teilnehmer \
+die Aktionen aufzuschreiben, die Sie gerne angehen würden - eine Aktion pro Karte. Wenn \
+alle fertig sind, sammle die Karten ein, mische sie und lese sie eine nach der anderen vor. Hänge \
+nun die 'Frucht' an den Baum, und zwar entsprechend der folgenden Einschätzungen der Teilnehmer: \
+<ul>\
+    <li>Ist es einfach? Platziere die Karte niedriger. Ist es schwer? Dann höher auf den Baum.</li>\
+    <li>Scheint es sehr vorteilhaft? Platziere die Karte auf der linken Seite des Baums. Aktion bringt eher weniger? Eher rechts.</li>\
+</ul>\
+Jetzt sind die Früchte links unten am Baum die erste Wahl als nächste Aktion. Wenn dies nicht Konsens ist, diskutiere kurz über \
+mögliche Aktionen oder lasse mit Klebepunkten abstimmen.",
+source:    "<a href='http://tobias.is'>Tobias Baldauf</a>",
+durationDetail:  "10-15 min",
+duration:    "Medium",
+stage:    "Forming, Storming",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
