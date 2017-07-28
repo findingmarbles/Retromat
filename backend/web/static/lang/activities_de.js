@@ -1066,3 +1066,51 @@ duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release"
 };
+all_activities[69] = {
+phase:     0,
+name:      "3 für 1 - Beginn",
+summary:   "Kläre, wie zufrieden das Team ist mit den Ergebnissen der Iteration, der Kommunikation und der Stimmung im Team ist - alles in einem",
+desc:      "Bereite ein Flipchart vor mit einem Koordinatensystem. Beschrifte die y-Achse mit \
+'Zufriedenheit mit den Ergebnissen der Iteration', die x-Achse mit 'Häufigkeit mit der wir uns koordinieren'. \
+Bitte alle Teilnehmer, den Punkt der Zufriedenheit (y-Achse) und der wahrgenommenen Häufigkeit (x-Achse) zu \
+markieren - und zwar mit einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt).<br>\
+Diskutiere überraschende Ausreißer und extreme Stimmungen. (Variiere die x-Achse, um andere Themen im Team zu reflektieren, z. B. 'Häufigkeit, in der wir als Zweiter-Team programmieren (Pairing)'.)",
+source:     source_judith,
+durationDetail:  "5 min groupsize",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project"
+};
+all_activities[70] = {
+phase:     4,
+name:      "3 für 1 - Abschluss: Wurde jeder gehört?",
+summary:   "Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war",
+desc:      "Bereite ein Flipchart vor mit einem Koordinatensystem. Beschrifte die y-Achse mit \
+'Zufriedenheit mit dem Ergebnis der Iteration' und die x-Achse mit 'Faire Verteilung der Redezeit' \
+je gleichmäßiger die Verteilung, umso weiter rechts). Bitte alle Teilnehmer, den Punkt ihrer \
+Zufriedenheit (y-Achse) und die Verteilung der Redezeit (x-Achse) zu markieren - und zwar mit \
+einem Emoticon, der ihre Stimmung zeigt (also nicht nur einem Punkt). Diskutiere ungleiche \
+Redezeiten (und extreme Stimmungen).",
+source:     source_judith,
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[71] = {
+phase:     3,
+name:      "Teilt den Euro ",
+summary:   "Wie viel ist eine Aktion dem Team wert?  ",
+desc:      "Zeige auf einem Flipchart eine Liste möglicher Aktionen. Zeichne eine Spalte daneben \
+mit dem Titel 'Bedeutung (in €)'. Das Team kann 100 (virtuelle) Euro für die Aktionen ausgeben. Je \
+wichtiger eine Aktionen ist, umso mehr sollten sie ausgeben. Mit Spielgeld aus einem Brettspiel \
+wie Monopoly macht es noch mehr Spaß. \
+<br><br> \
+ Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 'teuersten' Aktionen als ausgewählt.",
+source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
+durationDetail:  "10 min groupsize",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
+// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
