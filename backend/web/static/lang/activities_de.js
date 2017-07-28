@@ -1025,5 +1025,44 @@ duration:    "Medium",
 stage:    "All",
 suitable:  "iteration, project, release, introverts"
 };
-// Values for duration: "<minMinutes>-<maxMinutes> perPerson"
-// Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
+all_activities[66] = {
+phase:     4,
+name:      "Was ich mitnehme",
+summary:   "Sammeln, was die Teilnehmer während der Retro gelernt haben",
+desc:      "Lasse alle auf eine Haftnotiz die bemerkenswerteste Sache schreiben, die sie während der Retro \
+gelernt haben. Klebe die Notizen an die Tür. Lasse die Teilnehmer reihum ihre Notizen vorlesen.",
+source:     source_judith,
+durationDetail:  "5 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[67] = {
+phase:     2,
+name:      "Unternehmens-Landkarte",
+summary:   "Male eine Landkarte Deines Unternehmens als wäre es ein Land",
+desc:      "Verteile Papier und Stifte. Stelle folgende Frage: 'Was wäre, wenn Dein Unternehmen / \
+Bereich / Deine Abteilung ein Land wäre?' Wie würde die Landkarte aussehen? Welche Tipps wären \
+wichtig für eine sichere Reise? Lasse die Teilnehmer für 5 - 10 Minuten zeichnen. Hänge die \
+Zeichnungen auf. Bespreche jede Landkarte, um interessante Metaphern zu erklären und zu diskutieren.",
+source:     source_judith,
+durationDetail:  "15 min groupsize",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[68] = {
+phase:     2,
+name:      "Das Schlimmste was wir machen können",
+summary:   "Finde heraus, was die nächste Iteration mit Sicherheit ruiniert",
+desc:      "Verteile Stifte und Haftnotizen. Frage nach Ideen, wie die nächste Iteration mit \
+Sicherheit zu einem Desaster wird - pro Haftnotiz eine Idee. Wenn alle fertig sind, hänge die \
+Haftnotizen auf. Gehe sie gemeinsam mit dem Team durch und identifiziere wichtige Themenfelder. \
+<br> \
+Wende in der nächsten Phase diese Themen genau ins Gegenteil.",
+source:     source_findingMarbles,
+durationDetail:  "15 min groupsize",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
