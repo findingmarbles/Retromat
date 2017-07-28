@@ -1118,14 +1118,14 @@ all_activities[72] = {
 phase:     3,
 name:      "Pitchen",
 summary:   "Ideen für Aktivitäten im Wettbwerb um zwei 'Wird umgesetzt'-Slots",
-desc:      "[Achtung: Dieses Spiel schafft "Gewinner" und "Verlierer". Verwende es nicht, wenn im \
+desc:      "[Achtung: Dieses Spiel schafft 'Gewinner' und 'Verlierer'. Verwende es nicht, wenn im \
 Team größere Machtungleichgewichte bestehen.] \
 <br><br> \
 Bitte alle, an die beiden Aktionen zu denken, die aus ihrer Sicht implementiert werden sollten, \
 und lasse sie einzeln auf Karteikarten schreiben. Zeichne zwei Rechtecke auf das Board, dies sind \
 die 'Wird umgesetzt'-Slots. Das erste Teammitglied setzt ihre bevorzugte Idee in den ersten Slot. \
 Das nächste Teammitglied im Kreis setzt seinen Favoriten in den zweiten Slot. Das nächste Mitglied \
-muss nun ihre Lieblingsidee gegen die Idee in den beiden Slots pitchen, die sie für die die \
+muss nun ihre Lieblingsidee gegen die Idee in den beiden Slots pitchen, die sie für die \
 weniger gute hält. Wenn das Team ihr folgt, wir ihre Idee gegen die dort hängende Idee \
 ausgetauscht. So geht es weiter, bis alle ihre Karten vorgestellt haben. \
 <br><br> \
