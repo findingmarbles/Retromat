@@ -984,23 +984,23 @@ suitable:  "iteration, project"
 all_activities[64] = {
 phase:     1,
 name:      "Wertsch&auml;tzendes Nachfragen",
-summary:   "Verbessere die Stimmung im Team durch positive Fragen",
+summary:   "Verbessere  die Stimmung im Team durch positive Fragen",
 desc:      "Gebe dem Team in mehreren Runden jeweils eine Frage, die Teilnehmer notieren ihre Antworten \
 (gebe ihnen ausreichend Zeit zum Nachdenken) und lese sie dann den anderen vor. \
 <br><br> \
 Folgende Fragen k&ouml;nntest Du Softwareentwicklungs-Teams stellen: \
 <ol>\
-    <li>Wann warst Du das letzte Mal wirklich engagiert / motiviert / produktiv? Was hast Du gemacht? Was war passiert? Wie fühlte es sich an?</li>\
-    <li>Aus einer Applikations- / Code-Perspektive: Was war der 'heisseste Scheiss', den Du zusammengebaut hast? Warum ist es so gut?</li>\
-    <li>Was von den Dingen, die du für diese Firma gemacht hast, hat den höchsten Wert? Warum?</li>\
-    <li>Wann hast Du am besten mit dem <Product Owner> zusammengearbeitet? Was war gut daran?</li>\
-    <li>Wann war Deine Einbindung und die Zusammenarbeit mit dem Team am besten?</li>\
-    <li>Was war Dein wichtigster Beitrag zur Entwickler-Community (dieser Firma)? Wie hast Du das gemacht?</li>\
-    <li>Lasst Eure Bescheidenheit jetzt mal außen vor: Was ist Deine wertvollste Fachkenntnis / Charaktereigenschaften, die Du zum Team beiträgst? Beispiele?</li>\
+    <li>Wann warst Du das letzte Mal wirklich engagiert / motiviert / produktiv? Was hast Du gemacht? Was war passiert? Wie f&uuml;hlte es sich an?</li> \
+    <li>Aus einer Applikations- / Code-Perspektive: Was war der 'heisseste Scheiss', den Du zusammengebaut hast? Warum ist es so gut?</li> \
+    <li>Was von den Dingen, die du für diese Firma gemacht hast, hat den höchsten Wert? Warum?</li> \
+    <li>Wann hast Du am besten mit dem <Product Owner> zusammengearbeitet? Was war gut daran?</li> \
+    <li>Wann war Deine Einbindung und die Zusammenarbeit mit dem Team am besten?</li> \
+    <li>Was war Dein wichtigster Beitrag zur Entwickler-Community (dieser Firma)? Wie hast Du das gemacht?</li> \
+    <li>Lasst Eure Bescheidenheit jetzt mal außen vor: Was ist Deine wertvollste Fachkenntnis / Charaktereigenschaften, die Du zum Team beitr&auml;gst? Beispiele?</li> \
     <li>Was ist das wichtigste Merkmal Deines Teams? Was zeichnet Dich dabei aus?</li> \
 </ol> \
-<br> \ 
-('Zurück in die Zukunft' (#37) funktioniert gut als nächster Schritt.)",
+<br> \
+('Zur&uuml;ck in die Zukunft' (#37) funktioniert gut als n&auml;chster Schritt.)",
 source:    "<a href='http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html'>Doug Bradbury</a>, adapted for SW development by " + source_findingMarbles,
 durationDetail:  "20-25 min groupsize",
 duration:    "Medium",
