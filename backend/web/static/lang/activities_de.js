@@ -1107,7 +1107,7 @@ mit dem Titel 'Bedeutung (in €)'. Das Team kann 100 (virtuelle) Euro für die 
 wichtiger eine Aktionen ist, umso mehr sollten sie ausgeben. Mit Spielgeld aus einem Brettspiel \
 wie Monopoly macht es noch mehr Spaß. \
 <br><br> \
-Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 'teuersten' Aktionen als ausgewählt.",
+Lasse das Team gemeinsam die Preise finden. Betrachte die 2 oder 3 wertgeschätztesten Aktionen als ausgewählt.",
 source:     "<a href='http://www.gogamestorm.com/?p=457'>Gamestorming</a>",
 durationDetail:  "10 min groupsize",
 duration:    "Short",
@@ -1119,7 +1119,7 @@ phase:     3,
 name:      "Pitchen",
 summary:   "Ideen für Aktivitäten im Wettbwerb um zwei 'Wird umgesetzt'-Slots",
 desc:      "[Achtung: Dieses Spiel schafft "Gewinner" und "Verlierer". Verwende es nicht, wenn im \
-Team größere Machtungleichgewichte bestehen.]   \
+Team größere Machtungleichgewichte bestehen.] \
 <br><br> \
 Bitte alle, an die beiden Aktionen zu denken, die aus ihrer Sicht implementiert werden sollten, \
 und lasse sie einzeln auf Karteikarten schreiben. Zeichne zwei Rechtecke auf das Board, dies sind \
@@ -1127,7 +1127,7 @@ die 'Wird umgesetzt'-Slots. Das erste Teammitglied setzt ihre bevorzugte Idee in
 Das nächste Teammitglied im Kreis setzt seinen Favoriten in den zweiten Slot. Das nächste Mitglied \
 muss nun ihre Lieblingsidee gegen die Idee in den beiden Slots pitchen, die sie für die die \
 weniger gute hält. Wenn das Team ihr folgt, wir ihre Idee gegen die dort hängende Idee \
-ausgetauscht. So geht es weiter, bis alle ihre Karten vorgestellt haben.   \
+ausgetauscht. So geht es weiter, bis alle ihre Karten vorgestellt haben. \
 <br><br> \
 Starte möglichst nicht mit einem dominanten Teammitglied.",
 source:     source_judith,
@@ -1139,7 +1139,7 @@ suitable:  "iteration"
 all_activities[73] = {
 phase:     2,
 name:      "Pessimieren",
-summary:   "Hätten wir die letzte Iteration ruiniert, wie hätten wir das gemacht?  ",
+summary:   "Hätten wir die letzte Iteration ruiniert, wie hätten wir das gemacht?",
 desc:      "Beginne die Phase mit der Frage: 'Wenn wir die letzte Iteration völlig ruiniert hätten, was \
 hätten wir getan?' Notiere die Antworten auf einem Flipchart. Frage dann: 'Was wäre denn jeweils das Gegenteil \
 davon?' Notiere dies auf einem weiteren Flipchart. Bitte jetzt die Teilnehmer, die Punkte auf dem \
