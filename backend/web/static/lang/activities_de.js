@@ -1114,5 +1114,60 @@ duration:    "Short",
 stage:    "All",
 suitable:  "iteration, project, release"
 };
+all_activities[72] = {
+phase:     3,
+name:      "Pitchen",
+summary:   "Ideen für Aktivitäten im Wettbwerb um zwei 'Wird umgesetzt'-Slots",
+desc:      "[Achtung: Dieses Spiel schafft "Gewinner" und "Verlierer". Verwende es nicht, wenn im \
+Team größere Machtungleichgewichte bestehen.]   \
+<br><br> \
+Bitte alle, an die beiden Aktionen zu denken, die aus ihrer Sicht implementiert werden sollten, \
+und lasse sie einzeln auf Karteikarten schreiben. Zeichne zwei Rechtecke auf das Board, dies sind \
+die 'Wird umgesetzt'-Slots. Das erste Teammitglied setzt ihre bevorzugte Idee in den ersten Slot. \
+Das nächste Teammitglied im Kreis setzt seinen Favoriten in den zweiten Slot. Das nächste Mitglied \
+muss nun ihre Lieblingsidee gegen die Idee in den beiden Slots pitchen, die sie für die die \
+weniger gute hält. Wenn das Team ihr folgt, wir ihre Idee gegen die dort hängende Idee \
+ausgetauscht. So geht es weiter, bis alle ihre Karten vorgestellt haben.   \
+<br><br> \
+Starte möglichst nicht mit einem dominanten Teammitglied.",
+source:     source_judith,
+durationDetail:  "15 min groupsize",
+duration:    "Medium",
+stage:    "Performing",
+suitable:  "iteration"
+};
+all_activities[73] = {
+phase:     2,
+name:      "Pessimieren",
+summary:   "Hätten wir die letzte Iteration ruiniert, wie hätten wir das gemacht?  ",
+desc:      "Beginne die Phase mit der Frage: 'Wenn wir die letzte Iteration völlig ruiniert hätten, was \
+hätten wir getan?' Notiere die Antworten auf einem Flipchart. Frage dann: 'Was wäre denn jeweils das Gegenteil \
+davon?' Notiere dies auf einem weiteren Flipchart. Bitte jetzt die Teilnehmer, die Punkte auf dem \
+'Gegenteil'-Chart zu kommentieren, indem sie auf Haftnotizen die Frage beantworten: 'Was hält uns davon ab?' \
+In einer weiteren Runde nutzen sie Haftnotizen in einer anderen Farbe, um nun diese Kommentare zu kommentieren \
+indem sie die Frage beantworten: 'Warum ist das so?'",
+source:     source_judith,
+durationDetail:  "25 min groupsize",
+duration:    "Long",
+stage:    "All",
+suitable:  "iteration, project"
+};
+all_activities[74] = {
+phase:     1,
+name:      "Schreibe das Unaussprechliche",
+summary:   "Schreibe auf was Du niemals sagen könntest",
+desc:      "Vermutest Du, das es im Team unausgesprochene Tabus gibt, die die Zusammenarbeit behindern? \
+Vielleicht hilft diese Methode: Verpflichte alle zu Vertraulichkeit ('Alles was gesagt wird bleibt hier im Raum') \
+und sage an, dass alle Notizen am Ende zerstört werden. Erst dann gebe ein Blatt Papier an jeden Teilnehmer aus, \
+um das größte Tabu im Team bzw. im Unternehmen zu notieren. \
+Wenn alle fertig sind, geben alle das Blatt an den linken Nachbarn weiter. Die Nachbarn lesen und können \
+Kommentare hinzufügen. Lasse die Seiten solange weitergegeben, bis sie zu ihren Autoren zurückgekehrt sind. \
+Jeder liest noch einmal durch. Dann werden alle Blätter feierlich zerkleinert oder verbrannt (wenn Sie draußen sind).",
+source:     "Unknown, via Vanessa",
+durationDetail:  "10 min groupsize",
+duration:    "Short",
+stage:    "Storming, Stagnating",
+suitable:  "iteration, project, release"
+};
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
