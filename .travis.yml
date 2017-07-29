@@ -10,6 +10,7 @@ php:
     - 7.1
 
 before_install:
+    - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - cp backend/app/config/parameters.yml.travis backend/app/config/parameters.yml
 
 install:
