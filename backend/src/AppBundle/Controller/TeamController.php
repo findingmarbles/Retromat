@@ -89,4 +89,27 @@ class TeamController extends Controller
     {
         $this->ids[] = $id;
     }
+
+    /**
+     * @Route("/experiment/cache-counter", name="cache-counter-experiment")
+     */
+    public function cacheExperimentAction()
+    {
+        $cachedCounter = $this->get('cache.app')->getItem('experiment.counter');
+        if (!$cachedCounter->isHit()) {
+            $counter = 0;
+
+            $cachedCounter->set($counter);
+            $this->get('cache.app')->save($cachedCounter);
+        } else {
+            $counter = $cachedCounter->get();
+            
+            $counter++;
+
+            $cachedCounter->set($counter);
+            $this->get('cache.app')->save($cachedCounter);
+        }
+
+        return $this->render('team/experiment/cacheCounter.html.twig', ['counter' => $counter]);
+    }
 }
