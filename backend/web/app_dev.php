@@ -16,7 +16,7 @@ use Symfony\Component\Debug\Debug;
 if (!(in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1', '185.26.156.32']) || PHP_SAPI === 'cli-server')
 ) {
     header('HTTP/1.0 403 Forbidden');
-    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+    exit('The Debug controller can only be accessed using a SSH tunnel. See backend/web/app_dev.php for detailed instructions on how to setup the tunnel.');
 }
 
 /** @var \Composer\Autoload\ClassLoader $loader */
