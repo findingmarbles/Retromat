@@ -62,6 +62,7 @@ class Deployment
      */
     public function run()
     {
+        $this->cleanupBuildDir();
         $this->createArtifact();
         $this->enableSshConnectionMultiplexing();
         $this->transferArtifact();
@@ -70,6 +71,11 @@ class Deployment
         $this->remoteUpdateDatabase();
         $this->remoteCacheClearAndWarm();
         $this->remoteExpose();
+    }
+
+    private function cleanupBuildDir()
+    {
+        system('php backend/bin/console cache:clear --no-warmup --env=prod');
     }
 
     private function createArtifact()
