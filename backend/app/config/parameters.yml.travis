@@ -6,13 +6,14 @@ parameters:
     database_user:      root
     database_password:  ~
 
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_port:       ~
-    mailer_encryption: ~
-    mailer_user:       ~
-    mailer_password:   ~
 
-    secret:            ThisIsAutomaticallyChangedOnDeployment
+    mailer_transport:   smtp
+    mailer_host:        127.0.0.1
+    mailer_port:        ~
+    mailer_encryption:  ~
+    mailer_user:        ~
+    mailer_password:    ~
+
+    secret:             ThisIsAutomaticallyChangedOnDeployment
 
     retromat_backend_mail: cannot-be-empty@example.org
