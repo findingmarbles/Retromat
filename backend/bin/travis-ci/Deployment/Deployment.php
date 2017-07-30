@@ -76,6 +76,8 @@ class Deployment
     private function cleanupBuildDir()
     {
         system('php backend/bin/console cache:clear --no-warmup --env=prod');
+        system('mkdir backend/var/logs-travis');
+        system('mv backend/var/logs/* backend/var/logs-travis');
     }
 
     private function createArtifact()
