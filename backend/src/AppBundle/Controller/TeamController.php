@@ -95,19 +95,20 @@ class TeamController extends Controller
      */
     public function cacheExperimentAction()
     {
-        $cachedCounter = $this->get('cache.app')->getItem('experiment.counter');
+        $cache = $this->get('cache.app');
+        $cachedCounter = $cache->getItem('experiment.counter');
         if (!$cachedCounter->isHit()) {
             $counter = 0;
 
             $cachedCounter->set($counter);
-            $this->get('cache.app')->save($cachedCounter);
+            $cache->save($cachedCounter);
         } else {
             $counter = $cachedCounter->get();
             
             $counter++;
 
             $cachedCounter->set($counter);
-            $this->get('cache.app')->save($cachedCounter);
+            $cache->save($cachedCounter);
         }
 
         return $this->render('team/experiment/cacheCounter.html.twig', ['counter' => $counter]);
