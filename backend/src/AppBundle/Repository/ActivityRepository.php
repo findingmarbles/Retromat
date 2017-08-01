@@ -32,6 +32,7 @@ class ActivityRepository extends EntityRepository
         $activities = $this->createQueryBuilder('a')
             ->select('a.retromatId, a.phase')
             ->getQuery()
+            ->useResultCache(true, 86400, 'retromat_findAllActivitiesByPhases')
             ->getResult(Query::HYDRATE_ARRAY);
 
         foreach ($activities as $activity) {
