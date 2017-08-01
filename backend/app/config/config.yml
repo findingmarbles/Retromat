@@ -65,8 +65,8 @@ doctrine:
                     namespace:            null
                     cache_provider:       null
                 metadata_cache_driver:
-                    type:                 array
-                    host:                 ~
+                    type:                 redis
+                    host:                 localhost
                     port:                 ~
                     database:             ~
                     instance_class:       ~
