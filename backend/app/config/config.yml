@@ -55,28 +55,14 @@ doctrine:
                 naming_strategy: doctrine.orm.naming_strategy.underscore
                 auto_mapping: true
                 query_cache_driver:
-                    type:                 array
-                    host:                 ~
-                    port:                 ~
-                    database:             ~
-                    instance_class:       ~
-                    class:                ~
-                    id:                   ~
-                    namespace:            null
-                    cache_provider:       null
+                    type: service
+                    id: retromat.doctrine_cache.redis
                 metadata_cache_driver:
                     type: service
                     id: retromat.doctrine_cache.redis
                 result_cache_driver:
-                    type:                 array
-                    host:                 ~
-                    port:                 ~
-                    database:             ~
-                    instance_class:       ~
-                    class:                ~
-                    id:                   ~
-                    namespace:            null
-                    cache_provider:       null
+                    type: service
+                    id: retromat.doctrine_cache.redis
 
 doctrine_migrations:
     dir_name: "%kernel.project_dir%/app/DoctrineMigrations"
