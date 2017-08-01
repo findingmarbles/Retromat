@@ -42,12 +42,8 @@ services:
             - { name: "kernel.event_subscriber" }
     retromat.doctrine_cache.redis_connection:
         class: Redis
-        calls:
-            - method: connect
-              arguments:
-                  - "%redis_connection%"
+        calls: [[connect, ["%redis_connection%"]]]
     retromat.doctrine_cache.redis:
         parent: doctrine_cache.abstract.redis
         abstract:  false
-        calls:
-            - [setRedis, ['@retromat.doctrine_cache.redis_connection']]
+        calls: [[setRedis, ['@retromat.doctrine_cache.redis_connection']]]
