@@ -65,15 +65,8 @@ doctrine:
                     namespace:            null
                     cache_provider:       null
                 metadata_cache_driver:
-                    type:                 redis
-                    host:                 /Users/timon/.redis/sock
-                    port:                 ~
-                    database:             ~
-                    instance_class:       ~
-                    class:                ~
-                    id:                   ~
-                    namespace:            null
-                    cache_provider:       null
+                    type: service
+                    id: cache.app
                 result_cache_driver:
                     type:                 array
                     host:                 ~
