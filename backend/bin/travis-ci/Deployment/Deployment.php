@@ -156,6 +156,7 @@ class Deployment
     private function remoteCacheClearAndWarm()
     {
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
+        $this->remote('redis-cli -s /home/retromat/.redis/sock FLUSHALL');
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
     }
 
