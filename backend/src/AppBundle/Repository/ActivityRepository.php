@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AppBundle\Repository;
 
@@ -8,7 +9,7 @@ use AppBundle\Entity\Activity;
 
 class ActivityRepository extends EntityRepository
 {
-    public function findOrdered($language, array $orderedIds)
+    public function findOrdered(string $language, array $orderedIds): array
     {
         $unOrderedActivities = $this->findBy(['language' => $language, 'retromatId' => $orderedIds]);
         $orderedActivities = [];
@@ -25,7 +26,16 @@ class ActivityRepository extends EntityRepository
         return $orderedActivities;
     }
 
-    public function findAllActivitiesByPhases()
+    public function findAllOrdered(string $language): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a')
+            ->getQuery()
+            ->useResultCache(true, 86400, 'retromat_findAllOrdered')
+            ->getResult();
+    }
+
+    public function findAllActivitiesByPhases(): array
     {
         $activitiesByPhase = [];
 

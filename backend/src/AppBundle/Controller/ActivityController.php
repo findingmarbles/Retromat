@@ -22,7 +22,7 @@ class ActivityController extends FOSRestController implements ClassResourceInter
     public function cgetAction()
     {
         $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
-        $activities = $repo->findOrdered('en', range(1, 200));
+        $activities = $repo->findAllOrdered('en');
         /** @var $activity Activity */
         foreach ($activities as $activity) {
             $activity->setSource($this->expandSource($activity->getSource()));

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace tests\AppBundle\Repository;
 
@@ -30,6 +31,24 @@ class ActivityRepositoryTest extends WebTestCase
         $this->assertEquals(113, next($ordered)->getRetromatId());
         $this->assertEquals(13, next($ordered)->getRetromatId());
         $this->assertEquals(16, end($ordered)->getRetromatId());
+    }
+
+    public function testFindAllOrdered()
+    {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+
+        $repo = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
+        $ordered = $repo->findAllOrdered($language = 'en');
+
+        // check for correct keys
+        $this->assertEquals(1, $ordered[0]->getRetromatId());
+        $this->assertEquals(2, $ordered[1]->getRetromatId());
+        $this->assertEquals(3, $ordered[2]->getRetromatId());
+
+        // check for correct order of keys
+        $this->assertEquals(1, reset($ordered)->getRetromatId());
+        $this->assertEquals(2, next($ordered)->getRetromatId());
+        $this->assertEquals(3, next($ordered)->getRetromatId());
     }
 
     public function testFindAllActivitiesForPhases()

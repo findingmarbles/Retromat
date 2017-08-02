@@ -153,4 +153,21 @@ class ActivityControllerTest extends WebTestCase
             $activities[65-1]['source']
         );
     }
+
+    public function testActivityIdsAndNamesInCollectionRequests()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/activities');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(1, $activities[1-1]['retromatId']);
+        $this->assertEquals(32, $activities[32-1]['retromatId']);
+        $this->assertEquals(100, $activities[100-1]['retromatId']);
+
+        $this->assertEquals('Emoticon Project Gauge', $activities[32-1]['name']);
+        $this->assertEquals('Happiness Histogram', $activities[59-1]['name']);
+        $this->assertEquals('Repeat &amp; Avoid', $activities[80-1]['name']);
+    }
 }
