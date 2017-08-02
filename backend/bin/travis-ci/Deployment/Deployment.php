@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * Higly specific for travis-ci + uberspace, because we hope to stay here for a couple of years :-)
@@ -149,7 +150,9 @@ class Deployment
     private function remoteUpdateDatabase()
     {
         $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction');
+        $this->remote(
+            'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
+        );
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console retromat:import:activities');
     }
 
@@ -171,7 +174,9 @@ class Deployment
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
-        $this->remote('cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current');
+        $this->remote(
+            'cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current'
+        );
 
         // make the sitemap files availabe inside each new deployment directory
         $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';
