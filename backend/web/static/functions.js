@@ -5,16 +5,13 @@ function init() {
     var plan_id = urlParams.id;
     var phase = urlParams.phase;
 
-    // if AJAX feature is enabled, English activities are not included as JS file but loaded here:
-    if (get_feature_ajax() && ('en' == get_lang())) {
-        $.getJSON("/activities", {_locale: "en"})
+    if (typeof all_activities === "undefined") {
+        $.getJSON("/activities.json", {_locale: "en"})
             .fail(function (jqxhr, textStatus, error) {
                 console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
             })
             .done(function (json) {
                 all_activities = json;
-
-                // do everything else we need to do after successfully loading activities
                 if (plan_id) {
                     publish_plan(plan_id, phase);
                 } else {
@@ -22,7 +19,6 @@ function init() {
                 }
                 publish_footer_stats();
             });
-    // non-English activities are included as JS files, so publish directly
     } else {
         if (plan_id) {
             publish_plan(plan_id, phase);

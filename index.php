@@ -4,18 +4,7 @@
 // format: [html, twig], default: html
 
 // English activities can be loaded via AJAX or included as JS file.
-// Configure and make setting available in PHP and JS variables.
-// Re-deploy for changed setting to take effect.
 $featureAjax = true;
-?>
-<script type="text/javascript">
-    function get_feature_ajax()
-    {
-        // PHP false converts to JS "", which also evaluates to false. Good enough for now.
-        return '<?php echo $featureAjax?>';
-    }
-</script>
-<?php
 
 // determine language and make it available in PHP and JS variables
 $lang = 'en';
