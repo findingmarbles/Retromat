@@ -6,7 +6,7 @@
 // English activities can be loaded via AJAX or included as JS file.
 // Configure and make setting available in PHP and JS variables.
 // Re-deploy for changed setting to take effect.
-$featureAjax = false;
+$featureAjax = true;
 ?>
 <script type="text/javascript">
     function get_feature_ajax()
