@@ -112,7 +112,7 @@ var PHASE_ID_TAG = 'phase';
     <script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
 <?php } ?>
 <script src="/static/lang/photos.js"></script>
-<script src="/static/functions.js"></script>
+<script src="/static/functions.js?fresh=1"></script>
 
     <script type="text/javascript"> // functions that need translations from PHP
         //Input: String
