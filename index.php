@@ -116,10 +116,10 @@ var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "differe
 var PHASE_ID_TAG = 'phase';
 </script>
 
-<script src="/static/sources.js"></script>
 <?php if ((true === $featureAjax) and is_output_format_twig($argv) and ('en' == $lang)) { ?>
     <script src="/static/lang/phase_titles_en.js"></script>
 <?php } else { ?>
+    <script src="/static/sources.js"></script>
     <script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
 <?php } ?>
 <script src="/static/lang/photos.js"></script>
