@@ -7,7 +7,11 @@ use AppBundle\Entity\Activity;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use FOS\RestBundle\View\View;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
+/**
+ * @Cache(smaxage="86400")
+ */
 class ActivityController extends FOSRestController implements ClassResourceInterface
 {
     public function getAction($id)
