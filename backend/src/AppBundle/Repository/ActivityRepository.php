@@ -30,6 +30,7 @@ class ActivityRepository extends EntityRepository
     {
         return $this->createQueryBuilder('a')
             ->select('a')
+            ->orderBy('a.retromatId', 'ASC')
             ->getQuery()
             ->useResultCache(true, 86400, 'retromat_findAllOrdered')
             ->getResult();
