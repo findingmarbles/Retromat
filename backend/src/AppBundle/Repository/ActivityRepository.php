@@ -9,23 +9,29 @@ use AppBundle\Entity\Activity;
 
 class ActivityRepository extends EntityRepository
 {
+    /**
+     * @param string $language
+     * @param array $orderedIds
+     * @return array
+     *
+     * Caching millions of combinations of e.g. 5 activities separately would not make sense, but
+     * findAllOrdered already caches all activities. Reuse this cache for speed.
+     */
     public function findOrdered(string $language, array $orderedIds): array
     {
-        $unOrderedActivities = $this->findBy(['language' => $language, 'retromatId' => $orderedIds]);
+        $allActivities = $this->findAllOrdered($language);
         $orderedActivities = [];
-
-        // assign keys indicating correct position
-        foreach ($unOrderedActivities as $activity) {
-            /** @var Activity $activity */
-            $orderedActivities[array_search($activity->getRetromatId(), $orderedIds)] = $activity;
+        foreach ($orderedIds as $id) {
+            $orderedActivities[] = $allActivities[$id-1];
         }
-
-        // order associative array by keys
-        ksort($orderedActivities);
 
         return $orderedActivities;
     }
 
+    /**
+     * @param string $language
+     * @return array
+     */
     public function findAllOrdered(string $language): array
     {
         return $this->createQueryBuilder('a')
@@ -36,6 +42,9 @@ class ActivityRepository extends EntityRepository
             ->getResult();
     }
 
+    /**
+     * @return array
+     */
     public function findAllActivitiesByPhases(): array
     {
         $activitiesByPhase = [];

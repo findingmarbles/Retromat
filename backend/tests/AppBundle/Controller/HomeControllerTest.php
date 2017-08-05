@@ -19,7 +19,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSingleActivityBlock()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=32');
 
         $jsPlan = $crawler->filter('.js_plan');
@@ -269,10 +271,12 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSuccessiveActivitiesInDifferentColors()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
-        $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
-        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
 
+        $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
+
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
         $colorCode = $this->extractColorCode($activities->eq(0));
         for ($i = 1; $i < $activities->count(); $i++) {
             $previousColorCode = $colorCode;
@@ -314,7 +318,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase0LongUrl()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
 
@@ -323,7 +329,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase1LongUrl()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $idsStringPhase1 = '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase1.'&phase=1');
 
@@ -332,12 +340,15 @@ class HomeControllerTest extends WebTestCase
 
     public function testRegressionAvoidUnlessNeededHeaderAllActivitiesFor()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3&phase=0');
+
         $this->assertStringStartsWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
 
         $crawler = $client->request('GET', '/en/?id=1-2-3');
+
         $this->assertStringStartsNotWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
     }
 
@@ -361,8 +372,11 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowNumbersInFooter()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
+
         $footer = $crawler->filter('.about')->filter('.content');
         $this->assertEquals('127', $footer->filter('.js_footer_no_of_activities')->text());
         $this->assertEquals('8349005', $footer->filter('.js_footer_no_of_combinations')->text());
@@ -382,7 +396,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowIdsInInputField()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5');
         $this->assertEquals('1-2-3-4-5', $crawler->filter('.ids-display__input')->attr('value'));
 
@@ -501,6 +517,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPageTitle5Activities()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
