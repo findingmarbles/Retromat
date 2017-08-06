@@ -66,6 +66,9 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
 
+knp_doctrine_behaviors:
+    translatable:   true
+
 swiftmailer:
     transport:  "%mailer_transport%"
     host:       "%mailer_host%"
