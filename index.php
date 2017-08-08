@@ -13,14 +13,6 @@ if (isset($argv[1])) {
 } else if (array_key_exists('lang', $_GET)) {
     $lang = $_GET['lang'];
 }
-?>
-<script type="text/javascript">
-    function get_lang()
-    {
-        return '<?php echo $lang?>';
-    }
-</script>
-<?php
 
 function is_output_format_twig($argv)
 {
@@ -114,7 +106,11 @@ var PHASE_ID_TAG = 'phase';
 <script src="/static/lang/photos.js"></script>
 <script src="/static/functions.js?fresh=1"></script>
 
-    <script type="text/javascript"> // functions that need translations from PHP
+    <script type="text/javascript">
+        // Functions that need translations from PHP.
+        // @todo save bandwidth by moving these functions to functions.js,
+        // which is cached by browsers and crawlers.
+
         //Input: String
         function publish_plan(plan_id, phase) {
             var plan_id = sanitize_plan_id(plan_id);
