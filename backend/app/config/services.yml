@@ -17,7 +17,6 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
-        arguments: ["@retromat.plan.plan_id_generator", "@doctrine.orm.entity_manager"]
     retromat.plan.description_renderer:
         class: AppBundle\Plan\DescriptionRenderer
     retromat.plan.plan_id_generator:
