@@ -19,10 +19,10 @@ class Activity2
 
     /**
      * Internal id used by the Doctine ORM.
-     * Property name needs to be "id" for the Translatable trait.
+     * Coloumn + property name both need to be "id" for the Translatable trait.
      *
      * @var int
-     * @ORM\Column(name="doctrine_id", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
