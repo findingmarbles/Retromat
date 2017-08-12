@@ -10,7 +10,11 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 /**
  * Activity2
  *
- * @ORM\Table(name="activity2")
+ * @ORM\Table(name="activity2",
+ *     indexes={
+ *          @ORM\Index(name="retromatId_index2", columns={"retromat_id"}),
+ *          @ORM\Index(name="phase_index2", columns={"phase"})}
+ *     )
  * @ORM\Entity
  */
 class Activity2
