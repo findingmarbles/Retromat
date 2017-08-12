@@ -34,19 +34,6 @@ class ActivityImporter
         $this->validator = $validator;
     }
 
-    public function getAllValidActivities()
-    {
-        $activity = [];
-        foreach ($this->reader->extractAllActivities() as $activityArray) {
-            /** @var Activity $activityEntity */
-            $activityEntity = $this->mapper->fillObjectFromArray($activityArray, new Activity());
-            $activityEntity->setLanguage('en');
-            $activity [] = $activityEntity;
-        }
-
-        return $this->filter->skipAndLogInvalid($activity);
-    }
-
     public function import()
     {
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity');
