@@ -5,6 +5,7 @@ namespace AppBundle\Importer\Activity;
 
 use AppBundle\Entity\Activity;
 use AppBundle\Entity\Activity2;
+use AppBundle\Entity\Activity2Translation;
 use AppBundle\Importer\Activity\Exception\InvalidActivityException;
 use AppBundle\Importer\ArrayToObjectMapper;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -77,7 +78,13 @@ class ActivityImporter
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity2');
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
+            /** @var Activity2Translation $translationFromReader */
+            $translationFromReader = $this->mapper->fillObjectFromArray($activityArray, new Activity2Translation());
+            $translationFromReader->setLocale('en');
+
+            /** @var Activity2 $activityFromReader */
             $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, new Activity2());
+            $activityFromReader->addTranslation($translationFromReader);
 
             $violations = $this->validator->validate($activityFromReader);
             if (0 === count($violations)) {
