@@ -87,6 +87,7 @@ class ActivityImporter
             if (0 === count($violations)) {
                 $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
                 if (isset($activityFromDb)) {
+                    $activityFromDb->setCurrentLocale($locale);
                     $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
                 } else {
                     $this->objectManager->persist($activityFromReader);
