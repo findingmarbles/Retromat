@@ -12,7 +12,6 @@ class ArrayToObjectMapperTest extends \PHPUnit_Framework_TestCase
         $inputArray = [
             'firstDummyProperty' => 23,
             'SecondDummyPROPERTY' => 'FortyTwo',
-            'NonExistingProperty' => 'ToBeSkippedWithoutError',
         ];
         $objectToFill = new FillMeDummy();
         $mapper->fillObjectFromArray($inputArray, $objectToFill);
