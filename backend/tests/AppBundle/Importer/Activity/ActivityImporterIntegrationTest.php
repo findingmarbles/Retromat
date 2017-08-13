@@ -119,9 +119,16 @@ class ActivityImporterIntegrationTest extends WebTestCase
 
         $activityImporter->import();
 
+        // structure we are migrating away from
         $this->assertEquals(
             'ESVP',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
+        );
+
+        // structure we are migrating to
+        $this->assertEquals(
+            'ESVP',
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
         );
 
         $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_esvp_updated.js');
@@ -129,9 +136,16 @@ class ActivityImporterIntegrationTest extends WebTestCase
 
         $activityImporter2->import();
 
+        // structure we are migrating away from
         $this->assertEquals(
             'ESVPupdated',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
+        );
+
+        // structure we are migrating to
+        $this->assertEquals(
+            'ESVPupdated',
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
         );
     }
 }
