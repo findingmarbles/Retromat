@@ -25,11 +25,23 @@ class ActivityImporterIntegrationTest extends WebTestCase
 
         $activityImporter->import();
 
+        // structure we are migrating away from
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
         );
+
+        // structure we are migrating to
+        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+//        $this->assertEquals(
+//            'Discuss the 12 agile principles and pick one to work on',
+//            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->translate('en')->getSummary()
+//        );
+//        $this->assertEquals(
+//            'Discuss the 12 agile principles and pick one to work on',
+//            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->getSummary()
+//        );
     }
 
     public function testImportOnTopOfExisting()
