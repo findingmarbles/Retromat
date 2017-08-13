@@ -38,10 +38,10 @@ class ActivityImporterIntegrationTest extends WebTestCase
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->translate('en')->getSummary()
         );
-//        $this->assertEquals(
-//            'Discuss the 12 agile principles and pick one to work on',
-//            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->getSummary()
-//        );
+        $this->assertEquals(
+            'Discuss the 12 agile principles and pick one to work on',
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->getSummary()
+        );
     }
 
     public function testImportOnTopOfExisting()

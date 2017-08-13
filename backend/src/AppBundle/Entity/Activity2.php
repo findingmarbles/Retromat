@@ -239,4 +239,14 @@ class Activity2
     {
         return (string)$this->retromatId;
     }
+
+    /**
+     * @param $method
+     * @param $arguments
+     * @return mixed
+     */
+    public function __call($method, $arguments)
+    {
+        return $this->proxyCurrentLocaleTranslation($method, $arguments);
+    }
 }
