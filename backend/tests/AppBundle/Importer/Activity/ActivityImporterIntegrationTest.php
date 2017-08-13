@@ -24,6 +24,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
+        $entityManager->clear();
 
         // structure we are migrating away from
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
@@ -58,6 +59,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
+        $entityManager->clear();
 
         // structure we are migrating away from
         $activity = $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123]);
@@ -72,6 +74,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $this->assertCount(128, $entityManager->getRepository('AppBundle:Activity2')->findAll());
 
         $activityImporter->import();
+        $entityManager->clear();
 
         // structure we are migrating away from
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
@@ -100,38 +103,39 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import('de');
+        $entityManager->clear();
 
         $this->assertCount(75, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+        $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71]);
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate(
-                'de'
-            )->getSummary()
+            $activity2->translate('de', $fallbackToDefault = false)->getSummary()
         );
-
+        $activity2->setCurrentLocale('de');
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->getSummary()
+            $activity2->getSummary()
         );
     }
 
     public function testImportOnEmptyDbEnDe()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
         $activityImporter->import('en');
+        $entityManager->clear();
 
         $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_de.js');
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
-
         $activityImporter->import('de');
+        $entityManager->clear();
 
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
 
@@ -142,7 +146,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         );
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
-            $activity2->translate('de')->getSummary()
+            $activity2->translate('de', $fallbackToDefault = false)->getSummary()
         );
 
         $activity2->setCurrentLocale('en');
@@ -150,7 +154,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
             'Check satisfaction with retro results, fair distribution of talk time &amp; mood',
             $activity2->getSummary()
         );
-
         $activity2->setCurrentLocale('de');
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
@@ -230,6 +233,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import();
+        $entityManager->clear();
 
         // structure we are migrating away from
         $this->assertEquals(
@@ -247,6 +251,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $validator);
 
         $activityImporter2->import();
+        $entityManager->clear();
 
         // structure we are migrating away from
         $this->assertEquals(

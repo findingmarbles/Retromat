@@ -80,16 +80,18 @@ class ActivityImporter
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
             $newActivity = new Activity2();
-            $newActivity->setCurrentLocale($locale);
+            $newActivity->setDefaultLocale($locale);
             $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, $newActivity);
 
             $violations = $this->validator->validate($activityFromReader);
             if (0 === count($violations)) {
                 $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
                 if (isset($activityFromDb)) {
-                    $activityFromDb->setCurrentLocale($locale);
+                    $activityFromDb->setDefaultLocale($locale);
                     $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
+                    $activityFromDb->mergeNewTranslations();
                 } else {
+                    $activityFromReader->mergeNewTranslations();
                     $this->objectManager->persist($activityFromReader);
                 }
             } else {
