@@ -36,13 +36,14 @@ class ActivityImporter
         $this->validator = $validator;
     }
 
-    public function import()
+    public function import(string $locale = 'en')
     {
         // structure we are migrating away from
+        // import1 only supports English
         $this->import1();
 
         // structure we are migrating to
-        $this->import2();
+        $this->import2($locale);
     }
 
     // structure we are migrating away from
@@ -73,12 +74,14 @@ class ActivityImporter
     }
 
     // structure we are migrating to
-    public function import2()
+    public function import2(string $locale = 'en')
     {
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity2');
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
-            $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, new Activity2());
+            $newActivity = new Activity2();
+            $newActivity->setCurrentLocale($locale);
+            $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, $newActivity);
 
             $violations = $this->validator->validate($activityFromReader);
             if (0 === count($violations)) {

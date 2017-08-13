@@ -12,7 +12,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class ActivityImporterIntegrationTest extends WebTestCase
 {
-    public function testImportOnEmptyDb()
+    public function testImportOnEmptyDbEn()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
@@ -83,6 +83,31 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->getSummary()
+        );
+    }
+
+    public function testImportOnEmptyDbDe()
+    {
+        $this->loadFixtures([]);
+        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_de.js');
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
+        $activityImporter->import('de');
+
+        $this->assertCount(75, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+        $this->assertEquals(
+            'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate('de')->getSummary()
+        );
+
+        $this->assertEquals(
+            'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->getSummary()
         );
     }
 
