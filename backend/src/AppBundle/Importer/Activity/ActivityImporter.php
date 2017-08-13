@@ -46,7 +46,7 @@ class ActivityImporter
     }
 
     // structure we are migrating away from
-    private function import1()
+    public function import1()
     {
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity');
 
@@ -73,7 +73,7 @@ class ActivityImporter
     }
 
     // structure we are migrating to
-    private function import2()
+    public function import2()
     {
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity2');
 

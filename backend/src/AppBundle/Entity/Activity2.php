@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
@@ -241,6 +242,20 @@ class Activity2
     public function __toString(): string
     {
         return (string)$this->retromatId;
+    }
+
+    /**
+     * Special method to add validation constraints on a property that is defined in a trait:
+     * https://symfony.com/doc/current/reference/constraints/Valid.html
+     * This could also be done via YML or XML, but all other constraints are defined via annotations
+     * and I prefer to keep all constrains together in the class definition itself.
+     *
+     * @param ClassMetadata $metadata
+     */
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('translations', new Assert\Valid());
+        $metadata->addPropertyConstraint('newTranslations', new Assert\Valid());
     }
 
     /**

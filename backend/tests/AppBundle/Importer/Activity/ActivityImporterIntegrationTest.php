@@ -86,7 +86,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         );
     }
 
-    public function testImportThrowsExceptionOnInvalid()
+    public function testImportThrowsExceptionOnInvalidActivity()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
@@ -98,12 +98,53 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         try {
-            $activityImporter->import();
+            $activityImporter->import1();
         } catch (InvalidActivityException $exception) {
             return;
         }
 
-        $this->fail('Expected exception not thrown: InvalidActivityException.');
+        $this->fail('Expected exception not thrown: InvalidActivityException for Activity (type 1).');
+    }
+
+    public function testImportThrowsExceptionOnInvalidActivity2Meta()
+    {
+        $this->loadFixtures([]);
+        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_meta.js');
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
+        try {
+            $activityImporter->import2();
+        } catch (InvalidActivityException $exception) {
+            return;
+        }
+
+        $this->fail('Expected exception not thrown: InvalidActivityException for Activity2 metadata.');
+    }
+
+
+    public function testImportThrowsExceptionOnInvalidActivity2Translation()
+    {
+        $this->loadFixtures([]);
+        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js');
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
+        try {
+            $activityImporter->import2();
+        } catch (InvalidActivityException $exception) {
+            return;
+        }
+
+        $this->fail('Expected exception not thrown: InvalidActivityException for Activity2 translation.');
     }
 
     public function testImportUpdatesExisting()
