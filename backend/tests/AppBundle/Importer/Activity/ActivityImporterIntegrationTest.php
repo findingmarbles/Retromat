@@ -36,7 +36,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->translate('en')->getSummary()
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123])->translate(
+                'en'
+            )->getSummary()
         );
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
@@ -102,7 +104,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $this->assertCount(75, $entityManager->getRepository('AppBundle:Activity2')->findAll());
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate('de')->getSummary()
+            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate(
+                'de'
+            )->getSummary()
         );
 
         $this->assertEquals(
@@ -110,6 +114,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->getSummary()
         );
     }
+
     public function testImportOnEmptyDbEnDe()
     {
         $this->loadFixtures([]);
@@ -127,21 +132,23 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         $activityImporter->import('de');
-        
+
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+
+        $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71]);
         $this->assertEquals(
             'Check satisfaction with retro results, fair distribution of talk time &amp; mood',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate('en')->getSummary()
+            $activity2->translate('en')->getSummary()
         );
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
-            $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71])->translate('de')->getSummary()
+            $activity2->translate('de')->getSummary()
         );
 
-        $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71]);
         $activity2->setCurrentLocale('en');
         $this->assertEquals(
-            'Check satisfaction with retro results, fair distribution of talk time &amp; mood',$activity2->getSummary()
+            'Check satisfaction with retro results, fair distribution of talk time &amp; mood',
+            $activity2->getSummary()
         );
 
         $activity2->setCurrentLocale('de');
@@ -190,7 +197,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
 
         $this->fail('Expected exception not thrown: InvalidActivityException for Activity2 metadata.');
     }
-
 
     public function testImportThrowsExceptionOnInvalidActivity2Translation()
     {
