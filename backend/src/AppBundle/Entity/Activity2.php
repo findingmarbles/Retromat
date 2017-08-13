@@ -84,9 +84,9 @@ class Activity2
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -98,7 +98,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setRetromatId($retromatId)
+    public function setRetromatId($retromatId): Activity2
     {
         $this->retromatId = $retromatId;
 
@@ -110,7 +110,7 @@ class Activity2
      *
      * @return int
      */
-    public function getRetromatId()
+    public function getRetromatId(): int
     {
         return $this->retromatId;
     }
@@ -122,7 +122,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setPhase($phase)
+    public function setPhase($phase): Activity2
     {
         $this->phase = $phase;
 
@@ -134,7 +134,7 @@ class Activity2
      *
      * @return int
      */
-    public function getPhase()
+    public function getPhase(): int
     {
         return $this->phase;
     }
@@ -146,7 +146,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setDuration($duration)
+    public function setDuration($duration): Activity2
     {
         $this->duration = $duration;
 
@@ -158,7 +158,7 @@ class Activity2
      *
      * @return string
      */
-    public function getDuration()
+    public function getDuration(): string
     {
         return $this->duration;
     }
@@ -170,7 +170,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setSource($source)
+    public function setSource($source): Activity2
     {
         $this->source = $source;
 
@@ -182,7 +182,7 @@ class Activity2
      *
      * @return string
      */
-    public function getSource()
+    public function getSource(): string
     {
         return $this->source;
     }
@@ -194,7 +194,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setMore($more)
+    public function setMore($more): Activity2
     {
         $this->more = $more;
 
@@ -206,7 +206,7 @@ class Activity2
      *
      * @return string
      */
-    public function getMore()
+    public function getMore(): string
     {
         return $this->more;
     }
@@ -218,7 +218,7 @@ class Activity2
      *
      * @return Activity2
      */
-    public function setSuitable($suitable)
+    public function setSuitable($suitable): Activity2
     {
         $this->suitable = $suitable;
 
@@ -230,12 +230,15 @@ class Activity2
      *
      * @return string
      */
-    public function getSuitable()
+    public function getSuitable(): string
     {
         return $this->suitable;
     }
 
-    public function __toString()
+    /**
+     * @return string
+     */
+    public function __toString(): string
     {
         return (string)$this->retromatId;
     }
