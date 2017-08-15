@@ -2408,7 +2408,7 @@ name:      "Sacred Cow",
 summary:   "What is the organization clinging to that doesn't make sense anymore?",
 desc:      "This activity is great for shaking up routine in places that do things \
 the way they've always done them. Introduce it by telling the story of the sacred cows, preferably the \
-<a href=‘http://www.solutionsiq.com/agile-companies-slaughterhouses/'>long epic version here</a>. Here's the gist: \
+<a href='http://www.solutionsiq.com/agile-companies-slaughterhouses/'>long epic version here</a>. Here's the gist: \
 <br><br> \
 'In some cultures cows were sacred, never to be killed for food or any other reason. \
 The cows roamed free, leading a happy life and usually died of old age. With rare \
