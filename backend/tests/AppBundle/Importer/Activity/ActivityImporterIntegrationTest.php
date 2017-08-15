@@ -15,7 +15,8 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportOnEmptyDbEn()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
+        $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en.js']);
+
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -50,7 +51,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportOnTopOfExisting()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
+        $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en.js']);
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -94,7 +95,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportOnEmptyDbDe()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_de.js');
+        $reader = new ActivityReader(null, ['de' => __DIR__.'/TestData/activities_de.js'], 'de');
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -126,14 +127,16 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en.js');
+        $activityFileNames = [
+            'en' => __DIR__.'/TestData/activities_en.js',
+            'de' => __DIR__.'/TestData/activities_de.js',
+        ];
+        $reader = new ActivityReader(null, $activityFileNames);
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
         $activityImporter->import('en');
         $entityManager->clear();
 
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_de.js');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
         $activityImporter->import('de');
         $entityManager->clear();
 
@@ -164,7 +167,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportThrowsExceptionOnInvalidActivity()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid.js');
+        $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid.js']);
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -184,7 +187,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportThrowsExceptionOnInvalidActivity2Meta()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_meta.js');
+        $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid.js']);
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -204,7 +207,10 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportThrowsExceptionOnInvalidActivity2Translation()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader(__DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js');
+        $reader = new ActivityReader(
+            null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js']
+        );
+
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -224,7 +230,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportUpdatesExisting()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader($activityFileName = __DIR__.'/TestData/activities_en_esvp.js');
+        $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_esvp.js']);
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
@@ -247,7 +253,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
         );
 
-        $reader2 = new ActivityReader(__DIR__.'/TestData/activities_en_esvp_updated.js');
+        $reader2 = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_esvp_updated.js']);
         $activityImporter2 = new ActivityImporter($entityManager, $reader2, $mapper, $validator);
 
         $activityImporter2->import();

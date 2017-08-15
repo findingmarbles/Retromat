@@ -11,7 +11,7 @@ services:
         arguments: ["@doctrine.orm.entity_manager"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
-        arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
+        arguments: [~, "%activityFileNames%"]
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
         arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator"]

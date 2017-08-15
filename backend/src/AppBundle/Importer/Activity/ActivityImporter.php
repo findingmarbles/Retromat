@@ -76,6 +76,7 @@ class ActivityImporter
     // structure we are migrating to
     public function import2(string $locale = 'en')
     {
+        $this->reader->setCurrentLocale($locale);
         $activityRepository = $this->objectManager->getRepository('AppBundle:Activity2');
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {

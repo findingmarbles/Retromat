@@ -108,3 +108,10 @@ parameters:
     # http://symfony.com/doc/current/console/request_context.html
     router.request_context.host:   plans-for-retrospectives.com
     router.request_context.scheme: https
+    activityFileNames:
+        de: "%kernel.root_dir%/../web/static/lang/activities_de.js"
+        en: "%kernel.root_dir%/../web/static/lang/activities_en.js"
+        es: "%kernel.root_dir%/../web/static/lang/activities_es.js"
+        fr: "%kernel.root_dir%/../web/static/lang/activities_fr.js"
+        nl: "%kernel.root_dir%/../web/static/lang/activities_nl.js"
+        ru: "%kernel.root_dir%/../web/static/lang/activities_ru.js"
