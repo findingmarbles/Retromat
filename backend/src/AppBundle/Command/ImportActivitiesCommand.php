@@ -32,10 +32,13 @@ class ImportActivitiesCommand extends ContainerAwareCommand
         // foreach ($activityfilenames as $locale => $fileName) {
 
         // Now whitelisting files that can be imported without errors immediately:
-        foreach (['de', 'en', 'es', 'nl'] as $locale) {
-            $this->getContainer()->get('retromat.activity_importer')->import($locale);
-            $output->writeln('Imported '.$locale);
-        }
+        // foreach (['de', 'en', 'es', 'nl'] as $locale) {
+        //    $this->getContainer()->get('retromat.activity_importer')->import($locale);
+        //    $output->writeln('Imported '.$locale);
+        // }
+
+        // Whitelist only Enlish for now, other languages need further analysis.
+        $this->getContainer()->get('retromat.activity_importer')->import('en');
 
         $output->writeln('Import complete.');
     }
