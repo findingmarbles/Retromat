@@ -5,7 +5,7 @@ namespace tests\AppBundle\Importer\Activity;
 
 use AppBundle\Importer\Activity\ActivityReader;
 
-class ActivityReaderTest extends \PHPUnit_Framework_TestCase
+class ActivityReader2Test extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var ActivityReader
@@ -14,8 +14,13 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $activityFileName = __DIR__.'/TestData/activities_en.js';
-        $this->reader = new ActivityReader($activityFileName);
+        $activityFileNames = [
+            'en' => __DIR__.'/TestData/activities_en.js',
+            'de' => __DIR__.'/TestData/activities_de.js',
+        ];
+
+        // signature we are migrating to
+        $this->reader = new ActivityReader(null, $activityFileNames, 'en');
     }
 
     public function testExtractActivity()
@@ -430,7 +435,7 @@ HTML;
         $this->assertEquals(123, $reader->highestRetromatId());
     }
 
-    public function testExtractAllActivities()
+    public function testExtractAllActivitiesEn()
     {
         $activity = $this->reader->extractAllActivities();
 
@@ -450,5 +455,28 @@ HTML;
             'suitable' => 'iteration, project, release',
         ];
         $this->assertEquals($expected, $activity[123]);
+    }
+
+    public function testExtractAllActivitiesDe()
+    {
+        $this->reader->setCurrentLocale('de');
+        $activity = $this->reader->extractAllActivities();
+
+        $this->assertEquals('FEUG (engl. ESVP)', $activity[1]['name']);
+        $this->assertEquals('Schreibe das Unaussprechliche', $activity[75]['name']);
+        $this->assertEquals('Schreibe auf was Du niemals sagen könntest', $activity[75]['summary']);
+
+        $expected = [
+            'retromatId' => 75,
+            'phase' => 1,
+            'name' => 'Schreibe das Unaussprechliche',
+            'summary' => 'Schreibe auf was Du niemals sagen könntest',
+            'desc' => "Vermutest Du, das es im Team unausgesprochene Tabus gibt, die die Zusammenarbeit behindern? Vielleicht hilft diese Methode: Verpflichte alle zu Vertraulichkeit ('Alles was gesagt wird bleibt hier im Raum') und sage an, dass alle Notizen am Ende zerstört werden. Erst dann gebe ein Blatt Papier an jeden Teilnehmer aus, um das größte Tabu im Team bzw. im Unternehmen zu notieren. Wenn alle fertig sind, geben alle das Blatt an den linken Nachbarn weiter. Die Nachbarn lesen und können Kommentare hinzufügen. Lasse die Seiten solange weitergegeben, bis sie zu ihren Autoren zurückgekehrt sind. Jeder liest noch einmal durch. Dann werden alle Blätter feierlich zerkleinert oder verbrannt (wenn Sie draußen sind).",
+            'source' => '"Unknown, via Vanessa"',
+            'more' => null,
+            'duration' => 'Short',
+            'suitable' => 'iteration, project, release',
+        ];
+        $this->assertEquals($expected, $activity[75]);
     }
 }

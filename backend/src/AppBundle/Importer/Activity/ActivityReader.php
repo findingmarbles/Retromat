@@ -7,9 +7,18 @@ class ActivityReader
 {
     private $activities;
 
-    public function __construct($fileName)
+    private $activityFileNames = [];
+
+    private $currentLocale;
+
+    public function __construct(string $fileName = null, array $activityFileNames = null, $defaultLocale = 'en')
     {
-        $this->activities = file_get_contents($fileName);
+        if ($activityFileNames) {
+            $this->activityFileNames = $activityFileNames;
+            $this->currentLocale = $defaultLocale;
+            $fileName = $this->activityFileNames[$this->currentLocale];
+        };
+        $this->readActivities($fileName);
     }
 
     public function extractAllActivities()
@@ -172,5 +181,25 @@ class ActivityReader
         }
 
         return null;
+    }
+
+    /**
+     * @param string $fileName
+     */
+    private function readActivities(string $fileName): void
+    {
+        $this->activities = file_get_contents($fileName);
+    }
+
+    /**
+     * @param string $currentLocale
+     * @return ActivityReader
+     */
+    public function setCurrentLocale(string $currentLocale): ActivityReader
+    {
+        $this->currentLocale = $currentLocale;
+        $this->readActivities($this->activityFileNames[$this->currentLocale]);
+
+        return $this;
     }
 }
