@@ -2433,7 +2433,7 @@ Go around the group and invite the team to describe their ‘cows’. For big gr
 best if they break into smaller groups for the discussion and share conclusions later with \
 everyone. \
 <br><br> \
-Now it’s time to grab the cow by its horns. What can you do to slaughter a sacred cow? Every \
+Now it’s time to grab the bull by its horns. What can you do to slaughter a sacred cow? Every \
 person / group proposes 2-3 actions / experiments. When all suggestions are on the table \
 everyone has to sign at least one initiative as a supporter. Initiatives without supporters \
 are discarded. \
