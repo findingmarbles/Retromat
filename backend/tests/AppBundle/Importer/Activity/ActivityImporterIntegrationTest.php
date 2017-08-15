@@ -95,7 +95,13 @@ class ActivityImporterIntegrationTest extends WebTestCase
     public function testImportOnEmptyDbDe()
     {
         $this->loadFixtures([]);
-        $reader = new ActivityReader(null, ['de' => __DIR__.'/TestData/activities_de.js'], 'de');
+        $reader = new ActivityReader(
+            null,
+            [
+                'en' => __DIR__.'/TestData/activities_en.js',
+                'de' => __DIR__.'/TestData/activities_de.js',
+            ]
+        );
         $mapper = new ArrayToObjectMapper();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
