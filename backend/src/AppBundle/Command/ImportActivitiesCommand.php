@@ -27,7 +27,15 @@ class ImportActivitiesCommand extends ContainerAwareCommand
     {
         $output->writeln('Importing retromat activities from JS files into the database ...');
 
-        $this->getContainer()->get('retromat.activity_importer')->import();
+        // @todo Debug import of fr and ru activity files, then activate import of all languages:
+        // $activityfilenames = $this->getContainer()->getParameter('activityfilenames');
+        // foreach ($activityfilenames as $locale => $fileName) {
+
+        // Now whitelisting files that can be imported without errors immediately:
+        foreach (['de', 'en', 'es', 'nl'] as $locale) {
+            $this->getContainer()->get('retromat.activity_importer')->import($locale);
+            $output->writeln('Imported '.$locale);
+        }
 
         $output->writeln('Import complete.');
     }
