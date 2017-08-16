@@ -114,4 +114,4 @@ parameters:
         es: "%kernel.root_dir%/../web/static/lang/activities_es.js"
         fr: "%kernel.root_dir%/../web/static/lang/activities_fr.js"
         nl: "%kernel.root_dir%/../web/static/lang/activities_nl.js"
-        ru: "%kernel.root_dir%/../web/static/lang/activities_ru.js"
+#        ru: "%kernel.root_dir%/../web/static/lang/activities_ru.js"
