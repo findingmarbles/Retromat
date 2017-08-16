@@ -45,7 +45,7 @@ desc:      "Подготовьте флипчарт с зонами для И, �
 source:  source_agileRetrospectives,
 durationDetail:  "5-10 numberPeople",
 duration:    "Короткая",
-stage:    "Формирование, Бурление",
+stage:    "Формирование, Бурление"
 };
 
 all_activities[1] = {
@@ -56,7 +56,7 @@ desc:      "Подготовь флипчарт с символом шторма
 Каждый участник отмечает свое настроение на флипчатре",
 duration:    "Короткая",
 stage:    "All",
-source:  source_agileRetrospectives,
+source:  source_agileRetrospectives
 };
 
 all_activities[2] = {
@@ -117,10 +117,10 @@ suitable: "итерация, max10people"
 };
 
 all_activities[5] = {
-    phase:     1,
-    name:      "Like to like",
-    summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
-    desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
+phase:     1,
+name:      "Like to like",
+summary:   "Participants match quality cards to their own Start-Stop-Continue-proposals",
+desc:      "Preparation: ca. 20 quality cards, i.e. colored index cards with unique words \
 such as <i>fun, on time, clear, meaningful, awesome, dangerous, nasty</i><br> \
 Each team member has to write at least 9 index cards: 3 each with things to \
 start doing, keep doing and stop doing. Choose one person to be the first judge. \
@@ -133,11 +133,11 @@ the quality card. The person left of the judge becomes the new judge.<br> \
 Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality \
 cards wins. Debrief by asking for takeaways. <br>\
 (Game is based on 'Apples to Apples')",
-    source:    source_agileRetrospectives,
-    durationDetail:  "30-40",
-    duration:    "Long",
-    stage:    "All",
-    suitable: "iteration, introverts"
+source:    source_agileRetrospectives,
+durationDetail:  "30-40",
+duration:    "Long",
+stage:    "All",
+suitable: "iteration, introverts"
 };
 
 all_activities[6] = {
@@ -1640,11 +1640,11 @@ summary:   "Each participant tells a story about the last iteration that contain
 desc:      "Provide everyone with something to write down their story. Then introduce the shaping words, \
 which influence the story to be written: \
 <ul> \
-<li>If the last iteration could have been better:<br> \
+    <li>If the last iteration could have been better:<br> \
 You set a couple of shaping words, e.g. such as 'mad, sad, glad' or 'keep, drop, add'. Additionally they have \
 to write their story in first person. This avoids blaming others. \
 </li> \
-<li>If the last iteration was successful:<br> \
+    <li>If the last iteration was successful:<br> \
 The team can either choose their own set of words or you can provide random words to unleash the team's creativity. \
 </li> \
 </ul> \
@@ -1663,12 +1663,12 @@ name:      "BYOSM - Build your own Scrum Master",
 summary:   "The team assembles the perfect SM \& takes different points of view",
 desc:      "Draw a Scrum Master on a flipchart with three sections on him/her: brain, heart, stomach. \
 <ul>\
-<li>Round 1: 'What properties does your perfect SM display?' <br>\
+    <li>Round 1: 'What properties does your perfect SM display?' <br>\
 Ask them to silently write down one trait per note. Let participants explain their notes and put them on the drawing. \
 </li> \
-<li>Round 2: 'What does the perfect SM have to know about you as a team so that he/she can work with you well?' \
+    <li>Round 2: 'What does the perfect SM have to know about you as a team so that he/she can work with you well?' \
 </li>\
-<li>Round 3: 'How can you support your SM to do a brilliant job?' <br> \
+    <li>Round 3: 'How can you support your SM to do a brilliant job?' <br> \
 </li></ul>\
 You can adapt this activity for other roles, e.g. BYOProductOwner.",
 source:    "<a href='http://agile-fab.com/2014/10/07/die-byosm-retrospektive/'>Fabian Schiller</a>",
@@ -1738,10 +1738,10 @@ questioning anything. You can figure out what things need to be talked about to 
 <br><br> \
 You need: \
 <ul> \
-<li> about 3 metres of string as the clothesline</li> \
-<li> about 20 clothes pins</li> \
-<li> a white shirt (cut from paper)</li> \
-<li> a pair of dirty pants (cut from paper)</li> \
+    <li> about 3 metres of string as the clothesline</li> \
+    <li> about 20 clothes pins</li> \
+    <li> a white shirt (cut from paper)</li> \
+    <li> a pair of dirty pants (cut from paper)</li> \
 </ul> \
 Hang up the clothesline and mark the middle, e.g. with a ribbon. \
 Hang up the clean shirt on one side and the dirty pants on the other. \
@@ -1953,12 +1953,12 @@ summary:   "Imagine your last iteration was a movie and write a review about it"
 desc:      "Introduce the activity by asking: \
 Imagine your last iteration was a movie and you had to write a review: \
             <ul> \
-<li>            What was the genre of the movie (e.g. horror, drama, ...)?</li> \
-<li>            What was the (central) theme? Describe in 2-3 words.</li> \
-<li>            Was there a big twist (e.g. a bad guy)?</li> \
-<li>            What was the ending like (e.g. happy-end, cliffhanger) and did you expect it?</li> \
-<li>            What was your personal highlight?</li> \
-<li>            Would you recommend it to a colleague?</li> \
+    <li>            What was the genre of the movie (e.g. horror, drama, ...)?</li> \
+    <li>            What was the (central) theme? Describe in 2-3 words.</li> \
+    <li>            Was there a big twist (e.g. a bad guy)?</li> \
+    <li>            What was the ending like (e.g. happy-end, cliffhanger) and did you expect it?</li> \
+    <li>            What was your personal highlight?</li> \
+    <li>            Would you recommend it to a colleague?</li> \
 </ul> \
 Give each team member a piece of paper and 5 minutes to silently ponder the questions. \
 In the meantime (or before the session) divide a flip chart in 7 columns headed with 'Genre', 'Theme', 'Twist', 'Ending', 'Expected?', 'Highlight', 'Recommend?'. \
@@ -1966,9 +1966,9 @@ When everyone has finished writing, fill out the flip chart while each participa
 <br> \
 Afterwards look at the finished table and lead a discussion about \
 <ul> \
-<li>What's standing out?</li> \
-<li>What patterns do you see? What do they mean for you as a team?</li> \
-<li>Suggestions on how to continue?</li> \
+    <li>What's standing out?</li> \
+    <li>What patterns do you see? What do they mean for you as a team?</li> \
+    <li>Suggestions on how to continue?</li> \
 </ul>",
 source:    "<a href='https://twitter.com/tuedelu'>Isabel Corniche</a>",
 durationDetail:  "20-25 minutes",
@@ -1992,8 +1992,8 @@ Several days before the retro, you send out the following information to team me
 'Think about the below questions for each of your team mates and prepare an answer before the session: \
 <ol> \
    <li>What is something you really admire/respect about this person or something you think they do really well in a professional capacity?</li> \
-<li>What is something you think is a weakness for this person? (Perhaps something they don't do so well, need to work on etc.)</li> \
-<li>What is something you feel this person shows promise in, but could perhaps work on a little more to truly shine at it?</li> \
+    <li>What is something you think is a weakness for this person? (Perhaps something they don't do so well, need to work on etc.)</li> \
+    <li>What is something you feel this person shows promise in, but could perhaps work on a little more to truly shine at it?</li> \
 </ol> \
 These questions are quite open in that you can draw on both technical and soft skills for each team member. \
 So it might be that you choose to highlight a specific technical strength/weakness, or you might comment on \
@@ -2036,10 +2036,10 @@ summary:   "Imagine you're on a voyage - Cliffs and treasures await",
 desc:      "Imagine you're navigating a boat instead of a product or service. \
 Ask the crew the following questions: \
 <ol> \
-<li>            Where is a treasure to be found? (New things worth trying) </li> \
-<li>            Where is a cliff to be safe from? (What makes the team worry)</li> \
-<li>            Keep course for ...  (What existing processes go well?)</li> \
-<li>            Change course for... (What existing processes go badly)</li> \
+    <li>            Where is a treasure to be found? (New things worth trying) </li> \
+    <li>            Where is a cliff to be safe from? (What makes the team worry)</li> \
+    <li>            Keep course for ...  (What existing processes go well?)</li> \
+    <li>            Change course for... (What existing processes go badly)</li> \
 </ol>",
 source:    "<a href='https://www.xing.com/profile/KatrinElise_Dreyer'>Katrin Dreyer</a>",
 durationDetail:  "30 minutes",
@@ -2090,9 +2090,9 @@ summary:   "Playfully explore unmet needs",
 desc:      "Present the following scenario to the participants: You have freed a genie from its bottle \
 and you're granted the customary 3 wishes. What do you wish for? Please make \
 <ul> \
-<li>one wish for yourself</li> \
-<li>one wish for your team</li> \
-<li>one wish for all the people in the world</li> \
+    <li>one wish for yourself</li> \
+    <li>one wish for your team</li> \
+    <li>one wish for all the people in the world</li> \
 </ul> \
 Cheating (i.e. wishing for more wishes or more genies) is not allowed! \
 <br><br> \
@@ -2111,11 +2111,11 @@ desc:      "Prepare a flip chart with 4 columns titled 'Action', 'Motivation', '
 Write down the list of actions the team wants to take in the first column. \
 Read out each action and fill in the other columns by asking: \
 <ul> \
-<li>Motivation - How can we motivate ourselves to do this? \
+    <li>Motivation - How can we motivate ourselves to do this? \
 	<br>Examples: \'Jane will own this and feedback at the next retrospective', or 'We'll reward ourselves with cake on Friday if we do this every day'</li><br> \
-<li>Ease - How can we make it easy to do? \
+    <li>Ease - How can we make it easy to do? \
 	<br>Example: For an action 'Start involving Simon in the stand up' a possibility could be 'Move the task board next to Simon's desk'</li><br> \
-<li>Reminder - How will we remember to do this? \
+    <li>Reminder - How will we remember to do this? \
 	<br>Examples: 'Richard will put a reminder in Google Calendar' or 'We'll do this after the stand up each day' \
 </ul> \
 Actions do not require all of the above. But if there are no suggestions for any of the columns, ask the team if they really think they will do it.",
@@ -2200,9 +2200,9 @@ summary:   "Boost everyones energy with tailored questions",
 desc:      "Ask your neighbor a question that is tailored to get a response that \
 is positive, true and about their own experiences, e.g. \
 <ul> \
-<li>What have you done really well in the last iteration?</li> \
-<li>What is something that makes you really happy?</li> \
-<li>What were you most happy about yesterday?</li> \
+    <li>What have you done really well in the last iteration?</li> \
+    <li>What is something that makes you really happy?</li> \
+    <li>What were you most happy about yesterday?</li> \
 </ul> \
 Then your neighbor asks their neighbor on the other side the same question and \
 so on until everyone has answered and asked. \
@@ -2270,11 +2270,11 @@ desc:      "This silent brainstorming technique helps the team come up with trul
 creative solutions and gives quiet people equal footing: \
 <br><br> \
 <ul> \
-<li>Everyone writes 3 sticky notes with 1 action idea each</li> \
-<li>Go around the room and pitch each idea in 15 seconds</li> \
-<li>Gather all stickies so that everyone can see them</li> \
-<li>Each team member adds their name to the sticky note that inspires them the most</li> \
-<li>Take off all ideas without a name on them</li> \
+    <li>Everyone writes 3 sticky notes with 1 action idea each</li> \
+    <li>Go around the room and pitch each idea in 15 seconds</li> \
+    <li>Gather all stickies so that everyone can see them</li> \
+    <li>Each team member adds their name to the sticky note that inspires them the most</li> \
+    <li>Take off all ideas without a name on them</li> \
 </ul> \
 Repeat this process 2 more times. Afterwards, everyone can dot vote to determine which \
 action(s) the team is going to implement.",
@@ -2367,14 +2367,14 @@ yarn runs out. \
 <br><br> \
 You can debrief with some of these questions: \
 <ul> \
-<li>What did you notice?</li> \
-<li>If you've got remote people: How does it feel to stand apart? How does it feel to have someone stand apart?</li> \
-<li>How do you feel about few (or no) connections?</li> \
-<li>What is it like to see this web of connections?</li> \
-<li>Can you be a team without this web?</li> \
-<li>What would happen if someone let go of their threads? \
+    <li>What did you notice?</li> \
+    <li>If you've got remote people: How does it feel to stand apart? How does it feel to have someone stand apart?</li> \
+    <li>How do you feel about few (or no) connections?</li> \
+    <li>What is it like to see this web of connections?</li> \
+    <li>Can you be a team without this web?</li> \
+    <li>What would happen if someone let go of their threads? \
 How would it affect the team?</li> \
-<li>Is there anything you will do differently at work now?</li> \
+    <li>Is there anything you will do differently at work now?</li> \
 </ul> \
 <br> \
 This activity is only the first part of a \
