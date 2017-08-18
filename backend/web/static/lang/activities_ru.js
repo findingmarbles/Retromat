@@ -184,22 +184,23 @@ suitable: "итерация, релиз, проект, корневая_прич
 
 all_activities[8] = {
 phase:     2,
-name:      "Learning Matrix",
-summary:   "Team members brainstorm in 4 categories to quickly list issues",
-desc:      "After discussing the data from Phase 2 show a flip chart with 4 quadrants labeled \
-':)', ':(', 'Idea!', and 'Appreciation'. Hand out sticky notes. \
+name:      "Матрица обучения",
+summary:   "Мозговой штурм по 4-м категориям для быстрого выявления проблем",
+desc:      "После завершения этапа 'Сбор данных' нарисуйте 4 квадрата на белой доске или на \
+листе флипчарта с заголовками  ':)', ':(', 'Идея!', и 'Благодарность'. Раздайте участникам стикеры. \
 <ul>\
-    <li>The team members can add their input to any quadrant. One thought per sticky note. </li>\
-    <li>Cluster the notes.</li>\
-    <li>Hand out 6-10 dots for people to vote on the most important issues.</li>\
+    <li>Участники могут писать свои мысли в любой квадрант. Каждая отдельная мысль на отдельном стикере.</li>\
+    <li>Сгруппируйте стикеры.</li>\
+    <li>Проведите голосование точками за наиболее важные мысли (6-9 точек на человека).</li>\
 </ul>\
-This list is your input for Phase 4.",
+Получившийся список является отправной точкой для следующего этапа: 'Разработка плана действий'.",
 source:    source_agileRetrospectives,
 durationDetail:  "20-25",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration"
+suitable: "итерация"
 };
+
 all_activities[9] = {
 phase:     2,
 name:      "Brainstorming / Filtering",
