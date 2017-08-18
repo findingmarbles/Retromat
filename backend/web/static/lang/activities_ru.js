@@ -203,28 +203,29 @@ suitable: "итерация"
 
 all_activities[9] = {
 phase:     2,
-name:      "Brainstorming / Filtering",
-summary:   "Generate lots of ideas and filter them against your criteria",
-desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas \
-which will be filtered <em>after</em> the brainstorming.\
+name:      "Мозговой штурм / фильтрация",
+summary:   "Сгенерируйте множество идей и отфильтруйте их согласно критериям",
+desc:      "Изложите цель и правила проведения мозгового штурма: <em>Сперва</em> генерируем как \
+можно больше новых идей, и <em>только потом</em> фильтруем.\
 <ul>\
-    <li>Let people write down their ideas for 5-10 minutes</li>\
-    <li>Go around the table repeatedly always asking one idea each, until all ideas are on the flip chart</li>\
-    <li>Now ask for filters (e.g. cost, time investment, uniqueness of concept, brand appropriateness, ...). \
-Let the group choose 4.</li>\
-    <li>Apply each filter and mark ideas that pass all 4.</li>\
-    <li>Which ideas will the group carry forward? Does someone feel strongly about one of the ideas?\
-Otherwise use majority vote. </li>\
+    <li>Дайте участникам 5-10 минут чтобы записать свои идеи.</li>\
+    <li>Сбор идей организуйте по кругу по одной от человека. Повторяйте пока все идеи не окажутся на листе флипчарта.</li>\
+    <li>Попросите участников составить список возможных критериев (например: стоимость, трудоемкость, \
+сложность, инновационность и т.п.) и попросите выбрать 4.</li>\
+    <li>Выберите идеи удовлетворяющие всем 4-м критериям.</li>\
+    <li>Какие идеи команда возьмет в работу? Кто из участников испытывает уверенность относительно \
+хотя бы одной идеи? Если нет - выберите идеи путем голосования большинством.</li>\
 </ul>\
-The selected ideas enter Phase 4.",
+Выбранные идеи переходят на следующий этап ретроспективы: 'Разработка плана действий'.",
 source:    source_agileRetrospectives,
 more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
     Nine Ways To Be A Great Brainstorm Lead</a>",
 durationDetail:  "40-60",
-duration:    "Long",
+duration:    "Длительная",
 stage:    "All",
-suitable: "iteration, release, project, introverts"
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[10] = {
 phase:     3,
 name:      "Circle of Questions",
