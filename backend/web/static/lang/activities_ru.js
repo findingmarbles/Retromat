@@ -166,21 +166,22 @@ suitable: "итерация, релиз, проект, интроверты"
 
 all_activities[7] = {
 phase:     2,
-name:      "5 Whys",
-summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
-desc:      "Divide the participants into small groups (<= 4 people) and give \
-each group one of the top identified issues. Instructions for the group:\
+name:      "5 Почему",
+summary:   "Докопаться до корневых причин проблемы постоянно задавая вопрос 'Почему?'",
+desc:      "Объедините участников в малые группы (не более 4-х человек) и дайте каждой \
+группе одну из выявленных проблем. Проинструктируйте группы:\
 <ul>\
-    <li>One person asks the others 'Why did that happen?' repeatedly to find the root cause or a chain of events</li>\
-    <li>Record the root causes (often the answer to the 5th 'Why?')</li>\
+    <li>Кто-то один постоянно задает вопрос 'Почему это произошло?' чтобы прояснить цепочку событий и выявить корневую причину</li>\
+    <li>Запишите корневую причину (обычно это ответ на пятый вопрос 'Почему?')</li>\
 </ul>\
-Let the groups share their findings.",
+Попросите группы поделиться своими результатами друг с другом.",
 source:    source_agileRetrospectives,
 durationDetail:  "15-20",
-duration:    "Short",
+duration:    "Короткая",
 stage:    "All",
-suitable: "iteration, release, project, root_cause"
+suitable: "итерация, релиз, проект, корневая_причина"
 };
+
 all_activities[8] = {
 phase:     2,
 name:      "Learning Matrix",
