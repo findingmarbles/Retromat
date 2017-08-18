@@ -245,23 +245,23 @@ suitable: "итерация, релиз, проект, интроверты"
 
 all_activities[11] = {
 phase:     3,
-name:      "Dot Voting - Start, Stop, Continue",
-summary:   "Brainstorm what to start, stop & continue and pick the top initiatives",
-desc:      "Divide a flip chart into boxes headed with  'Start', 'Continue' and 'Stop'. \
-Ask your participants to write concrete proposals for each category - 1 \
-idea per index card. Let them write in silence for a few minutes. \
-Let everyone read out their notes and post them to the appropriate category. \
-Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots\
-or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
-The top 2 or 3 become your action items.\
+name:      "Голосование точками - Начать, Прекратить, Продолжать",
+summary:   "Мозговой штурм в формате 'начать, прекратить, продолжать' и выбор лучших предложений",
+desc:      "Разделите флипчарт на 3 колонки 'Начать', 'Прекратить' и 'Продолжать'. Попросите участников \
+написать свои предложения в каждую из колонок - отдельное предложение на отдельном стикере. Дайте им на \
+это 5 минут и попросите соблюдать тишину. Затем попросите зачитать свои предложения и повесить на флипчарт. \
+Организуйте короткую дискуссию какие 20% предложений наиболее ценные. Затем попросите участников \
+проголосовать точками (по 3 точки на человека). 2-3 предложения, набравшие наибольшее количество голосов, \
+превращаются в план действий. \
 <br><br>\
-(Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
+(Посмотрите интересную вариацию этого упражнения от Пауло Кароли: <a href='http://www.funretrospectives.com/open-the-box/'>'Open the Box'</a>.)",
 source:    source_agileRetrospectives,
 durationDetail:  "15-30",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration"
+suitable: "итерация"
 };
+
 all_activities[12] = {
 phase:     3,
 name:      "SMART Goals",
