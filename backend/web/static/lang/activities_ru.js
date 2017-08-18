@@ -264,22 +264,24 @@ suitable: "итерация"
 
 all_activities[12] = {
 phase:     3,
-name:      "SMART Goals",
-summary:   "Formulate a specific and measurable plan of action",
-desc:      "Introduce <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART goals</a> \
-(specific, measurable, attainable, relevant, timely) and examples for SMART vs not so \
-smart goals, e.g.'We&apos;ll study stories before pulling them by talking about them with the \
-product owner each Wednesday at 9am' vs. 'We'll get to know the stories before they \
-are in our sprint backlog'.<br>\
-Form groups around the issues the team wants to work on. Each group identifies 1-5 \
-concrete steps to reach the goal. Let each group present their results. All participants should agree \
-on the 'SMART-ness' of the goals. Refine and confirm.",
+name:      "SMART-задачи",
+summary:   "Сформулируйте конкретный и измеримый план действий",
+desc:      "Презентуйте группе концепцию <a href='http://ru.wikipedia.org/wiki/SMART'>SMART</a>-задач: \
+Specific (конкретная), Measurable (измеримая), Attainable (достижимая), Relevant (актуальная), \
+Timely (ограничена во времени). Приведите примеры SMART и НЕ-SMART задач. НЕ-SMART: 'Нужно прорабатывать \
+истории перед взятием в спринт'. SMART: 'Перед взятием в спринт мы будем прорабатывать истории, обсуждая \
+их вместе с Product Owner'ом каждую среду в 9:00 утра'.<br>\
+Сформируйте малые группы вокруг рассматриваемых вопросов. Задача группы - определить 1-5 конкретных \
+шагов для решения поставленной задачи. Попросите группы презентовать свои результаты. Все участники \
+должны подтвердить, что предложенные шаги соответствуют концепции SMART. При необходимости доработайте \
+и подтвердите.",
 source:    source_agileRetrospectives,
 durationDetail:  "20-60 groupsize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project"
+suitable: "итерация, релиз, проект"
 };
+
 all_activities[13] = {
 phase:     4,
 name:      "Дверь отзывов - Числа",
