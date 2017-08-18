@@ -228,19 +228,21 @@ suitable: "итерация, релиз, проект, интроверты"
 
 all_activities[10] = {
 phase:     3,
-name:      "Circle of Questions",
-summary:   "Asking and answering go around the team circle - an excellent way to reach consensus",
-desc:      "Everyone sits in a circle. Begin by stating that you'll go round asking questions to find out \
-what you want to do as a group. You start by asking your neighbor the first question, e.g. \
-'What is the most important thing we should start in the next iteration?' Your \
-neighbor answers and asks her neighbor a related question. Stop when consensus emerges or \
-the time is up. Go around at least once, so that everybody is heard!",
+name:      "Круг вопросов",
+summary:   "Участники по кругу отвечают и задают вопросы - отличный способ достичь консенсуса",
+desc:      "Попросите группу сесть в круг. Первый участник задает вопрос соседу слева касательно \
+плана действий. Например: 'Как ты считаешь, какое самое важное изменение нам следует попробовать на \
+следующей итерации?'. Сосед отвечает на вопрос, а затем задает своему соседу слева вопрос, который \
+либо расширяет предыдущий вопрос, либо начинает новый. И так далее по кругу, пока группа не достигнет \
+взаимопонимания по вопросу, либо не закончится выделенное время. Следует пройти как минимум один круг, \
+чтобы у каждого была возможность высказаться!",
 source:    source_agileRetrospectives,
 durationDetail:  "30+ groupsize",
-duration:    "Medium",
-stage:    "Forming, Norming",
-suitable: "iteration, release, project, introverts"
+duration:    "Средняя",
+stage:    "Формирование, Нормирование",
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[11] = {
 phase:     3,
 name:      "Dot Voting - Start, Stop, Continue",
