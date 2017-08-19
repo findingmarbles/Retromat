@@ -52,7 +52,7 @@ class ActivityImporter
             $this->import2($locale);
         }
 
-        // Re-import english at the end to guarantee that
+        // Re-import English at the end to guarantee that
         // all meta data is used from Enlish translation.
         // Not the most beautiful or efficient soultion,
         // but it runs very rarely and will be deleted
