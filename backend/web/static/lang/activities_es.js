@@ -483,9 +483,9 @@ phase:     5,
 name:      "Hojas de Di&aacute;logo",
 summary:   "Un enfoque estructurado para el debate",
 desc:      "Una hoja de di&aacute;logo se parece a un juego de mesa. \
-Existen <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'> varias hojas de dialogo disponibles</a>. \
+Existen <a href='http://allankelly.net/dlgsheets/'> varias hojas de dialogo disponibles</a>. \
 Eligir una, imprimirla lo m&aacute;s grande posible (tama&ntilde;o A1 si puede ser) y seguir las instrucciones.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly at Software Strategy</a>",
+source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 duration:  "90-120",
 suitable: "iteraci&iacute;n, entrega, proyecto"
 };
@@ -851,7 +851,7 @@ Ahora leer las declaraciones, por ejemplo:\
 Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
 Esta puede ser tambi&eacute;n una actividad de cierre (#53).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+<a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>",
 duration:  "10 min",
 suitable:  "iteration, project, release"
 };
@@ -873,7 +873,7 @@ Ahora leer las declaraciones, por ejemplo:\
 Observar las constelaciones que se forman. Luego preguntar qu&eacute constelaci&oacute;n sorprendi&oacute; m&aacute;s.<br>\
 Esta puede ser tambi&eacute;n una actividad de apertura (#52).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via \
-<a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, \
+<a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>, \
 <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 duration:  "5 min",
 suitable:  "iteration, project, release"

@@ -1,10 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace tests\AppBundle\Importer\Activity;
 
 use AppBundle\Importer\Activity\ActivityReader;
 
-class ActivityReaderTest extends \PHPUnit_Framework_TestCase
+class ActivityReader2Test extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var ActivityReader
@@ -13,8 +14,13 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $activityFileName = __DIR__.'/TestData/activities_en.js';
-        $this->reader = new ActivityReader($activityFileName);
+        $activityFileNames = [
+            'en' => __DIR__.'/TestData/activities_en.js',
+            'de' => __DIR__.'/TestData/activities_de.js',
+        ];
+
+        // signature we are migrating to
+        $this->reader = new ActivityReader(null, $activityFileNames, 'en');
     }
 
     public function testExtractActivity()
@@ -24,10 +30,7 @@ class ActivityReaderTest extends \PHPUnit_Framework_TestCase
             'phase' => 3,
             'name' => "Take a Stand - Line Dance",
             'summary' => "Get a sense of everyone's position and reach consensus",
-            'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) \
-on the floor with masking tape. Mark one end as option A) and the other as option B). \
-Team members position themselves on the scale according to their preference for either option. \
-Now tweak the options until one option has a clear majority.",
+            'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) on the floor with masking tape. Mark one end as option A) and the other as option B). Team members position themselves on the scale according to their preference for either option. Now tweak the options until one option has a clear majority.",
             'source' => 'source_skycoach',
             'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
             'duration' => "Short",
@@ -162,15 +165,21 @@ source:  source_agileRetrospectives
 HTML;
 
         $expected = <<<'HTML'
-In round-robin each participant answers the same question (unless they say 'I pass'). \
-Sample questions: <br>\
-<ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
-</ul><br>\
-Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
+In round-robin each participant answers the same question (unless they say 'I pass'). Sample questions: <br><ul>    <li>In one word - What do you need from this retrospective?</li>Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>    <li>In this retrospective - If you were a car, what kind would it be?</li>    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li></ul><br>Avoid evaluating comments such as 'Great'. 'Thanks' is okay.
+HTML;
+
+        $this->assertEquals($expected, $this->reader->extractActivityDescription($activityBlock));
+    }
+
+    public function testExtractDescriptionWithHref()
+    {
+        $activityBlock = <<<'HTML'
+summary:   "foo",
+desc:      "... <a href='http://www.agilemanifesto.org/principles.html'>principles of the Agile Manifesto</a> ...",
+HTML;
+
+        $expected = <<<'HTML'
+... <a href="http://www.agilemanifesto.org/principles.html">principles of the Agile Manifesto</a> ...
 HTML;
 
         $this->assertEquals($expected, $this->reader->extractActivityDescription($activityBlock));
@@ -426,7 +435,7 @@ HTML;
         $this->assertEquals(123, $reader->highestRetromatId());
     }
 
-    public function testExtractAllActivities()
+    public function testExtractAllActivitiesEn()
     {
         $activity = $this->reader->extractAllActivities();
 
@@ -439,32 +448,35 @@ HTML;
             'phase' => 1,
             'name' => 'Find your Focus Principle',
             'summary' => 'Discuss the 12 agile principles and pick one to work on',
-            'desc' => 'Print the <a href=\'http://www.agilemanifesto.org/principles.html\'>principles of the Agile Manifesto</a> \
-onto cards, one principle \
-per card. If the group is large, split it and provide each smaller group with \
-their own set of the principles. \
-<br><br> \
-Explain that you want to order the principles according to the following question: \
-\'How much do we need to improve regarding this principle?\'. In the end the \
-principle that is the team\'s weakest spot should be on top of the list. \
-<br><br> \
-Start with a random principle, discuss what it means and how much need for \
-improvement you see, then place it in the middle. \
-Pick the next principle, discuss what it means and sort it relatively to the other \
-principles. You can propose a position depending on the previous discussion and \
-move from there by comparison. \
-Repeat this until all cards are sorted. \
-<br><br> \
-Now consider the card on top: This is presumeably the most needed and most urgent \
-principle you should work on. How does the team feel about it? Does everyone still \
-agree? What are the reasons there is the biggest demand for change here? Should you \
-compare to the second or third most important issue again? If someone would now \
-rather choose the second position, why?',
+            'desc' => 'Print the <a href="http://www.agilemanifesto.org/principles.html">principles of the Agile Manifesto</a> onto cards, one principle per card. If the group is large, split it and provide each smaller group with their own set of the principles. <br><br> Explain that you want to order the principles according to the following question: \'How much do we need to improve regarding this principle?\'. In the end the principle that is the team\'s weakest spot should be on top of the list. <br><br> Start with a random principle, discuss what it means and how much need for improvement you see, then place it in the middle. Pick the next principle, discuss what it means and sort it relatively to the other principles. You can propose a position depending on the previous discussion and move from there by comparison. Repeat this until all cards are sorted. <br><br> Now consider the card on top: This is presumeably the most needed and most urgent principle you should work on. How does the team feel about it? Does everyone still agree? What are the reasons there is the biggest demand for change here? Should you compare to the second or third most important issue again? If someone would now rather choose the second position, why?',
             'source' => '"<a href=\'http://www.agilesproduktmanagement.de/\'>Tobias Baier</a>"',
             'more' => null,
             'duration' => 'Long',
             'suitable' => 'iteration, project, release',
         ];
         $this->assertEquals($expected, $activity[123]);
+    }
+
+    public function testExtractAllActivitiesDe()
+    {
+        $this->reader->setCurrentLocale('de');
+        $activity = $this->reader->extractAllActivities();
+
+        $this->assertEquals('FEUG (engl. ESVP)', $activity[1]['name']);
+        $this->assertEquals('Schreibe das Unaussprechliche', $activity[75]['name']);
+        $this->assertEquals('Schreibe auf was Du niemals sagen könntest', $activity[75]['summary']);
+
+        $expected = [
+            'retromatId' => 75,
+            'phase' => 1,
+            'name' => 'Schreibe das Unaussprechliche',
+            'summary' => 'Schreibe auf was Du niemals sagen könntest',
+            'desc' => "Vermutest Du, das es im Team unausgesprochene Tabus gibt, die die Zusammenarbeit behindern? Vielleicht hilft diese Methode: Verpflichte alle zu Vertraulichkeit ('Alles was gesagt wird bleibt hier im Raum') und sage an, dass alle Notizen am Ende zerstört werden. Erst dann gebe ein Blatt Papier an jeden Teilnehmer aus, um das größte Tabu im Team bzw. im Unternehmen zu notieren. Wenn alle fertig sind, geben alle das Blatt an den linken Nachbarn weiter. Die Nachbarn lesen und können Kommentare hinzufügen. Lasse die Seiten solange weitergegeben, bis sie zu ihren Autoren zurückgekehrt sind. Jeder liest noch einmal durch. Dann werden alle Blätter feierlich zerkleinert oder verbrannt (wenn Sie draußen sind).",
+            'source' => '"Unknown, via Vanessa"',
+            'more' => null,
+            'duration' => 'Short',
+            'suitable' => 'iteration, project, release',
+        ];
+        $this->assertEquals($expected, $activity[75]);
     }
 }

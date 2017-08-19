@@ -17,4 +17,5 @@ php index.php fr        > backend/app/Resources/views/home/generated/index_fr.ht
 php index.php nl        > backend/app/Resources/views/home/generated/index_nl.html.twig
 php index.php ru        > backend/app/Resources/views/home/generated/index_ru.html.twig
 
-php backend/bin/console cache:clear --env=prod
+php backend/bin/console cache:clear --no-warmup --env=prod
+php backend/bin/console cache:warmup --env=prod

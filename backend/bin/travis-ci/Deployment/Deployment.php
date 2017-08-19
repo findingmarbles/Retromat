@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * Higly specific for travis-ci + uberspace, because we hope to stay here for a couple of years :-)
@@ -62,6 +63,7 @@ class Deployment
      */
     public function run()
     {
+        $this->cleanupBuildDir();
         $this->createArtifact();
         $this->enableSshConnectionMultiplexing();
         $this->transferArtifact();
@@ -70,6 +72,13 @@ class Deployment
         $this->remoteUpdateDatabase();
         $this->remoteCacheClearAndWarm();
         $this->remoteExpose();
+    }
+
+    private function cleanupBuildDir()
+    {
+        system('php backend/bin/console cache:clear --no-warmup --env=prod');
+        system('mkdir backend/var/logs-travis');
+        system('mv backend/var/logs/* backend/var/logs-travis');
     }
 
     private function createArtifact()
@@ -141,13 +150,17 @@ class Deployment
     private function remoteUpdateDatabase()
     {
         $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction');
+        $this->remote(
+            'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
+        );
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console retromat:import:activities');
     }
 
     private function remoteCacheClearAndWarm()
     {
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --env=prod');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
+        $this->remote('redis-cli -s /home/retromat/.redis/sock FLUSHALL');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
     }
 
     private function remoteExpose()
@@ -161,7 +174,9 @@ class Deployment
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
-        $this->remote('cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current');
+        $this->remote(
+            'cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current'
+        );
 
         // make the sitemap files availabe inside each new deployment directory
         $sitemapDir = self::WebSpaceDirPrefix.'retromat-sitemaps/';

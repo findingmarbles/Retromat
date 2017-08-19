@@ -4,12 +4,29 @@ function init() {
     var urlParams = getUrlVars();
     var plan_id = urlParams.id;
     var phase = urlParams.phase;
-    if (plan_id) {
-        publish_plan(plan_id, phase);
+
+    if (typeof all_activities === "undefined") {
+        $.getJSON("/activities.json", {_locale: "en"})
+            .fail(function (jqxhr, textStatus, error) {
+                console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
+            })
+            .done(function (json) {
+                all_activities = json;
+                if (plan_id) {
+                    publish_plan(plan_id, phase);
+                } else {
+                    publish_random_plan();
+                }
+                publish_footer_stats();
+            });
     } else {
-        publish_random_plan();
+        if (plan_id) {
+            publish_plan(plan_id, phase);
+        } else {
+            publish_random_plan();
+        }
+        publish_footer_stats();
     }
-    publish_footer_stats();
 }
 
 // From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html

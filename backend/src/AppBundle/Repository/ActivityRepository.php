@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AppBundle\Repository;
 
@@ -8,30 +9,50 @@ use AppBundle\Entity\Activity;
 
 class ActivityRepository extends EntityRepository
 {
-    public function findOrdered($language, array $orderedIds)
+    /**
+     * @param string $language
+     * @param array $orderedIds
+     * @return array
+     *
+     * Caching millions of combinations of e.g. 5 activities separately would not make sense, but
+     * findAllOrdered already caches all activities. Reuse this cache for speed.
+     */
+    public function findOrdered(string $language, array $orderedIds): array
     {
-        $unOrderedActivities = $this->findBy(['language' => $language, 'retromatId' => $orderedIds]);
+        $allActivities = $this->findAllOrdered($language);
         $orderedActivities = [];
-
-        // assign keys indicating correct position
-        foreach ($unOrderedActivities as $activity) {
-            /** @var Activity $activity */
-            $orderedActivities[array_search($activity->getRetromatId(), $orderedIds)] = $activity;
+        foreach ($orderedIds as $id) {
+            $orderedActivities[] = $allActivities[$id-1];
         }
-
-        // order associative array by keys
-        ksort($orderedActivities);
 
         return $orderedActivities;
     }
 
-    public function findAllActivitiesByPhases()
+    /**
+     * @param string $language
+     * @return array
+     */
+    public function findAllOrdered(string $language): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a')
+            ->orderBy('a.retromatId', 'ASC')
+            ->getQuery()
+            ->useResultCache(true, 86400, 'retromat_findAllOrdered')
+            ->getResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function findAllActivitiesByPhases(): array
     {
         $activitiesByPhase = [];
 
         $activities = $this->createQueryBuilder('a')
             ->select('a.retromatId, a.phase')
             ->getQuery()
+            ->useResultCache(true, 86400, 'retromat_findAllActivitiesByPhases')
             ->getResult(Query::HYDRATE_ARRAY);
 
         foreach ($activities as $activity) {

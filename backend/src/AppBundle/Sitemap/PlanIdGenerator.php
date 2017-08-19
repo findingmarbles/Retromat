@@ -8,16 +8,16 @@ use AppBundle\Activity\ActivityByPhase;
 class PlanIdGenerator
 {
     /**
-     * @var array $activitiesByPhase
+     * @var ActivityByPhase $activityByPhase
      */
-    private $activitiesByPhase;
+    private $activityByPhase;
 
     /**
      * @param ActivityByPhase $activityByPhase
      */
     public function __construct(ActivityByPhase $activityByPhase)
     {
-        $this->activitiesByPhase = $activityByPhase->getAllActivitiesByPhase();
+        $this->activityByPhase = $activityByPhase;
     }
 
     /**
@@ -27,12 +27,13 @@ class PlanIdGenerator
      */
     public function generate(callable $callback, int $maxResults = PHP_INT_MAX, int $skip = 0)
     {
+        $activitiesByPhase = $this->activityByPhase->getAllActivitiesByPhase();
         $totalResults = 0;
-        foreach ($this->activitiesByPhase[4] as $id4) {
-            foreach ($this->activitiesByPhase[3] as $id3) {
-                foreach ($this->activitiesByPhase[2] as $id2) {
-                    foreach ($this->activitiesByPhase[1] as $id1) {
-                        foreach ($this->activitiesByPhase[0] as $id0) {
+        foreach ($activitiesByPhase[4] as $id4) {
+            foreach ($activitiesByPhase[3] as $id3) {
+                foreach ($activitiesByPhase[2] as $id2) {
+                    foreach ($activitiesByPhase[1] as $id1) {
+                        foreach ($activitiesByPhase[0] as $id0) {
                             if ($totalResults >= $maxResults) {
                                 return;
                             } elseif (0 < $skip) {

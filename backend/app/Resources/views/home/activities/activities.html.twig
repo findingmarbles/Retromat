@@ -23,12 +23,12 @@
                     <div class="summary">
                         <span class="js_fill_summary">{{ activity.summary }}</span>
                         <br>
-                        {# probaly need move this to a separate templete or macro or the database later #}
+                        {# @todo: remove duplication with ActivityController->expandSource #}
                         <span class="source">Source:                            <span class="js_fill_source">{{ activity.source  | replace({' + "': ''}) | replace({'" + ': ''}) | replace({'"':''}) | replace (activity_source) | raw }}</span>
                         </span>
                     </div><!-- END summary -->
                     <div class="description">
-                        <span class="js_fill_description">{{ activity.desc | replace({"\\\n":''}) | replace({"<a href='":'<a href="'}) | replace({"'>":'">'}) | raw }}</span>
+                        <span class="js_fill_description">{{ activity.desc | raw }}</span>
                     </div><!-- END description -->
                 </div><!-- END js_item -->
                 <div class="js_photo_link photo_link">

@@ -15,6 +15,9 @@ about_old:
         _controller: FrameworkBundle:Redirect:redirect
         route: about
         permanent: true
+activity:
+    type:     rest
+    resource: AppBundle\Controller\ActivityController
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

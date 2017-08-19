@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace tests\AppBundle\Controller;
 
 // tests directory is not available to the autoloader, so we have to manually require these files:
-require 'DataFixtures/LoadActivityData.php';
+require_once 'DataFixtures/LoadActivityData.php';
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
@@ -19,7 +19,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSingleActivityBlock()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=32');
 
         $jsPlan = $crawler->filter('.js_plan');
@@ -43,8 +45,6 @@ class HomeControllerTest extends WebTestCase
             'Happiness Histogram',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_name')->html()
         );
-
-        $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=80');
         $this->assertEquals(
@@ -271,10 +271,12 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSuccessiveActivitiesInDifferentColors()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
-        $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
-        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
 
+        $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
+
+        $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
         $colorCode = $this->extractColorCode($activities->eq(0));
         for ($i = 1; $i < $activities->count(); $i++) {
             $previousColorCode = $colorCode;
@@ -316,7 +318,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase0LongUrl()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
 
@@ -325,7 +329,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase1LongUrl()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $idsStringPhase1 = '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase1.'&phase=1');
 
@@ -334,12 +340,15 @@ class HomeControllerTest extends WebTestCase
 
     public function testRegressionAvoidUnlessNeededHeaderAllActivitiesFor()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3&phase=0');
+
         $this->assertStringStartsWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
 
         $crawler = $client->request('GET', '/en/?id=1-2-3');
+
         $this->assertStringStartsNotWith('All activities for', $crawler->filter('.js_fill_plan_title')->text());
     }
 
@@ -363,8 +372,11 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowNumbersInFooter()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
+
         $footer = $crawler->filter('.about')->filter('.content');
         $this->assertEquals('127', $footer->filter('.js_footer_no_of_activities')->text());
         $this->assertEquals('8349005', $footer->filter('.js_footer_no_of_combinations')->text());
@@ -384,7 +396,9 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowIdsInInputField()
     {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
         $client = static::createClient();
+
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5');
         $this->assertEquals('1-2-3-4-5', $crawler->filter('.ids-display__input')->attr('value'));
 
@@ -436,7 +450,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectIndexToNewUrlEn()
     {
         $client = static::createClient();
+
         $client->request('GET', '/index.html?id=32');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=32'),
@@ -447,7 +463,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectIndexToNewUrlDe()
     {
         $client = static::createClient();
+
         $client->request('GET', '/index_de.html?id=32');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/de/?id=32'),
@@ -458,7 +476,9 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectSlashToNewUrl()
     {
         $client = static::createClient();
+
         $client->request('GET', '/?id=70-4-69-29-71');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=70-4-69-29-71'),
@@ -469,8 +489,10 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectPhase0ToNewUrl()
     {
         $client = static::createClient();
+
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $client->request('GET', '/index.html?id='.$idsStringPhase0.'&phase=0');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect(
@@ -483,11 +505,59 @@ class HomeControllerTest extends WebTestCase
     public function testRedirectMalformedId()
     {
         $client = static::createClient();
+
         $client->request('GET', '/en/?id=-59-7-50-63-14');
+
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
         $this->assertTrue(
             $client->getResponse()->isRedirect('/en/?id=59-7-50-63-14'),
             'Response is a redirect to the correct URL.'
+        );
+    }
+
+    public function testShowPageTitle5Activities()
+    {
+        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
+
+        $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
+    }
+
+    public function testShowPageTitle1Activitiy()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=1');
+
+        $this->assertEquals('ESVP (#1)', $crawler->filter('title')->text());
+    }
+
+    public function testShowMetaDescription5Activities()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
+
+        $this->assertEquals(
+            '3, 126: Give positive, as well as non-threatening, constructive feedback, 9: Team members brainstorm in 4 categories to quickly list issues, 39, 60',
+            $crawler->filter('meta[name="description"]')->attr('content')
+        );
+    }
+
+    public function testShowMetaDescription1Activitiy()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/en/?id=1');
+
+        $this->assertEquals(
+            'How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?',
+            $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
 }

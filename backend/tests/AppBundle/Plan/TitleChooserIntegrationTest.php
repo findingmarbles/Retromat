@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace tests\AppBundle\Plan;
 
@@ -11,8 +11,7 @@ class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     public function testRenderTitleSingleChoice()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -20,8 +19,8 @@ groups_of_terms:
     0: [Agile]
     1: [Retro]
     2: [Plan]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -30,8 +29,7 @@ groups_of_terms:
 
     public function testRenderTitleEmptyUnless5Activities()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -39,8 +37,8 @@ groups_of_terms:
     0: [Agile]
     1: [Retro]
     2: [Plan]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -50,8 +48,7 @@ groups_of_terms:
 
     public function testChooseTitleIdEmptyUnless5Activities()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -59,8 +56,8 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -71,8 +68,7 @@ groups_of_terms:
 
     public function testChooseTitleIdCorrectFormat()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -80,8 +76,8 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -104,8 +100,7 @@ groups_of_terms:
 
     public function testChooseTitleIdDifferentPlansGetDifferentTitles()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
     1: [   1, 2]
@@ -115,8 +110,8 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -130,8 +125,7 @@ groups_of_terms:
 
     public function testChooseTitleIdPlanAlwaysGetsSameTitle()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
     1: [   1, 2]
@@ -141,8 +135,8 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -157,8 +151,7 @@ groups_of_terms:
 
     public function testChooseTitleIdMaxLength()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -166,8 +159,8 @@ groups_of_terms:
     0: ["", "Agile", "Scrum", "Kanban", "XP"]
     1: ["", "Retro", "Retrospective"]
     2: ["Plan", "Agenda"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
@@ -189,15 +182,14 @@ groups_of_terms:
      */
     public function testChooseTitleIdMaxLengthNotFeasible()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0]
 
 groups_of_terms:
     0: ["Foo"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = 2;
         $title = new TitleRenderer($titleParts);
@@ -208,8 +200,7 @@ groups_of_terms:
 
     public function testDropOptionalTermsUntilShortEnough()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -224,8 +215,8 @@ groups_of_terms:
     7: ["", "bar7"]
     8: ["", "bar8"]
     9: ["", "bar9"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
@@ -239,8 +230,7 @@ groups_of_terms:
 
     public function testDropOneOptionalTerm()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -248,8 +238,8 @@ groups_of_terms:
     0: ["", "Agile", "Scrum", "Kanban", "XP"]
     1: ["", "Retro", "Retrospective"]
     2: ["Plan", "Agenda"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
@@ -259,8 +249,7 @@ groups_of_terms:
 
     public function testDropOneOptionalTermDeterministicRandomness()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -275,8 +264,8 @@ groups_of_terms:
     7: ["", "bar7"]
     8: ["", "bar8"]
     9: ["", "bar9"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
@@ -301,8 +290,7 @@ groups_of_terms:
 
     public function testIsShortEnough()
     {
-        $titleParts = Yaml::parse(
-            '
+        $yaml = <<<YAML
 sequence_of_groups:
     0: [0, 1, 2]
 
@@ -310,8 +298,8 @@ groups_of_terms:
     0: ["", "Agile", "Scrum", "Kanban", "XP"]
     1: ["", "Retro", "Retrospective"]
     2: ["Plan", "Agenda"]
-'
-        );
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $maxLengthIncludingPlanId = 15;
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);

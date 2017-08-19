@@ -23,13 +23,22 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
-//$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
-//$_lang['INDEX_TEAM_TRANSLATOR_NAME'] = 'Your Name';
-//$_lang['INDEX_TEAM_TRANSLATOR_LINK'] = 'Your URL';
-//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'] = '/static/images/team/ - send me a picture; will be cut to 70x93px :)';
-//$_lang['INDEX_TEAM_TRANSLATOR_TEXT'] = <<<EOT
-//             Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
-//EOT;
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation by: ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Translator 1';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/translator1';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+	Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!.
+	<br><br><br>
+EOT;
+
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Translator 2';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/translator2';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
+	Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!.
+	<br><br><br>
+EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT

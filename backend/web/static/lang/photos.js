@@ -1,3 +1,15 @@
+// All activity photos are kept in the git repository now.
+// To add a new activity photo file, perform the following steps:
+// 1. Put the file into: backend/web/static/images/activities
+// 2. Add the filename and contributor to the JS structure below,
+//    make sure to include the prefix: path +
+//
+// When adding a URL, look at one of the http / https examples below.
+// For a URL, the path + prefix must NOT be added.
+//
+// In PHP it is recommended to add a comma on the last array element.
+// In JS files (like this one) an extra comma results in inconsistent
+// array lengths in different browsers and is therefore NOT recommended.
 
 var path = '/static/images/activities/';
 
@@ -41,12 +53,12 @@ all_photos[18] = [
 {filename:    path + "19_sailboat.jpg", contributor: "David Johnson"}
 ];
 all_photos[19] = [
-{filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano"}
+{ filename: path + "20_Perfection-Game-2.jpg", contributor: "Pedro Ángel Serrano" },
+{ filename: path + "20_perfection-game-2.png", contributor: "Karen Castillo Inoa" }
 ];
-all_photos[20] = [{
-filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG",
-contributor: "Paulo Caroli"
-}];
+all_photos[20] = [
+{ filename:    "http://1.bp.blogspot.com/-dLemopaMJ9o/UhKRRRBMFkI/AAAAAAAAC78/6hH5yQKucYA/s320/photo+4(1).JPG", contributor: "Paulo Caroli" }
+];
 all_photos[21] = [{
 filename:    path + "22_Temperature-Reading.jpg",
 contributor: "Weronika Kedzierska"
@@ -95,7 +107,7 @@ all_photos[48] = [
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
 {filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsey"},
-{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"},
+{filename:    path + "54_Story-Oscars_3.jpg", contributor: "Geert van der Ploeg"}
 
 ];
 all_photos[58] = [
@@ -128,7 +140,6 @@ all_photos[69] = [
 {filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
 ];
 all_photos[77] = [
-{filename:    "http://ebgconsulting.com/blog/wp-content/uploads/2010/06/4-Ls-poster-verticle-layout2.jpg", contributor: "Ellen Gottesdiener"},
 {filename:    path + "78_Four-Ls.jpg", contributor: "Philipp Flenker"},
 {filename:    path + "78_Four-Ls_2.jpg", contributor: "Geert van der Ploeg"}
 ];
@@ -168,7 +179,7 @@ all_photos[91] = [
 {filename:    path + "92_Motivational_Poster-4.jpg", contributor: "Sarah Schmid"}
 ];
 all_photos[96] = [
-{filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"},
+{filename:    path + "97_tweetmysprint.jpg", contributor: "Thomas Guest"}
 ];
 all_photos[97] = [
 {filename:    path + "98_Laundry-Day.jpg", contributor: "Katrin Dreyer"},
@@ -177,14 +188,14 @@ all_photos[97] = [
 {filename:    path + "98_Laundry-Day_4.jpg", contributor: "Lionel Secousse"}
 ];
 all_photos[106] = [
-{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"},
+{filename:    path + "107_Unlikely-Superheros.jpg", contributor: "Adrien Clerbois"}
 ];
 all_photos[109] = [
 {filename:    path + "110_movie-critic.jpg", contributor: "Ana Maria Betancur Vargas"},
 {filename:    path + "110_movie-critic_2.jpg", contributor: "Ana Maria Betancur Vargas"}
 ];
 all_photos[112] = [
-{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"},
+{filename:    path + "113_Navigation.jpg", contributor: "Katrin Dreyer"}
 ];
 all_photos[113] = [
 {filename:    path + "114_Tangerine.jpg", contributor: "Afagh Zadeh"},
@@ -192,11 +203,17 @@ all_photos[113] = [
 {filename:    path + "114_Balloons.jpg", contributor: "Scott Kavanagh"}
 ];
 all_photos[114] = [
-{filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards"},
+{ filename:    path + "115_Force-Field-Analysis.jpg", contributor: "Joel Edwards" }
+];
+all_photos[116] = [
+{ filename:    path + "117_maximize-follow-through.png", contributor: "Karen Castillo Inoa" }
 ];
 all_photos[117] = [
-{filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"},
+{filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"}
 ];
 all_photos[122] = [
-{filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"},
+{filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"}
+];
+all_photos[129] = [
+{filename:    "https://agilehunter.files.wordpress.com/2017/06/elephant_safari.jpg?w=740", contributor: "Willem Larsen"}
 ];

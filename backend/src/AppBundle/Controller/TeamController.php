@@ -33,27 +33,6 @@ class TeamController extends Controller
     }
 
     /**
-     * @Route("/experiment/titles/sequence/{sequenceId}", name="titles-experiment-sequence")
-     */
-    public function titlesExperimentBySequenceAction($sequenceId)
-    {
-        $titleParts = $this->getParameter('retromat.plan.titles');
-        $generator = $this->get('retromat.plan.title_id_generator');
-
-        return $this->render(
-            'team/experiment/titlesBySequence.html.twig',
-            [
-                'title_renderer' => $this->get('retromat.plan.title_renderer'),
-                'totalCombinations' => $generator->countCombinationsInAllSequences(),
-                'ids' => $generator->generateIds($sequenceId),
-                'titleParts' => $titleParts,
-                'sequenceId' => $sequenceId,
-                'combinationsInSequence' => $generator->countCombinationsInSequence($sequenceId),
-            ]
-        );
-    }
-
-    /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
@@ -109,5 +88,29 @@ class TeamController extends Controller
     public function collect(string $id)
     {
         $this->ids[] = $id;
+    }
+
+    /**
+     * @Route("/experiment/cache-counter", name="cache-counter-experiment")
+     */
+    public function cacheExperimentAction()
+    {
+        $cache = $this->get('cache.app');
+        $cachedCounter = $cache->getItem('experiment.counter');
+        if (!$cachedCounter->isHit()) {
+            $counter = 0;
+
+            $cachedCounter->set($counter);
+            $cache->save($cachedCounter);
+        } else {
+            $counter = $cachedCounter->get();
+            
+            $counter++;
+
+            $cachedCounter->set($counter);
+            $cache->save($cachedCounter);
+        }
+
+        return $this->render('team/experiment/cacheCounter.html.twig', ['counter' => $counter]);
     }
 }

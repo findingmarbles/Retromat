@@ -21,85 +21,85 @@ var phase_titles = ['Ouvrir la rétrospective', 'Recueillir des données', 'Gén
 
 all_activities = [];
 all_activities[0] = {
-	phase: 0,
-	name: "ECVP",
-	summary: "Comment se sentent les participants de la rétro : Explorateur, Client, Vacancier, ou Prisonnier ?",
-	desc: "Préparer un paper-board avec des zones pour E, C, V, et P. Expliquer les concepts : <br>\
+phase: 0,
+name: "ECVP",
+summary: "Comment se sentent les participants de la rétro : Explorateur, Client, Vacancier, ou Prisonnier ?",
+desc: "Préparer un paper-board avec des zones pour E, C, V, et P. Expliquer les concepts : <br>\
 <ul>\
-    <li>Explorateur : Désireux de se lancer, de rechercher ce qui a et n'a pas fonctionné et comment améliorer.</li>\
-    <li>Client : Attitude positive. Content si de bonnes choses en ressortent.</li>\
-    <li>Vacancier : Hésitant à participer activement mais la rétro vaut mieux que le travail habituel.</li>\
-    <li>Prisonnier : Participe seulement car il (sent qu'il) le doit.</li>\
+<li>Explorateur : Désireux de se lancer, de rechercher ce qui a et n'a pas fonctionné et comment améliorer.</li>\
+<li>Client : Attitude positive. Content si de bonnes choses en ressortent.</li>\
+<li>Vacancier : Hésitant à participer activement mais la rétro vaut mieux que le travail habituel.</li>\
+<li>Prisonnier : Participe seulement car il (sent qu'il) le doit.</li>\
 </ul>\
 Faire un sondage (anonyme sur des bouts de papier). Compter les réponses et assurer le suivi sur le tableau \
 pour que tous voient. Si la confiance est faible, détruire délibérément les votes pour assurer la confidentialité. \
 Demander ce que les participants pensent des résultats. S'il y a une majorité de Vacanciers ou Prisonniers \
 envisager d'utiliser la rétro pour discuter de ce constat.",
-	duration: "5-10 numberPeople",
-	source: source_agileRetrospectives,
-	suitable: "iteration, release, project, immature"
+duration: "5-10 numberPeople",
+source: source_agileRetrospectives,
+suitable: "iteration, release, project, immature"
 };
 all_activities[1] = {
-	phase: 0,
-	name: "Bulletin météo",
-	summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
-	desc: "Préparer un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
+phase: 0,
+name: "Bulletin météo",
+summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
+desc: "Préparer un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
 Chaque participant marque son humeur sur le tableau.",
-	source: source_agileRetrospectives
+source: source_agileRetrospectives
 };
 all_activities[2] = {
-	phase: 0,
-	name: "Lancement - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
-	summary: "Poser une question à laquelle chacun des participants répond à son tour.",
-	desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
+phase: 0,
+name: "Lancement - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
+summary: "Poser une question à laquelle chacun des participants répond à son tour.",
+desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
 Exemples de questions: <br>\
 <ul>\
-    <li>En un mot - Qu'attendez-vous de cette rétrospective ?</li>\
-    <li>En un mot - Qu'avez vous en tête ?<br>\
-        Traitez les préoccupations, par exemple en les écrivants et en les mettant - physiquement et mentalement - de côté</li>\
-    <li>Dans cette rétrospective - Si vous étiez une voiture, quel genre serait-elle ?</li>\
-    <li>Dans quel état émotionnel êtes-vous ? (par exemple, «heureux», «en colère», «triste», «effrayé»)</li>\
+<li>En un mot - Qu'attendez-vous de cette rétrospective ?</li>\
+<li>En un mot - Qu'avez vous en tête ?<br>\
+Traitez les préoccupations, par exemple en les écrivants et en les mettant - physiquement et mentalement - de côté</li>\
+<li>Dans cette rétrospective - Si vous étiez une voiture, quel genre serait-elle ?</li>\
+<li>Dans quel état émotionnel êtes-vous ? (par exemple, «heureux», «en colère», «triste», «effrayé»)</li>\
 </ul><br>\
 Évitez l'évaluation des commentaires, par exemple avec «Très Bien». «Merci» est suffisant.",
-	source: source_agileRetrospectives
+source: source_agileRetrospectives
 };
 all_activities[3] = {
-	phase: 1,
-	name: "Frise chronologie",
-	summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement.",
-	desc: "Diviser en groupes de 5 personnes ou moins. Distribuer des cartes et des marqueurs. \
+phase: 1,
+name: "Frise chronologie",
+summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement.",
+desc: "Diviser en groupes de 5 personnes ou moins. Distribuer des cartes et des marqueurs. \
 Donner aux participants 10 minutes pour noter des événements mémorables et / ou personnellement significatifs. \
 Il s'agit de recueillir plusieurs points de vue. Un consensus serait préjudiciable. Tous les participants \
 affichent leurs cartes et les ordonnent. Il est normal d'ajouter des cartes à la volée. Analyser.<br>\
 Des codes couleurs peuvent aider à faire ressortir des modèles, par exemple :<br>\
 <ul>\
-    <li>Émotions</li>\
-    <li>Évènements (techniques, organisation, personnes, ...)</li>\
-    <li>Fonctions (testeur, développeur, manager, ...)</li>\
+<li>Émotions</li>\
+<li>Évènements (techniques, organisation, personnes, ...)</li>\
+<li>Fonctions (testeur, développeur, manager, ...)</li>\
 </ul>",
-	duration: "60-90 timeframe",
-	source: source_agileRetrospectives,
-	suitable: "iteration, introverts"
+duration: "60-90 timeframe",
+source: source_agileRetrospectives,
+suitable: "iteration, introverts"
 };
 all_activities[4] = {
-	phase: 1,
-	name: "Analyse des fonctionnalités utilisateur",
-	summary: "Passer sur chaque fonctionnalité utilisateur traitée par l'équipe et chercher des améliorations possibles",
-	desc: "Préparation : Rassembler toutes les fonctionnalités utilisateur traitées lors de l'itération et les amener à \
+phase: 1,
+name: "Analyse des fonctionnalités utilisateur",
+summary: "Passer sur chaque fonctionnalité utilisateur traitée par l'équipe et chercher des améliorations possibles",
+desc: "Préparation : Rassembler toutes les fonctionnalités utilisateur traitées lors de l'itération et les amener à \
 la rétrospective. <br> \
 En groupe (10 personnes max.) lire chaque fonctionnalité utilisateur. Pour chacune d'elles se demander si \
 elle s'est bien passée ou non. Si tout s'est bien passé, saisir pourquoi. Sinon discuter de ce qu'il est possible de \
 faire différemment à l'avenir. <br> \
 Variantes : Vous pouvez effectuer cela pour les tickets de support, les bugs ou toute autre tâche \
 effectuée par l'équipe.",
-	source: source_findingMarbles,
-	suitable: "iteration, max10people"
+source: source_findingMarbles,
+suitable: "iteration, max10people"
 };
 all_activities[5] = {
-	phase: 1,
-	name: "Aimer à aimer",
-	summary: "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\".",
-	desc: "Préparation: 20 cartes qualité, càd des fiches cartonnées colorées avec un unique mot \
+phase: 1,
+name: "Aimer à aimer",
+summary: "Les participants font correspondre des cartes qualité à leurs propres propositions \"Commencer-Arrêter-Continuer\".",
+desc: "Préparation: 20 cartes qualité, càd des fiches cartonnées colorées avec un unique mot \
 comme <i>drôle, claire, sérieuse, géniale, dangereuse, désagréable</i>.<br> \
 Chaque membre de l'équipe doit écrire au moins 9 cartes : 3 de chaque pour les choses \
 à commencer à faire, à continuer et à arrêter. Choisir une personne qui sera le premier juge. \
@@ -112,101 +112,101 @@ la carte qualité. La personne à la gauche du juge devient alors le nouveau jug
 Arrêter lorsque tout le monde est à court de cartes (6-9 tours). Celui qui a le plus \
 de cartes qualité gagne. Débriefer en demandant quelles sont les principales conclusions. \
 <br>(Basé sur le jeu 'Apples to Apples')",
-	source: source_agileRetrospectives,
-	duration: "30-40",
-	suitable: "iteration, introverts"
+source: source_agileRetrospectives,
+duration: "30-40",
+suitable: "iteration, introverts"
 };
 all_activities[6] = {
-	phase: 1,
-	name: "Mad Sad Glad",
-	summary: "Collecter les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), tristes (sad), ou contents (glad) et trouver les raisons.",
-	desc: "Affichez trois affiches intitulées 'en colère' (mad), 'triste' (sad), et 'content' (glad) ou '>:), :(, :)'. \
+phase: 1,
+name: "Mad Sad Glad",
+summary: "Collecter les évènements durant lesquels les membres de l'équipe se sont sentis en colère (mad), tristes (sad), ou contents (glad) et trouver les raisons.",
+desc: "Affichez trois affiches intitulées 'en colère' (mad), 'triste' (sad), et 'content' (glad) ou '>:), :(, :)'. \
 Les membres de l'equipe écrivent un évènement par carte lorsqu'ils ont ressenti ce sentiment, avec un code couleur pour chaque type de sentiment. \
 Lorsque le temps est écoulé demander à chacun de placer ses cartes sur les affiches appropriées. Regrouper les cartes sur \
 chaque affiche puis demander au groupe de nommer chaque regroupement. <br>\
 Terminer en demandant :\
 <ul>\
-    <li>Qu'en ressort-il ? Qu'est-ce qui est inattendu ?</li>\
-    <li>Qu'est-ce qui a rendu cette tâche difficile ? Qu'est-ce qui a été amusant ?</li>\
-    <li>Reconnaissez vous des motifs / modèles ? Que signifient-ils pour vous en tant qu'équipe ?</li>\
-    <li>Des suggestions sur comment continuer ?</li>\
+<li>Qu'en ressort-il ? Qu'est-ce qui est inattendu ?</li>\
+<li>Qu'est-ce qui a rendu cette tâche difficile ? Qu'est-ce qui a été amusant ?</li>\
+<li>Reconnaissez vous des motifs / modèles ? Que signifient-ils pour vous en tant qu'équipe ?</li>\
+<li>Des suggestions sur comment continuer ?</li>\
 </ul>",
-	source: source_agileRetrospectives,
-	duration: "15-25",
-	suitable: "iteration, release, project, introverts"
+source: source_agileRetrospectives,
+duration: "15-25",
+suitable: "iteration, release, project, introverts"
 };
 all_activities[7] = {
-	phase: 2,
-	name: "5 Pourquoi",
-	alternativeName: "La source des maux",
-	summary: "Examiner de près la cause racine de problèmes en vous demandant à plusieurs reprises 'Pourquoi ?'",
-	desc: "Diviser les participants en petits groupes (<= 4 personnes) et donner à chaque groupe \
+phase: 2,
+name: "5 Pourquoi",
+alternativeName: "La source des maux",
+summary: "Examiner de près la cause racine de problèmes en vous demandant à plusieurs reprises 'Pourquoi ?'",
+desc: "Diviser les participants en petits groupes (<= 4 personnes) et donner à chaque groupe \
 l'un des problèmes le plus identifié précédemment. Instructions pour le groupe :\
 <ul>\
-    <li>Une personne demande aux autres 'Pourquoi est-ce arrivé ?' à plusieurs reprises pour trouver la cause racine ou une suite d'évènements</li>\
-    <li>Notez la cause racine trouvée (souvent la réponse au 5ème 'Pourquoi ?')</li>\
+<li>Une personne demande aux autres 'Pourquoi est-ce arrivé ?' à plusieurs reprises pour trouver la cause racine ou une suite d'évènements</li>\
+<li>Notez la cause racine trouvée (souvent la réponse au 5ème 'Pourquoi ?')</li>\
 </ul>\
 Laisser le groupe partager ses conclusions.",
-	source: source_agileRetrospectives,
-	duration: "15-20",
-	suitable: "iteration, release, project, root_cause"
+source: source_agileRetrospectives,
+duration: "15-20",
+suitable: "iteration, release, project, root_cause"
 };
 all_activities[8] = {
-	phase: 2,
-	name: "Matrice d'apprentissage",
-	summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes.",
-	desc: "Après avoir discuté des données de la Phase 2, afficher un tableau à 4 quadrants intitulés \
+phase: 2,
+name: "Matrice d'apprentissage",
+summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes.",
+desc: "Après avoir discuté des données de la Phase 2, afficher un tableau à 4 quadrants intitulés \
 ':)', ':(', 'Idée !', et 'Appréciation'. Distribuez des post-its. \
 <ul>\
-    <li>Les membres de l'équipe peuvent contribuer à chaque quadrant. Une idée par post-it.</li>\
-    <li>Regrouper les notes.</li>\
-    <li>Distribuer 6 à 10 points aux participants pour voter et élire les idées les plus importantes.</li>\
+<li>Les membres de l'équipe peuvent contribuer à chaque quadrant. Une idée par post-it.</li>\
+<li>Regrouper les notes.</li>\
+<li>Distribuer 6 à 10 points aux participants pour voter et élire les idées les plus importantes.</li>\
 </ul>\
 Cette liste sera celle utilisée pour la Phase 4.",
-	source: source_agileRetrospectives,
-	duration: "20-25",
-	suitable: "iteration"
+source: source_agileRetrospectives,
+duration: "20-25",
+suitable: "iteration"
 };
 all_activities[9] = {
-	phase: 2,
-	name: "Brainstorming / Filtrage",
-	summary: "Générer de nombreuses idées et filtrer les suivant vos critères.",
-	desc: "Exposer les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
+phase: 2,
+name: "Brainstorming / Filtrage",
+summary: "Générer de nombreuses idées et filtrer les suivant vos critères.",
+desc: "Exposer les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
 qui seront filtrées <em>après</em> le brainstorming.\
 <ul>\
-    <li>Laisser les participants écrire leurs idées pendant 5 à 10 minutes</li>\
-    <li>Faire des tours de table en demandant de façon répétée une idée à chacun, jusqu'à ce que toutes les idées soient au tableau</li>\
-    <li>Demander ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité, ...). \
-        Laisser le groupe en choisir 4.</li>\
-    <li>Appliquer chaque filtre et marquer les idées qui passent les 4 filtres.</li>\
-    <li>Quelles idées le groupe veut-il faire avancer ? Est-ce que quelqu'un se sent particulièrement concerné par une de ces idées ? \
-        Autrement prendre une décision à la majorité.</li>\
+<li>Laisser les participants écrire leurs idées pendant 5 à 10 minutes</li>\
+<li>Faire des tours de table en demandant de façon répétée une idée à chacun, jusqu'à ce que toutes les idées soient au tableau</li>\
+<li>Demander ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité, ...). \
+Laisser le groupe en choisir 4.</li>\
+<li>Appliquer chaque filtre et marquer les idées qui passent les 4 filtres.</li>\
+<li>Quelles idées le groupe veut-il faire avancer ? Est-ce que quelqu'un se sent particulièrement concerné par une de ces idées ? \
+Autrement prendre une décision à la majorité.</li>\
 </ul>\
 Les idées sélectionnées rentrent en Phase 4.",
-	source: source_agileRetrospectives,
-	more: "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
-    Nine Ways To Be A Great Brainstorm Lead</a>",
-	duration: "40-60",
-	suitable: "iteration, release, project, introverts"
+source: source_agileRetrospectives,
+more: "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
+Nine Ways To Be A Great Brainstorm Lead</a>",
+duration: "40-60",
+suitable: "iteration, release, project, introverts"
 };
 all_activities[10] = {
-	phase: 3,
-	name: "Le Cercle des Questions",
-	summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
-	desc: "Tout le monde s'asseoit en cercle. Commencer en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
+phase: 3,
+name: "Le Cercle des Questions",
+summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
+desc: "Tout le monde s'asseoit en cercle. Commencer en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
 ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
 'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
 voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
 que le temps est &eacute;coul&eacute;. Faites au moins un tour, qu'on puisse entendre tout le monde !",
-	source: source_agileRetrospectives,
-	duration: "30+ groupsize",
-	suitable: "iteration, release, project, introverts"
+source: source_agileRetrospectives,
+duration: "30+ groupsize",
+suitable: "iteration, release, project, introverts"
 };
 all_activities[11] = {
-	phase: 3,
-	name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
-	summary: "R&eacute;fl&eacute;chir ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et garder les propositions les mieux not&eacute;es.",
-	desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
+phase: 3,
+name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
+summary: "R&eacute;fl&eacute;chir ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et garder les propositions les mieux not&eacute;es.",
+desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
 id&eacute;e par carte. LEs laisser &eacute;crire en silence pendant quelques minutes. \
 Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
@@ -215,15 +215,15 @@ ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrav
 Les 2 ou 3 meilleures seront les actions &agrave; mener.\
 <br><br>\
 (Voir <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> pour une excellente alternative à cette activité.)",
-	source: source_agileRetrospectives,
-	duration: "15-30",
-	suitable: "iteration"
+source: source_agileRetrospectives,
+duration: "15-30",
+suitable: "iteration"
 };
 all_activities[12] = {
-	phase: 3,
-	name: "Objectifs SMART",
-	summary: "Formuler un plan d'action spécifique et mesurable.",
-	desc: "Présenter les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
+phase: 3,
+name: "Objectifs SMART",
+summary: "Formuler un plan d'action spécifique et mesurable.",
+desc: "Présenter les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
 product owner tous les mercredi à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
@@ -231,56 +231,56 @@ ne soit ajoutées au backlog du sprint'. <br>\
 Créer des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5 \
 étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
 s'accorder sur la compatibilité SMART des objectifs. Affiner et ratifier.",
-	source: source_agileRetrospectives,
-	duration: "20-60 groupsize",
-	suitable: "iteration, release, project"
+source: source_agileRetrospectives,
+duration: "20-60 groupsize",
+suitable: "iteration, release, project"
 };
 all_activities[13] = {
-	phase: 4,
-	name: "La porte des retours - les chiffres",
-	summary: "Évaluer la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
-	desc: "Placer des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
+phase: 4,
+name: "La porte des retours - les chiffres",
+summary: "Évaluer la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
+desc: "Placer des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
 A la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
 correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
-	source: "ALE 2011, " + source_findingMarbles,
-	duration: "2-3",
-	suitable: "iteration, largeGroups"
+source: "ALE 2011, " + source_findingMarbles,
+duration: "2-3",
+suitable: "iteration, largeGroups"
 };
 all_activities[14] = {
-	phase: 4,
-	name: "Appréciations",
-	summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
-	desc: "Commencer en remerciant de manière sincère l'un des participants. \
+phase: 4,
+name: "Appréciations",
+summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
+desc: "Commencer en remerciant de manière sincère l'un des participants. \
 Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
 Inviter alors les autres à faire de même et attendre que quelqu'un se jette à l'eau. Arrêter quand personne n'a parlé pendant plus d'une minute.",
-	source: source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
-	duration: "5-30 groupsize",
-	suitable: "iteration, release, project"
+source: source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
+duration: "5-30 groupsize",
+suitable: "iteration, release, project"
 };
 all_activities[15] = {
-	phase: 4,
-	name: "Aide, Gêne, Hypothèse",
-	summary: "Obtenir des retours concrets sur votre manière de faciliter.",
-	desc: "Préparer 3 feuilles de papier intitulées 'Aide', 'Gêne', et 'Hypothèse' \
+phase: 4,
+name: "Aide, Gêne, Hypothèse",
+summary: "Obtenir des retours concrets sur votre manière de faciliter.",
+desc: "Préparer 3 feuilles de papier intitulées 'Aide', 'Gêne', et 'Hypothèse' \
 (des suggestions de choses à essayer). \
 Demander aux participants de vous aider à progresser et devenir un meilleur facilitateur en vous écrivant des post-its \
 et en signant de leurs initiales pour que vous puissiez poser des questions par la suite.",
-	source: source_agileRetrospectives,
-	duration: "5-10",
-	suitable: "iteration, release"
+source: source_agileRetrospectives,
+duration: "5-10",
+suitable: "iteration, release"
 };
 all_activities[16] = {
-	phase: 4, // marche aussi pour 5
-	name: "SaMoLo (Plus de, Autant de, Moins de)",
-	summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
-	desc: "Dessiner au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
+phase: 4, // marche aussi pour 5
+name: "SaMoLo (Plus de, Autant de, Moins de)",
+summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
+desc: "Dessiner au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
 Demander aux participants un coup de main pour vous aider à améliorer votre comportement : Écrire sur des post-its \
 ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
 discuter un court moment des post-its collés dans chaque partie.",
-	more: "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
-	source: "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
-	duration: "5-10",
-	suitable: "iteration, release, project"
+more: "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
+source: "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
+duration: "5-10",
+suitable: "iteration, release, project"
 };
 all_activities[17] = {
 phase:     0,
@@ -288,9 +288,9 @@ name:      "Lancement - Commentaires Amazon",
 summary:   "Commenter l'itération sur Amazon. Ne pas oublier l'évaluation !",
 desc:      "Chaque membre écrit un rapide commentaire qui comporte : \
 <ul>\
-    <li>Un titre</li>\
-    <li>Un commentaire</li>\
-    <li>Une évaluation (5 étoiles pour le meilleur score) </li>\
+<li>Un titre</li>\
+<li>Un commentaire</li>\
+<li>Une évaluation (5 étoiles pour le meilleur score) </li>\
 </ul>\
 Chacun lit son commentaire. Noter les évaluations sur un tableau.<br>\
 Peut s'étendre à la rétrospective entière en demandant également ce qui est recommandé de faire et de ne pas faire pour l'itération.",
@@ -335,95 +335,95 @@ duration:  "15-30 groupSize",
 suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
-    phase:     0,
-    name:      "Prise de température",
-    summary:   "Les participants marquent leur 'température' (humeur) sur un tableau",
-    desc:      "Préparer un tableau avec un dessin de thermomètre allant de glacé à chaud \
-    en passant par la température du corps. \
-    Chaque participant marque son humeur au tableau.",
-    source:  source_unknown
+phase:     0,
+name:      "Prise de température",
+summary:   "Les participants marquent leur 'température' (humeur) sur un tableau",
+desc:      "Préparer un tableau avec un dessin de thermomètre allant de glacé à chaud \
+en passant par la température du corps. \
+Chaque participant marque son humeur au tableau.",
+source:  source_unknown
 };
 all_activities[22] = {
-    phase:     4,
-    name:      "La porte des retours - Smileys",
-    summary:   "Mesurer la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
-    desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
-    À la fin de la rétrospective, demander aux participants de marquer leur niveau \
-    de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
-    source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
-    duration:  "2-3",
-    suitable: "iteration, largeGroups"
+phase:     4,
+name:      "La porte des retours - Smileys",
+summary:   "Mesurer la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
+desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
+À la fin de la rétrospective, demander aux participants de marquer leur niveau \
+de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
+source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
+duration:  "2-3",
+suitable: "iteration, largeGroups"
 };
 all_activities[23] = {
-    phase:     3,
-    name:      "Liste des choses à faire",
-    summary:   "Les participants proposent et s'engagent sur des actions",
-    desc:      "Préparer un tableau avec 3 colonnes 'Quoi', 'Qui' et 'Échéance'. \
-    Demander à chaque participant à tour de rôle ce qu'ils souhaitent faire pour faire \
-    avancer l'équipe. Écrire la tâche, se mettre d'accord sur une date d'échéance \
-    et les laisser signer de leur nom. <br>\
-    Si quelqu'un suggère une action pour l'équipe entière, cette personne doit obtenir \
-    l'adhésion (et les signatures) des autres.",
-    source:    source_findingMarbles + ", inspiré par <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>cette liste</a>",
-    duration:  "10-15 groupSize",
-    suitable: "iteration, release, smallGroups"
+phase:     3,
+name:      "Liste des choses à faire",
+summary:   "Les participants proposent et s'engagent sur des actions",
+desc:      "Préparer un tableau avec 3 colonnes 'Quoi', 'Qui' et 'Échéance'. \
+Demander à chaque participant à tour de rôle ce qu'ils souhaitent faire pour faire \
+avancer l'équipe. Écrire la tâche, se mettre d'accord sur une date d'échéance \
+et les laisser signer de leur nom. <br>\
+Si quelqu'un suggère une action pour l'équipe entière, cette personne doit obtenir \
+l'adhésion (et les signatures) des autres.",
+source:    source_findingMarbles + ", inspiré par <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>cette liste</a>",
+duration:  "10-15 groupSize",
+suitable: "iteration, release, smallGroups"
 };
 all_activities[24] = {
-    phase:     2,
-    name:      "Diagramme-Causes-Effets",
-    summary:   "Trouver la source des problèmes dont les origines sont difficiles à localiser \
-        et amènent à des discussions sans fin",
-    desc:      "Écrire le problème que vous souhaitez explorer sur un post-it et le coller au milieu d'un tableau blanc. \
-        Découvrir en quoi c'est un problème en demandant continuellement 'Et alors ?'. \
-        Découvrir les causes racines de ce problème en demandant continuellement 'Pourquoi (est-ce que cela se produit) ?'. \
-        Documenter vos conclusions en ajoutant des post-its et en explicitant la relation \
-        cause à effet avec des flèches. Chaque post-it peut avoir plus d'une raison et plus \
-        d'une conséquence.<br>\
-        Les cercles vicieux sont généralement de bons points de départ pour la prise d'actions. \
-        Si vous parvenez à casser leur mauvaise influence, vous pouvez gagner énormément.",
-    source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
-    more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
-    duration:  "20-60 complexity",
-    suitable: "release, project, smallGroups, complex"
+phase:     2,
+name:      "Diagramme-Causes-Effets",
+summary:   "Trouver la source des problèmes dont les origines sont difficiles à localiser \
+et amènent à des discussions sans fin",
+desc:      "Écrire le problème que vous souhaitez explorer sur un post-it et le coller au milieu d'un tableau blanc. \
+Découvrir en quoi c'est un problème en demandant continuellement 'Et alors ?'. \
+Découvrir les causes racines de ce problème en demandant continuellement 'Pourquoi (est-ce que cela se produit) ?'. \
+Documenter vos conclusions en ajoutant des post-its et en explicitant la relation \
+cause à effet avec des flèches. Chaque post-it peut avoir plus d'une raison et plus \
+d'une conséquence.<br>\
+Les cercles vicieux sont généralement de bons points de départ pour la prise d'actions. \
+Si vous parvenez à casser leur mauvaise influence, vous pouvez gagner énormément.",
+source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
+more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
+duration:  "20-60 complexity",
+suitable: "release, project, smallGroups, complex"
 };
 all_activities[25] = {
-    phase:     2,
-    name:      "Speed Dating",
-    summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête à tête",
-    desc:      "Chaque participant écrit un sujet qu'il souhaite approfondir, càd quelque chose \
-    qu'il aimerait voir changer. Former ensuite des paires et répartissez vous à travers la salle. \
-    Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minute par\
-    participant (sujet) - l'un après l'autre. \
-    Après 10 minutes les paires se séparent et forment de nouvelles paires. Continuer \
-    jusqu'à ce que tout le monde ait discuté avec tout le monde. <br>\
-    Si le groupe a un nombre impair de membres, le facilitateur devient membre d'une paire \
-    mais son partenaire dispose de l'intégralité des 10 minutes sur son sujet.",
-    source:    source_kalnin,
-    duration:  "10 perPerson",
-    suitable: "iteration, release, smallGroups"
+phase:     2,
+name:      "Speed Dating",
+summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête à tête",
+desc:      "Chaque participant écrit un sujet qu'il souhaite approfondir, càd quelque chose \
+qu'il aimerait voir changer. Former ensuite des paires et répartissez vous à travers la salle. \
+Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minute par\
+participant (sujet) - l'un après l'autre. \
+Après 10 minutes les paires se séparent et forment de nouvelles paires. Continuer \
+jusqu'à ce que tout le monde ait discuté avec tout le monde. <br>\
+Si le groupe a un nombre impair de membres, le facilitateur devient membre d'une paire \
+mais son partenaire dispose de l'intégralité des 10 minutes sur son sujet.",
+source:    source_kalnin,
+duration:  "10 perPerson",
+suitable: "iteration, release, smallGroups"
 };
 all_activities[26] = {
-    phase:     5,
-    name:      "Biscuits Chinois de Rétrospective",
-    summary:   "Amener l'équipe à manger à l'extérieur et susciter des discussions avec des biscuits chinois de rétrospective ('retrospective cookies')",
-    desc:      "Inviter l'équipe à manger à l'extérieur, de préférence Chinois si vous souhaitez \
-    rester dans le thème ;)<br>\
-    Distribuer des 'fortune cookies' (biscuits chinois renfermant un mot dans leur emballage) \
-    et faire un tour de table en ouvrant les biscuits et en discutant leur contenu. \
-    Quelques exemples de 'fortunes' :\
+phase:     5,
+name:      "Biscuits Chinois de Rétrospective",
+summary:   "Amener l'équipe à manger à l'extérieur et susciter des discussions avec des biscuits chinois de rétrospective ('retrospective cookies')",
+desc:      "Inviter l'équipe à manger à l'extérieur, de préférence Chinois si vous souhaitez \
+rester dans le thème ;)<br>\
+Distribuer des 'fortune cookies' (biscuits chinois renfermant un mot dans leur emballage) \
+et faire un tour de table en ouvrant les biscuits et en discutant leur contenu. \
+Quelques exemples de 'fortunes' :\
 <ul>\
-    <li>Quelle a été la chose la plus efficace que vous ayez fait durant le Sprint, et pourquoi \
-    est-ce que cela a été si réussi ?</li>\
-    <li>Est-ce que le burndown reflète la réalité ? Pourquoi ?</li>\
-    <li>Que contribuez vous au sein de votre entreprise à la communauté de développeurs ? \
-    Que pourriez vous contribuer ?</li>\
-    <li>Quel a été le plus gros obstacle à l'équipe durant ce Sprint ?</li>\
+<li>Quelle a été la chose la plus efficace que vous ayez fait durant le Sprint, et pourquoi \
+est-ce que cela a été si réussi ?</li>\
+<li>Est-ce que le burndown reflète la réalité ? Pourquoi ?</li>\
+<li>Que contribuez vous au sein de votre entreprise à la communauté de développeurs ? \
+Que pourriez vous contribuer ?</li>\
+<li>Quel a été le plus gros obstacle à l'équipe durant ce Sprint ?</li>\
 </ul>\
 Vous pouvez <a href='http://weisbart.com/cookies/'>commander des biscuits chinois de rétrospective chez Weisbart</a> \
 ou cuisiner les vôtre, par exemple si l'Anglais n'est pas la langue natale de votre équipe.",
-    source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
-    duration:  "90-120",
-    suitable: "iteration, release, smallGroups"
+source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
+duration:  "90-120",
+suitable: "iteration, release, smallGroups"
 };
 all_activities[27] = {
 phase:     5,
@@ -464,9 +464,9 @@ all_activities[29] = {
 phase:     5,
 name:      "Plateau de discussion",
 summary:   "Une approche structurée pour une discussion.",
-desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>plusieurs grilles disponibles (EN)</a>.<br />\
+desc:      "Un plateau de discussions ressemble un peu à un jeu de plateau. Il y a <a href='http://allankelly.net/dlgsheets/'>plusieurs grilles disponibles (EN)</a>.<br />\
 En choisir une, l'imprimer dans le plus grand format possible (idéalement en A1) et suivre ses instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dlgsheets/available.html'>Allen Kelly chez Software Strategy</a>",
+source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly chez Software Strategy</a>",
 duration:  "90-120",
 suitable: "iteration, release, project"
 };
@@ -735,7 +735,7 @@ durationDetail:  "5 à 10' par décision",
 duration:    "Courte",
 stage:    "Storming, Norming",
 suitable: "iteration, release, project"
-}
+};
 all_activities[48] = {
 phase:     3,
 name:      "Vote par gommette - Etoile de mer",

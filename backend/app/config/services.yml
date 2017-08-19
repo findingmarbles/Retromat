@@ -11,13 +11,12 @@ services:
         arguments: ["@doctrine.orm.entity_manager"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
-        arguments: ["%kernel.root_dir%/../web/static/lang/activities_en.js"]
+        arguments: [~, "%activityFileNames%"]
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
         arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
-        arguments: ["@retromat.plan.plan_id_generator", "@doctrine.orm.entity_manager"]
     retromat.plan.description_renderer:
         class: AppBundle\Plan\DescriptionRenderer
     retromat.plan.plan_id_generator:
@@ -40,3 +39,10 @@ services:
         arguments: ["@router", "@doctrine.orm.entity_manager", "@retromat.sitemap.plan_generator", "@retromat.activity_by_phase"]
         tags:
             - { name: "kernel.event_subscriber" }
+    retromat.doctrine_cache.redis_connection:
+        class: Redis
+        calls: [[connect, ["%redis_connection%"]]]
+    retromat.doctrine_cache.redis:
+        parent: doctrine_cache.abstract.redis
+        abstract:  false
+        calls: [[setRedis, ['@retromat.doctrine_cache.redis_connection']]]

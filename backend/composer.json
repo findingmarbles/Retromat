@@ -14,24 +14,28 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
+        ]
     },
     "require": {
         "php": ">=5.5.9",
-        "symfony/symfony": "3.2.*",
-        "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-cache-bundle": "^1.2",
-        "doctrine/annotations": "^1.3",
-        "symfony/swiftmailer-bundle": "^2.3",
-        "symfony/monolog-bundle": "^3.0",
-        "symfony/polyfill-apcu": "^1.0",
-        "sensio/distribution-bundle": "^5.0",
-        "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0",
-        "presta/sitemap-bundle": "^1.5",
         "doctrine/doctrine-migrations-bundle": "^1.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "doctrine/orm": "^2.5",
+        "friendsofsymfony/rest-bundle": "^2.2",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "knplabs/doctrine-behaviors": "~1.4",
+        "presta/sitemap-bundle": "^1.5",
+        "sensio/distribution-bundle": "^5.0.19",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "symfony/monolog-bundle": "^3.1.0",
+        "symfony/polyfill-apcu": "^1.0",
+        "symfony/swiftmailer-bundle": "^2.3.10",
+        "symfony/symfony": "3.3.*",
+        "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -54,6 +58,9 @@
         "post-update-cmd": [
             "@symfony-scripts"
         ]
+    },
+    "config": {
+        "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",

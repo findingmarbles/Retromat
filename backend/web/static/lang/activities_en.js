@@ -59,10 +59,11 @@ summary:   "Ask one question that each participant answers in turn",
 desc:      "In round-robin each participant answers the same question (unless they say 'I pass'). \
 Sample questions: <br>\
 <ul>\
-    <li>In one word - What do you need from this retrospective?</li>\
-Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li>\
-    <li>In this retrospective - If you were a car, what kind would it be?</li>\
-    <li>What emotional state are you in (e.g. 'glad', 'mad', 'sad', 'scared'?)</li>\
+    <li>In one word - What do you need from this retrospective?</li> \
+Address concerns, e.g. by writing it down and setting it - physically and mentally - aside</li> \
+    <li>In this retrospective - If you were a car, what kind would it be?</li> \
+    <li>What's something that caused problems last sprint?</li> \
+    <li>If you could change one thing about the last sprint what would it be?</li> \
 </ul><br>\
 Avoid evaluating comments such as 'Great'. 'Thanks' is okay.",
 duration:    "Short",
@@ -132,7 +133,7 @@ all_activities[6] = {
 phase:     1,
 name:      "Mad Sad Glad",
 summary:   "Collect events when team members felt mad, sad, or glad and find the sources",
-desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or '>:), :(, :) alternatively). Team members write down \
+desc:      "Put up three posters labeled 'mad', 'sad', and 'glad' (or >:(, :(, :) alternatively). Team members write down \
 one event per color coded card, when they've felt that way. When the time is up \
 have everyone post their cards to the appropriate posters. Cluster the cards on \
 each poster. Ask the group for cluster names. <br>\
@@ -513,9 +514,9 @@ phase:     5,
 name:      "Dialogue Sheets",
 summary:   "A structured approach to a discussion",
 desc:      "A dialogue sheet looks a little like a board game board. There are \
-<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
+<a href='http://allankelly.net/dlgsheets/'>several different sheets available</a>. \
 Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
+source:    "<a href='http://allankelly.net/dlgsheets/'>Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
 duration:    "Long",
 stage:    "All",
@@ -531,11 +532,12 @@ desc:      "Distribute index cards and markers. Set a topic, e.g. one of the fol
     <li>What was the most remarkable moment?</li>\
     <li>What was the biggest problem?</li>\
     <li>What did you long for?</li>\
+    <li>If the last iteration had been a circus performance, what part did you play? Juggler, funambulist, clown, knife-thrower, ...</li> \
 </ul>\
 Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
 let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
+source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a>, Olivier Gourment; <a href='https://twitter.com/thomasguest'>Thomas Guest</a>",
 durationDetail:  "5 + 3 per person",
 duration:    "Medium",
 stage:    "Performing",
@@ -885,7 +887,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Afterwards ask which constellations were surprising.<br>\
 This can also be a closing activity (#53).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>",
 durationDetail:  "10 min",
 duration:    "Short",
 stage:    "All",
@@ -906,7 +908,7 @@ if they don't, they should move as far outwards as their degree of disagreement.
 </ul>\
 Watch the constellations unfold. Any surprising constellations?<br>\
 This can also be an opening activity (#52).",
-source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='https://luis-goncalves.com/agile-retrospective-set-the-stage/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 durationDetail:  "5 min",
 duration:    "Short",
 stage:    "All",
@@ -2360,10 +2362,89 @@ How would it affect the team?</li> \
 </ul> \
 <br> \
 This activity is only the first part of a \
-<a href='https://dl.dropboxusercontent.com/u/440419/Stringtheory%20-%20Hidden%20Connections%20-%20Exercise.pdf'>longer game</a>.",
+<a href='https://www.dropbox.com/s/e4wv43gw82p409i/Stringtheory%20-%20Team%20Exercise.pdf'>longer game</a>.",
 source:    "<a href='https://twitter.com/ebstar'>Eben Halford</a>",
 duration:    "Medium",
 stage:    "Forming",
+suitable:  "iteration, project, release"
+};
+all_activities[129] = {
+phase:     0,
+name:      "Spot the Elephant",
+summary:   "Are there problems nobody talks about?",
+desc:      "Prepare 1 set of cards per team member. A set of cards contains \
+1 elephant card, 1 boot card, 1 happy sun card, and 1 moon card. Explain how they each choose one card from their set: \
+<ul>\
+<li>If a team member thinks there is at least one 'Elephant in the room' (unspoken but important problem) for this team, then choose the Elephant card. \
+Choosing this card doesn't mean that they have to talk about the Elephant or even say what they think the problem is.</li> \
+<li>If there are no Elephants, but they got their feelings hurt in an interaction at least once since the last retrospective \
+(and didn't mention it), choose the Boot crushing flower card.</li>\
+<li>If everything is hunky dory for them, choose the Happy Sun.</li> \
+<li>If they're uncomfortable sharing, or don't feel like any other card fits, choose the neutral Moon.</li> \
+</ul> \
+To preserve anonymity, everyone places their chosen card face down on the feedback pile and \
+the rest of their sets face down on a discard pile. Shuffle the discard pile to ensure anonymity and put it aside. \
+Shuffle the feedback pile and then reveal the cards one at a time. \
+<br><br>\
+If your team has 1 or more Elephants in the room, you have some serious issues with psychological safety. \
+Let the team sit with their new knowledge and offer a larger retrospective soon to make space for them to share \
+if they wish, but do not ask directly who chose what. Preserve the anonymity and do not coerce explanations of the \
+    chosen card! This is a critical opportunity to build trust and preserve your ability to gain insight into the state \
+of the team. \
+<br><br> \
+In the same way, depending on the size of your team, two or more hurt feelings suggest that you may have safety issues. \
+Two or more Moons also suggests a lack of psychological safety. \
+Take this feedback into consideration when designing your next retro. \
+There are lots of great ways to more thoroughly dive into and surface learnings, this activity just points out when such \
+a retrospective is needed.",
+source:    "<a href='https://agilehunter.wordpress.com/2017/06/13/elephant-safari/'>Willem Larsen</a>",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[130] = {
+phase:     5,
+name:      "Sacred Cow",
+summary:   "What is the organization clinging to that doesn't make sense anymore?",
+desc:      "This activity is great for shaking up routine in places that do things \
+the way they've always done them. Introduce it by telling the story of the sacred cows, preferably the \
+<a href='http://www.solutionsiq.com/agile-companies-slaughterhouses/'>long epic version here</a>. Here's the gist: \
+<br><br> \
+'In some cultures cows were sacred, never to be killed for food or any other reason. \
+The cows roamed free, leading a happy life and usually died of old age. With rare \
+exceptions such as one fateful spring in a city far, far away ...\
+<br><br> \
+This particular city came under siege by a superior enemy force. All the citizens withdrew \
+into the safety of the city walls but there was nothing going in or out of the city. Days \
+turned into weeks and the citizens grew hungry and desperate. There was hardly any \
+food left. They did, however, have a lot of sacred cows. Unfortunately, the idea of \
+killing a sacred cow was taboo and also a horrible crime. \
+<br><br> \
+But these were not ordinary times. If the attackers were to succeed they would certainly \
+kill the cows. So wasn’t it a better if the soldiers ate some of the cows to defend the \
+town and maybe safe the people and the rest of the cows? In the end, the town had to \
+re-evaluate their stance on cows. They thought and acted in ways that were unthinkable before. \
+And it worked. They saved their town and the people in it. Not all the cows, though.’ \
+<br><br> \
+Hand out sticky notes and ask the participants to write down the sacred cows of their \
+organisation: Things they have always done a certain way without ever asking why. \
+<br><br> \
+Go around the group and invite the team to describe their ‘cows’. For big groups, it works \
+best if they break into smaller groups for the discussion and share conclusions later with \
+everyone. \
+<br><br> \
+Now it’s time to grab the bull by its horns. What can you do to slaughter a sacred cow? Every \
+person / group proposes 2-3 actions / experiments. When all suggestions are on the table \
+everyone has to sign at least one initiative as a supporter. Initiatives without supporters \
+are discarded. \
+<br><br> \
+To close the retrospective, invite the group to gather in a round. Set the \
+timer to 10 minutes and prepare a token. Ask them to share what they've \
+gotten from the retrospective. Sharing is voluntary: if someone \
+wants to share they have to ask for the token.",
+source:    "<a href='https://twitter.com/ani_angelini'>Ani Angelini</a>",
+duration:    "Short",
+stage:    "All",
 suitable:  "iteration, project, release"
 };
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"

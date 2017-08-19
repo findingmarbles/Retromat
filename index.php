@@ -1,11 +1,13 @@
 <?php
-
 // run as follows: php index.php [langage] [format]
 // language: [de, en, es, fr, nl], default: en
 // format: [html, twig], default: html
 
-$lang = 'en';
+// English activities can be loaded via AJAX or included as JS file.
+$featureAjax = true;
 
+// determine language and make it available in PHP and JS variables
+$lang = 'en';
 if (isset($argv[1])) {
     $lang = $argv[1];
 } else if (array_key_exists('lang', $_GET)) {
@@ -95,12 +97,20 @@ var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "differe
 var PHASE_ID_TAG = 'phase';
 </script>
 
-<script src="/static/sources.js"></script>
-<script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
+<?php if ((true === $featureAjax) and is_output_format_twig($argv) and ('en' == $lang)) { ?>
+    <script src="/static/lang/phase_titles_en.js"></script>
+<?php } else { ?>
+    <script src="/static/sources.js"></script>
+    <script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
+<?php } ?>
 <script src="/static/lang/photos.js"></script>
-<script src="/static/functions.js"></script>
+<script src="/static/functions.js?fresh=1"></script>
 
-    <script type="text/javascript"> // functions that need translations from PHP
+    <script type="text/javascript">
+        // Functions that need translations from PHP.
+        // @todo save bandwidth by moving these functions to functions.js,
+        // which is cached by browsers and crawlers.
+
         //Input: String
         function publish_plan(plan_id, phase) {
             var plan_id = sanitize_plan_id(plan_id);
@@ -228,8 +238,8 @@ var PHASE_ID_TAG = 'phase';
         <img class="header__logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (51 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (129 activities)</option>
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (75 Aktivit&auml;ten)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (131 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (95 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (47 activit&eacute;s)</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (96 activiteiten)</option>
