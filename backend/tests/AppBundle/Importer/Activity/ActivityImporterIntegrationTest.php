@@ -108,12 +108,13 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator, ['de']);
 
-        $activityImporter->import('de');
+        $activityImporter->import();
         $entityManager->clear();
 
-        $this->assertCount(75, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+        // 129, because English is always imported to set the metadate correctly
+        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
         $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71]);
         $this->assertEquals(
             'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
@@ -139,12 +140,9 @@ class ActivityImporterIntegrationTest extends WebTestCase
             'de' => __DIR__.'/TestData/activities_de.js',
         ];
         $reader = new ActivityReader(null, $activityFileNames);
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator, ['en', 'de']);
 
-        $activityImporter->import('en');
-        $entityManager->clear();
-
-        $activityImporter->import('de');
+        $activityImporter->import();
         $entityManager->clear();
 
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());

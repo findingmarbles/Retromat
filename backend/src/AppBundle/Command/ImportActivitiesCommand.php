@@ -27,11 +27,7 @@ class ImportActivitiesCommand extends ContainerAwareCommand
     {
         $output->writeln('Importing retromat activities from JS files into the database ...');
 
-        $activityfilenames = $this->getContainer()->getParameter('activityfilenames');
-        foreach ($activityfilenames as $locale => $fileName) {
-            $this->getContainer()->get('retromat.activity_importer')->import($locale);
-            $output->writeln('Imported '.$locale);
-        }
+        $this->getContainer()->get('retromat.activity_importer')->import();
 
         $output->writeln('Import complete.');
     }
