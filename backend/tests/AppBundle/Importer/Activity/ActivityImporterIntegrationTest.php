@@ -277,4 +277,46 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
         );
     }
+
+    public function testImport2MultipleImportsAllLanguages()
+    {
+        $this->loadFixtures([]);
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityFileNames = [
+            'en' => __DIR__.'/TestData/activities_en.js',
+            'de' => __DIR__.'/TestData/activities_de.js',
+        ];
+        $reader = new ActivityReader(null, $activityFileNames);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
+        $activityImporter->import2Multiple(['en', 'de']);
+        $entityManager->clear();
+
+        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+
+        $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 71]);
+        $this->assertEquals(
+            'Check satisfaction with retro results, fair distribution of talk time &amp; mood',
+            $activity2->translate('en')->getSummary()
+        );
+        $this->assertEquals(
+            'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
+            $activity2->translate('de', $fallbackToDefault = false)->getSummary()
+        );
+
+        $activity2->setCurrentLocale('en');
+        $this->assertEquals(
+            'Check satisfaction with retro results, fair distribution of talk time &amp; mood',
+            $activity2->getSummary()
+        );
+        $activity2->setCurrentLocale('de');
+        $this->assertEquals(
+            'Kläre, wie zufrieden das Team ist mit Retro-Ergebnisse der Retrospektive, einer fairen Verteilung der Redezeit und der Stimmung während der Retrospektive war',
+            $activity2->getSummary()
+        );
+    }
 }

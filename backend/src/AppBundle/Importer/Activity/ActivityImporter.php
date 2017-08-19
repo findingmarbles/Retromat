@@ -46,6 +46,13 @@ class ActivityImporter
         $this->import2($locale);
     }
 
+    public function import2Multiple(array $locales = [])
+    {
+        foreach ($locales as $locale) {
+            $this->import2($locale);
+        }
+    }
+
     // structure we are migrating away from
     public function import1()
     {
