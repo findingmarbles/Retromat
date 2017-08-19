@@ -46,6 +46,20 @@ class ActivityImporter
         $this->import2($locale);
     }
 
+    public function import2Multiple(array $locales = [])
+    {
+        foreach ($locales as $locale) {
+            $this->import2($locale);
+        }
+
+        // Re-import english at the end to guarantee that
+        // all meta data is used from Enlish translation.
+        // Not the most beautiful or efficient soultion,
+        // but it runs very rarely and will be deleted
+        // as soon as activities live in the databse.
+        $this->import2('en');
+    }
+
     // structure we are migrating away from
     public function import1()
     {
