@@ -116,6 +116,32 @@ source:    source_findingMarbles,
 suitable: "итерация, max10people"
 };
 
+all_activities[5] = {
+phase:     1,
+name:      "Подобное к подобному",
+summary:   "Участники сопоставляют свои идеи Прекратить-Продолжать-Начать с карточками характеристик", 
+desc:      "Эта активность основана на настольной игре 'Яблоки к яблокам', для более подробного \
+описания игрового процесса обратитесь к описанию игры в интернете.<br> \
+Вам нужно подготовить 20 карточек с характеристиками, на которых написаны прилагательные: \
+<i>'Самое время', 'Мило', 'Прекрасно', 'Это Агонь!', 'Опасно', 'Свежо', 'Рискованно', 'Креативно', \
+'Весело', 'Отвратительно', 'Великолепно', 'Смелая идея',</i> и т.п. <br> \
+Попросите каждого участника сделать как минимум 9 карточек идей: 3 идеи что следует прекратить делать, \
+3 идеи что следует продолжать делать, 3 идеи что следует начать делать. Далее начинается игра. \
+Выбирается первый судья. Судья берет из стопки первую карточку с характеристикой (например <i>'Самое время'</i>), \
+показывает всем, а участники выкладывают на стол свою идею текстом вниз. Тот, кто выложил последним, \
+забирает идею обратно и в текущем раунде не участвует. Судья перемешивает идеи, переворачивает текстом вверх, \
+и выбирает ту, которая наиболее подходит под карточку характеристики. Автор победившей идеи получает карточку \
+характеристики в качестве бонуса. Использованные идеи убираются со стола и далее в игре не участвуют. \
+Далее роль судьи передается следующему участнику и начинается следующий раунд. Игра заканчивается когда \
+у участников заканчиваются карточки идей. Побеждает участник собравший наибольшее количество карточек характеристик. \
+После игры проведите дебрифинг.",
+source:    source_agileRetrospectives,
+durationDetail:  "30-40",
+duration:    "Длительная",
+stage:    "All",
+suitable: "итерация, интроверты"
+};
+
 all_activities[6] = {
 phase:     1,
 name:      "Гнев, грусть и радость",
@@ -140,115 +166,122 @@ suitable: "итерация, релиз, проект, интроверты"
 
 all_activities[7] = {
 phase:     2,
-name:      "5 Whys",
-summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
-desc:      "Divide the participants into small groups (<= 4 people) and give \
-each group one of the top identified issues. Instructions for the group:\
+name:      "5 Почему",
+summary:   "Докопаться до корневых причин проблемы постоянно задавая вопрос 'Почему?'",
+desc:      "Объедините участников в малые группы (не более 4-х человек) и дайте каждой \
+группе одну из выявленных проблем. Проинструктируйте группы:\
 <ul>\
-    <li>One person asks the others 'Why did that happen?' repeatedly to find the root cause or a chain of events</li>\
-    <li>Record the root causes (often the answer to the 5th 'Why?')</li>\
+    <li>Кто-то один постоянно задает вопрос 'Почему это произошло?' чтобы прояснить цепочку событий и выявить корневую причину</li>\
+    <li>Запишите корневую причину (обычно это ответ на пятый вопрос 'Почему?')</li>\
 </ul>\
-Let the groups share their findings.",
+Попросите группы поделиться своими результатами друг с другом.",
 source:    source_agileRetrospectives,
 durationDetail:  "15-20",
-duration:    "Short",
+duration:    "Короткая",
 stage:    "All",
-suitable: "iteration, release, project, root_cause"
+suitable: "итерация, релиз, проект, корневая_причина"
 };
+
 all_activities[8] = {
 phase:     2,
-name:      "Learning Matrix",
-summary:   "Team members brainstorm in 4 categories to quickly list issues",
-desc:      "After discussing the data from Phase 2 show a flip chart with 4 quadrants labeled \
-':)', ':(', 'Idea!', and 'Appreciation'. Hand out sticky notes. \
+name:      "Матрица обучения",
+summary:   "Мозговой штурм по 4-м категориям для быстрого выявления проблем",
+desc:      "После завершения этапа 'Сбор данных' нарисуйте 4 квадрата на белой доске или на \
+листе флипчарта с заголовками  ':)', ':(', 'Идея!', и 'Благодарность'. Раздайте участникам стикеры. \
 <ul>\
-    <li>The team members can add their input to any quadrant. One thought per sticky note. </li>\
-    <li>Cluster the notes.</li>\
-    <li>Hand out 6-10 dots for people to vote on the most important issues.</li>\
+    <li>Участники могут писать свои мысли в любой квадрант. Каждая отдельная мысль на отдельном стикере.</li>\
+    <li>Сгруппируйте стикеры.</li>\
+    <li>Проведите голосование точками за наиболее важные мысли (6-9 точек на человека).</li>\
 </ul>\
-This list is your input for Phase 4.",
+Получившийся список является отправной точкой для следующего этапа: 'Разработка плана действий'.",
 source:    source_agileRetrospectives,
 durationDetail:  "20-25",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration"
+suitable: "итерация"
 };
+
 all_activities[9] = {
 phase:     2,
-name:      "Brainstorming / Filtering",
-summary:   "Generate lots of ideas and filter them against your criteria",
-desc:      "Lay out the rules of brainstorming, and the goal: To generate lots of new ideas \
-which will be filtered <em>after</em> the brainstorming.\
+name:      "Мозговой штурм / фильтрация",
+summary:   "Сгенерируйте множество идей и отфильтруйте их согласно критериям",
+desc:      "Изложите цель и правила проведения мозгового штурма: <em>Сперва</em> генерируем как \
+можно больше новых идей, и <em>только потом</em> фильтруем.\
 <ul>\
-    <li>Let people write down their ideas for 5-10 minutes</li>\
-    <li>Go around the table repeatedly always asking one idea each, until all ideas are on the flip chart</li>\
-    <li>Now ask for filters (e.g. cost, time investment, uniqueness of concept, brand appropriateness, ...). \
-Let the group choose 4.</li>\
-    <li>Apply each filter and mark ideas that pass all 4.</li>\
-    <li>Which ideas will the group carry forward? Does someone feel strongly about one of the ideas?\
-Otherwise use majority vote. </li>\
+    <li>Дайте участникам 5-10 минут чтобы записать свои идеи.</li>\
+    <li>Сбор идей организуйте по кругу по одной от человека. Повторяйте пока все идеи не окажутся на листе флипчарта.</li>\
+    <li>Попросите участников составить список возможных критериев (например: стоимость, трудоемкость, \
+сложность, инновационность и т.п.) и попросите выбрать 4.</li>\
+    <li>Выберите идеи удовлетворяющие всем 4-м критериям.</li>\
+    <li>Какие идеи команда возьмет в работу? Кто из участников испытывает уверенность относительно \
+хотя бы одной идеи? Если нет - выберите идеи путем голосования большинством.</li>\
 </ul>\
-The selected ideas enter Phase 4.",
+Выбранные идеи переходят на следующий этап ретроспективы: 'Разработка плана действий'.",
 source:    source_agileRetrospectives,
 more:     "<a href='http://www.mpdailyfix.com/the-best-brainstorming-nine-ways-to-be-a-great-brainstorm-lead/'>\
     Nine Ways To Be A Great Brainstorm Lead</a>",
 durationDetail:  "40-60",
-duration:    "Long",
+duration:    "Длительная",
 stage:    "All",
-suitable: "iteration, release, project, introverts"
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[10] = {
 phase:     3,
-name:      "Circle of Questions",
-summary:   "Asking and answering go around the team circle - an excellent way to reach consensus",
-desc:      "Everyone sits in a circle. Begin by stating that you'll go round asking questions to find out \
-what you want to do as a group. You start by asking your neighbor the first question, e.g. \
-'What is the most important thing we should start in the next iteration?' Your \
-neighbor answers and asks her neighbor a related question. Stop when consensus emerges or \
-the time is up. Go around at least once, so that everybody is heard!",
+name:      "Круг вопросов",
+summary:   "Участники по кругу отвечают и задают вопросы - отличный способ достичь консенсуса",
+desc:      "Попросите группу сесть в круг. Первый участник задает вопрос соседу слева касательно \
+плана действий. Например: 'Как ты считаешь, какое самое важное изменение нам следует попробовать на \
+следующей итерации?'. Сосед отвечает на вопрос, а затем задает своему соседу слева вопрос, который \
+либо расширяет предыдущий вопрос, либо начинает новый. И так далее по кругу, пока группа не достигнет \
+взаимопонимания по вопросу, либо не закончится выделенное время. Следует пройти как минимум один круг, \
+чтобы у каждого была возможность высказаться!",
 source:    source_agileRetrospectives,
 durationDetail:  "30+ groupsize",
-duration:    "Medium",
-stage:    "Forming, Norming",
-suitable: "iteration, release, project, introverts"
+duration:    "Средняя",
+stage:    "Формирование, Нормирование",
+suitable: "итерация, релиз, проект, интроверты"
 };
+
 all_activities[11] = {
 phase:     3,
-name:      "Dot Voting - Start, Stop, Continue",
-summary:   "Brainstorm what to start, stop & continue and pick the top initiatives",
-desc:      "Divide a flip chart into boxes headed with  'Start', 'Continue' and 'Stop'. \
-Ask your participants to write concrete proposals for each category - 1 \
-idea per index card. Let them write in silence for a few minutes. \
-Let everyone read out their notes and post them to the appropriate category. \
-Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots\
-or X's with a marker, e.g. 1, 2, and 3 dots for each person to distribute. \
-The top 2 or 3 become your action items.\
+name:      "Голосование точками - Начать, Прекратить, Продолжать",
+summary:   "Мозговой штурм в формате 'начать, прекратить, продолжать' и выбор лучших предложений",
+desc:      "Разделите флипчарт на 3 колонки 'Начать', 'Прекратить' и 'Продолжать'. Попросите участников \
+написать свои предложения в каждую из колонок - отдельное предложение на отдельном стикере. Дайте им на \
+это 5 минут и попросите соблюдать тишину. Затем попросите зачитать свои предложения и повесить на флипчарт. \
+Организуйте короткую дискуссию какие 20% предложений наиболее ценные. Затем попросите участников \
+проголосовать точками (по 3 точки на человека). 2-3 предложения, набравшие наибольшее количество голосов, \
+превращаются в план действий. \
 <br><br>\
-(Check out <a href='http://www.funretrospectives.com/open-the-box/'>Paulo Caroli's 'Open the Box'</a> for an awesome variation of this activity.)",
+(Посмотрите интересную вариацию этого упражнения от Пауло Кароли: <a href='http://www.funretrospectives.com/open-the-box/'>'Open the Box'</a>.)",
 source:    source_agileRetrospectives,
 durationDetail:  "15-30",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration"
+suitable: "итерация"
 };
+
 all_activities[12] = {
 phase:     3,
-name:      "SMART Goals",
-summary:   "Formulate a specific and measurable plan of action",
-desc:      "Introduce <a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART goals</a> \
-(specific, measurable, attainable, relevant, timely) and examples for SMART vs not so \
-smart goals, e.g.'We&apos;ll study stories before pulling them by talking about them with the \
-product owner each Wednesday at 9am' vs. 'We'll get to know the stories before they \
-are in our sprint backlog'.<br>\
-Form groups around the issues the team wants to work on. Each group identifies 1-5 \
-concrete steps to reach the goal. Let each group present their results. All participants should agree \
-on the 'SMART-ness' of the goals. Refine and confirm.",
+name:      "SMART-задачи",
+summary:   "Сформулируйте конкретный и измеримый план действий",
+desc:      "Презентуйте группе концепцию <a href='http://ru.wikipedia.org/wiki/SMART'>SMART</a>-задач: \
+Specific (конкретная), Measurable (измеримая), Attainable (достижимая), Relevant (актуальная), \
+Timely (ограничена во времени). Приведите примеры SMART и НЕ-SMART задач. НЕ-SMART: 'Нужно прорабатывать \
+истории перед взятием в спринт'. SMART: 'Перед взятием в спринт мы будем прорабатывать истории, обсуждая \
+их вместе с Product Owner'ом каждую среду в 9:00 утра'.<br>\
+Сформируйте малые группы вокруг рассматриваемых вопросов. Задача группы - определить 1-5 конкретных \
+шагов для решения поставленной задачи. Попросите группы презентовать свои результаты. Все участники \
+должны подтвердить, что предложенные шаги соответствуют концепции SMART. При необходимости доработайте \
+и подтвердите.",
 source:    source_agileRetrospectives,
 durationDetail:  "20-60 groupsize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project"
+suitable: "итерация, релиз, проект"
 };
+
 all_activities[13] = {
 phase:     4,
 name:      "Дверь отзывов - Числа",
