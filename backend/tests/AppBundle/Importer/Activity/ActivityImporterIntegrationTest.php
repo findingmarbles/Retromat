@@ -347,4 +347,26 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $activity2->getDuration()
         );
     }
+
+    public function testImport2MultipleNoSuperfluousNonEnglishTransations()
+    {
+        $this->loadFixtures([]);
+        $mapper = new ArrayToObjectMapper();
+        /** @var ValidatorInterface $validator */
+        $validator = $this->getContainer()->get('validator');
+        /** @var ObjectManager $entityManager */
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $activityFileNames = [
+            'en' => __DIR__.'/TestData/activities_en_2.js',
+            'de' => __DIR__.'/TestData/activities_de_feug_wrong_translated_meta.js',
+        ];
+        $reader = new ActivityReader(null, $activityFileNames);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+
+        $activityImporter->import2Multiple(['en', 'de']);
+        $entityManager->clear();
+
+        $this->assertCount(2, $entityManager->getRepository('AppBundle:Activity2')->findAll());
+        $this->assertCount(3, $entityManager->getRepository('AppBundle:Activity2Translation')->findAll());
+    }
 }
