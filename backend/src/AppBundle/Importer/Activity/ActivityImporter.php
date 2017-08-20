@@ -21,6 +21,8 @@ class ActivityImporter
 
     private $validator;
 
+    private $locales;
+
     /**
      * ActivityImporter constructor.
      */
@@ -28,22 +30,38 @@ class ActivityImporter
         ObjectManager $objectManager,
         ActivityReader $reader,
         ArrayToObjectMapper $mapper,
-        ValidatorInterface $validator
+        ValidatorInterface $validator,
+        array $locales = ['en']
     ) {
         $this->objectManager = $objectManager;
         $this->reader = $reader;
         $this->mapper = $mapper;
         $this->validator = $validator;
+        $this->locales = $locales;
     }
 
-    public function import(string $locale = 'en')
+    public function import()
     {
         // structure we are migrating away from
         // import1 only supports English
         $this->import1();
 
         // structure we are migrating to
-        $this->import2($locale);
+        $this->import2Multiple($this->locales);
+    }
+
+    public function import2Multiple(array $locales = [])
+    {
+        foreach ($locales as $locale) {
+            $this->import2($locale);
+        }
+
+        // Re-import English at the end to guarantee that
+        // all meta data is used from Enlish translation.
+        // Not the most beautiful or efficient soultion,
+        // but it runs very rarely and will be deleted
+        // as soon as activities live in the databse.
+        $this->import2('en');
     }
 
     // structure we are migrating away from

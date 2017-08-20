@@ -11,10 +11,10 @@ services:
         arguments: ["@doctrine.orm.entity_manager"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
-        arguments: [~, "%activityFileNames%"]
+        arguments: [~, "%retromat.activity.import.file_names%"]
     retromat.activity_importer:
         class: AppBundle\Importer\Activity\ActivityImporter
-        arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator"]
+        arguments: ["@doctrine.orm.entity_manager", "@retromat.activity_reader", "@array_to_object_mapper", "@validator", "%retromat.activity.import.languages.whitelist%"]
     retromat.color_varation:
         class: AppBundle\Twig\ColorVariation
     retromat.plan.description_renderer:
