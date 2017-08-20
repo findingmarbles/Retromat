@@ -209,7 +209,7 @@ class Activity2
      */
     public function getMore(): string
     {
-        return $this->more;
+        return (string) $this->more;
     }
 
     /**
@@ -256,6 +256,15 @@ class Activity2
     {
         $metadata->addPropertyConstraint('translations', new Assert\Valid());
         $metadata->addPropertyConstraint('newTranslations', new Assert\Valid());
+    }
+
+    /**
+     * @param $property
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        return $this->proxyCurrentLocaleTranslation('get'.$property);
     }
 
     /**
