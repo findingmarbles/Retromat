@@ -347,22 +347,24 @@ suitable: "итерация, релиз, проект"
 
 all_activities[17] = {
 phase:     0,
-name:      "Check In - Amazon Review",
-summary:   "Review the iteration on Amazon. Don't forget the star rating!",
-desc:      "Each team member writes a short review with: \
+name:      "Отзыв на Яндекс-Маркете",
+summary:   "Напишите отзыв о прошедшей итерации в стиле Яндекс-Маркета",
+desc:      "Попросите участников написать короткий отзыв о прошедшей итерации в формате: \
 <ul>\
-    <li>Title</li>\
-    <li>Content</li>\
-    <li>Star rating (5 stars is the best) </li>\
+    <li>Заголовок</li>\
+    <li>Содержание</li>\
+    <li>Количество звезд по пятибальной шкале</li>\
 </ul>\
-Everyone reads out their review. Record the star ratings on a flip chart.<br>\
-Can span whole retrospective by also asking what is recommended about the iteration and what not.",
+Далее попросите зачитать свои отзывы. Оценки записывайте на флипчарт.<br>\
+Упражнение можно расширить на всю ретроспективу добавив вопросы: что бы вы порекомендовали на \
+следующую итерацию, а что бы не стали рекомендовать.",
 source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
 durationDetail:  "10",
-duration:    "Long",
+duration:    "Длительная",
 stage:    "All",
-suitable: "release, project"
+suitable: "релиз, проект"
 };
+
 all_activities[18] = {
 phase:     1,
 name:      "Speedboat / Sailboat",
