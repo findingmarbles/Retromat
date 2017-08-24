@@ -331,19 +331,20 @@ suitable: "итерация, релиз"
 
 all_activities[16] = {
 phase:     4, // 5 geht auch
-name:      "SaMoLo (More of, Same of, Less of)",
-summary:   "Get course corrections on what you do as a facilitator",
-desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and 'Less of'. \
-Ask participants to nudge your behaviour into the right direction: Write stickies \
-with what you should do more, less and what is exactly right. Read out and briefly \
-discuss the stickies section-wise.",
+name:      "Больше, Меньше, Так держать",
+summary:   "Получите обратную связь на свое поведение как ведущего ретроспективы",
+desc:      "Разделите флипчарт на 3 колонки 'Больше', 'Меньше' и 'Так держать'. \
+Попросите участников скорректировать ваше поведение как ведущего ретроспективы: Записать на стикерах \
+что вам следует делать больше, что следует делать меньше, и что следует оставить без изменений. \
+Зачитайте и кратко обсудите полученную информацию.",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
 durationDetail:  "5-10",
-duration:    "Medium",
-stage:    "Forming, Storming",
-suitable: "iteration, release, project"
+duration:    "Средняя",
+stage:    "Формирование, Бурление",
+suitable: "итерация, релиз, проект"
 };
+
 all_activities[17] = {
 phase:     0,
 name:      "Check In - Amazon Review",
