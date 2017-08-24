@@ -367,21 +367,22 @@ suitable: "релиз, проект"
 
 all_activities[18] = {
 phase:     1,
-name:      "Speedboat / Sailboat",
-summary:   "Analyze what forces push you forward and what pulls you back",
-desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as well \
-as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
-and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
-Read out each one and discuss how you can increase 'motors' and cut 'anchors'. \
+name:      "Катер / Яхта",
+summary:   "Проанализируйте что двигает вас вперед, а что тянет назад",
+desc:      "Нарисуйте на листе флипчарта катер с мощным мотором и большим тяжелым якорем. Попросите \
+участников в тишине записать на стикерах что двигает команду вперед (мотор), а что тормозит и мешает \
+(якорь). Каждая мысль на отдельном стикере. Попросите развесить стикеры на мотор и якорь соответственно. \
+Зачитайте каждый и обсудите, каким образом усилить движущие и устранить сдерживающие факторы. \
 <br><br> \
-Variation: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
-they already see coming.",
-source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
+Вариация: Иногда на рисунок добавляют айсберг, олицетворяющий предстоящие трудности, которые команда видит \
+на своем пути.",
+source:    source_innovationGames + ", найдено у <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 durationDetail:  "10-15 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release"
+suitable: "итерация, релиз"
 };
+
 all_activities[19] = {
 phase:     2,
 name:      "Perfection Game",
