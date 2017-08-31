@@ -481,19 +481,19 @@ suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[26] = {
 phase:     5,
-name:      "Retrospective Cookies",
-summary:   "Take the team out to eat and spark discussion with retrospective fortune cookies",
-desc:      "Invite the team out to eat, preferably Chinese if you want to stay in theme ;) \
-Distribute fortune cookies and go around the table opening the cookies and \
-discussing their content. Example 'fortunes': \
+name:      "Печенье для ретроспективы",
+summary:   "Организуй обед для команды и инициируй обсуждение предсказаний из печенья для ретроспективы.",
+desc:      "Предложи команде пообедать вместе, лучше всего в китайском или азиатском кафе, чтобы оставаться "в теме". \
+Распределите печенье с предсказаниями. Каждый участник открывает свое печенье и все обсуждают предсказание.  \
+Примеры предсказаний: \
 <ul>\
-    <li>What was the most effective thing you did this iteration, and why was it so successful?</li>\
-    <li>Did the burndown reflect reality? Why or why not?</li>\
-    <li>What do you contribute to the development community in your company? What could you contribute?</li>\
-    <li>What was our Team's biggest impediment this iteration?</li>\
+    <li>Что было наиболее эффективно в этой итерации и почему это было настолько успешно?</li>\
+    <li>Отображает ли реальность наша диаграмма сгорания? Почему да или почему нет?</li>\
+    <li>Чем ты способствуешь обществу разрботчиков в нашей компании?  Какой вклад ты еще можешь внести?</li>\
+    <li>Что было в этой итерации наибольшим препятствием для команды?</li>\
 </ul>\
-You can <a href='http://weisbart.com/cookies/'>order retrospective cookies from Weisbart</a> \
-or bake your own, e.g. if English is not the team's native language.",
+Такое печенье можно  <a href='http://weisbart.com/cookies/'> заказать в Weisbart</a> \
+либо испечь самостоятельно, если английский не родной язык для команды.",
 source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
 durationDetail:  "90-120",
 duration:    "Длительная",
