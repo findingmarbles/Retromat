@@ -464,20 +464,20 @@ suitable: "release, project, smallGroups, complex"
 };
 all_activities[25] = {
 phase:     2,
-name:      "Speed Dating",
-summary:   "Each team member explores one topic in depth in a series of 1:1 talks",
-desc:      "Each participant writes down one topic they want to explore, i.e. something they'd like to \
-change. Then form pairs and spread across the room. Each pair discusses both topics \
-and ponders possible actions - 5 minutes per participant (topic) - one after the other. \
-After 10 minutes the pairs break up to form new pairs. Continue \
-until everyone has talked to everyone else. <br>\
-If the group has an odd number of members, the facilitator is part of a pair but the partner \
-gets all 10 minutes for their topic.",
-source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Thorsten Kalnin</a>",
+name:      "Быстрое свидание",
+summary:   "Каждый участник команды подробно обсуждает одну тему с помощью серий разговоров 1 на 1",
+desc:      "Каждый участник записывает одну тему, которую он хочет обсудить, например что-то, что он хочет \
+изменить. Затем участники формируют пары и распределяются по комнате. Каждыя пара обсуждает две темы (по одной от каждого из участников)\
+и обдумывает возможные действия - на каждую тему дается по 5 минут и темы обсуджаются по очереди. \
+Через 10 минут пары расфорируются и участники создают новые пары. Так продолжаем, \
+пока каждый участник не переговорит со всеми другими участниками команды. <br>\
+Если количество участников в группе нечетное, то фасилитатор составляет пару, но не предлагает свою тему. \
+Участник получает на обсуждеие своей темы все 10 митут.",
+source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Торстен Калнин (Thorsten Kalnin)</a>",
 durationDetail:  "10 perPerson",
-duration:    "Long",
-stage:    "Storming, Norming",
-suitable: "iteration, release, smallGroups"
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
+suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[26] = {
 phase:     5,
@@ -496,9 +496,9 @@ You can <a href='http://weisbart.com/cookies/'>order retrospective cookies from 
 or bake your own, e.g. if English is not the team's native language.",
 source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
 durationDetail:  "90-120",
-duration:    "Long",
-stage:    "Performing, Stagnating, Adjourning",
-suitable: "iteration, release, smallGroups"
+duration:    "Длительная",
+stage:    "Функционирование, Стагнация, Расформирование",
+suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[27] = {
 phase:     5,
@@ -511,9 +511,9 @@ you don't need visual documentation to support discussion. Mature teams can easi
 consensus even in such an informal setting.",
 source:    source_findingMarbles,
 durationDetail:  "60-90",
-duration:    "Long",
-stage:    "Performing, Adjourning",
-suitable: "iteration, release, smallGroups, smoothSailing, mature"
+duration:    "Длительная",
+stage:    "Функционирование, Расформирование",
+suitable: "итерация, релиз, небольшие группы, smoothSailing, mature"
 };
 all_activities[28] = {
 phase:     3,
@@ -527,9 +527,9 @@ The participants write down possible actions in pairs of two. Encourage them to 
 circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence and Concern</a>' by Jim Bullock",
-duration:    "Medium",
-stage:    "Forming, Storming, Norming",
-suitable: "iteration, release, project, stuck, immature"
+duration:    "Средняя",
+stage:    "Формирование, Бурление, Нормирование",
+suitable: "итерация, релиз, проект, stuck, immature"
 };
 all_activities[29] = {
 phase:     5,
@@ -540,9 +540,9 @@ desc:      "A dialogue sheet looks a little like a board game board. There are \
 Choose one, print it as large as possible (preferably A1) and follow its instructions.",
 source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
-duration:    "Long",
-stage:    "All",
-suitable: "iteration, release, project"
+duration:    "Длительная",
+stage:    "Любая",
+suitable: "итерация, релиз, проект"
 };
 all_activities[30] = {
 phase:     0,
@@ -559,10 +559,10 @@ Ask the team members to draw their answer. Post all drawings on a whiteboard. Fo
 let people guess what it means, before the artist explains it.<br> \
 Metaphors open new viewpoints and create a shared understanding.",
 source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
-durationDetail:  "5 + 3 per person",
-duration:    "Medium",
-stage:    "Performing",
-suitable: "iteration, release, project"
+durationDetail:  "5 + 3 на человека",
+duration:    "Средняя",
+stage:    "Функционирование",
+suitable: "итерация, релиз, проект"
 };
 all_activities[31] = {
 phase:     0,
