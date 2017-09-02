@@ -116,3 +116,5 @@ parameters:
         fr: "%kernel.root_dir%/../web/static/lang/activities_fr.js"
         nl: "%kernel.root_dir%/../web/static/lang/activities_nl.js"
         ru: "%kernel.root_dir%/../web/static/lang/activities_ru.js"
+    knp.doctrine_behaviors.translatable_subscriber.translatable_fetch_method: EAGER
+    knp.doctrine_behaviors.translatable_subscriber.translation_fetch_method: EAGER
