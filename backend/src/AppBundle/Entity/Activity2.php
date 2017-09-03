@@ -16,7 +16,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
  *          @ORM\Index(name="retromatId_index2", columns={"retromat_id"}),
  *          @ORM\Index(name="phase_index2", columns={"phase"})}
  *     )
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\Activity2Repository")
  */
 class Activity2
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace tests\AppBundle\Repository;
 
 // tests directory is not available to the autoloader, so we have to manually require these files:
-require 'DataFixtures/LoadActivityData.php';
-require 'DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhases.php';
+require_once 'DataFixtures/LoadActivityData.php';
+require_once 'DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhases.php';
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
