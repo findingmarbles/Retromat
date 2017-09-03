@@ -14,7 +14,8 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
-    serializer:      { enabled: true }
+    serializer:
+        cache: retromat.doctrine_cache.redis
     templating:
         engines: ['twig']
     default_locale:  "%locale%"
