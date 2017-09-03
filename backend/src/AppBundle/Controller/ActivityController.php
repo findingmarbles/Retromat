@@ -31,12 +31,18 @@ class ActivityController extends FOSRestController implements ClassResourceInter
     {
         $request->setLocale($request->query->get('locale', 'en'));
         $activities = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $localizedActivities = [];
         /** @var $activity Activity2 */
         foreach ($activities as $activity) {
-            $activity->setSource($this->expandSource($activity->getSource()));
+            if (!empty($activity->translate($request->getLocale(), false)->getId())) {
+                $activity->setSource($this->expandSource($activity->getSource()));
+                $localizedActivities[] = $activity;
+            } else {
+                break;
+            }
         }
 
-        return $this->view($activities, 200)->setContext((new Context())->addGroup('rest'));
+        return $this->view($localizedActivities, 200)->setContext((new Context())->addGroup('rest'));
     }
 
     // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig

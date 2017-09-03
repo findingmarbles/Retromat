@@ -3,10 +3,7 @@
 // language: [de, en, es, fr, nl], default: en
 // format: [html, twig], default: html
 
-// English activities can be loaded via AJAX or included as JS file.
-$featureAjax = true;
-
-// determine language and make it available in PHP and JS variables
+// determine language and make it available variable
 $lang = 'en';
 if (isset($argv[1])) {
     $lang = $argv[1];
@@ -17,6 +14,11 @@ if (isset($argv[1])) {
 function is_output_format_twig($argv)
 {
     return (isset($argv[2]) and 'twig' === $argv[2]);
+}
+
+function load_activities_via_ajax($argv)
+{
+    return (isset($argv[3]) and 'ajax' === $argv[3]);
 }
 
 $isEnglish = false;
@@ -97,14 +99,13 @@ var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "differe
 var PHASE_ID_TAG = 'phase';
 </script>
 
-<?php if ((true === $featureAjax) and is_output_format_twig($argv) and ('en' == $lang)) { ?>
-    <script src="/static/lang/phase_titles_en.js"></script>
-<?php } else { ?>
+<script src="/static/lang/phase_titles_<?php echo $lang ?>.js"></script>
+<?php if (!load_activities_via_ajax($argv)) { ?>
     <script src="/static/sources.js"></script>
     <script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
 <?php } ?>
 <script src="/static/lang/photos.js"></script>
-<script src="/static/functions.js?fresh=1"></script>
+<script src="/static/functions.js?fresh=2"></script>
 
     <script type="text/javascript">
         // Functions that need translations from PHP.

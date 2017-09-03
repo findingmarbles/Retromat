@@ -211,10 +211,36 @@ class ActivityControllerTest extends WebTestCase
 
         $this->assertEquals(1, $activities[1-1]['retromatId']);
         $this->assertEquals(32, $activities[32-1]['retromatId']);
-        $this->assertEquals(100, $activities[100-1]['retromatId']);
+        $this->assertEquals(75, $activities[75-1]['retromatId']);
 
         $this->assertEquals('Projekt-Gef&uuml;hlsmesser', $activities[32-1]['name']);
         $this->assertEquals('Verdeckter Boss', $activities[58-1]['name']);
         $this->assertEquals('Schreibe das Unaussprechliche', $activities[75-1]['name']);
+    }
+
+    public function testOnlyTranslatedActivitiesInCollectionRequests()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/activities?locale=de');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+        $this->assertCount(75, $activities);
+
+        $client->request('GET', '/activities?locale=en');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+        $this->assertCount(131, $activities);
+
+        $client->request('GET', '/activities?locale=es');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+        $this->assertCount(95, $activities);
+
+        $client->request('GET', '/activities?locale=fr');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+        $this->assertCount(50, $activities);
+
+        $client->request('GET', '/activities?locale=nl');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+        $this->assertCount(101, $activities);
     }
 }

@@ -1,0 +1,1 @@
+var phase_titles = ['Armar el escenario', 'Recolectar datos', 'Indagar', 'Decidir qu&eacute; hacer', 'Cerrar la retrospectiva', 'Algo completamente distinto'];

@@ -6,7 +6,7 @@ function init() {
     var phase = urlParams.phase;
 
     if (typeof all_activities === "undefined") {
-        $.getJSON("/activities.json", {_locale: "en"})
+        $.getJSON("/activities.json", {locale: getLocale()})
             .fail(function (jqxhr, textStatus, error) {
                 console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
             })
@@ -26,6 +26,15 @@ function init() {
             publish_random_plan();
         }
         publish_footer_stats();
+    }
+}
+
+function getLocale() {
+    var pathPart1 = window.location.pathname.split('/')[1];
+    if ('app_dev.php' == pathPart1) {
+        return window.location.pathname.split('/')[2];
+    } else {
+        return pathPart1;
     }
 }
 

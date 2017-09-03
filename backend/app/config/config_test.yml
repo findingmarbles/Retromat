@@ -25,3 +25,12 @@ doctrine:
             default:
                 driver:   pdo_sqlite
                 path:     "%kernel.cache_dir%/test.db"
+
+parameters:
+    retromat.activity.import.file_names:
+        en: "%kernel.root_dir%/../tests/AppBundle/data/activities_en.js"
+        de: "%kernel.root_dir%/../tests/AppBundle/data/activities_de.js"
+        es: "%kernel.root_dir%/../tests/AppBundle/data/activities_es.js"
+        fr: "%kernel.root_dir%/../tests/AppBundle/data/activities_fr.js"
+        nl: "%kernel.root_dir%/../tests/AppBundle/data/activities_nl.js"
+        ru: "%kernel.root_dir%/../tests/AppBundle/data/activities_ru.js"
