@@ -17,7 +17,7 @@ class ActivityControllerTest extends WebTestCase
         $this->loadFixtures([]);
     }
 
-    public function testActivityName()
+    public function testActivityNameEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
@@ -43,6 +43,36 @@ class ActivityControllerTest extends WebTestCase
 
         $this->assertEquals(
             'Repeat &amp; Avoid',
+            $activity['name']
+        );
+    }
+
+    public function testActivityNameGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/activities/32?locale=de');
+        $activity = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(
+            'Projekt-Gef&uuml;hlsmesser',
+            $activity['name']
+        );
+
+        $client->request('GET', '/activities/58?locale=de');
+        $activity = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(
+            'Verdeckter Boss',
+            $activity['name']
+        );
+
+        $client->request('GET', '/activities/75?locale=de');
+        $activity = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(
+            'Schreibe das Unaussprechliche',
             $activity['name']
         );
     }
