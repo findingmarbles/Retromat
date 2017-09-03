@@ -184,7 +184,7 @@ class ActivityControllerTest extends WebTestCase
         );
     }
 
-    public function testActivityIdsAndNamesInCollectionRequests()
+    public function testActivityIdsAndNamesInCollectionRequestsEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
@@ -199,5 +199,22 @@ class ActivityControllerTest extends WebTestCase
         $this->assertEquals('Emoticon Project Gauge', $activities[32-1]['name']);
         $this->assertEquals('Happiness Histogram', $activities[59-1]['name']);
         $this->assertEquals('Repeat &amp; Avoid', $activities[80-1]['name']);
+    }
+
+    public function testActivityIdsAndNamesInCollectionRequestsGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/activities?locale=de');
+        $activities = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(1, $activities[1-1]['retromatId']);
+        $this->assertEquals(32, $activities[32-1]['retromatId']);
+        $this->assertEquals(100, $activities[100-1]['retromatId']);
+
+        $this->assertEquals('Projekt-Gef&uuml;hlsmesser', $activities[32-1]['name']);
+        $this->assertEquals('Verdeckter Boss', $activities[58-1]['name']);
+        $this->assertEquals('Schreibe das Unaussprechliche', $activities[75-1]['name']);
     }
 }
