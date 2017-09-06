@@ -443,21 +443,20 @@ suitable: "итерация, релиз, малаягруппа"
 };
 all_activities[24] = {
 phase:     2,
-name:      "Cause-Effect-Diagram",
-summary:   "Find the source of problems whose origins are hard to pinpoint and lead to endless discussion",
-desc:      "Write the problem you want to explore on a sticky note and put it in the middle of a whiteboard. \
-Find out why that is a problem by repeatedly asking 'So what?'. Find out the root causes \
-by repeatedly asking 'Why (does this happen)?' Document your findings by \
-writing more stickies and showing causal relations with arrows. Each sticky can have more than \
-one reason and more than one consequence<br> \
-Vicious circles are usually good starting points for actions. If you can break their bad \
-influence, you can gain a lot.",
+name:      "Причинно-Следственная Диаграмма",
+summary:   "Найти источник проблемы, происхождение которой трудно определить и приводит к бесконечным дискуссиям",
+desc:      "Напишите проблему, которую вы хотите исследовать на стикер и приклейте его в середину доски. \
+Анализируйте в чем конкретно состоит проблема, постоянно спрашивая 'Что следует из этого?'. \
+Выясняйте первопричины спрашиваю, 'почему' (это произошло)? Записывайте ваши выводы на стикерах. \
+Визуализируйте причинно-следственные связи с помощью стрелок. Каждый стикер можете иметь несколько причин и несколько следствий.<br> \
+Если вы найдёте причино-следственный круг, это как правило, представляют собой хорошую базу для действий. \
+Если вы можете сломать этот негативный круг, вы можете улучшить сразу очень многое.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 durationDetail:  "20-60 complexity",
-duration:    "Long",
-stage:    "Storming, Norming",
-suitable: "release, project, smallGroups, complex"
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
+suitable: "релиз, проект, малаягруппа, complex"
 
 
 };
