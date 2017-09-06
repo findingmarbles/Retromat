@@ -519,7 +519,7 @@ all_activities[28] = {
 phase:     3,
 name:      "Circles &amp; Soup / Круги влияния",
 summary:   "Create actions based on how much control the team has to carry them out",
-desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
+desc:      "Приготовь флип чарт с 3 концентрическими кругами, каждый круг должен быть достаточно большим, чтобы вместить в себя несколько стикеров. Label them \
 'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
 from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
 Take your insights from the last phase and put them in the appropriate circle.<br> \
@@ -533,12 +533,12 @@ suitable: "итерация, релиз, проект, stuck, immature"
 };
 all_activities[29] = {
 phase:     5,
-name:      "Dialogue Sheets",
-summary:   "A structured approach to a discussion",
-desc:      "A dialogue sheet looks a little like a board game board. There are \
-<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
-Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
+name:      "Поле для разговора",
+summary:   "Структурированный подход к обсуждению",
+desc:      "Поле для разговора выглядит как часть настольной игры. Вы можете найти тут \
+<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>несколько различных примеров(на английском языке)</a>. \
+Выбирите подходящее поле, распечатайте его в максимально большом формате (желательно А1) и следуйте иструкциям.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'> Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
 duration:    "Длительная",
 stage:    "Любая",
@@ -546,19 +546,19 @@ suitable: "итерация, релиз, проект"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Check In - Draw the Iteration",
-summary:   "Participants draw some aspect of the iteration",
-desc:      "Distribute index cards and markers. Set a topic, e.g. one of the following: \
+name:      "Начало - Нарисуй итерацию",
+summary:   "Участники рисуют некоторые события итерации",
+desc:      "Раздай листы бумаги и маркеры. Предложи тему, например можно взять один из следующих вопросов: \
 <ul>\
-    <li>How did you feel during the iteration?</li>\
-    <li>What was the most remarkable moment?</li>\
-    <li>What was the biggest problem?</li>\
-    <li>What did you long for?</li>\
+    <li>Что ты чувствовал в течении последней итерации?</li>\
+    <li>Какой момент был для тебя самым значимым в течении последней итерации ?</li>\
+    <li>Что для тебя было самой большой проблемой за последнюю итерацию?</li>\
+    <li>Чем ты занимался в течении последней итерации?</li>\
 </ul>\
-Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
-let people guess what it means, before the artist explains it.<br> \
-Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
+Попроси участников команды нарисовать свои ответы. Развесь все рисунки на стене, флип чарте или доске.\
+Предложи участникам высказать свои идеи, что может означать каждый из рисунков, прежде чем автор сам рассказжет, что он имел в виду. <br> \
+Метафоры открывают новые горизонты и создают общее понимание вещей.",
+source:    source_findingMarbles + ", адаптировано из идеи <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> и Olivier Gourment",
 durationDetail:  "5 + 3 на человека",
 duration:    "Средняя",
 stage:    "Функционирование",
