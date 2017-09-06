@@ -405,60 +405,58 @@ suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
 phase:     0,
-name:      "Temperature Reading",
-summary:   "Participants mark their 'temperature' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
-Each participant marks their mood on the sheet.",
-duration:    "Short",
+name:      "Измерение температуры",
+summary:   "Участники отмечают свою 'температуру' (настроение) на флипчарте",
+desc:      "Подготовьте флипчарт с чертежом термометра от замерзания до температуры тела к кипятку. \
+Каждый участник отмечает свое настроение",
+duration:    "Короткая",
 stage:    "All",
 source:  source_unknown,
 };
 all_activities[22] = {
 phase:     4,
-name:      "Feedback Door - Smilies",
-summary:   "Gauge participants' satisfaction with the retro in minimum time using smilies",
-desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against the door. \
-When ending the retrospective, ask your participants to mark their satisfaction \
-with the session with an 'x' below the applicable smily.",
+name:      "Дверь отзывов - со смайликами",
+summary:   "Узнай уровень удовлетворенности с ретроспективой за минимальный срок, используя смайлики",
+desc:      "Нарисуйте ':)', ':|', и ':(' на листе бумаги и прикрепите его на дверь. \
+Когда заканчится ретроспектива, попросите участников, дать отзыв буквой 'X' под подходящим смайликом.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
 durationDetail:  "2-3",
-duration:    "Short",
+duration:    "Короткая",
 stage:    "All",
-suitable: "iteration, largeGroups"
+suitable: "итерация, большаяГруппа"
 };
 all_activities[23] = {
 phase:     3,
-name:      "Open Items List",
-summary:   "Participants propose and sign up for actions",
-desc:      "Prepare a flip chart with 3 columns titled 'What', 'Who', and 'Due'. \
-Ask one participant after the other, what they want to do to advance \
-the team. Write down the task, agree on a 'done by'-date and let them sign \
-their name. <br>\
-If someone suggests an action for the whole team, the proposer needs to get \
-buy-in (and signatures) from the others.",
-source:    source_findingMarbles + ", inspired by <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>this list</a>",
+name:      "Открытый список дел",
+summary:   "Участники предлагают и берут ответственность за действия",
+desc:      "Подготовте флипчарт с 3 столбами 'Что', 'Кто' и 'Когда'. \
+Спросите участников одного за другим, что они хотят сделать для улучшения \
+команды. Запишите действие, договоритесь о том 'когда' оно должно быть сделано и  \
+попросите участника вписать своё имя. <br>\
+Если кто-то предлагает действие для всей команды, то он должен договориться \
+со всеми, чтобы они сами вписали своё имя.",
+source:    source_findingMarbles + ", инспирированно <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>этим списком</a>",
 durationDetail:  "10-15 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, smallGroups"
+suitable: "итерация, релиз, малаягруппа"
 };
 all_activities[24] = {
 phase:     2,
-name:      "Cause-Effect-Diagram",
-summary:   "Find the source of problems whose origins are hard to pinpoint and lead to endless discussion",
-desc:      "Write the problem you want to explore on a sticky note and put it in the middle of a whiteboard. \
-Find out why that is a problem by repeatedly asking 'So what?'. Find out the root causes \
-by repeatedly asking 'Why (does this happen)?' Document your findings by \
-writing more stickies and showing causal relations with arrows. Each sticky can have more than \
-one reason and more than one consequence<br> \
-Vicious circles are usually good starting points for actions. If you can break their bad \
-influence, you can gain a lot.",
+name:      "Причинно-Следственная Диаграмма",
+summary:   "Найти источник проблемы, происхождение которой трудно определить и приводит к бесконечным дискуссиям",
+desc:      "Напишите проблему, которую вы хотите исследовать на стикер и приклейте его в середину доски. \
+Анализируйте в чем конкретно состоит проблема, постоянно спрашивая 'Что следует из этого?'. \
+Выясняйте первопричины спрашиваю, 'почему' (это произошло)? Записывайте ваши выводы на стикерах. \
+Визуализируйте причинно-следственные связи с помощью стрелок. Каждый стикер можете иметь несколько причин и несколько следствий.<br> \
+Если вы найдёте причино-следственный круг, это как правило, представляют собой хорошую базу для действий. \
+Если вы можете сломать этот негативный круг, вы можете улучшить сразу очень многое.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 durationDetail:  "20-60 complexity",
-duration:    "Long",
-stage:    "Storming, Norming",
-suitable: "release, project, smallGroups, complex"
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
+suitable: "релиз, проект, малаягруппа, complex"
 
 
 };
@@ -546,19 +544,19 @@ suitable: "итерация, релиз, проект"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Начало - Нарисуй итерацию",
-summary:   "Участники рисуют некоторые события итерации",
-desc:      "Раздай листы бумаги и маркеры. Предложи тему, например можно взять один из следующих вопросов: \
+name:      "Чек-ин - нарисуй итерацию",
+summary:   "Участники рисуют определенный аспект итерации",
+desc:      "Распределите карточки и маркеры. Задайте тему, например: \
 <ul>\
-    <li>Что ты чувствовал в течении последней итерации?</li>\
-    <li>Какой момент был для тебя самым значимым в течении последней итерации ?</li>\
-    <li>Что для тебя было самой большой проблемой за последнюю итерацию?</li>\
-    <li>Чем ты занимался в течении последней итерации?</li>\
+<li>Как ты себя чувствовал(а) во время итерации?</li>\
+<li>Твой самый приятный момент?</li>\
+<li>Какова была самая большая проблема?</li>\
+<li>Чего тебе не хватало?</li>\
 </ul>\
-Попроси участников команды нарисовать свои ответы. Развесь все рисунки на стене, флип чарте или доске.\
-Предложи участникам высказать свои идеи, что может означать каждый из рисунков, прежде чем автор сам рассказжет, что он имел в виду. <br> \
-Метафоры открывают новые горизонты и создают общее понимание вещей.",
-source:    source_findingMarbles + ", адаптировано из идеи <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> и Olivier Gourment",
+Попросите участников нарисовать свой ответ и прикрепить рисунки на доску. \
+Начните с того что участники угадывают, что означает картинки других. Потом создатели коротко объясняют свою картинку.<br> \
+Метафоры лучше помогают получить новую точку зрения и сформировать общее понимание.",
+source:    source_findingMarbles + ", адаптированно с <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
 durationDetail:  "5 + 3 на человека",
 duration:    "Средняя",
 stage:    "Функционирование",
