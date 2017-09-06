@@ -500,13 +500,13 @@ suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[27] = {
 phase:     5,
-name:      "Take a Walk",
-summary:   "Go to the nearest park and wander about and just talk",
-desc:      "Is there nice weather outside? Then why stay cooped up inside, when walking fills your brain with oxygen \
-and new ideas 'off the trodden track'. Get outside and take a walk in the nearest park. Talk will \
-naturally revolve around work. This is a nice break from routine when things run relatively smoothly and \
-you don't need visual documentation to support discussion. Mature teams can easily spread ideas and reach \
-consensus even in such an informal setting.",
+name:      "Прогулка",
+summary:   "Пойдите в ближайший парк, прогуляйтесь и просто поболтайте",
+desc:      "На улице хорошая погода? Зачем оставаться в закрытом помещении, когда можно выйти на свежий воздух, наполнить свой мозг кислородом  \
+и новыми оригинальными идеями, отличающимися от стандартных предложений. Выйдите и прогуляйтесь в ближайший парк. \
+Разговор естественным  образом сведётся к темам, связанным с работой. Это хороший способ отвлечься от рутинных дел, когда рабочий процесс налажен и все работает относительно гладко. \
+Чтобы поддержать дискуссию не требуется дополнительных средств, таких как визуализация или документирование. Зрелые команды могут легко выносить на обсуждение и  \
+беседовать о важных темах, а так же достигать соглашений даже в такой неформальной обстановке",
 source:    source_findingMarbles,
 durationDetail:  "60-90",
 duration:    "Длительная",
@@ -515,9 +515,9 @@ suitable: "итерация, релиз, небольшие группы, smooth
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles &amp; Soup / Circle of Influence",
+name:      "Circles &amp; Soup / Круги влияния",
 summary:   "Create actions based on how much control the team has to carry them out",
-desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
+desc:      "Приготовь флип чарт с 3 концентрическими кругами, каждый круг должен быть достаточно большим, чтобы вместить в себя несколько стикеров. Label them \
 'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
 from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
 Take your insights from the last phase and put them in the appropriate circle.<br> \
@@ -531,12 +531,12 @@ suitable: "итерация, релиз, проект, stuck, immature"
 };
 all_activities[29] = {
 phase:     5,
-name:      "Dialogue Sheets",
-summary:   "A structured approach to a discussion",
-desc:      "A dialogue sheet looks a little like a board game board. There are \
-<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
-Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
+name:      "Поле для разговора",
+summary:   "Структурированный подход к обсуждению",
+desc:      "Поле для разговора выглядит как часть настольной игры. Вы можете найти тут \
+<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>несколько различных примеров(на английском языке)</a>. \
+Выбирите подходящее поле, распечатайте его в максимально большом формате (желательно А1) и следуйте иструкциям.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'> Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
 duration:    "Длительная",
 stage:    "Любая",
