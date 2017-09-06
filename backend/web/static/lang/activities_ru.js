@@ -427,19 +427,19 @@ suitable: "итерация, большаяГруппа"
 };
 all_activities[23] = {
 phase:     3,
-name:      "Open Items List",
-summary:   "Participants propose and sign up for actions",
-desc:      "Prepare a flip chart with 3 columns titled 'What', 'Who', and 'Due'. \
-Ask one participant after the other, what they want to do to advance \
-the team. Write down the task, agree on a 'done by'-date and let them sign \
-their name. <br>\
-If someone suggests an action for the whole team, the proposer needs to get \
-buy-in (and signatures) from the others.",
-source:    source_findingMarbles + ", inspired by <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>this list</a>",
+name:      "Открытый список дел",
+summary:   "Участники предлагают и берут ответственность за действия",
+desc:      "Подготовте флипчарт с 3 столбами 'Что', 'Кто' и 'Когда'. \
+Спросите участников одного за другим, что они хотят сделать для улучшения \
+команды. Запишите действие, договоритесь о том 'когда' оно должно быть сделано и  \
+попросите участника вписать своё имя. <br>\
+Если кто-то предлагает действие для всей команды, то он должен договориться \
+со всеми, чтобы они сами вписали своё имя.",
+source:    source_findingMarbles + ", инспирированно <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>этим списком</a>",
 durationDetail:  "10-15 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, smallGroups"
+suitable: "итерация, релиз, малаягруппа"
 };
 all_activities[24] = {
 phase:     2,
