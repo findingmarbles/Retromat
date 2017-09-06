@@ -403,121 +403,119 @@ suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
 phase:     0,
-name:      "Temperature Reading",
-summary:   "Participants mark their 'temperature' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
-Each participant marks their mood on the sheet.",
-duration:    "Short",
+name:      "Измерение температуры",
+summary:   "Участники отмечают свою 'температуру' (настроение) на флипчарте",
+desc:      "Подготовьте флипчарт с чертежом термометра от замерзания до температуры тела к кипятку. \
+Каждый участник отмечает свое настроение",
+duration:    "Короткая",
 stage:    "All",
 source:  source_unknown,
 };
 all_activities[22] = {
 phase:     4,
-name:      "Feedback Door - Smilies",
-summary:   "Gauge participants' satisfaction with the retro in minimum time using smilies",
-desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against the door. \
-When ending the retrospective, ask your participants to mark their satisfaction \
-with the session with an 'x' below the applicable smily.",
+name:      "Дверь отзывов - со смайликами",
+summary:   "Узнай уровень удовлетворенности с ретроспективой за минимальный срок, используя смайлики",
+desc:      "Нарисуйте ':)', ':|', и ':(' на листе бумаги и прикрепите его на дверь. \
+Когда заканчится ретроспектива, попросите участников, дать отзыв буквой 'X' под подходящим смайликом.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
 durationDetail:  "2-3",
-duration:    "Short",
+duration:    "Короткая",
 stage:    "All",
-suitable: "iteration, largeGroups"
+suitable: "итерация, большаяГруппа"
 };
 all_activities[23] = {
 phase:     3,
-name:      "Open Items List",
-summary:   "Participants propose and sign up for actions",
-desc:      "Prepare a flip chart with 3 columns titled 'What', 'Who', and 'Due'. \
-Ask one participant after the other, what they want to do to advance \
-the team. Write down the task, agree on a 'done by'-date and let them sign \
-their name. <br>\
-If someone suggests an action for the whole team, the proposer needs to get \
-buy-in (and signatures) from the others.",
-source:    source_findingMarbles + ", inspired by <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>this list</a>",
+name:      "Открытый список дел",
+summary:   "Участники предлагают и берут ответственность за действия",
+desc:      "Подготовте флипчарт с 3 столбами 'Что', 'Кто' и 'Когда'. \
+Спросите участников одного за другим, что они хотят сделать для улучшения \
+команды. Запишите действие, договоритесь о том 'когда' оно должно быть сделано и  \
+попросите участника вписать своё имя. <br>\
+Если кто-то предлагает действие для всей команды, то он должен договориться \
+со всеми, чтобы они сами вписали своё имя.",
+source:    source_findingMarbles + ", инспирированно <a href='http://lwscologne.wordpress.com/2012/05/08/11-treffen-der-limited-wip-society-cologne/#Retrospektiven'>этим списком</a>",
 durationDetail:  "10-15 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, smallGroups"
+suitable: "итерация, релиз, малаягруппа"
 };
 all_activities[24] = {
 phase:     2,
-name:      "Cause-Effect-Diagram",
-summary:   "Find the source of problems whose origins are hard to pinpoint and lead to endless discussion",
-desc:      "Write the problem you want to explore on a sticky note and put it in the middle of a whiteboard. \
-Find out why that is a problem by repeatedly asking 'So what?'. Find out the root causes \
-by repeatedly asking 'Why (does this happen)?' Document your findings by \
-writing more stickies and showing causal relations with arrows. Each sticky can have more than \
-one reason and more than one consequence<br> \
-Vicious circles are usually good starting points for actions. If you can break their bad \
-influence, you can gain a lot.",
+name:      "Причинно-Следственная Диаграмма",
+summary:   "Найти источник проблемы, происхождение которой трудно определить и приводит к бесконечным дискуссиям",
+desc:      "Напишите проблему, которую вы хотите исследовать на стикер и приклейте его в середину доски. \
+Анализируйте в чем конкретно состоит проблема, постоянно спрашивая 'Что следует из этого?'. \
+Выясняйте первопричины спрашиваю, 'почему' (это произошло)? Записывайте ваши выводы на стикерах. \
+Визуализируйте причинно-следственные связи с помощью стрелок. Каждый стикер можете иметь несколько причин и несколько следствий.<br> \
+Если вы найдёте причино-следственный круг, это как правило, представляют собой хорошую базу для действий. \
+Если вы можете сломать этот негативный круг, вы можете улучшить сразу очень многое.",
 source:    "<a href='http://blog.crisp.se/2009/09/29/henrikkniberg/1254176460000'>Henrik Kniberg</a>",
 more:      "<a href='http://finding-marbles.com/2011/08/04/cause-effect-diagrams/'>Corinna's experiences</a>",
 durationDetail:  "20-60 complexity",
-duration:    "Long",
-stage:    "Storming, Norming",
-suitable: "release, project, smallGroups, complex"
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
+suitable: "релиз, проект, малаягруппа, complex"
 
 
 };
 all_activities[25] = {
 phase:     2,
-name:      "Speed Dating",
-summary:   "Each team member explores one topic in depth in a series of 1:1 talks",
-desc:      "Each participant writes down one topic they want to explore, i.e. something they'd like to \
-change. Then form pairs and spread across the room. Each pair discusses both topics \
-and ponders possible actions - 5 minutes per participant (topic) - one after the other. \
-After 10 minutes the pairs break up to form new pairs. Continue \
-until everyone has talked to everyone else. <br>\
-If the group has an odd number of members, the facilitator is part of a pair but the partner \
-gets all 10 minutes for their topic.",
-source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Thorsten Kalnin</a>",
+name:      "Быстрое свидание",
+summary:   "Каждый участник команды подробно обсуждает одну тему с помощью серий разговоров 1 на 1",
+desc:      "Каждый участник записывает одну тему, которую он хочет обсудить, например что-то, что он хочет \
+изменить. Затем участники формируют пары и распределяются по комнате. Каждыя пара обсуждает две темы (по одной от каждого из участников)\
+и обдумывает возможные действия - на каждую тему дается по 5 минут и темы обсуджаются по очереди. \
+Через 10 минут пары расфорируются и участники создают новые пары. Так продолжаем, \
+пока каждый участник не переговорит со всеми другими участниками команды. <br>\
+Если количество участников в группе нечетное, то фасилитатор составляет пару, но не предлагает свою тему. \
+Участник получает на обсуждеие своей темы все 10 минут.",
+source:    "<a href='http://vinylbaustein.net/tag/retrospective/'>Торстен Калнин (Thorsten Kalnin)</a>",
 durationDetail:  "10 perPerson",
-duration:    "Long",
-stage:    "Storming, Norming",
-suitable: "iteration, release, smallGroups"
+duration:    "Длительная",
+stage:    "Бурление, Нормирование",
+suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[26] = {
 phase:     5,
-name:      "Retrospective Cookies",
-summary:   "Take the team out to eat and spark discussion with retrospective fortune cookies",
-desc:      "Invite the team out to eat, preferably Chinese if you want to stay in theme ;) \
-Distribute fortune cookies and go around the table opening the cookies and \
-discussing their content. Example 'fortunes': \
+name:      "Печенье для ретроспективы",
+summary:   "Организуй обед для команды и инициируй обсуждение предсказаний из печенья для ретроспективы.",
+desc:      "Предложи команде пообедать вместе, лучше всего в китайском или азиатском кафе, чтобы оставаться "в теме". \
+Распределите печенье с предсказаниями. Каждый участник открывает свое печенье и все обсуждают предсказание.  \
+Примеры предсказаний: \
 <ul>\
-    <li>What was the most effective thing you did this iteration, and why was it so successful?</li>\
-    <li>Did the burndown reflect reality? Why or why not?</li>\
-    <li>What do you contribute to the development community in your company? What could you contribute?</li>\
-    <li>What was our Team's biggest impediment this iteration?</li>\
+    <li>Что было наиболее эффективно в этой итерации и почему это было настолько успешно?</li>\
+    <li>Отображает ли реальность наша диаграмма сгорания? Почему да или почему нет?</li>\
+    <li>Чем ты способствуешь обществу разрботчиков в нашей компании?  Какой вклад ты еще можешь внести?</li>\
+    <li>Что было в этой итерации наибольшим препятствием для команды?</li>\
 </ul>\
-You can <a href='http://weisbart.com/cookies/'>order retrospective cookies from Weisbart</a> \
-or bake your own, e.g. if English is not the team's native language.",
+Такое печенье можно  <a href='http://weisbart.com/cookies/'> заказать в Weisbart</a> \
+либо испечь самостоятельно, если английский не родной язык для команды.",
 source:    "<a href='http://weisbart.com/cookies/'>Adam Weisbart</a>",
 durationDetail:  "90-120",
-duration:    "Long",
-stage:    "Performing, Stagnating, Adjourning",
-suitable: "iteration, release, smallGroups"
+duration:    "Длительная",
+stage:    "Функционирование, Стагнация, Расформирование",
+suitable: "итерация, релиз, небольшие группы"
 };
 all_activities[27] = {
 phase:     5,
-name:      "Take a Walk",
-summary:   "Go to the nearest park and wander about and just talk",
-desc:      "Is there nice weather outside? Then why stay cooped up inside, when walking fills your brain with oxygen \
-and new ideas 'off the trodden track'. Get outside and take a walk in the nearest park. Talk will \
-naturally revolve around work. This is a nice break from routine when things run relatively smoothly and \
-you don't need visual documentation to support discussion. Mature teams can easily spread ideas and reach \
-consensus even in such an informal setting.",
+name:      "Прогулка",
+summary:   "Пойдите в ближайший парк, прогуляйтесь и просто поболтайте",
+desc:      "На улице хорошая погода? Зачем оставаться в закрытом помещении, когда можно выйти на свежий воздух, наполнить свой мозг кислородом  \
+и новыми оригинальными идеями, отличающимися от стандартных предложений. Выйдите и прогуляйтесь в ближайший парк. \
+Разговор естественным  образом сведётся к темам, связанным с работой. Это хороший способ отвлечься от рутинных дел, когда рабочий процесс налажен и все работает относительно гладко. \
+Чтобы поддержать дискуссию не требуется дополнительных средств, таких как визуализация или документирование. Зрелые команды могут легко выносить на обсуждение и  \
+беседовать о важных темах, а так же достигать соглашений даже в такой неформальной обстановке",
 source:    source_findingMarbles,
 durationDetail:  "60-90",
-duration:    "Long",
-stage:    "Performing, Adjourning",
-suitable: "iteration, release, smallGroups, smoothSailing, mature"
+duration:    "Длительная",
+stage:    "Функционирование, Расформирование",
+suitable: "итерация, релиз, небольшие группы, smoothSailing, mature"
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles &amp; Soup / Circle of Influence",
+name:      "Circles &amp; Soup / Круги влияния",
 summary:   "Create actions based on how much control the team has to carry them out",
-desc:      "Prepare a flip chart with 3 concentric circles, each big enough to put stickies in. Label them \
+desc:      "Приготовь флип чарт с 3 концентрическими кругами, каждый круг должен быть достаточно большим, чтобы вместить в себя несколько стикеров. Label them \
 'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
 from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
 Take your insights from the last phase and put them in the appropriate circle.<br> \
@@ -525,42 +523,42 @@ The participants write down possible actions in pairs of two. Encourage them to 
 circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
 Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence and Concern</a>' by Jim Bullock",
-duration:    "Medium",
-stage:    "Forming, Storming, Norming",
-suitable: "iteration, release, project, stuck, immature"
+duration:    "Средняя",
+stage:    "Формирование, Бурление, Нормирование",
+suitable: "итерация, релиз, проект, stuck, immature"
 };
 all_activities[29] = {
 phase:     5,
-name:      "Dialogue Sheets",
-summary:   "A structured approach to a discussion",
-desc:      "A dialogue sheet looks a little like a board game board. There are \
-<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>several different sheets available</a>. \
-Choose one, print it as large as possible (preferably A1) and follow its instructions.",
-source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>Allen Kelly at Software Strategy</a>",
+name:      "Поле для разговора",
+summary:   "Структурированный подход к обсуждению",
+desc:      "Поле для разговора выглядит как часть настольной игры. Вы можете найти тут \
+<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'>несколько различных примеров(на английском языке)</a>. \
+Выбирите подходящее поле, распечатайте его в максимально большом формате (желательно А1) и следуйте иструкциям.",
+source:    "<a href='http://www.softwarestrategy.co.uk/dialogue-sheets/'> Allen Kelly at Software Strategy</a>",
 durationDetail:  "90-120",
-duration:    "Long",
-stage:    "All",
-suitable: "iteration, release, project"
+duration:    "Длительная",
+stage:    "Любая",
+suitable: "итерация, релиз, проект"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Check In - Draw the Iteration",
-summary:   "Participants draw some aspect of the iteration",
-desc:      "Distribute index cards and markers. Set a topic, e.g. one of the following: \
+name:      "Чек-ин - нарисуй итерацию",
+summary:   "Участники рисуют определенный аспект итерации",
+desc:      "Распределите карточки и маркеры. Задайте тему, например: \
 <ul>\
-    <li>How did you feel during the iteration?</li>\
-    <li>What was the most remarkable moment?</li>\
-    <li>What was the biggest problem?</li>\
-    <li>What did you long for?</li>\
+<li>Как ты себя чувствовал(а) во время итерации?</li>\
+<li>Твой самый приятный момент?</li>\
+<li>Какова была самая большая проблема?</li>\
+<li>Чего тебе не хватало?</li>\
 </ul>\
-Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
-let people guess what it means, before the artist explains it.<br> \
-Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
-durationDetail:  "5 + 3 per person",
-duration:    "Medium",
-stage:    "Performing",
-suitable: "iteration, release, project"
+Попросите участников нарисовать свой ответ и прикрепить рисунки на доску. \
+Начните с того что участники угадывают, что означает картинки других. Потом создатели коротко объясняют свою картинку.<br> \
+Метафоры открывают новые горизонты и помагают сформировать общее понимание вещей.",
+source:    source_findingMarbles + ", адаптированно из идеи <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
+durationDetail:  "5 + 3 на человека",
+duration:    "Средняя",
+stage:    "Функционирование",
+suitable: "итерация, релиз, проект"
 };
 all_activities[31] = {
 phase:     0,

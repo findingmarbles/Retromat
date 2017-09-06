@@ -1,34 +1,34 @@
 <?php
 
-$_lang['HTML_TITLE'] = 'Inspiration &amp; plans for (agile) retrospectives';
+$_lang['HTML_TITLE'] = 'Инспирация, структуры &amp; планы для (аджайл) ретроспектив';
 
-$_lang['INDEX_PITCH'] = 'Planning your next agile <b>retrospective</b>? Start with a random plan, change it to fit the team\'s situation, print it and share the URL. Or browse around for new ideas!<br><br>Is this your first retrospective? <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">Start here!</a>';
-$_lang['INDEX_PLAN_ID'] = 'Current Plan ID:';
-$_lang['INDEX_BUTTON_SHOW'] = 'Show!';
-$_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
-$_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
-$_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
-$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
+$_lang['INDEX_PITCH'] = 'Планируете вашу следующию аджайл <b>ретроспективу</b>? Начните со случайного плана, адаптируйте его к вашей команде и ситуации, распечатайте его или поделитесь URL вашего плана с другими. Или просто полистайте в поиске новых идей!';
+$_lang['INDEX_PLAN_ID'] = 'ID активности';
+$_lang['INDEX_BUTTON_SHOW'] = 'Показать';
+$_lang['INDEX_RANDOM_RETRO'] = 'Новый случайную активность';
+$_lang['INDEX_ENTER_ID'] = 'Напрямую ввести ID';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в активностях';
+$_lang['INDEX_ALL_ACTIVITIES'] = 'Все активности для';
+$_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ АКТИВНОСТИ ...';
 
-$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
-$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
-$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
-$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Что такое ретроспектива?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">О Ретромате</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Печатная версия</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Добавить активность</a>';
 
 if (is_output_format_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
 } else {
-    $_lang['INDEX_ABOUT'] = 'Retromat contains <span class="js_footer_no_of_activities"></span> activities, allowing for <span class="js_footer_no_of_combinations"></span> combinations (<span class="js_footer_no_of_combinations_formula"></span>) and we are constantly adding more.'; // Do you know a great activity?
+    $_lang['INDEX_ABOUT'] = 'Ретромат содержит <span class="js_footer_no_of_activities"></span> активности позволяющие <span class="js_footer_no_of_combinations"></span> комбинаций (<span class="js_footer_no_of_combinations_formula"></span>) и мы постоянно добавляем новые.'; // Ты знаешь хорошую активность?
 }
-$_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
+$_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи её';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation by: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Translator 1';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/translator1';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/antonskornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!.
+	Антон работает аджайл коучом и тренером со множеством разных организаций в ИТ и вне ИТ! Пишите ему на <a href="https://twitter.com/antonskornyakov">Twitter</a> или через <a href="https://www.linkedin.com/in/antonskornyakov/">LinkedIn</a>!
 	<br><br><br>
 EOT;
 
