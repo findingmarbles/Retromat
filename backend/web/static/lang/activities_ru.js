@@ -544,19 +544,19 @@ suitable: "итерация, релиз, проект"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Check In - Draw the Iteration",
-summary:   "Participants draw some aspect of the iteration",
-desc:      "Distribute index cards and markers. Set a topic, e.g. one of the following: \
+name:      "Чек-ин - нарисуй итерацию",
+summary:   "Участники рисуют определенный аспект итерации",
+desc:      "Распределите карточки и маркеры. Задайте тему, например: \
 <ul>\
-    <li>How did you feel during the iteration?</li>\
-    <li>What was the most remarkable moment?</li>\
-    <li>What was the biggest problem?</li>\
-    <li>What did you long for?</li>\
+<li>Как ты себя чувствовал(а) во время итерации?</li>\
+<li>Твой самый приятный момент?</li>\
+<li>Какова была самая большая проблема?</li>\
+<li>Чего тебе не хватало?</li>\
 </ul>\
-Ask the team members to draw their answer. Post all drawings on a whiteboard. For each drawing \
-let people guess what it means, before the artist explains it.<br> \
-Metaphors open new viewpoints and create a shared understanding.",
-source:    source_findingMarbles + ", adapted from <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
+Попросите участников нарисовать свой ответ и прикрепить рисунки на доску. \
+Начните с того что участники угадывают, что означает картинки других. Потом создатели коротко объясняют свою картинку.<br> \
+Метафоры лучше помогают получить новую точку зрения и сформировать общее понимание.",
+source:    source_findingMarbles + ", адаптированно с <a href='http://vinylbaustein.net/2011/03/24/draw-the-problem-draw-the-challenge/'>Thorsten Kalnin</a> and Olivier Gourment",
 durationDetail:  "5 + 3 на человека",
 duration:    "Средняя",
 stage:    "Функционирование",
