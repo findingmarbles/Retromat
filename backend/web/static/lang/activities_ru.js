@@ -405,11 +405,11 @@ suitable: "iteration, release, project, largeGroups"
 };
 all_activities[21] = {
 phase:     0,
-name:      "Temperature Reading",
-summary:   "Participants mark their 'temperature' (mood) on a flipchart",
-desc:      "Prepare a flipchart with a drawing of a thermometer from freezing to body temperature to hot. \
-Each participant marks their mood on the sheet.",
-duration:    "Short",
+name:      "Измерение температуры",
+summary:   "Участники отмечают свою 'температуру' (настроение) на флипчарте",
+desc:      "Подготовьте флипчарт с чертежом термометра от замерзания до температуры тела к кипятку. \
+Каждый участник отмечает свое настроение",
+duration:    "Короткая",
 stage:    "All",
 source:  source_unknown,
 };
