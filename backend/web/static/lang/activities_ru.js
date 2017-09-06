@@ -415,16 +415,15 @@ source:  source_unknown,
 };
 all_activities[22] = {
 phase:     4,
-name:      "Feedback Door - Smilies",
-summary:   "Gauge participants' satisfaction with the retro in minimum time using smilies",
-desc:      "Draw a ':)', ':|', and ':(' on a sheet of paper and tape it against the door. \
-When ending the retrospective, ask your participants to mark their satisfaction \
-with the session with an 'x' below the applicable smily.",
+name:      "Дверь отзывов - со смайликами",
+summary:   "Узнай уровень удовлетворенности с ретроспективой за минимальный срок, используя смайлики",
+desc:      "Нарисуйте ':)', ':|', и ':(' на листе бумаги и прикрепите его на дверь. \
+Когда заканчится ретроспектива, попросите участников, дать отзыв буквой 'X' под подходящим смайликом.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
 durationDetail:  "2-3",
-duration:    "Short",
+duration:    "Короткая",
 stage:    "All",
-suitable: "iteration, largeGroups"
+suitable: "итерация, большаяГруппа"
 };
 all_activities[23] = {
 phase:     3,
