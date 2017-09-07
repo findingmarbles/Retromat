@@ -5,30 +5,30 @@
     {% for activity in activities %}
     <div class="js_activity_block activity_block bg{{ color_variation.nextColor() }}">
         <div class="activity-wrapper">
-            <a href="?id={{ activity_by_phase.previousIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_prev_button display_table-cell{% if phase is not null %} hidden{% endif %}"
+            <a href="?id={{ activity_by_phase.previousIds(ids, activity.getRetromatId, activity.getPhase)|join('-') }}" class="js_phase-stepper phase-stepper js_prev_button display_table-cell{% if phase is not null %} hidden{% endif %}"
                title="Show other activity for this phase">◄</a>
             <div class="activity-content">
                 <div class="js_phase_title phase_title">
-                    <a href="?id={{ activity_by_phase.getActivitiesString(activity.phase) }}&phase={{ activity.phase }}"
+                    <a href="?id={{ activity_by_phase.getActivitiesString(activity.getPhase) }}&phase={{ activity.getPhase }}"
                        class="js_fill_phase_link">
                         <span class="js_fill_phase_title">{{ ('phase_title_'~activity.phase) | trans }}</span>
                     </a>
                 </div>
                 <div class="js_item">
-                    <h2><span class="js_fill_name">{{ activity.name | raw }}</span>
+                    <h2><span class="js_fill_name">{{ activity.getName | raw }}</span>
                         <span class="activity_id_wrapper">
-                            (<a class="js_fill_activity_link" href="?id={{ activity.retromatId }}">#<span class="js_fill_id">{{ activity.retromatId }}</span></a>)
+                            (<a class="js_fill_activity_link" href="?id={{ activity.getRetromatId }}">#<span class="js_fill_id">{{ activity.getRetromatId }}</span></a>)
                     </span>
                     </h2>
                     <div class="summary">
-                        <span class="js_fill_summary">{{ activity.summary }}</span>
+                        <span class="js_fill_summary">{{ activity.getSummary }}</span>
                         <br>
                         {# @todo: remove duplication with ActivityController->expandSource #}
-                        <span class="source">Source:                            <span class="js_fill_source">{{ activity.source  | replace({' + "': ''}) | replace({'" + ': ''}) | replace({'"':''}) | replace (activity_source) | raw }}</span>
+                        <span class="source">Source:                            <span class="js_fill_source">{{ activity.getSource  | replace({' + "': ''}) | replace({'" + ': ''}) | replace({'"':''}) | replace (activity_source) | raw }}</span>
                         </span>
                     </div><!-- END summary -->
                     <div class="description">
-                        <span class="js_fill_description">{{ activity.desc | raw }}</span>
+                        <span class="js_fill_description">{{ activity.getDesc | raw }}</span>
                     </div><!-- END description -->
                 </div><!-- END js_item -->
                 <div class="js_photo_link photo_link">
@@ -39,7 +39,7 @@
                     -->
                 </div><!-- END .js_photo_link -->
             </div><!-- END .activity-content -->
-            <a href="?id={{ activity_by_phase.nextIds(ids, activity.retromatId, activity.phase)|join('-') }}" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
+            <a href="?id={{ activity_by_phase.nextIds(ids, activity.getRetromatId, activity.getPhase)|join('-') }}" class="js_phase-stepper phase-stepper js_next_button display_table-cell{% if phase is not null %} hidden{% endif %}"
                title="Show other activity for this phase">►</a>
         </div><!-- END .activity-wrapper -->
     </div>

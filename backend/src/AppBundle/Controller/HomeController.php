@@ -20,7 +20,7 @@ class HomeController extends Controller
         $description = '';
         $phase = $request->query->get('phase');
 
-        if ($request->query->has('id')) {
+        if ('en' === $request->getLocale() and $request->query->has('id')) {
             $ids = explode('-', $request->query->get('id'));
             if (array_filter($ids) !== $ids) {
                 return $this->redirectToRoute(
@@ -29,8 +29,8 @@ class HomeController extends Controller
                     301
                 );
             }
-            $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
-            $activities = $repo->findOrdered($request->getLocale(), $ids);
+            $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
+            $activities = $repo->findOrdered($ids);
             if ((1 === count($activities)) and (1 === count($ids))) {
                 $title = ($activities[0])->getName() . ' (#' . ($activities[0])->getRetromatId() . ')';
                 $description = ($activities[0])->getSummary();
