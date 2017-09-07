@@ -62,15 +62,16 @@ class HomeController extends Controller
      * @param $idString
      * @return array
      */
-    private function parseIds($idString): array
+    private function parseIds(string $idString = null): array
     {
-        if (empty($idString)) {
-            $ids = [];
-        } else {
-            $ids = explode('-', $idString);
-            foreach ($ids as $id) {
-                $id = (int)$id;
-                if (0 === $id) {
+        $ids = [];
+        if (!empty($idString)) {
+            $rawIds = explode('-', $idString);
+            foreach ($rawIds as $rawId) {
+                $id = (int)$rawId;
+                if (0 !== $id and (string)$id === $rawId) {
+                    $ids[] = $id;
+                } else {
                     throw $this->createNotFoundException();
                 }
             }
