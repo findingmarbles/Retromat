@@ -26,13 +26,7 @@ class HomeController extends Controller
             if (count($ids) !== count($activities)) {
                 throw $this->createNotFoundException();
             }
-            if ((1 === count($activities)) and (1 === count($ids))) {
-                $title = ($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
-                $description = ($activities[0])->getSummary();
-            } else {
-                $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids));
-                $description = $this->get('retromat.plan.description_renderer')->render($activities);
-            }
+            list($title, $description) = $this->planTitleAndDescription($ids, $activities);
         }
 
         return $this->render(
@@ -83,5 +77,23 @@ class HomeController extends Controller
         }
 
         return $ids;
+    }
+
+    /**
+     * @param $ids
+     * @param $activities
+     * @return array
+     */
+    private function planTitleAndDescription(array $ids, array $activities): array
+    {
+        if ((1 === count($activities)) and (1 === count($ids))) {
+            $title = ($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
+            $description = ($activities[0])->getSummary();
+        } else {
+            $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids));
+            $description = $this->get('retromat.plan.description_renderer')->render($activities);
+        }
+
+        return [$title, $description];
     }
 }
