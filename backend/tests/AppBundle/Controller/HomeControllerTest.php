@@ -294,7 +294,7 @@ class HomeControllerTest extends WebTestCase
     {
         $colorCodePrefix = ' bg';
         $classesString = $activity->attr('class');
-        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix) + strlen($colorCodePrefix), 1);
+        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix)+strlen($colorCodePrefix), 1);
 
         return $colorCode;
     }
@@ -548,13 +548,23 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function test404OnIdNotFound()
+    /**
+     * @dataProvider malformedPathsProvider
+     */
+    public function test404OnIdNotFound($url)
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/en/?id=x');
+        $client->request('GET', $url);
 
-        $this->assertEquals('404',$client->getResponse()->getStatusCode());
+        $this->assertEquals('404', $client->getResponse()->getStatusCode());
+    }
+
+    public function malformedPathsProvider()
+    {
+        return [
+            ['/en/?id=x'],
+        ];
     }
 }
