@@ -14,21 +14,23 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
-        $idString = $request->query->get('id');
-        $ids = $this->parseIds($idString);
+        $ids = $this->parseIds($request->query->get('id'));
+        $phase = $request->query->get('phase');
         $activities = [];
         $title = '';
         $description = '';
-        $phase = $request->query->get('phase');
 
         if ('en' === $request->getLocale() and 0 < count($ids)) {
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
+            if (count($ids) !== count($activities)) {
+                throw $this->createNotFoundException();
+            }
             if ((1 === count($activities)) and (1 === count($ids))) {
                 $title = ($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
                 $description = ($activities[0])->getSummary();
             } else {
-                $title = $this->get('retromat.plan.title_chooser')->renderTitle($idString);
+                $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids));
                 $description = $this->get('retromat.plan.description_renderer')->render($activities);
             }
         }

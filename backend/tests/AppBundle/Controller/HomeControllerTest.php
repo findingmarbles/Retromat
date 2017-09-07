@@ -565,6 +565,24 @@ class HomeControllerTest extends WebTestCase
     {
         return [
             ['/en/?id=x'],
+            ['/en/?id=03-07-22-90-132'],
+            ['/en/?id=76-97-74-72-60999999.1%2520union%2520select%2520unhex%28hex%28version%28%29%29%29%2520-%'],            ['/fr/?id=%2Fetc%2Fpasswd'],
+            ['/en/?id=%22%3Ehello'],
+            ['/en/?id=%2Fetc%2Fpasswd'],
+            ['/en/?id=..%2Fetc%2Fpasswd'],
+            ['/en/?id=..%2F..%2F..%2Fetc%2Fpasswd'],
+            ['/en/?id=..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd'],
+            ['/en/?id=42-6-9-12-15999999.1%2520union%2520select%2520unhex%28hex%28version%28%29%29%29%2520-%2520and%25201%253D1'],
+            ['/en/?id=1-65-94-24-40%20-%20Traduire%20cette%20page%27A%3D0'],
+            ['/en/?id=8%3Faup-key%3Dc2fd9ed5efb0d253785cc4bfb806d0e2'],
+            ['/en/?id=2-47-91-103-57%20-%20Traduire%20cette%20page%27A%3D0'],
+            ['/en/?id=1-65-94-24-40%20-%20Traduire%20cette%20page%27A%3D0'],
+            ['/en/?id=42-119-68-99-53%2520or%2520%281%2C2%29%3D%28select%2Afrom%28select%2520name_const%28CHAR%28111%2C108%2C111%2C108%2C111%2C115%2C104%2C101%2C114%29%2C1%29%2Cname_const%28CHAR%28111%2C108%2C111%2C108%2C111%2C115%2C104%2C101%2C114%29%2C1%29%29a%29%2520-%2520and%25201%253D1'],
+            ['/en/?id=85-64-41-21-101999999.1%2520union%2520select%2520unhex%28hex%28version%28%29%29%29%2520-%2520and%25201%253D1'],
+            ['/en/?id=18zhttps%3A%2F%2Fplans-for-retrospectives.com%2Fen%2F%3Fid%3D18'],
+            ['/en/?id=94999999.1%20union%20select%20unhex%28hex%28version%28%29%29%29%20-%20and%201%3D1'],
+            ['/en/?id=511111111111111%27%2520UNION%2520SELECT%2520CHAR%2845%2C120%2C49%2C45%2C81%2C45%29-%2520%2520'],
+            ['/en/?id=511111111111111%2522%2520UNION%2520SELECT%2520CHAR%2845%2C120%2C49%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C50%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C51%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C52%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C53%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C54%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C55%2C45%2C81%2C45%29%2520-%2520%2F%2A%2520order%2520by%2520%2522as'],
         ];
     }
 }
