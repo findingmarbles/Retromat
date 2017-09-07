@@ -32,7 +32,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 2';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова;
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step';
