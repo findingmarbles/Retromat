@@ -22,13 +22,7 @@ class HomeController extends Controller
 
         if ('en' === $request->getLocale() and $request->query->has('id')) {
             $ids = explode('-', $request->query->get('id'));
-            if (array_filter($ids) !== $ids) {
-                return $this->redirectToRoute(
-                    'activities_by_id',
-                    ['id' => implode('-', array_filter($ids)), 'phase' => $phase],
-                    301
-                );
-            }
+
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
             if ((1 === count($activities)) and (1 === count($ids))) {

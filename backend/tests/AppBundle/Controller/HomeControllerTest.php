@@ -502,19 +502,6 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testRedirectMalformedId()
-    {
-        $client = static::createClient();
-
-        $client->request('GET', '/en/?id=-59-7-50-63-14');
-
-        $this->assertEquals(301, $client->getResponse()->getStatusCode());
-        $this->assertTrue(
-            $client->getResponse()->isRedirect('/en/?id=59-7-50-63-14'),
-            'Response is a redirect to the correct URL.'
-        );
-    }
-
     public function testShowPageTitle5Activities()
     {
         $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
