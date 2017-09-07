@@ -23,7 +23,7 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи её';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/antonskornyakov.jpg';
@@ -32,11 +32,12 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Translator 2';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/translator2';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова;
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-	Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!.
+	Юлиана работает скрам мастером, я так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
 	<br><br><br>
 EOT;
 
