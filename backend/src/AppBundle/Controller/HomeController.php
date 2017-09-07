@@ -14,22 +14,21 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
-        $ids = [];
+        $idString = $request->query->get('id');
+        $ids = $this->parseIds($idString);
         $activities = [];
         $title = '';
         $description = '';
         $phase = $request->query->get('phase');
 
-        if ('en' === $request->getLocale() and $request->query->has('id')) {
-            $ids = explode('-', $request->query->get('id'));
-
+        if ('en' === $request->getLocale() and 0 < count($ids)) {
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
             if ((1 === count($activities)) and (1 === count($ids))) {
-                $title = ($activities[0])->getName() . ' (#' . ($activities[0])->getRetromatId() . ')';
+                $title = ($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
                 $description = ($activities[0])->getSummary();
             } else {
-                $title = $this->get('retromat.plan.title_chooser')->renderTitle($request->query->get('id'));
+                $title = $this->get('retromat.plan.title_chooser')->renderTitle($idString);
                 $description = $this->get('retromat.plan.description_renderer')->render($activities);
             }
         }
@@ -61,5 +60,26 @@ class HomeController extends Controller
             ['id' => $request->query->get('id'), 'phase' => $request->query->get('phase')],
             301
         );
+    }
+
+    /**
+     * @param $idString
+     * @return array
+     */
+    private function parseIds($idString): array
+    {
+        if (empty($idString)) {
+            $ids = [];
+        } else {
+            $ids = explode('-', $idString);
+            foreach ($ids as $id) {
+                $id = (int)$id;
+                if (0 === $id) {
+                    throw $this->createNotFoundException();
+                }
+            }
+        }
+
+        return $ids;
     }
 }

@@ -547,4 +547,14 @@ class HomeControllerTest extends WebTestCase
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
+
+    public function test404OnIdNotFound()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $client->request('GET', '/en/?id=x');
+
+        $this->assertEquals('404',$client->getResponse()->getStatusCode());
+    }
 }
