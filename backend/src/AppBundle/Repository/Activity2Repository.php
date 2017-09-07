@@ -9,6 +9,24 @@ use Doctrine\ORM\Query\Expr\Join;
 class Activity2Repository extends EntityRepository
 {
     /**
+     * @param array $orderedIds
+     * @return array
+     *
+     * Caching millions of combinations of e.g. 5 activities separately would not make sense, but
+     * findAllOrdered already caches all activities. Reuse this cache for speed.
+     */
+    public function findOrdered(array $orderedIds): array
+    {
+        $allActivities = $this->findAllOrdered();
+        $orderedActivities = [];
+        foreach ($orderedIds as $id) {
+            $orderedActivities[] = $allActivities[$id-1];
+        }
+
+        return $orderedActivities;
+    }
+
+    /**
      * @return array
      */
     public function findAllOrdered(): array
