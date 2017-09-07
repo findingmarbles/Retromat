@@ -82,7 +82,7 @@ class ActivityByPhase
     {
         if (!isset($this->activityByPhase)) {
             $this->activityByPhase = $this->entityManager->getRepository(
-                'AppBundle:Activity'
+                'AppBundle:Activity2'
             )->findAllActivitiesByPhases();
         }
     }

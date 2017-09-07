@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
 
 class Activity2Repository extends EntityRepository
@@ -36,7 +37,27 @@ class Activity2Repository extends EntityRepository
             ->leftJoin('a.translations', 'a2t', Join::WITH, 'a2t.translatable = a.id')
             ->orderBy('a.retromatId', 'ASC')
             ->getQuery()
-            ->useResultCache(true, 86400, 'retromat_Activity2Repository_findAllOrdered')
+            ->useResultCache(true, 86400)
             ->getResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function findAllActivitiesByPhases(): array
+    {
+        $activitiesByPhase = [];
+
+        $activities = $this->createQueryBuilder('a')
+            ->select('a.retromatId', 'a.phase')
+            ->getQuery()
+            ->useResultCache(true, 86400)
+            ->getResult(Query::HYDRATE_ARRAY);
+
+        foreach ($activities as $activity) {
+            $activitiesByPhase[$activity['phase']][] = $activity['retromatId'];
+        }
+
+        return $activitiesByPhase;
     }
 }
