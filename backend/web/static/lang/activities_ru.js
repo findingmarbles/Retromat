@@ -515,16 +515,16 @@ suitable: "итерация, релиз, небольшие группы, smooth
 };
 all_activities[28] = {
 phase:     3,
-name:      "Circles &amp; Soup / Круги влияния",
-summary:   "Create actions based on how much control the team has to carry them out",
-desc:      "Приготовь флип чарт с 3 концентрическими кругами, каждый круг должен быть достаточно большим, чтобы вместить в себя несколько стикеров. Label them \
-'Team controls - Direct action', 'Team influences - Persuasive/recommending action' and 'The soup - Response action', \
-from innermost to outermost circle respectively. ('The soup' denotes the wider system the team is embedded into.) \
-Take your insights from the last phase and put them in the appropriate circle.<br> \
-The participants write down possible actions in pairs of two. Encourage them to concentrate on issues in their \
-circle of influence. The pairs post their action plans next to the respective issue and read it out loud. \
-Agree on which plans to try (via discussion, majority vote, dot voting, ...)",
-source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> who adapted it from 'Seven Habits of Highly Effective People' by Stephen Covey and <a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>Circle of Influence and Concern</a>' by Jim Bullock",
+name:      "Круги и суп / Области влияния",
+summary:   "Участники создают список действий в зависимости от того, как они могут влиять на ситуацию. ",
+desc:      "Приготовь флип чарт с 3 концентрическими кругами, каждый круг должен быть достаточно большим, чтобы вместить в себя несколько стикеров. \
+Назовите внутренний круг 'Команда контролирует - Действие', средний 'Команда влияет - Рекомендованное действие' и самый большой 'Суп - Реакция команды', \
+(В данном случае 'Суп' означает более широкую структуру, которая включает в себя команду, например сама организация, или влияет на решения команды) \
+Расположите стикеры с выводами, информацией и проблемами из предыдущей фазы в соответствующие круги.<br> \
+Участники записывают возможные действия, работая в парах. Предложите парам сконцентрировать свое внимания на тех проблемах, которые находятся в их круге влияния. \
+Каждая пара приклеивает стикер с возможным действием около самой проблемы и представляет его команде. \
+Договоритесь с помощью дискуссии или голосования, какие из действий команда испробует в ближайшее время",
+source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Диана Ларсен</a>использовала, как источник книгу Штефана Ковей 'Seven Habits of Highly Effective People' и описание Джим Баллока 'Circle of Influence and Concern'",
 duration:    "Средняя",
 stage:    "Формирование, Бурление, Нормирование",
 suitable: "итерация, релиз, проект, stuck, immature"
