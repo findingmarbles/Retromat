@@ -385,32 +385,34 @@ suitable: "итерация, релиз"
 
 all_activities[19] = {
 phase:     2,
-name:      "Perfection Game",
-summary:   "What would make the next iteration a perfect 10 out of 10?",
-desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a wide one for 'Actions'. \
-Everyone rates the last iteration on a scale from 1 to 10. Then they have to suggest what action(s) \
-would make the next iteration a perfect 10.",
+name:      "Игра в совершенство",
+summary:   "Что сделает следующую итерацию совершенной (на 10 баллов из 10)?",
+desc:      "Разделите флипчарт на 2 колонки: узкая колонка 'Оценка' и широкая 'Улучшения'. Каждый \
+оценивает прошедшую итерацию по шкале от 1 до 10. После чего группа должна предложить улучшения, \
+которые сделают следующую итерацию идеальной (10 баллов из 10).",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release"
+suitable: "итерация, релиз"
 };
+
 all_activities[20] = {
 phase:     3,
-name:      "Merge",
-summary:   "Condense many possible actions down to just two the team will try",
-desc:      "Hand out index cards and markers. Tell everyone to write down the two actions they \
-want to try next iteration - as concretely as possible \
-(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Then everyone pairs \
-up with their neighbor and both together must merge their actions into a single list with \
-two actions. The pairs form groups of 4. Then 8. Now collect every group's two action items \
-and have a vote on the final two.",
+name:      "Выжимка",
+summary:   "Сведите все возможные действия к двум, которые команда возьмет в работу",
+desc:      "Раздайте стикеры и маркеры. Попросите каждого записать два улучшения, которые он хочет \
+попробовать на следующей итерации. Попросите писать максимально конкретно в соответствии c концепцией \
+<a href='http://ru.wikipedia.org/wiki/SMART'>SMART</a>. Далее участники объединяются в пары, и каждая \
+пара должна из 4-х улучшений выбрать 2 наилучших. Затем пары объединяются в группы по 4 человека и снова \
+выбирают 2 из 4-х. Затем группы по 8 человек. После соберите победившие идеи и общим голосованием выберите \
+финальные 2",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 durationDetail:  "15-30 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project, largeGroups"
+suitable: "итерация, релиз, проект, большие группы"
 };
+
 all_activities[21] = {
 phase:     0,
 name:      "Temperature Reading",
