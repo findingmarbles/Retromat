@@ -70,5 +70,3 @@ $_lang['POPUP_IDS_INFO']= 'Voorbeeld ID: 3-33-20-13-45';
 $_lang['POPUP_SEARCH_BUTTON'] = 'Zoeken';
 $_lang['POPUP_SEARCH_INFO']= 'Zoek op titel, samenvatting of beschrijving';
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Helaas, er werd niets gevonden voor';
-
-?>

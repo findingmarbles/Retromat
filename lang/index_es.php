@@ -74,6 +74,3 @@ $_lang['POPUP_IDS_INFO']= 'Ejemplo ID: 3-33-20-13-45';
 $_lang['POPUP_SEARCH_BUTTON'] = 'Buscar';
 $_lang['POPUP_SEARCH_INFO']= 'Buscar en t&iacute;tulos, res&uacute;menes &amp; descripciones';
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Disculpa, no se encontr&oacute; nada para';
-
-?>
-
