@@ -23,7 +23,7 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи её';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/antonskornyakov.jpg';
@@ -32,51 +32,57 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Translator 2';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/translator2';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-	Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!.
+	Юлиана работает скрам мастером, я так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][2] = 'Александр';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][2] = 'https://twitter.com/Yuliana_Step';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/yuliana_step';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][2] = <<<EOT
+	Юлиана работает скрам мастером, я так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
+	<br><br><br>
+EOT;
+
+$_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Создатель';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
-    Corinna wished for something like Retromat during her Scrummaster years.
-    Eventually she just built it herself in the hope that it would be useful to others, too.
-    Any questions, suggestions or encouragement?
-    You can <a href="mailto:corinna@finding-marbles.com">email her</a> or
-    <a href="https://twitter.com/findingmarbles">follow her on Twitter</a>.
-    If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her <a href="http://wall-skills.com">summaries on Wall-Skills.com</a>.  
+	Когда Корина работала скрам мастером она сама нуждалась в Ретромате.
+	В конце концов она сама построила его в надежде на то, что он и другим поможет.
+    У вас есть вопросы, предложения или тёплые слова? 
+    <a href="mailto:corinna@finding-marbles.com">Пишите ей</a> или
+    <a href="https://twitter.com/findingmarbles">читайте её Twitter</a>.
+    Если вам нравится Ретромат, вам может понравится <a href="http://finding-marbles.com">блог Коринны</a> и
+ 	её сайт с <a href="http://wall-skills.com">обзорами и распечатками Wall-Skills.com</a>.
 EOT;
 
-$_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
+$_lang['INDEX_TEAM_TIMON_TITLE'] = 'Ко-создатель';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-As developer, product owner, scrum master and <a href="https://agile.coach/">agile coach</a>, Timon has been a Retromat user and fan for more than three years. He had quite a few feature ideas. In 2016 he started to build some of those features himself. You can <a href="mailto:timon.fiddike@agile.coach">email him</a> or
-    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>.
+Тимон использовал Ретромат на протяжении долгово времени как разработчик, продукт-оунер, скрам мастер и <a href="https://agile.coach/">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike"> читать его на Twitter</a>.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = 'от Finding-Marbles.com';
 
-$_lang['ACTIVITY_SOURCE'] = 'Source:';
-$_lang['ACTIVITY_PREV'] = 'Show other activity for this phase';
-$_lang['ACTIVITY_NEXT'] = 'Show other activity for this phase';
-$_lang['ACTIVITY_PHOTO_ADD'] = 'Add Photo';
+$_lang['ACTIVITY_SOURCE'] = 'Источник:';
+$_lang['ACTIVITY_PREV'] = 'Показать предыдущую активность для этой фазы';
+$_lang['ACTIVITY_NEXT'] = 'Показать следующию активность для этой фазы';
+$_lang['ACTIVITY_PHOTO_ADD'] = 'Добавить фотографию';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
-$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'View photo';
-$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'View photos';
-$_lang['ACTIVITY_PHOTO_BY'] = 'Photo by ';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Посмотреть фотографию';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Посмотреть фотографии';
+$_lang['ACTIVITY_PHOTO_BY'] = 'Фото от ';
 
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';
-$_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, can\'t find activity with ID';
+$_lang['ERROR_NO_SCRIPT'] = 'Ретромат работает с Javascript. Пожалуйста активируйте в вашем браузере. Спасибо!';
+$_lang['ERROR_MISSING_ACTIVITY'] = 'Извиняюсь, не могу найти такой активности';
 
-$_lang['POPUP_CLOSE'] = 'Close';
-$_lang['POPUP_IDS_BUTTON'] = 'Show!';
-$_lang['POPUP_IDS_INFO']= 'Example ID: 3-33-20-13-45';
-$_lang['POPUP_SEARCH_BUTTON'] = 'Search';
-$_lang['POPUP_SEARCH_INFO']= 'Search titles, summaries &amp; descriptions';
-$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Sorry, nothing found for';
-
-?>
+$_lang['POPUP_CLOSE'] = 'Закрыть';
+$_lang['POPUP_IDS_BUTTON'] = 'Показать!';
+$_lang['POPUP_IDS_INFO']= 'Пример ID: 3-33-20-13-45';
+$_lang['POPUP_SEARCH_BUTTON'] = 'Поиск';
+$_lang['POPUP_SEARCH_INFO']= 'Поиск в названиях и описаниях';
+$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Извиняюсь, не могу ничего подходящего найти';
