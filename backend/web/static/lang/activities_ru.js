@@ -327,82 +327,88 @@ suitable: "итерация, релиз"
 
 all_activities[16] = {
 phase:     4, // 5 geht auch
-name:      "SaMoLo (More of, Same of, Less of)",
-summary:   "Get course corrections on what you do as a facilitator",
-desc:      "Divide a flip chart in 3 sections titled 'More of', 'Same of', and 'Less of'. \
-Ask participants to nudge your behaviour into the right direction: Write stickies \
-with what you should do more, less and what is exactly right. Read out and briefly \
-discuss the stickies section-wise.",
+name:      "Больше, Меньше, Так держать",
+summary:   "Получите обратную связь на свое поведение как ведущего ретроспективы",
+desc:      "Разделите флипчарт на 3 колонки 'Больше', 'Меньше' и 'Так держать'. \
+Попросите участников скорректировать ваше поведение как ведущего ретроспективы: Записать на стикерах \
+что вам следует делать больше, что следует делать меньше, и что следует оставить без изменений. \
+Зачитайте и кратко обсудите полученную информацию.",
 source:    "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
 more:      "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>David Bland's experiences</a>",
 durationDetail:  "5-10",
-duration:    "Medium",
-stage:    "Forming, Storming",
-suitable: "iteration, release, project"
+duration:    "Средняя",
+stage:    "Формирование, Бурление",
+suitable: "итерация, релиз, проект"
 };
+
 all_activities[17] = {
 phase:     0,
-name:      "Check In - Amazon Review",
-summary:   "Review the iteration on Amazon. Don't forget the star rating!",
-desc:      "Each team member writes a short review with: \
+name:      "Отзыв на Яндекс-Маркете",
+summary:   "Напишите отзыв о прошедшей итерации в стиле Яндекс-Маркета",
+desc:      "Попросите участников написать короткий отзыв о прошедшей итерации в формате: \
 <ul>\
-    <li>Title</li>\
-    <li>Content</li>\
-    <li>Star rating (5 stars is the best) </li>\
+    <li>Заголовок</li>\
+    <li>Содержание</li>\
+    <li>Количество звезд по пятибальной шкале</li>\
 </ul>\
-Everyone reads out their review. Record the star ratings on a flip chart.<br>\
-Can span whole retrospective by also asking what is recommended about the iteration and what not.",
+Далее попросите зачитать свои отзывы. Оценки записывайте на флипчарт.<br>\
+Упражнение можно расширить на всю ретроспективу добавив вопросы: что бы вы порекомендовали на \
+следующую итерацию, а что бы не стали рекомендовать.",
 source:    "<a href='http://blog.codecentric.de/2012/02/unser-sprint-bei-amazon/'>Christian Hei&szlig;</a>",
 durationDetail:  "10",
-duration:    "Long",
+duration:    "Длительная",
 stage:    "All",
-suitable: "release, project"
+suitable: "релиз, проект"
 };
+
 all_activities[18] = {
 phase:     1,
-name:      "Speedboat / Sailboat",
-summary:   "Analyze what forces push you forward and what pulls you back",
-desc:      "Draw a speedboat onto a flip chart paper. Give it a strong motor as well \
-as a heavy anchor. Team members silently write on sticky notes what propelled the team forward \
-and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. \
-Read out each one and discuss how you can increase 'motors' and cut 'anchors'. \
+name:      "Катер / Яхта",
+summary:   "Проанализируйте что двигает вас вперед, а что тянет назад",
+desc:      "Нарисуйте на листе флипчарта катер с мощным мотором и большим тяжелым якорем. Попросите \
+участников в тишине записать на стикерах что двигает команду вперед (мотор), а что тормозит и мешает \
+(якорь). Каждая мысль на отдельном стикере. Попросите развесить стикеры на мотор и якорь соответственно. \
+Зачитайте каждый и обсудите, каким образом усилить движущие и устранить сдерживающие факторы. \
 <br><br> \
-Variation: Some people add an iceberg in the back of the image. The iceberg represents obstacles \
-they already see coming.",
-source:    source_innovationGames + ", found at <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
+Вариация: Иногда на рисунок добавляют айсберг, олицетворяющий предстоящие трудности, которые команда видит \
+на своем пути.",
+source:    source_innovationGames + ", найдено у <a href='http://leadinganswers.typepad.com/leading_answers/2007/10/calgary-apln-pl.html'>Mike Griffiths</a>",
 durationDetail:  "10-15 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release"
+suitable: "итерация, релиз"
 };
+
 all_activities[19] = {
 phase:     2,
-name:      "Perfection Game",
-summary:   "What would make the next iteration a perfect 10 out of 10?",
-desc:      "Prepare a flip chart with 2 columns, a slim one for 'Rating' and a wide one for 'Actions'. \
-Everyone rates the last iteration on a scale from 1 to 10. Then they have to suggest what action(s) \
-would make the next iteration a perfect 10.",
+name:      "Игра в совершенство",
+summary:   "Что сделает следующую итерацию совершенной (на 10 баллов из 10)?",
+desc:      "Разделите флипчарт на 2 колонки: узкая колонка 'Оценка' и широкая 'Улучшения'. Каждый \
+оценивает прошедшую итерацию по шкале от 1 до 10. После чего группа должна предложить улучшения, \
+которые сделают следующую итерацию идеальной (10 баллов из 10).",
 source:    "<a href='http://www.benlinders.com/2011/getting-business-value-out-of-agile-retrospectives/'>Ben Linders</a>",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release"
+suitable: "итерация, релиз"
 };
+
 all_activities[20] = {
 phase:     3,
-name:      "Merge",
-summary:   "Condense many possible actions down to just two the team will try",
-desc:      "Hand out index cards and markers. Tell everyone to write down the two actions they \
-want to try next iteration - as concretely as possible \
-(<a href='http://en.wikipedia.org/wiki/SMART_criteria'>SMART</a>). Then everyone pairs \
-up with their neighbor and both together must merge their actions into a single list with \
-two actions. The pairs form groups of 4. Then 8. Now collect every group's two action items \
-and have a vote on the final two.",
+name:      "Выжимка",
+summary:   "Сведите все возможные действия к двум, которые команда возьмет в работу",
+desc:      "Раздайте стикеры и маркеры. Попросите каждого записать два улучшения, которые он хочет \
+попробовать на следующей итерации. Попросите писать максимально конкретно в соответствии c концепцией \
+<a href='http://ru.wikipedia.org/wiki/SMART'>SMART</a>. Далее участники объединяются в пары, и каждая \
+пара должна из 4-х улучшений выбрать 2 наилучших. Затем пары объединяются в группы по 4 человека и снова \
+выбирают 2 из 4-х. Затем группы по 8 человек. После соберите победившие идеи и общим голосованием выберите \
+финальные 2",
 source:    "Lydia Grawunder & Sebastian Nachtigall",
 durationDetail:  "15-30 groupSize",
-duration:    "Medium",
+duration:    "Средняя",
 stage:    "All",
-suitable: "iteration, release, project, largeGroups"
+suitable: "итерация, релиз, проект, большие группы"
 };
+
 all_activities[21] = {
 phase:     0,
 name:      "Измерение температуры",
