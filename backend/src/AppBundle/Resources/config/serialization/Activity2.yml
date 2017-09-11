@@ -1,0 +1,12 @@
+AppBundle\Entity\Activity2:
+    attributes:
+        retromatId:     { groups: ['rest'] }
+        phase:          { groups: ['rest'] }
+        source:         { groups: ['rest'] }
+        translations:   { groups: ['rest'] }
+        # using the magic __get method we can
+        # include properties from translations
+        # at the toplevel of Activity2:
+        name:           { groups: ['rest'] }
+        summary:        { groups: ['rest'] }
+        desc:           { groups: ['rest'] }

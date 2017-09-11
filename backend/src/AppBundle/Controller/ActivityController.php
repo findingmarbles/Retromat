@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Activity;
+use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use FOS\RestBundle\View\View;
@@ -16,9 +17,19 @@ class ActivityController extends FOSRestController implements ClassResourceInter
 {
     public function getAction($id)
     {
+//      // Keeping working Activity2 based version commented out until it's fast through caching.
+
         /** @var $activity Activity */
+//        $activity = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2')->find($id);
         $activity = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity')->find($id);
         $activity->setSource($this->expandSource($activity->getSource()));
+
+//        $context = new Context();
+//        $context->addGroup('rest');
+//        $view = $this->view($activity, 200);
+//        $view->setContext($context);
+//
+//        return $view;
 
         return new View($activity);
     }
