@@ -568,6 +568,7 @@ duration:    "Средняя",
 stage:    "Функционирование",
 suitable: "итерация, релиз, проект"
 };
+/*
 all_activities[31] = {
 phase:     0,
 name:      "Emoticon Project Gauge",
@@ -2392,6 +2393,6 @@ source:    "<a href='https://twitter.com/ebstar'>Eben Halford</a>",
 duration:    "Medium",
 stage:    "Forming",
 suitable:  "iteration, project, release"
-};
+};*/
 // Values for duration: "<minMinutes>-<maxMinutes> perPerson"
 // Values for suitable: "iteration, realease, project, introverts, max10People, rootCause, smoothSailing, immature, largeGroup"
