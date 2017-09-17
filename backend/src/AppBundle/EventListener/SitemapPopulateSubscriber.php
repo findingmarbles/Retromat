@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
-use AppBundle\Entity\Activity;
 
 class SitemapPopulateSubscriber implements EventSubscriberInterface
 {
@@ -128,7 +127,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private function populateAllActivitiesPage(UrlContainerInterface $urlContainer)
     {
         $language = 'en';
-        $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
+        $activities = $this->objectManager->getRepository('AppBundle:Activity2')->findAll();
 
         $activityIds = [];
         foreach ($activities as $activity) {
@@ -157,7 +156,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private function populateIndividualActivities(UrlContainerInterface $urlContainer)
     {
         $language = 'en';
-        $activities = $this->objectManager->getRepository('AppBundle:Activity')->findBy(['language' => $language]);
+        $activities = $this->objectManager->getRepository('AppBundle:Activity2')->findAll();
 
         foreach ($activities as $activity) {
             $urlContainer->addUrl(
