@@ -2,7 +2,7 @@
 
 namespace tests\AppBundle\Importer;
 
-use AppBundle\Entity\Activity;
+use AppBundle\Entity\Activity2;
 use AppBundle\Importer\ArrayToObjectMapper;
 
 class ArrayToObjectMapperIntegrationTest extends \PHPUnit_Framework_TestCase
@@ -11,7 +11,6 @@ class ArrayToObjectMapperIntegrationTest extends \PHPUnit_Framework_TestCase
     {
         $inputArray = [
             'retromatId' => 123,
-            'language' => 'en',
             'phase' => 1,
             'name' => 'Find your Focus Principle',
             'summary' => 'Discuss the 12 agile principles and pick one to work on',
@@ -42,9 +41,8 @@ rather choose the second position, why?',
             'suitable' => 'iteration, project, release',
         ];
 
-        $entity = new Activity();
+        $entity = new Activity2();
         $entity->setRetromatId(123);
-        $entity->setLanguage('en');
         $entity->setPhase(1);
         $entity->setName('Find your Focus Principle');
         $entity->setSummary('Discuss the 12 agile principles and pick one to work on');
@@ -76,7 +74,7 @@ rather choose the second position, why?'
         $entity->setDuration('long');
         $entity->setSuitable('iteration, project, release');
 
-        $activity = new Activity();
+        $activity = new Activity2();
         $mapper = new ArrayToObjectMapper();
         $mapper->fillObjectFromArray($inputArray, $activity);
 

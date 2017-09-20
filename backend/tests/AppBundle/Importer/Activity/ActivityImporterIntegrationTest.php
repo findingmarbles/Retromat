@@ -28,14 +28,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter->import();
         $entityManager->clear();
 
-        // structure we are migrating away from
-        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
-        $this->assertEquals(
-            'Discuss the 12 agile principles and pick one to work on',
-            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
-        );
-
-        // structure we are migrating to
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
@@ -63,13 +55,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter->import();
         $entityManager->clear();
 
-        // structure we are migrating away from
-        $activity = $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123]);
-        $entityManager->remove($activity);
-        $entityManager->flush();
-        $this->assertCount(128, $entityManager->getRepository('AppBundle:Activity')->findAll());
-
-        // structure we are migrating to
         $activity2 = $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 123]);
         $entityManager->remove($activity2);
         $entityManager->flush();
@@ -78,14 +63,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter->import();
         $entityManager->clear();
 
-        // structure we are migrating away from
-        $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity')->findAll());
-        $this->assertEquals(
-            'Discuss the 12 agile principles and pick one to work on',
-            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 123])->getSummary()
-        );
-
-        // structure we are migrating to
         $this->assertCount(129, $entityManager->getRepository('AppBundle:Activity2')->findAll());
         $this->assertEquals(
             'Discuss the 12 agile principles and pick one to work on',
@@ -181,7 +158,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
 
         try {
-            $activityImporter->import1();
+            $activityImporter->import();
         } catch (InvalidActivityException $exception) {
             return;
         }
@@ -246,13 +223,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter->import();
         $entityManager->clear();
 
-        // structure we are migrating away from
-        $this->assertEquals(
-            'ESVP',
-            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
-        );
-
-        // structure we are migrating to
         $this->assertEquals(
             'ESVP',
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
@@ -264,13 +234,6 @@ class ActivityImporterIntegrationTest extends WebTestCase
         $activityImporter2->import();
         $entityManager->clear();
 
-        // structure we are migrating away from
-        $this->assertEquals(
-            'ESVPupdated',
-            $entityManager->getRepository('AppBundle:Activity')->findOneBy(['retromatId' => 1])->getName()
-        );
-
-        // structure we are migrating to
         $this->assertEquals(
             'ESVPupdated',
             $entityManager->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => 1])->getName()
