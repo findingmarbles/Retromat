@@ -13,7 +13,7 @@ $_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ УПРАЖНЕНИЕ ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Что такое ретроспектива?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">О Ретромате</a>';
-$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Печатная версия</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Печатная версия</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Добавить активность</a>';
 
 if (is_output_format_twig($argv)) {
@@ -23,16 +23,16 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи его';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик';
+
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/antonskornyakov.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/anton_skornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Антон работает аджайл коучом и тренером со множеством разных организаций в ИТ и вне ИТ! Пишите ему на <a href="https://twitter.com/antonskornyakov">Twitter</a> или через <a href="https://www.linkedin.com/in/antonskornyakov/">LinkedIn</a>!
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 2';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step.jpg';
@@ -41,14 +41,14 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 3';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][2] = 'Александр Мартюшев';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][2] = 'http://onagile.ru/team/alex-martyushev/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/alex.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/alex_martiushev.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][2] = <<<EOT
 	Александр работает agile коучем и тренером в компании OnAgile. Связаться с Александром можно по <a href="mailto:alex@onagile.ru?subject=Вопрос по Agile">электронной почте</a>.
 	<br><br><br>
 EOT;
+
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Создатель';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
@@ -88,5 +88,3 @@ $_lang['POPUP_IDS_INFO']= 'Пример ID: 3-33-20-13-45';
 $_lang['POPUP_SEARCH_BUTTON'] = 'Поиск';
 $_lang['POPUP_SEARCH_INFO']= 'Поиск в названиях и описаниях';
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Извиняюсь, не могу ничего подходящего найти';
-
-?>

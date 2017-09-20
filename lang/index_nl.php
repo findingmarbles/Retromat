@@ -13,7 +13,7 @@ $_lang['INDEX_LOADING'] = '... ACTIVITEITEN WORDEN GELADEN ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
-$_lang['INDEX_NAVI_PRINT'] = '<a href="/print/index.html">Print Edition</a>';
+$_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
 if (is_output_format_twig($argv)) {
