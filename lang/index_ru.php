@@ -23,7 +23,7 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи её';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/antonskornyakov.jpg';
@@ -32,6 +32,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	<br><br><br>
 EOT;
 
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 2';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step.jpg';
@@ -40,11 +41,12 @@ $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 	<br><br><br>
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][2] = 'Александр';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][2] = 'https://twitter.com/Yuliana_Step';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/yuliana_step';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 3';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][2] = 'Александр Мартюшев';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][2] = 'http://onagile.ru/team/alex-martyushev/';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/alex.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][2] = <<<EOT
-	Юлиана работает скрам мастером, я так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
+	Александр работает agile коучем и тренером в компании OnAgile. Связаться с Александром можно по <a href="mailto:alex@onagile.ru?subject=Вопрос по Agile">электронной почте</a>.
 	<br><br><br>
 EOT;
 
@@ -86,3 +88,5 @@ $_lang['POPUP_IDS_INFO']= 'Пример ID: 3-33-20-13-45';
 $_lang['POPUP_SEARCH_BUTTON'] = 'Поиск';
 $_lang['POPUP_SEARCH_INFO']= 'Поиск в названиях и описаниях';
 $_lang['POPUP_SEARCH_NO_RESULTS'] = 'Извиняюсь, не могу ничего подходящего найти';
+
+?>
