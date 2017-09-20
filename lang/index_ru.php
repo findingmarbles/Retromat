@@ -3,13 +3,13 @@
 $_lang['HTML_TITLE'] = 'Инспирация, структуры &amp; планы для (аджайл) ретроспектив';
 
 $_lang['INDEX_PITCH'] = 'Планируете вашу следующию аджайл <b>ретроспективу</b>? Начните со случайного плана, адаптируйте его к вашей команде и ситуации, распечатайте его или поделитесь URL вашего плана с другими. Или просто полистайте в поиске новых идей!';
-$_lang['INDEX_PLAN_ID'] = 'ID активности';
+$_lang['INDEX_PLAN_ID'] = 'ID упражнения';
 $_lang['INDEX_BUTTON_SHOW'] = 'Показать';
-$_lang['INDEX_RANDOM_RETRO'] = 'Новый случайную активность';
+$_lang['INDEX_RANDOM_RETRO'] = 'Новый случайную упражнение';
 $_lang['INDEX_ENTER_ID'] = 'Напрямую ввести ID';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в активностях';
-$_lang['INDEX_ALL_ACTIVITIES'] = 'Все активности для';
-$_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ АКТИВНОСТИ ...';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в упражнениях';
+$_lang['INDEX_ALL_ACTIVITIES'] = 'Все упражнения для';
+$_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ УПРАЖНЕНИЕ ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Что такое ретроспектива?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">О Ретромате</a>';
@@ -19,9 +19,9 @@ $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-
 if (is_output_format_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
 } else {
-    $_lang['INDEX_ABOUT'] = 'Ретромат содержит <span class="js_footer_no_of_activities"></span> активности позволяющие <span class="js_footer_no_of_combinations"></span> комбинаций (<span class="js_footer_no_of_combinations_formula"></span>) и мы постоянно добавляем новые.'; // Ты знаешь хорошую активность?
+    $_lang['INDEX_ABOUT'] = 'Ретромат содержит <span class="js_footer_no_of_activities"></span> упражнения позволяющие <span class="js_footer_no_of_combinations"></span> комбинаций для разнообразия вашей ретроспективы (<span class="js_footer_no_of_combinations_formula"></span>) и мы активно работает над добавлением новых упраженений'; // Ты знаешь хорошее упражнение?
 }
-$_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи её';
+$_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи его';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик 1';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
