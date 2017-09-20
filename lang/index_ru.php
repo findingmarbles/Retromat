@@ -37,7 +37,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
-	Юлиана работает скрам мастером, я так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
+	Юлиана работает скрам мастером, и так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
 	<br><br><br>
 EOT;
 
