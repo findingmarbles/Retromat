@@ -233,7 +233,7 @@ class Activity2
      */
     public function getSuitable(): string
     {
-        return $this->suitable;
+        return (string) $this->suitable;
     }
 
     /**
