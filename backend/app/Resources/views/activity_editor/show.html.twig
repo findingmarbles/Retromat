@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Activity2</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ activity2.id }}</td>
+            </tr>
+            <tr>
+                <th>Retromatid</th>
+                <td>{{ activity2.retromatId }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ activity2.phase }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ activity2.duration }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ activity2.source }}</td>
+            </tr>
+            <tr>
+                <th>More</th>
+                <td>{{ activity2.more }}</td>
+            </tr>
+            <tr>
+                <th>Suitable</th>
+                <td>{{ activity2.suitable }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('team_activity_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

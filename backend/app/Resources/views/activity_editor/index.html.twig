@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Activity2s list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Retromatid</th>
+                <th>Phase</th>
+                <th>Duration</th>
+                <th>Source</th>
+                <th>More</th>
+                <th>Suitable</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for activity2 in activity2s %}
+            <tr>
+                <td><a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">{{ activity2.id }}</a></td>
+                <td>{{ activity2.retromatId }}</td>
+                <td>{{ activity2.phase }}</td>
+                <td>{{ activity2.duration }}</td>
+                <td>{{ activity2.source }}</td>
+                <td>{{ activity2.more }}</td>
+                <td>{{ activity2.suitable }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('team_activity_new') }}">Create a new activity2</a>
+        </li>
+    </ul>
+{% endblock %}
