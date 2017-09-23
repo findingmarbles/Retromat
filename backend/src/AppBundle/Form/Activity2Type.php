@@ -16,6 +16,9 @@ class Activity2Type extends AbstractType
         $builder
             ->add('retromatId')
             ->add('phase')
+            ->add('name')
+            ->add('summary')
+            ->add('desc')
             ->add('duration')
             ->add('source')
             ->add('more')
