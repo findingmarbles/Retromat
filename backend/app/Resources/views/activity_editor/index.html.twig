@@ -7,25 +7,19 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Retromatid</th>
                 <th>Phase</th>
-                <th>Duration</th>
-                <th>Source</th>
-                <th>More</th>
-                <th>Suitable</th>
+                <th>Name</th>
+                <th>Summary</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for activity2 in activity2s %}
             <tr>
-                <td><a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">{{ activity2.id }}</a></td>
-                <td>{{ activity2.retromatId }}</td>
+                <td><a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">{{ activity2.retromatId }}</a></td>
                 <td>{{ activity2.phase }}</td>
-                <td>{{ activity2.duration }}</td>
-                <td>{{ activity2.source }}</td>
-                <td>{{ activity2.more }}</td>
-                <td>{{ activity2.suitable }}</td>
+                <td>{{ activity2.getName }}</td>
+                <td>{{ activity2.getSummary }}</td>
                 <td>
                     <ul>
                         <li>
