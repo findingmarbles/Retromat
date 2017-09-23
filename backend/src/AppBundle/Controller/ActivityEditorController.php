@@ -88,7 +88,7 @@ class ActivityEditorController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('team_activity_edit', array('id' => $activity2->getId()));
+            return $this->redirectToRoute('team_activity_show', array('id' => $activity2->getId()));
         }
 
         return $this->render('activity_editor/edit.html.twig', array(
