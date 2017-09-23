@@ -13,7 +13,13 @@ class Activity2Type extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('retromatId')->add('phase')->add('duration')->add('source')->add('more')->add('suitable');
+        $builder
+            ->add('retromatId')
+            ->add('phase')
+            ->add('duration')
+            ->add('source')
+            ->add('more')
+            ->add('suitable');
     }
     
     /**
