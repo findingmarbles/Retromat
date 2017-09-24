@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for activity2 in activity2s %}
+        {% for activity2 in activity2s|reverse %}
             <tr>
                 <td><a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">{{ activity2.retromatId }}</a></td>
                 <td>{{ activity2.phase }}</td>
