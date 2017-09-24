@@ -113,7 +113,7 @@ class Activity2
      */
     public function getRetromatId(): int
     {
-        return $this->retromatId;
+        return (int)$this->retromatId;
     }
 
     /**
@@ -137,7 +137,7 @@ class Activity2
      */
     public function getPhase(): int
     {
-        return $this->phase;
+        return (int)$this->phase;
     }
 
     /**
@@ -161,7 +161,7 @@ class Activity2
      */
     public function getDuration(): string
     {
-        return $this->duration;
+        return (string)$this->duration;
     }
 
     /**
@@ -185,7 +185,7 @@ class Activity2
      */
     public function getSource(): string
     {
-        return $this->source;
+        return (string)$this->source;
     }
 
     /**
