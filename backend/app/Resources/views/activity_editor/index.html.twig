@@ -1,43 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Activity2s list</h1>
+    <h1>Activities ({{ app.request.locale }})</h1>
 
-    <table>
+    <ul>
+        <li>
+            <a href="{{ path('team_activity_new') }}">Create a new activity</a>
+        </li>
+    </ul>
+
+    <table style="border-spacing: 10px;">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Phase</th>
-                <th>Name</th>
-                <th>Summary</th>
-                <th>Actions</th>
-            </tr>
+        <tr align="left">
+            <th>Id</th>
+            <th style="width: 150px;">Actions</th>
+            <th>Phase</th>
+            <th>Name</th>
+            <th>Summary</th>
+        </tr>
         </thead>
         <tbody>
         {% for activity2 in activity2s|reverse %}
             <tr>
-                <td><a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">{{ activity2.retromatId }}</a></td>
-                <td>{{ activity2.phase }}</td>
+                <td align="right">{{ activity2.retromatId }}</td>
+                <td>
+                    <a href="{{ path('activities_by_id', { 'id': activity2.id }) }}">public</a> |
+                    <a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">details</a> |
+                    <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">edit</a>
+                </td>
+                <td align="center">{{ activity2.phase }}</td>
                 <td>{{ activity2.getName }}</td>
                 <td>{{ activity2.getSummary }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('team_activity_new') }}">Create a new activity2</a>
-        </li>
-    </ul>
 {% endblock %}
