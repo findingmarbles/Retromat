@@ -53,6 +53,10 @@ class ActivityEditorController extends Controller
         $activity->setRetromatId($lastActivityId + 1);
         $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $form->handleRequest($request);
+        // working arround weird bug: correct value 0 in request, entity ends up with null
+        if (empty($activity->getPhase())) {
+            $activity->setPhase(0);
+        };
 
         if ($form->isSubmitted() && $form->isValid()) {
             $activity->mergeNewTranslations();

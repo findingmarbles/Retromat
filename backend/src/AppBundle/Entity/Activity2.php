@@ -47,7 +47,6 @@ class Activity2
     /**
      * @var int
      * @Assert\Type("integer")
-     * @Assert\NotBlank()
      * @Assert\Range(min = 0, max = 5)
      * Using `backticks` to avoid mysql reserved keyword https://dev.mysql.com/doc/refman/5.5/en/keywords.html
      * @ORM\Column(name="`phase`", type="smallint")

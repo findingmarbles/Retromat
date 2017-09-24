@@ -39,4 +39,30 @@ class ActivityEditorControllerTest extends WebTestCase
             $crawler->selectLink('/en/team/activity/1')->link()->getUri()
         );
     }
+
+    public function testCreateNewActivityPhase0()
+    {
+        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/en/team/activity/new');
+        $form = $crawler->selectButton('Create')->form()->setValues(
+            [
+                'appbundle_activity2[phase]' => 0,
+                'appbundle_activity2[name]' => 'foo',
+                'appbundle_activity2[summary]' => 'bar',
+                'appbundle_activity2[desc]' => 'la',
+            ]
+        );
+        $crawler = $client->submit($form);
+
+//        dump($client->getResponse()->getContent());
+
+        $this->assertStatusCode(302, $client);
+        $this->assertEquals(
+            'http://localhost/en/team/activity/1',
+            $crawler->selectLink('/en/team/activity/1')->link()->getUri()
+        );
+    }
 }
