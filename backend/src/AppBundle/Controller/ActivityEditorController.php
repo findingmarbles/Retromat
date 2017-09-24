@@ -49,6 +49,7 @@ class ActivityEditorController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $activity->mergeNewTranslations();
             $em->persist($activity);
             $em->flush();
 
