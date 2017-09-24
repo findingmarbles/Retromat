@@ -57,8 +57,6 @@ class ActivityEditorControllerTest extends WebTestCase
         );
         $crawler = $client->submit($form);
 
-//        dump($client->getResponse()->getContent());
-
         $this->assertStatusCode(302, $client);
         $this->assertEquals(
             'http://localhost/en/team/activity/1',
