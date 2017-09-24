@@ -47,10 +47,11 @@ class ActivityEditorController extends Controller
     public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $lastActivityId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
+        // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
+        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAll()) + 1;
 
         $activity = new Activity2();
-        $activity->setRetromatId($lastActivityId + 1);
+        $activity->setRetromatId($nextRetromatId);
         $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $form->handleRequest($request);
         // working arround weird bug: correct value 0 in request, entity ends up with null
