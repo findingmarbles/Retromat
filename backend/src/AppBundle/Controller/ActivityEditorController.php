@@ -24,10 +24,10 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $activity2s = $em->getRepository('AppBundle:Activity2')->findAll();
+        $activities = $em->getRepository('AppBundle:Activity2')->findAll();
 
         return $this->render('activity_editor/index.html.twig', array(
-            'activity2s' => $activity2s,
+            'activity2s' => $activities,
         ));
     }
 
@@ -39,20 +39,20 @@ class ActivityEditorController extends Controller
      */
     public function newAction(Request $request)
     {
-        $activity2 = new Activity2();
-        $form = $this->createForm('AppBundle\Form\Activity2Type', $activity2);
+        $activity = new Activity2();
+        $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($activity2);
+            $em->persist($activity);
             $em->flush();
 
-            return $this->redirectToRoute('team_activity_show', array('id' => $activity2->getId()));
+            return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
         }
 
         return $this->render('activity_editor/new.html.twig', array(
-            'activity2' => $activity2,
+            'activity2' => $activity,
             'form' => $form->createView(),
         ));
     }
@@ -63,12 +63,12 @@ class ActivityEditorController extends Controller
      * @Route("/{id}", name="team_activity_show")
      * @Method("GET")
      */
-    public function showAction(Activity2 $activity2)
+    public function showAction(Activity2 $activity)
     {
-        $deleteForm = $this->createDeleteForm($activity2);
+        $deleteForm = $this->createDeleteForm($activity);
 
         return $this->render('activity_editor/show.html.twig', array(
-            'activity2' => $activity2,
+            'activity2' => $activity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -79,20 +79,20 @@ class ActivityEditorController extends Controller
      * @Route("/{id}/edit", name="team_activity_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Activity2 $activity2)
+    public function editAction(Request $request, Activity2 $activity)
     {
-        $deleteForm = $this->createDeleteForm($activity2);
-        $editForm = $this->createForm('AppBundle\Form\Activity2Type', $activity2);
+        $deleteForm = $this->createDeleteForm($activity);
+        $editForm = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('team_activity_show', array('id' => $activity2->getId()));
+            return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
         }
 
         return $this->render('activity_editor/edit.html.twig', array(
-            'activity2' => $activity2,
+            'activity2' => $activity,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -104,14 +104,14 @@ class ActivityEditorController extends Controller
      * @Route("/{id}", name="team_activity_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Activity2 $activity2)
+    public function deleteAction(Request $request, Activity2 $activity)
     {
-        $form = $this->createDeleteForm($activity2);
+        $form = $this->createDeleteForm($activity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($activity2);
+            $em->remove($activity);
             $em->flush();
         }
 
@@ -121,14 +121,14 @@ class ActivityEditorController extends Controller
     /**
      * Creates a form to delete a activity2 entity.
      *
-     * @param Activity2 $activity2 The activity2 entity
+     * @param Activity2 $activity The activity2 entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Activity2 $activity2)
+    private function createDeleteForm(Activity2 $activity)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('team_activity_delete', array('id' => $activity2->getId())))
+            ->setAction($this->generateUrl('team_activity_delete', array('id' => $activity->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
