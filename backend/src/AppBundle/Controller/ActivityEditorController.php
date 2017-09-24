@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
@@ -39,12 +40,15 @@ class ActivityEditorController extends Controller
      */
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $lastActivityId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
+
         $activity = new Activity2();
+        $activity->setRetromatId($lastActivityId+1);
         $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             $em->persist($activity);
             $em->flush();
 
