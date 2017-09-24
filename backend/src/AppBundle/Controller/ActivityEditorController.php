@@ -4,10 +4,11 @@ declare(strict_types=1);
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Activity2;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Activity2 controller.
@@ -29,9 +30,12 @@ class ActivityEditorController extends Controller
 
         $activities = $em->getRepository('AppBundle:Activity2')->findAll();
 
-        return $this->render('activity_editor/index.html.twig', array(
-            'activity2s' => $activities,
-        ));
+        return $this->render(
+            'activity_editor/index.html.twig',
+            array(
+                'activity2s' => $activities,
+            )
+        );
     }
 
     /**
@@ -46,7 +50,7 @@ class ActivityEditorController extends Controller
         $lastActivityId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
 
         $activity = new Activity2();
-        $activity->setRetromatId($lastActivityId+1);
+        $activity->setRetromatId($lastActivityId + 1);
         $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $form->handleRequest($request);
 
@@ -58,10 +62,13 @@ class ActivityEditorController extends Controller
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
         }
 
-        return $this->render('activity_editor/new.html.twig', array(
-            'activity2' => $activity,
-            'form' => $form->createView(),
-        ));
+        return $this->render(
+            'activity_editor/new.html.twig',
+            array(
+                'activity2' => $activity,
+                'form' => $form->createView(),
+            )
+        );
     }
 
     /**
@@ -74,10 +81,13 @@ class ActivityEditorController extends Controller
     {
         $deleteForm = $this->createDeleteForm($activity);
 
-        return $this->render('activity_editor/show.html.twig', array(
-            'activity2' => $activity,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render(
+            'activity_editor/show.html.twig',
+            array(
+                'activity2' => $activity,
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**
@@ -98,11 +108,14 @@ class ActivityEditorController extends Controller
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
         }
 
-        return $this->render('activity_editor/edit.html.twig', array(
-            'activity2' => $activity,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render(
+            'activity_editor/edit.html.twig',
+            array(
+                'activity2' => $activity,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**
@@ -137,7 +150,6 @@ class ActivityEditorController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('team_activity_delete', array('id' => $activity->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
