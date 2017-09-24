@@ -24,20 +24,20 @@ class ActivityEditorControllerTest extends WebTestCase
 //        ])->getReferenceRepository();
 
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers']);
-//        $credentials = ['username' => 'admin', 'password' => 'adminPass'];
+        $credentials = ['username' => 'admin', 'password' => 'adminPass'];
 
 
 //        $admin = $fixtures->getReference('admin');
 //        $this->loginAs($admin, 'main');
 
-#        $client = $this->makeClient($credentials);
+        $client = $this->makeClient($credentials);
 
 
-        $client = static::createClient();
-        $crawler = $client->request('GET', '/en/login');
-        $form = $crawler->selectButton('Log in')->form();
-        $form->setValues(['_username' => 'admin', '_password' => 'adminPass']);
-        $crawler = $client->submit($form);
+//        $client = static::createClient();
+//        $crawler = $client->request('GET', '/en/login');
+//        $form = $crawler->selectButton('Log in')->form();
+//        $form->setValues(['_username' => 'admin', '_password' => 'adminPass']);
+//        $crawler = $client->submit($form);
 
 
         dump($client->getCookieJar());

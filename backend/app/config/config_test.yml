@@ -32,6 +32,9 @@ doctrine:
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: plaintext
+    firewalls:
+        main:
+            http_basic: ~
 
 parameters:
     retromat.activity.import.file_names:
