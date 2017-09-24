@@ -23,17 +23,14 @@ class Activity2Type extends AbstractType
                 'phase',
                 ChoiceType::class,
                 [
-                    'choices' => array_combine(
-                        [
-                            '0 Set the stage',
-                            '1 Gather data',
-                            '2 Generate Insight',
-                            '3 Decide what to do',
-                            '4 Close',
-                            '5 Something completely different',
-                        ],
-                        range(0, 5)
-                    ),
+                    'choices' => [
+                        '0 Set the stage' => 0,
+                        '1 Gather data' => 1,
+                        '2 Generate Insight' => 2,
+                        '3 Decide what to do' => 3,
+                        '4 Close' => 4,
+                        '5 Something completely different' => 5,
+                    ],
                 ]
             )
             ->add('name', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
