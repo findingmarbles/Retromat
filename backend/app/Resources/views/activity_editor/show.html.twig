@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Activity2</h1>
+    <h1>Activity ({{ app.request.locale }}): {{ activity2.getName }}</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ activity2.id }}</td>
+                <td>{{ activity2.retromatId }}</td>
             </tr>
             <tr>
                 <th>Phase</th>
