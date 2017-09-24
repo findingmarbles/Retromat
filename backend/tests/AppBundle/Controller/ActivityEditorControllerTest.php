@@ -19,18 +19,19 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityPhase1()
     {
-//        $fixtures = $this->loadFixtures([
-//            'tests\AppBundle\Controller\DataFixtures\LoadUsers'
-//        ])->getReferenceRepository();
+        $fixtures = $this->loadFixtures([
+            'tests\AppBundle\Controller\DataFixtures\LoadUsers'
+        ])->getReferenceRepository();
 
-        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers']);
-        $credentials = ['username' => 'admin', 'password' => 'adminPass'];
+//        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers']);
+//        $credentials = ['username' => 'admin', 'password' => 'adminPass'];
 
 
-//        $admin = $fixtures->getReference('admin');
-//        $this->loginAs($admin, 'main');
+        $admin = $fixtures->getReference('admin');
+        $this->loginAs($admin, 'main');
+        $client = $this->makeClient();
 
-        $client = $this->makeClient($credentials);
+//        $client = $this->makeClient($credentials);
 
 
 //        $client = static::createClient();

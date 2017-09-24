@@ -22,7 +22,7 @@ class LoadUsers extends AbstractFixture
         $admin->setEmail('admin@example.com');
         $admin->setEnabled(true);
         $admin->addRole('ROLE_ADMIN');
-//        $this->setReference('admin', $admin);
+        $this->setReference('admin', $admin);
 
         $manager->persist($admin);
         $manager->flush();
