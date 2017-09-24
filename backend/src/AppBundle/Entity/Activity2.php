@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Activity2
@@ -209,7 +209,7 @@ class Activity2
      */
     public function getMore(): string
     {
-        return (string) $this->more;
+        return (string)$this->more;
     }
 
     /**
@@ -233,7 +233,7 @@ class Activity2
      */
     public function getSuitable(): string
     {
-        return (string) $this->suitable;
+        return (string)$this->suitable;
     }
 
     /**
@@ -268,11 +268,21 @@ class Activity2
     }
 
     /**
+     * @param $property
+     * @param $argument
+     * @return mixed
+     */
+    public function __set($property, $argument)
+    {
+        return $this->proxyCurrentLocaleTranslation('set'.$property, [$argument]);
+    }
+
+    /**
      * @param $method
      * @param $arguments
      * @return mixed
      */
-    public function __call($method, $arguments)
+    public function __call($method, array $arguments = [])
     {
         return $this->proxyCurrentLocaleTranslation($method, $arguments);
     }
