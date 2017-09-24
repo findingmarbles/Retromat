@@ -4,7 +4,6 @@ imports:
 framework:
     test: ~
     session:
-#        storage_id: session.storage.mock_file
         handler_id:  ~
         storage_id: session.storage.filesystem
         name: MOCKSESSID
@@ -28,13 +27,6 @@ doctrine:
             default:
                 driver:   pdo_sqlite
                 path:     "%kernel.cache_dir%/test.db"
-
-security:
-    encoders:
-        FOS\UserBundle\Model\UserInterface: plaintext
-    firewalls:
-        main:
-            http_basic: ~
 
 parameters:
     retromat.activity.import.file_names:
