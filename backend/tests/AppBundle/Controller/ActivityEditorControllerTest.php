@@ -104,4 +104,18 @@ class ActivityEditorControllerTest extends WebTestCase
             $crawler->selectLink('/en/team/activity/2')->link()->getUri()
         );
     }
+
+
+    public function testCreateNewActivityRequiresEnglishLocale()
+    {
+        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $client->request('GET', '/en/team/activity/new');
+        $this->assertStatusCode(200, $client);
+
+        $client->request('GET', '/de/team/activity/new');
+        $this->assertStatusCode(404, $client);
+    }
 }

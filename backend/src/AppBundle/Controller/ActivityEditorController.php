@@ -41,7 +41,7 @@ class ActivityEditorController extends Controller
     /**
      * Creates a new activity2 entity.
      *
-     * @Route("/new", name="team_activity_new")
+     * @Route("/new", requirements={"_locale": "en"}, name="team_activity_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
