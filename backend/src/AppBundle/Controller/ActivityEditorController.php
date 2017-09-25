@@ -48,7 +48,7 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAll()) + 1;
+        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered()) + 1;
 
         $activity = new Activity2();
         $activity->setRetromatId($nextRetromatId);
@@ -62,6 +62,7 @@ class ActivityEditorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $activity->mergeNewTranslations();
             $em->persist($activity);
+            $this->get('retromat.doctrine_cache.redis')->deleteAll();
             $em->flush();
 
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
@@ -108,6 +109,7 @@ class ActivityEditorController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->get('retromat.doctrine_cache.redis')->deleteAll();
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
@@ -137,6 +139,7 @@ class ActivityEditorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($activity);
+            $this->get('retromat.doctrine_cache.redis')->deleteAll();
             $em->flush();
         }
 

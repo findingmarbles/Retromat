@@ -105,7 +105,6 @@ class ActivityEditorControllerTest extends WebTestCase
         );
     }
 
-
     public function testCreateNewActivityRequiresEnglishLocale()
     {
         $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
