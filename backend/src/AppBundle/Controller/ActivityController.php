@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Cache(smaxage="86400")
+ * @Cache(smaxage="600")
  */
 class ActivityController extends FOSRestController implements ClassResourceInterface
 {
