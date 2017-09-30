@@ -28,13 +28,14 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $activities = $em->getRepository('AppBundle:Activity2')->findAll();
+        $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
 
         return $this->render(
             'activity_editor/index.html.twig',
-            array(
+            [
                 'activity2s' => $activities,
-            )
+                'delete_form' => $this->createDeleteForm(end($activities))->createView(),
+            ]
         );
     }
 
@@ -105,7 +106,6 @@ class ActivityEditorController extends Controller
      */
     public function editAction(Request $request, Activity2 $activity)
     {
-        $deleteForm = $this->createDeleteForm($activity);
         $editForm = $this->createForm('AppBundle\Form\Activity2Type', $activity);
         $editForm->handleRequest($request);
 
@@ -120,7 +120,6 @@ class ActivityEditorController extends Controller
             array(
                 'activity2' => $activity,
                 'edit_form' => $editForm->createView(),
-                'delete_form' => $deleteForm->createView(),
             )
         );
     }
@@ -138,8 +137,13 @@ class ActivityEditorController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($activity);
-            $this->flushEntityManagerAndClearRedisCache();
+
+            // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
+            $lastRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
+            if ($activity->getId() === $lastRetromatId) {
+                $em->remove($activity);
+                $this->flushEntityManagerAndClearRedisCache();
+            }
         }
 
         return $this->redirectToRoute('team_activity_index');

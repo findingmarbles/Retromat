@@ -6,8 +6,12 @@
         <li>
             <a href="{{ path('team_activity_new') }}">Create a new activity</a>
         </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete the last activity">
+            {{ form_end(delete_form) }}
+        </li>
     </ul>
-
     <table style="border-spacing: 10px;">
         <thead>
         <tr align="left">
