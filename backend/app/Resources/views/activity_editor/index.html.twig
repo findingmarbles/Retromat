@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <ul>
+        <li><a href="{{ path('team_dashboard', {'_locale': 'en'}) }}">Back to the dashboard</a></li>
+    </ul>
     <h1>Activities ({{ app.request.locale }})</h1>
     <ul>
         <li>

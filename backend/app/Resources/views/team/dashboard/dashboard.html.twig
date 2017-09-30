@@ -3,23 +3,20 @@
 {% block title %}Retromat Team Dashboard{% endblock %}
 
 {% block body %}
-    <h1>Retromat Team Dashboard</h1>
+    <h1>Retromat Admin Dashboard</h1>
+    <h2>Welcome {{ app.user.username|title }} :-)</h2>
     <ul>
-        <li>Welcome :-)</li>
-        <li><a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></li>
-        <ul>
-            <li><a href="{{ path('fos_user_profile_show') }}">Profile show</a></li>
-            <li><a href="{{ path('fos_user_profile_edit') }}">Profile edit</a></li>
-            <li><a href="{{ path('fos_user_change_password') }}">Password change</a></li>
-            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
-        </ul>
+        <li><a href="{{ path('fos_user_profile_show') }}">Profile show</a></li>
+        <li><a href="{{ path('fos_user_profile_edit') }}">Profile edit</a></li>
+        <li><a href="{{ path('fos_user_change_password') }}">Password change</a></li>
+        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
     </ul>
     <h2>Tools: Internal</h2>
     <ul>
-        <li><a href="{{ path('titles-experiment') }}">Plan Title and Description Experiments</a></li>
-        <li><a href="{{ path('cache-counter-experiment') }}">Cache Counter Experiment</a></li>
+        <li><a href="{{ path('team_activity_index', {'_locale': 'en'}) }}"> Activity Editor</a></li>
         <li><a href="/app_dev.php">Debug Controller</a></li>
-        <li><a href="https://plans-for-retrospectives.com/commit.txt">Commit Hash</a> of current <a href="{{ path('home') }}">live Retromat</a></li>
+        <li><a href="https://plans-for-retrospectives.com/commit.txt">Commit Hash</a> of current <a
+                    href="{{ path('home') }}">live Retromat</a></li>
     </ul>
     <h2>Tools: External</h2>
     <ul>
@@ -60,5 +57,10 @@
                 <li><a href="https://adwords.google.com/">Adwords (Keyword Research)</a></li>
             </ul>
         </li>
+    </ul>
+    <h2>Experiments: Internal</h2>
+    <ul>
+        <li><a href="{{ path('titles-experiment') }}">Plan Title and Description Experiments</a></li>
+        <li><a href="{{ path('cache-counter-experiment') }}">Cache Counter Experiment</a></li>
     </ul>
 {% endblock %}
