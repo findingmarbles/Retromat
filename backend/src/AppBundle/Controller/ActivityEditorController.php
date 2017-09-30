@@ -84,15 +84,7 @@ class ActivityEditorController extends Controller
      */
     public function showAction(Activity2 $activity)
     {
-        $deleteForm = $this->createDeleteForm($activity);
-
-        return $this->render(
-            'activity_editor/show.html.twig',
-            array(
-                'activity2' => $activity,
-                'delete_form' => $deleteForm->createView(),
-            )
-        );
+        return $this->render('activity_editor/show.html.twig', ['activity2' => $activity]);
     }
 
     /**
