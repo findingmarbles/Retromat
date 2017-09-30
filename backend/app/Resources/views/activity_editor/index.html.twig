@@ -26,7 +26,7 @@
                 <td>
                     <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">edit</a> |
                     <a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">preview</a> |
-                    <a href="{{ path('activities_by_id', { 'id': activity2.retromatId }) }}">public</a>
+                    <a href="{{ path('activities_by_id', { 'id': activity2.retromatId }) }}" target="_blank">public</a>
                 </td>
                 <td align="center">{{ activity2.phase }}</td>
                 <td>{{ activity2.getName }}</td>
