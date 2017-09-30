@@ -1,55 +1,48 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retromat Activity Editor: {{ app.request.locale }} {{ activity.id }} {{ activity.getName }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-{% block body %}
-    <h1>Activity ({{ app.request.locale }}): {{ activity2.getName }}</h1>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif"/>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ activity2.retromatId }}</td>
-            </tr>
-            <tr>
-                <th>Phase</th>
-                <td>{{ activity2.phase }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ activity2.getName }}</td>
-            </tr>
-            <tr>
-                <th>Summary</th>
-                <td>{{ activity2.getSummary }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ activity2.getDesc }}</td>
-            </tr>
-            <tr>
-                <th>Duration</th>
-                <td>{{ activity2.duration }}</td>
-            </tr>
-            <tr>
-                <th>Source</th>
-                <td>{{ activity2.source }}</td>
-            </tr>
-            <tr>
-                <th>More</th>
-                <td>{{ activity2.more }}</td>
-            </tr>
-            <tr>
-                <th>Suitable</th>
-                <td>{{ activity2.suitable }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <link rel="stylesheet" type="text/css" href="/static/retromat.css"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('team_activity_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">Edit</a>
-        </li>
-    </ul>
-{% endblock %}
+    <link rel="shortcut icon" href="/static/images/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png"/>
+
+    <div class="pitch">
+        <div class="content">
+            <ul>
+                <li>
+                    <a href="{{ path('team_activity_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    <a href="{{ path('team_activity_edit', { 'id': activity.id }) }}">Edit</a>
+                </li>
+                <li>
+                    <a href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}">Public</a> (10 min browser caching)
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% include 'home/activities/activity.html.twig' %}
+
+    <div class="about">
+        <div class="content">
+            <ul>
+                <li>
+                    Only the &quot;source&quot; link is expected to function in this preview.
+                </li>
+                <li>
+                    The links to the activity (#number) and phase (underlined, top right hand
+                    corner) are broken.
+                </li>
+                <li>
+                    This is the expected bahavior, because we are using the live activity template out of context.
+                </li>
+            </ul>
+        </div>
+    </div>
+    </body>
+</html>

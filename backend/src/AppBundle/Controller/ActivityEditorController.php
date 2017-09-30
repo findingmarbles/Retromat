@@ -84,7 +84,17 @@ class ActivityEditorController extends Controller
      */
     public function showAction(Activity2 $activity)
     {
-        return $this->render('activity_editor/show.html.twig', ['activity2' => $activity]);
+        return $this->render(
+            'activity_editor/show.html.twig',
+            [
+                'activity' => $activity,
+                'ids' => [$activity->getId()],
+                'phase' => '',
+                'color_variation' => $this->get('retromat.color_varation'),
+                'activity_by_phase' => $this->get('retromat.activity_by_phase'),
+                'activity_source' => $this->getParameter('retromat.activity.source'),
+            ]
+        );
     }
 
     /**
@@ -149,7 +159,7 @@ class ActivityEditorController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
-    
+
     private function flushEntityManagerAndClearRedisCache(): void
     {
         $this->getDoctrine()->getManager()->flush();
