@@ -78,6 +78,12 @@ ebook_old2:
         _controller: FrameworkBundle:Redirect:redirect
         route: ebook
         permanent: true
+login:
+    path: /login
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: fos_user_security_login
+        permanent: false
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix:   /{_locale}
