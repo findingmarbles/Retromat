@@ -53,7 +53,7 @@ class ActivityImporter
         // all meta data is used from Enlish translation.
         // Not the most beautiful or efficient soultion,
         // but it runs very rarely and will be deleted
-        // as soon as activities live in the databse.
+        // as soon as activities live in the database.
         $this->import2('en');
     }
 
