@@ -28,6 +28,7 @@ class ImportActivitiesCommand extends ContainerAwareCommand
         $output->writeln('Importing retromat activities from JS files into the database ...');
 
         $this->getContainer()->get('retromat.activity_importer')->import();
+        $this->getContainer()->get('retromat.doctrine_cache.redis')->deleteAll();
 
         $output->writeln('Import complete.');
     }
