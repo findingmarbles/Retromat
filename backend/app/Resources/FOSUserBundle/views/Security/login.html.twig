@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('team_dashboard') }}">Dashboard</a> |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% endif %}
+    </p>
+
+    {% if app.request.hasPreviousSession %}
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    <p>
+        {% block fos_user_content %}
+            {{ include('@FOSUser/Security/login_content.html.twig') }}
+        {% endblock fos_user_content %}
+    </p>
+
+    <p>
+        <a href="{{ path('fos_user_resetting_request') }}">Password forgotten?</a>
+    </p>
+{% endblock body %}
