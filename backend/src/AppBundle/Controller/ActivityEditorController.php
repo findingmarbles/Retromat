@@ -92,6 +92,8 @@ class ActivityEditorController extends Controller
      */
     public function showAction(Activity2 $activity)
     {
+        $this->get('retromat.activity_source_expander')->expandSource($activity);
+
         return $this->render(
             'activity_editor/show.html.twig',
             [
@@ -100,7 +102,6 @@ class ActivityEditorController extends Controller
                 'phase' => '',
                 'color_variation' => $this->get('retromat.color_varation'),
                 'activity_by_phase' => $this->get('retromat.activity_by_phase'),
-                'activity_source' => $this->getParameter('retromat.activity.source'),
             ]
         );
     }
