@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Activity2;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,9 +26,8 @@ class HomeController extends Controller
             if (count($ids) !== count($activities)) {
                 throw $this->createNotFoundException();
             }
-            /** @var $activity Activity2 */
             foreach ($activities as $activity) {
-                $activity->setSource($this->expandSource($activity->getSource()));
+                $this->get('retromat.activity_source_expander')->expandSource($activity);
             }
             list($title, $description) = $this->planTitleAndDescription($ids, $activities);
         }
@@ -100,18 +98,5 @@ class HomeController extends Controller
         }
 
         return [$title, $description];
-    }
-
-    // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig AND ActivityAcontroller
-    private function expandSource(string $source): string
-    {
-        $sources = $this->getParameter('retromat.activity.source');
-
-        $source = str_replace([' + "', '" + '], '', $source);
-        $source = str_replace('"', '', $source);
-        $source = str_replace(["='", "'>"], ['="', '">'], $source);
-        $source = str_replace(array_keys($sources), $sources, $source);
-
-        return $source;
     }
 }

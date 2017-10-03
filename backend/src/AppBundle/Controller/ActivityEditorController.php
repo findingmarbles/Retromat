@@ -31,7 +31,6 @@ class ActivityEditorController extends Controller
         /** @var $activity Activity2 */
         foreach ($activities as $activity) {
             if (!empty($activity->translate($request->getLocale(), false)->getId())) {
-                $activity->setSource($this->expandSource($activity->getSource()));
                 $localizedActivities[] = $activity;
             } else {
                 break;
@@ -176,18 +175,5 @@ class ActivityEditorController extends Controller
     {
         $this->getDoctrine()->getManager()->flush();
         $this->get('retromat.doctrine_cache.redis')->deleteAll();
-    }
-
-    // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig AND ActivityAcontroller
-    private function expandSource(string $source): string
-    {
-        $sources = $this->getParameter('retromat.activity.source');
-
-        $source = str_replace([' + "', '" + '], '', $source);
-        $source = str_replace('"', '', $source);
-        $source = str_replace(["='", "'>"], ['="', '">'], $source);
-        $source = str_replace(array_keys($sources), $sources, $source);
-
-        return $source;
     }
 }
