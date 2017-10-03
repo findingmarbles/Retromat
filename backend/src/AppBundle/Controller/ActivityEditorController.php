@@ -145,10 +145,10 @@ class ActivityEditorController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
             // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-            $lastRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
-            if ($activity->getId() === $lastRetromatId) {
+            $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+            $lastRetromatId = end($activities)->getRetromatId();
+            if ($activity->getRetromatId() === $lastRetromatId) {
                 $em->remove($activity);
                 $this->flushEntityManagerAndClearRedisCache();
             }
