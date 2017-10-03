@@ -24,17 +24,25 @@ class ActivityEditorController extends Controller
      * @Route("/", name="team_activity_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $localizedActivities = [];
+        /** @var $activity Activity2 */
+        foreach ($activities as $activity) {
+            if (!empty($activity->translate($request->getLocale(), false)->getId())) {
+                $activity->setSource($this->expandSource($activity->getSource()));
+                $localizedActivities[] = $activity;
+            } else {
+                break;
+            }
+        }
 
         return $this->render(
             'activity_editor/index.html.twig',
             [
-                'activity2s' => $activities,
-                'delete_form' => $this->createDeleteForm(end($activities))->createView(),
+                'activity2s' => $localizedActivities,
+                'delete_form' => $this->createDeleteForm(end($localizedActivities))->createView(),
             ]
         );
     }
@@ -49,7 +57,7 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered())+1;
+        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered()) + 1;
 
         $activity = new Activity2();
         $activity->setRetromatId($nextRetromatId);
@@ -168,5 +176,18 @@ class ActivityEditorController extends Controller
     {
         $this->getDoctrine()->getManager()->flush();
         $this->get('retromat.doctrine_cache.redis')->deleteAll();
+    }
+
+    // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig AND ActivityAcontroller
+    private function expandSource(string $source): string
+    {
+        $sources = $this->getParameter('retromat.activity.source');
+
+        $source = str_replace([' + "', '" + '], '', $source);
+        $source = str_replace('"', '', $source);
+        $source = str_replace(["='", "'>"], ['="', '">'], $source);
+        $source = str_replace(array_keys($sources), $sources, $source);
+
+        return $source;
     }
 }

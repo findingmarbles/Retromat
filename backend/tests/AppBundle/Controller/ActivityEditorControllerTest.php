@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace tests\AppBundle\Controller;
 
 require_once('DataFixtures/LoadUsers.php');
+require_once('DataFixtures/LoadActivityData.php');
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
@@ -103,5 +104,32 @@ class ActivityEditorControllerTest extends WebTestCase
             'http://localhost/en/team/activity/2',
             $crawler->selectLink('/en/team/activity/2')->link()->getUri()
         );
+    }
+
+    public function testIndexContainsOnlyTranslatedActivities()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/');
+        $this->assertCount(75+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/en/team/activity/');
+        $this->assertCount(131+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/es/team/activity/');
+        $this->assertCount(95+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/fr/team/activity/');
+        $this->assertCount(50+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/nl/team/activity/');
+        $this->assertCount(101+1, $crawler->filter('tr'));
     }
 }
