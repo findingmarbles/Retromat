@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% form_theme form 'form_table_layout.html.twig' %}
+
 {% block body %}
     <ul>
         <li>
@@ -10,10 +11,12 @@
     <h1>Create Activity</h1>
     <ul>
         <li>Click "Create" (below the form), to publish your new activity.</li>
-        <li>Following creation you will immediately see a preview. Browser caches keep the old versions of activity pages for up to 10 minutes.</li>
+        <li>Following creation you will immediately see a preview. Browser caches keep the old versions of activity
+            pages for up to 10 minutes.
+        </li>
     </ul>
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_widget(form) }}
+    <input type="submit" value="Create"/>
     {{ form_end(form) }}
 {% endblock %}
