@@ -10,9 +10,7 @@
             <a href="{{ path('team_activity_new') }}">Create a new activity</a>
         </li>
         <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete the last activity"> (instant, no undo)
-            {{ form_end(delete_form) }}
+            <a href="{{ path('team_activity_delete_confirm') }}">Delete the last activity</a>
         </li>
     </ul>
     <table style="border-spacing: 10px;">

@@ -37,13 +37,7 @@ class ActivityEditorController extends Controller
             }
         }
 
-        return $this->render(
-            'activity_editor/index.html.twig',
-            [
-                'activity2s' => $localizedActivities,
-                'delete_form' => $this->createDeleteForm(end($localizedActivities))->createView(),
-            ]
-        );
+        return $this->render('activity_editor/index.html.twig', ['activity2s' => $localizedActivities]);
     }
 
     /**
@@ -56,7 +50,7 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered()) + 1;
+        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered())+1;
 
         $activity = new Activity2();
         $activity->setRetromatId($nextRetromatId);
@@ -82,6 +76,51 @@ class ActivityEditorController extends Controller
                 'form' => $form->createView(),
             )
         );
+    }
+
+    /**
+     * Asks for confirmation to delete the last activity2 entity.
+     *
+     * @Route("/delete-confirm", name="team_activity_delete_confirm")
+     * @Method({"GET"})
+     */
+    public function deleteConfirmAction()
+    {
+        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $lastActivity = end($activities);
+
+        return $this->render(
+            'activity_editor/deleteConfirm.html.twig',
+            [
+                'delete_form' => $this->createDeleteForm($lastActivity)->createView(),
+                'lastActivity' => $lastActivity,
+            ]
+        );
+    }
+
+    /**
+     * Deletes a activity2 entity.
+     *
+     * @Route("/{id}", name="team_activity_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, Activity2 $activity)
+    {
+        $form = $this->createDeleteForm($activity);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
+            $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+            $lastRetromatId = end($activities)->getRetromatId();
+            if ($activity->getRetromatId() === $lastRetromatId) {
+                $em->remove($activity);
+                $this->flushEntityManagerAndClearRedisCache();
+            }
+        }
+
+        return $this->redirectToRoute('team_activity_index');
     }
 
     /**
@@ -130,31 +169,6 @@ class ActivityEditorController extends Controller
                 'edit_form' => $editForm->createView(),
             )
         );
-    }
-
-    /**
-     * Deletes a activity2 entity.
-     *
-     * @Route("/{id}", name="team_activity_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, Activity2 $activity)
-    {
-        $form = $this->createDeleteForm($activity);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-            $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
-            $lastRetromatId = end($activities)->getRetromatId();
-            if ($activity->getRetromatId() === $lastRetromatId) {
-                $em->remove($activity);
-                $this->flushEntityManagerAndClearRedisCache();
-            }
-        }
-
-        return $this->redirectToRoute('team_activity_index');
     }
 
     /**
