@@ -631,6 +631,26 @@ stage:    "Нормирование, Функционирование",
 suitable: "итерация, релиз, зрелаяКоманда"
 };
 
+all_activities[34] = {
+phase:     1,
+name:      "Agile чеклист",
+summary:   "Проверьте себя на соответствие Agile чеклисту",
+desc:      "Распечатайте чеклист, который лучше всего поможет команде идентифицировать зоны роста. Например:\
+<ul>\
+    <li><a href='http://www.crisp.se/gratis-material-och-guider/scrum-checklist'>Отличный Scrum чеклист от Хенрика Книберга</a></li>\
+    <li><a href='http://finding-marbles.com/2011/09/30/assess-your-agile-engineering-practices/'>Чеклист по инженерным agile практикам</a></li>\
+    <li><a href='http://agileconsortium.blogspot.de/2007/12/nokia-test.html'>Nokia тест</a></li>\
+    <li><a href='http://agilemanifesto.org/iso/ru/principles.html'>12 принципов Agile манифеста</a></li>\
+</ul>\
+Пройдитесь с командой по чеклисту. Обсудите где вы находитесь сейчас и в правильном ли направлении двигаетесь. <br>\
+Это упражнение хорошо подходит когда итерация прошла гладко без инцидентов.",
+source:    source_findingMarbles,
+durationDetail:  "10-25 минут в зависимости от чеклиста",
+duration:    "Средняя",
+stage:    "All",
+suitable: "малаягруппа, итерация, релиз, проект, гладкопрошло"
+};
+
 all_activities[39] = {
 phase:     4,
 name:      "Плюс & Дельта",
