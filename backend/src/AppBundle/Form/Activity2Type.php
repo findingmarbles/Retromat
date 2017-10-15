@@ -39,6 +39,7 @@ class Activity2Type extends AbstractType
             ->add('duration', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
             ->add('source', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
             ->add('more', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
+            ->add('stage', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
             ->add('suitable', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]]);
     }
 
