@@ -61,6 +61,7 @@ class ActivityReader
             'source' => $this->extractActivitySource($activityBlock),
             'more' => $this->extractActivityMore($activityBlock),
             'duration' => $this->extractActivityDuration($activityBlock),
+            'stage' => $this->extractActivityStage($activityBlock),
             'suitable' => $this->extractActivitySuitable($activityBlock),
         ];
 
@@ -116,6 +117,11 @@ class ActivityReader
     public function extractActivitySuitable($activityBlock)
     {
         return $this->extractStringValue($activityBlock, $key = 'suitable:');
+    }
+
+    public function extractActivityStage($activityBlock)
+    {
+        return $this->extractStringValue($activityBlock, $key = 'stage:');
     }
 
     public function extractActivityPhase($activityBlock)
