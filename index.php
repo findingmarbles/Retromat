@@ -270,6 +270,17 @@ var PHASE_ID_TAG = 'phase';
 <?php if ($isEnglish) { ?>
     <div class="book">
         <div class="content" style="line-height: 20px">
+                It is Print Retromat season – Get yours until Nov 1st!
+<br><br>
+                <a href="https://www.plans-for-retrospectives.com/print"
+                   style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Order now!
+                </a>
+        </div>
+    </div>
+
+<!--
+    <div class="book">
+        <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
 <br><br>
                 <a href="{{ path('ebook') }}"
@@ -278,7 +289,6 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 
-<!--
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Retromat needs your help to improve!
