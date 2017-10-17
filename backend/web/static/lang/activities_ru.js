@@ -461,8 +461,6 @@ durationDetail:  "20-60 complexity",
 duration:    "Длительная",
 stage:    "Бурление, Нормирование",
 suitable: "релиз, проект, малаягруппа, complex"
-
-
 };
 all_activities[25] = {
 phase:     2,
@@ -566,7 +564,6 @@ duration:    "Средняя",
 stage:    "Функционирование",
 suitable: "итерация, релиз, проект"
 };
-
 all_activities[31] = {
 phase:     0,
 name:      "Оценка проекта смайликами",
@@ -590,7 +587,6 @@ duration:    "Короткая",
 stage:    "All",
 suitable: "итерация, релиз"
 };
-
 all_activities[32] = {
 phase:     1,
 name:      "Гордость и Сожаление",
@@ -610,7 +606,6 @@ duration:    "Средняя",
 stage:    "All",
 suitable: "итерация, релиз"
 };
-
 all_activities[33] = {
 phase:     4,
 name:      "Поток признания",
@@ -630,7 +625,6 @@ duration:    "Короткая",
 stage:    "Нормирование, Функционирование",
 suitable: "итерация, релиз, зрелаяКоманда"
 };
-
 all_activities[34] = {
 phase:     1,
 name:      "Agile чеклист",
@@ -650,7 +644,6 @@ duration:    "Средняя",
 stage:    "All",
 suitable: "малаягруппа, итерация, релиз, проект, гладкопрошло"
 };
-
 all_activities[35] = {
 phase:     0,
 name:      "Позитивная цель",
@@ -668,7 +661,6 @@ duration:    "Короткая",
 stage:    "All",
 suitable: "итерация, релиз, проект"
 };
-
 all_activities[36] = {
 phase:     2,
 name:      "Вспомнить будущее",
