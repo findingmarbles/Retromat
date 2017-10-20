@@ -766,3 +766,65 @@ duration:    "Medium",
 stage:    "Storming, Norming",
 suitable:  "iteration"
 };
+all_activities[50] = {
+phase:     1,
+name:      "Café Lean",
+summary:   "Utiliser le format du café Lean pour une discussion centrée sur les sujets les plus importants",
+desc:      "Indiquer combien de temps consacrer à cette phase et expliquer ensuite les règles du café Lean pour les rétrospectives : \
+<ul> \
+  <li>Chacun écrit les sujets qu'il voudrait évoquer - 1 sujet par note</li>\
+  <li>Placer les notes sur un tableau. Chacun décrit son sujet en une ou deux phrases. Les notes sur le même sujet sont regroupées</li>\
+  <li>Tout le monde vote par point pour les deux sujets qu'ils veulent évoquer</li>\
+  <li>Trier les notes selon les votes</li>\
+  <li>Débutez par le sujet avec le plus grand intérêt</li>\
+  <li>Démarrer un chrono pour 5 minutes. Lorsque le chrono sonne, tout le monde lève ou baisse le pouce. Si les pouces levés sont majoritaires, le sujet est relancé pour 5 minutes. Si les pouces baissés l'emportent, on enchaîne sur le sujet suivant.</li>\
+</ul> \
+Arrêter une fois le temps consacré à l'activité est écoulé.",
+source:    "<a href='http://leancoffee.org/'>Description originale</a> et <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>en action [EN]</a>",
+durationDetail:  "20-40 min",
+duration:    "Flexible",
+stage:    "All",
+suitable:  "iteration"
+};
+all_activities[51] = {
+phase:     0,
+name:      "Constellation - Ouvrir",
+summary:   "Permettre aux participants d'approuver ou rejeter des énoncés en se déplaçant",
+desc:      "Placer un cercle ou une sphère au milieu d'une zone dégagée. Inviter l'équipe à se rassembler autour. \
+Expliquer que le cercle est le centre d'approbation. Si je suis d'accord avec un énoncé, je me rapproche du centre, \
+si je ne le suis pas, je m'en éloigne d'autant que représente mon niveau de rejet. Ensuite, lire les déclarations, exemple : \
+<ul>\
+  <li>Je trouve que je peux m'exprimer ouvertement dans cette rétrospective</li>\
+  <li>Je suis satisfait de notre dernière itération</li>\
+  <li>Je suis heureux de la qualité de notre code</li>\
+  <li>Je pense que nos pratiques d'intégration continue sont matures</li>\
+</ul>\
+Regarder les constellations se déployer. Après-coup, demander quelles constellations étaient surprenantes.<br>\
+Cette activité peut également être utilisée pour clore la rétrospective (#53).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
+durationDetail:  "10 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
+all_activities[52] = {
+phase:     4,
+name:      "Constellation - Clore",
+summary:   "Permettre aux participants de noter la rétrospective en se déplaçant",
+desc:      "Placer un cercle ou une sphère au milieu d'une zone dégagée. Inviter l'équipe à se rassembler autour. \
+Expliquer que le cercle est le centre d'approbation. Si je suis d'accord avec un énoncé, je me rapproche du centre, \
+si je ne le suis pas, je m'en éloigne d'autant que représente mon niveau de rejet. Ensuite, lire les déclarations, exemple : \
+<ul>\
+  <li>Nous avons parlé de ce qui me tenait le plus à cœur</li>\
+  <li>J'ai parlé ouvertement aujourd'hui</li>\
+  <li>Je pense que la durée de la rétrospective a été utilisée à bon escient</li>\
+  <li>Je suis confient(e) sur la faisabilité de nos actions</li>\
+</ul>\
+Regarder les constellations se déployer. Après-coup, demander quelles constellations étaient surprenantes.<br>\
+Cette activité peut également être utilisée pour ouvrir la rétrospective (#52).",
+source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
+durationDetail:  "5 min",
+duration:    "Short",
+stage:    "All",
+suitable:  "iteration, project, release"
+};
