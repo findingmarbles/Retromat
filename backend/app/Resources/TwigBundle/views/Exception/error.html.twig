@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>An Error Occurred: Not Found</title>
-</head>
-<body>
-<h1>Oops! An Error Occurred</h1>
-<h2>The server returned an error {{ status_code }}: {{ status_text }}</h2>
-<div>
-    Please start from the <a href="/">home page</a>.
-</div>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}An Error Occurred{% endblock %}
+
+{% block body %}
+    <h1>An Error Occurred</h1>
+    <h2>The server returned an error {{ status_code }}: {{ status_text }}</h2>
+    <div>
+        Please start from the <a href="/">home page</a>.
+    </div>
+{% endblock body %}
