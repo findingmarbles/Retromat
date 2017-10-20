@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/base.css">
+{% endblock %}
+
 {% block body %}
     <p>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
