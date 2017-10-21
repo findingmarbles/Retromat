@@ -165,4 +165,33 @@ class ActivityEditorControllerTest extends WebTestCase
         $translatableFields = ['name', 'summary', 'desc', '_token'];
         $this->assertEquals($translatableFields, array_keys($formValues['appbundle_activity2']));
     }
+
+    public function testCreateNewActivityTranslationDe()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+        $form = $crawler->selectButton('Create')->form()->setValues(
+            [
+                'appbundle_activity2[name]' => 'foo',
+                'appbundle_activity2[summary]' => 'bar',
+                'appbundle_activity2[desc]' => 'la',
+            ]
+        );
+        $crawler = $client->submit($form);
+
+        $this->assertStatusCode(302, $client);
+        $this->assertEquals(
+            'http://localhost/de/team/activity/'.(75+1),
+            $crawler->selectLink('/de/team/activity/'.(75+1))->link()->getUri()
+        );
+
+    }
 }

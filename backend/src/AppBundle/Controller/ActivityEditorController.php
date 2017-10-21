@@ -62,11 +62,13 @@ class ActivityEditorController extends Controller
         }
         $nextRetromatId = count($localizedActivities)+1;
 
-        $activity = new Activity2();
-        $activity->setRetromatId($nextRetromatId);
         if ('en' === $request->getLocale()) {
+            $activity = new Activity2();
+            $activity->setRetromatId($nextRetromatId);
             $formType = 'AppBundle\Form\Activity2Type';
         } else {
+            $activity = $activities[$nextRetromatId-1];
+            $activity->setDefaultLocale($request->getLocale());
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }
         $form = $this->createForm($formType, $activity);
