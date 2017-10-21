@@ -26,18 +26,10 @@ class ActivityEditorController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
-        $localizedActivities = [];
-        /** @var $activity Activity2 */
-        foreach ($activities as $activity) {
-            if (!empty($activity->translate($request->getLocale(), false)->getId())) {
-                $localizedActivities[] = $activity;
-            } else {
-                break;
-            }
-        }
-
-        return $this->render('activity_editor/index.html.twig', ['activity2s' => $localizedActivities]);
+        return $this->render(
+            'activity_editor/index.html.twig',
+            ['activity2s' => $this->findLocalizedActivities($request->getLocale())]
+        );
     }
 
     /**
@@ -49,17 +41,7 @@ class ActivityEditorController extends Controller
     public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
-        $localizedActivities = [];
-        /** @var $activity Activity2 */
-        foreach ($activities as $activity) {
-            if (!empty($activity->translate($request->getLocale(), false)->getId())) {
-                $localizedActivities[] = $activity;
-            } else {
-                break;
-            }
-        }
+        $localizedActivities = $this->findLocalizedActivities($request->getLocale());
         $maxRetromatId = count($localizedActivities);
 
         if ('en' === $request->getLocale()) {
@@ -67,7 +49,7 @@ class ActivityEditorController extends Controller
             $activity->setRetromatId($maxRetromatId+1);
             $formType = 'AppBundle\Form\Activity2Type';
         } else {
-            $activity = $activities[$maxRetromatId];
+            $activity = $em->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => $maxRetromatId+1]);
             $activity->setDefaultLocale($request->getLocale());
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }
@@ -207,5 +189,25 @@ class ActivityEditorController extends Controller
     {
         $this->getDoctrine()->getManager()->flush();
         $this->get('retromat.doctrine_cache.redis')->deleteAll();
+    }
+
+    /**
+     * @param string $locale
+     * @return array
+     */
+    private function findLocalizedActivities(string $locale): array
+    {
+        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $localizedActivities = [];
+        /** @var $activity Activity2 */
+        foreach ($activities as $activity) {
+            if (!empty($activity->translate($locale, false)->getId())) {
+                $localizedActivities[] = $activity;
+            } else {
+                break;
+            }
+        }
+
+        return $localizedActivities;
     }
 }
