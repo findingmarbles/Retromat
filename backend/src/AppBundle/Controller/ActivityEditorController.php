@@ -50,7 +50,17 @@ class ActivityEditorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered())+1;
+        $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $localizedActivities = [];
+        /** @var $activity Activity2 */
+        foreach ($activities as $activity) {
+            if (!empty($activity->translate($request->getLocale(), false)->getId())) {
+                $localizedActivities[] = $activity;
+            } else {
+                break;
+            }
+        }
+        $nextRetromatId = count($localizedActivities)+1;
 
         $activity = new Activity2();
         $activity->setRetromatId($nextRetromatId);

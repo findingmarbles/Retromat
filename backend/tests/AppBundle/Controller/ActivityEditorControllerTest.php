@@ -132,4 +132,20 @@ class ActivityEditorControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/nl/team/activity/');
         $this->assertCount(101+1, $crawler->filter('tr'));
     }
+
+    public function testCreateNewActivityTranslationDeForCorrectId()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+        $this->assertEquals(75+1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
+
+    }
 }
