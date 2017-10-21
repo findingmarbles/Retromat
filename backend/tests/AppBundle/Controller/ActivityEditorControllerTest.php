@@ -146,6 +146,23 @@ class ActivityEditorControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/de/team/activity/new');
         $this->assertEquals(75+1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
+    }
 
+    public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+
+        $formValues = $crawler->selectButton('Create')->form()->getPhpValues();
+        $translatableFields = ['name', 'summary', 'desc', '_token'];
+        $this->assertEquals($translatableFields, array_keys($formValues['appbundle_activity2']));
     }
 }
