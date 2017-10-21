@@ -60,14 +60,14 @@ class ActivityEditorController extends Controller
                 break;
             }
         }
-        $nextRetromatId = count($localizedActivities)+1;
+        $maxRetromatId = count($localizedActivities);
 
         if ('en' === $request->getLocale()) {
             $activity = new Activity2();
-            $activity->setRetromatId($nextRetromatId);
+            $activity->setRetromatId($maxRetromatId+1);
             $formType = 'AppBundle\Form\Activity2Type';
         } else {
-            $activity = $activities[$nextRetromatId-1];
+            $activity = $activities[$maxRetromatId];
             $activity->setDefaultLocale($request->getLocale());
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }
