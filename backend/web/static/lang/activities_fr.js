@@ -562,7 +562,7 @@ desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en d
   <li>Trouvons plusieurs façons de renforcer notre travail d'équipe et nos process</li>\
   <li>Trouvons comment étendre nos bonnes pratiques et méthodes d'ingénierie</li>\
   <li>Identifions et tentons de trouver plus de rapports dans le travail qui fonctionne</li>\
-  <li>Identifions là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération</li>\
+  <li>Identifions là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'augmenter celle que nous fournirons lors du prochain</li>\
 </ul>",
 source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 duration:  "3 minutes",
