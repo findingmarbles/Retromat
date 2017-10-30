@@ -63,7 +63,7 @@ source: source_agileRetrospectives
 };
 all_activities[3] = {
 phase: 1,
-name: "Frise chronologie",
+name: "Frise chronologique",
 summary: "Les participants écrivent les événements marquants et les ordonnent chronologiquement.",
 desc: "Diviser en groupes de 5 personnes ou moins. Distribuer des cartes et des marqueurs. \
 Donner aux participants 10 minutes pour noter des événements mémorables et / ou personnellement significatifs. \
@@ -72,8 +72,8 @@ affichent leurs cartes et les ordonnent. Il est normal d'ajouter des cartes à l
 Des codes couleurs peuvent aider à faire ressortir des modèles, par exemple :<br>\
 <ul>\
 <li>Émotions</li>\
-<li>Évènements (techniques, organisation, personnes, ...)</li>\
-<li>Fonctions (testeur, développeur, manager, ...)</li>\
+<li>Événements (techniques, organisation, personnes...)</li>\
+<li>Fonctions (testeur, développeur, manager...)</li>\
 </ul>",
 duration: "60-90 timeframe",
 source: source_agileRetrospectives,
@@ -104,8 +104,8 @@ Chaque membre de l'équipe doit écrire au moins 9 cartes : 3 de chaque pour les
 Le juge retourne la première carte qualité. Chaque membre sélectionne alors parmi ses cartes \
 celle qui correspond le mieux à ce mot et la pose face cachée sur la table. \
 Le dernier à se décider doit remettre la carte dans son jeu. Le juge mélange toutes \
-les cartes proposées, les retourne une par une et décide laquelle correspond le plus = la gagnante. \
-Toutes les cartes sont jetées. La personne ayant proposée la carte gagnante reçoit \
+les cartes proposées, les retourne une par une et décide laquelle correspond le plus : c'est la gagnante. \
+Toutes les cartes sont jetées. La personne ayant proposé la carte gagnante reçoit \
 la carte qualité. La personne à la gauche du juge devient alors le nouveau juge.<br> \
 Arrêter lorsque tout le monde est à court de cartes (6-9 tours). Celui qui a le plus \
 de cartes qualité gagne. Débriefer en demandant quelles sont les principales conclusions. \
@@ -299,7 +299,7 @@ suitable: "release, project"
 all_activities[18] = {
 phase:     1,
 name:      "Hors-Bord / Voilier",
-summary:   "Analyser les forces qui vous vont avancer et qui vous ralentissent.",
+summary:   "Analyser les forces qui vous font avancer et qui vous ralentissent.",
 desc:      "Dessiner un bateau sur un tableau à feuilles. Le doter d'un bon moteur \
 ainsi que d'une ancre très lourde. Les membres de l'équipe écrivent en silence sur des post-its ce qui a propulsé l'équipe vers l'avant \
 et ce qui lui a fait faire du surplace. Une idée par post-it. Coller les post-its respectivement sur le moteur et l'ancre. \
@@ -511,13 +511,13 @@ suitable: "iteration, release"
 all_activities[32] = {
 phase:     1,
 name:      "Fier(ère) & Désolé(e)",
-summary:   "De quoi les membres de l'équipe sont ils fiers ou désolés ?",
+summary:   "De quoi les membres de l'équipe sont-ils fiers ou désolés ?",
 desc:      "Afficher deux feuilles &quot;fier(e)&quot; et &quot;désolé(e)&quot;.<br />\
 Les membres de l'équipe listent un commentaire pour chaque feuille.<br />\
 Lorsque le temps est écoulé, faire un tour de table pour que chacun lise ses notes et les colle sous le thème approprié. <br/>\
 Démarrer une courte conversation en demandant :\
 <ul>\
-  <li>Est ce que quelque chose vous a surpris ?</li>\
+  <li>Est-ce que quelque chose vous a surpris ?</li>\
   <li>Quels motifs peut-on constater ? Que cela signifie-t-il en tant qu'équipe ?</li>\
 </ul>",
 source:    source_agileRetrospectives,
@@ -708,9 +708,9 @@ all_activities[46] = {
 phase:     1,
 name:      "Vider la boîte aux lettres",
 summary:   "Jetons un coup d'&#156;il aux notes collectées pendant le sprint",
-desc:      "Mettre en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque-chose \
-d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit. \
-et le 'poste'. (La 'boîte aux lettres' peut être également un endroit visible. Cela peut initier \
+desc:      "Mettre en place une 'boîte à lettres de rétrospective' au début de l'itération. Lorsque quelque chose \
+d'important se produit ou que quelqu'un a une idée d'amélioration, il l'écrit \
+et le 'poste'. (La 'boîte aux lettres' peut également être un endroit visible. Cela peut initier \
 une discussion pendant l'itération.) <br>\
 Parcourir toutes les notes et en discuter.<br>\
 Une boîte aux lettres est bien pour les longues itérations et les équipes distraites.",
@@ -776,10 +776,10 @@ desc:      "Indiquer combien de temps consacrer à cette phase et expliquer ensu
   <li>Placer les notes sur un tableau. Chacun décrit son sujet en une ou deux phrases. Les notes sur le même sujet sont regroupées</li>\
   <li>Tout le monde vote par point pour les deux sujets qu'ils veulent évoquer</li>\
   <li>Trier les notes selon les votes</li>\
-  <li>Débutez par le sujet avec le plus grand intérêt</li>\
+  <li>Débuter par le sujet avec le plus grand intérêt</li>\
   <li>Démarrer un chrono pour 5 minutes. Lorsque le chrono sonne, tout le monde lève ou baisse le pouce. Si les pouces levés sont majoritaires, le sujet est relancé pour 5 minutes. Si les pouces baissés l'emportent, on enchaîne sur le sujet suivant.</li>\
 </ul> \
-Arrêter une fois le temps consacré à l'activité est écoulé.",
+Arrêter une fois que le temps consacré à l'activité est écoulé.",
 source:    "<a href='http://leancoffee.org/'>Description originale</a> et <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>en action [EN]</a>",
 durationDetail:  "20-40 min",
 duration:    "Flexible",
