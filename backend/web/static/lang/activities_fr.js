@@ -22,7 +22,7 @@ all_activities[0] = {
 phase: 0,
 name: "ECVP",
 summary: "Comment se sentent les participants de la rétro : Explorateur, Client, Vacancier, ou Prisonnier ?",
-desc: "Préparer un paper-board avec des zones pour E, C, V, et P. Expliquer les concepts : <br>\
+desc: "Préparer un paperboard avec des zones pour E, C, V, et P. Expliquer les concepts : <br>\
 <ul>\
 <li>Explorateur : Désireux de se lancer, de rechercher ce qui a et n'a pas fonctionné et comment améliorer.</li>\
 <li>Client : Attitude positive. Content si de bonnes choses en ressortent.</li>\
@@ -40,8 +40,8 @@ suitable: "iteration, release, project, immature"
 all_activities[1] = {
 phase: 0,
 name: "Bulletin météo",
-summary: "Les participants marquent leur 'météo' (humeur) sur un paper-board.",
-desc: "Préparer un paper-board avec un dessin d'orage, pluie, nuages ​​et soleil. \
+summary: "Les participants marquent leur 'météo' (humeur) sur un paperboard.",
+desc: "Préparer un paperboard avec un dessin d'orage, pluie, nuages ​​et soleil. \
 Chaque participant marque son humeur sur le tableau.",
 source: source_agileRetrospectives
 };
@@ -49,16 +49,16 @@ all_activities[2] = {
 phase: 0,
 name: "Lancement - Question rapide", // TODO This can be expanded to at least 10 different variants - how?
 summary: "Poser une question à laquelle chacun des participants répond à son tour.",
-desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent «je passe»). \
-Exemples de questions: <br>\
+desc: "À tour de rôle chaque participant répond à la même question (sauf s'ils disent « je passe »). \
+Exemples de questions : <br>\
 <ul>\
 <li>En un mot - Qu'attendez-vous de cette rétrospective ?</li>\
-<li>En un mot - Qu'avez vous en tête ?<br>\
-Traitez les préoccupations, par exemple en les écrivants et en les mettant - physiquement et mentalement - de côté</li>\
+<li>En un mot - Qu'avez-vous en tête ?<br>\
+Traitez les préoccupations, par exemple en les écrivant et en les mettant - physiquement et mentalement - de côté</li>\
 <li>Dans cette rétrospective - Si vous étiez une voiture, quel genre serait-elle ?</li>\
-<li>Dans quel état émotionnel êtes-vous ? (par exemple, «heureux», «en colère», «triste», «effrayé»)</li>\
+<li>Dans quel état émotionnel êtes-vous ? (par exemple, « heureux », « en colère », « triste », « effrayé »)</li>\
 </ul><br>\
-Évitez l'évaluation des commentaires, par exemple avec «Très Bien». «Merci» est suffisant.",
+Évitez l'évaluation des commentaires, par exemple avec « Très Bien ». « Merci » est suffisant.",
 source: source_agileRetrospectives
 };
 all_activities[3] = {
@@ -470,9 +470,9 @@ suitable: "iteration, release, project"
 };
 all_activities[30] = {
 phase:     0,
-name:      "Lancement - Dessinez l'itération",
+name:      "Lancement - Dessiner l'itération",
 summary:   "Les participants dessinent certains aspects de l'itération.",
-desc:      "Distribuee des cartes et des marqueurs et choisir le sujet. Exemples de sujet : \
+desc:      "Distribuer des cartes et des marqueurs et choisir le sujet. Exemples de sujet : \
 <ul> \
   <li>Comment avez-vous vécu l'itération ?</li>\
   <li>Quel a été le moment le plus marquant ?</li>\
@@ -491,7 +491,7 @@ suitable: "iteration, release, project"
 all_activities[31] = {
 phase:     0,
 name:      "Gauge du projet par émoticônes",
-summary:   "Aider les membres de l'équipe à exprimer leur sentiment vis à vis du projet et en traiter les causes au plus tôt.",
+summary:   "Aider les membres de l'équipe à exprimer leur sentiment vis-à-vis du projet et en traiter les causes au plus tôt.",
 desc:      "Preparer un tableau avec des visages exprimant diverses émotions telles que :\
 <ul>\
   <li>choc / surprise</li>\
@@ -561,8 +561,8 @@ desc:      "Concentrez-vous sur les aspects positifs au lieu des problèmes en d
 <ul>\
   <li>Trouvons plusieurs façons de renforcer notre travail d'équipe et nos process</li>\
   <li>Trouvons comment étendre nos bonnes pratiques et méthodes d'ingénierie</li>\
-  <li>Nous identifierons et tenterons de trouver plus de rapports dans le travail qui fonctionnent</li>\
-  <li>Nous identifierons là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'agumenter celle que nous fournirons lors du prochain</li>\
+  <li>Identifions et tentons de trouver plus de rapports dans le travail qui fonctionne</li>\
+  <li>Identifions là où nous avons produit le plus de valeur ajoutée au cours de la dernière itération afin d'augmenter celle que nous fournirons lors du prochain</li>\
 </ul>",
 source:    "<a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 duration:  "3 minutes",
@@ -661,7 +661,7 @@ suitable: "iteration, release, project",
 all_activities[42] = {
 phase:     0,
 name:      "Prise de position - Ouverture",
-summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à l'itération",
+summary:   "Les participants se positionnent pour indiquer leur niveau de satisfaction par rapport à l'itération",
 desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définir une extrémité \
 comme 'Génial' et l'autre comme 'Nul'. Inviter les participants à se positionner sur l'échelle \
 en fonction de leur satisfaction à propos de la dernière itération. Psychologiquement, \
@@ -698,7 +698,7 @@ all_activities[45] = {
 phase:     0,
 name:      "Pourquoi des rétrospectives ?",
 summary:   "Demander &quot;Pourquoi faisons-nous des rétrospectives ?&quot;",
-desc:      "Revenir aux sources et commencer la rétrospective en demandant &quot;Pourquoi faisons nous ça ?&quot; \
+desc:      "Revenir aux sources et commencer la rétrospective en demandant &quot;Pourquoi faisons-nous ça ?&quot; \
 Écrire toutes les réponses pour qu'elles soient visibles par tout le monde. Vous pourriez être surpris.",
 source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Pete Roessler</a>",
 duration:  "5",
@@ -799,7 +799,7 @@ si je ne le suis pas, je m'en éloigne d'autant que représente mon niveau de re
   <li>Je suis heureux de la qualité de notre code</li>\
   <li>Je pense que nos pratiques d'intégration continue sont matures</li>\
 </ul>\
-Regarder les constellations se déployer. Après-coup, demander quelles constellations étaient surprenantes.<br>\
+Regarder les constellations se déployer. Après coup, demander quelles constellations étaient surprenantes.<br>\
 Cette activité peut également être utilisée pour clore la rétrospective (#53).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>",
 durationDetail:  "10 min",
