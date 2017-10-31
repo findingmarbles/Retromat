@@ -137,12 +137,12 @@ all_activities[7] = {
 phase: 2,
 name: "5 Pourquoi",
 alternativeName: "La source des maux",
-summary: "Examiner de près la cause racine de problèmes en vous demandant à plusieurs reprises 'Pourquoi ?'",
+summary: "Examiner de près la cause racine de problèmes en se demandant à plusieurs reprises 'Pourquoi ?'",
 desc: "Diviser les participants en petits groupes (<= 4 personnes) et donner à chaque groupe \
 l'un des problèmes le plus identifié précédemment. Instructions pour le groupe :\
 <ul>\
 <li>Une personne demande aux autres 'Pourquoi est-ce arrivé ?' à plusieurs reprises pour trouver la cause racine ou une suite d'évènements</li>\
-<li>Notez la cause racine trouvée (souvent la réponse au 5ème 'Pourquoi ?')</li>\
+<li>Noter la cause racine trouvée (souvent la réponse au 5e 'Pourquoi ?')</li>\
 </ul>\
 Laisser le groupe partager ses conclusions.",
 source: source_agileRetrospectives,
@@ -154,7 +154,7 @@ phase: 2,
 name: "Matrice d'apprentissage",
 summary: "Les membres de l'équipe 'brainstorment' sur 4 catégories afin de rapidement lister des problèmes.",
 desc: "Après avoir discuté des données de la Phase 2, afficher un tableau à 4 quadrants intitulés \
-':)', ':(', 'Idée !', et 'Appréciation'. Distribuez des post-its. \
+':)', ':(', 'Idée !', et 'Appréciation'. Distribuer des post-its. \
 <ul>\
 <li>Les membres de l'équipe peuvent contribuer à chaque quadrant. Une idée par post-it.</li>\
 <li>Regrouper les notes.</li>\
@@ -168,13 +168,13 @@ suitable: "iteration"
 all_activities[9] = {
 phase: 2,
 name: "Brainstorming / Filtrage",
-summary: "Générer de nombreuses idées et filtrer les suivant vos critères.",
+summary: "Générer de nombreuses idées et les filtrer suivant certains critères.",
 desc: "Exposer les règles du brainstorming, et le but : générer un maximum de nouvelles idées \
 qui seront filtrées <em>après</em> le brainstorming.\
 <ul>\
 <li>Laisser les participants écrire leurs idées pendant 5 à 10 minutes</li>\
 <li>Faire des tours de table en demandant de façon répétée une idée à chacun, jusqu'à ce que toutes les idées soient au tableau</li>\
-<li>Demander ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité, ...). \
+<li>Demander ensuite des filtres (exemple : coût, temps demandé, unicité des concepts, pertinence par rapport à l'activité...). \
 Laisser le groupe en choisir 4.</li>\
 <li>Appliquer chaque filtre et marquer les idées qui passent les 4 filtres.</li>\
 <li>Quelles idées le groupe veut-il faire avancer ? Est-ce que quelqu'un se sent particulièrement concerné par une de ces idées ? \
@@ -387,10 +387,10 @@ suitable: "release, project, smallGroups, complex"
 all_activities[25] = {
 phase:     2,
 name:      "Speed Dating",
-summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête à tête",
+summary:   "Chaque membre de l'équipe explore un sujet en détail dans une série de discussions en tête-à-tête",
 desc:      "Chaque participant écrit un sujet qu'il souhaite approfondir, càd quelque chose \
-qu'il aimerait voir changer. Former ensuite des paires et répartissez vous à travers la salle. \
-Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minute par\
+qu'il aimerait voir changer. Former ensuite des paires et répartissez-vous à travers la salle. \
+Chaque paire discute des deux sujets et réfléchit aux actions possibles - 5 minutes par \
 participant (sujet) - l'un après l'autre. \
 Après 10 minutes les paires se séparent et forment de nouvelles paires. Continuer \
 jusqu'à ce que tout le monde ait discuté avec tout le monde. <br>\
@@ -571,14 +571,14 @@ suitable: "iteration, release, project"
 all_activities[36] = {
 phase:     2,
 name:      "Souvenons-nous de l'avenir",
-summary:   "Imaginer que la prochaine itération est parfaite. A quoi ressemble-t-elle ? Qu'avez-vous fait ?",
-desc:      "<p>Imaginer que vous puissez voyager à travers le temps jusqu'à la fin de la prochaine itération (ou release).<br />\
-Vous y apprenez que ça a été la meilleure itération et la plus productive que vous ayez fait !<br />\
+summary:   "Imaginez que la prochaine itération soit parfaite. À quoi ressemble-t-elle ? Qu'avez-vous fait ?",
+desc:      "<p>Imaginez que vous puissiez voyager à travers le temps jusqu'à la fin de la prochaine itération (ou release).<br />\
+Vous y apprenez que ça a été la meilleure itération et la plus productive que vous ayez faite !<br />\
 Comment vos futurs vous vous la décrivent ? Qu'y voyez-vous et entendez-vous ?</p>\
-<p>Donner un peu de temps à l'équipe pour imaginer cette situation et prendre quelques notes / mots clés pour aider leur mémoire.<br />\
-  Ensuite, laisser chacun décrire sa vision de l'itération parfaite.<br />\
-  Pousuivre ensuite avec la question &quot;Quels changements avons-nous réalisés pour atteindre un avenir si productif et satisfaisant ?&quot;<br />\
-  Noter les réponses sur des cartes pour s'en servir dans la phase suivante.</p>",
+<p>Donnez un peu de temps à l'équipe pour imaginer cette situation et prendre quelques notes / mots clés pour aider leur mémoire.<br />\
+  Ensuite, laissez chacun décrire sa vision de l'itération parfaite.<br />\
+  Pousuivez ensuite avec la question &quot;Quels changements avons-nous réalisés pour atteindre un avenir si productif et satisfaisant ?&quot;<br />\
+  Notez les réponses sur des cartes pour vous en servir dans la phase suivante.</p>",
 source:    source_innovationGames + ", trouvé à <a href='http://www.ayeconference.com/appreciativeretrospective/'>Diana Larsen</a>",
 suitable: "iteration, release, project"
 };
@@ -753,13 +753,13 @@ suitable:  "iteration, release, project"
 all_activities[49] = {
 phase:     2,
 name:      "V&#156;u accordé",
-summary:   "Une féé vous accorde un v&#156;u, comment réalisez-vous qu'il a été exaucé ?",
+summary:   "Une fée vous accorde un v&#156;u, comment réalisez-vous qu'il a été exaucé ?",
 desc:      "Donner 2 minutes à chaque participant pour trancher la réponse qu'ils donneraient à la question suivante :<br /> \
 &quot;Une fée vous accorde un v&#156;u qui résoudra votre plus gros problème au travail au cours de la nuit. Que lui demandez-vous ?&quot;<br /> \
 Poursuivre par : &quot;Vous arrivez au travail le lendemain matin. Vous constatez que la fée a exaucé votre v&#156;u. Comment pouvez-vous le dire ? \
-Qu'est ce qui a changé ? &quot;<br /> \
-Si la confiance au sein du group est importante, laisser chacun décrire son environnement de travail &quot;féérique&quot;.<br /> \
-Si tel n'est pas le cas, demander à chacun de garder son souhait à l'esprit pour la prochaine étape et de suggérer des actions qui aideraient à d'approcher son souhait.",
+Qu'est-ce qui a changé ? &quot;<br /> \
+Si la confiance au sein du groupe est importante, laisser chacun décrire son environnement de travail &quot;féerique&quot;.<br /> \
+Si tel n'est pas le cas, demander à chacun de garder son souhait à l'esprit pour la prochaine étape et de suggérer des actions qui aideraient à s'approcher de son souhait.",
 source:    "Lydia Grawunder &amp; Sebastian Nachtigall",
 durationDetail:  "15 min",
 duration:    "Medium",
