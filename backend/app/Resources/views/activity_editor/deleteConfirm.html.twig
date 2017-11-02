@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/team.css">
+{% endblock %}
+
+{% block body %}
+    <ul>
+        <li>
+            <a href="{{ path('team_activity_index') }}">Back to the list</a>
+        </li>
+    </ul>
+    <h1>Delete Activity ({{ app.request.locale }}): {{ lastActivity.getName }}</h1>
+    <ul>
+        <li>Click &quot;Confirm delete&quot; (below), to confirm instant deletion of:
+            &quot;{{ lastActivity.getName }}&quot;
+        </li>
+        <li>If any translations exist, they will be deleted as well.
+        </li>
+        <li>Browser caches keep old versions of activity data for up to 10 minutes.</li>
+        <li>There is no &quot;undo&quot; button!</li>
+    </ul>
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Confirm delete">
+    {{ form_end(delete_form) }}
+{% endblock %}

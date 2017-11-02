@@ -19,7 +19,7 @@
                     <span class="js_fill_summary">{{ activity.getSummary }}</span>
                     <br>
                     {# @todo: remove duplication with ActivityController->expandSource #}
-                    <span class="source">Source:                            <span class="js_fill_source">{{ activity.getSource  | replace({' + "': ''}) | replace({'" + ': ''}) | replace({'"':''}) | replace (activity_source) | raw }}</span>
+                    <span class="source">Source: <span class="js_fill_source">{{ activity.getSource|raw }}</span>
                         </span>
                 </div><!-- END summary -->
                 <div class="description">

@@ -24,36 +24,36 @@ class ActivityEditorController extends Controller
      * @Route("/", name="team_activity_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
-
         return $this->render(
             'activity_editor/index.html.twig',
-            [
-                'activity2s' => $activities,
-                'delete_form' => $this->createDeleteForm(end($activities))->createView(),
-            ]
+            ['activity2s' => $this->findLocalizedActivities($request->getLocale())]
         );
     }
 
     /**
      * Creates a new activity2 entity.
      *
-     * @Route("/new", requirements={"_locale": "en"}, name="team_activity_new")
+     * @Route("/new", name="team_activity_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-        $nextRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered())+1;
+        $localizedActivities = $this->findLocalizedActivities($request->getLocale());
+        $maxRetromatId = count($localizedActivities);
 
-        $activity = new Activity2();
-        $activity->setRetromatId($nextRetromatId);
-        $form = $this->createForm('AppBundle\Form\Activity2Type', $activity);
+        if ('en' === $request->getLocale()) {
+            $activity = new Activity2();
+            $activity->setRetromatId($maxRetromatId+1);
+            $formType = 'AppBundle\Form\Activity2Type';
+        } else {
+            $activity = $em->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => $maxRetromatId+1]);
+            $activity->setDefaultLocale($request->getLocale());
+            $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
+        }
+        $form = $this->createForm($formType, $activity);
         $form->handleRequest($request);
         // working arround weird bug: correct value 0 in request, entity ends up with null
         if (empty($activity->getPhase())) {
@@ -78,6 +78,51 @@ class ActivityEditorController extends Controller
     }
 
     /**
+     * Asks for confirmation to delete the last activity2 entity.
+     *
+     * @Route("/delete-confirm", name="team_activity_delete_confirm")
+     * @Method({"GET"})
+     */
+    public function deleteConfirmAction()
+    {
+        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $lastActivity = end($activities);
+
+        return $this->render(
+            'activity_editor/deleteConfirm.html.twig',
+            [
+                'delete_form' => $this->createDeleteForm($lastActivity)->createView(),
+                'lastActivity' => $lastActivity,
+            ]
+        );
+    }
+
+    /**
+     * Deletes a activity2 entity.
+     *
+     * @Route("/{id}", name="team_activity_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, Activity2 $activity)
+    {
+        $form = $this->createDeleteForm($activity);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
+            $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+            $lastRetromatId = end($activities)->getRetromatId();
+            if ($activity->getRetromatId() === $lastRetromatId) {
+                $em->remove($activity);
+                $this->flushEntityManagerAndClearRedisCache();
+            }
+        }
+
+        return $this->redirectToRoute('team_activity_index');
+    }
+
+    /**
      * Finds and displays a activity2 entity.
      *
      * @Route("/{id}", name="team_activity_show")
@@ -85,6 +130,8 @@ class ActivityEditorController extends Controller
      */
     public function showAction(Activity2 $activity)
     {
+        $this->get('retromat.activity_source_expander')->expandSource($activity);
+
         return $this->render(
             'activity_editor/show.html.twig',
             [
@@ -93,7 +140,6 @@ class ActivityEditorController extends Controller
                 'phase' => '',
                 'color_variation' => $this->get('retromat.color_varation'),
                 'activity_by_phase' => $this->get('retromat.activity_by_phase'),
-                'activity_source' => $this->getParameter('retromat.activity.source'),
             ]
         );
     }
@@ -125,31 +171,6 @@ class ActivityEditorController extends Controller
     }
 
     /**
-     * Deletes a activity2 entity.
-     *
-     * @Route("/{id}", name="team_activity_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, Activity2 $activity)
-    {
-        $form = $this->createDeleteForm($activity);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-
-            // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-            $lastRetromatId = count($em->getRepository('AppBundle:Activity2')->findAllOrdered());
-            if ($activity->getId() === $lastRetromatId) {
-                $em->remove($activity);
-                $this->flushEntityManagerAndClearRedisCache();
-            }
-        }
-
-        return $this->redirectToRoute('team_activity_index');
-    }
-
-    /**
      * Creates a form to delete a activity2 entity.
      *
      * @param Activity2 $activity The activity2 entity
@@ -168,5 +189,25 @@ class ActivityEditorController extends Controller
     {
         $this->getDoctrine()->getManager()->flush();
         $this->get('retromat.doctrine_cache.redis')->deleteAll();
+    }
+
+    /**
+     * @param string $locale
+     * @return array
+     */
+    private function findLocalizedActivities(string $locale): array
+    {
+        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $localizedActivities = [];
+        /** @var $activity Activity2 */
+        foreach ($activities as $activity) {
+            if (!empty($activity->translate($locale, false)->getId())) {
+                $localizedActivities[] = $activity;
+            } else {
+                break;
+            }
+        }
+
+        return $localizedActivities;
     }
 }

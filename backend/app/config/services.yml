@@ -9,6 +9,9 @@ services:
     retromat.activity_by_phase:
         class: AppBundle\Activity\ActivityByPhase
         arguments: ["@doctrine.orm.entity_manager"]
+    retromat.activity_source_expander:
+        class: AppBundle\Activity\ActivitySourceExpander
+        arguments: ["%retromat.activity.source%"]
     retromat.activity_reader:
         class: AppBundle\Importer\Activity\ActivityReader
         arguments: [~, "%retromat.activity.import.file_names%"]

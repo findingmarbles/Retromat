@@ -3,46 +3,46 @@
 <head>
     <title>Retromat Activity Editor: {{ app.request.locale }} {{ activity.id }} {{ activity.getName }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif"/>
-
     <link rel="stylesheet" type="text/css" href="/static/retromat.css"/>
-
     <link rel="shortcut icon" href="/static/images/favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png"/>
-
-    <div class="pitch">
-        <div class="content">
-            <ul>
-                <li>
-                    <a href="{{ path('team_activity_index') }}">Back to the list</a>
-                </li>
-                <li>
-                    <a href="{{ path('team_activity_edit', { 'id': activity.id }) }}">Edit</a>
-                </li>
-                <li>
-                    <a target="_blank" href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}">Public</a> (10 min browser caching)
-                </li>
-            </ul>
-        </div>
+</head>
+<body>
+<div class="pitch">
+    <div class="content">
+        <ul>
+            <li>
+                <a href="{{ path('team_activity_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('team_activity_edit', { 'id': activity.id }) }}">Edit</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}">Public</a> (10
+                min browser caching)
+            </li>
+        </ul>
     </div>
-    {% include 'home/activities/activity.html.twig' %}
+</div>
 
-    <div class="about">
-        <div class="content">
-            <ul>
-                <li>
-                    Only the &quot;source&quot; link is expected to function in this preview.
-                </li>
-                <li>
-                    The links to the activity (#number) and phase (underlined, top right hand
-                    corner) are broken.
-                </li>
-                <li>
-                    This is the expected bahavior, because we are using the live activity template out of context.
-                </li>
-            </ul>
-        </div>
+{% include 'home/activities/activity.html.twig' %}
+
+<div class="about">
+    <div class="content">
+        <ul>
+            <li>
+                Only the &quot;source&quot; link is expected to function in this preview.
+            </li>
+            <li>
+                The links to the activity (#number) and phase (underlined, top right hand
+                corner) are broken.
+            </li>
+            <li>
+                This is the expected bahavior, because we are using the live activity template out of context.
+            </li>
+        </ul>
     </div>
-    </body>
+</div>
+</body>
 </html>

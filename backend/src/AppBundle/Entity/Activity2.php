@@ -82,6 +82,13 @@ class Activity2
     private $suitable;
 
     /**
+     * @var string
+     * @Assert\Type("string")
+     * @ORM\Column(name="stage", type="string", length=255, nullable=true)
+     */
+    private $stage;
+
+    /**
      * Get id
      *
      * @return int
@@ -233,6 +240,30 @@ class Activity2
     public function getSuitable(): string
     {
         return (string)$this->suitable;
+    }
+
+    /**
+     * Set stage
+     *
+     * @param string $stage
+     *
+     * @return Activity2
+     */
+    public function setStage($stage): Activity2
+    {
+        $this->stage = $stage;
+
+        return $this;
+    }
+
+    /**
+     * Get stage
+     *
+     * @return string
+     */
+    public function getStage(): string
+    {
+        return (string)$this->stage;
     }
 
     /**

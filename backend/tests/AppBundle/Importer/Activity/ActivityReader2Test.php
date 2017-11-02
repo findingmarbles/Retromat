@@ -35,6 +35,7 @@ class ActivityReader2Test extends \PHPUnit_Framework_TestCase
             'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
             'duration' => "Short",
             'suitable' => "iteration, release, project",
+            'stage' => 'Storming, Norming',
         ];
 
         $this->assertEquals($expected, $this->reader->extractActivity(48));
@@ -427,6 +428,31 @@ HTML;
         $this->assertNull($this->reader->extractActivitySuitable(''));
     }
 
+    public function testExtractStage()
+    {
+        $activityBlock = <<<'HTML'
+phase:     2,
+name:      "5 Whys",
+summary:   "Drill down to the root cause of problems by repeatedly asking 'Why?'",
+desc:      "Divide the participants into small groups (<= 4 people) and give \
+each group one of the top identified issues. Instructions for the group:\
+<ul>\
+    <li>One person asks the others 'Why did that happen?' repeatedly to find the root cause or a chain of events</li>\
+    <li>Record the root causes (often the answer to the 5th 'Why?')</li>\
+</ul>\
+Let the groups share their findings.",
+source:    source_agileRetrospectives,
+duration:  "15-20",
+stage:    "All",
+suitable: "iteration, release, project, root_cause"
+HTML;
+
+        $this->assertEquals(
+            'All',
+            $this->reader->extractActivityStage($activityBlock)
+        );
+    }
+
     public function testHighestActivityNumber()
     {
         $activityFileName = __DIR__.'/TestData/activities_en_reduced_example.js';
@@ -453,6 +479,7 @@ HTML;
             'more' => null,
             'duration' => 'Long',
             'suitable' => 'iteration, project, release',
+            'stage' => 'Forming, Storming, Stagnating',
         ];
         $this->assertEquals($expected, $activity[123]);
     }
@@ -476,6 +503,7 @@ HTML;
             'more' => null,
             'duration' => 'Short',
             'suitable' => 'iteration, project, release',
+            'stage' => 'Storming, Stagnating',
         ];
         $this->assertEquals($expected, $activity[75]);
     }

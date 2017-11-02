@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace tests\AppBundle\Controller;
 
 require_once('DataFixtures/LoadUsers.php');
+require_once('DataFixtures/LoadActivityData.php');
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
@@ -105,16 +106,92 @@ class ActivityEditorControllerTest extends WebTestCase
         );
     }
 
-    public function testCreateNewActivityRequiresEnglishLocale()
+    public function testIndexContainsOnlyTranslatedActivities()
     {
-        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
         $this->loginAs($refRepo->getReference('admin'), 'main');
         $client = $this->makeClient();
 
-        $client->request('GET', '/en/team/activity/new');
-        $this->assertStatusCode(200, $client);
+        $crawler = $client->request('GET', '/de/team/activity/');
+        $this->assertCount(75+1, $crawler->filter('tr'));
 
-        $client->request('GET', '/de/team/activity/new');
-        $this->assertStatusCode(404, $client);
+        $crawler = $client->request('GET', '/en/team/activity/');
+        $this->assertCount(131+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/es/team/activity/');
+        $this->assertCount(95+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/fr/team/activity/');
+        $this->assertCount(50+1, $crawler->filter('tr'));
+
+        $crawler = $client->request('GET', '/nl/team/activity/');
+        $this->assertCount(101+1, $crawler->filter('tr'));
+    }
+
+    public function testCreateNewActivityTranslationDeForCorrectId()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+        $this->assertEquals(75+1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
+    }
+
+    public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+
+        $formValues = $crawler->selectButton('Create')->form()->getPhpValues();
+        $translatableFields = ['name', 'summary', 'desc', '_token'];
+        $this->assertEquals($translatableFields, array_keys($formValues['appbundle_activity2']));
+    }
+
+    public function testCreateNewActivityTranslationDe()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+        $form = $crawler->selectButton('Create')->form()->setValues(
+            [
+                'appbundle_activity2[name]' => 'foo',
+                'appbundle_activity2[summary]' => 'bar',
+                'appbundle_activity2[desc]' => 'la',
+            ]
+        );
+        $crawler = $client->submit($form);
+
+        $this->assertStatusCode(302, $client);
+        $this->assertEquals(
+            'http://localhost/de/team/activity/'.(75+1),
+            $crawler->selectLink('/de/team/activity/'.(75+1))->link()->getUri()
+        );
+
     }
 }

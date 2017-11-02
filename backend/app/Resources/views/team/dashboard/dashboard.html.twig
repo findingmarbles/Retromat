@@ -2,6 +2,10 @@
 
 {% block title %}Retromat Team Dashboard{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/team.css">
+{% endblock %}
+
 {% block body %}
     <h1>Retromat Admin Dashboard</h1>
     <h2>Welcome {{ app.user.username|title }} :-)</h2>

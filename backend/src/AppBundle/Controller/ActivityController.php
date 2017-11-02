@@ -20,7 +20,7 @@ class ActivityController extends FOSRestController implements ClassResourceInter
         $request->setLocale($request->query->get('locale', 'en'));
         /** @var $activity Activity2 */
         $activity = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2')->find($id);
-        $activity->setSource($this->expandSource($activity->getSource()));
+        $this->get('retromat.activity_source_expander')->expandSource($activity);
 
         return $this->view($activity, 200)->setContext((new Context())->addGroup('rest'));
     }
@@ -33,7 +33,7 @@ class ActivityController extends FOSRestController implements ClassResourceInter
         /** @var $activity Activity2 */
         foreach ($activities as $activity) {
             if (!empty($activity->translate($request->getLocale(), false)->getId())) {
-                $activity->setSource($this->expandSource($activity->getSource()));
+                $this->get('retromat.activity_source_expander')->expandSource($activity);
                 $localizedActivities[] = $activity;
             } else {
                 break;
@@ -41,18 +41,5 @@ class ActivityController extends FOSRestController implements ClassResourceInter
         }
 
         return $this->view($localizedActivities, 200)->setContext((new Context())->addGroup('rest'));
-    }
-
-    // @todo remove duplication with app/Resources/views/home/activities/activities.html.twig
-    private function expandSource(string $source): string
-    {
-        $sources = $this->getParameter('retromat.activity.source');
-
-        $source = str_replace([' + "', '" + '], '', $source);
-        $source = str_replace('"', '', $source);
-        $source = str_replace(["='", "'>"], ['="', '">'], $source);
-        $source = str_replace(array_keys($sources), $sources, $source);
-
-        return $source;
     }
 }

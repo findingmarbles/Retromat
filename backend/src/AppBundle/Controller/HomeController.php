@@ -26,6 +26,9 @@ class HomeController extends Controller
             if (count($ids) !== count($activities)) {
                 throw $this->createNotFoundException();
             }
+            foreach ($activities as $activity) {
+                $this->get('retromat.activity_source_expander')->expandSource($activity);
+            }
             list($title, $description) = $this->planTitleAndDescription($ids, $activities);
         }
 
@@ -37,7 +40,6 @@ class HomeController extends Controller
                 'activities' => $activities,
                 'color_variation' => $this->get('retromat.color_varation'),
                 'activity_by_phase' => $this->get('retromat.activity_by_phase'),
-                'activity_source' => $this->getParameter('retromat.activity.source'),
                 'title' => $title,
                 'description' => $description,
             ]

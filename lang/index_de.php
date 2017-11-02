@@ -10,7 +10,7 @@ $_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche die Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 
-$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Was ist eine Retrospektive?</a>';
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/was-ist-eine-agile-retrospektive/">Was ist eine Retrospektive?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retromat</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Gedruckte Ausgabe</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Aktivit&auml;t hinzuf&uuml;gen</a>';

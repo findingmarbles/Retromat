@@ -19,7 +19,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSingleActivityBlock()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=32');
@@ -271,7 +271,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowSuccessiveActivitiesInDifferentColors()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
@@ -318,7 +318,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase0LongUrl()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
@@ -329,7 +329,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowTitlePhase1LongUrl()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $idsStringPhase1 = '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123';
@@ -340,7 +340,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testRegressionAvoidUnlessNeededHeaderAllActivitiesFor()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3&phase=0');
@@ -372,7 +372,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowNumbersInFooter()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
@@ -396,7 +396,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowIdsInInputField()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5');
@@ -504,7 +504,7 @@ class HomeControllerTest extends WebTestCase
 
     public function testShowPageTitle5Activities()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivityData']);
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');

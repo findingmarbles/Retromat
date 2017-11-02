@@ -268,6 +268,18 @@ var PHASE_ID_TAG = 'phase';
 </div>
 
 <?php if ($isEnglish) { ?>
+<!--
+    <div class="book">
+        <div class="content" style="line-height: 20px">
+                Join 1000+ subscribers and get new activities + tips and tricks around retrospectives in your inbox!
+<br><br>
+                <a href="http://plans-for-retrospectives.us7.list-manage.com/subscribe?u=e8749d4c3e1a6d758a4bd1d93&id=7697399e07"
+                   style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Subscribe now!
+                </a>
+        </div>
+    </div>
+-->
+
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
@@ -278,16 +290,6 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 
-<!--
-    <div class="book">
-        <div class="content" style="line-height: 20px">
-                Retromat needs your help to improve!
-                <a href="/donate.html" 
-                   style="margin-left: 20px; padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Support Retromat!
-                </a>
-        </div>
-    </div>
--->
 <?php } ?>
 
 <div class="plan-header">
