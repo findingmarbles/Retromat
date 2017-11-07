@@ -191,7 +191,7 @@ all_activities[10] = {
 phase: 3,
 name: "Le Cercle des Questions",
 summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
-desc: "Tout le monde s'asseoit en cercle. Commencer en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
+desc: "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
 ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
 'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
 voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
@@ -206,7 +206,7 @@ name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
 summary: "R&eacute;fl&eacute;chir ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et garder les propositions les mieux not&eacute;es.",
 desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
-id&eacute;e par carte. LEs laisser &eacute;crire en silence pendant quelques minutes. \
+id&eacute;e par carte. Les laisser &eacute;crire en silence pendant quelques minutes. \
 Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
 Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Voter en distribuant des points \
 ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
@@ -224,7 +224,7 @@ summary: "Formuler un plan d'action spécifique et mesurable.",
 desc: "Présenter les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
-product owner tous les mercredi à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
+product owner tous les mercredis à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
 ne soit ajoutées au backlog du sprint'. <br>\
 Créer des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5 \
 étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
@@ -451,8 +451,8 @@ Nommer les cercles de l'intérieur vers l'extérieur :<br /> \
 (&quot;Le reste&quot; représente l'environnement dans lequel l'équipe est embarquée.)<br /> \
 Reprendre la liste des idées identifiée à l'étape précédente et les placer dans le cercle approprié. <br /> \
 Les participants rédigent en binôme les actions possibles. Les encourager à se concentrer en priorité sur les éléments dans leur cercle d'influence.<br /> \
-Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lise à voix haute. <br /> \
-Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc).",
+Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lisent à voix haute. <br /> \
+Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc.).",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
 qui l'a adapté de &quot;Seven Habits of Highly Effective People&quot; par Stephen Covey et \
 '<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' par Jim Bullock",
@@ -591,9 +591,9 @@ desc:      "Séparer un tableau en trois ensembles intitulés :\
   <li>Abandonner</li>\
   <li>Démarrer</li>\
 </ul>\
-Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème. \
 Les laisser écrire en silence pendant quelques minutes. <br />\
-Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Chacun lit ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
 Mener la conversation pour identifiez 20% des idées qui seraient les plus bénéfiques. <br />\
 Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
 Les 2 ou 3 principales idées seront votre plan d'actions.",
@@ -606,9 +606,9 @@ phase:     3,
 name:      "Vote par gommette - Fonctionne bien, Faire différemment",
 summary:   "Phosphorer sur ce qui a bien fonctionné et ce qu'il faudrait faire différemment et gardez les meilleurs idées.",
 desc:      "Intituler respectivement deux tableaux &quot;Fonctionne bien&quot; et &quot;Faire différemment&quot;.<br /> \
-Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème. \
 Les laisser écrire en silence pendant quelques minutes.<br />\
-Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Chacun lit ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
 Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
 Les 2 ou 3 principales idées seront votre plan d'actions.",
 source:    source_agileRetrospectives,
@@ -722,11 +722,11 @@ suitable: "release, project"
 all_activities[47] = {
 phase:     3,
 name:      "Prenez position - Dancez sur le fil",
-summary:   "Faites vous une idée de l'opinion de tout le monde et atteignez le consensus",
-desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créer une grande échelle (ex : une longue ligne) \
+summary:   "Faites-vous une idée de l'opinion de tout le monde et atteignez le consensus",
+desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créez une grande échelle (ex : une longue ligne) \
 au sol avec du scotch de peintre. Marquez une extrémité comme étant l'option A) et l'autre comme étant l'option B). \
 Les membres de l'équipe se répartissent le long de l'échelle selon leur position entre les deux options. \
-Ensuite, reformuler les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
+Ensuite, reformulez les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
 durationDetail:  "5 à 10' par décision",
@@ -736,14 +736,14 @@ suitable: "iteration, release, project"
 };
 all_activities[48] = {
 phase:     3,
-name:      "Vote par gommette - Etoile de mer",
+name:      "Vote par gommette - Étoile de mer",
 summary:   "Collect what to start, stop, continue, do more and less of",
 summary:   "Collectez quoi commencer, arrêter, continuer, faire plus et faire moins de",
-desc:      "Dessiner 5 rayons sur un tableau, afin de former 5 sections. \
-Nommez les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
+desc:      "Dessinez 5 rayons sur un tableau, afin de former 5 sections. \
+Nommez-les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
 Les participants notent leurs propositions sur des post-its et les collent \
 dans les sections appropriées. Après avoir regroupé les notes selon les idées \
-faire un vote par gommettes pour les propositions à tenter.",
+faites un vote par gommettes pour les propositions à tenter.",
 source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
 durationDetail:  "15 min",
 duration:    "Medium",
