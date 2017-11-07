@@ -238,7 +238,7 @@ phase: 4,
 name: "La porte des retours - les chiffres",
 summary: "Évaluer la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
 desc: "Placer des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
-A la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
+À la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
 correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
 source: "ALE 2011, " + source_findingMarbles,
 duration: "2-3",
@@ -249,7 +249,7 @@ phase: 4,
 name: "Appréciations",
 summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
 desc: "Commencer en remerciant de manière sincère l'un des participants. \
-Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
+Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème...<br />\
 Inviter alors les autres à faire de même et attendre que quelqu'un se jette à l'eau. Arrêter quand personne n'a parlé pendant plus d'une minute.",
 source: source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
 duration: "5-30 groupsize",
@@ -272,8 +272,8 @@ phase: 4, // marche aussi pour 5
 name: "SaMoLo (Plus de, Autant de, Moins de)",
 summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
 desc: "Dessiner au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
-Demander aux participants un coup de main pour vous aider à améliorer votre comportement : Écrire sur des post-its \
-ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
+Demander aux participants un coup de main pour vous aider à améliorer votre comportement : écrire sur des post-its \
+ce que vous devriez faire plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
 discuter un court moment des post-its collés dans chaque partie.",
 more: "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
 source: "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
@@ -345,7 +345,7 @@ all_activities[22] = {
 phase:     4,
 name:      "La porte des retours - Smileys",
 summary:   "Mesurer la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
-desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
+desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez-la sur la porte. \
 À la fin de la rétrospective, demander aux participants de marquer leur niveau \
 de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
@@ -527,8 +527,8 @@ suitable: "iteration, release"
 all_activities[33] = {
 phase:     4,
 name:      "La douche de l'appréciation",
-summary:   "Ecouter les gens parler dans votre dos (et uniquement des bonnes choses) !",
-desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos.\
+summary:   "Écouter les gens parler dans votre dos (et uniquement des bonnes choses) !",
+desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos. \
 Quelque chose comme ça : >^<.<br />\
 Les deux personnes dans les chaises qui se font face parlent de la troisième personne pendant qu'elle se douche durant 2 minutes.<br />\
 Elles ne peuvent dire que des choses positives et rien de ce qu'il se dit ne peut être minimisé en en reparlant par la suite.<br />\
@@ -619,7 +619,7 @@ all_activities[39] = {
 phase:     4,
 name:      "Plus & Delta",
 summary:   "Chaque participant note une chose qu'il aime et une qu'il voudrait changer à propos de la rétro.",
-desc:      "Préparer une tableau avec deux colonnes &quot;Plus&quot; et &quot;Delta&quot;. \
+desc:      "Préparer un tableau avec deux colonnes &quot;Plus&quot; et &quot;Delta&quot;. \
 Demander à chaque participant d'écrire un aspect de la rétrospective qu'il a aimé et un qu'il souhaiterait modifier sur des cartes différentes. <br />\
 Afficher et passer rapidement en revue les cartes en clarifiant leur sens exact \
 et en identifiant la tendance majoritaire lorsque des notes vont dans deux directions opposées pour un même point.",
@@ -674,12 +674,12 @@ suitable: "iteration, release, project"
 all_activities[43] = {
 phase:     4,
 name:      "Prise de position - Conclusion",
-summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
+summary:   "Les participants se positionnent pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
 desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définir une extrémité \
 comme 'Génial' et l'autre comme 'Nul'. Invitez les participants à se positionner sur l'échelle \
 en fonction de leur satisfaction à propos de la rétrospective. Psychologiquement, \
 prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
-Voir l'activité #43 pour voir comment la retrospective avec la même échelle de valeurs",
+Voir l'activité #43 pour voir comment démarrer la retrospective avec la même échelle de valeurs.",
 source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 duration:  "2-5",
 suitable: "iteration, release, project"
@@ -687,9 +687,9 @@ suitable: "iteration, release, project"
 all_activities[44] = {
 phase:     4,
 name:      "Ravi & Surpris",
-summary:   "Qu'est-ce qui a plu et/ou supris les participants pendant la retrospective",
+summary:   "Qu'est-ce qui a plu et/ou surpris les participants pendant la rétrospective ?",
 desc:      "Faire simplement un rapide tour du groupe et inviter chaque participant à pointer du doigt une \
-constatation de la retrospective qui les a soit surpris soit ravi (ou les deux).",
+constatation de la retrospective qui les a soit surpris soit ravis (ou les deux).",
 source:    source_unknown,
 duration:  "5",
 suitable: "iteration, release, project"
@@ -820,7 +820,7 @@ si je ne le suis pas, je m'en éloigne d'autant que représente mon niveau de re
   <li>Je pense que la durée de la rétrospective a été utilisée à bon escient</li>\
   <li>Je suis confient(e) sur la faisabilité de nos actions</li>\
 </ul>\
-Regarder les constellations se déployer. Après-coup, demander quelles constellations étaient surprenantes.<br>\
+Regarder les constellations se déployer. Après coup, demander quelles constellations étaient surprenantes.<br>\
 Cette activité peut également être utilisée pour ouvrir la rétrospective (#52).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 durationDetail:  "5 min",
