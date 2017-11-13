@@ -789,6 +789,17 @@ duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
 };
+all_activities[44] = {
+phase:     4,
+name:      "Рады и Удивлены",
+summary:   "Узнайте, что обрадовало и что удивило участников ретроспективы",
+desc:      "Просто быстро по кругу опросите группу о том, что либо удивило или обрадовало участников (или то и другое)",
+source:    source_unknown,
+durationDetail:  "5",
+duration:    "Short",
+stage:    "All",
+suitable: "iteration, release, project"
+};
 all_activities[55] = {
 phase:     5,
 name:      "Пригласите клиента",
