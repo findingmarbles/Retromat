@@ -759,6 +759,21 @@ duration:    "Medium",
 stage:    "All",
 suitable: "iteration, release, project",
 };
+all_activities[42] = {
+phase:     0,
+name:      "Покажи где ты стоишь.",
+summary:   "Участники занимают позицию, отображующию их удовлетворенность в итерации",
+desc:      "Создайте длинную линию на полу с помощью ленты. Отметьте один конец словом \
+'отлично', а другой 'плохой'. Пригласите участников встать на шкале отображая\
+их удовлетворенность в итерации. С точки зрения психологии, физически занять позицию \
+сильно отличается простого высказывания. Это более 'реально'.<br> \
+Линию можно использовать повторно, если закрыть ретроспективу упражнением #44.",
+source:    source_findingMarbles + ", inspired by <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Кристофер Патер</a>",
+durationDetail:  "2-5",
+duration:    "Short",
+stage:    "All",
+suitable: "iteration, release, project"
+};
 all_activities[55] = {
 phase:     5,
 name:      "Пригласите клиента",
