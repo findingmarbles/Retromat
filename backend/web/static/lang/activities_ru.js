@@ -800,6 +800,18 @@ duration:    "Short",
 stage:    "All",
 suitable: "iteration, release, project"
 };
+all_activities[45] = {
+phase:     0,
+name:      "Зачем ретроспектива?",
+summary:   "Спросите 'Зачем мы занимаемся ретроспективами?'",
+desc:      "Вернитесь к корням и начните ретроспективу с вопроса: Зачем мы это делаем?' \
+Записывайте ответы видимо для всех. Возможно, вы удивитесь.",
+source:    "<a href='http://proessler.wordpress.com/2012/07/20/check-in-activity-agile-retrospectives/'>Пит Рёсслер</a>",
+durationDetail:  "5",
+duration:    "Short",
+stage:    "Forming, Performing, Stagnating",
+suitable: "iteration, release, project"
+};
 all_activities[55] = {
 phase:     5,
 name:      "Пригласите клиента",
