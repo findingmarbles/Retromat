@@ -191,7 +191,7 @@ all_activities[10] = {
 phase: 3,
 name: "Le Cercle des Questions",
 summary: "Questions et r&eacute;ponses font le tour du cercle de l'&eacute;quipe - une excellente fa&ccedil;on de parvenir à un consensus.",
-desc: "Tout le monde s'asseoit en cercle. Commencer en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
+desc: "Tout le monde s'asseoit en cercle. Commencez en annonçant que vous allez faire un tour de questions pour d&eacute;couvrir \
 ce que vous voulez faire en tant que groupe. Vous commencez par poser la premi&egrave;re question &agrave; votre voisin, par exemple \
 'Quelle est la chose la plus importante que nous devrions d&eacute;marrer lors de la prochaine it&eacute;ration ?' Votre \
 voisin r&eacute;pond et pose une question li&eacute;e &agrave; son voisin. Arr&ecirc;tez-vous quand un consensus &eacute;merge ou \
@@ -206,7 +206,7 @@ name: "D&eacute;marrer, Arr&ecirc;ter, Continuer",
 summary: "R&eacute;fl&eacute;chir ensemble &agrave; ce que vous voulez d&eacute;marrer, arr&ecirc;ter ou continuer et garder les propositions les mieux not&eacute;es.",
 desc: "Diviser le tableau en 3 colonnes nomm&eacute;es 'D&eacute;marrer', 'Continuer' and 'Arr&ecirc;ter'. \
 Demander aux participants d'&eacute;crire des propositions concr&egrave;tes pour chaque cat&eacute;gorie - 1 \
-id&eacute;e par carte. LEs laisser &eacute;crire en silence pendant quelques minutes. \
+id&eacute;e par carte. Les laisser &eacute;crire en silence pendant quelques minutes. \
 Puis chacun lit ses propositions &agrave; voix haute et les place dans la cat&eacute;gorie appropri&eacute;e. \
 Mener une courte discussion sur les 20% d'id&eacute;es qui vous semblent les plus b&eacute;n&eacute;fiques. Voter en distribuant des points \
 ou des croix &agrave; l'aide d'un marqueur, par exemple 1, 2, et 3 points &agrave; distribuer par personne. \
@@ -224,7 +224,7 @@ summary: "Formuler un plan d'action spécifique et mesurable.",
 desc: "Présenter les <a href='http://en.wikipedia.org/wiki/SMART_criteria'>objectifs SMART</a> \
 (Spécifique, Mesurable, Atteignable, Réaliste, défini dans le Temps) ainsi que des exemples d'objectifs \
 plus ou moins SMART, par exemple 'Nous étudierons les stories avant des les accepter en en parlant avec le \
-product owner tous les mercredi à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
+product owner tous les mercredis à 9h.' plutôt que 'Nous prendrons connaissance des stories avant qu'elles \
 ne soit ajoutées au backlog du sprint'. <br>\
 Créer des groupes par thématiques sur lesquelles l'équipe souhaite continuer à travailler. Chaque groupe identifie de 1 à 5 \
 étapes concrètes pour atteindre l'objectif. Chaque groupe présente ses résultats. Tous les participants doivent \
@@ -238,7 +238,7 @@ phase: 4,
 name: "La porte des retours - les chiffres",
 summary: "Évaluer la satisfaction des participants à propos de la rétro sur une échelle de 1 à 5 en un minimum de temps.",
 desc: "Placer des posts-its sur la porte numérotés de 1 à 5. 1 étant le plus haut et le meilleur score, 5 le plus bas et le pire. \
-A la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
+À la fin de la rétrospective, demander aux participants de placer un post-it sur le chiffre qui d'après eux \
 correspond le mieux à la session. Le post-it peut être vide ou contenir un commentaire ou une suggestion.",
 source: "ALE 2011, " + source_findingMarbles,
 duration: "2-3",
@@ -249,7 +249,7 @@ phase: 4,
 name: "Appréciations",
 summary: "Les membres de l'équipe sont reconnaissants les uns envers les autres et concluent de manière positive.",
 desc: "Commencer en remerciant de manière sincère l'un des participants. \
-Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème, ...<br />\
+Cela peut concerner n'importe laquelle de ses contributions : aider l'équipe ou vous-même à résoudre un problème...<br />\
 Inviter alors les autres à faire de même et attendre que quelqu'un se jette à l'eau. Arrêter quand personne n'a parlé pendant plus d'une minute.",
 source: source_agileRetrospectives + " qui l'a adapté de 'The Satir Model: Family Therapy and Beyond'",
 duration: "5-30 groupsize",
@@ -272,8 +272,8 @@ phase: 4, // marche aussi pour 5
 name: "SaMoLo (Plus de, Autant de, Moins de)",
 summary: "Pour vous aider à redresser la barre dans votre rôle de facilitateur.",
 desc: "Dessiner au tableau trois parties intitulées 'Plus de', 'Autant de', et 'Moins de'. \
-Demander aux participants un coup de main pour vous aider à améliorer votre comportement : Écrire sur des post-its \
-ce que vous devriez faire, plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
+Demander aux participants un coup de main pour vous aider à améliorer votre comportement : écrire sur des post-its \
+ce que vous devriez faire plus souvent, moins souvent et ce qui est très bien comme ça. Lire et \
 discuter un court moment des post-its collés dans chaque partie.",
 more: "<a href='http://www.scrumology.net/2010/05/11/samolo-retrospectives/'>Les expériences de David Bland</a>",
 source: "<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>",
@@ -345,7 +345,7 @@ all_activities[22] = {
 phase:     4,
 name:      "La porte des retours - Smileys",
 summary:   "Mesurer la satisfaction des participants concernant la rétro en un minimum de temps en utilisant des smileys",
-desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez la sur la porte. \
+desc:      "Dessinez un ':)', ':|', et ':(' sur une feuille de papier et accrochez-la sur la porte. \
 À la fin de la rétrospective, demander aux participants de marquer leur niveau \
 de satisfaction par rapport à la session par un 'x' sous le smiley correspondant.",
 source:    "<a href='http://boeffi.net/tutorials/roti-return-on-time-invested-wie-funktionierts/'>Boeffi</a>",
@@ -451,8 +451,8 @@ Nommer les cercles de l'intérieur vers l'extérieur :<br /> \
 (&quot;Le reste&quot; représente l'environnement dans lequel l'équipe est embarquée.)<br /> \
 Reprendre la liste des idées identifiée à l'étape précédente et les placer dans le cercle approprié. <br /> \
 Les participants rédigent en binôme les actions possibles. Les encourager à se concentrer en priorité sur les éléments dans leur cercle d'influence.<br /> \
-Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lise à voix haute. <br /> \
-Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc).",
+Les binômes collent ensuite leur plan d'actions à côté de chaque élément associé et le lisent à voix haute. <br /> \
+Mettez-vous d'accord sur le plan à essayer (via discussion, vote à la majorité, vote par gommette, etc.).",
 source:    "<a href='http://www.futureworksconsulting.com/blog/2010/07/26/circles-and-soup/'>Diana Larsen</a> \
 qui l'a adapté de &quot;Seven Habits of Highly Effective People&quot; par Stephen Covey et \
 '<a href='http://www.ayeconference.com/wiki/scribble.cgi?read=CirclesOfControlInfluenceAndConcern'>CircleofInfluenceAndConcern</a>' par Jim Bullock",
@@ -527,8 +527,8 @@ suitable: "iteration, release"
 all_activities[33] = {
 phase:     4,
 name:      "La douche de l'appréciation",
-summary:   "Ecouter les gens parler dans votre dos (et uniquement des bonnes choses) !",
-desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos.\
+summary:   "Écouter les gens parler dans votre dos (et uniquement des bonnes choses) !",
+desc:      "Par groupes de 3, chaque groupe déplace ses chaises pour que 2 chaises soient face à face et que la troisième leur tourne le dos. \
 Quelque chose comme ça : >^<.<br />\
 Les deux personnes dans les chaises qui se font face parlent de la troisième personne pendant qu'elle se douche durant 2 minutes.<br />\
 Elles ne peuvent dire que des choses positives et rien de ce qu'il se dit ne peut être minimisé en en reparlant par la suite.<br />\
@@ -591,9 +591,9 @@ desc:      "Séparer un tableau en trois ensembles intitulés :\
   <li>Abandonner</li>\
   <li>Démarrer</li>\
 </ul>\
-Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème. \
 Les laisser écrire en silence pendant quelques minutes. <br />\
-Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Chacun lit ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
 Mener la conversation pour identifiez 20% des idées qui seraient les plus bénéfiques. <br />\
 Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
 Les 2 ou 3 principales idées seront votre plan d'actions.",
@@ -606,9 +606,9 @@ phase:     3,
 name:      "Vote par gommette - Fonctionne bien, Faire différemment",
 summary:   "Phosphorer sur ce qui a bien fonctionné et ce qu'il faudrait faire différemment et gardez les meilleurs idées.",
 desc:      "Intituler respectivement deux tableaux &quot;Fonctionne bien&quot; et &quot;Faire différemment&quot;.<br /> \
-Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème.\
+Demander à vos participants d'écrire des propositions concrètes pour chaque catégorie avec une idée par thème. \
 Les laisser écrire en silence pendant quelques minutes.<br />\
-Chacun lis ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
+Chacun lit ensuite ses notes à voix haute et colle ses cartes dans la catégorie appropriée.<br />\
 Laisser chacun voter avec des gommettes ou avec un marqueur en pouvant distribuer 1, 2 ou 3 points aux idées (répartis comme bon lui semble).<br />\
 Les 2 ou 3 principales idées seront votre plan d'actions.",
 source:    source_agileRetrospectives,
@@ -619,7 +619,7 @@ all_activities[39] = {
 phase:     4,
 name:      "Plus & Delta",
 summary:   "Chaque participant note une chose qu'il aime et une qu'il voudrait changer à propos de la rétro.",
-desc:      "Préparer une tableau avec deux colonnes &quot;Plus&quot; et &quot;Delta&quot;. \
+desc:      "Préparer un tableau avec deux colonnes &quot;Plus&quot; et &quot;Delta&quot;. \
 Demander à chaque participant d'écrire un aspect de la rétrospective qu'il a aimé et un qu'il souhaiterait modifier sur des cartes différentes. <br />\
 Afficher et passer rapidement en revue les cartes en clarifiant leur sens exact \
 et en identifiant la tendance majoritaire lorsque des notes vont dans deux directions opposées pour un même point.",
@@ -674,12 +674,12 @@ suitable: "iteration, release, project"
 all_activities[43] = {
 phase:     4,
 name:      "Prise de position - Conclusion",
-summary:   "Les participants se positionnent, pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
+summary:   "Les participants se positionnent pour indiquer leur niveau de satisfaction par rapport à la rétrospective",
 desc:      "Créer une grande échelle (par exemple une longue ligne) sur le sol avec du rouleau adhésif. Définir une extrémité \
 comme 'Génial' et l'autre comme 'Nul'. Invitez les participants à se positionner sur l'échelle \
 en fonction de leur satisfaction à propos de la rétrospective. Psychologiquement, \
 prendre position physiquement est différent de juste dire quelque chose. C'est plus 'réel'.<br> \
-Voir l'activité #43 pour voir comment la retrospective avec la même échelle de valeurs",
+Voir l'activité #43 pour voir comment démarrer la retrospective avec la même échelle de valeurs.",
 source:    source_findingMarbles + ", inspiré par <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 duration:  "2-5",
 suitable: "iteration, release, project"
@@ -687,9 +687,9 @@ suitable: "iteration, release, project"
 all_activities[44] = {
 phase:     4,
 name:      "Ravi & Surpris",
-summary:   "Qu'est-ce qui a plu et/ou supris les participants pendant la retrospective",
+summary:   "Qu'est-ce qui a plu et/ou surpris les participants pendant la rétrospective ?",
 desc:      "Faire simplement un rapide tour du groupe et inviter chaque participant à pointer du doigt une \
-constatation de la retrospective qui les a soit surpris soit ravi (ou les deux).",
+constatation de la retrospective qui les a soit surpris soit ravis (ou les deux).",
 source:    source_unknown,
 duration:  "5",
 suitable: "iteration, release, project"
@@ -722,11 +722,11 @@ suitable: "release, project"
 all_activities[47] = {
 phase:     3,
 name:      "Prenez position - Dancez sur le fil",
-summary:   "Faites vous une idée de l'opinion de tout le monde et atteignez le consensus",
-desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créer une grande échelle (ex : une longue ligne) \
+summary:   "Faites-vous une idée de l'opinion de tout le monde et atteignez le consensus",
+desc:      "Lorsque l'équipe ne parvient pas à trancher entre deux options, créez une grande échelle (ex : une longue ligne) \
 au sol avec du scotch de peintre. Marquez une extrémité comme étant l'option A) et l'autre comme étant l'option B). \
 Les membres de l'équipe se répartissent le long de l'échelle selon leur position entre les deux options. \
-Ensuite, reformuler les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
+Ensuite, reformulez les options jusqu'à ce que l'une d'entre elles ait une majorité clairement visible.",
 source:    source_skycoach,
 more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Article original</a>",
 durationDetail:  "5 à 10' par décision",
@@ -736,14 +736,14 @@ suitable: "iteration, release, project"
 };
 all_activities[48] = {
 phase:     3,
-name:      "Vote par gommette - Etoile de mer",
+name:      "Vote par gommette - Étoile de mer",
 summary:   "Collect what to start, stop, continue, do more and less of",
 summary:   "Collectez quoi commencer, arrêter, continuer, faire plus et faire moins de",
-desc:      "Dessiner 5 rayons sur un tableau, afin de former 5 sections. \
-Nommez les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
+desc:      "Dessinez 5 rayons sur un tableau, afin de former 5 sections. \
+Nommez-les 'Commencer à', 'Arrêter de', 'Continuer de', 'Faire plus de' and 'Faire moins de'. \
 Les participants notent leurs propositions sur des post-its et les collent \
 dans les sections appropriées. Après avoir regroupé les notes selon les idées \
-faire un vote par gommettes pour les propositions à tenter.",
+faites un vote par gommettes pour les propositions à tenter.",
 source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Pat Kua</a>",
 durationDetail:  "15 min",
 duration:    "Medium",
@@ -820,7 +820,7 @@ si je ne le suis pas, je m'en éloigne d'autant que représente mon niveau de re
   <li>Je pense que la durée de la rétrospective a été utilisée à bon escient</li>\
   <li>Je suis confient(e) sur la faisabilité de nos actions</li>\
 </ul>\
-Regarder les constellations se déployer. Après-coup, demander quelles constellations étaient surprenantes.<br>\
+Regarder les constellations se déployer. Après coup, demander quelles constellations étaient surprenantes.<br>\
 Cette activité peut également être utilisée pour ouvrir la rétrospective (#52).",
 source:    "<a href='http://www.coachingagileteams.com/'>Lyssa Adkins</a> via <a href='http://lmsgoncalves.com/2013/01/23/constellation-a-good-exercise-to-set-the-stage-in-the-retrospective/'>Luis Goncalves</a>, <a href='http://www.softwareleid.de/2012/06/eine-retro-im-kreis.html'>Christoph Pater</a>",
 durationDetail:  "5 min",
