@@ -186,7 +186,7 @@ class ActivityEditorController extends Controller
      *
      * @param Activity2 $activity The activity2 entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return \Symfony\Component\Form\FormInterface The form
      */
     private function createDeleteForm(Activity2 $activity)
     {
