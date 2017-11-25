@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Controller;
 
@@ -147,19 +147,19 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClient();
 
         $crawler = $client->request('GET', '/de/team/activity/');
-        $this->assertCount(75+1, $crawler->filter('tr'));
+        $this->assertCount(75 + 1, $crawler->filter('tr'));
 
         $crawler = $client->request('GET', '/en/team/activity/');
-        $this->assertCount(131+1, $crawler->filter('tr'));
+        $this->assertCount(131 + 1, $crawler->filter('tr'));
 
         $crawler = $client->request('GET', '/es/team/activity/');
-        $this->assertCount(95+1, $crawler->filter('tr'));
+        $this->assertCount(95 + 1, $crawler->filter('tr'));
 
         $crawler = $client->request('GET', '/fr/team/activity/');
-        $this->assertCount(50+1, $crawler->filter('tr'));
+        $this->assertCount(50 + 1, $crawler->filter('tr'));
 
         $crawler = $client->request('GET', '/nl/team/activity/');
-        $this->assertCount(101+1, $crawler->filter('tr'));
+        $this->assertCount(101 + 1, $crawler->filter('tr'));
     }
 
     public function testCreateNewActivityTranslationDeForCorrectId()
@@ -174,7 +174,7 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClient();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
-        $this->assertEquals(75+1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
+        $this->assertEquals(75 + 1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
     }
 
     public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields()
@@ -218,9 +218,8 @@ class ActivityEditorControllerTest extends WebTestCase
 
         $this->assertStatusCode(302, $client);
         $this->assertEquals(
-            'http://localhost/de/team/activity/'.(75+1),
-            $crawler->selectLink('/de/team/activity/'.(75+1))->link()->getUri()
+            'http://localhost/de/team/activity/'.(75 + 1),
+            $crawler->selectLink('/de/team/activity/'.(75 + 1))->link()->getUri()
         );
-
     }
 }

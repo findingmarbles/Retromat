@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace AppBundle\Controller;
 
@@ -46,10 +46,10 @@ class ActivityEditorController extends Controller
 
         if ('en' === $request->getLocale()) {
             $activity = new Activity2();
-            $activity->setRetromatId($maxRetromatId+1);
+            $activity->setRetromatId($maxRetromatId + 1);
             $formType = 'AppBundle\Form\Activity2Type';
         } else {
-            $activity = $em->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => $maxRetromatId+1]);
+            $activity = $em->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => $maxRetromatId + 1]);
             $activity->setDefaultLocale($request->getLocale());
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }

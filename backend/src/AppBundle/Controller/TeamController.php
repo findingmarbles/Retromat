@@ -104,7 +104,7 @@ class TeamController extends Controller
             $cache->save($cachedCounter);
         } else {
             $counter = $cachedCounter->get();
-            
+
             $counter++;
 
             $cachedCounter->set($counter);

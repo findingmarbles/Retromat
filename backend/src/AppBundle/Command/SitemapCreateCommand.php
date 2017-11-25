@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
@@ -12,10 +13,8 @@ class SitemapCreateCommand extends Command
         $this
             // the name of the command (the part after "bin/console")
             ->setName('retromat:sitemap:create')
-
             // the short description shown while running "php bin/console list"
-            ->setDescription('Please use the presta:sitemaps:dump command for creating the sitemap.')
-        ;
+            ->setDescription('Please use the presta:sitemaps:dump command for creating the sitemap.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Repository;
 
@@ -53,8 +53,12 @@ class Activity2RepositoryTest extends WebTestCase
 
     public function testFindAllActivitiesForPhases()
     {
-        $this->loadFixtures(['tests\AppBundle\Repository\DataFixtures\LoadActivity2DataForTestFindAllActivitiesForPhases']);
-        $activityRepository = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
+        $this->loadFixtures(
+            ['tests\AppBundle\Repository\DataFixtures\LoadActivity2DataForTestFindAllActivitiesForPhases']
+        );
+        $activityRepository = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository(
+            'AppBundle:Activity2'
+        );
 
         $expectedActivityByPhase = [
             0 => [1, 7],

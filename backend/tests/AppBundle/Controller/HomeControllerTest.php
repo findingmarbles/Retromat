@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Controller;
 
@@ -294,7 +294,7 @@ class HomeControllerTest extends WebTestCase
     {
         $colorCodePrefix = ' bg';
         $classesString = $activity->attr('class');
-        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix)+strlen($colorCodePrefix), 1);
+        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix) + strlen($colorCodePrefix), 1);
 
         return $colorCode;
     }

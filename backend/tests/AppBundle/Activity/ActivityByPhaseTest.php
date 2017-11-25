@@ -14,7 +14,8 @@ class ActivityByPhaseTest extends WebTestCase
      */
     private $activityByPhase;
 
-    public function setUp() {
+    public function setUp()
+    {
         $activityByPhase = [
             0 => [1, 2, 3, 18, 22, 31, 32, 36, 42, 43, 46, 52, 59, 70, 76, 81, 82, 84, 85, 90, 106, 107, 108, 114, 122],
             1 => [4, 5, 6, 7, 19, 33, 35, 47, 51, 54, 62, 64, 65, 75, 78, 79, 80, 86, 87, 89, 93, 97, 98, 110, 116, 119, 121, 123, 126, 127],
@@ -47,7 +48,7 @@ class ActivityByPhaseTest extends WebTestCase
     public function testGetAllActivitiesByPhase()
     {
         $activityByPhase = $this->activityByPhase;
-        
+
         $activitiesByPhase = $activityByPhase->getAllActivitiesByPhase();
 
         $this->assertEquals(3, $activitiesByPhase[0][2]);
@@ -64,7 +65,10 @@ class ActivityByPhaseTest extends WebTestCase
     {
         $activityByPhase = $this->activityByPhase;
 
-        $this->assertEquals('1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122', $activityByPhase->getActivitiesString(0));
+        $this->assertEquals(
+            '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122',
+            $activityByPhase->getActivitiesString(0)
+        );
         $this->assertEquals('27-28-30-56-111', $activityByPhase->getActivitiesString(5));
     }
 

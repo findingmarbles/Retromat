@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace AppBundle\Repository;
 
@@ -21,8 +21,8 @@ class Activity2Repository extends EntityRepository
         $allActivities = $this->findAllOrdered();
         $orderedActivities = [];
         foreach ($orderedIds as $id) {
-            if (array_key_exists($id-1, $allActivities)) {
-                $orderedActivities[] = $allActivities[$id-1];
+            if (array_key_exists($id - 1, $allActivities)) {
+                $orderedActivities[] = $allActivities[$id - 1];
             }
         }
 
