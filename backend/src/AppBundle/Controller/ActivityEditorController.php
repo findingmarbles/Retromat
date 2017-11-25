@@ -24,7 +24,7 @@ class ActivityEditorController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         return $this->render(
             'activity_editor/index.html.twig',
@@ -40,7 +40,7 @@ class ActivityEditorController extends Controller
      */
     public function newAction(Request $request)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         $em = $this->getDoctrine()->getManager();
         $localizedActivities = $this->findLocalizedActivities($request->getLocale());
@@ -87,7 +87,7 @@ class ActivityEditorController extends Controller
      */
     public function deleteConfirmAction(Request $request)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         $activities = $this->findLocalizedActivities($request->getLocale());
 
@@ -110,7 +110,7 @@ class ActivityEditorController extends Controller
      */
     public function deleteAction(Request $request, Activity2 $activity)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         $form = $this->createDeleteForm($activity);
         $form->handleRequest($request);
@@ -139,9 +139,9 @@ class ActivityEditorController extends Controller
      * @Route("/{id}", name="team_activity_show")
      * @Method("GET")
      */
-    public function showAction(Activity2 $activity)
+    public function showAction(Activity2 $activity, Request $request)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         $this->get('retromat.activity_source_expander')->expandSource($activity);
 
@@ -165,7 +165,7 @@ class ActivityEditorController extends Controller
      */
     public function editAction(Request $request, Activity2 $activity)
     {
-        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         if ('en' === $request->getLocale()) {
             $formType = 'AppBundle\Form\Activity2Type';

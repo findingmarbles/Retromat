@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/{_locale}/team")
- * @Security("has_role('ROLE_ADMIN')")
+ * @Security("has_role('ROLE_TRANSLATOR')")
  */
 class TeamController extends Controller
 {
@@ -26,6 +26,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/titles", name="titles-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function titlesExperimentAction()
     {
@@ -34,6 +35,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
     {
@@ -56,6 +58,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/email")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function emailExperimentAction()
     {
@@ -76,6 +79,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/error")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function errorExperimentAction()
     {
@@ -92,6 +96,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/cache-counter", name="cache-counter-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function cacheExperimentAction()
     {
