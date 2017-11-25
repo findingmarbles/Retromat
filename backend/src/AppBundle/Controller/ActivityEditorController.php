@@ -157,7 +157,13 @@ class ActivityEditorController extends Controller
      */
     public function editAction(Request $request, Activity2 $activity)
     {
-        $editForm = $this->createForm('AppBundle\Form\Activity2Type', $activity);
+        if ('en' === $request->getLocale()) {
+            $formType = 'AppBundle\Form\Activity2Type';
+        } else {
+            $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
+        }
+        $editForm = $this->createForm($formType, $activity);
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
