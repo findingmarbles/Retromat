@@ -6,7 +6,6 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Activity2;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -14,7 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  * Activity2 controller.
  *
  * @Route("{_locale}/team/activity")
- * @Security("has_role('ROLE_ADMIN')")
  */
 class ActivityEditorController extends Controller
 {
@@ -26,6 +24,8 @@ class ActivityEditorController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         return $this->render(
             'activity_editor/index.html.twig',
             ['activity2s' => $this->findLocalizedActivities($request->getLocale())]
@@ -40,6 +40,8 @@ class ActivityEditorController extends Controller
      */
     public function newAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         $em = $this->getDoctrine()->getManager();
         $localizedActivities = $this->findLocalizedActivities($request->getLocale());
         $maxRetromatId = count($localizedActivities);
@@ -85,6 +87,8 @@ class ActivityEditorController extends Controller
      */
     public function deleteConfirmAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         $activities = $this->findLocalizedActivities($request->getLocale());
 
         $lastActivity = end($activities);
@@ -106,6 +110,8 @@ class ActivityEditorController extends Controller
      */
     public function deleteAction(Request $request, Activity2 $activity)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         $form = $this->createDeleteForm($activity);
         $form->handleRequest($request);
 
@@ -135,6 +141,8 @@ class ActivityEditorController extends Controller
      */
     public function showAction(Activity2 $activity)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         $this->get('retromat.activity_source_expander')->expandSource($activity);
 
         return $this->render(
@@ -157,6 +165,8 @@ class ActivityEditorController extends Controller
      */
     public function editAction(Request $request, Activity2 $activity)
     {
+        $this->denyAccessUnlessGranted('ROLE_translator_'.$request->getLocale());
+
         if ('en' === $request->getLocale()) {
             $formType = 'AppBundle\Form\Activity2Type';
         } else {

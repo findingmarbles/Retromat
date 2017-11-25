@@ -23,7 +23,13 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+        ROLE_ADMIN:
+            - ROLE_translator_en
+            - ROLE_translator_de
+            - ROLE_translator_es
+            - ROLE_translator_fr
+            - ROLE_translator_nl
+            - ROLE_translator_ru
         ROLE_SUPER_ADMIN: ROLE_ADMIN
     access_control:
         - { path: ^/(.+)/register, role: ROLE_ADMIN }
