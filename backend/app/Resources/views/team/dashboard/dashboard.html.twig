@@ -15,14 +15,27 @@
         <li><a href="{{ path('fos_user_change_password') }}">Password change</a></li>
         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
     </ul>
-    <h2>Tools: Internal</h2>
+    <h2>Translator Tools</h2>
+    <ul>
+        <li>Activity Editor
+            <ul>
+                {% for locale in ['en', 'de', 'es', 'fr', 'nl', 'ru'] %}
+                    {% if is_granted('ROLE_translator_'~locale) %}
+                        <li><a href="{{ path('team_activity_index', {'_locale': locale}) }}">{{ locale }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Admin: Tools: Internal</h2>
     <ul>
         <li><a href="{{ path('team_activity_index', {'_locale': 'en'}) }}"> Activity Editor</a></li>
         <li><a href="/app_dev.php">Debug Controller</a></li>
         <li><a href="https://plans-for-retrospectives.com/commit.txt">Commit Hash</a> of current <a
                     href="{{ path('home') }}">live Retromat</a></li>
     </ul>
-    <h2>Tools: External</h2>
+    <h2>Admin: Tools: External</h2>
     <ul>
         <li>Collaboation
             <ul>
@@ -62,7 +75,7 @@
             </ul>
         </li>
     </ul>
-    <h2>Experiments: Internal</h2>
+    <h2>Admin: Experiments: Internal</h2>
     <ul>
         <li><a href="{{ path('titles-experiment') }}">Plan Title and Description Experiments</a></li>
         <li><a href="{{ path('cache-counter-experiment') }}">Cache Counter Experiment</a></li>
