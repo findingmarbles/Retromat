@@ -115,7 +115,11 @@ class ActivityEditorController extends Controller
             $activities = $this->findLocalizedActivities($request->getLocale());
             $lastRetromatId = end($activities)->getRetromatId();
             if ($activity->getRetromatId() === $lastRetromatId) {
-                $em->remove($activity);
+                if ('en' === $request->getLocale()) {
+                    $em->remove($activity);
+                } else {
+                    $activity->removeTranslation($activity->translate($request->getLocale(), false));
+                }
                 $this->flushEntityManagerAndClearRedisCache();
             }
         }
