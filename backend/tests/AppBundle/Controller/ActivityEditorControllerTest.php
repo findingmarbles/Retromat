@@ -17,6 +17,35 @@ class ActivityEditorControllerTest extends WebTestCase
         $this->loadFixtures([]);
     }
 
+    public function testCreateNewActivityUsesNextFreeRetromatIdEmptyDb()
+    {
+        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/en/team/activity/new');
+        $prefilledRetromatId = $crawler->filter('#appbundle_activity2_retromatId')->eq(0)->attr('value');
+
+        $this->assertEquals(1, $prefilledRetromatId);
+    }
+
+    public function testCreateNewActivityUsesNextFreeRetromatIdFullDb()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/en/team/activity/new');
+        $prefilledRetromatId = $crawler->filter('#appbundle_activity2_retromatId')->eq(0)->attr('value');
+
+        $this->assertEquals(132, $prefilledRetromatId);
+    }
+
     public function testCreateNewActivityPhase1()
     {
         $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
