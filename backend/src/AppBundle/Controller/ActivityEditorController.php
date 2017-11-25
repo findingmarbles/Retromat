@@ -83,9 +83,10 @@ class ActivityEditorController extends Controller
      * @Route("/delete-confirm", name="team_activity_delete_confirm")
      * @Method({"GET"})
      */
-    public function deleteConfirmAction()
+    public function deleteConfirmAction(Request $request)
     {
-        $activities = $this->getDoctrine()->getManager()->getRepository('AppBundle:Activity2')->findAllOrdered();
+        $activities = $this->findLocalizedActivities($request->getLocale());
+
         $lastActivity = end($activities);
 
         return $this->render(
@@ -111,7 +112,7 @@ class ActivityEditorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
-            $activities = $em->getRepository('AppBundle:Activity2')->findAllOrdered();
+            $activities = $this->findLocalizedActivities($request->getLocale());
             $lastRetromatId = end($activities)->getRetromatId();
             if ($activity->getRetromatId() === $lastRetromatId) {
                 $em->remove($activity);
