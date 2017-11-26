@@ -12,9 +12,18 @@
             <a href="{{ path('team_activity_index') }}">Back to the list</a>
         </li>
     </ul>
-    <h1>Create Activity</h1>
+    <h1>
+        {% if 'en' == app.request.locale %}
+            Create New Activity
+        {% else %}
+            Create Activity Translation {{ app.request.locale|upper }}
+            for: {{ activity2.translate('en').getName() }}
+        {% endif %}
+    </h1>
     <ul>
-        <li>Click "Create" (below the form), to publish your new activity.</li>
+        <li>Click "Create" (below the form), to publish your new
+            activity{% if 'en' != app.request.locale %} translation{% endif %}.
+        </li>
         <li>Following creation you will immediately see a preview. Browser caches keep the old versions of activity
             pages for up to 10 minutes.
         </li>

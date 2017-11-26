@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block body %}
+    No design at this point in time. We might get around to styling this internal area in 2018.
     <h1>Retromat Team Dashboard</h1>
     <h2>Welcome {{ app.user.username|title }} :-)</h2>
     <ul>
@@ -16,11 +17,18 @@
         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
     </ul>
     {% if is_granted('ROLE_TRANSLATOR') %}
-        <h2>Translator Tools</h2>
+        <h2>Content Tools</h2>
         <ul>
-            <li>Activity Editor
+            {% if is_granted('ROLE_ADMIN') %}
+                <li>Activity Editor
+                    <ul>
+                        <li><a href="{{ path('team_activity_index', {'_locale': 'en'}) }}">en</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+            <li>Activity Translation Editor
                 <ul>
-                    {% for locale in ['en', 'de', 'es', 'fr', 'nl', 'ru'] %}
+                    {% for locale in ['de', 'es', 'fr', 'nl', 'ru'] %}
                         {% if is_granted('ROLE_TRANSLATOR_'~locale|upper) %}
                             <li><a href="{{ path('team_activity_index', {'_locale': locale}) }}">{{ locale }}</a></li>
                         {% endif %}
