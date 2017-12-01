@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace tests\AppBundle\Controller;
 
@@ -175,12 +175,12 @@ class ActivityControllerTest extends WebTestCase
 
         $this->assertEquals(
             'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
-            $activities[14-1]['source']
+            $activities[14 - 1]['source']
         );
 
         $this->assertEquals(
             '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
-            $activities[65-1]['source']
+            $activities[65 - 1]['source']
         );
     }
 
@@ -192,13 +192,13 @@ class ActivityControllerTest extends WebTestCase
         $client->request('GET', '/activities');
         $activities = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertEquals(1, $activities[1-1]['retromatId']);
-        $this->assertEquals(32, $activities[32-1]['retromatId']);
-        $this->assertEquals(100, $activities[100-1]['retromatId']);
+        $this->assertEquals(1, $activities[1 - 1]['retromatId']);
+        $this->assertEquals(32, $activities[32 - 1]['retromatId']);
+        $this->assertEquals(100, $activities[100 - 1]['retromatId']);
 
-        $this->assertEquals('Emoticon Project Gauge', $activities[32-1]['name']);
-        $this->assertEquals('Happiness Histogram', $activities[59-1]['name']);
-        $this->assertEquals('Repeat &amp; Avoid', $activities[80-1]['name']);
+        $this->assertEquals('Emoticon Project Gauge', $activities[32 - 1]['name']);
+        $this->assertEquals('Happiness Histogram', $activities[59 - 1]['name']);
+        $this->assertEquals('Repeat &amp; Avoid', $activities[80 - 1]['name']);
     }
 
     public function testActivityIdsAndNamesInCollectionRequestsGerman()
@@ -209,13 +209,13 @@ class ActivityControllerTest extends WebTestCase
         $client->request('GET', '/activities?locale=de');
         $activities = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertEquals(1, $activities[1-1]['retromatId']);
-        $this->assertEquals(32, $activities[32-1]['retromatId']);
-        $this->assertEquals(75, $activities[75-1]['retromatId']);
+        $this->assertEquals(1, $activities[1 - 1]['retromatId']);
+        $this->assertEquals(32, $activities[32 - 1]['retromatId']);
+        $this->assertEquals(75, $activities[75 - 1]['retromatId']);
 
-        $this->assertEquals('Projekt-Gef&uuml;hlsmesser', $activities[32-1]['name']);
-        $this->assertEquals('Verdeckter Boss', $activities[58-1]['name']);
-        $this->assertEquals('Schreibe das Unaussprechliche', $activities[75-1]['name']);
+        $this->assertEquals('Projekt-Gef&uuml;hlsmesser', $activities[32 - 1]['name']);
+        $this->assertEquals('Verdeckter Boss', $activities[58 - 1]['name']);
+        $this->assertEquals('Schreibe das Unaussprechliche', $activities[75 - 1]['name']);
     }
 
     public function testOnlyTranslatedActivitiesInCollectionRequests()

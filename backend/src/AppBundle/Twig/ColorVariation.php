@@ -5,12 +5,14 @@ namespace AppBundle\Twig;
 class ColorVariation
 {
     private $colors;
+
     private $previousColor = -1;
+
     private $allColors = [0, 1, 2, 3, 4];
 
     public function nextColor()
     {
-        if (count($this->colors) < 2){
+        if (count($this->colors) < 2) {
             $this->colors = $this->allColors;
             shuffle($this->colors);
         }

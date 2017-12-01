@@ -13,15 +13,22 @@
         </li>
     </ul>
 
-    <h1>Edit Activity ({{ app.request.locale }}): {{ activity2.getName }}</h1>
+    <h1>Edit Activity{% if 'en' != app.request.locale %} Translation {{ app.request.locale|upper }}{% endif %}:
+        {{ activity2.retromatId }}</h1>
     <ul>
+        <li>Translation for activity {{ activity2.retromatId }}: <a
+                    target="_blank"
+                    href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">{{ activity2.translate('en').getName() }}</a>
+        </li>
         <li>Click &quot;Update&quot; (below the form) to publish your changes.</li>
-        <li>Follwing your update you will immediately see a preview. Browser caches keep the old version for up to 10 minutes.</li>
-        <li>If unsure, keep a local copy of activities you edit until you like the result, because:</li>
+        <li>Follwing your update you will immediately see a preview. Browser caches keep the old version for up to 10
+            minutes.
+        </li>
+        <li>If unsure, keep a local copy of translations you edit until you like the result, because:</li>
         <li>There is no &quot;undo&quot; button!</li>
     </ul>
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Update" />
+    {{ form_widget(edit_form) }}
+    <input type="submit" value="Update"/>
     {{ form_end(edit_form) }}
 {% endblock %}

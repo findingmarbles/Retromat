@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace AppBundle\Activity;
 
@@ -39,11 +39,11 @@ class ActivityByPhase
         $idKey = array_search($id, $this->activityByPhase[$phase]);
 
         // if we are on the last activity of the phase, the next one is the first
-        if ($idKey == count($this->activityByPhase[$phase])-1) {
+        if ($idKey == count($this->activityByPhase[$phase]) - 1) {
             return $this->activityByPhase[$phase][0];
         }
 
-        return $this->activityByPhase[$phase][$idKey+1];
+        return $this->activityByPhase[$phase][$idKey + 1];
     }
 
     public function previousActivityIdInPhase($phase, $id)
@@ -53,10 +53,10 @@ class ActivityByPhase
 
         // if we are on the first activity of the phase, the previous one is the last
         if (0 == $idKey) {
-            return $this->activityByPhase[$phase][count($this->activityByPhase[$phase])-1];
+            return $this->activityByPhase[$phase][count($this->activityByPhase[$phase]) - 1];
         }
 
-        return $this->activityByPhase[$phase][$idKey-1];
+        return $this->activityByPhase[$phase][$idKey - 1];
     }
 
     public function nextIds(array $ids, $id, $phase)

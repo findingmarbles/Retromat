@@ -3,14 +3,14 @@ declare(strict_types = 1);
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/{_locale}/team")
- * @Security("has_role('ROLE_ADMIN')")
+ * @Security("has_role('ROLE_TRANSLATOR')")
  */
 class TeamController extends Controller
 {
@@ -26,6 +26,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/titles", name="titles-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function titlesExperimentAction()
     {
@@ -34,6 +35,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
     {
@@ -56,6 +58,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/email")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function emailExperimentAction()
     {
@@ -63,8 +66,8 @@ class TeamController extends Controller
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setFrom('retromat-backend@avior.uberspace.de')
-            ->setTo('retromat-backend@avior.uberspace.de')
+            ->setFrom($this->getParameter('retromat_backend_mail'))
+            ->setTo($this->getParameter('retromat_backend_mail'))
             ->setBody(
                 'Email Experiment',
                 'text/plain'
@@ -76,6 +79,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/error")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function errorExperimentAction()
     {
@@ -92,6 +96,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/cache-counter", name="cache-counter-experiment")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function cacheExperimentAction()
     {
@@ -104,7 +109,7 @@ class TeamController extends Controller
             $cache->save($cachedCounter);
         } else {
             $counter = $cachedCounter->get();
-            
+
             $counter++;
 
             $cachedCounter->set($counter);

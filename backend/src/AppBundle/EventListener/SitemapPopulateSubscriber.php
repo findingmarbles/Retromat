@@ -103,7 +103,7 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     {
         $language = 'en';
 
-        foreach (range(0,5) as $phase) {
+        foreach (range(0, 5) as $phase) {
             $urlContainer->addUrl(
                 new UrlConcrete(
                     $this->urlGenerator->generate(

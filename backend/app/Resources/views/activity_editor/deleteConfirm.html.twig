@@ -10,13 +10,17 @@
             <a href="{{ path('team_activity_index') }}">Back to the list</a>
         </li>
     </ul>
-    <h1>Delete Activity ({{ app.request.locale }}): {{ lastActivity.getName }}</h1>
+    <h1>Delete Activity{% if 'en' != app.request.locale %}
+        Translation {{ app.request.locale|upper }}{% endif %}:
+        {{ lastActivity.getName }}</h1>
     <ul>
         <li>Click &quot;Confirm delete&quot; (below), to confirm instant deletion of:
             &quot;{{ lastActivity.getName }}&quot;
         </li>
-        <li>If any translations exist, they will be deleted as well.
-        </li>
+        {% if 'en' == app.request.locale %}
+            <li>Translations will be deleted as well.
+            </li>
+        {% endif %}
         <li>Browser caches keep old versions of activity data for up to 10 minutes.</li>
         <li>There is no &quot;undo&quot; button!</li>
     </ul>

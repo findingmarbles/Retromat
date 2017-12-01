@@ -2,4 +2,6 @@
 
 namespace AppBundle\Twig\Exception;
 
-class InconsistentInputException extends \Exception {}
+class InconsistentInputException extends \Exception
+{
+}

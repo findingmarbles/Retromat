@@ -8,13 +8,22 @@
     <ul>
         <li><a href="{{ path('team_dashboard', {'_locale': 'en'}) }}">Back to the dashboard</a></li>
     </ul>
-    <h1>Activities ({{ app.request.locale }})</h1>
+    <h1>
+        {% if 'en' == app.request.locale %}
+            Activity List
+        {% else %}
+            Activity Translations List: {{ app.request.locale|upper }}
+        {% endif %}
+    </h1>
+
     <ul>
         <li>
-            <a href="{{ path('team_activity_new') }}">Create a new activity</a>
+            <a href="{{ path('team_activity_new') }}">Create</a> a new
+            activity {% if 'en' != app.request.locale %} translation{% endif %}
         </li>
         <li>
-            <a href="{{ path('team_activity_delete_confirm') }}">Delete the last activity</a>
+            <a href="{{ path('team_activity_delete_confirm') }}">Delete</a> the last
+            activity {% if 'en' != app.request.locale %} translation{% endif %}
         </li>
     </ul>
     <table style="border-spacing: 10px;">
