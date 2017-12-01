@@ -9,20 +9,44 @@ use AppBundle\Importer\ArrayToObjectMapper;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+/**
+ * Class ActivityImporter
+ * @package AppBundle\Importer\Activity
+ */
 class ActivityImporter
 {
+    /**
+     * @var ObjectManager
+     */
     private $objectManager;
 
+    /**
+     * @var ActivityReader
+     */
     private $reader;
 
+    /**
+     * @var ArrayToObjectMapper
+     */
     private $mapper;
 
+    /**
+     * @var ValidatorInterface
+     */
     private $validator;
 
+    /**
+     * @var array
+     */
     private $locales;
 
     /**
      * ActivityImporter constructor.
+     * @param ObjectManager $objectManager
+     * @param ActivityReader $reader
+     * @param ArrayToObjectMapper $mapper
+     * @param ValidatorInterface $validator
+     * @param array $locales
      */
     public function __construct(
         ObjectManager $objectManager,
@@ -38,11 +62,18 @@ class ActivityImporter
         $this->locales = $locales;
     }
 
+    /**
+     * @throws InvalidActivityException
+     */
     public function import()
     {
         $this->import2Multiple($this->locales);
     }
 
+    /**
+     * @param array $locales
+     * @throws InvalidActivityException
+     */
     public function import2Multiple(array $locales = [])
     {
         foreach ($locales as $locale) {
@@ -57,6 +88,10 @@ class ActivityImporter
         $this->import2('en');
     }
 
+    /**
+     * @param string $locale
+     * @throws InvalidActivityException
+     */
     public function import2(string $locale = 'en')
     {
         $this->reader->setCurrentLocale($locale);
