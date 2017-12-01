@@ -29,6 +29,7 @@ doctrine:
                 path:     "%kernel.cache_dir%/test.db"
 
 parameters:
+    retromat.activity.import.languages.whitelist: ["en", "de", "es", "fr", "nl", "ru"]
     retromat.activity.import.file_names:
         en: "%kernel.root_dir%/../tests/AppBundle/data/activities_en.js"
         de: "%kernel.root_dir%/../tests/AppBundle/data/activities_de.js"
