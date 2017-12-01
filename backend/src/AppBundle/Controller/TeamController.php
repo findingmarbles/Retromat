@@ -3,9 +3,9 @@ declare(strict_types = 1);
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -66,8 +66,8 @@ class TeamController extends Controller
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setFrom('retromat-backend@avior.uberspace.de')
-            ->setTo('retromat-backend@avior.uberspace.de')
+            ->setFrom($this->getParameter('retromat_backend_mail'))
+            ->setTo($this->getParameter('retromat_backend_mail'))
             ->setBody(
                 'Email Experiment',
                 'text/plain'
