@@ -18,7 +18,7 @@
     <ul>
         <li>Translation for activity {{ activity2.retromatId }}: <a
                     target="_blank"
-                    href="{{ path('activities_by_id', { 'id': activity2.retromatId }) }}">{{ activity2.translate('en').getName() }}</a>
+                    href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">{{ activity2.translate('en').getName() }}</a>
         </li>
         <li>Click &quot;Update&quot; (below the form) to publish your changes.</li>
         <li>Follwing your update you will immediately see a preview. Browser caches keep the old version for up to 10
