@@ -16,7 +16,7 @@
                     </span>
                 </h2>
                 <div class="summary">
-                    <span class="js_fill_summary">{{ activity.getSummary }}</span>
+                    <span class="js_fill_summary">{{ activity.getSummary | raw }}</span>
                     <br>
                     {# @todo: remove duplication with ActivityController->expandSource #}
                     <span class="source">Source: <span class="js_fill_source">{{ activity.getSource|raw }}</span>
