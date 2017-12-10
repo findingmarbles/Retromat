@@ -26,6 +26,7 @@
           <root url="phar://$USER_HOME$/GitSep/bin.git/composer.phar/" />
           <root url="phar://$USER_HOME$/GitSep/bin.git/phpunit-4.8.26.phar/" />
           <root url="phar://$USER_HOME$/GitSep/bin.git/phpunit-5.3.5.phar/" />
+          <root url="phar://$MODULE_DIR$/backend/vendor/bin/.phpunit/phpunit-5.7/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$MODULE_DIR$/backend/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
         </CLASSES>
         <SOURCES>
@@ -34,6 +35,7 @@
           <root url="phar://$USER_HOME$/GitSep/bin.git/composer.phar/" />
           <root url="phar://$USER_HOME$/GitSep/bin.git/phpunit-4.8.26.phar/" />
           <root url="phar://$USER_HOME$/GitSep/bin.git/phpunit-5.3.5.phar/" />
+          <root url="phar://$MODULE_DIR$/backend/vendor/bin/.phpunit/phpunit-5.7/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$MODULE_DIR$/backend/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
         </SOURCES>
       </library>
