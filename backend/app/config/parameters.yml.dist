@@ -24,3 +24,5 @@ parameters:
     secret:            ThisIsAutomaticallyChangedOnDeployment
 
     retromat_backend_mail: ~
+
+    session_dir_relative: /var/sessions/

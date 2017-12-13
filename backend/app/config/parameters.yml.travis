@@ -18,3 +18,5 @@ parameters:
     secret:             ThisIsAutomaticallyChangedOnDeployment
 
     retromat_backend_mail: cannot-be-empty@example.org
+
+    session_dir_relative: /var/sessions/
