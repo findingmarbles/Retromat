@@ -15,7 +15,7 @@ install:
     - composer install --working-dir=backend
 
 before_script:
-    - php backend/bin/console security:check
+    - php backend/bin/console security:check backend/
     - php backend/bin/console doctrine:database:create
     - php backend/bin/console doctrine:migrations:migrate --no-interaction
     - php backend/bin/console retromat:import:activities
