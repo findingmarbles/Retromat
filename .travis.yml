@@ -15,7 +15,7 @@ install:
     - composer install --working-dir=backend
 
 before_script:
-    - php backend/bin/console security:check backend/
+    - php backend/bin/console security:check backend/ --end-point=http://security.sensiolabs.org/check_lock
     - php backend/bin/console doctrine:database:create
     - php backend/bin/console doctrine:migrations:migrate --no-interaction
     - php backend/bin/console retromat:import:activities
