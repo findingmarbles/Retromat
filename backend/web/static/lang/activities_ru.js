@@ -880,18 +880,18 @@ suitable:  "iteration"
 all_activities[50] = {
 phase:     1,
 name:      "Lean Coffee",
-summary:   "Use the Lean Coffee format for a focused discussion of the top topics",
-desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: \
-		<ul> \
-    <li>Everyone writes down topics they’d like to discuss - 1 topic per sticky</li>\
-    <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. Group stickies that are about the same topic</li>\
-    <li>Everyone dot-votes for the 2 topics they want to discuss</li>\
-    <li>Order the stickies according to votes</li>\
-    <li>Start with the topic of highest interest</li>\
-    <li>Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. </li>\
+summary:   "Использовать формат Lean Coffee для целенаправленного обсуждения самых важных тем",
+desc:      "Обьясните, сколько отведено для этой активности. Объясните правила lean coffee для ретроспективы: \
+ <ul> \
+    <li>Каждый пишет темы, которые он хотел бы обсудить - по одной теме на стикере</li>\
+    <li>Стикеры приклеивают к доске или флипчарту. Человек, написавший эту тему, описывает ее в 1 или 2 предложениях. Стикеры на одну тему группируются.</li>\
+    <li>Каждый голосует за темы, которые хотыл бы обсудить, ставя точки на стикерах. У каждого 2 точки.</li>\
+    <li>Определяется порядок тем по голосам</li>\
+    <li>Начинают самой важной темы и тд.</li>\
+    <li>Ставиться таймер на 5 минут. Когда таймер подает звуковой сигнал, каждый голосует большым пальцом вверх или вниз. Большинство больших пальцев вверх: тема получает еще 5 минут. Большинство больших пальцев вниз: начать следующую тему. </li>\
 </ul> \
-Stop when the allotted time is over.",
-source:    "<a href='http://leancoffee.org/'>Original description</a> and <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
+Остановитесь, когда отведенное время закончится.",
+source:    "<a href='http://leancoffee.org/'>Изначальное описание</a> и <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>его приминение</a>",
 durationDetail:  "20-40 min",
 duration:    "Flexible",
 stage:    "All",
