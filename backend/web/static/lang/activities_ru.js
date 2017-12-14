@@ -812,6 +812,91 @@ duration:    "Short",
 stage:    "Forming, Performing, Stagnating",
 suitable: "iteration, release, project"
 };
+all_activities[46] = {
+phase:     1,
+name:      "Отчистить почтовый ящик",
+summary:   "Просмотрите все заметки, собранные во время итерации",
+desc:      "Установите 'ретроспективный почтовый ящик' в начале итерации. Всякий раз, когда что-то \
+значительное случается или у кого-то есть идея для улучшения, они пишут это и кладут в ящик. \
+(Альтернатвнр 'почтовый ящик' может быть хорошо видимым местом куда приклеивают записки. Это может спровоцировать \
+обсуждение в ходе итерации.) <br>\
+Пройдите по всем заметкам и обсудите их.<br>\
+Почтовый ящик отлично подходит для длительных итераций и забывчивых команд.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Изначальная статья автора</a>",
+durationDetail:  "15",
+duration:    "Medium",
+stage:    "All",
+suitable: "release, project"
+};
+all_activities[47] = {
+phase:     3,
+name:      "Займи позицию - танц по линии",
+summary:   "Поймите позицию каждого и достигните консенсуса",
+desc:      "Когда команда не может решить между двумя вариантами, создайте длинную линию \
+на полу с помощью скотча. Отметь один конец, как вариант А, а другой как вариант Б. \
+Члены команды встают на места по шкале в соответствии с их предпочтениями. \
+Теперь команда может изменять параметры решения, пока один вариант не получит явное большинство.",
+source:    source_skycoach,
+more:      "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Изначальная статья автора</a>",
+durationDetail:  "5-10 per decision",
+duration:    "Short",
+stage:    "Storming, Norming",
+suitable: "iteration, release, project"
+};
+all_activities[48] = {
+phase:     3,
+name:      "Голосование точками - звезда",
+summary:   "Собрать всё то, что надо начинать, прекращать, продолжать, чего делать больше и меньше",
+desc:      "Нарисуйте 5 линий на флипчарте, разделив его таким образом на 5 частей. \
+Назовите их 'Старт', 'Стоп', 'Продолжать', 'Больше' и 'Меньше'. \
+Участники пишут свои предложения на бумажках и приклеивают из в соответствующем месте \
+Совместите одинаковые предложения в одну и проведите голование точками, \
+чтобы решить какое предложение попробовать.",
+source:    "<a href='http://www.thekua.com/rant/2006/03/the-retrospective-starfish/'>Пат Куа</a>",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "All",
+suitable:  "iteration, release, project"
+};
+all_activities[49] = {
+phase:     2,
+name:      "Исполнение желания",
+summary:   "Фея исполняет желание - как ты поймёшь, что оно сбылось?",
+desc:      "Дайте участникам 2 минуты, чтобы молча задуматься над следующим вопросом: \
+'Фея дает тебе одно желание, которое исправит твою самую большую проблему \
+на работе. Чего ты хочешь?' Дальше добавьте: 'Ты приходишь на работу на следующее \
+утро. Ты понимаешь, что фея исполнила твоё желание. Откуда ты это знаешь? \
+Что изменилось?' \
+Если уровень доверия в группе высок, попросите всех описать \
+их рабочее место послу исполнения их желания. Если нет, просто скажите участникам держать \
+сценирии их исполнениых желаний в голове и предложить действия, которые смогут помочь их реализовать.",
+source:    "Лидия Гравундер и Себастиан Нахтигалл",
+durationDetail:  "15 min",
+duration:    "Medium",
+stage:    "Storming, Norming",
+suitable:  "iteration"
+};
+all_activities[50] = {
+phase:     1,
+name:      "Lean Coffee",
+summary:   "Use the Lean Coffee format for a focused discussion of the top topics",
+desc:      "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives: \
+		<ul> \
+    <li>Everyone writes down topics they’d like to discuss - 1 topic per sticky</li>\
+    <li>Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. Group stickies that are about the same topic</li>\
+    <li>Everyone dot-votes for the 2 topics they want to discuss</li>\
+    <li>Order the stickies according to votes</li>\
+    <li>Start with the topic of highest interest</li>\
+    <li>Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. </li>\
+</ul> \
+Stop when the allotted time is over.",
+source:    "<a href='http://leancoffee.org/'>Original description</a> and <a href='http://finding-marbles.com/2013/01/12/lean-altbier-aka-lean-coffee/'>in action</a>",
+durationDetail:  "20-40 min",
+duration:    "Flexible",
+stage:    "All",
+suitable:  "iteration"
+};
 all_activities[55] = {
 phase:     5,
 name:      "Пригласите клиента",
