@@ -49,7 +49,7 @@ class HomeController extends Controller
     /**
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
-     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl"}, name="home")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="home")
      */
     public function redirectAction(Request $request)
     {
