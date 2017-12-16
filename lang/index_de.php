@@ -19,10 +19,17 @@ $_lang['INDEX_ABOUT'] = 'Retromat enth&auml;lt <span class="js_footer_no_of_acti
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Schlag sie vor';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '&Uuml;bersetzung von ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Patrick Zeising';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/peezett';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Ronald Steyer';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://aboutronaldblog.wordpress.com/';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ronald_steyer.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+	Ronald findet in ziemlich unterschiedlichen Aufgaben immer wieder das, was ihn besonders interessiert: Veränderungen  oder besser: Transformation fördern. Um Unternehmen kundenorientierter und anpassungsfähiger zu machen, will er sie für agiles Arbeiten begeistern, Du kannst ihm <a href="mailto:aboutronald@posteo.de">schreiben</a>.
+EOT;
+
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Patrick Zeising';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/peezett';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/patrick_zeising.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 	Patrick arbeitet in verschiedenen Rollen in der Softwareentwicklung in einem fantastischen <a href="http://www.team-neusta.de/">Team</a>. Seine Leidenschaft wird dabei geweckt von agilen Methoden. G&auml;be es in seinem Leben keine IT, so st&uuml;nde er jetzt mit seiner Gitarre vor einem Mikro auf einer B&uuml;hne. Du kannst ihm <a href="mailto:patrick.zeising@posteo.de">schreiben</a> oder
     ihm <a href="https://twitter.com/peezett">auf Twitter folgen</a>.
 EOT;
