@@ -41,6 +41,7 @@ Our team of awesome translators:
 * French: [Julien Dubois](http://juliendubois.fr/), [Pierre Martin](https://twitter.com/pierremartin) and [Frank Taillandier](http://frank.taillandier.me/)
 * German: [Patrick Zeising](https://twitter.com/peezett)
 * Dutch: [Linda van der Pal](https://twitter.com/DuchessFounder)
+* Russian: [Anton Skornyakov](http://skornyakov.info/), [Yuliana Stepanova](https://twitter.com/Yuliana_Step), [Alexander Martyushev](http://onagile.ru/team/alex-martyushev/)
 
 Your mother tongue is up there? Join them! For two people it's half the work. Science! ;)
 
