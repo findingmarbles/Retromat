@@ -361,6 +361,9 @@ YAML;
         $this->assertNotEquals($titleId2, $titleId1);
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testChooseTitleIdPlanAlwaysGetsSameTitle()
     {
         $yaml = <<<YAML
@@ -373,6 +376,17 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agiler, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Ablaufplan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -387,6 +401,49 @@ YAML;
         }
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdPlanAlwaysGetsSameTitleDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+    1: [   1, 2]
+    2: [0, 1   ]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agiler, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Ablaufplan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $titleId1 = $chooser->chooseTitleId('1-2-3-4-5', 'de');
+
+        // if it works 100 times in a row, we believe it always works
+        for ($i = 0; $i < 100; $i++) {
+            $titleId2 = $chooser->chooseTitleId('1-2-3-4-5', 'de');
+            $this->assertEquals($titleId2, $titleId1);
+        }
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testChooseTitleIdMaxLength()
     {
         $yaml = <<<YAML
@@ -397,6 +454,15 @@ groups_of_terms:
     0: ["", "Agile", "Scrum", "Kanban", "XP"]
     1: ["", "Retro", "Retrospective"]
     2: ["Plan", "Agenda"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Ablaufplan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $planId = '1-2-3-4-5';
@@ -406,6 +472,46 @@ YAML;
 
         $titleId = $chooser->chooseTitleId($planId);
         $titleString = $title->render($titleId);
+        $fullTitle = $titleString.' '.$planId;
+
+        $this->assertLessThanOrEqual(
+            $maxLengthIncludingPlanId,
+            strlen($fullTitle),
+            'This is longer than '.$maxLengthIncludingPlanId.': '.$fullTitle
+        );
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdMaxLengthDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", Agiler, Scrum, Kanban, XP]
+        1: ["", Retro, Retrospective]
+        2: [Plan, Ablaufplan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
+        $titleId = $chooser->chooseTitleId($planId, 'de');
+        $titleString = $title->render($titleId, 'de');
         $fullTitle = $titleString.' '.$planId;
 
         $this->assertLessThanOrEqual(

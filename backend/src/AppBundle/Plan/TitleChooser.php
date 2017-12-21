@@ -105,7 +105,7 @@ class TitleChooser
 
         // take care of $maxLengthIncludingPlanId
         $titleId = $chosenSequenceId.':'.implode('-', $chosenTermIds);
-        $titleId = $this->dropOptionalTermsUntilShortEnough($titleId, $activityIdsString);
+        $titleId = $this->dropOptionalTermsUntilShortEnough($titleId, $activityIdsString, $locale);
 
         return $titleId;
     }
@@ -115,10 +115,10 @@ class TitleChooser
      * @param string $planId
      * @return string
      */
-    public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId): string
+    public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId, string $locale = 'en'): string
     {
-        while (!$this->isShortEnough($titleId, $planId)) {
-            $titleId = $this->dropOneOptionalTerm($titleId);
+        while (!$this->isShortEnough($titleId, $planId, $locale)) {
+            $titleId = $this->dropOneOptionalTerm($titleId, $locale);
         }
 
         return $titleId;
@@ -128,12 +128,22 @@ class TitleChooser
      * @param string $titleId
      * @return string
      */
-    public function dropOneOptionalTerm(string $titleId): string
+    public function dropOneOptionalTerm(string $titleId, string $locale = 'en'): string
     {
+        if ('en' === $locale) {
+            $parts = $this->parts;
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
         // parse titleId
         $idStringParts = explode(':', $titleId);
         $sequenceOfGroupsId = $idStringParts[0];
-        $sequenceOfGroups = $this->sequenceOfGroups[$sequenceOfGroupsId];
+        $sequenceOfGroups = $parts['sequence_of_groups'][$sequenceOfGroupsId];
         $fragmentIds = explode('-', $idStringParts[1]);
         unset($titleId, $idStringParts);
 
@@ -143,7 +153,7 @@ class TitleChooser
             // non-empty (by convention, empty string must be listed first and therefore are id == 0)
             if (0 != $fragmentIds[$i]) {
                 // by convention, optional groups are marked by having an empty string as their first term
-                if (0 == strlen($this->groupsOfTerms[$sequenceOfGroups[$i]][0])) {
+                if (0 == strlen($parts['groups_of_terms'][$sequenceOfGroups[$i]][0])) {
                     $nonEmptyOptionalGroupIds[] = $i;
                 }
             }
@@ -167,10 +177,10 @@ class TitleChooser
      * @param string $activityIdsString
      * @return bool
      */
-    public function isShortEnough(string $titleId, string $activityIdsString): bool
+    public function isShortEnough(string $titleId, string $activityIdsString, string $locale = 'en'): bool
     {
         return $this->maxLengthIncludingPlanId >= strlen(
-                $this->titleRenderer->render($titleId).': '.$activityIdsString
+                $this->titleRenderer->render($titleId, $locale).': '.$activityIdsString
             );
     }
 }
