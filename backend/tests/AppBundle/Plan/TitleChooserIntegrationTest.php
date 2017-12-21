@@ -572,6 +572,9 @@ YAML;
         $chooser->chooseTitleId($planId, 'de');
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testDropOptionalTermsUntilShortEnough()
     {
         $yaml = <<<YAML
@@ -602,6 +605,58 @@ YAML;
         $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testDropOptionalTermsUntilShortEnoughDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+groups_of_terms:
+    0: ["foo"]
+    1: ["", "bar1"]
+    2: ["", "bar2"]
+    3: ["", "bar3"]
+    4: ["", "bar4"]
+    5: ["", "bar5"]
+    6: ["", "bar6"]
+    7: ["", "bar7"]
+    8: ["", "bar8"]
+    9: ["", "bar9"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
+        $titleId2 = $chooser->dropOptionalTermsUntilShortEnough($titleId1, $planId, 'de');
+
+        $this->assertEquals('0:0-0-0-0-0-0-0-0-0-0', $titleId2);
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testDropOneOptionalTerm()
     {
         $yaml = <<<YAML
@@ -621,6 +676,40 @@ YAML;
         $this->assertEquals('0:0-0-0', $titleId2);
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testDropOneOptionalTermDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+        $titleId1 = '0:0-2-0';
+        $titleId2 = $chooser->dropOneOptionalTerm($titleId1, 'de');
+        $this->assertEquals('0:0-0-0', $titleId2);
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testDropOneOptionalTermDeterministicRandomness()
     {
         $yaml = <<<YAML
@@ -662,6 +751,66 @@ YAML;
         $this->assertNotEquals($titleId2, $titleId4);
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testDropOneOptionalTermDeterministicRandomnessDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+groups_of_terms:
+    0: ["foo"]
+    1: ["", "bar1"]
+    2: ["", "bar2"]
+    3: ["", "bar3"]
+    4: ["", "bar4"]
+    5: ["", "bar5"]
+    6: ["", "bar6"]
+    7: ["", "bar7"]
+    8: ["", "bar8"]
+    9: ["", "bar9"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+        $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
+
+        // some term is dropped
+        mt_srand(0);
+        $titleId2 = $chooser->dropOneOptionalTerm($titleId1, 'de');
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId2);
+
+        // same seed, same term dropped
+        mt_srand(0);
+        $titleId3 = $chooser->dropOneOptionalTerm($titleId1, 'de');
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId3);
+        $this->assertEquals($titleId2, $titleId3);
+
+        // different seed, different terms dropped
+        mt_srand(1);
+        $titleId4 = $chooser->dropOneOptionalTerm($titleId1, 'de');
+        $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId4);
+        $this->assertNotEquals($titleId2, $titleId4);
+    }
+
     public function testIsShortEnough()
     {
         $yaml = <<<YAML
@@ -681,5 +830,35 @@ YAML;
 
         $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId));
         $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
+    }
+
+    public function testIsShortEnoughDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: ["", "Agile", "Scrum", "Kanban", "XP"]
+    1: ["", "Retro", "Retrospective"]
+    2: ["Plan", "Agenda"]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $maxLengthIncludingPlanId = 15;
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
+        $planId = '1-2-3-4-5';
+
+        $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId, 'de'));
+        $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId, 'de'));
     }
 }

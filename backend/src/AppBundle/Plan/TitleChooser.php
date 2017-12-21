@@ -127,6 +127,7 @@ class TitleChooser
     /**
      * @param string $titleId
      * @return string
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function dropOneOptionalTerm(string $titleId, string $locale = 'en'): string
     {
