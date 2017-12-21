@@ -27,6 +27,33 @@ YAML;
         $this->assertEquals('Agile Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5'));
     }
 
+    public function testRenderTitleSingleChoiceDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile]
+    1: [Retro]
+    2: [Plan]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $this->assertEquals('Agiler Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5', 'de'));
+    }
+
     public function testRenderTitleEmptyUnless5Activities()
     {
         $yaml = <<<YAML
