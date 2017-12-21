@@ -42,7 +42,7 @@ class TeamController extends Controller
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
-        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity');
+        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
 
         return $this->render(
             'team/experiment/titlesAndDescriptionsByPlanId.html.twig',
