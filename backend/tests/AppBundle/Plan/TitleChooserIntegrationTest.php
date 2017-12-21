@@ -21,12 +21,15 @@ groups_of_terms:
     2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
-        $title = new TitleRenderer($titleParts);
-        $chooser = new TitleChooser($titleParts, $title);
+        $titleRenderer = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $titleRenderer);
 
         $this->assertEquals('Agile Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5'));
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testRenderTitleSingleChoiceDe()
     {
         $yaml = <<<YAML
@@ -48,8 +51,8 @@ de:
         2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
-        $title = new TitleRenderer($titleParts);
-        $chooser = new TitleChooser($titleParts, $title);
+        $titleRenderer = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $titleRenderer);
 
         $this->assertEquals('Agiler Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5', 'de'));
     }

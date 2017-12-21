@@ -5,6 +5,7 @@ namespace AppBundle\Plan;
 
 use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 use AppBundle\Plan\TitleRenderer;
+use AppBundle\Twig\Exception\InconsistentInputException;
 
 class TitleChooser
 {
@@ -17,6 +18,11 @@ class TitleChooser
      * @var array
      */
     private $groupsOfTerms;
+
+    /**
+     * @var array
+     */
+    private $parts = [];
 
     /**
      * @var TitleRenderer
@@ -36,6 +42,7 @@ class TitleChooser
      */
     public function __construct(array $titleParts, TitleRenderer $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
+        $this->parts = $titleParts;
         $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
         $this->groupsOfTerms = $titleParts['groups_of_terms'];
         $this->titleRenderer = $title;
@@ -44,22 +51,26 @@ class TitleChooser
 
     /**
      * @param string $activityIdsString
+     * @param string $locale
      * @return string
+     * @throws InconsistentInputException
      */
-    public function renderTitle(string $activityIdsString): string
+    public function renderTitle(string $activityIdsString, string $locale = 'en'): string
     {
         if (5 !== count(explode('-', $activityIdsString))) {
             return '';
         }
 
-        return $this->titleRenderer->render($this->chooseTitleId($activityIdsString)).': '.$activityIdsString;
+        return $this->titleRenderer->render($this->chooseTitleId($activityIdsString), $locale).': '.$activityIdsString;
     }
 
     /**
      * @param string $activityIdsString
+     * @param string $locale
      * @return string
+     * @throws InconsistentInputException
      */
-    public function chooseTitleId(string $activityIdsString): string
+    public function chooseTitleId(string $activityIdsString, string $locale = 'en'): string
     {
         // parse input
         $activityIds = explode('-', $activityIdsString);
@@ -67,18 +78,28 @@ class TitleChooser
             return '';
         }
 
+        if ('en' === $locale) {
+            $parts = $this->parts;
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
         // use input to seed the random number generator so we get deterministic randomness
         $planNumber = (int)implode('0', $activityIds);
         mt_srand($planNumber);
 
         // randomly choose a squence to use and identify the groups of terms in it
-        $chosenSequenceId = mt_rand(0, count($this->sequenceOfGroups) - 1);
-        $groupIds = $this->sequenceOfGroups[$chosenSequenceId];
+        $chosenSequenceId = mt_rand(0, count($parts['sequence_of_groups']) - 1);
+        $groupIds = $parts['sequence_of_groups'][$chosenSequenceId];
 
         // randomly choose one term from each group in the sequence
         $chosenTermIds = [];
         foreach ($groupIds as $groupId) {
-            $groupOfTerms = $this->groupsOfTerms[$groupId];
+            $groupOfTerms = $parts['groups_of_terms'][$groupId];
             $chosenTermIds[] = mt_rand(0, count($groupOfTerms) - 1);
         }
 

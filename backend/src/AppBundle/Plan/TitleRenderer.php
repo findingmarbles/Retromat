@@ -26,10 +26,20 @@ class TitleRenderer
      * @return string
      * @throws InconsistentInputException
      */
-    public function render(string $idString): string
+    public function render(string $idString, string $locale = 'en'): string
     {
+        if ('en' === $locale) {
+            $parts = $this->parts;
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
         $idStringParts = explode(':', $idString);
-        $sequenceOfGroups = $this->parts['sequence_of_groups'][$idStringParts[0]];
+        $sequenceOfGroups = $parts['sequence_of_groups'][$idStringParts[0]];
         $fragmentIds = explode('-', $idStringParts[1]);
         unset($idString, $idStringParts);
 
@@ -41,7 +51,7 @@ class TitleRenderer
 
         $fragments = [];
         for ($i = 0; $i < count($fragmentIds); $i++) {
-            $fragment = $this->parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
+            $fragment = $parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
             if (0 < strlen($fragment)) {
                 $fragments[] = $fragment;
             }
