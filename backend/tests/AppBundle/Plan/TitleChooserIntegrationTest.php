@@ -9,6 +9,9 @@ use Symfony\Component\Yaml\Yaml;
 
 class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testRenderTitleSingleChoice()
     {
         $yaml = <<<YAML
@@ -19,6 +22,15 @@ groups_of_terms:
     0: [Agile]
     1: [Retro]
     2: [Plan]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $titleRenderer = new TitleRenderer($titleParts);
@@ -57,6 +69,9 @@ YAML;
         $this->assertEquals('Agiler Retro Plan: 1-2-3-4-5', $chooser->renderTitle('1-2-3-4-5', 'de'));
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testRenderTitleEmptyUnless5Activities()
     {
         $yaml = <<<YAML
@@ -67,6 +82,15 @@ groups_of_terms:
     0: [Agile]
     1: [Retro]
     2: [Plan]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -76,6 +100,40 @@ YAML;
         $this->assertEquals('', $chooser->renderTitle('1-2-3-4-5-6'));
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testRenderTitleEmptyUnless5ActivitiesDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile]
+    1: [Retro]
+    2: [Plan]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $this->assertEquals('', $chooser->renderTitle('1-2-3-4', 'de'));
+        $this->assertEquals('', $chooser->renderTitle('1-2-3-4-5-6', 'de'));
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testChooseTitleIdEmptyUnless5Activities()
     {
         $yaml = <<<YAML
@@ -86,6 +144,15 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -96,6 +163,41 @@ YAML;
         $this->assertEquals('', $chooser->chooseTitleId('1-2-3-4-5-6'));
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdEmptyUnless5ActivitiesDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $this->assertEquals('', $chooser->chooseTitleId('1', 'de'));
+        $this->assertEquals('', $chooser->chooseTitleId('1-2-3-4', 'de'));
+        $this->assertEquals('', $chooser->chooseTitleId('1-2-3-4-5-6', 'de'));
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testChooseTitleIdCorrectFormat()
     {
         $yaml = <<<YAML
@@ -106,6 +208,15 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -128,6 +239,53 @@ YAML;
         }
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdCorrectFormatDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+    
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agiler]
+        1: [Retro]
+        2: [Plan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $titleId = $chooser->chooseTitleId('1-2-3-4-5', 'de');
+
+        $idStringParts = explode(':', $titleId);
+        $sequenceId = $idStringParts[0];
+        $this->assertTrue(is_numeric($sequenceId));
+
+        $fragmentIdsString = $idStringParts[1];
+        $this->assertContains('-', $fragmentIdsString);
+
+        $fragmentIds = explode('-', $fragmentIdsString);
+        $this->assertInternalType('array', $fragmentIds);
+
+        foreach ($fragmentIds as $fragmentId) {
+            $this->assertTrue(is_numeric($fragmentId));
+        }
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testChooseTitleIdDifferentPlansGetDifferentTitles()
     {
         $yaml = <<<YAML
@@ -140,6 +298,17 @@ groups_of_terms:
     0: [Agile, Scrum, Kanban, XP]
     1: [Retro, Retrospective]
     2: [Plan, Agenda]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agiler, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Ablaufplan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -150,6 +319,45 @@ YAML;
         $this->assertNotEquals($titleId2, $titleId1);
 
         $titleId2 = $chooser->chooseTitleId('1-2-3-4-7');
+        $this->assertNotEquals($titleId2, $titleId1);
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdDifferentPlansGetDifferentTitlesDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+    1: [   1, 2]
+    2: [0, 1   ]
+
+groups_of_terms:
+    0: [Agile, Scrum, Kanban, XP]
+    1: [Retro, Retrospective]
+    2: [Plan, Agenda]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agiler, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Ablaufplan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title);
+
+        $titleId1 = $chooser->chooseTitleId('1-2-3-4-5', 'de');
+        $titleId2 = $chooser->chooseTitleId('1-2-3-4-6', 'de');
+        $this->assertNotEquals($titleId2, $titleId1);
+
+        $titleId2 = $chooser->chooseTitleId('1-2-3-4-7', 'de');
         $this->assertNotEquals($titleId2, $titleId1);
     }
 
