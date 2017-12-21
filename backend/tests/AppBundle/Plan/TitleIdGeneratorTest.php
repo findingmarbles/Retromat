@@ -7,6 +7,9 @@ use Symfony\Component\Yaml\Yaml;
 
 class TitleIdGeneratorTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testCountCombinationsInSequenceSingle()
     {
         $yaml = <<<YAML
@@ -23,6 +26,36 @@ YAML;
         $generator = new TitleIdGenerator($titleParts);
 
         $this->assertEquals(1, $generator->countCombinationsInSequence(0));
+    }
+
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testCountCombinationsInSequenceSingleDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0, 1, 2]
+
+groups_of_terms:
+    0: [Agile]
+    1: [Retrospective]
+    2: [Plan]
+
+de:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retrospective]
+        2: [Plan]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+
+        $generator = new TitleIdGenerator($titleParts);
+
+        $this->assertEquals(1, $generator->countCombinationsInSequence(0, 'de'));
     }
 
     public function testCountCombinationsInSequenceMultiple()
