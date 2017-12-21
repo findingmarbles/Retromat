@@ -523,6 +523,7 @@ YAML;
 
     /**
      * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdMaxLengthNotFeasible()
     {
@@ -540,6 +541,35 @@ YAML;
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
         $chooser->chooseTitleId($planId);
+    }
+
+    /**
+     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
+    public function testChooseTitleIdMaxLengthNotFeasibleDe()
+    {
+        $yaml = <<<YAML
+sequence_of_groups:
+    0: [0]
+
+groups_of_terms:
+    0: ["Foo"]
+
+de:
+    sequence_of_groups:
+        0: [0]
+    
+    groups_of_terms:
+        0: ["Foo"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $planId = '1-2-3-4-5';
+        $maxLengthIncludingPlanId = 2;
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
+        $chooser->chooseTitleId($planId, 'de');
     }
 
     public function testDropOptionalTermsUntilShortEnough()
