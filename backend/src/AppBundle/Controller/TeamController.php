@@ -80,6 +80,7 @@ class TeamController extends Controller
     /**
      * @Route("/experiment/error")
      * @Security("has_role('ROLE_ADMIN')")
+     * @throws \Exception
      */
     public function errorExperimentAction()
     {
