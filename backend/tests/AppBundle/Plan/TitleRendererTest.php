@@ -86,13 +86,14 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     public function testRenderNoSuperfluousWhitespace()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:
@@ -114,13 +115,14 @@ YAML;
     public function testRenderNoSuperfluousWhitespaceDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:

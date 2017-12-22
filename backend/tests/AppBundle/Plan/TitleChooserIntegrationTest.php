@@ -10,18 +10,20 @@ use Symfony\Component\Yaml\Yaml;
 class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testRenderTitleSingleChoice()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retro]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retro]
+        2: [Plan]
     
 de:
     sequence_of_groups:
@@ -40,18 +42,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testRenderTitleSingleChoiceDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retro]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retro]
+        2: [Plan]
     
 de:
     sequence_of_groups:
@@ -70,18 +74,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testRenderTitleEmptyUnless5Activities()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retro]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retro]
+        2: [Plan]
     
 de:
     sequence_of_groups:
@@ -101,18 +107,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testRenderTitleEmptyUnless5ActivitiesDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retro]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retro]
+        2: [Plan]
     
 de:
     sequence_of_groups:
@@ -132,18 +140,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdEmptyUnless5Activities()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
     
 de:
     sequence_of_groups:
@@ -164,18 +174,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdEmptyUnless5ActivitiesDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
     
 de:
     sequence_of_groups:
@@ -196,18 +208,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdCorrectFormat()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
     
 de:
     sequence_of_groups:
@@ -240,18 +254,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdCorrectFormatDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
     
 de:
     sequence_of_groups:
@@ -284,20 +300,22 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdDifferentPlansGetDifferentTitles()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-    1: [   1, 2]
-    2: [0, 1   ]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
 
 de:
     sequence_of_groups:
@@ -323,20 +341,22 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdDifferentPlansGetDifferentTitlesDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-    1: [   1, 2]
-    2: [0, 1   ]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
 
 de:
     sequence_of_groups:
@@ -362,20 +382,22 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdPlanAlwaysGetsSameTitle()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-    1: [   1, 2]
-    2: [0, 1   ]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:        
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
 
 de:
     sequence_of_groups:
@@ -402,20 +424,22 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdPlanAlwaysGetsSameTitleDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-    1: [   1, 2]
-    2: [0, 1   ]
-
-groups_of_terms:
-    0: [Agile, Scrum, Kanban, XP]
-    1: [Retro, Retrospective]
-    2: [Plan, Agenda]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+        1: [   1, 2]
+        2: [0, 1   ]
+    
+    groups_of_terms:
+        0: [Agile, Scrum, Kanban, XP]
+        1: [Retro, Retrospective]
+        2: [Plan, Agenda]
 
 de:
     sequence_of_groups:
@@ -442,18 +466,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdMaxLength()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:
@@ -482,18 +508,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testChooseTitleIdMaxLengthDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:
@@ -522,17 +550,18 @@ YAML;
     }
 
     /**
-     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      */
     public function testChooseTitleIdMaxLengthNotFeasible()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0]
-
-groups_of_terms:
-    0: ["Foo"]
+en:
+    sequence_of_groups:
+        0: [0]
+    
+    groups_of_terms:
+        0: ["Foo"]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $planId = '1-2-3-4-5';
@@ -544,17 +573,18 @@ YAML;
     }
 
     /**
-     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      */
     public function testChooseTitleIdMaxLengthNotFeasibleDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0]
-
-groups_of_terms:
-    0: ["Foo"]
+en:
+    sequence_of_groups:
+        0: [0]
+    
+    groups_of_terms:
+        0: ["Foo"]
 
 de:
     sequence_of_groups:
@@ -573,25 +603,27 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOptionalTermsUntilShortEnough()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-groups_of_terms:
-    0: ["foo"]
-    1: ["", "bar1"]
-    2: ["", "bar2"]
-    3: ["", "bar3"]
-    4: ["", "bar4"]
-    5: ["", "bar5"]
-    6: ["", "bar6"]
-    7: ["", "bar7"]
-    8: ["", "bar8"]
-    9: ["", "bar9"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
@@ -606,25 +638,27 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOptionalTermsUntilShortEnoughDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-groups_of_terms:
-    0: ["foo"]
-    1: ["", "bar1"]
-    2: ["", "bar2"]
-    3: ["", "bar3"]
-    4: ["", "bar4"]
-    5: ["", "bar5"]
-    6: ["", "bar6"]
-    7: ["", "bar7"]
-    8: ["", "bar8"]
-    9: ["", "bar9"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
 
 de:
     sequence_of_groups:
@@ -655,18 +689,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOneOptionalTerm()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -677,18 +713,20 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOneOptionalTermDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:
@@ -708,25 +746,27 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOneOptionalTermDeterministicRandomness()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-groups_of_terms:
-    0: ["foo"]
-    1: ["", "bar1"]
-    2: ["", "bar2"]
-    3: ["", "bar3"]
-    4: ["", "bar4"]
-    5: ["", "bar5"]
-    6: ["", "bar6"]
-    7: ["", "bar7"]
-    8: ["", "bar8"]
-    9: ["", "bar9"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $title = new TitleRenderer($titleParts);
@@ -752,25 +792,27 @@ YAML;
     }
 
     /**
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
      * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function testDropOneOptionalTermDeterministicRandomnessDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-groups_of_terms:
-    0: ["foo"]
-    1: ["", "bar1"]
-    2: ["", "bar2"]
-    3: ["", "bar3"]
-    4: ["", "bar4"]
-    5: ["", "bar5"]
-    6: ["", "bar6"]
-    7: ["", "bar7"]
-    8: ["", "bar8"]
-    9: ["", "bar9"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    groups_of_terms:
+        0: ["foo"]
+        1: ["", "bar1"]
+        2: ["", "bar2"]
+        3: ["", "bar3"]
+        4: ["", "bar4"]
+        5: ["", "bar5"]
+        6: ["", "bar6"]
+        7: ["", "bar7"]
+        8: ["", "bar8"]
+        9: ["", "bar9"]
 
 de:
     sequence_of_groups:
@@ -811,16 +853,20 @@ YAML;
         $this->assertNotEquals($titleId2, $titleId4);
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testIsShortEnough()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $maxLengthIncludingPlanId = 15;
@@ -832,16 +878,20 @@ YAML;
         $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId));
     }
 
+    /**
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     */
     public function testIsShortEnoughDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: ["", "Agile", "Scrum", "Kanban", "XP"]
-    1: ["", "Retro", "Retrospective"]
-    2: ["Plan", "Agenda"]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: ["", "Agile", "Scrum", "Kanban", "XP"]
+        1: ["", "Retro", "Retrospective"]
+        2: ["Plan", "Agenda"]
 
 de:
     sequence_of_groups:

@@ -14,13 +14,14 @@ class TitleIdGeneratorTest extends \PHPUnit_Framework_TestCase
     public function testCountCombinationsInSequenceSingle()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retrospective]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retrospective]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
 
@@ -35,13 +36,14 @@ YAML;
     public function testCountCombinationsInSequenceSingleDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retrospective]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retrospective]
+        2: [Plan]
 
 de:
     sequence_of_groups:
@@ -65,18 +67,19 @@ YAML;
     public function testCountCombinationsInSequenceMultiple()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [0, 1, 2]
-    2: [2, 3, 4]
-    3: [0, 1, 2, 3, 4]
-
-groups_of_terms:
-    0: [Agile, Scrum]
-    1: [Retrospective]
-    2: [Plan, Agenda]
-    3: [Number]
-    4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [0, 1, 2]
+        2: [2, 3, 4]
+        3: [0, 1, 2, 3, 4]
+    
+    groups_of_terms:
+        0: [Agile, Scrum]
+        1: [Retrospective]
+        2: [Plan, Agenda]
+        3: [Number]
+        4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
 
@@ -94,18 +97,19 @@ YAML;
     public function testCountCombinationsInSequenceMultipleDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [0, 1, 2]
-    2: [2, 3, 4]
-    3: [0, 1, 2, 3, 4]
-
-groups_of_terms:
-    0: [Agile, Scrum]
-    1: [Retrospective]
-    2: [Plan, Agenda]
-    3: [Number]
-    4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [0, 1, 2]
+        2: [2, 3, 4]
+        3: [0, 1, 2, 3, 4]
+    
+    groups_of_terms:
+        0: [Agile, Scrum]
+        1: [Retrospective]
+        2: [Plan, Agenda]
+        3: [Number]
+        4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 
 de:
     sequence_of_groups:
@@ -137,14 +141,15 @@ YAML;
     public function testCountCombinationsInAllSequencesTwo()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retrospective]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retrospective]
+        2: [Plan]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
 
@@ -159,14 +164,15 @@ YAML;
     public function testCountCombinationsInAllSequencesTwoDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [1, 2]
-
-groups_of_terms:
-    0: [Agile]
-    1: [Retrospective]
-    2: [Plan]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [1, 2]
+    
+    groups_of_terms:
+        0: [Agile]
+        1: [Retrospective]
+        2: [Plan]
 
 de:
     sequence_of_groups:
@@ -191,18 +197,19 @@ YAML;
     public function testCountCombinationsInAllSequencesMany()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [0, 1, 2]
-    2: [2, 3, 4]
-    3: [0, 1, 2, 3, 4]
-
-groups_of_terms:
-    0: [Agile, Scrum]
-    1: [Retrospective]
-    2: [Plan, Agenda]
-    3: [Number]
-    4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [0, 1, 2]
+        2: [2, 3, 4]
+        3: [0, 1, 2, 3, 4]
+    
+    groups_of_terms:
+        0: [Agile, Scrum]
+        1: [Retrospective]
+        2: [Plan, Agenda]
+        3: [Number]
+        4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
         $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
         $generator = new TitleIdGenerator($titleParts);
@@ -216,18 +223,19 @@ YAML;
     public function testCountCombinationsInAllSequencesManyDe()
     {
         $yaml = <<<YAML
-sequence_of_groups:
-    0: [0, 1]
-    1: [0, 1, 2]
-    2: [2, 3, 4]
-    3: [0, 1, 2, 3, 4]
-
-groups_of_terms:
-    0: [Agile, Scrum]
-    1: [Retrospective]
-    2: [Plan, Agenda]
-    3: [Number]
-    4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
+en:
+    sequence_of_groups:
+        0: [0, 1]
+        1: [0, 1, 2]
+        2: [2, 3, 4]
+        3: [0, 1, 2, 3, 4]
+    
+    groups_of_terms:
+        0: [Agile, Scrum]
+        1: [Retrospective]
+        2: [Plan, Agenda]
+        3: [Number]
+        4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 
 de:
     sequence_of_groups:

@@ -12,16 +12,6 @@ class TitleChooser
     /**
      * @var array
      */
-    private $sequenceOfGroups;
-
-    /**
-     * @var array
-     */
-    private $groupsOfTerms;
-
-    /**
-     * @var array
-     */
     private $parts = [];
 
     /**
@@ -43,8 +33,6 @@ class TitleChooser
     public function __construct(array $titleParts, TitleRenderer $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
         $this->parts = $titleParts;
-        $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
-        $this->groupsOfTerms = $titleParts['groups_of_terms'];
         $this->titleRenderer = $title;
         $this->maxLengthIncludingPlanId = $maxLengthIncludingPlanId;
     }
@@ -54,6 +42,7 @@ class TitleChooser
      * @param string $locale
      * @return string
      * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     public function renderTitle(string $activityIdsString, string $locale = 'en'): string
     {
@@ -69,23 +58,16 @@ class TitleChooser
      * @param string $locale
      * @return string
      * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     public function chooseTitleId(string $activityIdsString, string $locale = 'en'): string
     {
+        $parts = $this->extractTitleParts($locale);
+
         // parse input
         $activityIds = explode('-', $activityIdsString);
         if (5 !== count($activityIds)) {
             return '';
-        }
-
-        if ('en' === $locale) {
-            $parts = $this->parts;
-        } else {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                throw new InconsistentInputException('Locale not found in parts: '.$locale);
-            }
         }
 
         // use input to seed the random number generator so we get deterministic randomness
@@ -113,7 +95,10 @@ class TitleChooser
     /**
      * @param string $titleId
      * @param string $planId
+     * @param string $locale
      * @return string
+     * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     public function dropOptionalTermsUntilShortEnough(string $titleId, string $planId, string $locale = 'en'): string
     {
@@ -126,20 +111,14 @@ class TitleChooser
 
     /**
      * @param string $titleId
+     * @param string $locale
      * @return string
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     public function dropOneOptionalTerm(string $titleId, string $locale = 'en'): string
     {
-        if ('en' === $locale) {
-            $parts = $this->parts;
-        } else {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                throw new InconsistentInputException('Locale not found in parts: '.$locale);
-            }
-        }
+        $parts = $this->extractTitleParts($locale);
 
         // parse titleId
         $idStringParts = explode(':', $titleId);
@@ -176,12 +155,38 @@ class TitleChooser
     /**
      * @param string $titleId
      * @param string $activityIdsString
+     * @param string $locale
      * @return bool
+     * @throws InconsistentInputException
      */
     public function isShortEnough(string $titleId, string $activityIdsString, string $locale = 'en'): bool
     {
         return $this->maxLengthIncludingPlanId >= strlen(
                 $this->titleRenderer->render($titleId, $locale).': '.$activityIdsString
             );
+    }
+
+    /**
+     * @param string $locale
+     * @return array
+     * @throws InconsistentInputException
+     */
+    private function extractTitleParts(string $locale): array
+    {
+        if ('en' === $locale) {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                $parts = $this->parts;
+            }
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
+        return $parts;
     }
 }

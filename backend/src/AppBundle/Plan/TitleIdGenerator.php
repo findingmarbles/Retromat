@@ -25,15 +25,7 @@ class TitleIdGenerator
      */
     public function countCombinationsInSequence(int $id, string $locale = 'en'): int
     {
-        if ('en' === $locale) {
-            $parts = $this->parts;
-        } else {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                throw new InconsistentInputException('Locale not found in parts: '.$locale);
-            }
-        }
+        $parts = $this->extractTitleParts($locale);
 
         $numberOfCombinations = 1;
         foreach ($parts['sequence_of_groups'][$id] as $groupId) {
@@ -50,8 +42,29 @@ class TitleIdGenerator
      */
     public function countCombinationsInAllSequences(string $locale = 'en'): int
     {
+        $parts = $this->extractTitleParts($locale);
+
+        $numberOfCombinations = 0;
+        foreach ($parts['sequence_of_groups'] as $id => $value) {
+            $numberOfCombinations += $this->countCombinationsInSequence($id, $locale);
+        }
+
+        return $numberOfCombinations;
+    }
+
+    /**
+     * @param string $locale
+     * @return array
+     * @throws InconsistentInputException
+     */
+    private function extractTitleParts(string $locale): array
+    {
         if ('en' === $locale) {
-            $parts = $this->parts;
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                $parts = $this->parts;
+            }
         } else {
             if (array_key_exists($locale, $this->parts)) {
                 $parts = $this->parts[$locale];
@@ -60,11 +73,6 @@ class TitleIdGenerator
             }
         }
 
-        $numberOfCombinations = 0;
-        foreach ($parts['sequence_of_groups'] as $id => $value) {
-            $numberOfCombinations += $this->countCombinationsInSequence($id, $locale);
-        }
-
-        return $numberOfCombinations;
+        return $parts;
     }
 }

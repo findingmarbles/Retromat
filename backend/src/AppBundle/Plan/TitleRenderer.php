@@ -28,15 +28,7 @@ class TitleRenderer
      */
     public function render(string $idString, string $locale = 'en'): string
     {
-        if ('en' === $locale) {
-            $parts = $this->parts;
-        } else {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                throw new InconsistentInputException('Locale not found in parts: '.$locale);
-            }
-        }
+        $parts = $this->extractTitleParts($locale);
 
         $idStringParts = explode(':', $idString);
         $sequenceOfGroups = $parts['sequence_of_groups'][$idStringParts[0]];
@@ -58,5 +50,29 @@ class TitleRenderer
         }
 
         return implode(' ', $fragments);
+    }
+
+    /**
+     * @param string $locale
+     * @return array
+     * @throws InconsistentInputException
+     */
+    private function extractTitleParts(string $locale): array
+    {
+        if ('en' === $locale) {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                $parts = $this->parts;
+            }
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
+        return $parts;
     }
 }
