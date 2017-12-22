@@ -34,8 +34,8 @@
             <td style="text-align: left;">Description</td>
         </tr>
         {% for planId in planIds %}
-            {% set titleId = titleChooser.chooseTitleId(planId) %}
-            {% set title = titleChooser.renderTitle(planId) %}
+            {% set titleId = titleChooser.chooseTitleId(planId, app.request.locale) %}
+            {% set title = titleChooser.renderTitle(planId, app.request.locale) %}
             {% set description = descriptionRenderer.render(activityRepository.findOrdered(planId|split('-') )) %}
             <tr>
                 <th style="text-align: left;">{{ planId }}</th>
