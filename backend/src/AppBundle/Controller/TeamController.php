@@ -36,12 +36,15 @@ class TeamController extends Controller
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      * @Security("has_role('ROLE_ADMIN')")
+     * @throws \AppBundle\Twig\Exception\InconsistentInputException
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
     {
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
-        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences();
+        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences(
+            $request->getLocale()
+        );
         $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
 
         return $this->render(

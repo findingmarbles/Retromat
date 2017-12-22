@@ -7,10 +7,6 @@ use AppBundle\Twig\Exception\InconsistentInputException;
 
 class TitleIdGenerator
 {
-    private $sequenceOfGroups;
-
-    private $groupsOfTerms;
-
     /**
      * @var array
      */
@@ -18,8 +14,6 @@ class TitleIdGenerator
 
     public function __construct(array $titleParts)
     {
-        $this->sequenceOfGroups = $titleParts['sequence_of_groups'];
-        $this->groupsOfTerms = $titleParts['groups_of_terms'];
         $this->parts = $titleParts;
     }
 
@@ -56,8 +50,18 @@ class TitleIdGenerator
      */
     public function countCombinationsInAllSequences(string $locale = 'en'): int
     {
+        if ('en' === $locale) {
+            $parts = $this->parts;
+        } else {
+            if (array_key_exists($locale, $this->parts)) {
+                $parts = $this->parts[$locale];
+            } else {
+                throw new InconsistentInputException('Locale not found in parts: '.$locale);
+            }
+        }
+
         $numberOfCombinations = 0;
-        foreach ($this->sequenceOfGroups as $id => $value) {
+        foreach ($parts['sequence_of_groups'] as $id => $value) {
             $numberOfCombinations += $this->countCombinationsInSequence($id, $locale);
         }
 
