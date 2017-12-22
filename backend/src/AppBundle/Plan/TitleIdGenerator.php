@@ -29,7 +29,7 @@ class TitleIdGenerator
      * @return int
      * @throws InconsistentInputException
      */
-    public function countCombinationsInSequence(int $id, string $locale = 'en')
+    public function countCombinationsInSequence(int $id, string $locale = 'en'): int
     {
         if ('en' === $locale) {
             $parts = $this->parts;
@@ -41,7 +41,7 @@ class TitleIdGenerator
             }
         }
 
-            $numberOfCombinations = 1;
+        $numberOfCombinations = 1;
         foreach ($parts['sequence_of_groups'][$id] as $groupId) {
             $numberOfCombinations *= count($parts['groups_of_terms'][$groupId]);
         }
@@ -49,11 +49,16 @@ class TitleIdGenerator
         return $numberOfCombinations;
     }
 
-    public function countCombinationsInAllSequences()
+    /**
+     * @param string $locale
+     * @return int
+     * @throws InconsistentInputException
+     */
+    public function countCombinationsInAllSequences(string $locale = 'en'): int
     {
         $numberOfCombinations = 0;
         foreach ($this->sequenceOfGroups as $id => $value) {
-            $numberOfCombinations += $this->countCombinationsInSequence($id);
+            $numberOfCombinations += $this->countCombinationsInSequence($id, $locale);
         }
 
         return $numberOfCombinations;
