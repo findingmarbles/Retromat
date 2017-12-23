@@ -173,20 +173,10 @@ class TitleChooser
      */
     private function extractTitleParts(string $locale): array
     {
-        if ('en' === $locale) {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                $parts = $this->parts;
-            }
+        if (array_key_exists($locale, $this->parts)) {
+            return $this->parts[$locale];
         } else {
-            if (array_key_exists($locale, $this->parts)) {
-                $parts = $this->parts[$locale];
-            } else {
-                throw new InconsistentInputException('Locale not found in parts: '.$locale);
-            }
+            throw new InconsistentInputException('Locale not found in parts: '.$locale);
         }
-
-        return $parts;
     }
 }
