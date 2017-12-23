@@ -5,7 +5,7 @@ namespace AppBundle\Plan;
 
 use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 use AppBundle\Plan\TitleRenderer;
-use AppBundle\Twig\Exception\InconsistentInputException;
+use AppBundle\Plan\Exception\InconsistentInputException;
 
 class TitleChooser
 {

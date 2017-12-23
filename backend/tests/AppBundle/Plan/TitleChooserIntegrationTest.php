@@ -6,12 +6,13 @@ namespace tests\AppBundle\Plan;
 use AppBundle\Plan\TitleChooser;
 use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
+use AppBundle\Plan\Exception\InconsistentInputException;
 
 class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderTitleSingleChoice()
     {
@@ -43,7 +44,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderTitleSingleChoiceDe()
     {
@@ -75,7 +76,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderTitleEmptyUnless5Activities()
     {
@@ -108,7 +109,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderTitleEmptyUnless5ActivitiesDe()
     {
@@ -141,7 +142,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdEmptyUnless5Activities()
     {
@@ -175,7 +176,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdEmptyUnless5ActivitiesDe()
     {
@@ -209,7 +210,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdCorrectFormat()
     {
@@ -255,7 +256,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdCorrectFormatDe()
     {
@@ -301,7 +302,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdDifferentPlansGetDifferentTitles()
     {
@@ -342,7 +343,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdDifferentPlansGetDifferentTitlesDe()
     {
@@ -383,7 +384,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdPlanAlwaysGetsSameTitle()
     {
@@ -425,7 +426,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdPlanAlwaysGetsSameTitleDe()
     {
@@ -467,7 +468,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdMaxLength()
     {
@@ -509,7 +510,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testChooseTitleIdMaxLengthDe()
     {
@@ -550,7 +551,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      */
     public function testChooseTitleIdMaxLengthNotFeasible()
@@ -573,7 +574,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      * @expectedException \AppBundle\Plan\Exception\NoGroupLeftToDrop
      */
     public function testChooseTitleIdMaxLengthNotFeasibleDe()
@@ -604,7 +605,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOptionalTermsUntilShortEnough()
     {
@@ -639,7 +640,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOptionalTermsUntilShortEnoughDe()
     {
@@ -690,7 +691,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOneOptionalTerm()
     {
@@ -714,7 +715,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOneOptionalTermDe()
     {
@@ -747,7 +748,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOneOptionalTermDeterministicRandomness()
     {
@@ -793,7 +794,7 @@ YAML;
 
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testDropOneOptionalTermDeterministicRandomnessDe()
     {
@@ -854,7 +855,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testIsShortEnough()
     {
@@ -879,7 +880,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testIsShortEnoughDe()
     {

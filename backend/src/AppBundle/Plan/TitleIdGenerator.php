@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace AppBundle\Plan;
 
-use AppBundle\Twig\Exception\InconsistentInputException;
+use AppBundle\Plan\Exception\InconsistentInputException;
 
 class TitleIdGenerator
 {

@@ -5,11 +5,12 @@ namespace tests\AppBundle\Plan;
 
 use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
+use AppBundle\Plan\Exception\InconsistentInputException;
 
 class TitleRendererTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderDifferentTerms()
     {
@@ -21,7 +22,7 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderDifferentTermsDe()
     {
@@ -33,7 +34,7 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderDifferentSequences()
     {
@@ -45,7 +46,7 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderDifferentSequencesDe()
     {
@@ -57,8 +58,8 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \AppBundle\Twig\Exception\InconsistentInputException
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @expectedException \AppBundle\Plan\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderWrongNumberOfIds()
     {
@@ -69,8 +70,8 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \AppBundle\Twig\Exception\InconsistentInputException
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @expectedException \AppBundle\Plan\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderWrongNumberOfIdsDe()
     {
@@ -81,7 +82,7 @@ class TitleRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderNoSuperfluousWhitespace()
     {
@@ -110,7 +111,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testRenderNoSuperfluousWhitespaceDe()
     {

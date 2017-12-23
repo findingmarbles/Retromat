@@ -5,11 +5,12 @@ namespace tests\AppBundle\Plan;
 
 use AppBundle\Plan\TitleIdGenerator;
 use Symfony\Component\Yaml\Yaml;
+use AppBundle\Plan\Exception\InconsistentInputException;
 
 class TitleIdGeneratorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInSequenceSingle()
     {
@@ -31,7 +32,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInSequenceSingleDe()
     {
@@ -62,7 +63,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInSequenceMultiple()
     {
@@ -92,7 +93,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInSequenceMultipleDe()
     {
@@ -136,7 +137,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInAllSequencesTwo()
     {
@@ -159,7 +160,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInAllSequencesTwoDe()
     {
@@ -192,7 +193,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInAllSequencesMany()
     {
@@ -218,7 +219,7 @@ YAML;
     }
 
     /**
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function testCountCombinationsInAllSequencesManyDe()
     {

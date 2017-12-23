@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Twig\Exception;
+namespace AppBundle\Plan\Exception;
 
 class InconsistentInputException extends \Exception
 {

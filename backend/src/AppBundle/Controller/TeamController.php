@@ -36,7 +36,7 @@ class TeamController extends Controller
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      * @Security("has_role('ROLE_ADMIN')")
-     * @throws \AppBundle\Twig\Exception\InconsistentInputException
+     * @throws \AppBundle\Plan\Exception\InconsistentInputException
      */
     public function titlesAndDescriptionsExperimentByPlanId(Request $request)
     {
