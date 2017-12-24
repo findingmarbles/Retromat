@@ -6,11 +6,16 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Plan\Exception\InconsistentInputException;
+use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 
 class HomeController extends Controller
 {
     /**
      * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="activities_by_id")
+     * @param Request $request
+     * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     public function homeAction(Request $request)
     {
@@ -20,7 +25,7 @@ class HomeController extends Controller
         $title = '';
         $description = '';
 
-        if ('en' === $request->getLocale() and 0 < count($ids)) {
+        if (0 < count($ids) and ('en' === $request->getLocale() or 'de' === $request->getLocale())) {
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
             if (count($ids) !== count($activities)) {
@@ -50,6 +55,7 @@ class HomeController extends Controller
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
      * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="home")
+     * @param Request $request
      */
     public function redirectAction(Request $request)
     {
@@ -83,9 +89,11 @@ class HomeController extends Controller
     }
 
     /**
-     * @param $ids
-     * @param $activities
+     * @param array $ids
+     * @param array $activities
      * @return array
+     * @throws InconsistentInputException
+     * @throws NoGroupLeftToDrop
      */
     private function planTitleAndDescription(array $ids, array $activities): array
     {
