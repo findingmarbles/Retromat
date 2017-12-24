@@ -59,17 +59,16 @@ parameters:
             groups_of_terms:
                 # generated from en via Google Translate, needs more work before using it live
                 0: ["", "Retromat:"]
-                1: ["", "Kanban", "Lean"] # entweder 1 + 3 (ohne Iterationen) oder 2 + 4 (mit Iteration)
-                2: ["", "Agile", "Scrum", "XP", "Extreme Programmierung"]
-                3: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Über alles"]
-                4: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Über alle", "Iteration", "Sprint", "Cycle"]
-                5: ["Retrospektive", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflexion", "Inspect & Adapt", "Analyse"]
-                6: ["", "Treffen", "Ereignis", "Diskussion", "Zeremonie"]
+                1: ["", "Kanban", "Lean"] # entweder 1 + 3 (ohne Iterationen) oder 2 + 4 (mit Iterationen)
+                2: ["", "Agile", "Scrum", "XP", "Extreme Programming"]
+                3: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Gesamt"]
+                4: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Gesamt", "Iterations", "Sprint", "Zyklus"]
+                5: ["Retrospektive", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflexion:", "Rückblick:", "Rückschau:", "Inspect & Adapt", "Analyse", "Qualitätszirkel"]
+                6: ["", "Meeting", "Treffen:", "Diskussion:", "Zeremonie"]
                 7: ["", "Plan", "Agenda", "Struktur", "Experiment"]
                 8: ["", "Ideen", "Inspiration", "Beispiel"]
                 9: ["", "Aktivitäten"] # entweder 9 oder 10
-                10: ["", "mit 5 Aktivitäten", "mit 5 Stufen", "mit 5 Schritten", "mit 5 Ideen", "mit 5 Aktivitätsideen", "mit 5 Aktivitätsbeispielen"]
-                11: ["", "Generator", "Tool", "Guide", "Directory"]
-                12: ["", "Plane deine", "organisiere deine", "Erstelle deine", "Bereite deine vor"]
-                13: ["", "Scrum Master Tools:", "ScrumMaster Toolbox:", "Werkzeuge des Moderators:", "Moderatoren Toolbox:"]
-                # einsortieren: ["Qualitätszirkel"]
+                10: ["", "mit 5 Aktivitäten", "mit 5 Stufen", "in 5 Stufen", "mit 5 Schritten", "in 5 Schritten", "mit 5 Ideen", "mit 5 Aktivitätsideen", "mit 5 Aktivitätsbeispielen"]
+                11: ["", "Generator", "Tool", "Werkzeug", "Anleitung", "Verzeichnis", "Leitfaden"]
+                12: ["", "Plane Dein(e)", "Organisiere Dein(e)", "Erstelle Dein(e)", "Vorbereitung für Dein(e)"]
+                13: ["", "Scrum Master Tools:", "ScrumMaster Toolbox:", "Werkzeugkoffer für Moderatoren:", "Moderatoren Toolbox:"]
