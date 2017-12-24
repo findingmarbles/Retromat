@@ -25,20 +25,11 @@ class TeamController extends Controller
     }
 
     /**
-     * @Route("/experiment/titles", name="titles-experiment")
-     * @Security("has_role('ROLE_ADMIN')")
-     */
-    public function titlesExperimentAction()
-    {
-        return $this->render('team/experiment/titles.html.twig');
-    }
-
-    /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      * @Security("has_role('ROLE_ADMIN')")
      * @throws \AppBundle\Plan\Exception\InconsistentInputException
      */
-    public function titlesAndDescriptionsExperimentByPlanId(Request $request)
+    public function serpPreviewAction(Request $request)
     {
         $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
         $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
