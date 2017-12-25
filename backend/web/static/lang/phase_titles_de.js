@@ -1,1 +1,1 @@
-var phase_titles = ['Gespr&auml;chsklima schaffen', 'Themen sammeln', 'Erkenntnisse gewinnen', 'Entscheidungen treffen', 'Abschluss', 'Etwas v&ouml;llig Anderes'];
+var phase_titles = ['Gesprächsklima schaffen', 'Themen sammeln', 'Erkenntnisse gewinnen', 'Entscheidungen treffen', 'Abschluss', 'Etwas völlig Anderes'];
