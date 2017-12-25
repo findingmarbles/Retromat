@@ -6,6 +6,7 @@ namespace tests\AppBundle\Repository;
 // tests directory is not available to the autoloader, so we have to manually require these files:
 require_once 'DataFixtures/LoadActivityData.php';
 require_once 'DataFixtures/LoadActivity2DataForTestFindAllActivitiesForPhases.php';
+require_once 'DataFixtures/LoadActivity2DataForTestFindAllActivitiesForPhasesDe.php';
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
@@ -70,5 +71,26 @@ class Activity2RepositoryTest extends WebTestCase
         ];
 
         $this->assertEquals($expectedActivityByPhase, $activityRepository->findAllActivitiesByPhases());
+    }
+
+    public function testFindAllActivitiesForPhasesDe()
+    {
+        $this->loadFixtures(
+            ['tests\AppBundle\Repository\DataFixtures\LoadActivity2DataForTestFindAllActivitiesForPhasesDe']
+        );
+        $activityRepository = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository(
+            'AppBundle:Activity2'
+        );
+
+        $expectedActivityByPhase = [
+            0 => [1, 7],
+            1 => [2, 8],
+            2 => [3, 9],
+            3 => [4, 10],
+            4 => [5],
+            5 => [6],
+        ];
+
+        $this->assertEquals($expectedActivityByPhase, $activityRepository->findAllActivitiesByPhases('de'));
     }
 }

@@ -4,8 +4,8 @@ declare(strict_types = 1);
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
+use AppBundle\Entity\Activity2;
 
 class Activity2Repository extends EntityRepository
 {
@@ -44,20 +44,21 @@ class Activity2Repository extends EntityRepository
     }
 
     /**
+     * @param string $locale
      * @return array
      */
-    public function findAllActivitiesByPhases(): array
+    public function findAllActivitiesByPhases(string $locale = 'en'): array
     {
         $activitiesByPhase = [];
 
-        $activities = $this->createQueryBuilder('a')
-            ->select('a.retromatId', 'a.phase')
-            ->getQuery()
-            ->useResultCache(true, 86400)
-            ->getResult(Query::HYDRATE_ARRAY);
-
+        $activities = $this->findAllOrdered();
+        /** @var $activity Activity2 */
         foreach ($activities as $activity) {
-            $activitiesByPhase[$activity['phase']][] = $activity['retromatId'];
+            if (!empty($activity->translate($locale, false)->getId())) {
+                $activitiesByPhase[$activity->getPhase()][] = $activity->getRetromatId();
+            } else {
+                break;
+            }
         }
 
         return $activitiesByPhase;

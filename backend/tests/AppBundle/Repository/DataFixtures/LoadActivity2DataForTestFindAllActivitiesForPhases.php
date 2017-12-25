@@ -25,6 +25,7 @@ class LoadActivity2DataForTestFindAllActivitiesForPhases implements FixtureInter
 
         foreach ($activities as $activity) {
             $activity->setName('foo')->setSummary('foo')->setDesc('foo');
+            $activity->mergeNewTranslations();
             $manager->persist($activity);
         }
         $manager->flush();
