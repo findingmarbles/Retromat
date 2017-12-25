@@ -1,9 +1,9 @@
 <div class="js_plan">
-{% if 0 == activities|length %}
-    {% include 'home/activities/homeRandomPlans.html.twig' %}
-{% else %}
-    {% for activity in activities %}
-        {% include 'home/activities/activity.html.twig' %}
-    {% endfor %}
-{% endif %}
+    {% if 0 == activities|length %}
+        {% include 'home/activities/homeRandomPlans_'~app.request.locale~'.html.twig' %}
+    {% else %}
+        {% for activity in activities %}
+            {% include 'home/activities/activity.html.twig' %}
+        {% endfor %}
+    {% endif %}
 </div>
