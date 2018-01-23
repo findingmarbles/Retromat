@@ -12,7 +12,7 @@ use AppBundle\Plan\Exception\NoGroupLeftToDrop;
 class HomeController extends Controller
 {
     /**
-     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="activities_by_id")
+     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|pt-br|ru"}, name="activities_by_id")
      * @param Request $request
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
@@ -54,7 +54,7 @@ class HomeController extends Controller
     /**
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
-     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|ru"}, name="home")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|pt-br|ru"}, name="home")
      * @param Request $request
      */
     public function redirectAction(Request $request)

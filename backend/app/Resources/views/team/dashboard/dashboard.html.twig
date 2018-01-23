@@ -28,7 +28,7 @@
             {% endif %}
             <li>Activity Translation Editor
                 <ul>
-                    {% for locale in ['de', 'es', 'fr', 'nl', 'ru'] %}
+                    {% for locale in ['de', 'es', 'fr', 'nl', 'pt-br', 'ru'] %}
                         {% if is_granted('ROLE_TRANSLATOR_'~locale|upper) %}
                             <li><a href="{{ path('team_activity_index', {'_locale': locale}) }}">{{ locale }}</a></li>
                         {% endif %}

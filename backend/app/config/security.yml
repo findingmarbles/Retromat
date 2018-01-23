@@ -33,6 +33,8 @@ security:
             - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_NL:
             - ROLE_TRANSLATOR
+        ROLE_TRANSLATOR_PT-BR:
+            - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_RU:
             - ROLE_TRANSLATOR
         ROLE_TRANSLATOR:

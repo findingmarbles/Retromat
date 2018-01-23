@@ -15,6 +15,7 @@ php index.php de    html ajax > backend/app/Resources/views/home/generated/index
 php index.php es    html ajax > backend/app/Resources/views/home/generated/index_es.html.twig
 php index.php fr    html ajax > backend/app/Resources/views/home/generated/index_fr.html.twig
 php index.php nl    html ajax > backend/app/Resources/views/home/generated/index_nl.html.twig
+php index.php pt-br html ajax > backend/app/Resources/views/home/generated/index_pt-br.html.twig
 php index.php ru    html ajax > backend/app/Resources/views/home/generated/index_ru.html.twig
 
 php backend/bin/console cache:clear --no-warmup --env=prod
