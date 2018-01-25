@@ -153,7 +153,6 @@ class Deployment
         $this->remote(
             'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
         );
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console retromat:import:activities');
     }
 
     private function remoteCacheClearAndWarm()

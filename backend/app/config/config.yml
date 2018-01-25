@@ -109,7 +109,11 @@ parameters:
     # http://symfony.com/doc/current/console/request_context.html
     router.request_context.host:   plans-for-retrospectives.com
     router.request_context.scheme: https
-    retromat.activity.import.languages.whitelist: ["en"]
+    # import needs to be disabled in .travis.yml and Deployment.php, because
+    # even with an empty whitelist, en will be imported. This was
+    # necessary as a final step in the import to guarantee that meta data is
+    # consistently taken from the Enlish files.
+    retromat.activity.import.languages.whitelist: []
     retromat.activity.import.file_names:
         en: "%kernel.root_dir%/../web/static/lang/activities_en.js"
         de: "%kernel.root_dir%/../web/static/lang/activities_de.js"
