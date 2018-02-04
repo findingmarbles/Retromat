@@ -94,7 +94,7 @@ class ActivityEditorControllerTest extends WebTestCase
         );
     }
 
-    public function testCreateNewActivityMultipe()
+    public function testCreateNewActivityMultiple()
     {
         $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
         $this->loginAs($refRepo->getReference('admin'), 'main');
