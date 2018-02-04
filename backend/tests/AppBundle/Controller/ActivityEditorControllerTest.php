@@ -19,9 +19,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityUsesNextFreeRetromatIdEmptyDb()
     {
-        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
         $prefilledRetromatId = $crawler->filter('#appbundle_activity2_retromatId')->eq(0)->attr('value');
@@ -31,14 +29,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityUsesNextFreeRetromatIdFullDb()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
         $prefilledRetromatId = $crawler->filter('#appbundle_activity2_retromatId')->eq(0)->attr('value');
@@ -48,9 +39,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityPhase1()
     {
-        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
         $form = $crawler->selectButton('Create')->form()->setValues(
@@ -72,9 +61,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityPhase0()
     {
-        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
         $form = $crawler->selectButton('Create')->form()->setValues(
@@ -96,9 +83,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityMultiple()
     {
-        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
         $form = $crawler->selectButton('Create')->form()->setValues(
@@ -137,14 +122,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testIndexContainsOnlyTranslatedActivities()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/');
         $this->assertCount(75 + 1, $crawler->filter('tr'));
@@ -164,14 +142,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityTranslationDeForCorrectId()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
         $this->assertEquals(75 + 1, $crawler->filter('#appbundle_activity2_retromatId')->attr('value'));
@@ -179,14 +150,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
@@ -197,14 +161,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityTranslationDe()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
         $form = $crawler->selectButton('Create')->form()->setValues(
@@ -225,19 +182,12 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityNoPrefilledContentForEn()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
 
         $prefilled = $crawler->selectButton('Create')->form()->getValues();
-        
+
         $this->assertEmpty($prefilled['appbundle_activity2[name]']);
         $this->assertEmpty($prefilled['appbundle_activity2[summary]']);
         $this->assertEmpty($prefilled['appbundle_activity2[desc]']);
@@ -245,14 +195,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
     public function testCreateNewActivityTranslationDePrefilledFromEn()
     {
-        $refRepo = $this->loadFixtures(
-            [
-                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
-                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
-            ]
-        )->getReferenceRepository();
-        $this->loginAs($refRepo->getReference('admin'), 'main');
-        $client = $this->makeClient();
+        $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
@@ -267,5 +210,42 @@ class ActivityEditorControllerTest extends WebTestCase
             'Start a round of admiration by facing your neighbour and stating \'What I admire most about you is ...\' Then your neighbour says what she admires about her neighbour and so on until the last participants admires you. Feels great, doesn\'t it?',
             $prefilled['appbundle_activity2[desc]']
         );
+    }
+
+    /**
+     * @return \Symfony\Bundle\FrameworkBundle\Client
+     */
+    private function makeClientLoginAdmin(): \Symfony\Bundle\FrameworkBundle\Client
+    {
+        $refRepo = $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadUsers'])->getReferenceRepository();
+        try {
+            $this->loginAs($refRepo->getReference('admin'), 'main');
+        } catch (\Exception $e) {
+            $this->fail($e);
+        }
+        $client = $this->makeClient();
+
+        return $client;
+    }
+
+    /**
+     * @return \Symfony\Bundle\FrameworkBundle\Client
+     */
+    private function makeClientLoginAdminLoadFixtures(): \Symfony\Bundle\FrameworkBundle\Client
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        try {
+            $this->loginAs($refRepo->getReference('admin'), 'main');
+        } catch (\Exception $e) {
+            $this->fail($e);
+        }
+        $client = $this->makeClient();
+
+        return $client;
     }
 }
