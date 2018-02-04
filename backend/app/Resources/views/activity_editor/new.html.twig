@@ -23,7 +23,7 @@
     <ul>
         <li>Translation for activity {{ activity2.retromatId }}: <a
                     target="_blank"
-                    href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">{{ activity2.translate('en').getName() }}</a>
+                    href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">{{ activity2.translate('en').getName() }}</a>{% if 'en' != app.request.locale %}, English content has been filled in below, please replace it with your translation.{% endif %}
         </li>
         <li>Click "Create" (below the form), to publish your new
             activity{% if 'en' != app.request.locale %} translation{% endif %}.

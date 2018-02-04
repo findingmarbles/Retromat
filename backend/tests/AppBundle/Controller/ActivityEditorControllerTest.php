@@ -222,4 +222,50 @@ class ActivityEditorControllerTest extends WebTestCase
             $crawler->selectLink('/de/team/activity/'.(75 + 1))->link()->getUri()
         );
     }
+
+    public function testCreateNewActivityNoPrefilledContentForEn()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/en/team/activity/new');
+
+        $prefilled = $crawler->selectButton('Create')->form()->getValues();
+        
+        $this->assertEmpty($prefilled['appbundle_activity2[name]']);
+        $this->assertEmpty($prefilled['appbundle_activity2[summary]']);
+        $this->assertEmpty($prefilled['appbundle_activity2[desc]']);
+    }
+
+    public function testCreateNewActivityTranslationDePrefilledFromEn()
+    {
+        $refRepo = $this->loadFixtures(
+            [
+                'tests\AppBundle\Controller\DataFixtures\LoadActivityData',
+                'tests\AppBundle\Controller\DataFixtures\LoadUsers',
+            ]
+        )->getReferenceRepository();
+        $this->loginAs($refRepo->getReference('admin'), 'main');
+        $client = $this->makeClient();
+
+        $crawler = $client->request('GET', '/de/team/activity/new');
+
+        $prefilled = $crawler->selectButton('Create')->form()->getValues();
+
+        $this->assertEquals('Round of Admiration', $prefilled['appbundle_activity2[name]']);
+        $this->assertEquals(
+            'Participants express what they admire about one another',
+            $prefilled['appbundle_activity2[summary]']
+        );
+        $this->assertEquals(
+            'Start a round of admiration by facing your neighbour and stating \'What I admire most about you is ...\' Then your neighbour says what she admires about her neighbour and so on until the last participants admires you. Feels great, doesn\'t it?',
+            $prefilled['appbundle_activity2[desc]']
+        );
+    }
 }
