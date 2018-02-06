@@ -52,18 +52,12 @@ class ActivityEditorController extends Controller
             $formType = 'AppBundle\Form\Activity2Type';
         } else {
             $activity = $em->getRepository('AppBundle:Activity2')->findOneBy(['retromatId' => $maxRetromatId + 1]);
-            // get English content before switching the locale
-            $enName = $activity->getName();
-            $enSummary = $activity->getSummary();
-            $enDesc = $activity->getDesc();
-
-            // switch the locale
             $activity->setDefaultLocale($request->getLocale());
 
             // use English content to pre-fill translation fields
-            $activity->setName($enName);
-            $activity->setSummary($enSummary);
-            $activity->setDesc($enDesc);
+            $activity->setName($activity->translate('en')->getName());
+            $activity->setSummary($activity->translate('en')->getSummary());
+            $activity->setDesc($activity->translate('en')->getDesc());
 
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }
