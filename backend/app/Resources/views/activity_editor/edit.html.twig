@@ -16,11 +16,12 @@
         <br>
         {{ form_start(edit_form) }}
         {{ form_errors(edit_form) }}
-
         {{ form_label(edit_form.retromatId, 'Id: ') }}
         {{ form_errors(edit_form.retromatId) }}
         {{ form_widget(edit_form.retromatId, {'attr': {'class': 'idField'}}) }}
-
+        <a target="_blank" href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">View English live version &quot;{{ activity2.translate('en').getName() }}&quot;</a>
+        <br>
+        <br>
         {{ form_row(edit_form.phase) }}
         {{ form_row(edit_form.name) }}
         {{ form_row(edit_form.summary) }}
