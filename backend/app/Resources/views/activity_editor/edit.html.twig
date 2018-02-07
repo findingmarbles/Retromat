@@ -10,20 +10,31 @@
     <div class="mainContent">
         <h1>Edit Activity{% if 'en' != app.request.locale %} Translation {{ app.request.locale|upper }}{% endif %}:
             {{ activity2.retromatId }}</h1>
-
         Keep a local copy of your translation: <strong>There is no &quot;undo&quot;!</strong>
         <br>
         <br>
         {{ form_start(edit_form) }}
         {{ form_errors(edit_form) }}
+
         {{ form_label(edit_form.retromatId, 'Id: ') }}
         {{ form_errors(edit_form.retromatId) }}
         {{ form_widget(edit_form.retromatId, {'attr': {'class': 'idField'}}) }}
-        <a target="_blank" href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">View English live version &quot;{{ activity2.translate('en').getName() }}&quot;</a>
+        <a target="_blank" href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">View
+            English live version &quot;{{ activity2.translate('en').getName() }}&quot;</a>
         <br>
         <br>
-        {{ form_row(edit_form.phase) }}
-        {{ form_row(edit_form.name) }}
+        {{ form_label(edit_form.phase) }}
+        <br>
+        {{ form_errors(edit_form.phase) }}
+        {{ form_widget(edit_form.phase) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.name) }}
+        <br>
+        {{ form_errors(edit_form.name) }}
+        {{ form_widget(edit_form.name, {'attr': {'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
         {{ form_row(edit_form.summary) }}
         {{ form_row(edit_form.desc) }}
         {{ form_row(edit_form.duration) }}
