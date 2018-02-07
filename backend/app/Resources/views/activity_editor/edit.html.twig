@@ -15,7 +15,18 @@
         <br>
         <br>
         {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
+        {{ form_errors(edit_form) }}
+        {{ form_row(edit_form.retromatId) }}
+        {{ form_row(edit_form.phase) }}
+        {{ form_row(edit_form.name) }}
+        {{ form_row(edit_form.summary) }}
+        {{ form_row(edit_form.desc) }}
+        {{ form_row(edit_form.duration) }}
+        {{ form_row(edit_form.source) }}
+        {{ form_row(edit_form.more) }}
+        {{ form_row(edit_form.stage) }}
+        {{ form_row(edit_form.more) }}
+        {{ form_row(edit_form.suitable) }}
         <input type="submit" value="Update"/>
         {{ form_end(edit_form) }}
     </div>
