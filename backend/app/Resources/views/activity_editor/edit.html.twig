@@ -21,12 +21,14 @@
         {{ form_widget(edit_form.retromatId, {'attr': {'class': 'idField'}}) }}
         <a target="_blank" href="{{ path('activities_by_id', { 'id': activity2.retromatId, '_locale': 'en' }) }}">View
             English live version &quot;{{ activity2.translate('en').getName() }}&quot;</a>
-        <br>
-        <br>
-        {{ form_label(edit_form.phase) }}
-        <br>
-        {{ form_errors(edit_form.phase) }}
-        {{ form_widget(edit_form.phase) }}
+        {% if 'en' == app.request.locale %}
+            <br>
+            <br>
+            {{ form_label(edit_form.phase) }}
+            <br>
+            {{ form_errors(edit_form.phase) }}
+            {{ form_widget(edit_form.phase) }}
+        {% endif %}
         <br>
         <br>
         {{ form_label(edit_form.name) }}
@@ -45,36 +47,38 @@
         <br>
         {{ form_errors(edit_form.desc) }}
         {{ form_widget(edit_form.desc, {'attr': {'class': 'description', 'cols': 80, 'rows': 10, }}) }}
-        <br>
-        <br>
-        {{ form_label(edit_form.duration) }}
-        <br>
-        {{ form_errors(edit_form.duration) }}
-        {{ form_widget(edit_form.duration, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
-        <br>
-        <br>
-        {{ form_label(edit_form.source) }}
-        <br>
-        {{ form_errors(edit_form.source) }}
-        {{ form_widget(edit_form.source, {'attr': {'cols': 80, 'rows': 1, }}) }}
-        <br>
-        <br>
-        {{ form_label(edit_form.more) }}
-        <br>
-        {{ form_errors(edit_form.more) }}
-        {{ form_widget(edit_form.more, {'attr': {'cols': 80, 'rows': 1, }}) }}
-        <br>
-        <br>
-        {{ form_label(edit_form.stage) }}
-        <br>
-        {{ form_errors(edit_form.stage) }}
-        {{ form_widget(edit_form.stage, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
-        <br>
-        <br>
-        {{ form_label(edit_form.suitable) }}
-        <br>
-        {{ form_errors(edit_form.suitable) }}
-        {{ form_widget(edit_form.suitable, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+        {% if 'en' == app.request.locale %}
+            <br>
+            <br>
+            {{ form_label(edit_form.duration) }}
+            <br>
+            {{ form_errors(edit_form.duration) }}
+            {{ form_widget(edit_form.duration, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+            <br>
+            <br>
+            {{ form_label(edit_form.source) }}
+            <br>
+            {{ form_errors(edit_form.source) }}
+            {{ form_widget(edit_form.source, {'attr': {'cols': 80, 'rows': 1, }}) }}
+            <br>
+            <br>
+            {{ form_label(edit_form.more) }}
+            <br>
+            {{ form_errors(edit_form.more) }}
+            {{ form_widget(edit_form.more, {'attr': {'cols': 80, 'rows': 1, }}) }}
+            <br>
+            <br>
+            {{ form_label(edit_form.stage) }}
+            <br>
+            {{ form_errors(edit_form.stage) }}
+            {{ form_widget(edit_form.stage, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+            <br>
+            <br>
+            {{ form_label(edit_form.suitable) }}
+            <br>
+            {{ form_errors(edit_form.suitable) }}
+            {{ form_widget(edit_form.suitable, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+        {% endif %}
         <br>
         <br>
         &quot;Publish&quot; pushes your changes to the live version and displays a preview for you. Browser caches keep
