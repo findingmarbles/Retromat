@@ -42,7 +42,7 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Create')->form()->setValues(
+        $form = $crawler->selectButton('Publish')->form()->setValues(
             [
                 'appbundle_activity2[phase]' => 1,
                 'appbundle_activity2[name]' => 'foo',
@@ -64,7 +64,7 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Create')->form()->setValues(
+        $form = $crawler->selectButton('Publish')->form()->setValues(
             [
                 'appbundle_activity2[phase]' => 0,
                 'appbundle_activity2[name]' => 'foo',
@@ -86,7 +86,7 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Create')->form()->setValues(
+        $form = $crawler->selectButton('Publish')->form()->setValues(
             [
                 'appbundle_activity2[phase]' => 1,
                 'appbundle_activity2[name]' => 'foo',
@@ -103,7 +103,7 @@ class ActivityEditorControllerTest extends WebTestCase
         );
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Create')->form()->setValues(
+        $form = $crawler->selectButton('Publish')->form()->setValues(
             [
                 'appbundle_activity2[phase]' => 2,
                 'appbundle_activity2[name]' => 'qq',
@@ -154,7 +154,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
-        $formValues = $crawler->selectButton('Create')->form()->getPhpValues();
+        $formValues = $crawler->selectButton('Publish')->form()->getPhpValues();
         $translatableFields = ['name', 'summary', 'desc', '_token'];
         $this->assertEquals($translatableFields, array_keys($formValues['appbundle_activity2']));
     }
@@ -164,7 +164,7 @@ class ActivityEditorControllerTest extends WebTestCase
         $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
-        $form = $crawler->selectButton('Create')->form()->setValues(
+        $form = $crawler->selectButton('Publish')->form()->setValues(
             [
                 'appbundle_activity2[name]' => 'foo',
                 'appbundle_activity2[summary]' => 'bar',
@@ -186,7 +186,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/en/team/activity/new');
 
-        $prefilled = $crawler->selectButton('Create')->form()->getValues();
+        $prefilled = $crawler->selectButton('Publish')->form()->getValues();
 
         $this->assertEmpty($prefilled['appbundle_activity2[name]']);
         $this->assertEmpty($prefilled['appbundle_activity2[summary]']);
@@ -199,7 +199,7 @@ class ActivityEditorControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
-        $prefilled = $crawler->selectButton('Create')->form()->getValues();
+        $prefilled = $crawler->selectButton('Publish')->form()->getValues();
 
         $this->assertEquals('Round of Admiration', $prefilled['appbundle_activity2[name]']);
         $this->assertEquals(
