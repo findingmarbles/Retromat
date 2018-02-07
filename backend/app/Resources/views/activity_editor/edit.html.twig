@@ -53,15 +53,35 @@
         {{ form_widget(edit_form.duration, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
         <br>
         <br>
-
-
-        {{ form_row(edit_form.duration) }}
-        {{ form_row(edit_form.source) }}
-        {{ form_row(edit_form.more) }}
-        {{ form_row(edit_form.stage) }}
-        {{ form_row(edit_form.more) }}
-        {{ form_row(edit_form.suitable) }}
-        <input type="submit" value="Update"/>
+        {{ form_label(edit_form.source) }}
+        <br>
+        {{ form_errors(edit_form.source) }}
+        {{ form_widget(edit_form.source, {'attr': {'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.more) }}
+        <br>
+        {{ form_errors(edit_form.more) }}
+        {{ form_widget(edit_form.more, {'attr': {'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.stage) }}
+        <br>
+        {{ form_errors(edit_form.stage) }}
+        {{ form_widget(edit_form.stage, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.suitable) }}
+        <br>
+        {{ form_errors(edit_form.suitable) }}
+        {{ form_widget(edit_form.suitable, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+        &quot;Publish&quot; pushes your changes to the live version and displays a preview for you. Browser caches keep
+        the old version for up to 10 minutes.
+        <br>
+        <br>
+        <input type="submit" value="Publish"/>
         {{ form_end(edit_form) }}
     </div>
 {% endblock %}
