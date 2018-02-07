@@ -35,8 +35,26 @@
         {{ form_widget(edit_form.name, {'attr': {'cols': 80, 'rows': 1, }}) }}
         <br>
         <br>
-        {{ form_row(edit_form.summary) }}
-        {{ form_row(edit_form.desc) }}
+        {{ form_label(edit_form.summary) }}
+        <br>
+        {{ form_errors(edit_form.summary) }}
+        {{ form_widget(edit_form.summary, {'attr': {'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.desc) }}
+        <br>
+        {{ form_errors(edit_form.desc) }}
+        {{ form_widget(edit_form.desc, {'attr': {'class': 'description', 'cols': 80, 'rows': 10, }}) }}
+        <br>
+        <br>
+        {{ form_label(edit_form.duration) }}
+        <br>
+        {{ form_errors(edit_form.duration) }}
+        {{ form_widget(edit_form.duration, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+        <br>
+        <br>
+
+
         {{ form_row(edit_form.duration) }}
         {{ form_row(edit_form.source) }}
         {{ form_row(edit_form.more) }}
