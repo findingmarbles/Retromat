@@ -77,11 +77,12 @@ class ActivityEditorController extends Controller
         }
 
         return $this->render(
-            'activity_editor/new.html.twig',
-            array(
+            'activity_editor/edit.html.twig',
+            [
                 'activity2' => $activity,
-                'form' => $form->createView(),
-            )
+                'create' => true,
+                'edit_form' => $form->createView(),
+            ]
         );
     }
 
@@ -178,11 +179,11 @@ class ActivityEditorController extends Controller
         } else {
             $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
         }
-        $editForm = $this->createForm($formType, $activity);
+        $form = $this->createForm($formType, $activity);
 
-        $editForm->handleRequest($request);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->flushEntityManagerAndClearRedisCache();
 
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
@@ -190,10 +191,11 @@ class ActivityEditorController extends Controller
 
         return $this->render(
             'activity_editor/edit.html.twig',
-            array(
+            [
                 'activity2' => $activity,
-                'edit_form' => $editForm->createView(),
-            )
+                'create' => false,
+                'edit_form' => $form->createView(),
+            ]
         );
     }
 
