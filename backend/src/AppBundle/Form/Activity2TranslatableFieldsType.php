@@ -19,13 +19,9 @@ class Activity2TranslatableFieldsType extends AbstractType
     {
         $builder
             ->add('retromatId', TextType::class, ['disabled' => true])
-            ->add('name', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('summary', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add(
-                'desc',
-                TextareaType::class,
-                ['label' => 'Description', 'attr' => ['cols' => '100', 'rows' => '10'],]
-            );
+            ->add('name', TextareaType::class)
+            ->add('summary', TextareaType::class)
+            ->add('desc', TextareaType::class);
     }
 
     /**

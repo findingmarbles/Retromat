@@ -33,14 +33,14 @@ class Activity2Type extends AbstractType
                     ],
                 ]
             )
-            ->add('name', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('summary', TextareaType::class, ['attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('desc', TextareaType::class, ['label' => 'Description', 'attr' => ['cols' => '100', 'rows' => '10'],])
-            ->add('duration', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('source', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('more', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('stage', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]])
-            ->add('suitable', TextareaType::class, ['required' => false, 'attr' => ['cols' => '100', 'rows' => 1]]);
+            ->add('name', TextareaType::class)
+            ->add('summary', TextareaType::class)
+            ->add('desc', TextareaType::class)
+            ->add('duration', TextareaType::class, ['required' => false])
+            ->add('source', TextareaType::class, ['required' => false])
+            ->add('more', TextareaType::class, ['required' => false])
+            ->add('stage', TextareaType::class, ['required' => false])
+            ->add('suitable', TextareaType::class, ['required' => false]);
     }
 
     /**
