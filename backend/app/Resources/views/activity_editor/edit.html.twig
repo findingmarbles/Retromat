@@ -19,7 +19,7 @@
 
         {{ form_label(edit_form.retromatId, 'Id: ') }}
         {{ form_errors(edit_form.retromatId) }}
-        {{ form_widget(edit_form.retromatId) }}
+        {{ form_widget(edit_form.retromatId, {'attr': {'class': 'idField'}}) }}
 
         {{ form_row(edit_form.phase) }}
         {{ form_row(edit_form.name) }}
