@@ -1,3 +1,8 @@
+# Set precoonect http header
+<ifModule mod_headers.c>
+    Header set link "<//ajax.googleapis.com>; rel=preconnect; crossorigin, <//fonts.googleapis.com>; rel=preconnect; crossorigin, <//fonts.gstatic.com>; rel=preconnect; crossorigin"
+</ifModule>
+
 # Cache JavaScript files for 1 day
 <filesMatch ".(js)$">
     Header set Cache-Control "max-age=86400, public"
