@@ -8,6 +8,9 @@
     Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
 
+# Enable GZIP compression for plaintext assets
+AddOutputFilterByType DEFLATE text/html text/plain text/xml image/svg+xml text/css application/javascript text/javascript application/json
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
