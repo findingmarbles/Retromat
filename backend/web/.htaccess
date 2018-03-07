@@ -14,7 +14,25 @@
 </filesMatch>
 
 # Enable GZIP compression for plaintext assets
-AddOutputFilterByType DEFLATE text/html text/plain text/xml image/svg+xml text/css application/javascript text/javascript application/json
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/x-js
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE text/x-component
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/atom+xml
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE font/opentype
 
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
