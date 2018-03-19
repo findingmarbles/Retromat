@@ -1,6 +1,8 @@
 # Set precoonect http header
 <ifModule mod_headers.c>
     Header set link "<//ajax.googleapis.com>; rel=preconnect; crossorigin, <//fonts.googleapis.com>; rel=preconnect; crossorigin, <//fonts.gstatic.com>; rel=preconnect; crossorigin"
+    Header set Connection keep-alive
+    Header set Keep-Alive timeout=301,max=500
 </ifModule>
 
 # Cache JavaScript files for 1 day
