@@ -68,8 +68,6 @@ function get_url_to_index() {
 <?php } ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
-
 <link rel="stylesheet" type="text/css" href="/static/retromat.css" />
 
 <link rel="shortcut icon" href="/static/images/favicon.ico" />
