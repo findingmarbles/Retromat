@@ -1,6 +1,6 @@
 # Set precoonect http header
 <ifModule mod_headers.c>
-    Header set link "<//ajax.googleapis.com>; rel=preconnect; crossorigin, <//fonts.googleapis.com>; rel=preconnect; crossorigin, <//fonts.gstatic.com>; rel=preconnect; crossorigin"
+    Header set link "<//ajax.googleapis.com>; rel=preconnect; crossorigin"
     Header set Connection keep-alive
     Header set Keep-Alive timeout=301,max=500
 </ifModule>
@@ -35,6 +35,9 @@ AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
 AddOutputFilterByType DEFLATE application/x-font-ttf
 AddOutputFilterByType DEFLATE font/opentype
+
+# Set appropriate mime type
+AddType  application/font-woff2  .woff2
 
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
