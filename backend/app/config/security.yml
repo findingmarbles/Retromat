@@ -37,6 +37,8 @@ security:
             - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_RU:
             - ROLE_TRANSLATOR
+        ROLE_TRANSLATOR_ZH:
+            - ROLE_TRANSLATOR
         ROLE_TRANSLATOR:
             - ROLE_USER
         ROLE_ADMIN:
@@ -47,5 +49,6 @@ security:
             - ROLE_TRANSLATOR_NL
             - ROLE_TRANSLATOR_PT-BR
             - ROLE_TRANSLATOR_RU
+            - ROLE_TRANSLATOR_ZH
     access_control:
         - { path: ^/(.+)/register, role: ROLE_ADMIN }
