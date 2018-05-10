@@ -514,7 +514,7 @@ class HomeControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/en/?id=1');
 
-        $this->assertEquals('ESVP (#1)', $crawler->filter('title')->text());
+        $this->assertEquals('Retromat: ESVP (#1)', $crawler->filter('title')->text());
     }
 
     public function testShowMetaDescription5Activities()

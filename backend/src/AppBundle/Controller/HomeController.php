@@ -98,7 +98,7 @@ class HomeController extends Controller
     private function planTitleAndDescription(array $ids, array $activities): array
     {
         if ((1 === count($activities)) and (1 === count($ids))) {
-            $title = ($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
+            $title = 'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
             $description = ($activities[0])->getSummary();
         } else {
             $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids));
