@@ -172,6 +172,14 @@ class Deployment
             'cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain
         );
 
+        // make backend/web of the current deployment directory visible to the outside
+        $this->remote(
+            'cd '.self::WebSpaceDirPrefix.' ; rm retromat.org ; ln -s '.$this->deploymentDir.'/backend/web/ retromat.org'
+        );
+        $this->remote(
+            'cd '.self::WebSpaceDirPrefix.' ; rm www.retromat.org ; ln -s '.$this->deploymentDir.'/backend/web/ www.retromat.org'
+        );
+
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
         $this->remote(
             'cd '.$this->deploymentDestinationDir.' ; rm -f current ; ln -s '.$this->deploymentDir.' current'
