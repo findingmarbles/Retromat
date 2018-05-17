@@ -107,7 +107,7 @@ parameters:
     locale: en
     # added for the presta sitemap command, but used elsewhere as well
     # http://symfony.com/doc/current/console/request_context.html
-    router.request_context.host:   plans-for-retrospectives.com
+    router.request_context.host:   retromat.org
     router.request_context.scheme: https
     # import needs to be disabled in .travis.yml and Deployment.php, because
     # even with an empty whitelist, en will be imported. This was
