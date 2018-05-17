@@ -61,21 +61,16 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # retromat current domain: without www
-    RewriteCond %{HTTP_HOST} www\.plans-for-retrospectives\.com
-    RewriteRule ^(.*)$ https://plans-for-retrospectives.com/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} plans-for-retrospectives\.com
+    RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
 
-    # retromat new domain: without www
+    RewriteCond %{HTTP_HOST} www\.plans-for-retrospectives\.com
+    RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
+
     RewriteCond %{HTTP_HOST} www\.retromat\.org
     RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
 
-    # retromat current domain: always https on plans-for-retrospectives.com (but allow localhost etc. on http)
-    RewriteCond %{HTTP_HOST} plans-for-retrospectives\.com
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{ENV:HTTPS} !=on
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-    # retromat new domain: always https on retromat.org (but allow localhost etc. on http)
+    # always https on retromat.org (but allow localhost etc. on http)
     RewriteCond %{HTTP_HOST} retromat\.org
     RewriteCond %{HTTPS} !=on
     RewriteCond %{ENV:HTTPS} !=on
