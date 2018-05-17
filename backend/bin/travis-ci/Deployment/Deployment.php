@@ -55,7 +55,7 @@ class Deployment
         $this->artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
         $this->deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
         $this->deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
-        $this->deploymentDomain = 'plans-for-retrospectives.com';
+        $this->deploymentDomain = 'retromat.org';
     }
 
     /**
@@ -164,7 +164,7 @@ class Deployment
 
     private function remoteExpose()
     {
-        // make backend/web of the current deployment directory visible to the outside
+        // make backend/web of the current deployment domain directory visible to the outside
         $this->remote(
             'cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain
         );
@@ -172,12 +172,12 @@ class Deployment
             'cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain
         );
 
-        // make backend/web of the current deployment directory visible to the outside
+        // make backend/web of the previous deployment domain directory visible to the outside
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm retromat.org ; ln -s '.$this->deploymentDir.'/backend/web/ retromat.org'
+            'cd '.self::WebSpaceDirPrefix.' ; rm plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/web/ plans-for-retrospectives.com'
         );
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm www.retromat.org ; ln -s '.$this->deploymentDir.'/backend/web/ www.retromat.org'
+            'cd '.self::WebSpaceDirPrefix.' ; rm www.plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/web/ www.plans-for-retrospectives.com'
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
