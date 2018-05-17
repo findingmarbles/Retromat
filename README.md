@@ -8,7 +8,7 @@ Retromat: Create, tweak, print & share plans for (agile) retrospectives.
             and facilitators in general
 
 See it live at:
-https://plans-for-retrospectives.com
+https://retromat.org
 
 ---
 

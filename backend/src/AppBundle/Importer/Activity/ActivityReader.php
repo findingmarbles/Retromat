@@ -40,7 +40,7 @@ class ActivityReader
         $start = $keyPosition + strlen($key);
         $end = strpos($this->activities, ']', $start);
 
-        // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+        // $retromatId is the public ID as in https://retromat.org/?id=123
         // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
         $highestJsArrayId = intval(trim(substr($this->activities, $start, $end - $start)));
         $highestRetromatId = $highestJsArrayId + 1;
@@ -70,7 +70,7 @@ class ActivityReader
 
     private function extractActivityBlock($retromatId)
     {
-        // $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+        // $retromatId is the public ID as in https://retromat.org/?id=123
         // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
         $jsArrayId = $retromatId - 1;
 

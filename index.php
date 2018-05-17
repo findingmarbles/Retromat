@@ -290,7 +290,7 @@ var PHASE_ID_TAG = 'phase';
 <div class="plan-header">
     <div class="content">
         <div class="print-header">
-            Retromat <span class="finding_marbles">(plans-for-retrospectives.com) <?php echo($_lang['PRINT_HEADER']); ?></span>
+            Retromat <span class="finding_marbles">(retromat.org) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
         <div class="plan-header__wrapper">
         <?php if (is_output_format_twig($argv)) { ?>

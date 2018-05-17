@@ -34,7 +34,7 @@ class Activity2
     private $id;
 
     /**
-     * $retromatId is the public ID as in http://plans-for-retrospectives.com/?id=123
+     * $retromatId is the public ID as in https://retromat.org/?id=123
      * this differs by -1 from the internal ID in JS code, e.g. all_activities[122]
      *
      * @var int
