@@ -209,23 +209,21 @@ var PHASE_ID_TAG = 'phase';
 <link rel="alternate" hreflang="de" href="/de/" />
 <link rel="alternate" hreflang="nl" href="/nl/" />
 
-<!-- Piwik -->
+<!-- Matomo -->
 <script type="text/javascript">
     var _paq = _paq || [];
-    // tracker methods like "setCustomDimension" should be called before "trackPageView"
-    _paq.push(["setCookieDomain", "*.plans-for-retrospectives.com"]);
-    _paq.push(["setDomains", ["*.plans-for-retrospectives.com"]]);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-        var u="//plans-for-retrospectives.com/piwik/";
+        var u="//retromat.org/piwik/";
         _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', '2']);
+        _paq.push(['setSiteId', '3']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
     })();
 </script>
-<!-- End Piwik Code -->
+<!-- End Matomo Code -->
 </head>
 
 <body onload="JavaScript:init()">
@@ -478,8 +476,8 @@ var PHASE_ID_TAG = 'phase';
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
-<!-- Piwik -->
-<noscript><img src="//plans-for-retrospectives.com/piwik/piwik.php?idsite=2&rec=1&bots=1" style="border:0;" alt="" /></noscript>
-<!-- End Piwik Code -->
+<!-- Matomo -->
+<noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
+<!-- End Matomo Code -->
 </body>
 </html>
