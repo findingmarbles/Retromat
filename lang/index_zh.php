@@ -1,20 +1,21 @@
 <?php
 
-$_lang['HTML_TITLE'] = 'Inspiration &amp; plans for (agile) retrospectives';
+$_lang['HTML_TITLE'] = ‘（敏捷）回顾的灵感和方案’
 
-$_lang['INDEX_PITCH'] = 'Planning your next agile <b>retrospective</b>? Start with a random plan, change it to fit the team\'s situation, print it and share the URL. Or browse around for new ideas!<br><br>Is this your first retrospective? <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">Start here!</a>';
-$_lang['INDEX_PLAN_ID'] = 'Current Plan ID:';
-$_lang['INDEX_BUTTON_SHOW'] = 'Show!';
-$_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
-$_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
-$_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
-$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
+$_lang['INDEX_PITCH'] = ‘正在规划你的下一个敏捷<b>回顾</b>? 从一个随机的设计方案开始，进行相应的调整来让其适合团队的现状, 打印设计方案并分享它的链接。或者四处看看然后制定自己的方案!<br><br>如果这是你的第一次回顾会议？ <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">请从这里开始！</a>';
 
-$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
-$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
+$_lang['INDEX_PLAN_ID'] = ’当前方案ID:';
+$_lang['INDEX_BUTTON_SHOW'] = ’显示！’;
+$_lang['INDEX_RANDOM_RETRO'] = ’新的随机回顾方案’;
+$_lang['INDEX_ENTER_ID'] = ’输入想要显示方案的IDs’;
+$_lang['INDEX_SEARCH_KEYWORD'] = ’通过关键词查找活动’;
+$_lang['INDEX_ALL_ACTIVITIES'] = ’所有活动 其归属于’;
+$_lang['INDEX_LOADING'] = '... 加载活动 ...';
+
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">回顾是什么?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">关于Retromat</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Print Edition</a>';
-$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">添加活动</a>';
 
 if (is_output_format_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
@@ -23,12 +24,12 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Your Name';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'Your URL';
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = ‘翻译组织者: ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = ‘王存浩’;
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://cunhaowang.github.io/js/';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/YourImage.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-             Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
+敏捷教练，敏捷突击队发起人，热衷于敏捷相关的研究和分享，为了让更多中国的敏捷爱好者可以更好地设计自己的回顾会议，组织了翻译小组把retromat译为中文。翻译小组成员：周嘉敏，余旭峰，杨莹，李希兰，朱明，钟明，徐亚平，王如夫，卜夙，黄雅琴，杨贵，周伟峰，陆炜，陈艳艳，王存浩。可以通过Email: cunhaowang@yeah.net, 微信ID: cunhaowang和王存浩进行联系。
 EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
@@ -49,23 +50,23 @@ EOT;
 
 $_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
 
-$_lang['ACTIVITY_SOURCE'] = 'Source:';
-$_lang['ACTIVITY_PREV'] = 'Show other activity for this phase';
-$_lang['ACTIVITY_NEXT'] = 'Show other activity for this phase';
-$_lang['ACTIVITY_PHOTO_ADD'] = 'Add Photo';
+$_lang['ACTIVITY_SOURCE'] = ‘来源:’;
+$_lang['ACTIVITY_PREV'] = ‘显示该阶段的其他活动';
+$_lang['ACTIVITY_NEXT'] = '显示该阶段的其他活动';
+$_lang['ACTIVITY_PHOTO_ADD'] = ‘添加图片’;
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
-$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'View photo';
-$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'View photos';
-$_lang['ACTIVITY_PHOTO_BY'] = 'Photo by ';
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = ‘查看图片’;
+$_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = ‘查看图片’;
+$_lang['ACTIVITY_PHOTO_BY'] = ‘图片来自 ';
 
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';
-$_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, can\'t find activity with ID';
+$_lang['ERROR_NO_SCRIPT'] = 'Retromat需要JavaScript才能运行。请在浏览器中启用JavaScript。 谢谢！’;
+$_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, 找不到该ID对应的活动’;
 
-$_lang['POPUP_CLOSE'] = 'Close';
-$_lang['POPUP_IDS_BUTTON'] = 'Show!';
-$_lang['POPUP_IDS_INFO']= 'Example ID: 3-33-20-13-45';
-$_lang['POPUP_SEARCH_BUTTON'] = 'Search';
-$_lang['POPUP_SEARCH_INFO']= 'Search titles, summaries &amp; descriptions';
-$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Sorry, nothing found for';
+$_lang['POPUP_CLOSE'] = ‘关闭’;
+$_lang['POPUP_IDS_BUTTON'] = ‘显示！’;
+$_lang['POPUP_IDS_INFO']= ‘示例ID: 3-33-20-13-45';
+$_lang['POPUP_SEARCH_BUTTON'] = ‘查找’;
+$_lang['POPUP_SEARCH_INFO']= ‘查找标题，概要和描述’;
+$_lang['POPUP_SEARCH_NO_RESULTS'] = 'Sorry, 没有找到’;
