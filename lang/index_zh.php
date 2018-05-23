@@ -25,7 +25,7 @@ if (is_output_format_twig($argv)) {
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '翻译组织者: ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = '王存浩’;
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = '王存浩';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://cunhaowang.github.io/js/';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/cunhao.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
