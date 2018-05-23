@@ -27,7 +27,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = ‘翻译组织者: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = ‘王存浩’;
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://cunhaowang.github.io/js/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/YourImage.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/cunhao.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 敏捷教练，敏捷突击队发起人，热衷于敏捷相关的研究和分享，为了让更多中国的敏捷爱好者可以更好地设计自己的回顾会议，组织了翻译小组把retromat译为中文。翻译小组成员：周嘉敏，余旭峰，杨莹，李希兰，朱明，钟明，徐亚平，王如夫，卜夙，黄雅琴，杨贵，周伟峰，陆炜，陈艳艳，王存浩。可以通过Email: cunhaowang@yeah.net, 微信ID: cunhaowang和王存浩进行联系。
 EOT;
