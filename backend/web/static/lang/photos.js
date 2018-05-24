@@ -211,8 +211,14 @@ all_photos[116] = [
 all_photos[117] = [
 {filename:    path + "118_Snow-Mountain.jpg", contributor: "Olivier Fortier"}
 ];
+all_photos[120] = [
+{filename:    path + "121_good-bad-ugly-retro.jpg", contributor: "Simon Sablowski"}
+];
 all_photos[122] = [
 {filename:    path + "123_focus-principle.jpg", contributor: "Tobias Baier"}
+];
+all_photos[125] = [
+{filename:    path + "126_like-wish-retro.jpg", contributor: "Simon Sablowski"}
 ];
 all_photos[129] = [
 {filename:    "https://agilehunter.files.wordpress.com/2017/06/elephant_safari.jpg?w=740", contributor: "Willem Larsen"}
