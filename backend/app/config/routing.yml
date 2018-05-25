@@ -160,3 +160,8 @@ sources_old:
         _controller: FrameworkBundle:Redirect:redirect
         route: sources
         permanent: true
+imprint_privacy:
+    path: /imprint-privacy
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: imprint.html.twig
