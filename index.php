@@ -477,6 +477,18 @@ var PHASE_ID_TAG = 'phase';
        </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
+	
+<div class="footer bg0">
+   <div class="content">
+
+        <div class=”activity-wrapper” style="clear:both">
+           <a href="http://finding-marbles.com/retromat-org-imprint-privacy-cookies/">
+Imprint &amp; Privacy Policy
+</a>
+        </div>
+    </div><!-- .content -->
+</div><!-- .footer -->
+	
 <!-- Matomo -->
 <noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
 <!-- End Matomo Code -->
