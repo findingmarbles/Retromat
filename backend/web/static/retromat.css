@@ -543,14 +543,16 @@ ul ul {
 
 .bg0 .activity-wrapper,
 .bg2 .activity-wrapper,
-.bg3 .activity-wrapper {
+.bg3 .activity-wrapper 
+.footer {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 .bg0 .activity-wrapper a,
 .bg2 .activity-wrapper a,
-.bg3 .activity-wrapper a {
+.bg3 .activity-wrapper a 
+.footer a {
     color: #fff;
 }
 
@@ -662,6 +664,14 @@ ul ul {
     width: 50%;
 }
 
+.footer {
+   font-size: 0.8em;
+   text-align:center;
+}
+
+.footer .content {
+   padding: 10px;
+}
 
 /************ PRINT **************/
 
