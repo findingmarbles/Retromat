@@ -474,13 +474,11 @@ var PHASE_ID_TAG = 'phase';
             </div>
        </div><!-- .team--timon-->
 
-       </div><!-- .team--corinna -->
     </div><!-- .content -->
 </div><!-- .team -->
 	
 <div class="footer bg0”>
    <div class="content">
-
         <div style="clear:both">
            <a href="http://finding-marbles.com/retromat-org-imprint-privacy-cookies/">
 Imprint &amp; Privacy Policy
