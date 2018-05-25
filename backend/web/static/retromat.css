@@ -236,13 +236,17 @@ ul ul {
 
 .header a,
 .navi a,
-.team a {
+.team a,
+.footer a {
     color: #fff;
     text-decoration: none;
 }
 
 .header a:hover,
-.navi a:hover .team a:hover {
+.navi a:hover, 
+.team a:hover, 
+.footer, 
+.footer a:hover {
     color: #fff;
     text-decoration: underline;
 }
@@ -544,7 +548,7 @@ ul ul {
 .bg0 .activity-wrapper,
 .bg2 .activity-wrapper,
 .bg3 .activity-wrapper 
-.footer {
+{
     color: #fff;
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -552,7 +556,7 @@ ul ul {
 .bg0 .activity-wrapper a,
 .bg2 .activity-wrapper a,
 .bg3 .activity-wrapper a 
-.footer a {
+{
     color: #fff;
 }
 
@@ -666,7 +670,7 @@ ul ul {
 
 .footer {
    font-size: 0.8em;
-   text-align:center;
+   text-align: center;
 }
 
 .footer .content {
