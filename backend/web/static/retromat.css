@@ -678,6 +678,32 @@ ul ul {
    padding: 10px;
 }
 
+.imprint h1 {
+   font-size: 1.5em;
+}
+
+.imprint h2 {
+   font-size: 1.3em;
+}
+
+.imprint h3 {
+   font-size: 1.15em;
+}
+
+.imprint h1,
+.imprint h2,
+.imprint h3,
+.imprint h4
+{
+   margin-top: 2rem;
+   margin-bottom: 1rem;
+   font-weight: bold;
+}
+
+.imprint p {
+   margin-bottom: 0.5rem;
+}
+
 /************ PRINT **************/
 
 @media print {
