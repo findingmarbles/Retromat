@@ -477,12 +477,13 @@ var PHASE_ID_TAG = 'phase';
     </div><!-- .content -->
 </div><!-- .team -->
 	
-<div class="footer”>
+
+<div class="footer">
    <div class="content">
-        <div style="clear:both">
+      <div style="clear:both">
            <a href="/imprint-privacy">
-Imprint &amp; Privacy Policy
-</a>
+               Imprint &amp; Privacy Policy
+            </a>
         </div>
     </div><!-- .content -->
 </div><!-- .footer -->
