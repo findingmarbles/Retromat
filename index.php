@@ -488,16 +488,6 @@ var PHASE_ID_TAG = 'phase';
     </div><!-- .content -->
 </div><!-- .footer -->
 
-<div class="footer">
-   <div class="content">
-      <div style="clear:both">
-           <a href="/imprint-privacy">
-               Imprint &amp; Privacy Policy
-            </a>
-        </div>
-    </div><!-- .content -->
-</div><!-- .footer -->
-
 <!-- Matomo -->
 <noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
 <!-- End Matomo Code -->
