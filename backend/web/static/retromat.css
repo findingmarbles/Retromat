@@ -704,6 +704,54 @@ ul ul {
    margin-bottom: 0.5rem;
 }
 
+
+.subscribe {
+    text-align: center;
+}
+
+.subscribe input {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.subscribe_input {
+    width: 304px;
+    margin-top: -20px;
+    margin-bottom: -10px;
+    padding: 5px 10px 5px 10px;
+    font-size: 1em;
+
+    background-color: #f5ffe3;
+}
+
+.subscribe_input:focus {
+    background-color: #fff;
+}
+
+.subscribe .orange-button {
+    display: inline-block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding: 5px 8px;
+    text-decoration: none;
+    background-color: darkorange;
+    border-radius: 10px;
+    border: 2px white solid;
+    color: white;
+    font-size: 1em;
+}
+
+.subscribe_submit:hover {
+    background-color: #fe7803;
+}
+
+.no-spam {
+    font-size: 0.8em;
+    line-height: 0.9em;
+}
+
+
 /************ PRINT **************/
 
 @media print {

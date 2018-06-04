@@ -263,19 +263,25 @@ var PHASE_ID_TAG = 'phase';
     </div>
 </div>
 
+
 <?php if ($isEnglish) { ?>
-<!--
-    <div class="book">
+
+    <div class="book subscribe">
         <div class="content" style="line-height: 20px">
-                Join 1000+ subscribers and get new activities + tips and tricks around retrospectives in your inbox!
-<br><br>
-                <a href="http://plans-for-retrospectives.us7.list-manage.com/subscribe?u=e8749d4c3e1a6d758a4bd1d93&id=7697399e07"
-                   style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Subscribe now!
-                </a>
+        Join 1000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
+        <br><br>
+            <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=About" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
+                <input id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();" type="email"><br><br>
+                <input class="orange-button subscribe_submit" value="Subscribe" type="submit">
+            </form>
+
+            <span class="no-spam">Want a sample? <a href="https://us7.campaign-archive.com/home/?u=e8749d4c3e1a6d758a4bd1d93&id=7697399e07">View past emails here</a>. <br>
+            We don't share your email address with anyone but Mailchimp.</span>
         </div>
     </div>
--->
 
+
+<!--
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
@@ -285,6 +291,7 @@ var PHASE_ID_TAG = 'phase';
                 </a>
         </div>
     </div>
+-->
 
 <?php } ?>
 
