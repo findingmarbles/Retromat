@@ -201,6 +201,27 @@ var PHASE_ID_TAG = 'phase';
             publish_plan_title(text + " '" + keywords + "'"); // Call must be after "publish_plan()" or plan_title_container won't be displayed
         }
         /************ END PopUps Plan Navigation ************/
+
+        /************ BEGIN Newsletter Subscribe ************/
+    
+        var default_value = 'Your email address';
+
+        function removeDefaultText(){
+            var email_field = document.getElementById("email_address");
+            if(email_field.value == default_value){
+                email_field.value = "";
+            }
+        }
+
+        function setDefaultText(){
+            var email_field = document.getElementById("email_address");
+            if(email_field.value == ''){
+                email_field.value = default_value;
+            }
+        }
+
+        /************ END Newsletter Subscribe ************/
+
     </script>
 
 <link rel="alternate" hreflang="en" href="/en/" />
