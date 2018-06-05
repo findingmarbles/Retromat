@@ -229,6 +229,8 @@ var PHASE_ID_TAG = 'phase';
 <link rel="alternate" hreflang="fr" href="/fr/" />
 <link rel="alternate" hreflang="de" href="/de/" />
 <link rel="alternate" hreflang="nl" href="/nl/" />
+<link rel="alternate" hreflang="ru" href="/ru/" />
+<link rel="alternate" hreflang="zh" href="/zh/" />
 
 <!-- Matomo -->
 <script type="text/javascript">
