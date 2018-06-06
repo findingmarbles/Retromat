@@ -302,7 +302,6 @@ var PHASE_ID_TAG = 'phase';
                 Wondering what content you'll get?
                 <a href="https://us7.campaign-archive.com/home/?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07" target="_blank">Look at past emails</a> | 
                 <a href="https://retromat.org/imprint-privacy" target="_blank">Privacy Policy</a>
-                
             </span>
         </div>
     </div>
