@@ -291,7 +291,7 @@ var PHASE_ID_TAG = 'phase';
 
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
-        Join 1000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
+        Join 1500+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
         <br><br>
             <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=About" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
                 <input id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();" type="email">
