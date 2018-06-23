@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
 
-Setting up a dev environmemnt on Uberspace
+Setting up a dev environment on Uberspace
 ========
 
 Only in German for know. Let us know if you need an English version.
