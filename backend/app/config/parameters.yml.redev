@@ -2,7 +2,7 @@ parameters:
     database_host:      localhost
     database_port:      ~
     database_socket:    /var/lib/mysql/mysql.sock
-    database_name:      retromat_v2
+    database_name:      ChangeToSpaceNameFollowedBy_retromat
     database_user:      EnterSpaceNameHere
     database_password:  EnterPasswordFrom_~/.my.cnf_Here
 
