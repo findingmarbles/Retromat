@@ -5,15 +5,15 @@ Setting up a dev environment on Uberspace
 
 Only in German for know. Let us know if you need an English version.
 
-* alles was für redev01 erklärt wird funktioniert natürlich auch mit einem weiteren Space Namen ... da der Space Name auch system user, db user und Bestandteil etlicher Verzeichnisnamen ist, am besten alle Vorkommen von redev01 durch denen jeweils neuen Namen ersetzen ...
-* neuen Uberspace 6(!) erstellen "redev01"
+* Alles was für redev01 erklärt wird funktioniert natürlich auch mit einem weiteren Space Namen ... da der Space Name auch system user, db user und Bestandteil etlicher Verzeichnisnamen ist, am besten in einer lokalen Kopie dieses READMEs alle Vorkommen von redev01 durch den jeweils neuen Namen ersetzen ...
+* neuen Uberspace 6(!) erstellen "redev01" (U7 bekommt Redis erst später)
 * (optional) SSH public key(s) bei Uberspace redev01 hinterlegen für einfachen Zugriff: https://uberspace.de/dashboard/authentication
-* SSH Keypair auf Uberspace redev01 erstellen und public key bei eigenem Github user eintragen
+* SSH keypair auf Uberspace redev01 erstellen und public key bei eigenem Github user eintragen
 ```
 ssh-keygen -t rsa -b 4096
 cat .ssh/id_rsa.pub 
 ```
-* redis config schreiben (4 Zeilen alternativ per vim in die Datei schreiben ...)
+* Redis config schreiben (4 Zeilen alternativ per vim in die Datei schreiben ...)
 ```
 cd ~
 echo 'unixsocket /Users/timon/.redis/sock
@@ -21,53 +21,53 @@ daemonize no
 logfile stdout
 port 0' > ~/.redis/conf
 ```
-* redis als dauerhaften service aktivieren
+* Redis als dauerhaften Service aktivieren
 ```
 test -d ~/service || uberspace-setup-svscan
 uberspace-setup-redis 
 ```
-* redis php extention kompilieren und aktivieren
+* Redis PHP Extention kompilieren und aktivieren
 ```
 uberspace-install-pecl redis
 killall php-cgi
 ```
-* create sessions dir
+*  Sessions Verzeichnis anlegen
 ```
 mkdir /var/www/virtual/redev01/sessions
 ```
-* composer installieren
+* Composer installieren
 ```
 cd ~
 test -d ~/bin || mkdir ~/bin  
 curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin --filename=composer  
 ```
-* Clone git repo
+* Git repo klonen
 ```
 cd /var/www/virtual/redev01/
 git clone git@github.com:findingmarbles/Retromat.git retromat.git
 ```
-* copy config template to active config
+* Config template als aktive Config
 ```
 cd /var/www/virtual/redev01/retromat.git/
 cp backend/app/config/parameters.yml.redev backend/app/config/parameters.yml
 ```
-* edit copied config template ...
+* Config editieren ...
 ```
 vim /var/www/virtual/redev01/retromat.git/backend/app/config/parameters.yml
 ```
-... you need to update these values:
+... diese Werte von Hand setzen:
 ```
 database_name: redev01_retromat
 database_user: redev01
 database_password: (siehe cat ~/.my.cnf )
 redis_connection: (home dir, z.B. /home/redev01/.redis/sock )
 ```
-* Install Libraries
+* Libraries installieren
 ```
 cd /var/www/virtual/redev01/retromat.git/backend
 composer install
 ```
-* create database
+* DB anlegen
 ```
 bin/console doctrine:database:create
 ```
@@ -91,7 +91,7 @@ bin/console doctrine:database:create
 ```
 vim ~/retromat-dev.sql
 ```
-Die ersten zwei nicht-Kommentar Zeilen (CREATE DATABASE ... USE ...)editieren, neuen DB Name ( redev01_retromat einsetzten)
+Die ersten zwei nicht-Kommentar Zeilen (CREATE DATABASE ... USE ...) editieren, neuen DB Name ( redev01_retromat einsetzten)
 * Editierten DB Dump einpspielen:
 ```
 cd ~
@@ -104,11 +104,11 @@ bin/console doctrine:schema:validate
 cd /var/www/virtual/redev01/retromat.git/
 backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 ```
-* web directory per Symlink im Web sichtbar machen
+* Web Verzeichnis von Symfony per Symlink im Web sichtbar machen
 ```
 cd /var/www/virtual/redev01
 ln -s retromat.git/backend/web/ redev01.canopus.uberspace.de
 ```
 
-Und nun ist er live erreichbar:
+* Und nun ist diese Dev Umgebung im Web erreichbar:
 https://redev01.canopus.uberspace.de/
