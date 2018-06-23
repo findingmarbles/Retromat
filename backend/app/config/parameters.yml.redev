@@ -1,0 +1,20 @@
+parameters:
+    database_host:      localhost
+    database_port:      ~
+    database_socket:    /var/lib/mysql/mysql.sock
+    database_name:      retromat_v2
+    database_user:      EnterSpaceNameHere
+    database_password:  EnterPasswordFrom_~/.my.cnf_Here
+
+    redis_connection:   /home/retromat/.redis/sock
+
+    mailer_transport:   smtp
+    mailer_host:        127.0.0.1
+    mailer_port:        ~
+    mailer_encryption:  ~
+    mailer_user:        ~
+    mailer_password:    ~
+
+    secret:             ThisIsAutomaticallyChangedOnDeployment
+
+    retromat_backend_mail: cannot-be-empty@example.org
