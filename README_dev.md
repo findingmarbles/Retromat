@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
 
-Setting up a dev environment on Uberspace
+Setting up a dev instance on Uberspace
 ========
 
 Only in German for know. Let us know if you need an English version.
@@ -110,5 +110,5 @@ cd /var/www/virtual/redev01
 ln -s retromat.git/backend/web/ redev01.canopus.uberspace.de
 ```
 
-* Und nun ist diese Dev Umgebung im Web erreichbar:
+* Und nun ist diese Dev Instanz im Web erreichbar:
 https://redev01.canopus.uberspace.de/
