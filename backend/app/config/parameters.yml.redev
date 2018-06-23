@@ -6,7 +6,7 @@ parameters:
     database_user:      EnterSpaceNameHere
     database_password:  EnterPasswordFrom_~/.my.cnf_Here
 
-    redis_connection:   /home/retromat/.redis/sock
+    redis_connection:   ChangeToCurrentHomeDir: /home/retromat/.redis/sock
 
     mailer_transport:   smtp
     mailer_host:        127.0.0.1
@@ -18,3 +18,5 @@ parameters:
     secret:             ThisIsAutomaticallyChangedOnDeployment
 
     retromat_backend_mail: cannot-be-empty@example.org
+
+    session_dir_relative: /../../sessions/
