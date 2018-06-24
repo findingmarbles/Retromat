@@ -111,4 +111,22 @@ ln -s retromat.git/backend/web/ redev01.canopus.uberspace.de
 ```
 
 * Und nun ist diese Dev Instanz im Web erreichbar:
+```
 https://redev01.canopus.uberspace.de/
+```
+# Clear caches so you can see changes
+* You can clear caches on the server like this:
+```
+cd /var/www/virtual/redev01/retromat.git/backend
+bin/console cache:clear --no-warmup --env=prod
+bin/console cache:clear --no-warmup --env=dev
+redis-cli -s /home/retromat/.redis/sock FLUSHALL
+```
+* We allow browser caching for HTML and assets (JS, CSS), so you may need to clear your browser cache as well. Soem browsers allow disabling caches while the developer tools are open.
+
+# Bypass some caches on dev instance for easier development
+* Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony. To make it available on your dev instance (even without an SSH tunnel, like on avior) you edit this file. Inside the file, you will find instructions which block to comment out:
+```
+cd /var/www/virtual/redev01/retromat.git/backend
+vim web/app_dev.php
+```
