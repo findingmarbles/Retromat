@@ -4,7 +4,7 @@ namespace tests\AppBundle\Importer;
 
 use AppBundle\Importer\ArrayToObjectMapper;
 
-class ArrayToObjectMapperTest extends \PHPUnit_Framework_TestCase
+class ArrayToObjectMapperTest extends \PHPUnit\Framework\TestCase
 {
     public function testFillObjectFromArray()
     {

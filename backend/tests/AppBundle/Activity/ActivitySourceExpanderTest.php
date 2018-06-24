@@ -7,7 +7,7 @@ use AppBundle\Activity\ActivitySourceExpander;
 use AppBundle\Entity\Activity2;
 use Symfony\Component\Yaml\Yaml;
 
-class ActivitySourceExpanderTest extends \PHPUnit_Framework_TestCase
+class ActivitySourceExpanderTest extends \PHPUnit\Framework\TestCase
 {
     public function testSimpleStringRawHtml()
     {

@@ -7,7 +7,7 @@ use AppBundle\Plan\TitleIdGenerator;
 use Symfony\Component\Yaml\Yaml;
 use AppBundle\Plan\Exception\InconsistentInputException;
 
-class TitleIdGeneratorTest extends \PHPUnit_Framework_TestCase
+class TitleIdGeneratorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @throws InconsistentInputException

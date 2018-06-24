@@ -5,7 +5,7 @@ namespace tests\AppBundle\Importer;
 use AppBundle\Entity\Activity2;
 use AppBundle\Importer\ArrayToObjectMapper;
 
-class ArrayToObjectMapperIntegrationTest extends \PHPUnit_Framework_TestCase
+class ArrayToObjectMapperIntegrationTest extends \PHPUnit\Framework\TestCase
 {
     public function testFillActivityFromArray()
     {

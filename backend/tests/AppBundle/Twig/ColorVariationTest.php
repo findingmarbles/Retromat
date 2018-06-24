@@ -4,7 +4,7 @@ namespace tests\AppBundle\Twig;
 
 use AppBundle\Twig\ColorVariation;
 
-class ColorVariationTest extends \PHPUnit_Framework_TestCase
+class ColorVariationTest extends \PHPUnit\Framework\TestCase
 {
     public function testNextColor()
     {

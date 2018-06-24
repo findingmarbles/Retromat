@@ -6,7 +6,7 @@ namespace tests\AppBundle\Sitemap;
 use AppBundle\Sitemap\PlanIdGenerator;
 use AppBundle\Activity\ActivityByPhase;
 
-class PlanIdGeneratorTest extends \PHPUnit_Framework_TestCase
+class PlanIdGeneratorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var array

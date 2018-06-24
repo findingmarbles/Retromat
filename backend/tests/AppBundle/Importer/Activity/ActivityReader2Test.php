@@ -5,7 +5,7 @@ namespace tests\AppBundle\Importer\Activity;
 
 use AppBundle\Importer\Activity\ActivityReader;
 
-class ActivityReader2Test extends \PHPUnit_Framework_TestCase
+class ActivityReader2Test extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var ActivityReader

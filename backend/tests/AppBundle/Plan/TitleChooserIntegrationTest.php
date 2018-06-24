@@ -8,7 +8,7 @@ use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
 use AppBundle\Plan\Exception\InconsistentInputException;
 
-class TitleChooserIntegrationTest extends \PHPUnit_Framework_TestCase
+class TitleChooserIntegrationTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop

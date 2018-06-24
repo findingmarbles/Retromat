@@ -6,7 +6,7 @@ namespace tests\AppBundle\Plan;
 use AppBundle\Entity\Activity2;
 use AppBundle\Plan\DescriptionRenderer;
 
-class DescriptionRendererTest extends \PHPUnit_Framework_TestCase
+class DescriptionRendererTest extends \PHPUnit\Framework\TestCase
 {
     public function testRenderEmptyDescriptionUnless5Activities()
     {

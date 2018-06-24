@@ -7,7 +7,7 @@ use AppBundle\Plan\TitleRenderer;
 use Symfony\Component\Yaml\Yaml;
 use AppBundle\Plan\Exception\InconsistentInputException;
 
-class TitleRendererTest extends \PHPUnit_Framework_TestCase
+class TitleRendererTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @throws InconsistentInputException

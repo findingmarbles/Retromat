@@ -15,7 +15,7 @@ use Symfony\Component\Routing\RequestContext;
  * Self shunt pattern as described by Kent Beck: Test class implements interfaces to mock and injects $this
  */
 
-class PlanGeneratorIntegrationTest extends \PHPUnit_Framework_TestCase implements UrlContainerInterface, UrlGeneratorInterface
+class PlanGeneratorIntegrationTest extends \PHPUnit\Framework\TestCase implements UrlContainerInterface, UrlGeneratorInterface
 {
     private $urlContainer;
 
