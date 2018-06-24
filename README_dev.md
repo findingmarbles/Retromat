@@ -39,7 +39,7 @@ mkdir /var/www/virtual/redev01/sessions
 ```
 cd ~
 test -d ~/bin || mkdir ~/bin  
-curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin --filename=composer  
+curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin 
 ```
 * Git repo klonen
 ```
@@ -65,7 +65,7 @@ redis_connection: (home dir, z.B. /home/redev01/.redis/sock )
 * Libraries installieren
 ```
 cd /var/www/virtual/redev01/retromat.git/backend
-composer install
+composer.phar install
 ```
 * DB anlegen
 ```
