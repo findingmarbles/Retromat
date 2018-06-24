@@ -4,7 +4,7 @@ namespace AppBundle\Twig;
 
 class ColorVariation
 {
-    private $colors;
+    private $colors = [];
 
     private $previousColor = -1;
 
