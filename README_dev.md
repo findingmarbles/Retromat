@@ -99,7 +99,7 @@ cat retromat-dev.sql | mysql
 cd /var/www/virtual/redev01/retromat.git/backend
 bin/console doctrine:schema:validate
 ```
-* Tempales aus index.php erstellen
+* Templates aus index.php erstellen
 ```
 cd /var/www/virtual/redev01/retromat.git/
 backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
@@ -115,7 +115,12 @@ ln -s retromat.git/backend/web/ redev01.canopus.uberspace.de
 https://redev01.canopus.uberspace.de/
 ```
 # Clear caches so you can see changes
-* You can clear caches on the server like this:
+* Re-generate Twig templates from index.php - technically speaking not really a cache, but something you need to clear manually in order to get to see your changes
+```
+cd /var/www/virtual/redev01/retromat.git/
+backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
+```
+* You can clear actual caches on the server like this:
 ```
 cd /var/www/virtual/redev01/retromat.git/backend
 bin/console cache:clear --no-warmup --env=prod
