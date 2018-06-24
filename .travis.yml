@@ -27,7 +27,7 @@ script:
 deploy:
     on:
         branch: master
-        condition: $TRAVIS_PHP_VERSION = 7.1
+        condition: $TRAVIS_PHP_VERSION = 7.2
     skip_cleanup: true
     provider: script
     script: /bin/true
