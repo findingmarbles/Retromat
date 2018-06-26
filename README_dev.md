@@ -6,21 +6,26 @@ Setting up a dev instance on Uberspace
 Only in German for now. Let us know if you need an English version.
 
 * Uberspace anlegen: https://uberspace.de/register - Hier verwenden wir "redev01" als Beispiel. Alles was für redev01 erklärt wird funktioniert natürlich auch mit einem weiteren Space Namen ... da der Space Name auch system user, db user und Bestandteil etlicher Verzeichnisnamen ist, am besten in einer lokalen Kopie dieses READMEs alle Vorkommen von redev01 durch den jeweils neuen Namen ersetzen ...
-* neuen Uberspace 6(!) erstellen "redev01" (U7 bekommt Redis erst später)
+* neuen Uberspace Version 6(!) erstellen "redev01" (U7 bekommt Redis erst später)
 * (optional) SSH public key(s) bei Uberspace redev01 hinterlegen für einfachen Zugriff: https://uberspace.de/dashboard/authentication. Alternativ: Passwort setzen (auf der gleichen Seite)
+
+Per SSH auf Uberspace redev01 einloggen (den Namen des Uberspaces findest Du z.B. auf dem "Datenblatt"-Reiter https://uberspace.de/dashboard/datasheet ) und dann dort alle weiteren Kommandos ausführen (wenige Ausnamen, wo etwas nicht auf dem Server zu tun ist, sind deutlich markiert):
 * SSH keypair auf Uberspace redev01 erstellen und public key bei eigenem Github user eintragen
 ```
 ssh-keygen -t rsa -b 4096
 cat .ssh/id_rsa.pub 
 ```
-* Redis config schreiben (4 Zeilen alternativ per vim in die Datei schreiben ...) 
-Per SSH einloggen (den Namen des Uberspaces findest Du z.B. auf dem "E-Mail"-Reiter) und dann:
+* Redis config erstellen:
 ```
-cd ~
-echo 'unixsocket /Users/timon/.redis/sock
+mkdir ~/.redis
+vim ~/.redis/conf
+```
+Und dort folgenden Inhalt Eintragen:
+```
+unixsocket /home/redev01/.redis/sock
 daemonize no
 logfile stdout
-port 0' > ~/.redis/conf
+port 0
 ```
 * Redis als dauerhaften Service aktivieren
 ```
@@ -136,4 +141,3 @@ redis-cli -s /home/retromat/.redis/sock FLUSHALL
 cd /var/www/virtual/redev01/retromat.git/backend
 vim web/app_dev.php
 ```
-* In the dev environment, some errors and warnings (that you would never notice on prod) are taken seriously. It is a good idea to take care of these. Some of them result from the fact that new Ubersapces use PHP 7.2 by default, while the live instance still runs on PHP 7.1. Annoying, but not dangerous. Just a couple more things to take care of. 
