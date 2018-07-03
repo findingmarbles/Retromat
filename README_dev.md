@@ -15,18 +15,6 @@ Per SSH auf Uberspace redev01 einloggen (den Namen des Uberspaces findest Du z.B
 ssh-keygen -t rsa -b 4096
 cat .ssh/id_rsa.pub 
 ```
-* Redis config erstellen:
-```
-mkdir ~/.redis
-vim ~/.redis/conf
-```
-Und dort folgenden Inhalt Eintragen:
-```
-unixsocket /home/redev01/.redis/sock
-daemonize no
-logfile stdout
-port 0
-```
 * Redis als dauerhaften Service aktivieren
 ```
 test -d ~/service || uberspace-setup-svscan
