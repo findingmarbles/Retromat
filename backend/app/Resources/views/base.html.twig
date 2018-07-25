@@ -7,6 +7,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+{% include 'topnavi.html.twig' ignore missing  %}
+      
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 
