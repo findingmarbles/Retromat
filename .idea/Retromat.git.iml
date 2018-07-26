@@ -18,11 +18,14 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/doctrine-cache-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/doctrine-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/fig/link-util" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/friendsofsymfony/rest-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/friendsofsymfony/user-bundle" />

@@ -58,6 +58,10 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
