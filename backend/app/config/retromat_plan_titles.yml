@@ -57,7 +57,7 @@ parameters:
                 15: [ 0, 13,             5, 6, 7,    9         ]
 
             groups_of_terms:
-                # generated from en via Google Translate, needs more work before using it live
+                # "" as first element marks the group as optional (may be skipped to satisfy length constraints)
                 0: ["Retromat:"]
                 1: ["", "Kanban", "Lean"] # entweder 1 + 3 (ohne Iterationen) oder 2 + 4 (mit Iterationen)
                 2: ["", "Agile", "Scrum", "XP", "Extreme Programming"]
