@@ -517,7 +517,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
     }
 
-    public function testShowPageTitle1Activitiy()
+    public function testShowPageTitle1ActivitiyEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
@@ -525,6 +525,16 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/en/?id=1');
 
         $this->assertEquals('Retromat: ESVP (#1)', $crawler->filter('title')->text());
+    }
+
+    public function testShowPageTitle1ActivitiyGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/de/?id=1');
+
+        $this->assertEquals('Retromat: FEUG (engl. ESVP) (#1)', $crawler->filter('title')->text());
     }
 
     public function testShowMetaDescription5Activities()
