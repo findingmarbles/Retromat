@@ -19,13 +19,14 @@ class HomeController extends Controller
      */
     public function homeAction(Request $request)
     {
+        $locale = $request->getLocale();
         $ids = $this->parseIds($request->query->get('id'));
         $phase = $request->query->get('phase');
         $activities = [];
         $title = '';
         $description = '';
 
-        if (0 < count($ids) and ('en' === $request->getLocale() or 'de' === $request->getLocale())) {
+        if (0 < count($ids) and ('en' === $locale or 'de' === $locale)) {
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
             if (count($ids) !== count($activities)) {
@@ -34,11 +35,11 @@ class HomeController extends Controller
             foreach ($activities as $activity) {
                 $this->get('retromat.activity_source_expander')->expandSource($activity);
             }
-            list($title, $description) = $this->planTitleAndDescription($ids, $activities);
+            list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }
 
         return $this->render(
-            'home/generated/index_'.$request->getLocale().'.html.twig',
+            'home/generated/index_'.$locale.'.html.twig',
             [
                 'ids' => $ids,
                 'phase' => $phase,
@@ -95,13 +96,13 @@ class HomeController extends Controller
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
-    private function planTitleAndDescription(array $ids, array $activities): array
+    private function planTitleAndDescription(array $ids, array $activities, string $locale): array
     {
         if ((1 === count($activities)) and (1 === count($ids))) {
             $title = 'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
             $description = ($activities[0])->getSummary();
         } else {
-            $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids));
+            $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids), $locale);
             $description = $this->get('retromat.plan.description_renderer')->render($activities);
         }
 

@@ -497,12 +497,22 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testShowPageTitle5Activities()
+    public function testShowPageTitle5ActivitiesEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
+
+        $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
+    }
+
+    public function testShowPageTitle5ActivitiesGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/de/?id=3-126-9-39-60');
 
         $this->assertStringEndsWith(' 3-126-9-39-60', $crawler->filter('title')->text());
     }

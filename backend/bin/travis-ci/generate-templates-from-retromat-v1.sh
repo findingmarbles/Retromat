@@ -11,7 +11,7 @@
 mkdir -p backend/app/Resources/views/home/generated/
 
 php index.php en    twig ajax > backend/app/Resources/views/home/generated/index_en.html.twig
-php index.php de    html ajax > backend/app/Resources/views/home/generated/index_de.html.twig
+php index.php de    twig ajax > backend/app/Resources/views/home/generated/index_de.html.twig
 php index.php es    html ajax > backend/app/Resources/views/home/generated/index_es.html.twig
 php index.php fr    html ajax > backend/app/Resources/views/home/generated/index_fr.html.twig
 php index.php nl    html ajax > backend/app/Resources/views/home/generated/index_nl.html.twig
