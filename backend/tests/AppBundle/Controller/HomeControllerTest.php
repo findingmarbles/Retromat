@@ -537,7 +537,7 @@ class HomeControllerTest extends WebTestCase
         $this->assertEquals('Retromat: FEUG (engl. ESVP) (#1)', $crawler->filter('title')->text());
     }
 
-    public function testShowMetaDescription5Activities()
+    public function testShowMetaDescription5ActivitiesEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
@@ -546,6 +546,19 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertEquals(
             '3, 126: Give positive, as well as non-threatening, constructive feedback, 9: Team members brainstorm in 4 categories to quickly list issues, 39, 60',
+            $crawler->filter('meta[name="description"]')->attr('content')
+        );
+    }
+
+    public function testShowMetaDescription5ActivitiesGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/de/?id=1-2-3-4-5');
+
+        $this->assertEquals(
+            '1, 2: Die Teilnehmer markieren ihr Stimmungs-&quot;Wetter&quot; auf einem Flipchart., 3: Stelle eine Frage oder Aufgabe, die nacheinander von allen Teilnehmern beantwortet wird., 4, 5',
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
