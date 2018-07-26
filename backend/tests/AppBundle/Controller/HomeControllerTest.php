@@ -563,7 +563,7 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testShowMetaDescription1Activitiy()
+    public function testShowMetaDescription1ActivitiyEnglish()
     {
         $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
@@ -572,6 +572,19 @@ class HomeControllerTest extends WebTestCase
 
         $this->assertEquals(
             'How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?',
+            $crawler->filter('meta[name="description"]')->attr('content')
+        );
+    }
+
+    public function testShowMetaDescription1ActivitiyGerman()
+    {
+        $this->loadFixtures(['tests\AppBundle\Controller\DataFixtures\LoadActivityData']);
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/de/?id=1');
+
+        $this->assertEquals(
+            'Welche Haltung haben die Teilnehmer zur Retrospektive? In welcher Rolle f&uuml;hlen sie sich? Forscher, Einkaufsbummler, Urlauber, Gefangener.',
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
