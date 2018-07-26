@@ -63,8 +63,8 @@ parameters:
                 2: ["", "Agile", "Scrum", "XP", "Extreme Programming"]
                 3: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Gesamt"]
                 4: ["", "Release", "Projekt", "Programm", "Prozess", "Team", "Gesamt", "Iterations", "Sprint", "Zyklus"]
-                5: ["Retrospektive", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflexion:", "Rückblick:", "Rückschau:", "Inspect & Adapt", "Analyse", "Qualitätszirkel"]
-                6: ["", "Meeting", "Treffen:", "Diskussion:", "Zeremonie"]
+                5: ["Retrospektive", "Retro", "Post Mortem", "A3", "Lessons Learned", "Reflexion", "Rückblick", "Rückschau", "Inspect & Adapt", "Analyse", "Qualitätszirkel"]
+                6: ["", "Meeting", "Treffen", "Diskussion", "Zeremonie"]
                 7: ["", "Plan", "Agenda", "Struktur", "Experiment"]
                 8: ["", "Ideen", "Inspiration", "Beispiel"]
                 9: ["", "Aktivitäten"] # entweder 9 oder 10
