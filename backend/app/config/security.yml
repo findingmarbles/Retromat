@@ -50,5 +50,6 @@ security:
             - ROLE_TRANSLATOR_PT-BR
             - ROLE_TRANSLATOR_RU
             - ROLE_TRANSLATOR_ZH
+            - ROLE_SERP_PREVIEW
     access_control:
         - { path: ^/(.+)/register, role: ROLE_ADMIN }

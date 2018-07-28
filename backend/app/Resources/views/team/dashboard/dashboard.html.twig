@@ -34,6 +34,21 @@
                         {% endfor %}
                     </ul>
                 </li>
+                {% if is_granted('ROLE_SERP_PREVIEW') %}
+                    <li>SERP Preview
+                        <ul>
+                            <li>
+                                <a href="{{ path('titles-descriptions-experiment', {_locale: 'en', skip: 0, max: 100}) }}">en</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('titles-descriptions-experiment', {_locale: 'de', skip: 0, max: 100}) }}">de</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('titles-descriptions-experiment', {_locale: 'ru', skip: 0, max: 100}) }}">ru</a>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
             </ul>
         {% endif %}
 
@@ -92,25 +107,6 @@
                 <li>Research
                     <ul>
                         <li><a href="https://adwords.google.com/">Adwords (Keyword Research)</a></li>
-                    </ul>
-                </li>
-            </ul>
-        {% endif %}
-
-        {% if is_granted('ROLE_ADMIN') %}
-            <h2>Admin: Experiments: Internal</h2>
-            <ul>
-                <li>SERP Preview
-                    <ul>
-                        <li>
-                            <a href="{{ path('titles-descriptions-experiment', {_locale: 'en', skip: 0, max: 100}) }}">en</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('titles-descriptions-experiment', {_locale: 'de', skip: 0, max: 100}) }}">de</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('titles-descriptions-experiment', {_locale: 'ru', skip: 0, max: 100}) }}">ru</a>
-                        </li>
                     </ul>
                 </li>
             </ul>
