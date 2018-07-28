@@ -56,12 +56,12 @@ function get_url_to_index() {
 <head>
 <?php if (is_output_format_twig($argv)) { ?>
     {% if title is not empty %}
-        <title>{{ title }}</title>
+        <title>{{ title|raw }}</title>
     {% else %}
         <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
     {% endif %}
     {% if description is not empty %}
-        <meta name="description" content="{{ description }}">
+        <meta name="description" content="{{ description|raw }}">
     {% endif %}
 <?php } else { ?>
     <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
