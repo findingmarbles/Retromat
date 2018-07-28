@@ -558,7 +558,7 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/de/?id=1-2-3-4-5');
 
         $this->assertEquals(
-            '1, 2: Die Teilnehmer markieren ihr Stimmungs-&quot;Wetter&quot; auf einem Flipchart., 3: Stelle eine Frage oder Aufgabe, die nacheinander von allen Teilnehmern beantwortet wird., 4, 5',
+            '1, 2: Die Teilnehmer markieren ihr Stimmungs-"Wetter" auf einem Flipchart., 3: Stelle eine Frage oder Aufgabe, die nacheinander von allen Teilnehmern beantwortet wird., 4, 5',
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
@@ -584,7 +584,7 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/de/?id=1');
 
         $this->assertEquals(
-            'Welche Haltung haben die Teilnehmer zur Retrospektive? In welcher Rolle f&uuml;hlen sie sich? Forscher, Einkaufsbummler, Urlauber, Gefangener.',
+            'Welche Haltung haben die Teilnehmer zur Retrospektive? In welcher Rolle fühlen sie sich? Forscher, Einkaufsbummler, Urlauber, Gefangener.',
             $crawler->filter('meta[name="description"]')->attr('content')
         );
     }
