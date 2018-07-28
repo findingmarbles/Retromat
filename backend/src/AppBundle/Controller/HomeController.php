@@ -99,11 +99,18 @@ class HomeController extends Controller
     private function planTitleAndDescription(array $ids, array $activities, string $locale): array
     {
         if ((1 === count($activities)) and (1 === count($ids))) {
-            $title = 'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')';
-            $description = ($activities[0])->getSummary();
+            $title = html_entity_decode(
+                'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')',
+                ENT_NOQUOTES
+            );
+            $description = html_entity_decode(($activities[0])->getSummary(), ENT_NOQUOTES);
         } else {
+            // Titles are generated from a separate config, so html_entity_decode is not necessary
             $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids), $locale);
-            $description = $this->get('retromat.plan.description_renderer')->render($activities);
+            $description = html_entity_decode(
+                $this->get('retromat.plan.description_renderer')->render($activities),
+                ENT_NOQUOTES
+            );
         }
 
         return [$title, $description];
