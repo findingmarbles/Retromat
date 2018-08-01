@@ -1,6 +1,6 @@
 <?php
 
-$_lang['HTML_TITLE'] = 'Инспирация, структуры &amp; планы для (аджайл) ретроспектив';
+$_lang['HTML_TITLE'] = 'Вдохновение, структуры &amp; планы для (аджайл) ретроспектив';
 
 $_lang['INDEX_PITCH'] = 'Планируете вашу следующию аджайл <b>ретроспективу</b>? Начните со случайного плана, адаптируйте его к вашей команде и ситуации, распечатайте его или поделитесь URL вашего плана с другими. Или просто полистайте в поиске новых идей!';
 $_lang['INDEX_PLAN_ID'] = 'ID упражнения';
@@ -26,10 +26,10 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи его';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик';
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.info';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.de';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/anton_skornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	Антон работает аджайл коучом и тренером со множеством разных организаций в ИТ и вне ИТ! Пишите ему на <a href="https://twitter.com/antonskornyakov">Twitter</a> или через <a href="https://www.linkedin.com/in/antonskornyakov/">LinkedIn</a>!
+	Антон работает аджайл коучом и тренером со множеством разных организаций. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
 	<br><br><br>
 EOT;
 
