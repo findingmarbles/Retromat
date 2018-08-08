@@ -26,7 +26,7 @@ class TeamController extends Controller
 
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_SERP_PREVIEW')")
      * @throws \AppBundle\Plan\Exception\InconsistentInputException
      */
     public function serpPreviewAction(Request $request)
