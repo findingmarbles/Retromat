@@ -752,6 +752,67 @@ ul ul {
 }
 
 
+/************ BLOG STYLES **************/
+
+.site {
+    background: rgba(255,255,255,.35); padding-top: 40px;
+}
+
+.site h1,
+.site h1.entry-title,
+.site .site-title {
+    font-family: "droid serif", serif;
+    font-size: 3rem;
+}
+
+.site .site-header-info {
+    text-shadow: #3c8791 1px 2px;
+}
+
+.site .site-title {
+    font-size: 2.5rem;
+    font-family: "droid serif";
+}
+
+.site .site-description {
+    font-style: normal;
+    font-size: 1.6rem;
+    margin-top: -.5rem;
+}
+
+.site .site-logo,
+.site .site-navigation,
+.site .site-footer 
+{
+    display:none;
+}
+
+.site h2 {
+   font-size: 1.3em;
+}
+
+.site h3 {
+   font-size: 1.15em;
+}
+
+.site h1,
+.site h2,
+.site h3,
+.site h4,
+.site h1.entry-title
+{
+   margin-top: 2.5rem;
+   margin-bottom: 2rem;
+   font-weight: bold;
+}
+
+.site p {
+   margin-bottom: 0.5rem;
+}
+
+
+
+
 /************ PRINT **************/
 
 @media print {
