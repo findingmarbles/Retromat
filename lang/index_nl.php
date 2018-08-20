@@ -2,7 +2,7 @@
 
 $_lang['HTML_TITLE'] = 'Inspiratie &amp; plannen voor (agile) retrospectives';
 
-$_lang['INDEX_PITCH'] = 'Ben je bezig om je volgende <b>retrospective</b> voor te bereiden? Begin met een random plan, pas het aan, printen het uit en deel de URL. Of browse wat rond voor nieuwe ideeen!<br><br>Is dit je eerste retrospective? <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">Begin dan hier!</a>';
+$_lang['INDEX_PITCH'] = 'Ben je bezig om je volgende <b>retrospective</b> voor te bereiden? Begin met een random plan, pas het aan, printen het uit en deel de URL. Of browse wat rond voor nieuwe ideeen!<br><br>Is dit je eerste retrospective? <a href="/blog/best-retrospective-for-beginners/">Begin dan hier!</a>';
 $_lang['INDEX_PLAN_ID'] = 'ID van het huidige plan:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Toon!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nieuw random retrospective plan';
