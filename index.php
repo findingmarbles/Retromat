@@ -514,7 +514,7 @@ var PHASE_ID_TAG = 'phase';
 <div class="footer">
    <div class="content">
       <div style="clear:both">
-           <a href="/blog/imprint-privacy">
+           <a href="/blog/privacy-policy">
                Imprint &amp; Privacy Policy
             </a>
         </div>
