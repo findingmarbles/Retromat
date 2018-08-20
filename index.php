@@ -266,9 +266,9 @@ var PHASE_ID_TAG = 'phase';
     </select>
 
       <span class="navi">
-      <a href="{{ path('about') }}">About</a> |
-      <a href="{{ path('donate') }}">Donate</a> |
-      <a href="{{ path('books') }}">Books</a>
+              <a href="/blog/">Blog</a> |
+              <a href="/en/books">Books</a> |
+              <a href="/en/about">About</a>
         <!-- 
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
