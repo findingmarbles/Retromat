@@ -13,16 +13,7 @@
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 
-<!-- Auslagern in eigenes twig snippet -->
-<div class="footer">
-   <div class="content">
-      <div style="clear:both">
-           <a href="/imprint-privacy">
-               Imprint &amp; Privacy Policy
-            </a>
-        </div>
-    </div><!-- .content -->
-</div><!-- .footer -->
+{% include 'footer.html.twig' ignore missing  %}
 
     </body>
 </html>
