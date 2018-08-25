@@ -359,6 +359,12 @@ var PHASE_ID_TAG = 'phase';
                     </li>
                 </ul>
             </div><!-- plan-navi -->
+            <div class="sponsor">
+                Sponsored by<br>
+                <a href="https://www.emendare.de/" target="_blank">
+                    <img src="/static/images/sponsors/emendare-retromat-sponsor.png" width="178" height="95" alt="Sponsored by Emendare">
+                </a>
+            </div>
         </div><!-- plan-header__wrapper -->
     </div><!-- content -->
 </div>

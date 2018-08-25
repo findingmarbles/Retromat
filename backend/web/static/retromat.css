@@ -338,11 +338,11 @@ ul ul {
 }
 
 .plan-header .content {
+    padding:0px
+    width:710px; 
     background: #ecf8c8;
     /* The Fallback */
     background: rgba(255, 255, 255, 0.35);
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .plan-header__wrapper {
@@ -352,12 +352,14 @@ ul ul {
 
 .ids-display {
     display: table-cell;
-    width: 377px;
     vertical-align: middle;
+    padding-left:30px; 
+    width: 320px;
 }
 
 .plan-navi {
     display: table-cell;
+    vertical-align: middle;
     width: 173px;
 }
 
@@ -380,7 +382,6 @@ ul ul {
 }
 
 .plan-navi__random,
-.plan-navi__ids,
 .plan-navi__search {
     display: block;
     opacity: .7;
@@ -394,10 +395,8 @@ ul ul {
 }
 
 .plan-navi__random:hover,
-.plan-navi__ids:hover,
 .plan-navi__search:hover,
 .plan-navi__random:active,
-.plan-navi__ids:active,
 .plan-navi__search:active {
     opacity: 1;
 }
@@ -462,9 +461,6 @@ ul ul {
 }
 
 .popup-input,
-
-/*TODO */
-
 .popup__input {
     margin-left: 5px;
     margin-right: 3px;
@@ -477,6 +473,17 @@ ul ul {
     padding: 3px 5px 3px 5px;
     font-size: 0.8em;
     background-color: #d0d099;
+}
+
+.sponsor {
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center; 
+    width: 216px; 
+    height: 130px; 
+    color:gray; 
+    font-size:x-small; 
+    background-color:white;
 }
 
 .plan_title_container {
