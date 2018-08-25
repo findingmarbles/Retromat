@@ -322,7 +322,7 @@ var PHASE_ID_TAG = 'phase';
 <?php } ?>
 
 <div class="plan-header">
-    <div class="content">
+    <div class="content" style="padding: 0px; width: 710px;">
         <div class="print-header">
             Retromat <span class="finding_marbles">(retromat.org) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>

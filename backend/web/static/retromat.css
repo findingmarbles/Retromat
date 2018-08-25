@@ -338,8 +338,6 @@ ul ul {
 }
 
 .plan-header .content {
-    padding:0px
-    width:710px; 
     background: #ecf8c8;
     /* The Fallback */
     background: rgba(255, 255, 255, 0.35);
