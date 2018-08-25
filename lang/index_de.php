@@ -5,8 +5,7 @@ $_lang['INDEX_PITCH'] = 'Du planst Deine n&auml;chste <b>Retrospektive</b>? Fang
 $_lang['INDEX_PLAN_ID'] = 'Ablauf-ID:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Anzeigen';
 $_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Ablauf';
-$_lang['INDEX_ENTER_ID'] = 'IDs direkt eingeben';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche die Aktivitäten';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 

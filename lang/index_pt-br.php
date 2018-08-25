@@ -6,8 +6,7 @@ $_lang['INDEX_PITCH'] = 'Planning your next agile <b>retrospective</b>? Start wi
 $_lang['INDEX_PLAN_ID'] = 'Plan ID:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Show!';
 $_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
-$_lang['INDEX_ENTER_ID'] = 'Enter IDs to display';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for keyword';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for ID or  keyword';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
 $_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 

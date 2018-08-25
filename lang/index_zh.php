@@ -7,8 +7,7 @@ $_lang['INDEX_PITCH'] = '正在规划你的下一个敏捷<b>回顾</b>? 从一�
 $_lang['INDEX_PLAN_ID'] = '当前方案ID:';
 $_lang['INDEX_BUTTON_SHOW'] = '显示！';
 $_lang['INDEX_RANDOM_RETRO'] = '新的随机回顾方案';
-$_lang['INDEX_ENTER_ID'] = '输入想要显示方案的IDs';
-$_lang['INDEX_SEARCH_KEYWORD'] = '通过关键词查找活动';
+$_lang['INDEX_SEARCH_KEYWORD'] = '按关键字或ID查找活动';
 $_lang['INDEX_ALL_ACTIVITIES'] = '所有活动 其归属于';
 $_lang['INDEX_LOADING'] = '... 加载活动 ...';
 

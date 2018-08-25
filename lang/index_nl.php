@@ -6,8 +6,7 @@ $_lang['INDEX_PITCH'] = 'Ben je bezig om je volgende <b>retrospective</b> voor t
 $_lang['INDEX_PLAN_ID'] = 'ID van het plan:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Toon!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nieuw random retrospective plan';
-$_lang['INDEX_ENTER_ID'] = 'Voer IDs om weer te geven in';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Zoek activities per steekwoord';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Zoek activities per ID of steekwoord';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle activiteiten voor';
 $_lang['INDEX_LOADING'] = '... ACTIVITEITEN WORDEN GELADEN ...';
 

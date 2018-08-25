@@ -345,19 +345,6 @@ var PHASE_ID_TAG = 'phase';
                         </a>
                     </li>
                     <li>
-                        <a class="plan-navi__ids" title="<?php echo($_lang['INDEX_ENTER_ID']); ?>" href="JavaScript:show_popup('ids');">
-                            <?php echo($_lang['INDEX_ENTER_ID']); ?>
-                        </a>
-                        <div class="js_popup--ids popup--ids popup display_none">
-                            <form action="JavaScript:publish_plan($('.js_popup--ids__input').val());hide_popup('ids');" name="js_ids_form" class="ids_form">
-                                <input type="text" size="12" name="js_popup--ids__input" class="js_popup--ids__input popup__input" value="">
-                                <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_IDS_BUTTON']); ?>">
-                                <a href="JavaScript:hide_popup('ids');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
-                            </form>
-                            <div class="popup__info"><?php echo($_lang['POPUP_IDS_INFO']); ?></div>
-                        </div>
-                    </li>
-                    <li>
                         <a class="plan-navi__search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:show_popup('search');">
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
