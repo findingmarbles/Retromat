@@ -26,7 +26,7 @@ class HomeController extends Controller
         $title = '';
         $description = '';
 
-        if (0 < count($ids) and ('en' === $locale or 'de' === $locale)) {
+        if (0 < count($ids) and ('en' === $locale or 'de' === $locale or 'ru' === $locale)) {
             $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
             $activities = $repo->findOrdered($ids);
             if (count($ids) !== count($activities)) {
