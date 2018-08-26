@@ -1,12 +1,11 @@
 <?php
 $_lang['HTML_TITLE'] = 'Anregungen &amp; Abl&auml;ufe f&uuml;r (agile) Retrospektiven';
 
-$_lang['INDEX_PITCH'] = 'Du planst Deine n&auml;chste <b>Retrospektive</b>? Fang mit einem zuf&auml;llig generierten Ablauf an, pass ihn an, druck ihn aus und teile die URL mit anderen. Oder guck Dich einfach nach neuen Ideen um!';
+$_lang['INDEX_PITCH'] = 'Du planst Deine n&auml;chste <b>Retrospektive</b>? Fang mit einem zuf&auml;llig generierten Ablauf an, pass ihn an, druck ihn aus und teile die URL mit anderen. Oder guck Dich einfach nach neuen Ideen um!<br><br>Ist es Deine erste Retro? <a href="/blog/best-retrospective-for-beginners/">Fang hier an!</a>';
 $_lang['INDEX_PLAN_ID'] = 'Ablauf-ID:';
 $_lang['INDEX_BUTTON_SHOW'] = 'Anzeigen';
 $_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Ablauf';
-$_lang['INDEX_ENTER_ID'] = 'IDs direkt eingeben';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche die Aktivitäten';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
 $_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 

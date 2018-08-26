@@ -266,9 +266,9 @@ var PHASE_ID_TAG = 'phase';
     </select>
 
       <span class="navi">
-      <a href="{{ path('about') }}">About</a> |
-      <a href="{{ path('donate') }}">Donate</a> |
-      <a href="{{ path('books') }}">Books</a>
+              <a href="/blog/">Blog</a> |
+              <a href="/en/books">Books</a> |
+              <a href="/en/about">About</a>
         <!-- 
         <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
         <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
@@ -286,14 +286,11 @@ var PHASE_ID_TAG = 'phase';
     </div>
 </div>
 
-
-<?php if ($isEnglish) { ?>
-
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
         Join 1500+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
         <br><br>
-            <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=About" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
+            <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=Home" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
                 <input id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();" type="email">
                 <input class="orange-button subscribe_submit" value="Subscribe" type="submit">
             </form>
@@ -319,10 +316,8 @@ var PHASE_ID_TAG = 'phase';
     </div>
 -->
 
-<?php } ?>
-
 <div class="plan-header">
-    <div class="content">
+    <div class="content" style="padding: 0px; width: 710px;">
         <div class="print-header">
             Retromat <span class="finding_marbles">(retromat.org) <?php echo($_lang['PRINT_HEADER']); ?></span>
         </div>
@@ -345,19 +340,6 @@ var PHASE_ID_TAG = 'phase';
                         </a>
                     </li>
                     <li>
-                        <a class="plan-navi__ids" title="<?php echo($_lang['INDEX_ENTER_ID']); ?>" href="JavaScript:show_popup('ids');">
-                            <?php echo($_lang['INDEX_ENTER_ID']); ?>
-                        </a>
-                        <div class="js_popup--ids popup--ids popup display_none">
-                            <form action="JavaScript:publish_plan($('.js_popup--ids__input').val());hide_popup('ids');" name="js_ids_form" class="ids_form">
-                                <input type="text" size="12" name="js_popup--ids__input" class="js_popup--ids__input popup__input" value="">
-                                <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_IDS_BUTTON']); ?>">
-                                <a href="JavaScript:hide_popup('ids');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
-                            </form>
-                            <div class="popup__info"><?php echo($_lang['POPUP_IDS_INFO']); ?></div>
-                        </div>
-                    </li>
-                    <li>
                         <a class="plan-navi__search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:show_popup('search');">
                             <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
                         </a>
@@ -372,6 +354,12 @@ var PHASE_ID_TAG = 'phase';
                     </li>
                 </ul>
             </div><!-- plan-navi -->
+            <div class="sponsor">
+                Sponsored by<br>
+                <a href="https://www.emendare.de/" target="_blank">
+                    <img src="/static/images/sponsors/emendare-retromat-sponsor.png" width="178" height="95" alt="Sponsored by Emendare">
+                </a>
+            </div>
         </div><!-- plan-header__wrapper -->
     </div><!-- content -->
 </div>
@@ -514,7 +502,7 @@ var PHASE_ID_TAG = 'phase';
 <div class="footer">
    <div class="content">
       <div style="clear:both">
-           <a href="/imprint-privacy">
+           <a href="/blog/privacy-policy">
                Imprint &amp; Privacy Policy
             </a>
         </div>

@@ -912,4 +912,56 @@ YAML;
         $this->assertFalse($chooser->isShortEnough('0:1-1-1', $planId, 'de'));
         $this->assertTrue($chooser->isShortEnough('0:0-0-0', $planId, 'de'));
     }
+
+    /**
+     * @throws InconsistentInputException
+     * @throws \AppBundle\Plan\Exception\NoGroupLeftToDrop
+     */
+    public function testChooseTitleIdLocaleHandlingRu()
+    {
+        $yaml = <<<YAML
+ru:
+    sequence_of_groups:
+        0:  [ 0,     1,  3,   5, 6, 7, 8,   10     ]
+        1:  [ 0,       2,  4, 5, 6, 7,    9        ]
+        2:  [ 0,     1,  3,   5, 6, 7, 8,   10     ]
+        3:  [ 0,       2,  4, 5, 6, 7,    9        ]
+        4:  [ 0,     1,       5,    7,          11 ]
+        5:  [ 0,     1,       5,       8,       11 ]
+        6:  [ 0,       2,     5,    7,          11 ]
+        7:  [ 0,       2,     5,       8,       11 ]
+        8:  [ 0, 12, 1,  3,   5, 6,          10    ]
+        9:  [ 0, 12,   2,  4, 5, 6,       9        ]
+        10: [ 0, 12, 1,  3,   5, 6,          10    ]
+        11: [ 0, 12,   2,  4, 5, 6,       9        ]
+        12: [ 0, 13,          5, 6, 7, 8,    10    ]
+        13: [ 0, 13,          5, 6, 7,    9        ]
+        14: [ 0, 13,          5, 6, 7, 8,    10    ]
+        15: [ 0, 13,          5, 6, 7,    9        ]
+
+    groups_of_terms:
+        # "" as first element marks the group as optional (may be skipped to satisfy length constraints)
+        0: ["Retromat:"]
+        1: ["", "Канбан", "Lean"] # either 1+3 (without iterations) or 2+4 (with iteration)
+        2: ["", "Аджайл", "Скрам", "XP", "Экстремальное программирование"]
+        3: ["", "Релиз", "Проект", "Программа", "Процесс", "Команда"]
+        4: ["", "Релиз", "Проект", "Программа", "Процесс", "Команда", "Итерация", "Цикл", "Спринт"]
+        5: ["Ретроспектива", "Ретро", "Post Mortem", "A3", "Извлечение уроков", "Отражение", "Проверка и адаптация", "Анализ"]
+        6: ["", "Встреча", "Событие", "Обсуждение", "Церемония"]
+        7: ["", "План", "Повестка дня", "Структура", "Эксперимент"]
+        8: ["", "Идеи", "Вдохновение", "Пример"]
+        9: ["", "упражнения"] # either 9 or 10
+        10: ["", "с 5 действиями", "с 5 этапами", "с 5 шагами", "с 5 идеями", "с 5 видами деятельности", "с 5 примерами действий"]
+        11: ["", "Генератор", "Инструмент", "Руководство", "Справочник"]
+        12: ["", "Планируйте Вашу", "Организуйте Вашу", "Создайте Вашу", "Подготовьте Вашу"]
+        13: ["", "Инструменты Скрам Мастера:", "Инструменты Скраммастера:", "Инструменты фасилитатора:", "Инструментарий Скрам Мастера:", "Инструментарий Скраммастера:", "Инструментарий фасилитатора:"]
+YAML;
+        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $maxLengthIncludingPlanId = 60;
+        $title = new TitleRenderer($titleParts);
+        $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
+
+        $titleId = $chooser->chooseTitleId('70-4-8-11-14', 'ru');
+        $this->assertEquals('11:0-1-0-6-7-0-0', $titleId);
+    }
 }

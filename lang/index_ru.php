@@ -6,8 +6,7 @@ $_lang['INDEX_PITCH'] = 'Планируете вашу следующию адж
 $_lang['INDEX_PLAN_ID'] = 'ID упражнения';
 $_lang['INDEX_BUTTON_SHOW'] = 'Показать';
 $_lang['INDEX_RANDOM_RETRO'] = 'Новый случайную упражнение';
-$_lang['INDEX_ENTER_ID'] = 'Напрямую ввести ID';
-$_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в упражнениях';
+$_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в упражнениях или ID';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Все упражнения для';
 $_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ УПРАЖНЕНИЕ ...';
 

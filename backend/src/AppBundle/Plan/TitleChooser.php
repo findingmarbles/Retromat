@@ -50,7 +50,7 @@ class TitleChooser
             return '';
         }
 
-        return $this->titleRenderer->render($this->chooseTitleId($activityIdsString), $locale).': '.$activityIdsString;
+        return $this->titleRenderer->render($this->chooseTitleId($activityIdsString, $locale), $locale).': '.$activityIdsString;
     }
 
     /**

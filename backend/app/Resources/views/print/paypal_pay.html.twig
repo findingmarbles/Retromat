@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif" />
+    <link rel="stylesheet" type="text/css" href="/static/retromat.css" />
     <link rel="stylesheet" type="text/css" href="/print/styles.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -102,15 +103,7 @@
     </div>
 </div>
 
-<div class="footer">
-   <div class="content">
-      <div style="clear:both">
-           <a href="/imprint-privacy">
-               Imprint &amp; Privacy Policy
-            </a>
-        </div>
-    </div><!-- .content -->
-</div><!-- .footer -->
+{% include 'footer.html.twig' ignore missing  %}
 
 <!-- Matomo -->
 <noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>

@@ -2,13 +2,12 @@
 
 $_lang['HTML_TITLE'] = '（敏捷）回顾的灵感和方案';
 
-$_lang['INDEX_PITCH'] = '正在规划你的下一个敏捷<b>回顾</b>? 从一个随机的设计方案开始，进行相应的调整来让其适合团队的现状, 打印设计方案并分享它的链接。或者四处看看然后制定自己的方案!<br><br>如果这是你的第一次回顾会议？ <a href="http://finding-marbles.com/retr-o-mat/the-best-retrospective-for-beginners/">请从这里开始！</a>';
+$_lang['INDEX_PITCH'] = '正在规划你的下一个敏捷<b>回顾</b>? 从一个随机的设计方案开始，进行相应的调整来让其适合团队的现状, 打印设计方案并分享它的链接。或者四处看看然后制定自己的方案!<br><br>如果这是你的第一次回顾会议？ <a href="/blog/best-retrospective-for-beginners/">请从这里开始！</a>';
 
 $_lang['INDEX_PLAN_ID'] = '当前方案ID:';
 $_lang['INDEX_BUTTON_SHOW'] = '显示！';
 $_lang['INDEX_RANDOM_RETRO'] = '新的随机回顾方案';
-$_lang['INDEX_ENTER_ID'] = '输入想要显示方案的IDs';
-$_lang['INDEX_SEARCH_KEYWORD'] = '通过关键词查找活动';
+$_lang['INDEX_SEARCH_KEYWORD'] = '按关键字或ID查找活动';
 $_lang['INDEX_ALL_ACTIVITIES'] = '所有活动 其归属于';
 $_lang['INDEX_LOADING'] = '... 加载活动 ...';
 
