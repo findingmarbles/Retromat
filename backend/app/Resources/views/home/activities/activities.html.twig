@@ -1,6 +1,12 @@
 <div class="js_plan">
     {% if 0 == activities|length %}
-        {% include 'home/activities/homeRandomPlans_'~app.request.locale~'.html.twig' %}
+        {% if 'en' == app.request.locale %}
+            {% include 'home/activities/homeRandomPlans_en.html.twig' %}
+            {% include 'home/activities/homeRandomPlans_de.html.twig' %}
+            {% include 'home/activities/homeRandomPlans_ru.html.twig' %}
+        {% else %}
+            {% include 'home/activities/homeRandomPlans_'~app.request.locale~'.html.twig' %}
+        {% endif %}
     {% else %}
         {% for activity in activities %}
             {% include 'home/activities/activity.html.twig' %}
