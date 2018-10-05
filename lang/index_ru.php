@@ -28,7 +28,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.de';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/anton_skornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	Антон работает аджайл коучом и тренером со множеством разных организаций. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
+	Антон работает Скрам коучом и тренером со множеством разных организаций. Лин на его тренинги для Скрам мастеров - <a href="https://agile.coach/training/scrum-master-zertifizierung/">CSM</a> и владельцев продукта – <a href="https://agile.coach/training/product-owner-zertifizierung/">CSPO</a>. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
 	<br><br><br>
 EOT;
 
@@ -62,7 +62,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Ко-создатель';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Тимон проводит <a href="https://agile.coach/training/scrum-schulung-inhouse/">скрам обучение</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, продукт-оунер, скрам мастер и <a href="https://agile.coach/">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike"> читать его на Twitter</a>.
+Тимон проводит <a href="https://agile.coach/training/scrum-schulung-inhouse/">скрам тренинги</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, владелей продукта, скрам мастер и <a href="https://agile.coach/">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike" rel="nofollow"> читать его на Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'от Finding-Marbles.com';
