@@ -62,7 +62,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Ко-создатель';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Тимон использовал Ретромат на протяжении долгого времени как разработчик, продукт-оунер, скрам мастер и <a href="https://agile.coach/">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike"> читать его на Twitter</a>.
+Тимон проводит <a href="https://agile.coach/training/scrum-schulung-inhouse/">скрам обучение</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, продукт-оунер, скрам мастер и <a href="https://agile.coach/">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike"> читать его на Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'от Finding-Marbles.com';

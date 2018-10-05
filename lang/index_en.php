@@ -42,7 +42,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-As Integral Coach and <a href="https://agile.coach/">Agile Coach</a>, Timon coaches executives, managers, product owners and scrum masters. He has used Retromat since 2013 and started to build new features in 2016. You can <a href="mailto:retromat@fiddike.com">email him</a> or
+Timon gives <a href="https://agile.coach/training/scrum-schulung-inhouse/">Scrum Trainings</a>. As Integral Coach and <a href="https://agile.coach/">Agile Coach</a> he coaches executives, managers, product owners and scrum masters. He has used Retromat since 2013 and started to build new features in 2016. You can <a href="mailto:retromat@fiddike.com">email him</a> or
     <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>. Photo © Ina Abraham.
 EOT;
 
