@@ -29,7 +29,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'http://skornyakov.de';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/anton_skornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Антон работает Скрам коучом и тренером со множеством разных организаций. Линк на его тренинги для Скрам мастеров - <a href="https://agile.coach/training/scrum-master-zertifizierung/">CSM</a> и владельцев продукта – <a href="https://agile.coach/training/product-owner-zertifizierung/">CSPO</a>. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
-	<br><br><br>
+<br><br><br>
 EOT;
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Юлиана Степанова';
@@ -37,7 +37,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][1] = 'https://twitter.com/Yuliana_Step';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][1] = '/static/images/team/yuliana_step.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][1] = <<<EOT
 	Юлиана работает скрам мастером, и так же является "генератором идей", как на работе, так и в личной жизни. Вы можете связаться с ней через <a href="https://www.linkedin.com/in/yuliana-stepanova-2b99b349/">LinkedIn</a>!.
-	<br><br><br>
+<br><br><br>
 EOT;
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][2] = 'Александр Мартюшев';
@@ -45,7 +45,7 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][2] = 'http://onagile.ru/team/alex-martyushe
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][2] = '/static/images/team/alex_martiushev.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][2] = <<<EOT
 	Александр работает agile коучем и тренером в компании OnAgile. Связаться с Александром можно по <a href="mailto:alex@onagile.ru?subject=Вопрос по Agile">электронной почте</a>.
-	<br><br><br>
+<br><br><br>
 EOT;
 
 
