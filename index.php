@@ -355,9 +355,11 @@ var PHASE_ID_TAG = 'phase';
                 </ul>
             </div><!-- plan-navi -->
             <div class="sponsor">
-                Sponsored by<br>
-                <a href="https://www.emendare.de/" target="_blank">
-                    <img src="/static/images/sponsors/emendare-retromat-sponsor.png" width="178" height="95" alt="Sponsored by Emendare">
+                <a href="https://retromat.org/blog/become-a-retromat-sponsor/">
+                Become a Retromat sponsor
+                </a><br>
+                <a href="/en/ebook" target="_blank">
+                    <img src="/static/images/sponsors/ebook-retromat-sponsor.png" width="178" height="95" alt="Did you know there's a Retromat eBook?">
                 </a>
             </div>
         </div><!-- plan-header__wrapper -->
