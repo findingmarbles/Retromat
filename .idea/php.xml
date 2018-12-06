@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$USER_HOME$/GitSep/bin.git" />
+      <path value="$PROJECT_DIR$/../../bin.git" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bundle" />
@@ -64,10 +64,10 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings load_method="PHPUNIT_PHAR" configuration_file_path="$PROJECT_DIR$/backend/phpunit.xml.dist" custom_loader_path="" phpunit_phar_path="$USER_HOME$/GitSep/bin.git/phpunit-4.8.26.phar" />
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" configuration_file_path="$PROJECT_DIR$/backend/phpunit.xml.dist" custom_loader_path="" phpunit_phar_path="$PROJECT_DIR$/../../bin.git/phpunit-4.8.26.phar" />
     </phpunit_settings>
   </component>
 </project>
