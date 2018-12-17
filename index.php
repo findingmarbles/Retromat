@@ -256,8 +256,8 @@ var PHASE_ID_TAG = 'phase';
         <img class="header__logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (100 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (133 activities)</option>
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (135 Aktivit&auml;ten)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (135 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (108 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (59 activit&eacute;s)</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
