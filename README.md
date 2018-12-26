@@ -39,7 +39,7 @@ Our team of awesome translators:
 
 * Spanish: [Thomas Wallet](http://www.elproximopaso.net/) and [Pedro Ángel Serrano](https://twitter.com/pedroserranot)
 * French: [Julien Dubois](http://juliendubois.fr/), [Pierre Martin](https://twitter.com/pierremartin) and [Frank Taillandier](http://frank.taillandier.me/)
-* German: [Ronald Steyer](https://aboutronaldblog.wordpress.com/), [Patrick Zeising](https://twitter.com/peezett)
+* German: [Ronald Steyer](https://aboutronaldblog.wordpress.com/), [Patrick Zeising](https://twitter.com/peezett), [Martin Luig](https://twitter.com/LeanLuig)
 * Dutch: [Linda van der Pal](https://twitter.com/DuchessFounder)
 * Russian: [Anton Skornyakov](http://skornyakov.info/), [Yuliana Stepanova](https://twitter.com/Yuliana_Step), [Alexander Martyushev](http://onagile.ru/team/alex-martyushev/)
 
