@@ -23,6 +23,8 @@ $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://aboutronaldblog.wordpress.com
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ronald_steyer.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 	Ronald findet in ziemlich unterschiedlichen Aufgaben immer wieder das, was ihn besonders interessiert: Veränderungen  oder besser: Transformation fördern. Um Unternehmen kundenorientierter und anpassungsfähiger zu machen, will er sie für agiles Arbeiten begeistern, Du kannst ihm <a href="mailto:aboutronald@posteo.de">schreiben</a>.
+	<br> <br>
+Vielen Dank auch an <a href="http://retromat.luig.eu/">Martin Luig</a>.
 EOT;
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][1] = 'Patrick Zeising';
