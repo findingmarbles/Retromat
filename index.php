@@ -355,12 +355,9 @@ var PHASE_ID_TAG = 'phase';
                 </ul>
             </div><!-- plan-navi -->
             <div class="sponsor">
-                <a href="https://retromat.org/blog/become-a-retromat-sponsor/">
-                Become a Retromat sponsor
-                </a><br>
-                <a href="/en/ebook" target="_blank">
-                    <img src="/static/images/sponsors/ebook-retromat-sponsor.png" width="178" height="95" alt="Did you know there's a Retromat eBook?">
-                </a>
+                Thank you to our sponsor<br>
+                <a href="https://www.teammood.com/en/agile-retrospective/?utm_campaign=retromat&utm_medium=banner&utm_source=retromat&utm_content=homepage" target="_blank">
+                    <img src="/static/images/sponsors/TeamMood-retromat-sponsor.gif" width="178" height="95" alt="Sponsored by TeamMood.com">
             </div>
         </div><!-- plan-header__wrapper -->
     </div><!-- content -->
