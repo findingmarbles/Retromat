@@ -358,6 +358,7 @@ var PHASE_ID_TAG = 'phase';
                 Thank you to our sponsor<br>
                 <a href="https://www.teammood.com/en/agile-retrospective/?utm_campaign=retromat&utm_medium=banner&utm_source=retromat&utm_content=homepage" target="_blank">
                     <img src="/static/images/sponsors/TeamMood-retromat-sponsor.gif" width="178" height="95" alt="Sponsored by TeamMood.com">
+                </a>
             </div>
         </div><!-- plan-header__wrapper -->
     </div><!-- content -->
