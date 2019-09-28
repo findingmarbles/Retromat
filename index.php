@@ -256,9 +256,9 @@ var PHASE_ID_TAG = 'phase';
         <img class="header__logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (135 Aktivit&auml;ten)</option>
+        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (137 Aktivit&auml;ten)</option>
         <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (137 activities)</option>
-        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (108 actividades)</option>
+        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (114 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (59 activit&eacute;s)</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
         <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
@@ -288,7 +288,7 @@ var PHASE_ID_TAG = 'phase';
 
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
-        Join 1500+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
+        Join 6000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
         <br><br>
             <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=Home" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
                 <input id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();" type="email">
@@ -355,11 +355,13 @@ var PHASE_ID_TAG = 'phase';
                 </ul>
             </div><!-- plan-navi -->
             <div class="sponsor">
-                Thank you to our sponsor<br>
-                <a href="https://www.teammood.com/en/agile-retrospective/?utm_campaign=retromat&utm_medium=banner&utm_source=retromat&utm_content=homepage" target="_blank">
-                    <img src="/static/images/sponsors/TeamMood-retromat-sponsor.gif" width="178" height="95" alt="Sponsored by TeamMood.com">
+                <a href="https://retromat.org/blog/become-a-retromat-sponsor/">
+                Become a Retromat sponsor
+                </a><br>
+                <a href="/en/ebook" target="_blank">
+                    <img src="/static/images/sponsors/ebook-retromat-sponsor.png" width="178" height="95" alt="Did you know there's a Retromat eBook?">
                 </a>
-            </div>
+            </div><!-- sponsor -->
         </div><!-- plan-header__wrapper -->
     </div><!-- content -->
 </div>
