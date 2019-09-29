@@ -42,8 +42,8 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-As developer, product owner, scrum master and <a href="https://agile.coach/">agile coach</a>, Timon has been a Retromat user and fan for more than three years. He had quite a few feature ideas. In 2016 he started to build some of those features himself. You can <a href="mailto:timon.fiddike@agile.coach">email him</a> or
-    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>.
+Timon gives <a href="/en/team/timon">Scrum Trainings</a>. As Integral Coach and <a href="/en/team/timon">Agile Coach</a> he coaches executives, managers, product owners and scrum masters. He has used Retromat since 2013 and started to build new features in 2016. You can <a href="mailto:retromat@fiddike.com">email him</a> or
+    <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>. Photo © Ina Abraham.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';

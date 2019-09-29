@@ -46,7 +46,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Mitentwickelt von ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-	Timon gibt <a href="https://agile.coach/training/scrum-schulung-inhouse/">Scrum Schulungen</a>. Als Integraler Coach und <a href="https://agile.coach/">agiler Coach</a> coacht er Executives, Manager, Product Owner und Scrum Master. Retromat Nutzer seit 2013, Mitentwickler seit 2016. Du kannst ihm <a href="mailto:retromat@fiddike.com">schreiben</a> oder ihm <a href="https://twitter.com/TimonFiddike">auf Twitter folgen</a>. Photo © Ina Abraham.
+	Timon gibt <a href="/en/team/timon">Scrum Schulungen</a>. Als Integraler Coach und <a href="/en/team/timon">agiler Coach</a> coacht er Executives, Manager, Product Owner und Scrum Master. Retromat Nutzer seit 2013, Mitentwickler seit 2016. Du kannst ihm <a href="mailto:retromat@fiddike.com">schreiben</a> oder ihm <a href="https://twitter.com/TimonFiddike">auf Twitter folgen</a>. Photo © Ina Abraham.
 EOT;
 
 $_lang['PRINT_HEADER'] = 'von Finding-Marbles.com';

@@ -483,12 +483,12 @@ var PHASE_ID_TAG = 'phase';
 
 
        <div style="clear:both">
-           <a href="https://fiddike.com/">
+           <a href="/en/team/timon">
                <img src="/static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
                <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
-               <a href="https://fiddike.com/">
+               <a href="/en/team/timon">
                    Timon Fiddike
                </a>
            </h3>
