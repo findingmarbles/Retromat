@@ -5,15 +5,18 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Plan\Exception\InconsistentInputException;
 use AppBundle\Plan\Exception\NoGroupLeftToDrop;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
     /**
-     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|pt-br|ru|zh"}, name="activities_by_id")
+     * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|pl|pt-br|ru|zh"}, name="activities_by_id")
      * @param Request $request
+     * @return Response
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -55,8 +58,9 @@ class HomeController extends Controller
     /**
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
-     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|pt-br|ru|zh"}, name="home")
+     * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fr|es|nl|pl|pt-br|ru|zh"}, name="home")
      * @param Request $request
+     * @return RedirectResponse
      */
     public function redirectAction(Request $request)
     {
