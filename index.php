@@ -285,7 +285,7 @@ var PHASE_ID_TAG = 'phase';
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-
+<!--
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
         Join 6000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
@@ -302,9 +302,9 @@ var PHASE_ID_TAG = 'phase';
             </span>
         </div>
     </div>
+-->
 
 
-<!--
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
@@ -314,7 +314,7 @@ var PHASE_ID_TAG = 'phase';
                 </a>
         </div>
     </div>
--->
+
 
 <div class="plan-header">
     <div class="content" style="padding: 0px; width: 710px;">
