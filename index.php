@@ -304,7 +304,7 @@ var PHASE_ID_TAG = 'phase';
     </div>
 -->
 
-
+<!--
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
@@ -314,7 +314,14 @@ var PHASE_ID_TAG = 'phase';
                 </a>
         </div>
     </div>
+-->
 
+<div class="book">
+    <div class="content" style="line-height: 20px">Retromat Co-Developer Timon Fiddike offers a 1000 € price reduction: CSM® Deluxe Training 20-22.11.2019 in Berlin, in German. This is a unique opportunity, here's <a href="https://twitter.com/TimonFiddike/status/1185198623182733314">why</a>.
+            <br><br>
+            <a href="https://agile.coach/training/scrum-master-zertifizierung/" rel="nofollow" style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Sign up using the Code Retromat-1000!</a>
+    </div>
+</div>
 
 <div class="plan-header">
     <div class="content" style="padding: 0px; width: 710px;">
