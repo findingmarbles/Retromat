@@ -257,7 +257,7 @@ var PHASE_ID_TAG = 'phase';
 
     <select class="languageswitcher" onChange="switchLanguage(this.value)">
         <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (137 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (137 activities)</option>
+        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (139 activities)</option>
         <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (114 actividades)</option>
         <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (59 activit&eacute;s)</option>
         <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
@@ -285,7 +285,7 @@ var PHASE_ID_TAG = 'phase';
         <?php echo($_lang['INDEX_PITCH']); ?>
     </div>
 </div>
-
+<!--
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
         Join 6000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
@@ -302,9 +302,9 @@ var PHASE_ID_TAG = 'phase';
             </span>
         </div>
     </div>
+-->
 
 
-<!--
     <div class="book">
         <div class="content" style="line-height: 20px">
                 Run great agile retrospectives: Get all activities and more for your ebook reader!
@@ -314,7 +314,7 @@ var PHASE_ID_TAG = 'phase';
                 </a>
         </div>
     </div>
--->
+
 
 <div class="plan-header">
     <div class="content" style="padding: 0px; width: 710px;">
