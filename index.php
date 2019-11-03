@@ -319,7 +319,7 @@ var PHASE_ID_TAG = 'phase';
 <div class="book">
     <div class="content" style="line-height: 20px">Become a Certified Scrum Master® trained by Retromat Co-Developer Timon Fiddike and Andreas Schliep – Get a 50 &#37; price reduction for their CSM® Deluxe Training on <b><span style="white-space: nowrap;">20-22.11.2019</span> in Berlin</b> (German language). This is a unique opportunity, here's <a href="https://twitter.com/TimonFiddike/status/1185198623182733314" rel="nofollow" target="_blank">why</a>.
         <br><br>
-        <a href="https://agile.coach/training/scrum-master-zertifizierung/" target="_blank" rel="nofollow" style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Sign up using the Code Retromat-50!</a>
+        <a href="https://agile.coach/training/scrum-master-zertifizierung/" target="_blank" rel="nofollow" style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Use <b>Berlin-50%</b> code on signup</a>
     </div>
 </div>
 
