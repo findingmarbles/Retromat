@@ -304,22 +304,14 @@ var PHASE_ID_TAG = 'phase';
     </div>
 -->
 
-<!--
-    <div class="book">
-        <div class="content" style="line-height: 20px">
-                Run great agile retrospectives: Get all activities and more for your ebook reader!
-<br><br>
-                <a href="{{ path('ebook') }}"
-                   style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check out the Retromat ebook!
-                </a>
-        </div>
-    </div>
--->
-
 <div class="book">
-    <div class="content" style="line-height: 20px">Become a Certified Scrum Master® trained by Retromat Co-Developer Timon Fiddike and Andreas Schliep – Get a 50 &#37; price reduction for their CSM® Deluxe Training on <span style="white-space: nowrap;">20-22.11.2019</span> in <b>Berlin</b> (German language). This is a unique opportunity, here's <a href="https://twitter.com/TimonFiddike/status/1185198623182733314" rel="nofollow" target="_blank">why</a>.
+    <div class="content" style="line-height: 20px">
+        Run great agile retrospectives: Get all activities and more for your ebook reader!
         <br><br>
-        <a href="https://agile.coach/training/scrum-master-zertifizierung/" target="_blank" rel="nofollow" style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Use <b>Berlin-50%</b> code on signup</a>
+        <a href="{{ path('ebook') }}"
+           style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check
+            out the Retromat ebook!
+        </a>
     </div>
 </div>
 
