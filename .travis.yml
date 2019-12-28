@@ -6,6 +6,13 @@ language: php
 
 php:
     - 7.2
+    - 7.3
+    - 7.4
+
+jobs:
+  allow_failures:
+    - php: 7.3
+    - php: 7.4
 
 before_install:
     - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
