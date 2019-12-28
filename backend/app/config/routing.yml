@@ -160,6 +160,17 @@ sources_old:
         _controller: FrameworkBundle:Redirect:redirect
         route: sources
         permanent: true
+team_anton:
+    path: /en/team/anton
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    team/anton.html.twig
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2019-12-29T15:31:02+01:00"
+            changefreq: weekly
+            section: meta
 team_timon:
     path: /en/team/timon
     defaults:
