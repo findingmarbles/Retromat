@@ -43,9 +43,9 @@ before_deploy:
     - ssh-agent -k
 
 notifications:
-    on_success: always
-    on_failure: always
     email:
+        on_success: always
+        on_failure: always
         recipients:
             - timon.fiddike@agile.coach
             - corinna@finding-marbles.com
