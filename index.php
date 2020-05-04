@@ -325,7 +325,7 @@ var PHASE_ID_TAG = 'phase';
         </a>
         <br><br>
         (<a href="{{ path('print') }}" style="font-size: 0.8em">Looking for the Print Retromat?</a>)
-    -->
+    
     </div>
 </div>
 
