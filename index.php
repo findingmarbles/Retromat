@@ -307,7 +307,7 @@ var PHASE_ID_TAG = 'phase';
 <div class="book">
     <div class="content" style="line-height: 20px">
 
-        <!-- Print Retromat - added 20200122 -->
+        <!-- Print Retromat - added 20200122-20200504
          OMG! Print Retromats are back! Get yours fresh off the printer
         <br><br>
         <a href="{{ path('print') }}"
@@ -315,14 +315,16 @@ var PHASE_ID_TAG = 'phase';
         </a>
         <br><br>
         (<a href="{{ path('ebook') }}" style="font-size: 0.8em">Looking for the ebook?</a>)
-
-        <!-- ebook 
+-->
+       
         Run great agile retrospectives: Get all activities and more for your ebook reader!
         <br><br>
         <a href="{{ path('ebook') }}"
            style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check
             out the Retromat ebook!
         </a>
+        <br><br>
+        (<a href="{{ path('print') }}" style="font-size: 0.8em">Looking for the Print Retromat?</a>)
     -->
     </div>
 </div>
