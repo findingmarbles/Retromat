@@ -487,7 +487,7 @@ var PHASE_ID_TAG = 'phase';
            </a>
            <h3 style="margin-bottom: 10px">
                <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-               <a href="http://finding-marbles.com/">
+               <a href="https://www.corinnabaldauf.de/">
                    Corinna Baldauf
                </a>
            </h3>
