@@ -54,8 +54,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
 	Когда Корина работала скрам мастером она сама нуждалась в Ретромате.
 	В конце концов она сама построила его в надежде на то, что он и другим поможет.
     У вас есть вопросы, предложения или тёплые слова? 
-    <a href="mailto:corinna@finding-marbles.com">Пишите ей</a> или
-    <a href="https://twitter.com/findingmarbles">читайте её Twitter</a>.
+    <a href="mailto:corinna@retromat.org">Пишите ей</a> или
+    <a href="https://twitter.com/corinnabaldauf">читайте её Twitter</a>.
     Если вам нравится Ретромат, вам может понравится <a href="http://finding-marbles.com">блог Коринны</a> и
  	её сайт с <a href="http://wall-skills.com">обзорами и распечатками Wall-Skills.com</a>.
 EOT;
@@ -65,7 +65,7 @@ $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
 Тимон проводит <a href="/en/team/timon">скрам тренинги</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, владелей продукта, скрам мастер и <a href="/en/team/timon">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike" rel="nofollow"> читать его на Twitter</a>.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'от Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = 'Источник:';
 $_lang['ACTIVITY_PREV'] = 'Показать предыдущую активность для этой фазы';

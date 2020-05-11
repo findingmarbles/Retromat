@@ -38,8 +38,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wenste tijdens haar Scrummasterjaren vaak genoeg dat er iets als Retromat was.
     Uiteindelijk bouwde ze het zelf maar, in de hoop dat anderen het ook nuttig zouden vinden.
     Heb je nog vragen, suggesties of aanmoedigingen?
-    Je kunt het haar <a href="mailto:corinna@finding-marbles.com">mailen</a> of
-    <a href="https://twitter.com/findingmarbles">vertellen op Twitter</a> Als je Retromat leuk vindt, dan vind je misschien <a href="http://finding-marbles.com">Corinna's blog</a> en haar <a href="http://wall-skills.com">samenvattingen op Wall-Skills.com</a> ook leuk.
+    Je kunt het haar <a href="mailto:corinna@retromat.org">mailen</a> of
+    <a href="https://twitter.com/corinnabaldauf">vertellen op Twitter</a> Als je Retromat leuk vindt, dan vind je misschien <a href="http://finding-marbles.com">Corinna's blog</a> en haar <a href="http://wall-skills.com">samenvattingen op Wall-Skills.com</a> ook leuk.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
@@ -48,7 +48,7 @@ Als ontwikkelaar, product owner, scrum master en <a href="/en/team/timon">agile 
     <a href="https://twitter.com/TimonFiddike">volgen op Twitter</a>.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'door Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = 'Bron:';
 $_lang['ACTIVITY_PREV'] = 'Toon een andere activiteit voor deze fase';

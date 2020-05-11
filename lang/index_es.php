@@ -43,7 +43,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
 Corinna ech&oacute; en falta algo como Retromat en sus a&ntilde;os de Scrummaster.
 Finalmente lo desarroll&oacute; ella misma, esperando que tambi&eacute;n sea de utilidad para otros.
 &iquest;Preguntas, sugerencias o aliento?
-Puede <a href="mailto:corinna@finding-marbles.com">escribirle</a> o <a href="https://twitter.com/findingmarbles">seguirla en Twitter</a>.
+Puede <a href="mailto:corinna@retromat.org">escribirle</a> o <a href="https://twitter.com/corinnabaldauf">seguirla en Twitter</a>.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
@@ -52,7 +52,7 @@ Tanto como Desarrollador, Product Owner, Scrum Master y <a href="/en/team/timon"
     <a href="https://twitter.com/TimonFiddike">seguirle en Twitter</a>.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'por Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = 'Origen:';
 $_lang['ACTIVITY_PREV'] = 'Mostrar otra actividad para esta fase';

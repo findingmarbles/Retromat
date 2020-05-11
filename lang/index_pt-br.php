@@ -46,7 +46,7 @@ Timon gives <a href="/en/team/timon">Scrum Trainings</a>. As Integral Coach and 
     <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>. Photo © Ina Abraham.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = 'Source:';
 $_lang['ACTIVITY_PREV'] = 'Show other activity for this phase';

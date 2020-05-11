@@ -36,8 +36,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna wished for something like Retromat during her Scrummaster years.
     Eventually she just built it herself in the hope that it would be useful to others, too.
     Any questions, suggestions or encouragement?
-    You can <a href="mailto:corinna@finding-marbles.com">email her</a> or
-    <a href="https://twitter.com/findingmarbles">follow her on Twitter</a>.
+    You can <a href="mailto:corinna@retromat.org">email her</a> or
+    <a href="https://twitter.com/corinnabaldauf">follow her on Twitter</a>.
     If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her <a href="http://wall-skills.com">summaries on Wall-Skills.com</a>.  
 EOT;
 
@@ -47,7 +47,7 @@ Timon gives <a href="/en/team/timon">Scrum Trainings</a>. As Integral Coach and 
     <a href="https://twitter.com/TimonFiddike">follow him on Twitter</a>. Photo © Ina Abraham.
 EOT;
 
-$_lang['PRINT_HEADER'] = 'by Finding-Marbles.com';
+$_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = '来源:';
 $_lang['ACTIVITY_PREV'] = '显示该阶段的其他活动';

@@ -482,7 +482,7 @@ var PHASE_ID_TAG = 'phase';
 <?php } ?>
 
         <div style="clear:both">
-           <a href="http://finding-marbles.com/">
+           <a href="https://www.corinnabaldauf.de/">
                <img src="/static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
            </a>
            <h3 style="margin-bottom: 10px">
