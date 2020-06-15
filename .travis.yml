@@ -42,6 +42,7 @@ before_deploy:
     - rm -rf .travis/
     - openssl aes-256-cbc -d -a -in backend/app/config/parameters.yml.avior.enc -out backend/app/config/parameters.yml -k $travis_key
     - php backend/bin/travis-ci/deploy.php $TRAVIS_COMMIT
+    - php backend/bin/travis-ci/deployU7.php $TRAVIS_COMMIT
     - ssh-agent -k
 
 notifications:
