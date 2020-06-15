@@ -7,7 +7,7 @@ declare(strict_types=1);
 class DeploymentU7
 {
     const BuildDirPrefix = 'travis-build/';
-    const SshDestination = 'retro7@cyllene';
+    const SshDestination = 'retro7@cyllene.uberspace.de';
     const WebSpaceDirPrefix = '/var/www/virtual/retro7/';
 
     /**
@@ -77,7 +77,7 @@ class DeploymentU7
     private function cleanupBuildDir()
     {
         system('php backend/bin/console cache:clear --no-warmup --env=prod');
-        system('mkdir backend/var/logs-travis');
+        system('mkdir backend/var/logs-travis-U7');
         system('mv backend/var/logs/* backend/var/logs-travis');
     }
 
