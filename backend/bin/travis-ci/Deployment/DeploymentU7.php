@@ -93,7 +93,7 @@ class DeploymentU7
     private function addKnownHost()
     {
         file_put_contents(
-            getenv('HOME').'/.ssh/config',
+            getenv('HOME').'/.ssh/known_hosts',
             "cyllene.uberspace.de,185.26.156.217 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBeR+Mxs76A3m5BL7/kmsnr9m1PwaEDRwavOdrRq5wON\n",
             FILE_APPEND
         );
