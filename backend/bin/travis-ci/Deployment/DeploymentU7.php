@@ -159,7 +159,7 @@ class DeploymentU7
 
     private function remoteUpdateDatabase()
     {
-        $this->remote('/home/retromat/bin_bin.git/dump_mysql.sh');
+        $this->remote('/home/retro7/bin/dump_mysql.sh');
         $this->remote(
             'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
         );
@@ -168,7 +168,7 @@ class DeploymentU7
     private function remoteCacheClearAndWarm()
     {
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
-        $this->remote('redis-cli -s /home/retromat/.redis/sock FLUSHALL');
+        $this->remote('redis-cli -s /home/retro7/.redis/sock FLUSHALL');
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
     }
 
