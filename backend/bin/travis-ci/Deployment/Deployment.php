@@ -83,8 +83,9 @@ class Deployment
 
     private function createArtifact()
     {
+        system('rm -rf '.self::BuildDirPrefix.$this->buildDirName);
         system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
-        system('mv * '.self::BuildDirPrefix.$this->buildDirName);
+        system('cp -rp * '.self::BuildDirPrefix.$this->buildDirName);
         system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
         system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
     }
