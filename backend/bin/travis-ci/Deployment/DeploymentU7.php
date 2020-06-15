@@ -65,6 +65,7 @@ class DeploymentU7
     {
         $this->cleanupBuildDir();
         $this->createArtifact();
+        $this->addKnownHost();
         $this->enableSshConnectionMultiplexing();
         $this->transferArtifact();
 
@@ -89,12 +90,20 @@ class DeploymentU7
         system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
         system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
     }
+    private function addKnownHost()
+    {
+        file_put_contents(
+            getenv('HOME').'/.ssh/config',
+            "cyllene.uberspace.de,185.26.156.217 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBeR+Mxs76A3m5BL7/kmsnr9m1PwaEDRwavOdrRq5wON\n",
+            FILE_APPEND
+        );
+    }
 
     private function enableSshConnectionMultiplexing()
     {
         file_put_contents(
             getenv('HOME').'/.ssh/config',
-            "Host avior.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n",
+            "Host cyllene.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n",
             FILE_APPEND
         );
     }
