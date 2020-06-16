@@ -73,13 +73,15 @@ class DeploymentU7
         $this->remoteUpdateDatabase();
         $this->remoteCacheClearAndWarm();
         $this->remoteExpose();
+
+        $this->cleanup();
     }
 
     private function cleanupBuildDir()
     {
         system('php backend/bin/console cache:clear --no-warmup --env=prod');
         system('mkdir backend/var/logs-travis-U7');
-        system('mv backend/var/logs/* backend/var/logs-travis');
+        system('mv backend/var/logs/* backend/var/logs-travis-U7 # if U6 was deployed before, there may be nothing to move and that is O.K.');
     }
 
     private function createArtifact()
@@ -204,5 +206,10 @@ class DeploymentU7
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl -k https://'.$this->deploymentDomain.' -o /dev/null');
+    }
+
+    private function cleanup(){
+        system('rm -rf '.self::BuildDirPrefix.$this->buildDirName);
+        system('cd '.self::BuildDirPrefix.' ; rm -f '.$this->artifactFileName.' ; rm -rf '.$this->buildDirName);
     }
 }

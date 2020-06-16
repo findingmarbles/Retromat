@@ -72,6 +72,8 @@ class Deployment
         $this->remoteUpdateDatabase();
         $this->remoteCacheClearAndWarm();
         $this->remoteExpose();
+        
+        $this->cleanup();
     }
 
     private function cleanupBuildDir()
@@ -83,7 +85,6 @@ class Deployment
 
     private function createArtifact()
     {
-        system('rm -rf '.self::BuildDirPrefix.$this->buildDirName);
         system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
         system('cp -rp * '.self::BuildDirPrefix.$this->buildDirName);
         system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
@@ -195,5 +196,10 @@ class Deployment
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl -k https://'.$this->deploymentDomain.' -o /dev/null');
+    }
+
+    private function cleanup(){
+        system('rm -rf '.self::BuildDirPrefix.$this->buildDirName);
+        system('cd '.self::BuildDirPrefix.' ; rm -f '.$this->artifactFileName.' ; rm -rf '.$this->buildDirName);
     }
 }
