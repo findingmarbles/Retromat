@@ -1,3 +1,4 @@
+
 // All activity photos are kept in the git repository now.
 // To add a new activity photo file, perform the following steps:
 // 1. Put the file into: backend/web/static/images/activities
@@ -43,6 +44,9 @@ all_photos[11] = [
 ];
 all_photos[12] = [
 {filename:    path + "13_Smart-Goals.jpg", contributor: "Manuel Küblböck"}
+];
+all_photos[13] = [
+{filename:    path + "14-roti.jpg", contributor: "Aljona Buchloh"}
 ];
 all_photos[17] = [
 {filename:    path + "18_Amazon-Review.jpg", contributor: "Andy Rosslau"}
@@ -104,6 +108,9 @@ all_photos[48] = [
 {filename:    path + "49_Starfish.jpg", contributor: "Stefanie Kreidler"},
 {filename:    path + "49_Starfish_2.jpg", contributor: "Rollup Consulting"}
 ];
+all_photos[50] = [
+{filename:    path + "51-lean-coffee.jpg", contributor: "Aljona Buchloh"}
+];
 all_photos[53] = [
 {filename:    path + "54_Story-Oscars.jpg", contributor: "Wolfgang Fassbender"},
 {filename:    path + "54_Story-Oscars_2.jpg", contributor: "Deborah Lindsey"},
@@ -135,6 +142,9 @@ contributor: "Wayne D. Grant"
 all_photos[67] = [
 {filename:    path + "68_Company-Map.jpg", contributor: "Annette Harder"},
 {filename:    path + "68_Company-Map-2.JPG", contributor: "Pedro Ángel Serrano"}
+];
+all_photos[68] = [
+{filename:    path + "69_worst-we-could-do.jpg", contributor: "Aljona Buchloh"}
 ];
 all_photos[69] = [
 {filename:    path + "70_3-for-1.jpg", contributor: "Manuel Küblböck"}
