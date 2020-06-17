@@ -55,7 +55,7 @@ class DeploymentU7
         $this->artifactDestinationDir = self::WebSpaceDirPrefix.'retromat-artifacts/';
         $this->deploymentDestinationDir = self::WebSpaceDirPrefix.'retromat-deployments/';
         $this->deploymentDir = self::WebSpaceDirPrefix.'retromat-deployments/'.$this->buildDirName;
-        $this->deploymentDomain = 'retro7.uber.space';
+        $this->deploymentDomain = 'retromat.org';
     }
 
     /**
