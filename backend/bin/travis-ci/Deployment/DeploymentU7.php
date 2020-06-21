@@ -7,8 +7,9 @@ declare(strict_types=1);
 class DeploymentU7
 {
     const BuildDirPrefix = 'travis-build/';
-    const SshDestination = 'retro7@cyllene.uberspace.de';
-    const WebSpaceDirPrefix = '/var/www/virtual/retro7/';
+    const SshDestination = 'retro2@cordelia.uberspace.de';
+    const WebSpaceDirPrefix = '/var/www/virtual/retro2/';
+    const HomeDir = '/home/retro2/';
 
     /**
      * @var string
@@ -161,7 +162,7 @@ class DeploymentU7
 
     private function remoteUpdateDatabase()
     {
-        $this->remote('/home/retro7/bin/dump_mysql.sh');
+        $this->remote(self::HomeDir.'bin/dump_mysql.sh');
         $this->remote(
             'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
         );
@@ -170,7 +171,7 @@ class DeploymentU7
     private function remoteCacheClearAndWarm()
     {
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
-        $this->remote('redis-cli -s /home/retro7/.redis/sock FLUSHALL');
+        $this->remote('redis-cli -s '.self::HomeDir.'.redis/sock FLUSHALL');
         $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
     }
 
