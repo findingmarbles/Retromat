@@ -8,6 +8,8 @@ class DeploymentU7
 {
     const BuildDirPrefix = 'travis-build/';
     const SshDestination = 'retro2@cordelia.uberspace.de';
+    const SshKnownHosts = "cordelia.uberspace.de,185.26.156.184 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH43/bZ1goXjDAs+RbhvLn7TgU5tVPbz49U7cnQ9Z2nc\n";
+    const HostName = 'cordelia.uberspace.de';
     const WebSpaceDirPrefix = '/var/www/virtual/retro2/';
     const HomeDir = '/home/retro2/';
 
@@ -97,7 +99,7 @@ class DeploymentU7
     {
         file_put_contents(
             getenv('HOME').'/.ssh/known_hosts',
-            "cyllene.uberspace.de,185.26.156.217 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBeR+Mxs76A3m5BL7/kmsnr9m1PwaEDRwavOdrRq5wON\n",
+            self::SshKnownHosts,
             FILE_APPEND
         );
     }
@@ -106,7 +108,7 @@ class DeploymentU7
     {
         file_put_contents(
             getenv('HOME').'/.ssh/config',
-            "Host cyllene.uberspace.de\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n",
+            "Host ".self::HostName."\n\tStrictHostKeyChecking no\n\tControlMaster auto\n\tControlPath ~/.ssh/master-%r@%h:%p\n\tControlPersist 15\n",
             FILE_APPEND
         );
     }
