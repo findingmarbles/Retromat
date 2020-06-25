@@ -48,8 +48,6 @@ class DeploymentU7
      */
     public function __construct($travisCommit)
     {
-        system('echo '.$travisCommit.' > '.'backend/web/commit.txt');
-
         // local settings
         $this->buildDirName = date_format(date_create(), 'Y-m-d__H-i-s__').$travisCommit;
         $this->artifactFileName = $this->buildDirName.'.tar.gz ';
