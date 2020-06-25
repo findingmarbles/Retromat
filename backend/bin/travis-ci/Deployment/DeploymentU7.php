@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Higly specific for travis-ci + uberspace, because we hope to stay here for a couple of years :-)
+ * Highly specific for travis-ci + uberspace, because we hope to stay here for a couple of years :-)
  */
 class DeploymentU7
 {
@@ -91,7 +91,7 @@ class DeploymentU7
     {
         system('rm -rf '.self::BuildDirPrefix.$this->buildDirName);
         system('mkdir -p '.self::BuildDirPrefix.$this->buildDirName);
-        system('cp -rp * '.self::BuildDirPrefix.$this->buildDirName);
+        system('cp -rp backend '.self::BuildDirPrefix.$this->buildDirName);
         system('chmod -R 755 '.self::BuildDirPrefix.$this->buildDirName);
         system('cd '.self::BuildDirPrefix.' ; tar cfz '.$this->artifactFileName.' '.$this->buildDirName);
     }
