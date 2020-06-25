@@ -161,6 +161,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $activityImporter->import();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+            return;
         }
 
         $this->fail('Expected exception not thrown: InvalidActivityException for Activity (type 1).');
@@ -181,6 +182,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $activityImporter->import2();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+            return;
         }
 
         $this->fail('Expected exception not thrown: InvalidActivityException for Activity2 metadata.');
@@ -204,6 +206,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
             $activityImporter->import2();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+            return;
         }
 
         $this->fail('Expected exception not thrown: InvalidActivityException for Activity2 translation.');
