@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# on avior, sitemap generation takes about 17 minutes because of the large number of plans,
+# on avior, sitemap generation took about 17 minutes because of the large number of plans,
 # but we always want to present a consistent state to search engines, therefore:
 # export into the "generating-now" directory, then publish all files at once.
+#
+# Need to try this on cordelia at some point in time.
+#
 mkdir -p /var/www/virtual/retromat/retromat-sitemaps/generating-now/
 
 php /var/www/virtual/retromat/retromat-deployments/current/backend/bin/console --env=prod presta:sitemaps:dump --gzip \
