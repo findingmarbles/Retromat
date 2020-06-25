@@ -80,7 +80,7 @@ class DeploymentU7
 
     private function cleanupBuildDir()
     {
-        system('php backend/bin/console cache:clear --no-warmup --env=prod');
+        system('php backend/bin/console cache:clear --no-warmup --env=prod --quiet');
         system('mkdir backend/var/logs-travis-U7');
         system('mv backend/var/logs/* backend/var/logs-travis-U7 # if U6 was deployed before, there may be nothing to move and that is O.K.');
     }
@@ -164,15 +164,15 @@ class DeploymentU7
     {
         $this->remote(self::HomeDir.'bin/dump_mysql.sh');
         $this->remote(
-            'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction'
+            'cd '.$this->deploymentDir.' ; php backend/bin/console doctrine:migrations:migrate --no-interaction --quiet'
         );
     }
 
     private function remoteCacheClearAndWarm()
     {
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:clear --no-warmup --env=prod --quiet');
         $this->remote('redis-cli -s '.self::HomeDir.'.redis/sock FLUSHALL');
-        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod');
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/console cache:warmup --env=prod --quiet');
     }
 
     private function remoteExpose()
