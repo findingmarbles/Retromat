@@ -160,7 +160,7 @@ class ActivityImporterIntegrationTest extends WebTestCase
         try {
             $activityImporter->import();
         } catch (InvalidActivityException $exception) {
-            return;
+            $this->assertTrue();
         }
 
         $this->fail('Expected exception not thrown: InvalidActivityException for Activity (type 1).');
