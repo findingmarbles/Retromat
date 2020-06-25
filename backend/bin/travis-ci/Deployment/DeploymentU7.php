@@ -140,9 +140,9 @@ class DeploymentU7
             exit(2);
         }
 
-        // notify about success
-        echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
+        // only notify in case of failure
         if (0 !== strcmp($md5Local, $md5Remote)) {
+            echo PHP_EOL.'Local md5:  '.$md5Local.PHP_EOL.'Remote md5: '.$md5Remote;
             exit(3);
         }
     }
@@ -206,7 +206,7 @@ class DeploymentU7
         $this->remote('uberspace tools restart php');
 
         // ensure that php-cgi starts and caches to most needed php files right now
-        system('curl -k https://'.$this->deploymentDomain.' -o /dev/null');
+        system('curl --silent --show-error --insecure https://'.$this->deploymentDomain.' -o /dev/null');
     }
 
     private function cleanup(){
