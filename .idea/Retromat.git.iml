@@ -34,6 +34,9 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/incenteev/composer-parameter-handler" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/knplabs/doctrine-behaviors" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/liip/functional-test-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ocramius/package-versions" />
@@ -58,9 +61,11 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php56" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php70" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/symfony" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/webimpress/safe-writer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/willdurand/jsonp-callback-validator" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/willdurand/negotiation" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/zendframework/zend-code" />

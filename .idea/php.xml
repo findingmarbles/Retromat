@@ -62,6 +62,11 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/reflection" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-code" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
