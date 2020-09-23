@@ -288,16 +288,14 @@ var PHASE_ID_TAG = 'phase';
 <!--
     <div class="book subscribe">
         <div class="content" style="line-height: 20px">
-        Join 6000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
+        Join 7000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
         <br><br>
-            <form action="https://finding-marbles.us7.list-manage.com/subscribe/post?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07&amp;INTEREST=Home" method="post" name="subscribe_form" class="subscribe_form" target="_blank">
-                <input id="email_address" name="EMAIL" class="subscribe_input" value="Your email address" onfocus="javascript:removeDefaultText();" onblur="javascript:setDefaultText();" type="email">
-                <input class="orange-button subscribe_submit" value="Subscribe" type="submit">
-            </form>
+        <a href="https://landing.mailerlite.com/webforms/landing/u1x3o6">Subscribe to the Retromat newsletter (1-2 mails per month)</a>
+        TODO ORANGE BUTTON
 
             <span class="no-spam">
                 Wondering what content you'll get?
-                <a href="https://us7.campaign-archive.com/home/?u=e8749d4c3e1a6d758a4bd1d93&amp;id=7697399e07" target="_blank">Look at past emails</a> | 
+                <a href="TODO" target="_blank">Look at past emails</a> | 
                 <a href="https://retromat.org/blog/privacy-policy/" target="_blank">Privacy Policy</a>
             </span>
         </div>
