@@ -87,11 +87,6 @@ login:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix:   /{_locale}
-newsletter:
-    path: /en/newsletter
-    defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    newsletter.html.twig
 membership:
     path: /en/membership
     defaults:
