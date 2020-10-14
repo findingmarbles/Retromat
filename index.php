@@ -268,15 +268,8 @@ var PHASE_ID_TAG = 'phase';
       <span class="navi">
               <a href="/blog/">Blog</a> |
               <a href="/en/books">Books</a> |
+              <a href="/en/membership">Membership</a> | 
               <a href="/en/about">About</a>
-        <!-- 
-        <?php echo($_lang['INDEX_NAVI_WHAT_IS_RETRO']); ?> |
-        <?php echo($_lang['INDEX_NAVI_ABOUT']); ?> |
-        <?php echo($_lang['INDEX_NAVI_PRINT']); ?>
-		  <!-- PAUSED Until I've got more time
-		  |
-        <?php echo($_lang['INDEX_NAVI_ADD_ACTIVITY']); ?>
-        -->
       </span>
 </div>
 
