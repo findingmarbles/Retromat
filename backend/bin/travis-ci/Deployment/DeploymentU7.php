@@ -74,6 +74,7 @@ class DeploymentU7
         $this->remoteUpdateDatabase();
         $this->remoteCacheClearAndWarm();
         $this->remoteExpose();
+        $this->cleanupRemote();
 
         $this->cleanup();
     }
@@ -207,6 +208,10 @@ class DeploymentU7
 
         // ensure that php-cgi starts and caches to most needed php files right now
         system('curl --silent --show-error --insecure https://'.$this->deploymentDomain.' -o /dev/null');
+    }
+
+    private function cleanupRemote(){
+        $this->remote('cd '.$this->deploymentDir.' ; php backend/bin/cordelia/delete-old-deployments.php');
     }
 
     private function cleanup(){

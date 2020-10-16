@@ -6,10 +6,10 @@
 #
 # Need to try this on cordelia at some point in time.
 #
-mkdir -p /var/www/virtual/retromat/retromat-sitemaps/generating-now/
+mkdir -p /var/www/virtual/retro2/retromat-sitemaps/generating-now/
 
-php /var/www/virtual/retromat/retromat-deployments/current/backend/bin/console --env=prod presta:sitemaps:dump --gzip \
-  /var/www/virtual/retromat/retromat-sitemaps/generating-now/
-mv /var/www/virtual/retromat/retromat-sitemaps/generating-now/* /var/www/virtual/retromat/retromat-sitemaps
+php /var/www/virtual/retro2/retromat-deployments/current/backend/bin/console --env=prod presta:sitemaps:dump --gzip \
+  /var/www/virtual/retro2/retromat-sitemaps/generating-now/
+mv /var/www/virtual/retro2/retromat-sitemaps/generating-now/* /var/www/virtual/retromat/retromat-sitemaps
 
-rmdir /var/www/virtual/retromat/retromat-sitemaps/generating-now/
+rmdir /var/www/virtual/retro2/retromat-sitemaps/generating-now/
