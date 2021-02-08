@@ -6,7 +6,7 @@
 
 # Background:
 # No cd ... or absolute paths here, because
-# this command needs to work on local machines and on trvais-ci, too.
+# this command needs to work on local machines and on travis-ci, too.
 
 mkdir -p backend/app/Resources/views/home/generated/
 
