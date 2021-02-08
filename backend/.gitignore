@@ -1,6 +1,4 @@
 /app/config/parameters.yml
-/app/config/parameters.yml.avior
-/app/config/parameters.yml.vega
 /app/Resources/views/home/generated/
 /build/
 /var/*
