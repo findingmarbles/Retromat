@@ -1381,8 +1381,7 @@ name:      "Outcome Expectations",
 summary:   "Everyone states what they want out of the retrospective",
 desc:      "Everyone in the team states their goal for the retrospective, i.e. what they \
 want out of the meeting. Examples of what participants might say: \
-<ul> \
-    <li>I'm happy if we get 1 good action item</li> \
+<ul><li>I'm happy if we get 1 good action item</li> \
     <li>I want to talk about our argument about unit tests and agree on how we'll do it in the future</li> \
     <li>I'll consider this retro a success, if we come up with a plan to tidy up $obscureModule</li> \
 </ul> \
