@@ -15,7 +15,6 @@ install:
     - composer install --working-dir=backend
 
 before_script:
-    - php backend/bin/console security:check backend/ --end-point=https://security.symfony.com/check_lock
     - php backend/bin/console doctrine:database:create
     - php backend/bin/console doctrine:migrations:migrate --no-interaction
     - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
