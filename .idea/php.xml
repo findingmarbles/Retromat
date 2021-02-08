@@ -7,7 +7,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/backend/vendor/composer" />
       <path value="$PROJECT_DIR$/backend/vendor/bin/.phpunit" />
       <path value="$PROJECT_DIR$/backend/vendor/presta/sitemap-bundle" />
@@ -35,7 +34,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/rest-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/user-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/ocramius/package-versions" />
       <path value="$PROJECT_DIR$/backend/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/backend/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-cache-bundle" />
@@ -54,9 +52,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/migrations" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/persistence" />

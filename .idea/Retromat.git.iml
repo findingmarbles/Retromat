@@ -39,7 +39,6 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/liip/functional-test-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ocramius/package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/presta/sitemap-bundle" />
@@ -58,9 +57,6 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-apcu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-icu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-mbstring" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php56" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php70" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-util" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/symfony" />
