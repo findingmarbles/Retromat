@@ -479,3 +479,4 @@ function switchLanguage(new_lang) {
     new_url = location.protocol + '//' + location.host + '/' + new_lang + '/';
     window.open(new_url, "_self");
 }
+

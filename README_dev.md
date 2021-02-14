@@ -3,129 +3,108 @@
 Setting up a dev instance on Uberspace
 ========
 
-Only in German for now. Let us know if you need an English version.
+* Register a new UberSpace https://uberspace.de/register
 
-* Uberspace anlegen: https://uberspace.de/register - Hier verwenden wir "redev01" als Beispiel. Alles was für redev01 erklärt wird funktioniert natürlich auch mit einem weiteren Space Namen ... da der Space Name auch system user, db user und Bestandteil etlicher Verzeichnisnamen ist, am besten in einer lokalen Kopie dieses READMEs alle Vorkommen von redev01 durch den jeweils neuen Namen ersetzen ...
-* neuen Uberspace Version 6(!) erstellen "redev01" (U7 bekommt Redis erst später)
-* (optional) SSH public key(s) bei Uberspace redev01 hinterlegen für einfachen Zugriff: https://uberspace.de/dashboard/authentication. Alternativ: Passwort setzen (auf der gleichen Seite)
+* Ensure the right (tm) version of PHP, see .travis.yml for which one you need, then activate that one on the new uberspace like this:
+```
+uberspace tools version use php 7.4
+```
 
-Per SSH auf Uberspace redev01 einloggen (den Namen des Uberspaces findest Du z.B. auf dem "Datenblatt"-Reiter https://uberspace.de/dashboard/datasheet ) und dann dort alle weiteren Kommandos ausführen (wenige Ausnamen, wo etwas nicht auf dem Server zu tun ist, sind deutlich markiert):
-* SSH keypair auf Uberspace redev01 erstellen und public key bei eigenem Github user eintragen
+* Setup Redis service https://lab.uberspace.de/guide_redis.html
+
+* Obtain DB dump from live retromat.org (make a fresh dump of only retromat db, avoid blog and analytics DB ...), put it on the new space
 ```
-ssh-keygen -t rsa -b 4096
-cat .ssh/id_rsa.pub 
+# ssh <SpaceNameLive>@c....uberspace.de
+mysqldump --defaults-file=/home/<SpaceNameLive>/.my.cnf --databases <SpaceNameLive>_retromat > <SpaceNameLive>_retromat.sql
+# local
+scp <SpaceNameLive>@c....uberspace.de:<SpaceNameLive>_retromat.sql .
+scp <SpaceNameLive>_retromat.sql <SpaceNameDev>@canopus.uberspace.de:
 ```
-* Redis als dauerhaften Service aktivieren
+* on the new UberSpace: gunzip DB dump (if .gz), edit it and comment out "create db" and "use db" im present, then create new DB and import dump
 ```
-test -d ~/service || uberspace-setup-svscan
-uberspace-setup-redis 
+# ssh <SpaceNameDev>@canopus.uberspace.de
+echo 'CREATE DATABASE <SpaceNameDev>_retromat'| mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf
+mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf <SpaceNameDev>_retromat <  retro2_retromat.sql
 ```
-* Redis PHP Extention kompilieren und aktivieren
+* Clone git repo
 ```
-uberspace-install-pecl redis
-killall php-cgi
+cd /var/www/virtual/<SpaceNameDev>/
+git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git retromat.git
 ```
-*  Sessions Verzeichnis anlegen
+* Copy config template as active config
 ```
-mkdir /var/www/virtual/redev01/sessions
+cd /var/www/virtual/<SpaceNameDev>/retromat.git/
+cp backend/app/config/parameters.yml.dist backend/app/config/parameters.yml
 ```
-* Composer installieren
+* Edit config to reflect properties of current space (db host: localhost, db password from ~/.my.cnf etc.)...
 ```
-cd ~
-test -d ~/bin || mkdir ~/bin  
-curl -sS https://getcomposer.org/installer | php -- --install-dir=./bin 
+vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/app/config/parameters.yml
 ```
-* Git repo klonen
+... Create sessions dir and adjust path in parameters.yml
 ```
-cd /var/www/virtual/redev01/
-git clone git@github.com:findingmarbles/Retromat.git retromat.git
+mkdir /var/www/virtual/<SpaceNameDev>/sessions
 ```
-* Config template als aktive Config
+... set redis connection in parameters.yml
 ```
-cd /var/www/virtual/redev01/retromat.git/
-cp backend/app/config/parameters.yml.redev backend/app/config/parameters.yml
+redis_connection: (home dir, z.B. /home/<SpaceNameDev>/.redis/sock )
 ```
-* Config editieren ...
+* Install libraries
 ```
-vim /var/www/virtual/redev01/retromat.git/backend/app/config/parameters.yml
+cd /var/www/virtual/<SpaceNameDev>/retromat.git/backend
+composer install
 ```
-... diese Werte von Hand setzen:
+
+* Create temaples from index.php
 ```
-database_name: redev01_retromat
-database_user: redev01
-database_password: (siehe cat ~/.my.cnf )
-redis_connection: (home dir, z.B. /home/redev01/.redis/sock )
-```
-* Libraries installieren
-```
-cd /var/www/virtual/redev01/retromat.git/backend
-composer.phar install
-```
-* DB anlegen
-```
-bin/console doctrine:database:create
-```
-* Aktuellen live DB Dump besorgen ...
-* ... AUF AVIOR ... 
-```
-/usr/bin/mysqldump --defaults-file=/home/retromat/.my.cnf --databases retromat_v2 > ~/retromat-dev.sql
-```
-*  ... LOKAL ... 
-```
-scp retromat@avior.uberspace.de:retromat-dev.sql .
-scp retromat-dev.sql redev01@canopus.uberspace.de:
-```
-*  ... alle weiteren Kommandos wieder auf dem neuen Uberspace!!
-* Dev DB anlegen
-```
-cd /var/www/virtual/redev01/retromat.git/backend
-bin/console doctrine:database:create
-```
-* Aktuellen live DB Dump anpassen:
-```
-vim ~/retromat-dev.sql
-```
-Die ersten zwei nicht-Kommentar Zeilen (CREATE DATABASE ... USE ...) editieren, neuen DB Name ( redev01_retromat einsetzten)
-* Editierten DB Dump einpspielen:
-```
-cd ~
-cat retromat-dev.sql | mysql
-cd /var/www/virtual/redev01/retromat.git/backend
-bin/console doctrine:schema:validate
-```
-* Templates aus index.php erstellen
-```
-cd /var/www/virtual/redev01/retromat.git/
+cd /var/www/virtual/<SpaceNameDev>/retromat.git/
 backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 ```
-* Web Verzeichnis von Symfony per Symlink im Web sichtbar machen
+* Make web directory visible
 ```
-cd /var/www/virtual/redev01
-ln -s retromat.git/backend/web/ redev01.canopus.uberspace.de
+cd /var/www/virtual/<SpaceNameDev>
+ln -s retromat.git/backend/web/ <SpaceNameDev>.uber.space
 ```
+* And now this instance is availabe here: https://<username>.uber.space/robots.txt
 
-* Und nun ist diese Dev Instanz im Web erreichbar:
-```
-https://redev01.canopus.uberspace.de/
-```
 # Clear caches so you can see changes
 * Re-generate Twig templates from index.php - technically speaking not really a cache, but something you need to clear manually in order to get to see your changes
 ```
-cd /var/www/virtual/redev01/retromat.git/
+cd /var/www/virtual/<SpaceNameDev>/retromat.git/
 backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 ```
 * You can clear actual caches on the server like this:
 ```
-cd /var/www/virtual/redev01/retromat.git/backend
+cd /var/www/virtual/<SpaceNameDev>/retromat.git/backend
 bin/console cache:clear --no-warmup --env=prod
 bin/console cache:clear --no-warmup --env=dev
-redis-cli -s /home/retromat/.redis/sock FLUSHALL
+redis-cli -s /home/<SpaceNameDev>/.redis/sock FLUSHALL
 ```
 * We allow browser caching for HTML and assets (JS, CSS), so you may need to clear your browser cache as well. Some browsers allow disabling caches while the developer tools are open.
 
 # Bypass some caches on dev instance for easier development
 * Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony. To make it available on your dev instance (even without an SSH tunnel, like on avior) edit this file. Inside the file, you find instructions on which block to comment out:
 ```
-cd /var/www/virtual/redev01/retromat.git/backend
-vim web/app_dev.php
+vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/web/app_dev.php
+```
+* In the example, this has been done already, so if you want to see this
+```
+https://<SpaceNameDev>.uber.space/en/?id=114-54-26-38-15
+```
+* ... but bypass most caches and see the debug toolbar see ...
+```
+https://<username>.uber.space/app_dev.php/en/?id=114-54-26-38-15
+```
+So basically replace ".space/" with ".space/app_dev.php/" in the URL.
+
+# Debug
+* See here for lowlevel PHP logs (may be empty, as most are handeled by Symfony)
+https://manual.uberspace.de/web-logs/#error-log-php
+~/logs/error_log_php
+* See here for Symfony logs
+/var/www/virtual/<SpaceNameDev>/retromat.git/backend/var/logs
+
+# Run all tests
+```
+cd /var/www/virtual/<username>/retromat.git/backend
+vendor/bin/simple-phpunit
 ```

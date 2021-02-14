@@ -64,9 +64,13 @@
       <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/backend/vendor" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/backend/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-util" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.1">
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpUnit">
