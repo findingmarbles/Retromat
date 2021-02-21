@@ -95,9 +95,16 @@ https://<SpaceNameDev>.uber.space/en/?id=114-54-26-38-15
 https://<username>.uber.space/app_dev.php/en/?id=114-54-26-38-15
 ```
 So basically replace ".space/" with ".space/app_dev.php/" in the URL.
+
 # Debug
 * See here for lowlevel PHP logs (may be empty, as most are handeled by Symfony)
 https://manual.uberspace.de/web-logs/#error-log-php
 ~/logs/error_log_php
 * See here for Symfony logs
 /var/www/virtual/<SpaceNameDev>/retromat.git/backend/var/logs
+
+# Run all tests
+```
+cd /var/www/virtual/retrodev/retromat.git/backend
+vendor/bin/simple-phpunit
+```
