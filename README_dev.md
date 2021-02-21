@@ -105,6 +105,6 @@ https://manual.uberspace.de/web-logs/#error-log-php
 
 # Run all tests
 ```
-cd /var/www/virtual/retrodev/retromat.git/backend
+cd /var/www/virtual/<username>/retromat.git/backend
 vendor/bin/simple-phpunit
 ```
