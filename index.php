@@ -395,7 +395,7 @@ var PHASE_ID_TAG = 'phase';
     <div class="js_activity_block_template js_activity_block display_none">
         <div class="content">
             <div class="activity">
-                <div class="js_phase-stepper phase-stepper js_next_button">
+                <div class="js_phase-stepper phase-stepper js_prev_button">
                     <a href="javascript:Previous" class="js_prev_button_href"
                        title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;
                     </a>
