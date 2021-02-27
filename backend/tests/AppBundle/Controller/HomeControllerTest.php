@@ -407,7 +407,7 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/en/?id=3');
         $this->assertEquals(
             '?id=18',
-            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_next_button')->attr('href')
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_next_button_href')->attr('href')
         );
     }
 
@@ -419,7 +419,7 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/en/?id=18');
         $this->assertEquals(
             '?id=3',
-            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_prev_button')->attr('href')
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_prev_button_href')->attr('href')
         );
     }
 
@@ -431,12 +431,12 @@ class HomeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
         $this->assertEquals(
             '?id=18-87-113-13-16',
-            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_next_button')->attr('href')
+            $crawler->filter('.js_activity_block')->eq(0)->filter('.js_next_button_href')->attr('href')
         );
 
         $this->assertEquals(
             '?id=3-89-113-13-16',
-            $crawler->filter('.js_activity_block')->eq(1)->filter('.js_next_button')->attr('href')
+            $crawler->filter('.js_activity_block')->eq(1)->filter('.js_next_button_href')->attr('href')
         );
     }
 

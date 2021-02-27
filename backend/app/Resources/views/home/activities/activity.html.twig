@@ -1,9 +1,9 @@
     <div class="js_activity_block bg{{ color_variation.nextColor() }}">
         <div class="content">
             <div class="activity">
-                <div class="js_phase-stepper phase-stepper {% if phase is not null %} hidden{% endif %}">
+                <div class="js_phase-stepper phase-stepper js_prev_button {% if phase is not null %} hidden{% endif %}">
                     <a href="?id={{ activity_by_phase.previousIds(ids, activity.getRetromatId, activity.getPhase)|join('-') }}"
-                       title="Previous" class="js_prev_button">&#9668;
+                       title="Previous" class="js_prev_button_href">&#9668;
                     </a>
                 </div>
                 <div class="activity_content">
@@ -38,9 +38,9 @@
                         <span class="js_fill_photo-link"></span>
                     </div><!-- END .js_photo_link -->
                 </div>
-                <div class="js_phase-stepper phase-stepper {% if phase is not null %} hidden{% endif %}">
+                <div class="js_phase-stepper phase-stepper js_next_button {% if phase is not null %} hidden{% endif %}">
                     <a href="?id={{ activity_by_phase.nextIds(ids, activity.getRetromatId, activity.getPhase)|join('-') }}"
-                       title="Next" class="js_next_button">&#9658;
+                       title="Next" class="js_next_button_href">&#9658;
                     </a>
                 </div>
             </div>
