@@ -3,7 +3,6 @@
 <head>
     <title>Retromat Activity Editor: {{ app.request.locale|upper }} {{ activity.id }} {{ activity.getName }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif"/>
     <link rel="stylesheet" type="text/css" href="/static/retromat.css"/>
     <link rel="shortcut icon" href="/static/images/favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png"/>
@@ -11,18 +10,17 @@
 <body>
 <div class="pitch">
     <div class="content" style="padding-top: 30px; font-size: 1em;">
-        <a href="{{ path('team_activity_index') }}">&lt; List</a>
-        <br>
-        <br>
-        <a href="{{ path('team_activity_edit', { 'id': activity.id }) }}">Edit</a> | <a target="_blank"
-                                                                                        href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}">Live </a>(10min
-        browser
-        caching)
-        <br>
-        <br>
-        <div style="font-size: 0.9em; line-height: 1.1;">The links to the activity (#number) and phase (underlined, top
-            right hand
-            corner) do not work in the preview. Links in &quot;source&quot; and description work.
+        <div class="inner">
+            <a href="{{ path('team_activity_index') }}">&lt; List</a>
+            <br>
+            <br>
+            <a href="{{ path('team_activity_edit', { 'id': activity.id }) }}">Edit</a> | <a target="_blank" href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}">Live </a>(10min browser caching)
+            <br>
+            <br>
+            <div style="font-size: 0.9em; line-height: 1.1;">The links to the activity (#number) and phase (underlined, top
+                right hand
+                corner) do not work in the preview. Links in &quot;source&quot; and description work.
+            </div>
         </div>
     </div>
 </div>

@@ -52,7 +52,7 @@ function get_url_to_index() {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $lang ?>">
 <head>
 <?php if (is_output_format_twig($argv)) { ?>
     {% if title is not empty %}
@@ -66,12 +66,13 @@ function get_url_to_index() {
 <?php } else { ?>
     <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
 <?php } ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
-<link rel="stylesheet" type="text/css" href="/static/retromat.css" />
+    <link rel="stylesheet" type="text/css" href="/static/retromat.css?v=2" />
 
 <link rel="shortcut icon" href="/static/images/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="/static/images/apple-touch-icon.png" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/static/jquery.min.js"><\/script>')</script>
@@ -90,7 +91,7 @@ function get_url_to_index() {
 <![endif]-->
 
 <script type="text/javascript">
-// "CONFIG"
+// CONFIG
 var NUMBER_OF_REGULAR_PHASES = 5;
 var PHASE_SOMETHING_DIFFERENT = 5;
 var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "different" phase is 1:INVERTED_CHANCE
@@ -251,289 +252,272 @@ var PHASE_ID_TAG = 'phase';
 
 <body onload="JavaScript:init()">
 
-<div class="header">
-    <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
-        <img class="header__logo" src="/static/images/logo_white.png" alt="Retromat" title="Retromat"></a>
-
-    <select class="languageswitcher" onChange="switchLanguage(this.value)">
-        <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (140 Aktivit&auml;ten)</option>
-        <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (140 activities)</option>
-        <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (140 actividades)</option>
-        <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (64 activit&eacute;s)</option>
-        <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
-        <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
-	<option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
-    </select>
-
-      <span class="navi">
-              <a href="/blog/">Blog</a> |
-              <a href="/en/books">Books</a> |
-              <a href="/en/membership">Membership</a> | 
-              <a href="/en/about">About</a>
-      </span>
-</div>
-
-<div class="pitch">
-    <div class="content">
-        <?php echo($_lang['INDEX_PITCH']); ?>
-    </div>
-</div>
-<!--
-    <div class="book subscribe">
-        <div class="content" style="line-height: 20px">
-        Join 7000+ subscribers and get new activities &amp; tips for retrospectives in your inbox!
-        <br><br>
-        <a href="https://landing.mailerlite.com/webforms/landing/u1x3o6">Subscribe to the Retromat newsletter (1-2 mails per month)</a>
-        TODO ORANGE BUTTON
-
-            <span class="no-spam">
-                Wondering what content you'll get?
-                <a href="TODO" target="_blank">Look at past emails</a> | 
-                <a href="https://retromat.org/blog/privacy-policy/" target="_blank">Privacy Policy</a>
-            </span>
-        </div>
-    </div>
--->
-
-<div class="book">
-    <div class="content" style="line-height: 20px">
-
-<!-- Print Retromat - added 20200122-20200504
-         OMG! Print Retromats are back! Get yours fresh off the printer
-        <br><br>
-        <a href="{{ path('print') }}"
-           style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">More about the Retromat Print Edition
-        </a>
-        <br><br>
-        (<a href="{{ path('ebook') }}" style="font-size: 0.8em">Looking for the ebook?</a>)
--->
-   
-<!--    
-        Run great agile retrospectives: Get all activities and more for your ebook reader!
-        <br><br>
-        <a href="{{ path('ebook') }}"
-           style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check
-            out the Retromat ebook!
-        </a>
-        <br><br>
-        (<a href="{{ path('print') }}" style="font-size: 0.8em">Looking for the Print Retromat?</a>)
--->    
-
-        There's a new Retromat book geared towards beginners!
-        <br><br>
-        <a href="/blog/new-book-15-plans-for-retrospectives/"
-           style="padding: 4px 7px; text-decoration: none; background-color: darkorange; border-radius: 5px; border: 2px white solid; color: white;">Check
-            out "Plans for Retrospectives"
-        </a>
-        <br><br>
-        (<a href="{{ path('print') }}" style="font-size: 0.8em">Looking for the Print Retromat?</a>)
-
-    </div>
-</div>
-
-
-
-<div class="plan-header">
-    <div class="content" style="padding: 0px; width: 710px;">
-        <div class="print-header">
-            Retromat <span class="finding_marbles">(retromat.org) <?php echo($_lang['PRINT_HEADER']); ?></span>
-        </div>
-        <div class="plan-header__wrapper">
-        <?php if (is_output_format_twig($argv)) { ?>
-        {% include 'home/header/idDisplay.html.twig' %}
-        <?php } else { ?>
-            <div class="ids-display">
-                <?php echo($_lang['INDEX_PLAN_ID']); ?>
-                <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
-                    <input type="text" size="18" name="js_display" class="ids-display__input" value="">
-                </form>
-            </div>
-        <?php } ?>
-            <div class="plan-navi">
-                <ul>
-                    <li>
-                        <a class="plan-navi__random" title="<?php echo($_lang['INDEX_RANDOM_RETRO']); ?>" href="JavaScript:publish_random_plan()">
-                            <?php echo($_lang['INDEX_RANDOM_RETRO']); ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="plan-navi__search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:show_popup('search');">
-                            <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>
-                        </a>
-                        <div class="js_popup--search popup--search popup display_none">
-                            <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
-                                <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
-                                <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
-                                <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
-                            </form>
-                            <div class="popup__info"><?php echo($_lang['POPUP_SEARCH_INFO']); ?></div>
-                        </div>
-                    </li>
-                </ul>
-            </div><!-- plan-navi -->
-            <div class="sponsor">
-                <a href="https://retromat.org/blog/become-a-retromat-sponsor/">
-                Become a Retromat sponsor
-                </a><br>
-                <a href="/en/books" target="_blank">
-                    <img src="/static/images/sponsors/ebook-retromat-sponsor.png" width="178" height="95" alt="Did you know there's are Retromat eBooks?">
+    <div class="header">
+        <div class="header__leftblock">
+            <div class="header__logo">
+                <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
+                    <img src="/static/images/retromat-logo.svg"
+                     alt="Retromat"
+                     title="Retromat">
                 </a>
-            </div><!-- sponsor -->
-        </div><!-- plan-header__wrapper -->
-    </div><!-- content -->
-</div>
+            </div>
 
-<?php if (is_output_format_twig($argv)) { ?>
-    {% include 'home/titles/planTitle.html.twig' %}
-<?php } else { ?>
-    <div class="js_plan_title_container plan_title_container display_none">
-        <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+            <div class="header__navi">
+                <ul>
+                  <li><a href="/blog/">Blog</a></li>
+                  <li><a href="/en/books">Books</a></li>
+                  <li><a href="/en/membership">Membership</a></li>
+                  <li><a href="/en/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header__languageswitcher"> 
+            <select onchange="switchLanguage(this.value)">
+                <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (140 Aktivit&auml;ten)</option>
+                <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (140 activities)</option>
+                <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (140 actividades)</option>
+                <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (64 activit&eacute;s)</option>
+                <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
+                <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
+                <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
+            </select>
         </div>
     </div>
-<?php } ?>
 
-<?php if (is_output_format_twig($argv)) { ?>
-    {% include 'home/activities/activities.html.twig' %}
-<?php } else { ?>
-    <div class="js_plan">
-        <div class="activity_block bg1">
-            <div class="activity-wrapper">
-                <div class="activity-content">
-                    <?php echo($_lang['INDEX_LOADING']); ?>
-                    <noscript>
-                        <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
-                    </noscript>
+    <div class="pitch">
+        <div class="content">
+            <div class="inner font-serif">
+                <?php echo($_lang['INDEX_PITCH']); ?>  
+            </div>
+        </div>
+    </div>
+
+
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+                There's a new Retromat book geared towards beginners!
+                <br><br>
+                <a href="/blog/new-book-15-plans-for-retrospectives/"
+                   class="button-medium" style="color: white">
+                   Check out "Plans for Retrospectives"
+                </a>
+                <br><br>
+                (<a href="{{ path('print') }}" class="small-font">Looking for the Print Retromat?</a>)
+            </div>
+        </div>
+    </div>
+
+    <div class="plan-header">
+        <div class="content">
+            <div class="inner">
+                <div class="ids-display">
+                    <div class="print-header font-serif">
+                        Retromat.org – by Corinna Baldauf
+                    </div>
+
+                    <?php if (is_output_format_twig($argv)) { ?>
+                        {% include 'home/header/idDisplay.html.twig' %}
+                    <?php } else { ?>
+                        <?php echo($_lang['INDEX_PLAN_ID']); ?>
+                        <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
+                            <input type="text" size="18" name="js_display" class="ids-display__input" value="">
+                        </form>
+                    <?php } ?>
+                </div>
+                
+                <div class="plan-header-inner-right">
+                    <div class="plan-navi">
+                       <ul>
+                            <li>
+                                <a class="plan-navi__random" title="<?php echo($_lang['INDEX_RANDOM_RETRO']); ?>" href="JavaScript:publish_random_plan()">
+                                    <?php echo($_lang['INDEX_RANDOM_RETRO']); ?>         
+                                </a>
+                            </li>
+                            <li>
+                                <a class="plan-navi__search" title="<?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>" href="JavaScript:show_popup('search');">
+                                    <?php echo($_lang['INDEX_SEARCH_KEYWORD']); ?>                       
+                                </a>
+                                <div class="js_popup--search popup--search popup display_none">
+                                    <form action="JavaScript:publish_activities_for_keywords($('.js_popup--search__input').val())" name="js_search_form" class="search_form">
+                                        <input type="text" size="12" name="js_popup--search__input" class="js_popup--search__input popup__input" value="">
+                                        <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
+                                        <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
+                                    </form>
+                                    <div class="popup__info"><?php echo($_lang['POPUP_SEARCH_INFO']); ?></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="plan-header-promo">
+                        <a href="/en/books" target="_blank">
+                            <img src="/static/images/promo-ebook.jpg" width="132" height="95" alt="Did you know there are Retromat eBooks?">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <?php if (is_output_format_twig($argv)) { ?>
+        {% include 'home/titles/planTitle.html.twig' %}
+    <?php } else { ?>
+        <div class="js_plan_title_container plan-title display_none">
+            <div class="content">
+                <div class="inner">
+                   <span class="js_fill_plan_title">Replaced by JS</span>
+               </div>
+            </div>
+        </div>
+    <?php } ?>
+
+
+    <?php if (is_output_format_twig($argv)) { ?>
+        {% include 'home/activities/activities.html.twig' %}
+    <?php } else { ?>
+        <div class="js_plan">
+            <div class="bg1">
+                <div class="content">
+                    <div class="inner">
+                        <?php echo($_lang['INDEX_LOADING']); ?>
+                        <noscript>
+                            <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
+                        </noscript>
+                    </div>
+                </div>
+            </div>
+        </div><!-- END plan -->
+    <?php } ?>
+
+    <div class="js_activity_block_template js_activity_block display_none">
+        <div class="content">
+            <div class="activity">
+                <div class="phase-stepper">
+                    <a href="javascript:Previous" class="js_phase-stepper"
+                       title="<?php echo($_lang['ACTIVITY_PREV']) ?>" class="js_prev_button">&#9668;
+                    </a>
+                </div>
+                <div class="activity_content">
+                    <div class="js_phase_title phase_title">
+                        <a href="#" class="js_fill_phase_link">
+                            <span class="js_fill_phase_title"></span>
+                        </a>
+                    </div>
+
+                    <div class="js_item">
+                        <h2 class="font-serif">
+                            <span class="js_fill_name"></span>
+                            <span class="activity_id_wrapper">
+                                    (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
+                            </span>
+                        </h2>
+                        <div class="summary">
+                            <span class="js_fill_summary"></span>
+                            <br>
+                            <span class="source"><?php echo($_lang['ACTIVITY_SOURCE']) ?>
+                                <span class="js_fill_source"></span>
+                            </span>
+                        </div>
+                        <div class="description">
+                            <span class="js_fill_description"></span>
+                        </div>
+                    </div><!-- END js_item -->
+
+                    <div class="js_photo_link photo_link">
+                        <span class="js_fill_photo-link"></span>
+                    </div><!-- END .js_photo_link -->
+
+                </div>
+                <div class="phase-stepper">
+                    <a href="Javascript:Next" class="js_phase-stepper"
+                       title="<?php echo($_lang['ACTIVITY_NEXT']) ?>" class="js_next_button">&#9658;
+                    </a>
                 </div>
             </div>
         </div>
-    </div><!-- END plan -->
-<?php } ?>
-
-<div class="js_activity_block_template js_activity_block activity_block display_none">
-    <div class="activity-wrapper">
-        <a href="JavaScript:Previous" class="js_phase-stepper phase-stepper js_prev_button display_table-cell" title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;</a>
-        <div class="activity-content">
-            <div class="js_phase_title phase_title">
-                <a href="#" class="js_fill_phase_link">
-                    <span class="js_fill_phase_title"></span>
-                </a>
-            </div>
-            <div class="js_item">
-                <h2><span class="js_fill_name"></span>
-                    <span class="activity_id_wrapper">
-                            (<a class="js_fill_activity_link" href="#">#<span class="js_fill_id"></span></a>)
-                    </span>
-                </h2>
-                <div class="summary">
-                    <span class="js_fill_summary"></span>
-                    <br>
-                        <span class="source"><?php echo($_lang['ACTIVITY_SOURCE']) ?>
-                            <span class="js_fill_source"></span>
-                        </span>
-                </div><!-- END summary -->
-                <div class="description">
-                    <span class="js_fill_description"></span>
-                </div><!-- END description -->
-            </div><!-- END js_item -->
-            <div class="js_photo_link photo_link">
-                <span class="js_fill_photo-link"></span>
-				<!-- PAUSED Until I've got more time
-                <a href="mailto:corinna@finding-marbles.com?subject=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_SUBJECT']) ?>&body=<?php echo($_lang['ACTIVITY_PHOTO_MAIL_BODY']) ?>" class="less_pronounced">
-                    <?php echo($_lang['ACTIVITY_PHOTO_ADD']) ?>
-                </a>
-                -->
-            </div><!-- END .js_photo_link -->
-        </div><!-- END .activity-content -->
-        <a href="JavaScript:Next" class="js_phase-stepper phase-stepper js_next_button display_table-cell" title="<?php echo($_lang['ACTIVITY_NEXT']) ?>">&#9658;</a>
-    </div><!-- END .activity-wrapper -->
-</div>
-
-<div class="about">
-    <div class="content">
-        <?php echo($_lang['INDEX_ABOUT']); ?>
-<!-- PAUSED Until I've got more time
-        <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ"><?php echo($_lang['INDEX_ABOUT_SUGGEST']); ?></a>!
--->
     </div>
-</div>
 
-<div class="team">
-   <div class="content">
-
-<?php if (!$isEnglish) { ?>
-       
-           <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
-
-            <div style="clear:both">    
-               <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
-                   <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>" class="team-photo">
-               </a>
-
-                <h3 style="margin-bottom: 10px">
-                    <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
-                   <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
-                       <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
-                   </a>
-                </h3>
-
-               <div class="team-text">
-                   <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
-               </div>
-       </div><!-- .team--translator -->
-           <?php } ?>
-<?php } ?>
-
-        <div style="clear:both">
-           <a href="https://www.corinnabaldauf.de/">
-               <img src="/static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
-           </a>
-           <h3 style="margin-bottom: 10px">
-               <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?>
-               <a href="https://www.corinnabaldauf.de/">
-                   Corinna Baldauf
-               </a>
-           </h3>
-           <div class="team-text" style="margin-right:0">
-                   <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>       
+    <div class="about">
+        <div class="content font-serif">
+            <div class="inner">
+                <?php echo($_lang['INDEX_ABOUT']); ?>
             </div>
-       </div><!-- .team--corinna -->
-
-
-       <div style="clear:both">
-           <a href="/en/team/timon">
-               <img src="/static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
-           </a>
-           <h3 style="margin-bottom: 10px">
-               <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?>
-               <a href="/en/team/timon">
-                   Timon Fiddike
-               </a>
-           </h3>
-           <div class="team-text" style="margin-right:0">
-                  <?php echo($_lang['INDEX_TEAM_TIMON_TEXT']); ?>
-            </div>
-       </div><!-- .team--timon-->
-
-    </div><!-- .content -->
-</div><!-- .team -->
-	
-
-<div class="footer">
-   <div class="content">
-        <div style="clear:both">
-            <a href="/blog/faq-frequently-asked-questions/">
-                FAQ
-            </a>
-            | 
-            <a href="/blog/privacy-policy">
-                Imprint &amp; Privacy Policy
-            </a>
         </div>
-    </div><!-- .content -->
-</div><!-- .footer -->
+    </div>
 
-<!-- Matomo -->
-<noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
-<!-- End Matomo Code -->
+    <div class="team">
+        <div class="content">
+            <div class="inner">
+            <?php if (!$isEnglish) { ?>
+                <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
+                <div class="team-member">
+                    <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                        <img src="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][$i]); ?>" width="70" height="93" title="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>" class="team-photo">
+                    </a>
+
+                    <h3>
+                        <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TITLE']); ?>
+                        <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">
+                            <?php echo($_lang['INDEX_TEAM_TRANSLATOR_NAME'][$i]); ?>
+                        </a>
+                    </h3>
+
+                    <div class="team-text">
+                        <?php echo($_lang['INDEX_TEAM_TRANSLATOR_TEXT'][$i]); ?>
+                    </div>
+                </div><!-- .team--translator -->
+               <?php } ?>
+            <?php } ?>
+
+                <div class="team-member">
+                    <a href="https://www.corinnabaldauf.de/">
+                       <img src="/static/images/team/corinna_baldauf.jpg" width="70" height="93" title="Corinna Baldauf" class="team-photo">
+                    </a>
+                    <h3>
+                        <?php echo($_lang['INDEX_TEAM_CORINNA_TITLE']); ?> 
+                        <a href="https://www.corinnabaldauf.de/">
+                           Corinna Baldauf
+                       </a>
+                    </h3>
+                    <div class="team-text">
+                        <?php echo($_lang['INDEX_TEAM_CORINNA_TEXT']); ?>    
+                    </div>
+                </div><!-- .team--corinna -->
+
+                <div class="team-member">
+                    <a href="/en/team/timon">
+                        <img src="/static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
+                    </a>
+                    <h3>
+                        <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?> 
+                        <a href="/en/team/timon">
+                           Timon Fiddike
+                        </a>
+                    </h3>
+                    <div class="team-text">
+                          <?php echo($_lang['INDEX_TEAM_TIMON_TEXT']); ?>          
+                    </div>
+                </div><!-- .team--timon-->
+
+            </div><!-- END .inner-->
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <ul>
+            <li><a href="/blog/faq-frequently-asked-questions/">FAQ</a>
+            </li>
+            <li><a href="/blog/privacy-policy">Imprint &amp; Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <!-- Matomo -->
+    <noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
+    <!-- End Matomo Code -->
+
 </body>
 </html>

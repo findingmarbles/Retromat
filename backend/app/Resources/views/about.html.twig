@@ -1,92 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Retromat!</title>
+    <title>About Retromat</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
     <link rel="stylesheet" type="text/css" href="/static/retromat.css" />
-    <link rel="stylesheet" type="text/css" href="/print/styles.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    <script>
-        var default_value = 'Your email address';
-
-        function removeDefaultText(){
-            var email_field = document.getElementById("email_address");
-            if(email_field.value == default_value){
-                email_field.value = "";
-            }
-        }
-
-        function setDefaultText(){
-            var email_field = document.getElementById("email_address");
-            if(email_field.value == ''){
-                email_field.value = default_value;
-            }
-        }
-    </script>
-
-    <style>
-
-    #header {
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    padding: 8px 20px 8px 12px;
-    color: #fff;
-    font-size: 0.8em;
-
-    background: rgb(40,61,48); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(40,61,48,1) 0%, rgba(0,20,13,1) 84%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,61,48,1)), color-stop(84%,rgba(0,20,13,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(40,61,48,1) 0%,rgba(0,20,13,1) 84%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(40,61,48,1) 0%,rgba(0,20,13,1) 84%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(40,61,48,1) 0%,rgba(0,20,13,1) 84%); /* IE10+ */
-    background: linear-gradient(top,  rgba(40,61,48,1) 0%,rgba(0,20,13,1) 84%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d30', endColorstr='#00140d',GradientType=0 ); /* IE6-9 */
-
-    z-index: 5;
-
-    /* outer shadows  (note the rgba is red, green, blue, alpha) */
-    -moz-box-shadow:    0px 0px 4px 4px rgba(40, 40, 40, 0.6);
-    -webkit-box-shadow: 0px 0px 4px 4px rgba(40, 40, 40, 0.6);
-    box-shadow:         0px 0px 4px 4px rgba(40, 40, 40, 0.6);
-}
-
-#header a {
-    color: #fff;
-    text-decoration:none;
-}
-
-#header a:hover {
-    color: #fff;
-    text-decoration:underline;
-}
-
-#logo {
-    margin-left: 5px;
-    margin-bottom: -3px;
-}
-
-        .content, 
-        .activity-content {
-            font-size: larger;
-        }
-
-        .subscribe .orange-button {
-            display: inline-block;
-            padding: 10px;
-            text-decoration: none;
-            background-color: darkorange;
-            border-radius: 10px;
-            border: 2px white solid;
-            color: white;
-            font-size: 18px;
-        }
-
-    </style>
 
     <!-- Matomo -->
     <script type="text/javascript">
@@ -105,20 +27,23 @@
     <!-- End Matomo Code -->
 </head>
 
-<body>
+<body class="page">
 
 {% include 'topnavi.html.twig' ignore missing  %}
 
-<div class="pitch">
-    <div class="content" style="text-align: center">
-        About Retrospectives and Retromat
+    <div class="pitch">
+        <div class="content">
+            <div class="inner font-serif">
+                <h1>About Retrospectives and Retromat</h1>
+            </div>
         </div>
-</div>
+    </div>
 
-    <div class="bg0">
-        <div class="activity-wrapper">
-            <div class="activity-content">
-                <h1 style="font-weight: bold">New to retrospectives?</h1><br>
+    <div class="bg3">
+        <div class="content">
+            <div class="inner">     
+                <h2>New to retrospectives?</h2>
+
                 Here is a <a href="/blog/what-is-a-retrospective/" target="_blank">summary of what retrospectives are, why they are a great idea and how you can run one
                 </a>.<br><br>
                 <span style="font-size: small;">Spanish version: <a href="http://thomaswallet.blogspot.com.ar/2014/10/que-es-una-retrospectiva.html" target="_blank"> ¿Qué es una retrospectiva? 
@@ -131,9 +56,10 @@
     </div>
 
     <div class="bg4">
-        <div class="activity-wrapper">
-            <div class="activity-content">
-                 <h1 style="font-weight: bold"> New to Retromat?</h1><br>
+        <div class="content">
+            <div class="inner">     
+                 <h2> New to Retromat?</h2>
+
                  Retromat generates random plans for agile retrospectives: Out of a pool of many activities it selects 1 for each of the <a href="/blog/what-is-a-retrospective/" target="_blank">5 phases</a>. Use the arrows to exchange activities and make sure that all 5 activities fit together. They are unlikely to fit together in a truly random plan.
                  <br><br>
                 <a href="/blog/the-missing-manual-5-tricks-to-get-the-most-out-of-retromat/" target="_blank">Here's the unofficial manual for Retromat</a><br><br>
@@ -143,10 +69,10 @@
     </div>
 
     <div class="bg2">
-        <div class="activity-wrapper">
-            <div class="activity-content">
-                <h1 style="font-weight: bold;">Want to support Retromat?</h1>
-                <br>
+        <div class="content">
+            <div class="inner">     
+                <h2>Want to support Retromat?</h2>
+                
                 You want to suggest an activity, send a photo or translate? <a href="/blog/faq-frequently-asked-questions/" target="_blank">Check out the FAQ</a>
                 <br><br>
                 You want to help us keep the <span style="text-decoration: line-through;">lights</span> servers on, the mailing list going and – that's the biggy – have enough time to work on Retromat? We'd love to welcome you as a <a href="/en/membership">Retro Mate</a>! Alternatively, you can <a href="/en/books">buy the Retromat books</a> or <a href="/blog/become-a-retromat-sponsor/">become a sponsor</a>.
@@ -156,41 +82,25 @@
         </div>
     </div>
 
-<!-- Hintergrundfarbe class="bg3" is still free (dark green) -->
-
-<div class="subscribe">
-    <div class="content">
-        <div style="text-align: left;">
-        <h1 style="font-weight: bold;">Want to get new activities and other information via email?</h1>
-        <br>
-        <a href="https://landing.mailerlite.com/webforms/landing/u1x3o6">Subscribe to the Retromat newsletter (1-2 mails per month)</a>
-        </div>
-    </div>
-</div>
-<!--
-    <div class="bg3">
-        <div class="activity-wrapper">
-            <div class="activity-content">
-                <h1 style="font-weight: bold;">Who contributes to Retromat?</h1>
-                <br>
-                Retromat was created and is run by Corinna Baldauf. She blogs at <a href="http://finding-marbles.com">Finding-Marbles.com</a>. Besides Retromat she maintains <a href="http://wall-skills.com">Wall-Skills.com</a>. You can follow her on <a href="http://www.twitter.com/findingmarbles">Twitter</a>. 
-                <br><br>
-
-
-                Besides Corinna there are a lot of other people helping, translators
+    <div class="bg0">
+        <div class="content">
+            <div class="inner">     
+                <h2>Want to get new activities and updates via email?</h2>
+                
+                <a href="https://landing.mailerlite.com/webforms/landing/u1x3o6">Subscribe to the Retromat newsletter (1-2 mails per month)</a>
             </div>
         </div>
     </div>
--->
-<div class="about">
-    <div class="content">
 
-        <h1 style="font-size: large">Any Questions?</h1>
-    <br>
-        Please don't hesitate to ask! You can contact Corinna Baldauf via <a href="mailto:corinna@retromat.org">email</a> or
-        <a href="http://www.twitter.com/corinnabaldauf">Twitter</a>.
+    <div class="about">
+        <div class="content">
+            <div class="inner font-serif">
+                    <h3>Any questions?</h3>
+                    You can contact Corinna Baldauf <a href="mailto:corinna@retromat.org">via email</a> or
+                    <a href="https://twitter.com/corinnabaldauf">Twitter</a>.
+            </div>
+        </div>
     </div>
-</div>
 
 
 {% include 'footer.html.twig' ignore missing  %}

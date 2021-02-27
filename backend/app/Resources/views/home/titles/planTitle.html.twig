@@ -1,11 +1,17 @@
 {% if phase is null %}
-    <div class="js_plan_title_container plan_title_container display_none">
-    <div class="content"><span class="js_fill_plan_title">Replaced by JS</span>
+    <div class="js_plan_title_container plan-title display_none">
+        <div class="content">
+            <div class="inner">
+               <span class="js_fill_plan_title">Replaced by JS</span>
+           </div>
+        </div>
     </div>
-</div>
 {% else %}
-<div class="js_plan_title_container plan_title_container">
-    <div class="content"><span class="js_fill_plan_title">All activities for {{ ('phase_title_'~phase) | trans | upper }}</span>
+    <div class="js_plan_title_container plan-title display_none">
+        <div class="content">
+            <div class="inner">
+                <span class="js_fill_plan_title">All activities for {{ ('phase_title_'~phase) | trans | upper }}</span>
+           </div>
+        </div>
     </div>
-</div>
 {% endif %}
