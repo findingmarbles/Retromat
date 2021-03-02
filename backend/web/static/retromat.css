@@ -181,7 +181,7 @@
     }
 
     .button-medium:hover,
-    .button-big:hover, {
+    .button-big:hover {
         background-color: orange; 
     }
 
@@ -577,10 +577,6 @@
     @media print {
         body {
             color: black;
-        }
-
-        .print-header {
-            display: visible;
         }
 
         a {
