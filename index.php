@@ -80,6 +80,16 @@ function get_url_to_index() {
 <script src="/static/lightbox/lightbox.js"></script>
 <link href="/static/lightbox/lightbox.css" rel="stylesheet" />
 
+<!-- Detect IE9 - It has problems, probably because of history.pushState -->
+<script>
+    var is_ie = false;
+</script>
+<!--[if lt IE 10 ]>
+<script>
+    var is_ie = true;
+</script>
+<![endif]-->
+
 <script type="text/javascript">
 // CONFIG
 var NUMBER_OF_REGULAR_PHASES = 5;
@@ -386,7 +396,7 @@ var PHASE_ID_TAG = 'phase';
         <div class="content">
             <div class="activity">
                 <div class="js_phase-stepper phase-stepper js_prev_button">
-                    <a href="javascript:" class="js_prev_button_href"
+                    <a href="javascript:Previous" class="js_prev_button_href"
                        title="<?php echo($_lang['ACTIVITY_PREV']) ?>">&#9668;
                     </a>
                 </div>
@@ -422,7 +432,7 @@ var PHASE_ID_TAG = 'phase';
 
                 </div>
                 <div class="js_phase-stepper phase-stepper js_next_button">
-                    <a href="Javascript:" class="js_next_button_href"
+                    <a href="Javascript:Next" class="js_next_button_href"
                        title="<?php echo($_lang['ACTIVITY_NEXT']) ?>">&#9658;
                     </a>
                 </div>
