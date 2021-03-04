@@ -41,19 +41,14 @@ books_old:
 donate:
     path: /en/donate
     defaults:
-        _controller: FrameworkBundle:Template:template
-        template:    donate.html.twig
-    options:
-        sitemap:
-            priority: 0.5
-            lastmod: "2017-01-31T21:11:16+01:00"
-            changefreq: weekly
-            section: meta
+        _controller: FrameworkBundle:Redirect:redirect
+        route: membership
+        permanent: true
 donate_old:
     path: /donate.html
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
-        route: donate
+        route: membership
         permanent: true
 ebook:
     path: /en/ebook
