@@ -297,6 +297,22 @@ var PHASE_ID_TAG = 'phase';
     <div class="promo">
         <div class="content">
             <div class="inner">
+                Does Retromat make your work life easier? And your retrospectives have better outcomes? Great! Wanna help me make Retromat better?
+                <br><br>
+                <a href="/en/membership" style="color: white">
+                   Support Retromat – Join the Retro Mates :)
+                </a>
+                <br><br>
+                (<a href="/en/books" class="small-font">Looking for the books instead?</a>)
+            </div>
+        </div>
+    </div>
+
+
+<!-- PLANS BOOK
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
                 There's a new Retromat book geared towards beginners!
                 <br><br>
                 <a href="/blog/new-book-15-plans-for-retrospectives/"
@@ -308,6 +324,7 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
+-->
 
     <div class="plan-header">
         <div class="content">
