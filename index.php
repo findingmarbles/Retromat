@@ -299,7 +299,7 @@ var PHASE_ID_TAG = 'phase';
             <div class="inner">
                 Does Retromat make your work life easier? And your retrospectives have better outcomes? Great! Wanna help me make Retromat better?
                 <br><br>
-                <a href="/en/membership" style="color: white">
+                <a href="/en/membership" class="button-medium" style="color: white">
                    Support Retromat – Join the Retro Mates :)
                 </a>
                 <br><br>
