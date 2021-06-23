@@ -293,7 +293,7 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 
-
+<!-- MEMBERSHIP
     <div class="promo">
         <div class="content">
             <div class="inner">
@@ -307,9 +307,9 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
+-->
 
-
-<!-- PLANS BOOK
+<!-- PLANS BOOK 
     <div class="promo">
         <div class="content">
             <div class="inner">
@@ -325,6 +325,26 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 -->
+
+
+<!-- ALL BOOKS -->
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+                Did you know there's a Retromat eBook Bundle, containing both 
+                <a href="/blog/new-book-15-plans-for-retrospectives/" target="blank">
+                   "Plans for Retrospectives"</a> and <a href="/en/ebook" target="blank">"Run great agile retrospectives"?</a>
+                <br><br>
+                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
+                   class="button-medium" style="color:white" target="blank">
+                   Check out the Retromat eBook Bundle
+                </a>
+                <br><br>
+                (<a href="{{ path('print') }}" class="small-font">
+                And of course there's also the Print Retromat.</a>)
+            </div>
+        </div>
+    </div>
 
     <div class="plan-header">
         <div class="content">
