@@ -20,7 +20,6 @@ etc. please get in touch:
 * corinna@finding-marbles.com
 * @findingmarbles on Twitter
 
-
 # Contribute
 
 You'd like to get involved with Retromat? Great!
