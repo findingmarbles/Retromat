@@ -84,6 +84,12 @@
             <br>
             {{ form_errors(edit_form.suitable) }}
             {{ form_widget(edit_form.suitable, {'attr': {'class': 'shorter', 'cols': 80, 'rows': 1, }}) }}
+            <br>
+            <br>
+            {{ form_label(edit_form.forumUrl) }}
+            <br>
+            {{ form_errors(edit_form.forumUrl) }}
+            {{ form_widget(edit_form.forumUrl, {'attr': {'cols': 80, 'rows': 1, }}) }}
         {% endif %}
         <br>
         <br>

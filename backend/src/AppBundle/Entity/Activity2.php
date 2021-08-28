@@ -89,6 +89,13 @@ class Activity2
     private $stage;
 
     /**
+     * @var string
+     * @Assert\Type("string")
+     * @ORM\Column(name="forum_url", type="text", nullable=true)
+     */
+    private $forumUrl;
+
+    /**
      * Get id
      *
      * @return int
@@ -264,6 +271,30 @@ class Activity2
     public function getStage(): string
     {
         return (string)$this->stage;
+    }
+
+    /**
+     * Set forumUrl
+     *
+     * @param string $forumUrl
+     *
+     * @return Activity2
+     */
+    public function setForumUrl($forumUrl): Activity2
+    {
+        $this->forumUrl = $forumUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get forumUrl
+     *
+     * @return string
+     */
+    public function getForumUrl(): string
+    {
+        return (string)$this->forumUrl;
     }
 
     /**

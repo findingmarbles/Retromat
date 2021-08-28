@@ -5,6 +5,7 @@ AppBundle\Entity\Activity2:
         source:         { groups: ['rest'] }
         duration:       { groups: ['rest'] }
         stage:          { groups: ['rest'] }
+        forumUrl:       { groups: ['rest'] }
         # using the magic __get method we can
         # include properties from translations
         # at the toplevel of Activity2:

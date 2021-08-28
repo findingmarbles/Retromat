@@ -40,7 +40,8 @@ class Activity2Type extends AbstractType
             ->add('source', TextareaType::class, ['required' => false])
             ->add('more', TextareaType::class, ['required' => false])
             ->add('stage', TextareaType::class, ['required' => false])
-            ->add('suitable', TextareaType::class, ['required' => false]);
+            ->add('suitable', TextareaType::class, ['required' => false])
+            ->add('forumUrl', TextareaType::class, ['required' => false]);
     }
 
     /**
