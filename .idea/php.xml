@@ -68,9 +68,18 @@
       <path value="$PROJECT_DIR$/backend/vendor/ocramius/package-versions" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0">
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpUnit">
