@@ -12,7 +12,7 @@ uberspace tools version use php 7.4
 
 * Setup Redis service https://lab.uberspace.de/guide_redis.html
 
-* Obtain DB dump from live retromat.org (make a fresh dump of only retromat db, avoid blog and analytics DB ...), put it on the new space
+* OPTIONAL (you can import example activities instead, as described later): Obtain DB dump from live retromat.org (make a fresh dump of only retromat db, avoid blog and analytics DB ...), put it on the new space
 ```
 # ssh <SpaceNameLive>@c....uberspace.de
 mysqldump --defaults-file=/home/<SpaceNameLive>/.my.cnf --databases <SpaceNameLive>_retromat > <SpaceNameLive>_retromat.sql
@@ -20,7 +20,7 @@ mysqldump --defaults-file=/home/<SpaceNameLive>/.my.cnf --databases <SpaceNameLi
 scp <SpaceNameLive>@c....uberspace.de:<SpaceNameLive>_retromat.sql .
 scp <SpaceNameLive>_retromat.sql <SpaceNameDev>@canopus.uberspace.de:
 ```
-* on the new UberSpace: gunzip DB dump (if .gz), edit it and comment out "create db" and "use db" im present, then create new DB and import dump
+* OPTIONAL (you can import example activities instead, as described later): gunzip DB dump (if .gz), edit it and comment out "create db" and "use db" im present, then create new DB and import dump
 ```
 # ssh <SpaceNameDev>@canopus.uberspace.de
 echo 'CREATE DATABASE <SpaceNameDev>_retromat'| mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf
@@ -48,13 +48,23 @@ mkdir /var/www/virtual/<SpaceNameDev>/sessions
 ```
 redis_connection: (home dir, z.B. /home/<SpaceNameDev>/.redis/sock )
 ```
-* Install libraries
+* Install libraries (this will try to clear the cache, which can cause problems in an incomplete setup. In that case, fix / continue, then redo this step later)
 ```
 cd /var/www/virtual/<SpaceNameDev>/retromat.git/backend
 composer install
 ```
+* Set up the database structure (skip if you imported a full dump from live, see OPTIONAL step higher up)
+```
+bin/console doctrine:database:create
+doctrine:migrations:migrate
+```
+ 
+* Import example content into the database  (skip if you imported a full dump from live, see OPTIONAL step higher up)
+```
+bin/console retromat:import:activities
+```
 
-* Create temaples from index.php
+* Create templates from index.php
 ```
 cd /var/www/virtual/<SpaceNameDev>/retromat.git/
 backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
@@ -64,7 +74,7 @@ backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
 cd /var/www/virtual/<SpaceNameDev>
 ln -s retromat.git/backend/web/ <SpaceNameDev>.uber.space
 ```
-* And now this instance is availabe here: https://<username>.uber.space/robots.txt
+* And now this instance is availabe here: https://<SpaceNameDev>.uber.space/robots.txt
 
 # Clear caches so you can see changes
 * Re-generate Twig templates from index.php - technically speaking not really a cache, but something you need to clear manually in order to get to see your changes
