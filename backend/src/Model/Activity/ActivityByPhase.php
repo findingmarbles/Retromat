@@ -9,7 +9,10 @@ class ActivityByPhase
 {
     private $activityByPhase;
 
-    private $entityManager;
+    /**
+     * @var EntityManagerInterface
+     */
+    private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
     {

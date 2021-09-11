@@ -6,7 +6,7 @@ namespace App\Model\Importer\Activity;
 use App\Entity\Activity;
 use App\Model\Importer\Activity\Exception\InvalidActivityException;
 use App\Model\Importer\ArrayToObjectMapper;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -17,9 +17,9 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class ActivityImporter
 {
     /**
-     * @var ObjectManager
+     * @var EntityManagerInterface
      */
-    private $objectManager;
+    private $entityManager;
 
     /**
      * @var ActivityReader
@@ -42,21 +42,20 @@ class ActivityImporter
     private $locales;
 
     /**
-     * ActivityImporter constructor.
-     * @param ObjectManager $objectManager
+     * @param EntityManagerInterface $entityManager
      * @param ActivityReader $reader
      * @param ArrayToObjectMapper $mapper
      * @param ValidatorInterface $validator
-     * @param array $locales
+     * @param array|string[] $locales
      */
     public function __construct(
-        ObjectManager $objectManager,
+        EntityManagerInterface $entityManager,
         ActivityReader $reader,
         ArrayToObjectMapper $mapper,
         ValidatorInterface $validator,
         array $locales = ['en']
     ) {
-        $this->objectManager = $objectManager;
+        $this->entityManager = $entityManager;
         $this->reader = $reader;
         $this->mapper = $mapper;
         $this->validator = $validator;
@@ -96,10 +95,10 @@ class ActivityImporter
     public function import2(string $locale = 'en')
     {
         $this->reader->setCurrentLocale($locale);
-        $activityRepository = $this->objectManager->getRepository('App:Activity');
+        $activityRepository = $this->entityManager->getRepository('App:Activity');
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
-            $newActivity = new Activity2();
+            $newActivity = new Activity();
             $newActivity->setDefaultLocale($locale);
             $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, $newActivity);
 
@@ -112,7 +111,7 @@ class ActivityImporter
                     $activityFromDb->mergeNewTranslations();
                 } else {
                     $activityFromReader->mergeNewTranslations();
-                    $this->objectManager->persist($activityFromReader);
+                    $this->entityManager->persist($activityFromReader);
                 }
             } else {
                 $message = " This activity:\n ".(string)$activityFromReader."\n has these validations:\n ".(string)$violations."\n";
@@ -121,6 +120,6 @@ class ActivityImporter
             }
         }
 
-        $this->objectManager->flush();
+        $this->entityManager->flush();
     }
 }

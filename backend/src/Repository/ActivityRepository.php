@@ -21,6 +21,23 @@ class ActivityRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param array $orderedIds
+     * @return array
+     */
+    public function findOrdered(array $orderedIds): array
+    {
+        $allActivities = $this->findAllOrdered();
+        $orderedActivities = [];
+        foreach ($orderedIds as $id) {
+            if (array_key_exists($id - 1, $allActivities)) {
+                $orderedActivities[] = $allActivities[$id - 1];
+            }
+        }
+
+        return $orderedActivities;
+    }
+
+    /**
      * @return array
      */
     public function findAllOrdered(): array

@@ -32,7 +32,7 @@ class TeamController extends AbstractController
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences(
             $request->getLocale()
         );
-        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('App:Activity');
+        $activityRepository = $this->getDoctrine()->getRepository('App:Activity');
 
         return $this->render(
             'team/experiment/titlesAndDescriptionsByPlanId.html.twig',

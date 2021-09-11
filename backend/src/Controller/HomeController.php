@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
+use App\Repository\ActivityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,8 +30,9 @@ class HomeController extends AbstractController
         $description = '';
 
         if (0 < count($ids) and ('en' === $locale or 'de' === $locale or 'ru' === $locale)) {
-            $repo = $this->get('doctrine.orm.entity_manager')->getRepository('App:Activity');
-            $activities = $repo->findOrdered($ids);
+            $activities = $this->getDoctrine()
+                ->getRepository('App:Activity')
+                ->findOrdered($ids);
             if (count($ids) !== count($activities)) {
                 throw $this->createNotFoundException();
             }

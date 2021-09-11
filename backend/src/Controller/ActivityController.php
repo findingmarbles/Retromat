@@ -18,8 +18,10 @@ class ActivityController extends AbstractFOSRestController
     {
         $request->setLocale($request->query->get('locale', 'en'));
 
-        /** @var $activity Activity */
-        $activity = $this->get('doctrine.orm.entity_manager')->getRepository('App:Activity')->find($id);
+        $activity = $this->getDoctrine()
+            ->getRepository('App:Activity')
+            ->find($id);
+
         $this->get('retromat.activity_source_expander')->expandSource($activity);
 
         return $this->view($activity, 200)->setContext((new Context())->addGroup('rest'));

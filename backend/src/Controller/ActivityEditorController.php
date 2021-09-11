@@ -201,7 +201,7 @@ class ActivityEditorController extends AbstractController
      */
     private function findLocalizedActivities(string $locale): array
     {
-        $activities = $this->getDoctrine()->getManager()->getRepository('App:Activity')->findAllOrdered();
+        $activities = $this->getDoctrine()->getRepository('App:Activity')->findAllOrdered();
         $localizedActivities = [];
         /** @var $activity Activity */
         foreach ($activities as $activity) {
