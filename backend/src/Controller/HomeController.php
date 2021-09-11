@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\Plan\Exception\InconsistentInputException;
+use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

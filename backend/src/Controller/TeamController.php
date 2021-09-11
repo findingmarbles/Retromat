@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\Plan\Exception\InconsistentInputException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
@@ -23,7 +23,7 @@ class TeamController extends AbstractController
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      * @Security("has_role('ROLE_SERP_PREVIEW')")
-     * @throws \AppBundle\Plan\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function serpPreviewAction(Request $request)
     {
@@ -32,7 +32,7 @@ class TeamController extends AbstractController
         $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences(
             $request->getLocale()
         );
-        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Activity2');
+        $activityRepository = $this->get('doctrine.orm.entity_manager')->getRepository('App:Activity');
 
         return $this->render(
             'team/experiment/titlesAndDescriptionsByPlanId.html.twig',
