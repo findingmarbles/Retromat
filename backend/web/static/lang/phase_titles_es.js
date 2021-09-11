@@ -1,1 +1,0 @@
-var phase_titles = ['Armar el escenario', 'Recolectar datos', 'Indagar', 'Decidir qué hacer', 'Cerrar la retrospectiva', 'Algo completamente distinto'];

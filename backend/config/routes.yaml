@@ -1,0 +1,208 @@
+login:
+  path: /login
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: fos_user_security_login
+    permanent: false
+
+fos_user:
+  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+  prefix:   /{_locale}
+
+about:
+  path: /en/about
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: about.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2017-01-31T21:11:16+01:00"
+      changefreq: weekly
+      section: meta
+
+about_old:
+  path: /about.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: about
+    permanent: true
+
+books:
+  path: /en/books
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: books.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2017-01-31T21:11:16+01:00"
+      changefreq: weekly
+      section: meta
+
+books_old:
+  path: /books.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: books
+    permanent: true
+
+donate:
+  path: /en/donate
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: membership
+    permanent: true
+
+donate_old:
+  path: /donate.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: membership
+    permanent: true
+
+ebook:
+  path: /en/ebook
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template:    /ebook/index.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2017-01-31T21:11:16+01:00"
+      changefreq: weekly
+      section: meta
+
+ebook_old1:
+  path: /ebook/index.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: ebook
+    permanent: true
+
+ebook_old2:
+  path: /ebook/
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: ebook
+    permanent: true
+
+membership:
+  path: /en/membership
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: membership.html.twig
+
+print:
+  path: /en/print
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: print/index.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2017-01-31T21:11:16+01:00"
+      changefreq: weekly
+      section: meta
+
+print_old1:
+  path: /print/index.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: print
+    permanent: true
+
+print_old2:
+  path: /print/
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: print
+    permanent: true
+
+print_paypal_pay:
+  path: /en/print/paypal_pay
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: print/paypal_pay.html.twig
+
+print_paypal_pay_old:
+  path: /print/paypal_pay.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: print_paypal_pay
+    permanent: true
+print_paypal_success:
+  path: /en/print/paypal_success
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: print/paypal_success.html.twig
+
+print_paypal_success_old:
+  path: /print/paypal_success.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: print_paypal_success
+    permanent: true
+
+print_paypal_cancel:
+  path: /en/print/paypal_cancel
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: print/paypal_cancel.html.twig
+
+print_paypal_cancel_old:
+  path: /print/paypal_cancel.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: print_paypal_cancel
+    permanent: true
+
+sources:
+  path: /en/sources
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: print/sources.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2017-01-31T21:11:16+01:00"
+      changefreq: weekly
+      section: meta
+
+sources_old:
+  path: /print/sources.html
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: sources
+    permanent: true
+
+team_anton:
+  path: /en/team/anton
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: team/anton.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2019-12-29T15:31:02+01:00"
+      changefreq: weekly
+      section: meta
+
+team_timon:
+  path: /en/team/timon
+  defaults:
+    _controller: FrameworkBundle:Template:template
+    template: team/timon.html.twig
+  options:
+    sitemap:
+      priority: 0.5
+      lastmod: "2019-09-29T15:31:02+01:00"
+      changefreq: weekly
+      section: meta
+
+imprint_privacy_old:
+  path: /imprint-privacy
+  defaults:
+    _controller: FrameworkBundle:Redirect:urlRedirect
+    path: /blog/privacy-policy/
+    permanent: true
