@@ -39,7 +39,7 @@ class ActivityEditorController extends AbstractController
         if ('en' === $request->getLocale()) {
             $activity = new Activity();
             $activity->setRetromatId($maxRetromatId + 1);
-            $formType = 'AppBundle\Form\Activity2Type';
+            $formType = 'App\Form\ActivityType';
         } else {
             $activity = $em->getRepository('App:Activity')->findOneBy(['retromatId' => $maxRetromatId + 1]);
             $activity->setDefaultLocale($request->getLocale());
@@ -49,7 +49,7 @@ class ActivityEditorController extends AbstractController
             $activity->setSummary($activity->translate('en')->getSummary());
             $activity->setDesc($activity->translate('en')->getDesc());
 
-            $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
+            $formType = 'App\Form\ActivityTranslatableFieldsType';
         }
         $form = $this->createForm($formType, $activity);
         $form->handleRequest($request);
@@ -153,9 +153,9 @@ class ActivityEditorController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
         if ('en' === $request->getLocale()) {
-            $formType = 'AppBundle\Form\Activity2Type';
+            $formType = 'App\Form\ActivityType';
         } else {
-            $formType = 'AppBundle\Form\Activity2TranslatableFieldsType';
+            $formType = 'App\Form\ActivityTranslatableFieldsType';
         }
         $form = $this->createForm($formType, $activity);
 
