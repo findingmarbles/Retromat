@@ -9,36 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class RobotsController extends AbstractController
 {
     /**
-     * @Route("/robots.txt", host="retromat.org")
+     * @Route("/robots", name="robots")
      */
-    public function robotsOpenAction(): Response
+    public function index(): Response
     {
-        $response = new Response(
-            '
-User-agent: *
-Disallow:
-Crawl-delay: 1
-
-Sitemap: https://retromat.org/sitemap.xml'
-        );
-        $response->headers->set('content-type', 'text/plain; charset=UTF-8');
-
-        return $response;
-    }
-
-    /**
-     * @Route("/robots.txt")
-     */
-    public function robotsClosedAction()
-    {
-        $response = new Response(
-            '
-User-agent: *
-Disallow: /
-'
-        );
-        $response->headers->set('content-type', 'text/plain; charset=UTF-8');
-
-        return $response;
+        return $this->render('robots/index.html.twig', [
+            'controller_name' => 'RobotsController',
+        ]);
     }
 }

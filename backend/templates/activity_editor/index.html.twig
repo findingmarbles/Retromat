@@ -1,59 +1,20 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
 
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="/static/team-v2.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif"/>
-{% endblock %}
-
-{% block title %}List of Activities{% endblock %}
+<title>Hello ActivityEditorController!</title>
 
 {% block body %}
-    <span class="topline smaller"><a href="{{ path('team_dashboard', {'_locale': 'en'}) }}">&lt; Dashboard</a></span>
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-    <div class="mainContent">
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-        <h1>
-            {% if 'en' == app.request.locale %}
-                Activity List
-            {% else %}
-                Activity Translations List: {{ app.request.locale|upper }}
-            {% endif %}
-        </h1>
-
-        <ul>
-            <li>
-                <a href="{{ path('team_activity_new') }}">Create new activity
-                    {% if 'en' != app.request.locale %} translation{% endif %}</a>
-            </li>
-            <li>
-                <a href="{{ path('team_activity_delete_confirm') }}">Delete last activity
-                    {% if 'en' != app.request.locale %} translation{% endif %}</a>
-            </li>
-        </ul>
-        <table class="activities">
-            <thead>
-            <tr align="left">
-                <th>Id</th>
-                <th style="width: 150px;">Actions</th>
-                <th>Name</th>
-                <th>Summary</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for activity2 in activity2s|reverse %}
-                <tr>
-                    <td align="right">{{ activity2.retromatId }}</td>
-                    <td>
-                        <a href="{{ path('team_activity_edit', { 'id': activity2.id }) }}">edit</a> |
-                        <a href="{{ path('team_activity_show', { 'id': activity2.id }) }}">preview</a> |
-                        <a href="{{ path('activities_by_id', { 'id': activity2.retromatId }) }}"
-                           target="_blank">live</a>
-                    </td>
-                    <td>{{ activity2.getName }}</td>
-                    <td>{{ activity2.getSummary }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/christin/Projekte/christingruber/Retromat/backend/src/Controller/ActivityEditorController.php'|file_link(0) }}">src/Controller/ActivityEditorController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/christin/Projekte/christingruber/Retromat/backend/templates/activity_editor/index.html.twig'|file_link(0) }}">templates/activity_editor/index.html.twig</a></code></li>
+    </ul>
+</div>
 {% endblock %}

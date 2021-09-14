@@ -2,28 +2,19 @@
 
 namespace App\Controller;
 
-use App\Entity\Activity;
-use FOS\RestBundle\Context\Context;
-use FOS\RestBundle\Controller\AbstractFOSRestController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class ActivityController extends AbstractFOSRestController
+class ActivityController extends AbstractController
 {
     /**
-     * @param $id
-     * @param Request $request
-     * @return \FOS\RestBundle\View\View
+     * @Route("/activity", name="activity")
      */
-    public function getAction($id, Request $request)
+    public function index(): Response
     {
-        $request->setLocale($request->query->get('locale', 'en'));
-
-        $activity = $this->getDoctrine()
-            ->getRepository('App:Activity')
-            ->find($id);
-
-        $this->get('retromat.activity_source_expander')->expandSource($activity);
-
-        return $this->view($activity, 200)->setContext((new Context())->addGroup('rest'));
+        return $this->render('activity/index.html.twig', [
+            'controller_name' => 'ActivityController',
+        ]);
     }
 }
