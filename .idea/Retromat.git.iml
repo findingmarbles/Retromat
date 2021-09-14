@@ -73,6 +73,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/expression-language" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

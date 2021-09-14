@@ -169,6 +169,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/expression-language" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
