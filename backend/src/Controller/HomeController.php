@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Model\Activity\ActivityByPhase;
 use App\Model\Activity\ActivitySourceExpander;
+use App\Model\Plan\DescriptionRenderer;
 use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
+use App\Model\Plan\TitleChooser;
+use App\Model\Twig\ColorVariation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +17,26 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    private ActivitySourceExpander $activitySourceExpander;
+    private ColorVariation $colorVariation;
+    private ActivityByPhase $activityByPhase;
+    private TitleChooser $titleChooser;
+    private DescriptionRenderer $descriptionRenderer;
+
+    public function __construct(
+        ActivitySourceExpander $activitySourceExpander,
+        ColorVariation $colorVariation,
+        ActivityByPhase $activityByPhase,
+        TitleChooser $titleChooser,
+        DescriptionRenderer $descriptionRenderer
+    ) {
+        $this->activitySourceExpander = $activitySourceExpander;
+        $this->colorVariation = $colorVariation;
+        $this->activityByPhase = $activityByPhase;
+        $this->titleChooser = $titleChooser;
+        $this->descriptionRenderer = $descriptionRenderer;
+    }
+
     /**
      * @Route("/{_locale}/", requirements={"_locale": "en|de|fr|es|nl|pl|pt-br|ru|zh"}, name="activities_by_id")
      * @param Request $request
@@ -35,7 +59,7 @@ class HomeController extends AbstractController
                 throw $this->createNotFoundException();
             }
             foreach ($activities as $activity) {
-                $this->get('retromat.activity_source_expander')->expandSource($activity);
+                $this->activitySourceExpander->expandSource($activity);
             }
             list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }
@@ -46,14 +70,13 @@ class HomeController extends AbstractController
                 'ids' => $ids,
                 'phase' => $phase,
                 'activities' => $activities,
-                'color_variation' => $this->get('retromat.color_varation'),
-                'activity_by_phase' => $this->get('retromat.activity_by_phase'),
+                'color_variation' => $this->colorVariation,
+                'activity_by_phase' => $this->activityByPhase,
                 'title' => $title,
                 'description' => $description,
             ]
         );
     }
-
 
     /**
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
@@ -110,9 +133,9 @@ class HomeController extends AbstractController
             $description = html_entity_decode(($activities[0])->getSummary(), ENT_NOQUOTES);
         } else {
             // Titles are generated from a separate config, so html_entity_decode is not necessary
-            $title = $this->get('retromat.plan.title_chooser')->renderTitle(implode('-', $ids), $locale);
+            $title = $this->titleChooser->renderTitle(implode('-', $ids), $locale);
             $description = html_entity_decode(
-                $this->get('retromat.plan.description_renderer')->render($activities),
+                $this->descriptionRenderer->render($activities),
                 ENT_NOQUOTES
             );
         }

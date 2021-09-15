@@ -7,10 +7,9 @@ use App\Entity\Activity;
 
 class ActivitySourceExpander
 {
-    private $sources = [];
+    private array $sources = [];
 
     /**
-     * ActivitySourceExpander constructor.
      * @param array $sources
      */
     public function __construct(array $sources)
