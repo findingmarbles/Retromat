@@ -1,0 +1,106 @@
+body {
+    background-color: #e3f5ab;
+    color: #111;
+    font-family: "Droid Sans", tahoma, helvetica, sans-serif;
+    padding-left: 0.3em;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Droid Serif", serif;
+	margin-top: 0em;
+}
+
+.mainContent {
+	    padding: 1em;
+}
+
+.backButton,
+.topline {
+	text-transform: uppercase;
+}
+
+.backButton ul {
+	list-style: none;
+	padding-left: 1px;
+	text-decoration: underline;
+}
+
+/*.backButton li:before {
+	content: "\0088"; 
+}*/
+
+a, 
+a:link, 
+a:hover,
+a:active,
+a:visited {
+	color: #111;
+}
+
+.smaller {
+	font-size: 0.8em;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+	padding-left: 0.6em;
+	height: 2em;
+	border: 1px #444 solid;
+	background: #fff;
+
+	margin-bottom: 8px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+	padding: 4px 7px;
+	text-decoration: none;
+	background-color: darkorange;
+	border-radius: 5px;
+	border: 2px white solid;
+	color: white;
+	font-size: 1em;
+	margin-right: 0.3em;
+}
+
+textarea {
+	padding: 0.6em;
+	font-face: "Droid Sans", sans-serif;
+}
+
+.description {
+	height: 13em;
+}
+
+.shorter {
+	width: 12em;
+}
+
+.activities {
+	border-collapse: collapse;
+}
+
+.activities th {
+	background: #e3f5ab;
+}
+
+.activities td {
+	padding: 0.2em;
+}
+
+.activities tr:nth-child(odd) {
+	background: #c7e478;
+}
+
+input.idField {
+	color: #111;
+	font-size: 1.2em;
+	width: 2em;
+	background: transparent;
+	border: none;
+}
+

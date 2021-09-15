@@ -1,0 +1,1 @@
+var phase_titles = ['Voorbereiding', 'Data verzamelen', 'Inzicht verkrijgen', 'Beslissen wat te doen', 'Retrospective afsluiten', 'Iets totaal anders'];
