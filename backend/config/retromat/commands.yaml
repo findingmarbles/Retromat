@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Command\RetromatImportActivitiesCommand:
+    tags:
+      - { name: 'console.command', command: 'retromat:import:activities' }

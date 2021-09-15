@@ -8,3 +8,6 @@ login:
 fos_user:
   resource: "@FOSUserBundle/Resources/config/routing/all.xml"
   prefix:   /{_locale}
+
+retromat:
+  resource: "routes/retromat/static.yaml"
