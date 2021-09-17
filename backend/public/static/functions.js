@@ -6,7 +6,7 @@ function init() {
     var phase = urlParams.phase;
 
     if (typeof all_activities === "undefined") {
-        $.getJSON("/activities.json", {locale: getLocale()})
+        $.getJSON("/api/activities", {locale: getLocale()})
             .fail(function (jqxhr, textStatus, error) {
                 console.log("Loading activities via AJAX request failed: " + textStatus + ", " + jqxhr.status + ", " + error);
             })

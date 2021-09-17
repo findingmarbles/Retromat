@@ -1,0 +1,11 @@
+App\Entity\Activity:
+    attributes:
+        retromatId:     { groups: ['api'] }
+        phase:          { groups: ['api'] }
+        source:         { groups: ['api'] }
+        duration:       { groups: ['api'] }
+        stage:          { groups: ['api'] }
+        forumUrl:       { groups: ['api'] }
+        name:           { groups: ['api'] }
+        summary:        { groups: ['api'] }
+        desc:           { groups: ['api'] }

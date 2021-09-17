@@ -61,7 +61,8 @@ class ActivityRepository extends ServiceEntityRepository
         $activities = $this->findAllOrdered();
 
         foreach ($activities as $activity) {
-            if (!empty($activity->translate($locale, false)->getId())) {
+            /** @var $activity Activity */
+            if (!$activity->translate($locale, false)->isEmpty()) {
                 $activitiesByPhase[$activity->getPhase()][] = $activity->getRetromatId();
             } else {
                 break;
