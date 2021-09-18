@@ -34,6 +34,10 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "ext-json": "*",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "liip/functional-test-bundle": "^4.4",
+        "liip/test-fixtures-bundle": "^2.0",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "4.4.*",
         "symfony/css-selector": "4.4.*",

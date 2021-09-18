@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Tests\Controller\DataFixtures\:
+    resource: '../../tests/Controller/DataFixtures/*'
+    tags: ['doctrine.fixture.orm']
+
+  App\Tests\Repository\DataFixtures\:
+    resource: '../../tests/Repository/DataFixtures/*'
+    tags: ['doctrine.fixture.orm']

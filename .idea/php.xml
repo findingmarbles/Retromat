@@ -20,7 +20,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/backend/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/backend/vendor/zendframework/zend-eventmanager" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/behat/transliterator" />
       <path value="$PROJECT_DIR$/backend/vendor/sensiolabs/security-checker" />
       <path value="$PROJECT_DIR$/backend/vendor/fig/link-util" />
@@ -170,6 +169,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/backend/vendor/liip/test-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4">

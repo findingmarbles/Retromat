@@ -1,6 +1,7 @@
 imports:
     - { resource: retromat/models.yaml }
     - { resource: retromat/commands.yaml }
+    - { resource: retromat/fixtures.yaml }
 
 parameters:
     locale: 'en'
@@ -34,6 +35,7 @@ services:
             $activityFileNames: '%retromat.activity.import.file_names%'
 
     App\Model\Importer\Activity\ActivityImporter:
+        public: true
         arguments:
             $locales: '%retromat.activity.import.languages.whitelist%'
 
@@ -51,3 +53,4 @@ services:
             $parts: '%retromat.plan.titles%'
 
     # @todo add missing redis and sitemap services
+
