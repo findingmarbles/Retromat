@@ -5,18 +5,17 @@ namespace App\Entity;
 use App\Repository\ActivityRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
-use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass=ActivityRepository::class)
  * @ORM\Table(name="activity",
  *     indexes={
  *          @ORM\Index(name="retromatId_index2", columns={"retromat_id"}),
  *          @ORM\Index(name="phase_index2", columns={"phase"})}
  *     )
- * @ORM\Entity(repositoryClass=ActivityRepository::class)
  */
 class Activity implements TranslatableInterface
 {
