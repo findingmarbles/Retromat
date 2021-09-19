@@ -2,10 +2,15 @@
 
 namespace App\Controller;
 
+use App\Model\Plan\DescriptionRenderer;
+use App\Model\Plan\Exception\InconsistentInputException;
+use App\Model\Plan\TitleChooser;
+use App\Model\Plan\TitleIdGenerator;
+use App\Model\Sitemap\PlanIdGenerator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -15,6 +20,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeamController extends AbstractController
 {
     private $ids = [];
+
+    private PlanIdGenerator $planIdGenerator;
+
+    private TitleIdGenerator $titleIdGenerator;
+
+    private TitleChooser $titleChooser;
+
+    private DescriptionRenderer $descriptionRenderer;
+
+    public function __construct(
+        PlanIdGenerator $planIdGenerator,
+        TitleIdGenerator $titleIdGenerator,
+        TitleChooser $titleChooser,
+        DescriptionRenderer $descriptionRenderer
+    ) {
+        $this->planIdGenerator = $planIdGenerator;
+        $this->titleIdGenerator = $titleIdGenerator;
+        $this->titleChooser = $titleChooser;
+        $this->descriptionRenderer = $descriptionRenderer;
+    }
 
     /**
      * @Route("/dashboard", name="team_dashboard")
@@ -27,13 +52,12 @@ class TeamController extends AbstractController
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
      * @Security("has_role('ROLE_SERP_PREVIEW')")
-     * @throws \AppBundle\Plan\Exception\InconsistentInputException
+     * @throws InconsistentInputException
      */
     public function serpPreviewAction(Request $request)
     {
-        $planIdGenerator = $this->get('retromat.plan.plan_id_generator');
-        $planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
-        $totalCombinations = $this->get('retromat.plan.title_id_generator')->countCombinationsInAllSequences(
+        $this->planIdGenerator->generate([$this, 'collect'], (int)$request->get('max'), (int)$request->get('skip'));
+        $totalCombinations = $this->titleIdGenerator->countCombinationsInAllSequences(
             $request->getLocale()
         );
 
@@ -44,8 +68,8 @@ class TeamController extends AbstractController
             'team/experiment/titlesAndDescriptionsByPlanId.html.twig',
             [
                 'planIds' => $this->ids,
-                'titleChooser' => $this->get('retromat.plan.title_chooser'),
-                'descriptionRenderer' => $this->get('retromat.plan.description_renderer'),
+                'titleChooser' => $this->titleChooser,
+                'descriptionRenderer' => $this->descriptionRenderer,
                 'totalCombinations' => $totalCombinations,
                 'activityRepository' => $activityRepository,
             ]
@@ -60,14 +84,14 @@ class TeamController extends AbstractController
     {
         $subject = '[retomat-backend] Email Experiment';
 
-        $message = \Swift_Message::newInstance()
-            ->setSubject($subject)
+        $message = (new Swift_Message($subject))
             ->setFrom($this->getParameter('retromat_backend_mail'))
             ->setTo($this->getParameter('retromat_backend_mail'))
             ->setBody(
                 'Email Experiment',
                 'text/plain'
             );
+
         $this->get('mailer')->send($message);
 
         return $this->render('team/experiment/emailExperiment.html.twig', ['subject' => $subject]);
