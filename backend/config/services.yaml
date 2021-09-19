@@ -2,6 +2,7 @@ imports:
     - { resource: retromat/models.yaml }
     - { resource: retromat/commands.yaml }
     - { resource: retromat/fixtures.yaml }
+    - { resource: retromat/subscriber.yaml }
 
 parameters:
     locale: 'en'
