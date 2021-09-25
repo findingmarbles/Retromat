@@ -14,6 +14,7 @@ class Kernel extends BaseKernel
     use MicroKernelTrait;
 
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+    private const RETROMAT_CONFIG_NAME = 'retromat';
 
     public function registerBundles(): iterable
     {
@@ -41,6 +42,8 @@ class Kernel extends BaseKernel
         $loader->load($confDir.'/{packages}/'.$this->environment.'/*'.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/{services}'.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/{services}_'.$this->environment.self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/'.self::RETROMAT_CONFIG_NAME.'/'.self::RETROMAT_CONFIG_NAME.self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/'.self::RETROMAT_CONFIG_NAME.'/'.self::RETROMAT_CONFIG_NAME.'_'.$this->environment.self::CONFIG_EXTS, 'glob');
     }
 
     protected function configureRoutes(RouteCollectionBuilder $routes): void

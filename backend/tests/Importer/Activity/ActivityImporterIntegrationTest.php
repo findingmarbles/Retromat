@@ -4,6 +4,7 @@ namespace App\Tests\Importer\Activity;
 
 use App\Model\Importer\Activity\ActivityImporter;
 use App\Model\Importer\Activity\ActivityReader;
+use App\Model\Importer\Activity\Exception\InvalidActivityException;
 use App\Model\Importer\ArrayToObjectMapper;
 use App\Tests\AbstractTestCase;
 use Doctrine\Persistence\ObjectManager;

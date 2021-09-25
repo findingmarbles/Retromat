@@ -45,6 +45,8 @@
         "symfony/css-selector": "4.4.*",
         "symfony/maker-bundle": "^1.33",
         "symfony/phpunit-bridge": "^5.3",
+        "symfony/stopwatch": "4.4.*",
+        "symfony/web-profiler-bundle": "4.4.*",
         "symfony/web-server-bundle": "4.4.*"
     },
     "config": {

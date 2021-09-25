@@ -52,6 +52,3 @@ services:
     App\Model\Plan\TitleRenderer:
         arguments:
             $parts: '%retromat.plan.titles%'
-
-    # @todo add missing redis and sitemap services
-

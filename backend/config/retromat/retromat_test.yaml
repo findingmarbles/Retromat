@@ -1,0 +1,9 @@
+parameters:
+    retromat.activity.import.languages.whitelist: ["en", "de", "es", "fr", "nl", "ru"]
+    retromat.activity.import.file_names:
+        en: "%kernel.root_dir%/../tests/data/activities_en.js"
+        de: "%kernel.root_dir%/../tests/data/activities_de.js"
+        es: "%kernel.root_dir%/../tests/data/activities_es.js"
+        fr: "%kernel.root_dir%/../tests/data/activities_fr.js"
+        nl: "%kernel.root_dir%/../tests/data/activities_nl.js"
+        ru: "%kernel.root_dir%/../tests/data/activities_ru.js"

@@ -11,8 +11,6 @@ class ActivityControllerTest  extends AbstractTestCase
 {
     public function setUp(): void
     {
-        // empty database before each test.
-        // any test that needs data to function has to specify the data needed explicitly.
         $this->loadFixtures([]);
     }
 
@@ -21,7 +19,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/32');
+        $client->request('GET', '/api/activity/32');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -29,7 +27,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/activities/59');
+        $client->request('GET', '/api/activity/59');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -37,7 +35,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/activities/80');
+        $client->request('GET', '/api/activity/80');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -51,7 +49,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/32?locale=de');
+        $client->request('GET', '/api/activity/32?locale=de');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -59,7 +57,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/activities/58?locale=de');
+        $client->request('GET', '/api/activity/58?locale=de');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -67,7 +65,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/activities/75?locale=de');
+        $client->request('GET', '/api/activity/75?locale=de');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -81,7 +79,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/17');
+        $client->request('GET', '/api/activity/17');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -89,7 +87,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/activities/80');
+        $client->request('GET', '/api/activity/80');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -103,7 +101,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/77');
+        $client->request('GET', '/api/activity/77');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -111,7 +109,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/activities/5');
+        $client->request('GET', '/api/activity/5');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -125,7 +123,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/15');
+        $client->request('GET', '/api/activity/15');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -133,7 +131,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/activities/37');
+        $client->request('GET', '/api/activity/37');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -147,7 +145,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities/14');
+        $client->request('GET', '/api/activity/14');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -155,7 +153,7 @@ class ActivityControllerTest  extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/activities/65');
+        $client->request('GET', '/api/activity/65');
         $activity = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -169,7 +167,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities');
+        $client->request('GET', '/api/activities');
         $activities = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -188,7 +186,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities');
+        $client->request('GET', '/api/activities');
         $activities = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
@@ -205,7 +203,7 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities?locale=de');
+        $client->request('GET', '/api/activities?locale=de');
         $activities = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
@@ -222,23 +220,23 @@ class ActivityControllerTest  extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = static::createClient();
 
-        $client->request('GET', '/activities?locale=de');
+        $client->request('GET', '/api/activities?locale=de');
         $activities = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(75, $activities);
 
-        $client->request('GET', '/activities?locale=en');
+        $client->request('GET', '/api/activities?locale=en');
         $activities = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(131, $activities);
 
-        $client->request('GET', '/activities?locale=es');
+        $client->request('GET', '/api/activities?locale=es');
         $activities = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(95, $activities);
 
-        $client->request('GET', '/activities?locale=fr');
+        $client->request('GET', '/api/activities?locale=fr');
         $activities = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(50, $activities);
 
-        $client->request('GET', '/activities?locale=nl');
+        $client->request('GET', '/api/activities?locale=nl');
         $activities = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(101, $activities);
     }

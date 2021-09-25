@@ -28,7 +28,7 @@ class ActivityTranslation implements TranslationInterface
      * @Assert\NotBlank()
      * @ORM\Column(name="`name`", type="string", length=255)
      */
-    private $name;
+    private $name = '';
 
     /**
      * @var string
@@ -36,7 +36,7 @@ class ActivityTranslation implements TranslationInterface
      * @Assert\NotBlank()
      * @ORM\Column(name="summary", type="string", length=255)
      */
-    private $summary;
+    private $summary = '';
 
     /**
      * @var string
@@ -44,7 +44,7 @@ class ActivityTranslation implements TranslationInterface
      * @Assert\NotBlank()
      * @ORM\Column(name="`desc`", type="text")
      */
-    private $desc;
+    private $desc = '';
 
     /**
      * @param $name

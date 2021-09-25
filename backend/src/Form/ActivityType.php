@@ -56,6 +56,6 @@ class ActivityType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_activity2';
+        return 'app_activity';
     }
 }
