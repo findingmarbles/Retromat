@@ -7,9 +7,9 @@ use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 
 class AbstractTestCase extends WebTestCase
 {
-    public function loadFixtures($fixtures): void
+    public function loadFixtures($fixtures)
     {
-        $this->getContainer()
+        return $this->getContainer()
             ->get(DatabaseToolCollection::class)
             ->get()
             ->loadFixtures($fixtures);

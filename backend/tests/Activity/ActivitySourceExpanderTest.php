@@ -116,6 +116,6 @@ source_judith: "<a href=\"https://leanpub.com/ErfolgreicheRetrospektiven\">Judit
 source_unknown: "Unknown"
 YAML;
 
-        return Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        return Yaml::parse($yaml);
     }
 }

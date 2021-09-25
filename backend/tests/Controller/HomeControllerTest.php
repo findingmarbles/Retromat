@@ -350,14 +350,13 @@ class HomeControllerTest extends AbstractTestCase
         // must not be hidden when phase is not specified in URL
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0);
-        $this->assertNotContains('hidden', $crawler->filter('.js_phase-stepper')->eq(0)->attr('class'));
-        $this->assertNotContains('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
-
+        $this->assertStringNotContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(0)->attr('class'));
+        $this->assertStringNotContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
         // must be hidden when phase is specified in URL
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
-        $this->assertContains('hidden', $crawler->filter('.js_phase-stepper')->eq(0)->attr('class'));
-        $this->assertContains('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
+        $this->assertStringContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(0)->attr('class'));
+        $this->assertStringContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
     }
 
     public function testShowNumbersInFooter()
@@ -597,7 +596,10 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertEquals('404', $client->getResponse()->getStatusCode());
     }
 
-    public function malformedPathsProvider()
+    /**
+     * @return \string[][]
+     */
+    private function malformedPathsProvider(): array
     {
         return [
             ['/en/?id=x'],

@@ -36,7 +36,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $titleRenderer = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $titleRenderer);
 
@@ -68,7 +68,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $titleRenderer = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $titleRenderer);
 
@@ -100,7 +100,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -133,7 +133,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -166,7 +166,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -200,7 +200,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -234,7 +234,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -245,10 +245,10 @@ YAML;
         $this->assertTrue(is_numeric($sequenceId));
 
         $fragmentIdsString = $idStringParts[1];
-        $this->assertContains('-', $fragmentIdsString);
+        $this->assertStringContainsString('-', $fragmentIdsString);
 
         $fragmentIds = explode('-', $fragmentIdsString);
-        $this->assertInternalType('array', $fragmentIds);
+        $this->assertTrue(is_array($fragmentIds));
 
         foreach ($fragmentIds as $fragmentId) {
             $this->assertTrue(is_numeric($fragmentId));
@@ -280,7 +280,7 @@ de:
         1: [Retro]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -291,10 +291,10 @@ YAML;
         $this->assertTrue(is_numeric($sequenceId));
 
         $fragmentIdsString = $idStringParts[1];
-        $this->assertContains('-', $fragmentIdsString);
+        $this->assertStringContainsString('-', $fragmentIdsString);
 
         $fragmentIds = explode('-', $fragmentIdsString);
-        $this->assertInternalType('array', $fragmentIds);
+        $this->assertTrue(is_array($fragmentIds));
 
         foreach ($fragmentIds as $fragmentId) {
             $this->assertTrue(is_numeric($fragmentId));
@@ -330,7 +330,7 @@ de:
         1: [Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -371,7 +371,7 @@ de:
         1: [Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -412,7 +412,7 @@ de:
         1: [Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -454,7 +454,7 @@ de:
         1: [Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
 
@@ -492,7 +492,7 @@ de:
         1: [Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
@@ -534,7 +534,7 @@ de:
         1: ["", Retro, Retrospective]
         2: [Plan, Ablaufplan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
@@ -565,7 +565,7 @@ en:
     groups_of_terms:
         0: ["Foo"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = 2;
         $title = new TitleRenderer($titleParts);
@@ -595,7 +595,7 @@ de:
     groups_of_terms:
         0: ["Foo"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = 2;
         $title = new TitleRenderer($titleParts);
@@ -627,7 +627,7 @@ en:
         8: ["", "bar8"]
         9: ["", "bar9"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
@@ -678,7 +678,7 @@ de:
         8: ["", "bar8"]
         9: ["", "bar9"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
         $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
@@ -706,7 +706,7 @@ en:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
@@ -739,7 +739,7 @@ de:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-2-0';
@@ -770,7 +770,7 @@ en:
         8: ["", "bar8"]
         9: ["", "bar9"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
@@ -832,7 +832,7 @@ de:
         8: ["", "bar8"]
         9: ["", "bar9"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
@@ -870,7 +870,7 @@ en:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $maxLengthIncludingPlanId = 15;
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
@@ -904,7 +904,7 @@ de:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $maxLengthIncludingPlanId = 15;
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
@@ -957,7 +957,7 @@ ru:
         12: ["", "Планируйте Вашу", "Организуйте Вашу", "Создайте Вашу", "Подготовьте Вашу"]
         13: ["", "Инструменты Скрам Мастера:", "Инструменты Скраммастера:", "Инструменты фасилитатора:", "Инструментарий Скрам Мастера:", "Инструментарий Скраммастера:", "Инструментарий фасилитатора:"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $maxLengthIncludingPlanId = 60;
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);

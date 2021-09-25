@@ -24,7 +24,7 @@ en:
         1: [Retrospective]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -55,7 +55,7 @@ de:
         1: [Retrospective]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -82,7 +82,7 @@ en:
         3: [Number]
         4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -126,7 +126,7 @@ de:
         3: [Number]
         4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -152,7 +152,7 @@ en:
         1: [Retrospective]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -185,7 +185,7 @@ de:
         1: [Retrospective]
         2: [Plan]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
 
         $generator = new TitleIdGenerator($titleParts);
 
@@ -212,7 +212,7 @@ en:
         3: [Number]
         4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $generator = new TitleIdGenerator($titleParts);
 
         $this->assertEquals(30, $generator->countCombinationsInAllSequences());
@@ -252,7 +252,7 @@ de:
         3: [Number]
         4: [1-2-3-4-5, 6-7-8-9-10, 11-12-13-14-15, 16-17-17-19-20]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $generator = new TitleIdGenerator($titleParts);
 
         $this->assertEquals(30, $generator->countCombinationsInAllSequences('de'));

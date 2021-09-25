@@ -7,7 +7,7 @@ use App\Tests\AbstractTestCase;
 
 class RobotsControllerTest extends AbstractTestCase
 {
-    public function testRobotsClosed()
+    public function testRobotsTxtDisallow()
     {
         $client = static::createClient();
 
@@ -20,37 +20,37 @@ class RobotsControllerTest extends AbstractTestCase
         );
 
         $this->assertEquals(
-            '
-User-agent: *
-Disallow: /
-',
+            <<<EOT
+            User-agent: *
+            Disallow: /
+            EOT,
             $client->getResponse()->getContent()
         );
         $this->assertEquals('text/plain; charset=UTF-8', $client->getResponse()->headers->get('content-type'));
     }
 
-//    @todo Can not yet distinguish hostnames in this test, but verified that it's working manually.
-//    public function testRobotsOpen()
-//    {
-//        $client = static::createClient();
-//
-//        $client->request(
-//            'GET',
-//            '/robots.txt',
-//            array(),
-//            array(),
-//            array('HTTP_HOST' => 'retromat.org')
-//        );
-//
-//        $this->assertEquals(
-//            '
-//User-agent: *
-//Disallow:
-//Crawl-delay: 1
-//
-//Sitemap: https://retromat.org/sitemap.xml',
-//            $client->getResponse()->getContent()
-//        );
-//        $this->assertEquals('text/plain; charset=UTF-8', $client->getResponse()->headers->get('content-type'));
-//    }
+    public function testRobotsTxtAllow()
+    {
+        $client = static::createClient();
+
+        $client->request(
+            'GET',
+            '/robots.txt',
+            array(),
+            array(),
+            array('HTTP_HOST' => 'retromat.org')
+        );
+
+        $this->assertEquals(
+            <<<EOT
+            User-agent: *
+            Disallow:
+            Crawl-delay: 1
+            
+            Sitemap: https://retromat.org/sitemap.xml
+            EOT,
+            $client->getResponse()->getContent()
+        );
+        $this->assertEquals('text/plain; charset=UTF-8', $client->getResponse()->headers->get('content-type'));
+    }
 }

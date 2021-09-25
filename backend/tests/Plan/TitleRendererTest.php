@@ -14,7 +14,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderDifferentTerms()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Agile Retrospective Plan', $title->render('0:0-0-0'));
@@ -26,7 +26,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderDifferentTermsDe()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Agile Retrospective Plan', $title->render('0:0-0-0', 'de'));
@@ -38,7 +38,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderDifferentSequences()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Retrospective Plan', $title->render('2:0-0'));
@@ -50,7 +50,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderDifferentSequencesDe()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Retrospective Plan', $title->render('2:0-0', 'de'));
@@ -63,7 +63,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderWrongNumberOfIds()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $title->render('1:0-0-0');
@@ -75,7 +75,7 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
      */
     public function testRenderWrongNumberOfIdsDe()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'), Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $title->render('1:0-0-0', 'de');
@@ -105,7 +105,7 @@ de:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $this->assertEquals('Plan', $title->render('0:0-0-0'));
     }
@@ -134,7 +134,7 @@ de:
         1: ["", "Retro", "Retrospective"]
         2: ["Plan", "Agenda"]
 YAML;
-        $titleParts = Yaml::parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS);
+        $titleParts = Yaml::parse($yaml);
         $title = new TitleRenderer($titleParts);
         $this->assertEquals('Plan', $title->render('0:0-0-0', 'de'));
     }
