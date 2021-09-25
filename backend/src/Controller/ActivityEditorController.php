@@ -7,6 +7,7 @@ use App\Model\Activity\ActivityByPhase;
 use App\Model\Activity\ActivitySourceExpander;
 use App\Model\Twig\ColorVariation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,14 +22,18 @@ class ActivityEditorController extends AbstractController
 
     private ActivityByPhase $activityByPhase;
 
+    private AdapterInterface $redisAdapter;
+
     public function __construct(
         ActivitySourceExpander $activitySourceExpander,
         ColorVariation $colorVariation,
-        ActivityByPhase $activityByPhase
+        ActivityByPhase $activityByPhase,
+        AdapterInterface $redisAdapter
     ) {
         $this->activitySourceExpander = $activitySourceExpander;
         $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
+        $this->redisAdapter = $redisAdapter;
     }
 
     /**
@@ -211,8 +216,7 @@ class ActivityEditorController extends AbstractController
     private function flushEntityManagerAndClearRedisCache(): void
     {
         $this->getDoctrine()->getManager()->flush();
-        // @todo implement redis cache
-        // $this->get('retromat.doctrine_cache.redis')->deleteAll();
+        $this->redisAdapter->clear();
     }
 
     /**
