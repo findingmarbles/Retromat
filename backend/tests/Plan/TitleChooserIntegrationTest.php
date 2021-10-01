@@ -551,12 +551,10 @@ YAML;
         );
     }
 
-    /**
-     * @throws InconsistentInputException
-     * @expectedException NoGroupLeftToDrop
-     */
-    public function testChooseTitleIdMaxLengthNotFeasible()
+    public function testChooseTitleIdMaxLengthNotFeasible(): void
     {
+        $this->expectException(NoGroupLeftToDrop::class);
+
         $yaml = <<<YAML
 en:
     sequence_of_groups:
@@ -575,11 +573,12 @@ YAML;
     }
 
     /**
-     * @throws InconsistentInputException
-     * @expectedException NoGroupLeftToDrop
+     * @group dev
      */
-    public function testChooseTitleIdMaxLengthNotFeasibleDe()
+    public function testChooseTitleIdMaxLengthNotFeasibleDe(): void
     {
+        $this->expectException(NoGroupLeftToDrop::class);
+
         $yaml = <<<YAML
 en:
     sequence_of_groups:

@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace App\Model\Plan;
 
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
-use App\Model\Plan\TitleRenderer;
 use App\Model\Plan\Exception\InconsistentInputException;
 
 class TitleChooser

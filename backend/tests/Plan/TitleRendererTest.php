@@ -58,23 +58,22 @@ class TitleRendererTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException \AppBundle\Plan\Exception\InconsistentInputException
      * @throws InconsistentInputException
      */
     public function testRenderWrongNumberOfIds()
     {
+        $this->expectException(InconsistentInputException::class);
+
         $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $title->render('1:0-0-0');
     }
 
-    /**
-     * @expectedException \AppBundle\Plan\Exception\InconsistentInputException
-     * @throws InconsistentInputException
-     */
-    public function testRenderWrongNumberOfIdsDe()
+    public function testRenderWrongNumberOfIdsDe(): void
     {
+        $this->expectException(InconsistentInputException::class);
+
         $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
