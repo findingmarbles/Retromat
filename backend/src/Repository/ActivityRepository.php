@@ -47,7 +47,7 @@ class ActivityRepository extends ServiceEntityRepository
             ->leftJoin('a.translations', 'a2t', Join::WITH, 'a2t.translatable = a.id')
             ->orderBy('a.retromatId', 'ASC')
             ->getQuery()
-            ->useResultCache(true, 86400)
+            ->enableResultCache(true, 86400)
             ->getResult();
     }
 

@@ -7,9 +7,9 @@ use App\Model\Activity\ActivityByPhase;
 use App\Model\Activity\ActivitySourceExpander;
 use App\Model\Twig\ColorVariation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Cache\CacheInterface;
 
 /**
  * @Route("{_locale}/team/activity")
@@ -22,18 +22,18 @@ class ActivityEditorController extends AbstractController
 
     private ActivityByPhase $activityByPhase;
 
-    private AdapterInterface $redisAdapter;
+    private CacheInterface $doctrineResultCachePool;
 
     public function __construct(
         ActivitySourceExpander $activitySourceExpander,
         ColorVariation $colorVariation,
         ActivityByPhase $activityByPhase,
-        AdapterInterface $redisAdapter
+        CacheInterface $doctrineResultCachePool
     ) {
         $this->activitySourceExpander = $activitySourceExpander;
         $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
-        $this->redisAdapter = $redisAdapter;
+        $this->doctrineResultCachePool = $doctrineResultCachePool;
     }
 
     /**
@@ -216,7 +216,7 @@ class ActivityEditorController extends AbstractController
     private function flushEntityManagerAndClearRedisCache(): void
     {
         $this->getDoctrine()->getManager()->flush();
-        $this->redisAdapter->clear();
+        $this->doctrineResultCachePool->clear();
     }
 
     /**

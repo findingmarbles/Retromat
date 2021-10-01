@@ -58,7 +58,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
         );
     }
 
-    public function testCreateNewActivityPhase0()
+    public function testCreateNewActivityPhase0(): void
     {
         $client = $this->makeClientLoginAdmin();
 
@@ -71,6 +71,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
                 'app_activity[desc]' => 'la',
             ]
         );
+
         $crawler = $client->submit($form);
 
         $this->assertStatusCode(302, $client);
@@ -80,10 +81,8 @@ class ActivityEditorControllerTest extends AbstractTestCase
         );
     }
 
-    public function testCreateNewActivityMultiple()
+    public function testCreateNewActivityMultiple(): void
     {
-        $this->markTestSkipped('Skipped for setValues() wont work');
-
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
