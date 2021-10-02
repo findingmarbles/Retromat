@@ -31,24 +31,22 @@ mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf <SpaceNameDev>_retromat <  re
 cd /var/www/virtual/<SpaceNameDev>/
 git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git retromat.git
 ```
-* Copy config template as active config
+* Copy .env as .env.local and edit to reflect properties of current space (db host: localhost, db password from ~/.my.cnf etc.)...
+
 ```
 cd /var/www/virtual/<SpaceNameDev>/retromat.git/
-cp backend/app/config/parameters.yml.dist backend/app/config/parameters.yml
+cp backend/.env backend/.env.local
+vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/.env.local
 ```
-* Edit config to reflect properties of current space (db host: localhost, db password from ~/.my.cnf etc.)...
-```
-vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/app/config/parameters.yml
-```
-... Create sessions dir and adjust path in parameters.yml
+... (@TODO UPDATE THIS - WHERE TO CONFIGURE?) Create sessions dir and adjust path in parameters.yml
 ```
 mkdir /var/www/virtual/<SpaceNameDev>/sessions
 ```
-... set redis connection in parameters.yml
+... set redis connection in .env.local
 ```
-redis_connection: (home dir, z.B. /home/<SpaceNameDev>/.redis/sock )
+REDIS_URL="redis:///home/<SpaceNameDev>/.redis/sock"
 ```
-* Install libraries (this will try to clear the cache, which can cause problems in an incomplete setup. In that case, fix / continue, then redo this step later)
+* Install libraries (this will try to clear the cache, which can cause problems in an incomplete setup. In that case, re-run the command, if that doesn't help fix / continue, then redo this step later)
 ```
 cd /var/www/virtual/<SpaceNameDev>/retromat.git/backend
 composer install
@@ -92,7 +90,7 @@ redis-cli -s /home/<SpaceNameDev>/.redis/sock FLUSHALL
 * We allow browser caching for HTML and assets (JS, CSS), so you may need to clear your browser cache as well. Some browsers allow disabling caches while the developer tools are open.
 
 # Bypass some caches on dev instance for easier development
-* Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony. To make it available on your dev instance (even without an SSH tunnel, like on avior) edit this file. Inside the file, you find instructions on which block to comment out:
+* (@TODO UPDATE THIS) Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony. To make it available on your dev instance (even without an SSH tunnel, like on avior) edit this file. Inside the file, you find instructions on which block to comment out:
 ```
 vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/web/app_dev.php
 ```
