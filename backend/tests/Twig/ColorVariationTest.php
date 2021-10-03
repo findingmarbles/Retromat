@@ -3,8 +3,9 @@
 namespace App\Tests\Twig;
 
 use App\Model\Twig\ColorVariation;
+use PHPUnit\Framework\TestCase;
 
-class ColorVariationTest extends \PHPUnit\Framework\TestCase
+class ColorVariationTest extends TestCase
 {
     public function testNextColor()
     {

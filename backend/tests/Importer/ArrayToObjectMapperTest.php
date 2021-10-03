@@ -3,8 +3,9 @@
 namespace App\Tests\Importer;
 
 use App\Model\Importer\ArrayToObjectMapper;
+use PHPUnit\Framework\TestCase;
 
-class ArrayToObjectMapperTest extends \PHPUnit\Framework\TestCase
+class ArrayToObjectMapperTest extends TestCase
 {
     public function testFillObjectFromArray()
     {

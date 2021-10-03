@@ -5,8 +5,9 @@ namespace App\Tests\Plan;
 
 use App\Entity\Activity;
 use App\Model\Plan\DescriptionRenderer;
+use PHPUnit\Framework\TestCase;
 
-class DescriptionRendererTest extends \PHPUnit\Framework\TestCase
+class DescriptionRendererTest extends TestCase
 {
     public function testRenderEmptyDescriptionUnless5Activities()
     {

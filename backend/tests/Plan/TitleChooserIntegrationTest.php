@@ -6,10 +6,11 @@ namespace App\Tests\Plan;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\TitleChooser;
 use App\Model\Plan\TitleRenderer;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 use App\Model\Plan\Exception\InconsistentInputException;
 
-class TitleChooserIntegrationTest extends \PHPUnit\Framework\TestCase
+class TitleChooserIntegrationTest extends TestCase
 {
     /**
      * @throws NoGroupLeftToDrop

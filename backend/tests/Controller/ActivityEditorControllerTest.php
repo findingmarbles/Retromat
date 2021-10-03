@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace App\Tests\Controller;
 
 use App\Tests\AbstractTestCase;
-use Symfony\Bundle\FrameworkBundle\Client;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser as Client;
 
 class ActivityEditorControllerTest extends AbstractTestCase
 {

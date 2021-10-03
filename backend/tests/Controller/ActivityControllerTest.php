@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 namespace App\Tests\Controller;
 
-
-
 use App\Tests\AbstractTestCase;
 
 class ActivityControllerTest  extends AbstractTestCase

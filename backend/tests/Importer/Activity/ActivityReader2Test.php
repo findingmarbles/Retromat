@@ -4,8 +4,9 @@ declare(strict_types = 1);
 namespace App\Tests\Importer\Activity;
 
 use App\Model\Importer\Activity\ActivityReader;
+use PHPUnit\Framework\TestCase;
 
-class ActivityReader2Test extends \PHPUnit\Framework\TestCase
+class ActivityReader2Test extends TestCase
 {
     /**
      * @var ActivityReader

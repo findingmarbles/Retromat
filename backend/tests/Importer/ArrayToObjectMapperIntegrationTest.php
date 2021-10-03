@@ -4,8 +4,9 @@ namespace App\Tests\Importer;
 
 use App\Entity\Activity;
 use App\Model\Importer\ArrayToObjectMapper;
+use PHPUnit\Framework\TestCase;
 
-class ArrayToObjectMapperIntegrationTest extends \PHPUnit\Framework\TestCase
+class ArrayToObjectMapperIntegrationTest extends TestCase
 {
     public function testFillActivityFromArray()
     {

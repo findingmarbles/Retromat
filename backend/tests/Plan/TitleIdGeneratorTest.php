@@ -4,10 +4,11 @@ declare(strict_types = 1);
 namespace App\Tests\Plan;
 
 use App\Model\Plan\TitleIdGenerator;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 use App\Model\Plan\Exception\InconsistentInputException;
 
-class TitleIdGeneratorTest extends \PHPUnit\Framework\TestCase
+class TitleIdGeneratorTest extends TestCase
 {
     /**
      * @throws InconsistentInputException
