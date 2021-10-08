@@ -39,7 +39,7 @@ before_deploy:
     - eval "$(ssh-agent -s)"
     - ssh-add .travis/rsa_travis_timon
     - rm -rf .travis/
-    - openssl aes-256-cbc -d -a -in backend/.env.prod.cordelia.enc -out .env.prod -k $travis_key
+    - openssl aes-256-cbc -d -a -in backend/.env.cordelia.enc -out backend/.env -k $travis_key
     - php backend/bin/travis-ci/deployU7.php $TRAVIS_COMMIT
     - ssh-agent -k
 

@@ -4,6 +4,7 @@
 /.env.local.php
 /.env.*.local
 /.env.prod.cordelia
+/.env.cordelia
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
