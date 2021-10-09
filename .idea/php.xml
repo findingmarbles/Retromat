@@ -171,6 +171,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/backend/vendor/liip/test-fixtures-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4">

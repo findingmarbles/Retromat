@@ -13,6 +13,7 @@
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/aws.xml
 
 ## File-based project format:
 *.iws
