@@ -1,6 +1,8 @@
 services:
-  - mysql
   - redis
+
+addons:
+  mariadb: '10.3'
 
 language: php
 
