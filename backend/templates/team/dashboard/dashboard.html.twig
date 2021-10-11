@@ -60,13 +60,6 @@
         </ul>
 
         {% if is_granted('ROLE_ADMIN') %}
-            <h2>Admin: Tools: Internal</h2>
-            <ul>
-                <li><a href="/app_dev.php">Debug Controller</a></li>
-            </ul>
-        {% endif %}
-
-        {% if is_granted('ROLE_ADMIN') %}
             <h2>Admin: Tools: External</h2>
             <ul>
                 <li>Collaboation
@@ -80,12 +73,12 @@
                 </li>
                 <li>Deployment
                     <ul>
-                        <li><a href="https://travis-ci.org/findingmarbles/Retromat">Travis-CI Dashboard</a></li>
+                        <li><a href="https://app.travis-ci.com/github/findingmarbles/Retromat">Travis-CI Dashboard</a></li>
                     </ul>
                 </li>
                 <li>Uberspace
                     <ul>
-                        <li><a href="https://stats.avior.uberspace.de/retromat/">Traffic Stats</a></li>
+                        <li>Traffic Stats (todo)</li>
                         <li><a href="https://uberspace.de/dashboard/datasheet">Quota (Disk + Database)</a></li>
                     </ul>
                 </li>
@@ -100,11 +93,6 @@
                         <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Google Search Console</a>
                         <li><a href="https://www.bing.com/webmaster/home/dashboard">Bing Webmaster Tools</a></li>
                         <li><a href="https://webmaster.yandex.com/">Yandex Webmaster Tools</a></li>
-                    </ul>
-                </li>
-                <li>Research
-                    <ul>
-                        <li><a href="https://adwords.google.com/">Adwords (Keyword Research)</a></li>
                     </ul>
                 </li>
             </ul>
