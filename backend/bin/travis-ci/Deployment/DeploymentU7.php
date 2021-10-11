@@ -180,18 +180,18 @@ class DeploymentU7
     {
         // make backend/web of the current deployment domain directory visible to the outside
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ '.$this->deploymentDomain
+            'cd '.self::WebSpaceDirPrefix.' ; rm '.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/public/ '.$this->deploymentDomain
         );
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/web/ www.'.$this->deploymentDomain
+            'cd '.self::WebSpaceDirPrefix.' ; rm www.'.$this->deploymentDomain.' ; ln -s '.$this->deploymentDir.'/backend/public/ www.'.$this->deploymentDomain
         );
 
         // make backend/web of the previous deployment domain directory visible to the outside
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/web/ plans-for-retrospectives.com'
+            'cd '.self::WebSpaceDirPrefix.' ; rm plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/public/ plans-for-retrospectives.com'
         );
         $this->remote(
-            'cd '.self::WebSpaceDirPrefix.' ; rm www.plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/web/ www.plans-for-retrospectives.com'
+            'cd '.self::WebSpaceDirPrefix.' ; rm www.plans-for-retrospectives.com ; ln -s '.$this->deploymentDir.'/backend/public/ www.plans-for-retrospectives.com'
         );
 
         // mark the current deployment directory so we can reference it from the cron script that will periodically build the sitemap via the command line
