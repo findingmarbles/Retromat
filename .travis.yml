@@ -36,12 +36,12 @@ deploy:
 
 before_deploy:
     - mkdir -p .travis/
-    - openssl aes-256-cbc -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
+    - openssl aes-256-cbc -md sha256 -d -a -in backend/bin/travis-ci/rsa_travis_timon.enc -out .travis/rsa_travis_timon -k $travis_key
     - chmod 600 .travis/rsa_travis_timon
     - eval "$(ssh-agent -s)"
     - ssh-add .travis/rsa_travis_timon
     - rm -rf .travis/
-    - openssl aes-256-cbc -d -a -in backend/.env.cordelia.enc -out backend/.env -k $travis_key
+    - openssl aes-256-cbc -md sha256 -d -a -in backend/.env.cordelia.enc -out backend/.env -k $travis_key
     - php backend/bin/travis-ci/deployU7.php $TRAVIS_COMMIT
     - ssh-agent -k
 
