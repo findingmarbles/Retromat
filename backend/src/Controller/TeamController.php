@@ -77,27 +77,6 @@ class TeamController extends AbstractController
     }
 
     /**
-     * @Route("/experiment/email")
-     * @Security("has_role('ROLE_ADMIN')")
-     */
-    public function emailExperimentAction()
-    {
-        $subject = '[retomat-backend] Email Experiment';
-
-        $message = (new Swift_Message($subject))
-            ->setFrom($this->getParameter('retromat_backend_mail'))
-            ->setTo($this->getParameter('retromat_backend_mail'))
-            ->setBody(
-                'Email Experiment',
-                'text/plain'
-            );
-
-        $this->get('mailer')->send($message);
-
-        return $this->render('team/experiment/emailExperiment.html.twig', ['subject' => $subject]);
-    }
-
-    /**
      * @Route("/experiment/error")
      * @Security("has_role('ROLE_ADMIN')")
      * @throws \Exception
