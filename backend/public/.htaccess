@@ -1,3 +1,44 @@
+# Set preconnect http header
+<ifModule mod_headers.c>
+    Header set link "<//ajax.googleapis.com>; rel=preconnect; crossorigin"
+    Header set Connection keep-alive
+    Header set Keep-Alive timeout=301,max=500
+</ifModule>
+
+# Cache JavaScript files for 1 day
+<filesMatch ".(js)$">
+    Header set Cache-Control "max-age=86400, public"
+</filesMatch>
+
+# Cache static assets for 1 month
+<filesMatch ".(css|jpg|jpeg|png|gif|ico|txt)$">
+    Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
+# Enable GZIP compression for plaintext assets
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/x-js
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE text/x-component
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/atom+xml
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE font/opentype
+
+# Set appropriate mime type
+AddType  application/font-woff2  .woff2
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
@@ -19,6 +60,22 @@ DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # redirect old domains (but allow localhost)
+    RewriteCond %{HTTP_HOST} plans-for-retrospectives\.com
+    RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
+
+    RewriteCond %{HTTP_HOST} www\.plans-for-retrospectives\.com
+    RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
+
+    RewriteCond %{HTTP_HOST} www\.retromat\.org
+    RewriteRule ^(.*)$ https://retromat.org/$1 [R=301,L]
+
+    # always https on retromat.org (but allow localhost etc. on http)
+    RewriteCond %{HTTP_HOST} retromat\.org
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{ENV:HTTPS} !=on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
