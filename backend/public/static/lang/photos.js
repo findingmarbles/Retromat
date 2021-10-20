@@ -233,3 +233,10 @@ all_photos[125] = [
 all_photos[129] = [
 {filename:    "https://agilehunter.files.wordpress.com/2017/06/elephant_safari.jpg?w=740", contributor: "Willem Larsen"}
 ];
+all_photos[141] = [
+{filename:    path + "142_watermelon.jpg", contributor: "Sabina Lammert"}
+];
+all_photos[142] = [
+{filename:    path + "143_energiefass.jpg", contributor: "Anh Bui"},
+{filename:    path + "143_batterie.jpg", contributor: "Corinna Baldauf"}
+];
