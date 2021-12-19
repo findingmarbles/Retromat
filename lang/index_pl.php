@@ -23,35 +23,26 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Prześlij ją do nas';
 
-//$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Tłumaczenie ';
-//$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Jarosław Łojko';
-//$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://www.linkedin.com/in/jaroslawlojko/';
-//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ - send me a picture; will be cut to 70x93px :)';
-//$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-//Jarek to pragmatyczny i wszechstronny Agile Coach z wieloletnim doświadczeniem w różnych branżach. Nigdy nie przestaje się uczyć i rozwijać zarówno siebie jak i tych z którymi pracuje. Autor popularnego bloga <a href="https://agileadept.pl">Agile Adept</a>. 
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Tłumaczenie ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Jarosław Łojko';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://www.linkedin.com/in/jaroslawlojko/';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/jaroslaw_lojko.png';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+Jarek to pragmatyczny i wszechstronny Agile Coach z wieloletnim doświadczeniem w różnych branżach. Nigdy nie przestaje się uczyć i rozwijać zarówno siebie jak i tych z którymi pracuje. Autor popularnego bloga <a href="https://agileadept.pl">Agile Adept</a>. 
 
 
-//EOT;
+EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Stworzone przez ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Gdy Corinna pełniła rolę Scrum Masterki marzyła o narzędziu takim jak Retromat.
     W końcu zdecydowała się, że zbuduje je sama z nadzieją, że może być też przydatne dla innych.
     Masz pytania, sugestie, zachęty?
-    Napisz <a href="mailto:corinna@finding-marbles.com">wiadomość/a> lub
-    <a href="https://twitter.com/findingmarbles">śledź na Twitterze</a>.
+    Napisz <a href="mailto:corinna@retromat.org">wiadomość/a> lub
+    <a href="https://twitter.com/corinnabaldauf">śledź na Twitterze</a>.
     Jeżeli podoba ci się Retromat, możesz także polubbić    <a href="http://finding-marbles.com">Blog Corinny</a> oraz jej materiały na <a href="http://wall-skills.com">Wall-Skills.com</a>.  
 EOT;
 
-$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation by ';
-$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Translator Name';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ronald_steyer.jpg';
-$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	About the translater ... German Text only as Placeholder ... Veränderungen  oder besser: Transformation fördern. Um Unternehmen kundenorientierter und anpassungsfähiger zu machen, will er sie für agiles Arbeiten begeistern, Du kannst ihm <a href="mailto:aboutronald@posteo.de">schreiben</a>.
-		<br> <br>
-		Vielen Dank auch an <a href="http://retromat.luig.eu/">Martin Luig</a>.
-EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Współautor ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
