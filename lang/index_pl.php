@@ -53,8 +53,8 @@ EOT;
 $_lang['PRINT_HEADER'] = '(retromat.org)';
 
 $_lang['ACTIVITY_SOURCE'] = 'Źródło:';
-$_lang['ACTIVITY_PREV'] = 'Pokaż inne aktywności tej fazy';
-$_lang['ACTIVITY_NEXT'] = 'Pokaż inne aktywności tej fazy';
+$_lang['ACTIVITY_PREV'] = 'Pokaż poprzednią aktywność';
+$_lang['ACTIVITY_NEXT'] = 'Pokaż następną aktywność';
 $_lang['ACTIVITY_PHOTO_ADD'] = 'Dodaj zdjęcie';
 $_lang['ACTIVITY_PHOTO_MAIL_SUBJECT'] = 'Photos%20for%20Activity%3A%20ID';
 $_lang['ACTIVITY_PHOTO_MAIL_BODY'] = 'Hi%20Corinna%21%0D%0A%0D%0A[%20]%20Photo%20is%20attached%0D%0A[%20]%20Photo%20is%20online%20at%3A%20%0D%0A%0D%0ABest%2C%0D%0AYour%20Name';
