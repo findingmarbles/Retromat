@@ -38,7 +38,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Gdy Corinna pełniła rolę Scrum Masterki marzyła o narzędziu takim jak Retromat.
     W końcu zdecydowała się, że zbuduje je sama z nadzieją, że może być też przydatne dla innych.
     Masz pytania, sugestie, zachęty?
-    Napisz <a href="mailto:corinna@retromat.org">wiadomość/a> lub
+    Napisz <a href="mailto:corinna@retromat.org">wiadomość</a> lub
     <a href="https://twitter.com/corinnabaldauf">śledź na Twitterze</a>.
     Jeżeli podoba ci się Retromat, możesz także polubbić    <a href="http://finding-marbles.com">Blog Corinny</a> oraz jej materiały na <a href="http://wall-skills.com">Wall-Skills.com</a>.  
 EOT;
@@ -46,7 +46,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Współautor ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Timon prowadzi <a href="/en/team/timon">Szkolenia Scrumowe</a>. Jako Integral Coach i <a href="/en/team/timon">Agile Coach</a> pracuje z kadrą zarządzającą, menedżerami, product ownerami and scrum masterami. Używa Retromatu od 2013, a od 2016 rozwija jego dodatkowe funkcjonalmności. Wyślij <a href="mailto:retromat@fiddike.com">tiadomość do Timona</a> lub
+Timon prowadzi <a href="/en/team/timon">Szkolenia Scrumowe</a>. Jako Integral Coach i <a href="/en/team/timon">Agile Coach</a> pracuje z kadrą zarządzającą, menedżerami, product ownerami and scrum masterami. Używa Retromatu od 2013, a od 2016 rozwija jego dodatkowe funkcjonalmności. Wyślij <a href="mailto:retromat@fiddike.com">wiadomość do Timona</a> lub
     <a href="https://twitter.com/TimonFiddike">śledź go na Twitterze</a>. Photo © Ina Abraham.
 EOT;
 
