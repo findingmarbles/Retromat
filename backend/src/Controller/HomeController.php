@@ -9,6 +9,7 @@ use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\TitleChooser;
 use App\Model\Twig\ColorVariation;
+use App\Repository\ActivityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,19 +23,22 @@ class HomeController extends AbstractController
     private ActivityByPhase $activityByPhase;
     private TitleChooser $titleChooser;
     private DescriptionRenderer $descriptionRenderer;
+    private ActivityRepository $activityRepository;
 
     public function __construct(
         ActivitySourceExpander $activitySourceExpander,
         ColorVariation $colorVariation,
         ActivityByPhase $activityByPhase,
         TitleChooser $titleChooser,
-        DescriptionRenderer $descriptionRenderer
+        DescriptionRenderer $descriptionRenderer,
+        ActivityRepository $activityRepository
     ) {
         $this->activitySourceExpander = $activitySourceExpander;
         $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
         $this->titleChooser = $titleChooser;
         $this->descriptionRenderer = $descriptionRenderer;
+        $this->activityRepository = $activityRepository;
     }
 
     /**
@@ -52,9 +56,7 @@ class HomeController extends AbstractController
         $description = '';
 
         if (0 < count($ids) and ('en' === $locale or 'de' === $locale or 'ru' === $locale)) {
-            $repo = $this->getDoctrine()
-                ->getRepository('App:Activity');
-            $activities = $repo->findOrdered($ids);
+            $activities = $this->activityRepository->findOrdered($ids);
             if (count($ids) !== count($activities)) {
                 throw $this->createNotFoundException();
             }

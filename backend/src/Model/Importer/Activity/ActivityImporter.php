@@ -11,8 +11,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Class ActivityImporter
- * @package App
- *\Importer\Activity
+ * @package App\Importer\Activity
  */
 class ActivityImporter
 {

@@ -7,38 +7,37 @@ use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\TitleChooser;
 use App\Model\Plan\TitleIdGenerator;
 use App\Model\Sitemap\PlanIdGenerator;
+use App\Repository\ActivityRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/{_locale}/team")
- * @Security("has_role('ROLE_TRANSLATOR')")
  */
 class TeamController extends AbstractController
 {
     private $ids = [];
-
     private PlanIdGenerator $planIdGenerator;
-
     private TitleIdGenerator $titleIdGenerator;
-
     private TitleChooser $titleChooser;
-
     private DescriptionRenderer $descriptionRenderer;
+    private ActivityRepository $activityRepository;
 
     public function __construct(
         PlanIdGenerator $planIdGenerator,
         TitleIdGenerator $titleIdGenerator,
         TitleChooser $titleChooser,
-        DescriptionRenderer $descriptionRenderer
+        DescriptionRenderer $descriptionRenderer,
+        ActivityRepository $activityRepository
     ) {
         $this->planIdGenerator = $planIdGenerator;
         $this->titleIdGenerator = $titleIdGenerator;
         $this->titleChooser = $titleChooser;
         $this->descriptionRenderer = $descriptionRenderer;
+        $this->activityRepository = $activityRepository;
     }
 
     /**
@@ -51,7 +50,7 @@ class TeamController extends AbstractController
 
     /**
      * @Route("/experiment/titles-descriptions/by-plan-id", name="titles-descriptions-experiment")
-     * @Security("has_role('ROLE_SERP_PREVIEW')")
+     * @IsGranted("ROLE_SERP_PREVIEW")
      * @throws InconsistentInputException
      */
     public function serpPreviewAction(Request $request)
@@ -61,9 +60,6 @@ class TeamController extends AbstractController
             $request->getLocale()
         );
 
-        $activityRepository = $this->getDoctrine()
-            ->getRepository('App:Activity');
-
         return $this->render(
             'team/experiment/titlesAndDescriptionsByPlanId.html.twig',
             [
@@ -71,7 +67,7 @@ class TeamController extends AbstractController
                 'titleChooser' => $this->titleChooser,
                 'descriptionRenderer' => $this->descriptionRenderer,
                 'totalCombinations' => $totalCombinations,
-                'activityRepository' => $activityRepository,
+                'activityRepository' => $this->activityRepository,
             ]
         );
     }

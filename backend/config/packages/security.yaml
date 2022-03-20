@@ -1,27 +1,15 @@
 security:
-    providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
-    firewalls:
-        main:
-            pattern: ^/
-            form_login:
-                provider: fos_userbundle
-                csrf_token_generator: security.csrf.token_manager
-                login_path: fos_user_security_login
-                check_path: fos_user_security_check
-                default_target_path: team_dashboard
-                always_use_default_target_path: true
-            logout:
-                path: fos_user_security_logout
-                target: fos_user_security_login
-            anonymous: true
-        dev:
-            # disables authentication for assets and the profiler, adapt it according to your needs
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+        App\Entity\User:
+            algorithm: bcrypt
+    enable_authenticator_manager: true
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
     role_hierarchy:
         ROLE_TRANSLATOR_EN:
             - ROLE_TRANSLATOR
@@ -54,5 +42,25 @@ security:
             - ROLE_TRANSLATOR_RU
             - ROLE_TRANSLATOR_ZH
             - ROLE_SERP_PREVIEW
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: user_provider
+            custom_authenticator: App\Security\BackendAuthenticator
+            logout:
+                path: app_logout
+                target: app_login
     access_control:
-        - { path: ^/(.+)/register, role: ROLE_ADMIN }
+         - { path: '^/[a-z]{2}/team', roles: ROLE_TRANSLATOR }
+
+when@test:
+    security:
+        password_hashers:
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Lowest possible value for bcrypt
+                time_cost: 3 # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon

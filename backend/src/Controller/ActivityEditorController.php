@@ -6,6 +6,7 @@ use App\Entity\Activity;
 use App\Model\Activity\ActivityByPhase;
 use App\Model\Activity\ActivitySourceExpander;
 use App\Model\Twig\ColorVariation;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,16 +25,20 @@ class ActivityEditorController extends AbstractController
 
     private CacheInterface $doctrineResultCachePool;
 
+    private EntityManagerInterface $entityManager;
+
     public function __construct(
         ActivitySourceExpander $activitySourceExpander,
         ColorVariation $colorVariation,
         ActivityByPhase $activityByPhase,
-        CacheInterface $doctrineResultCachePool
+        CacheInterface $doctrineResultCachePool,
+        EntityManagerInterface $entityManager
     ) {
         $this->activitySourceExpander = $activitySourceExpander;
         $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
         $this->doctrineResultCachePool = $doctrineResultCachePool;
+        $this->entityManager = $entityManager;
     }
 
     /**
@@ -56,7 +61,6 @@ class ActivityEditorController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
 
-        $em = $this->getDoctrine()->getManager();
         $localizedActivities = $this->findLocalizedActivities($request->getLocale());
         $maxRetromatId = count($localizedActivities);
 
@@ -65,7 +69,7 @@ class ActivityEditorController extends AbstractController
             $activity->setRetromatId($maxRetromatId + 1);
             $formType = 'App\Form\ActivityType';
         } else {
-            $activity = $em->getRepository('App:Activity')->findOneBy(['retromatId' => $maxRetromatId + 1]);
+            $activity = $this->entityManager->getRepository('App:Activity')->findOneBy(['retromatId' => $maxRetromatId + 1]);
             $activity->setDefaultLocale($request->getLocale());
 
             // use English content to pre-fill translation fields
@@ -84,7 +88,7 @@ class ActivityEditorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $activity->mergeNewTranslations();
-            $em->persist($activity);
+            $this->entityManager->persist($activity);
             $this->flushEntityManagerAndClearRedisCache();
 
             return $this->redirectToRoute('team_activity_show', array('id' => $activity->getId()));
@@ -131,13 +135,12 @@ class ActivityEditorController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             // this wastes a bit of RAM and a millisecond, but it is used very rarely, thus not important to optimize
             $activities = $this->findLocalizedActivities($request->getLocale());
             $lastRetromatId = end($activities)->getRetromatId();
             if ($activity->getRetromatId() === $lastRetromatId) {
                 if ('en' === $request->getLocale()) {
-                    $em->remove($activity);
+                    $this->entityManager->remove($activity);
                 } else {
                     $activity->removeTranslation($activity->translate($request->getLocale(), false));
                 }
@@ -215,7 +218,7 @@ class ActivityEditorController extends AbstractController
 
     private function flushEntityManagerAndClearRedisCache(): void
     {
-        $this->getDoctrine()->getManager()->flush();
+        $this->entityManager->flush();
         $this->doctrineResultCachePool->clear();
     }
 
@@ -225,7 +228,7 @@ class ActivityEditorController extends AbstractController
      */
     private function findLocalizedActivities(string $locale): array
     {
-        $activities = $this->getDoctrine()
+        $activities = $this->entityManager
             ->getRepository('App:Activity')
             ->findAllOrdered();
 

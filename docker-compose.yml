@@ -1,6 +1,29 @@
 version: '3.1'
 
 services:
+ nginx:
+  build:
+   context: .
+   dockerfile: ./backend/docker/nginx/Dockerfile
+  volumes:
+   - ./backend/public:/app/backend/public
+  depends_on:
+   - php-fpm
+  ports:
+   - "8080:80"
+  networks:
+   - retromat
+
+ php-fpm:
+  build:
+   context: .
+   dockerfile: ./backend/docker/php-fpm/Dockerfile
+  volumes:
+   - .:/app
+  depends_on:
+   - db
+  networks:
+   - retromat
 
  db:
   image: mariadb

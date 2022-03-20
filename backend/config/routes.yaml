@@ -1,13 +1,2 @@
-login:
-  path: /login
-  defaults:
-    _controller: FrameworkBundle:Redirect:redirect
-    route: fos_user_security_login
-    permanent: false
-
-fos_user:
-  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-  prefix:   /{_locale}
-
 retromat:
   resource: "routes/retromat/static.yaml"

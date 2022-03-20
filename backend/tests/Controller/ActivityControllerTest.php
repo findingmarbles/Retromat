@@ -5,7 +5,7 @@ namespace App\Tests\Controller;
 
 use App\Tests\AbstractTestCase;
 
-class ActivityControllerTest  extends AbstractTestCase
+class ActivityControllerTest extends AbstractTestCase
 {
     public function setUp(): void
     {
@@ -15,7 +15,8 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivityNameEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/32');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -45,7 +46,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivityNameGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/32?locale=de');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -75,7 +76,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivitySourceSimpleString()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/17');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -97,7 +98,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivitySourcePlaceholder()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/77');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -119,7 +120,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivitySourcePlaceholderAndString()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/15');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -141,7 +142,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivitySourceStringAndPlaceholder()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/14');
         $activity = json_decode($client->getResponse()->getContent(), true);
@@ -163,7 +164,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testExpandedActivitySourceInCollectionRequests()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities');
         $activities = json_decode($client->getResponse()->getContent(), true);
@@ -182,7 +183,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivityIdsAndNamesInCollectionRequestsEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities');
         $activities = json_decode($client->getResponse()->getContent(), true);
@@ -199,7 +200,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testActivityIdsAndNamesInCollectionRequestsGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities?locale=de');
         $activities = json_decode($client->getResponse()->getContent(), true);
@@ -216,7 +217,7 @@ class ActivityControllerTest  extends AbstractTestCase
     public function testOnlyTranslatedActivitiesInCollectionRequests()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities?locale=de');
         $activities = json_decode($client->getResponse()->getContent(), true);

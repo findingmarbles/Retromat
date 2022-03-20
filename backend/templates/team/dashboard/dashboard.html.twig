@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-    <span class="topline smaller"><a href="{{ path('fos_user_security_logout') }}">&lt; Logout</a></span>
+    <span class="topline smaller"><a href="{{ path('app_logout') }}">&lt; Logout</a></span>
 
     <div class="mainContent">
         <h1>Dashboard</h1>
@@ -53,11 +53,13 @@
         {% endif %}
 
         <h2>Your Profile</h2>
+        {#
         <ul>
             <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
             <li><a href="{{ path('fos_user_profile_edit') }}">Edit profile</a></li>
             <li><a href="{{ path('fos_user_change_password') }}">Change Password</a></li>
         </ul>
+#}
 
         {% if is_granted('ROLE_ADMIN') %}
             <h2>Admin: Tools: External</h2>

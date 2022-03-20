@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Activity;
 use App\Model\Activity\ActivitySourceExpander;
+use App\Repository\ActivityRepository;
 use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -15,17 +16,13 @@ class ActivityApiController extends AbstractFOSRestController
 {
     private const SERIALIZER_GROUP = 'api';
 
-    /**
-     * @var ActivitySourceExpander
-     */
     private ActivitySourceExpander $activitySourceExpander;
+    private ActivityRepository $activityRepository;
 
-    /**
-     * @param ActivitySourceExpander $activitySourceExpander
-     */
-    public function __construct(ActivitySourceExpander $activitySourceExpander)
+    public function __construct(ActivitySourceExpander $activitySourceExpander, ActivityRepository $activityRepository)
     {
         $this->activitySourceExpander = $activitySourceExpander;
+        $this->activityRepository = $activityRepository;
     }
     
     /**
@@ -35,8 +32,7 @@ class ActivityApiController extends AbstractFOSRestController
     {
         $request->setLocale($request->query->get('locale', 'en'));
 
-        $activities = $this->getDoctrine()
-            ->getRepository('App:Activity')
+        $activities = $this->activityRepository
             ->findAllOrdered();
 
         $localizedActivities = [];
@@ -61,9 +57,7 @@ class ActivityApiController extends AbstractFOSRestController
         $request->setLocale($request->query->get('locale', 'en'));
 
         /** @var $activity Activity */
-        $activity = $this->getDoctrine()
-            ->getRepository('App:Activity')
-            ->find($id);
+        $activity = $this->activityRepository->find($id);
 
         $this->activitySourceExpander->expandSource($activity);
 

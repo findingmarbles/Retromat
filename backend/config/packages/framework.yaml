@@ -7,6 +7,3 @@ framework:
         cookie_samesite: lax
     php_errors:
         log: true
-    templating:
-        engines:
-            twig

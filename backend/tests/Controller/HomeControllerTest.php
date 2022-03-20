@@ -17,7 +17,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowSingleActivityBlock()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=32');
 
@@ -29,7 +29,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityNameRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=32');
         $this->assertEquals(
@@ -53,7 +53,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivitySummaries()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=76');
         $this->assertEquals(
@@ -71,7 +71,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityDescriptionsRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=22');
         $this->assertEquals(
@@ -92,7 +92,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityLinksText()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1');
         $this->assertEquals(
@@ -110,7 +110,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityLinksHref()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1');
         $this->assertEquals(
@@ -128,7 +128,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityPhaseLinkText()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3');
         $this->assertEquals(
@@ -146,7 +146,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivityPhaseLinkHref()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1');
         // .* in expression allows this to succeed on live data even when new activities are added
@@ -166,7 +166,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivitySourceSimpleStringRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=17');
         $this->assertEquals(
@@ -184,7 +184,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivitySourcePlaceholderRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=77');
         $this->assertEquals(
@@ -202,7 +202,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivitySourcePlaceholderAndStringRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=15');
         $this->assertEquals(
@@ -220,7 +220,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowActivitySourceStringAndPlaceholderRawHtml()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=14');
         $this->assertEquals(
@@ -238,7 +238,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowAny5Activities()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
@@ -262,7 +262,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowSuccessiveActivitiesInDifferentColors()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5-6-7');
 
@@ -292,7 +292,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowAllActivitiesInPhase0LongUrl()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
@@ -309,7 +309,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowTitlePhase0LongUrl()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
@@ -320,7 +320,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowTitlePhase1LongUrl()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $idsStringPhase1 = '4-5-6-7-19-33-35-47-51-54-62-64-65-75-78-79-80-86-87-89-93-97-98-110-116-119-121-123';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase1.'&phase=1');
@@ -331,7 +331,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testRegressionAvoidUnlessNeededHeaderAllActivitiesFor()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3&phase=0');
 
@@ -345,7 +345,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testHideSteppersPhase0LongUrl()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         // must not be hidden when phase is not specified in URL
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
@@ -362,7 +362,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowNumbersInFooter()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
 
@@ -374,7 +374,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowRandomPlanLinksOnHome()
     {
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
         $crawler = $client->request('GET', '/en/');
 
         $this->assertEquals(
@@ -386,7 +386,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowIdsInInputField()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1-2-3-4-5');
         $this->assertEquals('1-2-3-4-5', $crawler->filter('.ids-display__input')->attr('value'));
@@ -398,7 +398,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPhaseStepperNextSingleActivity()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3');
         $this->assertEquals(
@@ -410,7 +410,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPhaseStepperPreviousSingleActivity()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=18');
         $this->assertEquals(
@@ -422,7 +422,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPhaseStepperNextMultipleActivities()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
         $this->assertEquals(
@@ -438,7 +438,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testRedirectIndexToNewUrlEn()
     {
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/index.html?id=32');
 
@@ -451,7 +451,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testRedirectIndexToNewUrlDe()
     {
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/index_de.html?id=32');
 
@@ -464,7 +464,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testRedirectSlashToNewUrl()
     {
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', '/?id=70-4-69-29-71');
 
@@ -477,7 +477,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testRedirectPhase0ToNewUrl()
     {
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $client->request('GET', '/index.html?id='.$idsStringPhase0.'&phase=0');
@@ -494,7 +494,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPageTitle5ActivitiesEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
 
@@ -504,7 +504,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPageTitle5ActivitiesGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/de/?id=3-126-9-39-60');
 
@@ -514,7 +514,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPageTitle1ActivitiyEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1');
 
@@ -524,7 +524,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowPageTitle1ActivitiyGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/de/?id=1');
 
@@ -534,7 +534,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowMetaDescription5ActivitiesEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3-126-9-39-60');
 
@@ -547,7 +547,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowMetaDescription5ActivitiesGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/de/?id=1-2-3-4-5');
 
@@ -560,7 +560,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowMetaDescription1ActivitiyEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=1');
 
@@ -573,7 +573,7 @@ class HomeControllerTest extends AbstractTestCase
     public function testShowMetaDescription1ActivitiyGerman()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/de/?id=1');
 
@@ -589,7 +589,7 @@ class HomeControllerTest extends AbstractTestCase
     public function test404OnIdNotFound($url)
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = static::createClient();
+        $client = $this->getKernelBrowser();
 
         $client->request('GET', $url);
 

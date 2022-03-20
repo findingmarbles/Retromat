@@ -21,7 +21,7 @@ class LoadUsers extends Fixture
         $admin->setPassword('adminPass');
         $admin->setEmail('admin@example.com');
         $admin->setEnabled(true);
-        $admin->addRole('ROLE_ADMIN');
+        $admin->grantRole('ROLE_ADMIN');
 
         $this->setReference('admin', $admin);
 
