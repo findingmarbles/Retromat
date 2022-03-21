@@ -173,9 +173,11 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/password-hasher" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpUnit">

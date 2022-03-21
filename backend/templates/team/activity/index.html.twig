@@ -1,0 +1,47 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Activity index{% endblock %}
+
+{% block body %}
+    <h1>{% if 'en' == app.request.locale %}
+            Activity List
+        {% else %}
+            Activity Translations List: {{ app.request.locale|upper }}
+        {% endif %}
+    </h1>
+
+    <ul>
+        <li>
+            <a href="{{ path('team_activity_new') }}">Create new activity {% if 'en' != app.request.locale %} translation{% endif %}</a>
+        </li>
+    </ul>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+                <th>RetromatId</th>
+                <th>Name</th>
+                <th>Summary</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for activity in activities %}
+            <tr>
+                <td>{{ activity.retromatId }}</td>
+                <td>{{ activity.name }}</td>
+                <td>{{ activity.summary }}</td>
+                <td>
+                    <a href="{{ path('team_activity_show', {'id': activity.id}) }}">show</a>
+                    <a href="{{ path('team_activity_edit', {'id': activity.id}) }}">edit</a>
+                    <a href="{{ path('activities_by_id', { 'id': activity.retromatId }) }}" target="_blank">live</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no activities found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Activity\ActivityByPhase;
-use App\Model\Activity\ActivitySourceExpander;
+use App\Model\Activity\Expander\ActivityExpander;
 use App\Model\Plan\DescriptionRenderer;
 use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    private ActivitySourceExpander $activitySourceExpander;
+    private ActivityExpander $activityExpander;
     private ColorVariation $colorVariation;
     private ActivityByPhase $activityByPhase;
     private TitleChooser $titleChooser;
@@ -26,14 +26,14 @@ class HomeController extends AbstractController
     private ActivityRepository $activityRepository;
 
     public function __construct(
-        ActivitySourceExpander $activitySourceExpander,
+        ActivityExpander $activityExpander,
         ColorVariation $colorVariation,
         ActivityByPhase $activityByPhase,
         TitleChooser $titleChooser,
         DescriptionRenderer $descriptionRenderer,
         ActivityRepository $activityRepository
     ) {
-        $this->activitySourceExpander = $activitySourceExpander;
+        $this->activityExpander = $activityExpander;
         $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
         $this->titleChooser = $titleChooser;
@@ -61,7 +61,7 @@ class HomeController extends AbstractController
                 throw $this->createNotFoundException();
             }
             foreach ($activities as $activity) {
-                $this->activitySourceExpander->expandSource($activity);
+                $this->activityExpander->expandSource($activity);
             }
             list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }

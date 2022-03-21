@@ -170,7 +170,7 @@ team_anton:
   path: /en/team/anton
   defaults:
     _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    team/anton.html.twig
+    template: members/anton.html.twig
   options:
     sitemap:
       priority: 0.5
@@ -182,7 +182,7 @@ team_timon:
   path: /en/team/timon
   defaults:
     _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    team/timon.html.twig
+    template: members/timon.html.twig
   options:
     sitemap:
       priority: 0.5

@@ -27,7 +27,7 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
-    App\Model\Activity\ActivitySourceExpander:
+    App\Model\Activity\Expander\ActivityExpander:
         arguments:
             $sources: '%retromat.activity.source%'
 

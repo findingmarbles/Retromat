@@ -117,14 +117,6 @@ cd /var/www/virtual/<username>/retromat.git/backend
 vendor/bin/simple-phpunit
 ```
 
-# Create backend user
-```
-cd /var/www/virtual/<SpaceNameDev>/retromat.git
-bin/console fos:user:create admin
-bin/console fos:user:activate admin
-bin/console fos:user:promote admin ROLE_ADMIN 
-```
-
 # Docker Compose
 ```
 cd /var/www/virtual/<SpaceNameDev>/retromat.git

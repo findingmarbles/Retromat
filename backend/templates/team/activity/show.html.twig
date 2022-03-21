@@ -1,0 +1,54 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Activity{% endblock %}
+
+{% block body %}
+    <h1>Activity</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ activity.id }}</td>
+            </tr>
+            <tr>
+                <th>RetromatId</th>
+                <td>{{ activity.retromatId }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ activity.phase }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ activity.duration }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ activity.source }}</td>
+            </tr>
+            <tr>
+                <th>More</th>
+                <td>{{ activity.more }}</td>
+            </tr>
+            <tr>
+                <th>Suitable</th>
+                <td>{{ activity.suitable }}</td>
+            </tr>
+            <tr>
+                <th>Stage</th>
+                <td>{{ activity.stage }}</td>
+            </tr>
+            <tr>
+                <th>ForumUrl</th>
+                <td>{{ activity.forumUrl }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary" href="{{ path('team_activity_index') }}">back to list</a>
+
+    <a class="btn btn-primary" href="{{ path('team_activity_edit', {'id': activity.id}) }}">edit</a>
+
+    {{ include('team/activity/_delete_form.html.twig') }}
+{% endblock %}

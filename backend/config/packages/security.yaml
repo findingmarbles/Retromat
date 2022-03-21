@@ -4,7 +4,10 @@ security:
             algorithm: bcrypt
     enable_authenticator_manager: true
     password_hashers:
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\User: 'auto'
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+            algorithm: 'auto'
+            cost: 15
     providers:
         user_provider:
             entity:
@@ -49,10 +52,10 @@ security:
         main:
             lazy: true
             provider: user_provider
-            custom_authenticator: App\Security\BackendAuthenticator
+            custom_authenticator: App\Security\UserAuthenticator
             logout:
-                path: app_logout
-                target: app_login
+                path: user_logout
+                target: user_login
     access_control:
          - { path: '^/[a-z]{2}/team', roles: ROLE_TRANSLATOR }
 
