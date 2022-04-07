@@ -4,11 +4,24 @@ declare(strict_types = 1);
 namespace App\Tests\Controller\DataFixtures;
 
 use App\Entity\User;
+use App\Model\User\UserManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class LoadUsers extends Fixture
 {
+    const ROLE = 'ROLE_ADMIN';
+    const USERNAME = 'admin';
+    const PASSWORD = 'adminPass';
+    const EMAIL_ADDRESS = 'admin@example.com';
+
+    private UserManager $userManager;
+
+    public function __construct(UserManager $userManager)
+    {
+        $this->userManager = $userManager;
+    }
+
     /**
      * Load data fixtures with the passed EntityManager
      *
@@ -16,16 +29,15 @@ class LoadUsers extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        $admin = new User();
-        $admin->setUsername('admin');
-        $admin->setPassword('adminPass');
-        $admin->setEmail('admin@example.com');
-        $admin->setEnabled(true);
-        $admin->grantRole('ROLE_ADMIN');
+        $adminUser = new User();
+        $adminUser->setUsername(self::USERNAME);
+        $adminUser->setPassword(self::PASSWORD);
+        $adminUser->setEmail(self::EMAIL_ADDRESS);
+        $adminUser->setEnabled(true);
+        $adminUser->grantRole(self::ROLE);
 
-        $this->setReference('admin', $admin);
+        $this->setReference(self::USERNAME, $adminUser);
 
-        $manager->persist($admin);
-        $manager->flush();
+        $this->userManager->persist($adminUser);
     }
 }
