@@ -1,10 +1,10 @@
 version: '3.1'
 
 services:
- nginx:
+ httpd:
   build:
    context: .
-   dockerfile: ./backend/docker/nginx/Dockerfile
+   dockerfile: ./backend/docker/httpd/Dockerfile
   volumes:
    - ./backend/public:/app/backend/public
   depends_on:
