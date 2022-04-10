@@ -3,16 +3,26 @@ declare(strict_types = 1);
 
 namespace App\Tests\Repository;
 
+use App\Repository\ActivityRepository;
 use App\Tests\AbstractTestCase;
 
 class ActivityRepositoryTest extends AbstractTestCase
 {
+    private $activityRepository;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->loadFixtures([]);
+
+        $this->activityRepository = $this->getContainer()->get(ActivityRepository::class);
+    }
+
     public function testFindOrdered()
     {
         $this->loadFixtures(['App\Tests\Repository\DataFixtures\LoadActivityData']);
 
-        $repo = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('App:Activity');
-        $ordered = $repo->findOrdered($id = [3, 87, 113, 13, 16]);
+        $ordered = $this->activityRepository->findOrdered($id = [3, 87, 113, 13, 16]);
 
         // check for correct keys
         $this->assertEquals(3, $ordered[0]->getRetromatId());
@@ -33,8 +43,7 @@ class ActivityRepositoryTest extends AbstractTestCase
     {
         $this->loadFixtures(['App\Tests\Repository\DataFixtures\LoadActivityData']);
 
-        $repo = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository('App:Activity');
-        $ordered = $repo->findAllOrdered();
+        $ordered = $this->activityRepository->findAllOrdered();
 
         // check for correct keys
         $this->assertEquals(1, $ordered[0]->getRetromatId());
@@ -52,9 +61,6 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->loadFixtures(
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhases']
         );
-        $activityRepository = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository(
-            'App:Activity'
-        );
 
         $expectedActivityByPhase = [
             0 => [1, 7],
@@ -65,16 +71,13 @@ class ActivityRepositoryTest extends AbstractTestCase
             5 => [6, 12],
         ];
 
-        $this->assertEquals($expectedActivityByPhase, $activityRepository->findAllActivitiesByPhases());
+        $this->assertEquals($expectedActivityByPhase, $this->activityRepository->findAllActivitiesByPhases());
     }
 
     public function testFindAllActivitiesForPhasesDe()
     {
         $this->loadFixtures(
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhasesDe']
-        );
-        $activityRepository = $this->getContainer()->get('doctrine.orm.entity_manager')->getRepository(
-            'App:Activity'
         );
 
         $expectedActivityByPhase = [
@@ -86,6 +89,6 @@ class ActivityRepositoryTest extends AbstractTestCase
             5 => [6],
         ];
 
-        $this->assertEquals($expectedActivityByPhase, $activityRepository->findAllActivitiesByPhases('de'));
+        $this->assertEquals($expectedActivityByPhase, $this->activityRepository->findAllActivitiesByPhases('de'));
     }
 }

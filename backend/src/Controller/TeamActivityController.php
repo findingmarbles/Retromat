@@ -67,6 +67,10 @@ class TeamActivityController extends AbstractController
         $form = $this->createActivityForm($request->getLocale(), $activity);
         $form->handleRequest($request);
 
+        if (empty($activity->getPhase())) {
+            $activity->setPhase(0);
+        }
+
         if ($form->isSubmitted() && $form->isValid()) {
             $activity->mergeNewTranslations();
             $this->entityManager->persist($activity);

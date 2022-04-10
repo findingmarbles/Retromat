@@ -3,15 +3,15 @@ declare(strict_types = 1);
 
 namespace App\Tests\Activity;
 
-use App\Model\Activity\ActivitySourceExpander;
+use App\Model\Activity\Expander\ActivityExpander;
 use App\Entity\Activity;
 use Symfony\Component\Yaml\Yaml;
 
-class ActivitySourceExpanderTest extends \PHPUnit\Framework\TestCase
+class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
 {
     public function testSimpleStringRawHtml()
     {
-        $expander = new ActivitySourceExpander([]);
+        $expander = new ActivityExpander([]);
         $activity = new Activity();
 
         $activity->setSource("<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>");
@@ -33,7 +33,7 @@ class ActivitySourceExpanderTest extends \PHPUnit\Framework\TestCase
 
     public function testSourcePlaceholderRawHtml()
     {
-        $expander = new ActivitySourceExpander($this->retromatSources());
+        $expander = new ActivityExpander($this->retromatSources());
         $activity = new Activity();
 
         $activity->setSource('source_judith');
@@ -55,7 +55,7 @@ class ActivitySourceExpanderTest extends \PHPUnit\Framework\TestCase
 
     public function testSourcePlaceholderAndStringRawHtml()
     {
-        $expander = new ActivitySourceExpander($this->retromatSources());
+        $expander = new ActivityExpander($this->retromatSources());
         $activity = new Activity();
 
         $activity->setSource(
@@ -81,7 +81,7 @@ class ActivitySourceExpanderTest extends \PHPUnit\Framework\TestCase
 
     public function testSourceStringAndPlaceholderRawHtml()
     {
-        $expander = new ActivitySourceExpander($this->retromatSources());
+        $expander = new ActivityExpander($this->retromatSources());
         $activity = new Activity();
 
         $activity->setSource('"ALE 2011, " + source_findingMarbles');

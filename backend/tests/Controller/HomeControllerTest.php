@@ -9,8 +9,6 @@ class HomeControllerTest extends AbstractTestCase
 {
     public function setUp(): void
     {
-        // empty database before each test.
-        // any test that needs data to function has to specify the data needed explicitly.
         $this->loadFixtures([]);
     }
 
@@ -131,6 +129,7 @@ class HomeControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', '/en/?id=3');
+
         $this->assertEquals(
             'Set the stage',
             $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_phase_title')->text()

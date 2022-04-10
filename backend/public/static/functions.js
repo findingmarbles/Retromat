@@ -30,12 +30,7 @@ function init() {
 }
 
 function getLocale() {
-    var pathPart1 = window.location.pathname.split('/')[1];
-    if ('app_dev.php' == pathPart1) {
-        return window.location.pathname.split('/')[2];
-    } else {
-        return pathPart1;
-    }
+    return window.location.pathname.split('/')[1];
 }
 
 // From http://jquery-howto.blogspot.de/2009/09/get-url-parameters-values-with-jquery.html

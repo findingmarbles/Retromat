@@ -4,14 +4,16 @@ declare(strict_types = 1);
 namespace App\Tests\Controller;
 
 use App\Tests\AbstractTestCase;
+use App\Tests\Controller\DataFixtures\LoadUsers;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser as Client;
+use Symfony\Component\HttpFoundation\Response;
 
-class ActivityEditorControllerTest extends AbstractTestCase
+class TeamActivityControllerTest extends AbstractTestCase
 {
+    private const SELECTOR_BUTTON_PRIMARY = 'Save';
+
     public function setUp(): void
     {
-        // empty database before each test.
-        // any test that needs data to function has to specify the data needed explicitly.
         $this->loadFixtures([]);
     }
 
@@ -40,8 +42,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-
-        $form = $crawler->selectButton('Publish')->form()->setValues(
+        $form = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->setValues(
             [
                 'app_activity[phase]' => 1,
                 'app_activity[name]' => 'foo',
@@ -49,21 +50,16 @@ class ActivityEditorControllerTest extends AbstractTestCase
                 'app_activity[desc]' => 'la',
             ]
         );
-        $crawler = $client->submit($form);
+        $client->submit($form);
 
-        $this->assertStatusCode(302, $client);
-        $this->assertEquals(
-            'http://localhost/en/team/activity/1',
-            $crawler->selectLink('/en/team/activity/1')->link()->getUri()
-        );
+        $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
     public function testCreateNewActivityPhase0(): void
     {
         $client = $this->makeClientLoginAdmin();
-
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Publish')->form()->setValues(
+        $form = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->setValues(
             [
                 'app_activity[phase]' => 0,
                 'app_activity[name]' => 'foo',
@@ -71,14 +67,9 @@ class ActivityEditorControllerTest extends AbstractTestCase
                 'app_activity[desc]' => 'la',
             ]
         );
+        $client->submit($form);
 
-        $crawler = $client->submit($form);
-
-        $this->assertStatusCode(302, $client);
-        $this->assertEquals(
-            'http://localhost/en/team/activity/1',
-            $crawler->selectLink('/en/team/activity/1')->link()->getUri()
-        );
+        $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
     public function testCreateNewActivityMultiple(): void
@@ -86,7 +77,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
         $client = $this->makeClientLoginAdmin();
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-        $form = $crawler->selectButton('Publish')->form()->setValues(
+        $form = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->setValues(
             [
                 'app_activity[phase]' => 1,
                 'app_activity[name]' => 'foo',
@@ -94,17 +85,12 @@ class ActivityEditorControllerTest extends AbstractTestCase
                 'app_activity[desc]' => 'la',
             ]
         );
-        $crawler = $client->submit($form);
+        $client->submit($form);
 
-        $this->assertStatusCode(302, $client);
-        $this->assertEquals(
-            'http://localhost/en/team/activity/1',
-            $crawler->selectLink('/en/team/activity/1')->link()->getUri()
-        );
+        $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
 
         $crawler = $client->request('GET', '/en/team/activity/new');
-
-        $form = $crawler->selectButton('Publish')->form()->setValues(
+        $form = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->setValues(
             [
                 'app_activity[phase]' => 2,
                 'app_activity[name]' => 'qq',
@@ -112,14 +98,9 @@ class ActivityEditorControllerTest extends AbstractTestCase
                 'app_activity[desc]' => 'ee',
             ]
         );
+        $client->submit($form);
 
-        $crawler = $client->submit($form);
-
-        $this->assertStatusCode(302, $client);
-        $this->assertEquals(
-            'http://localhost/en/team/activity/2',
-            $crawler->selectLink('/en/team/activity/2')->link()->getUri()
-        );
+        $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
     public function testIndexContainsOnlyTranslatedActivities()
@@ -157,7 +138,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
-        $formValues = $crawler->selectButton('Publish')->form()->getPhpValues();
+        $formValues = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->getPhpValues();
 
         $translatableFields = ['name', 'summary', 'desc', '_token'];
         $this->assertEquals($translatableFields, array_keys($formValues['activity_translatable_fields']));
@@ -168,21 +149,16 @@ class ActivityEditorControllerTest extends AbstractTestCase
         $client = $this->makeClientLoginAdminLoadFixtures();
 
         $crawler = $client->request('GET', '/de/team/activity/new');
-
-        $form = $crawler->selectButton('Publish')->form()->setValues(
+        $form = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->setValues(
             [
                 'activity_translatable_fields[name]' => 'foo',
                 'activity_translatable_fields[summary]' => 'bar',
                 'activity_translatable_fields[desc]' => 'la',
             ]
         );
-        $crawler = $client->submit($form);
+        $client->submit($form);
 
-        $this->assertStatusCode(302, $client);
-        $this->assertEquals(
-            'http://localhost/de/team/activity/'.(75 + 1),
-            $crawler->selectLink('/de/team/activity/'.(75 + 1))->link()->getUri()
-        );
+        $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
     public function testCreateNewActivityNoPrefilledContentForEn()
@@ -191,7 +167,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
 
         $crawler = $client->request('GET', '/en/team/activity/new');
 
-        $prefilled = $crawler->selectButton('Publish')->form()->getValues();
+        $prefilled = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->getValues();
 
         $this->assertEmpty($prefilled['app_activity[name]']);
         $this->assertEmpty($prefilled['app_activity[summary]']);
@@ -204,7 +180,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
 
         $crawler = $client->request('GET', '/de/team/activity/new');
 
-        $prefilled = $crawler->selectButton('Publish')->form()->getValues();
+        $prefilled = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->getValues();
 
         $this->assertEquals('Round of Admiration', $prefilled['activity_translatable_fields[name]']);
         $this->assertEquals(
@@ -250,7 +226,7 @@ class ActivityEditorControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginAs($refRepo->getReferences()['admin'], 'main');
+            $this->loginAs($refRepo->getReferences()[LoadUsers::USERNAME], 'main');
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
