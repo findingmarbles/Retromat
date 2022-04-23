@@ -29,7 +29,7 @@ mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf <SpaceNameDev>_retromat <  re
 * Clone git repo
 ```
 cd /var/www/virtual/<SpaceNameDev>/
-git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git retromat.git
+git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git
 ```
 * Copy .env as .env.local and edit to reflect properties of current space (db host: localhost, db password from ~/.my.cnf etc.)...
 
@@ -115,11 +115,4 @@ https://manual.uberspace.de/web-logs/#error-log-php
 ```
 cd /var/www/virtual/<username>/retromat.git/backend
 vendor/bin/simple-phpunit
-```
-
-# Docker Compose
-```
-cd /var/www/virtual/<SpaceNameDev>/retromat.git
-docker-compose up -d
-docker-compose stop
 ```

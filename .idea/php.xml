@@ -32,7 +32,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/willdurand/jsonp-callback-validator" />
       <path value="$PROJECT_DIR$/backend/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/rest-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/backend/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-cache-bundle" />
@@ -69,10 +68,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
@@ -86,16 +83,10 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/form" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/filesystem" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/web-server-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/config" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/maker-bundle" />
