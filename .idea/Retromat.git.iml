@@ -35,7 +35,6 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/liip/functional-test-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/presta/sitemap-bundle" />
@@ -48,7 +47,6 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensio/generator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensiolabs/security-checker" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/monolog-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-apcu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-icu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-mbstring" />

@@ -5,7 +5,6 @@
       <path value="$PROJECT_DIR$/../../bin.git" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-migrations-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/backend/vendor/composer" />
       <path value="$PROJECT_DIR$/backend/vendor/bin/.phpunit" />
@@ -16,7 +15,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/knplabs/doctrine-behaviors" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/symfony" />
       <path value="$PROJECT_DIR$/backend/vendor/liip/functional-test-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/backend/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/backend/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/backend/vendor/behat/transliterator" />
@@ -160,7 +158,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/backend/vendor/liip/test-fixtures-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/password-hasher" />
