@@ -50,6 +50,11 @@ services:
   networks:
    - retromat
 
+ mailcatcher:
+  image: schickling/mailcatcher
+  ports:
+   - 1025:1080
+
 networks:
  retromat:
   driver: bridge

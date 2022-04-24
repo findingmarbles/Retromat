@@ -10,7 +10,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/composer" />
       <path value="$PROJECT_DIR$/backend/vendor/bin/.phpunit" />
       <path value="$PROJECT_DIR$/backend/vendor/presta/sitemap-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/backend/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/backend/vendor/paragonie/random_compat" />
@@ -48,7 +47,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/common" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/collections" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/migrations" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-fixtures-bundle" />
@@ -166,6 +164,16 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/mailer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

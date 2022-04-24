@@ -48,13 +48,11 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensio/generator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sensiolabs/security-checker" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/monolog-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-apcu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-icu" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/service-contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/symfony" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/webimpress/safe-writer" />
@@ -72,6 +70,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/expression-language" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/liip/test-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/phpunit-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/mailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
