@@ -57,7 +57,8 @@ security:
                 path: user_logout
                 target: user_login
     access_control:
-         - { path: '^/[a-z]{2}/team', roles: ROLE_TRANSLATOR }
+        - { path: '^/[a-z]{2}/team/(timon|anton)', roles: PUBLIC_ACCESS }
+        - { path: '^/[a-z]{2}/team', roles: ROLE_TRANSLATOR }
 
 when@test:
     security:
