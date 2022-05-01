@@ -25,10 +25,10 @@ $_lang['INDEX_ABOUT_SUGGEST'] = 'Предложи его';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Переводчик';
 
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Антон Скорняков';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = '/en/members/anton';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = '/en/team/anton';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/anton_skornyakov.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-	Антон работает Скрам коучом и тренером со множеством разных организаций. Линк на его тренинги для Скрам мастеров - <a href="/en/members/anton">CSM</a> и владельцев продукта – <a href="/en/members/anton">CSPO</a>. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
+	Антон работает Скрам коучом и тренером со множеством разных организаций. Линк на его тренинги для Скрам мастеров - <a href="/en/team/anton">CSM</a> и владельцев продукта – <a href="/en/team/anton">CSPO</a>. Пишите ему на <a href="https://twitter.com/antonskornyakov" rel="nofollow">Twitter</a>!
 <br><br><br>
 EOT;
 
@@ -62,7 +62,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Ко-создатель';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Тимон проводит <a href="/en/members/timon">скрам тренинги</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, владелей продукта, скрам мастер и <a href="/en/members/timon">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike" rel="nofollow"> читать его на Twitter</a>.
+Тимон проводит <a href="/en/team/timon">скрам тренинги</a>. Oн использовал Ретромат на протяжении долгого времени как разработчик, владелей продукта, скрам мастер и <a href="/en/team/timon">аджайл коуч</a>. С 2016-ого года он разрабатывает Ретромат вместе с Коринной и вносит много своих идей. Вы можете <a href="mailto:timon.fiddike@agile.coach">написать ему email</a> или <a href="https://twitter.com/TimonFiddike" rel="nofollow"> читать его на Twitter</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = '(retromat.org)';

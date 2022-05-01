@@ -527,12 +527,12 @@ var PHASE_ID_TAG = 'phase';
                 </div><!-- .team--corinna -->
 
                 <div class="team-member">
-                    <a href="/en/members/timon">
+                    <a href="/en/team/timon">
                         <img src="/static/images/team/timon_fiddike.jpg" width="70" height="93" title="Timon Fiddike" class="team-photo">
                     </a>
                     <h3>
                         <?php echo($_lang['INDEX_TEAM_TIMON_TITLE']); ?> 
-                        <a href="/en/members/timon">
+                        <a href="/en/team/timon">
                            Timon Fiddike
                         </a>
                     </h3>

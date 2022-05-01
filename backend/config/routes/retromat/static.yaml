@@ -167,7 +167,7 @@ sources_old:
     permanent: true
 
 team_anton:
-  path: /en/members/anton
+  path: /en/team/anton
   defaults:
     _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     template: members/anton.html.twig
@@ -179,7 +179,7 @@ team_anton:
       section: meta
 
 team_timon:
-  path: /en/members/timon
+  path: /en/team/timon
   defaults:
     _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     template: members/timon.html.twig

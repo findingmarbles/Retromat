@@ -44,7 +44,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Als ontwikkelaar, product owner, scrum master en <a href="/en/members/timon">agile coach</a>, was Timon al meer dan drie jaar een Retromat gebruikeren fan. Hij had nogal wat ideeën voor nieuwe features. In 2016 begon hij enkele van die ideeën zelf te bouwen. Je kunt hem <a href="mailto:timon.fiddike@agile.coach">mailen</a> of
+Als ontwikkelaar, product owner, scrum master en <a href="/en/team/timon">agile coach</a>, was Timon al meer dan drie jaar een Retromat gebruikeren fan. Hij had nogal wat ideeën voor nieuwe features. In 2016 begon hij enkele van die ideeën zelf te bouwen. Je kunt hem <a href="mailto:timon.fiddike@agile.coach">mailen</a> of
     <a href="https://twitter.com/TimonFiddike">volgen op Twitter</a>.
 EOT;
 

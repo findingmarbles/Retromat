@@ -46,7 +46,7 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Współautor ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-Timon prowadzi <a href="/en/members/timon">Szkolenia Scrumowe</a>. Jako Integral Coach i <a href="/en/members/timon">Agile Coach</a> pracuje z kadrą zarządzającą, menedżerami, product ownerami and scrum masterami. Używa Retromatu od 2013, a od 2016 rozwija jego dodatkowe funkcjonalmności. Wyślij <a href="mailto:retromat@fiddike.com">wiadomość do Timona</a> lub
+Timon prowadzi <a href="/en/team/timon">Szkolenia Scrumowe</a>. Jako Integral Coach i <a href="/en/team/timon">Agile Coach</a> pracuje z kadrą zarządzającą, menedżerami, product ownerami and scrum masterami. Używa Retromatu od 2013, a od 2016 rozwija jego dodatkowe funkcjonalmności. Wyślij <a href="mailto:retromat@fiddike.com">wiadomość do Timona</a> lub
     <a href="https://twitter.com/TimonFiddike">śledź go na Twitterze</a>. Photo © Ina Abraham.
 EOT;
 
