@@ -4,10 +4,14 @@ security:
             algorithm: bcrypt
     enable_authenticator_manager: true
     password_hashers:
-        App\Entity\User: 'auto'
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+        legacy:
             algorithm: 'auto'
             cost: 15
+        App\Entity\User:
+            algorithm: sodium
+            migrate_from:
+                - bcrypt
+                - legacy
     providers:
         user_provider:
             entity:
@@ -65,6 +69,6 @@ when@test:
         password_hashers:
             Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
                 algorithm: auto
-                cost: 4 # Lowest possible value for bcrypt
-                time_cost: 3 # Lowest possible value for argon
-                memory_cost: 10 # Lowest possible value for argon
+                cost: 4
+                time_cost: 3
+                memory_cost: 10
