@@ -1,0 +1,23 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Request Password Reset{% endblock %}
+
+{% block header %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body_class %}reset-password-request{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+    {{ form_start(form, {'class': 'form'}) }}
+    <h1 class="h3 mb-3 font-weight-normal">Password reset</h1>
+        <div class="form-group">
+            {{ form_row(form.email) }}
+        </div>
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(form) }}
+{% endblock %}

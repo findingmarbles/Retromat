@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class TeamLoginController extends AbstractController
+class UserLoginController extends AbstractController
 {
     /**
      * @param AuthenticationUtils $authenticationUtils
@@ -25,7 +25,7 @@ class TeamLoginController extends AbstractController
         }
 
         return $this->render(
-            'team/login/login.html.twig', [
+            'user/login/login.html.twig', [
                 'last_username' => $authenticationUtils->getLastUsername(),
                 'error' => $authenticationUtils->getLastAuthenticationError()
             ]

@@ -1,0 +1,14 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block header %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body_class %}check-email{% endblock %}
+
+{% block body %}
+    <p>
+        Wenn wir einen Account unter Ihrer E-Mailadresse gefunden haben erhalten Sie in Kürze eine E-Mail mit weiteren Informationen.
+    </p>
+    <p>Bitte prüfen Sie auch Ihren Spamordner, Sie können die E-Mail auch erneut <a href="{{ path('user_request_password_reset_email') }}">anfordern</a>.</p>
+{% endblock %}

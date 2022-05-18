@@ -15,6 +15,9 @@ use Doctrine\ORM\Query\Expr\Join;
  */
 class ActivityRepository extends ServiceEntityRepository
 {
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Activity::class);

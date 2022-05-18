@@ -10,7 +10,7 @@ services:
   depends_on:
    - php-fpm
   ports:
-   - "8080:80"
+   - 8080:80
   networks:
    - retromat
 
@@ -53,7 +53,10 @@ services:
  mailcatcher:
   image: schickling/mailcatcher
   ports:
-   - 1025:1080
+   - 1025:1025
+   - 1080:1080
+  networks:
+   - retromat
 
 networks:
  retromat:

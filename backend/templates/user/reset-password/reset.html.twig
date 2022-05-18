@@ -1,0 +1,21 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Reset Password{% endblock %}
+
+{% block header %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body_class %}reset-password{% endblock %}
+
+{% block body %}
+    <h1>Password reset</h1>
+
+    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form,  {'attr': {'class': 'p-5 shadow-sm border mt-3 mb-3'}}) }}
+
+    <button class="btn btn-primary"> {{ button_label|default('Save') }}</button>
+
+    {{ form_end(form) }}
+{% endblock %}

@@ -52,3 +52,17 @@ services:
     App\Model\Plan\TitleRenderer:
         arguments:
             $parts: '%retromat.plan.titles%'
+
+    App\Model\User\UserResetPasswordManager:
+        arguments:
+            $resetRequestLifetime: 3600
+
+    App\Model\User\Generator\UserResetPasswordTokenGenerator:
+        arguments:
+            $signingKey: NpGqMRwfIA0Eg6Usd
+
+    App\Model\User\Mailer\UserResetPasswordMailer:
+        arguments:
+            $from: '%env(MAILER_FROM_ADDRESS)%'
+            $subject: 'Passwort Reset'
+            $template: 'user/reset-password/email/reset-password-request.txt.twig'
