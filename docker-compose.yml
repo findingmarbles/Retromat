@@ -1,5 +1,4 @@
 version: '3.1'
-
 services:
  httpd:
   build:
@@ -13,7 +12,6 @@ services:
    - 8080:80
   networks:
    - retromat
-
  php-fpm:
   build:
    context: .
@@ -24,7 +22,6 @@ services:
    - db
   networks:
    - retromat
-
  db:
   image: mariadb
   ports:
@@ -33,14 +30,12 @@ services:
    MYSQL_ROOT_PASSWORD: PaSsWoRd
   networks:
    - retromat
-
  redis:
   image: redis
   ports:
    - 6379:6379
   networks:
    - retromat
-
  phpmyadmin:
   image: phpmyadmin/phpmyadmin
   links:
@@ -49,7 +44,6 @@ services:
    - 8181:80
   networks:
    - retromat
-
  mailcatcher:
   image: schickling/mailcatcher
   ports:
@@ -57,7 +51,6 @@ services:
    - 1080:1080
   networks:
    - retromat
-
 networks:
  retromat:
   driver: bridge
