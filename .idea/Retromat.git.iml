@@ -69,6 +69,9 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/liip/test-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/phpunit-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/monolog-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
