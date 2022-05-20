@@ -7,12 +7,13 @@ git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git 
 
 
 # Docker Compose
+Start session:
 ```
 cd retromat.git
 docker-compose up -d
 docker-compose stop
 ```
-At the end of your session:
+End session:
 ```
 docker-compose stop
 ```
@@ -50,24 +51,19 @@ Add .env.local to set mysql root PW .
 php backend/bin/console doctrine:migrations:migrate --no-interaction
 ```
 
-```
-php backend/bin/console doctrine:migrations:migrate --no-interaction
-```
-
 # Run Tests
-Create .env.test.local (e.g. by copying .env.local) with a different DB name
+Initially:
+Create .env.test.local (e.g. by copying .env.local) with a different DB name.
+
+On code change:
 ```
 php backend/bin/console --env=test doctrine:database:drop --force
 php backend/bin/console --env=test doctrine:database:create
 php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
-
-create .env.test.local (e.g. by copying .env.local)
+Each time:
 ```
-backend/vendor/bin/phpunit -c backend
-```
-Or, if necessary:
-```
+php backend/bin/console --env=test cache:clear
 php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
 
