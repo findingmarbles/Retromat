@@ -19,6 +19,7 @@ install:
     - composer install --working-dir=backend
 
 before_script:
+    - mv backend/.env.travis-before backend/.env
     - php backend/bin/console doctrine:database:create
     - php backend/bin/console doctrine:migrations:migrate --no-interaction
     - backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
