@@ -17,7 +17,7 @@ class UserLoginController extends AbstractController
      * @param UrlGeneratorInterface $urlGenerator
      * @return Response
      */
-    #[Route(path: '/login', name: 'user_login')]
+    #[Route(path: '/en/login', name: 'user_login')]
     public function login(AuthenticationUtils $authenticationUtils, UrlGeneratorInterface $urlGenerator): Response
     {
         if ($this->getUser()) {
