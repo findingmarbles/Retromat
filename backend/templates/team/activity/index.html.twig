@@ -19,20 +19,23 @@
                 This fails when there is no "next" activity left to be translated ;-)
             {% endif %}
         </li>
-        <li>
-            Deleting activities is off in the UI at this point.
-            If you created one by accident, use <a href="https://mysql.uberspace.de/phpmyadmin/">PHPMyadmin</a> as described <a href="https://manual.uberspace.de/database-mysql/">here</a>.
-        </li>
+        {% if(is_granted('ROLE_ADMIN') and 'en' == app.request.locale) %}
+            <li>
+                Deleting activities is off in the UI at this point.
+                 Dear Admin: If you created one by accident, please use <a href="https://mysql.uberspace.de/phpmyadmin/">PHPMyadmin</a> as
+                described <a href="https://manual.uberspace.de/database-mysql/">here</a>.
+            </li>
+        {% endif %}
     </ul>
 
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
-                <th>RetromatId</th>
-                <th>Name</th>
-                <th>Summary</th>
-                <th>actions</th>
-            </tr>
+            <th>RetromatId</th>
+            <th>Name</th>
+            <th>Summary</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for activity in activities %}
