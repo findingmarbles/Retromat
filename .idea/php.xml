@@ -161,15 +161,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/password-hasher" />
-      <path value="$PROJECT_DIR$/backend/vendor/friendsofsymfony/user-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/intl" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/web-server-bundle" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bundle" />

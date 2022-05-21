@@ -28,22 +28,30 @@ to login as root.
 In the Docker App, click "Open in Browser" on the PHPMyAdmin container or directly go to:
 http://localhost:8181/
 
-No you can e.g. import a DB dump from the live system and import it via PHPMyAdmin.
+No you can e.g. obtain a DB dump from the live system ...
+```
+[retro2@cordelia ~]$ /usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat > retro2_retromat.sql
+```
+... and import it via PHPMyAdmin:
+
+Locally you need to use the same DB name as specified in 
+.env or .env local, at this point the author prefers to create (and import into)
+retromat-local-prod to keep it separate from the local DB used for testing.
 
 In the Docker App, click CLI on the mariadb container for command live access to the database.
 
 # Install
 In the Docker App, click CLI on the retromat-app-php-fpm-1
 ```
-$ cd backend
-$ composer install
+cd backend
+composer install
 ```
 (if that fails:
 https://github.com/symfony/flex/issues/836
 https://github.com/symfony/flex/issues/890
 ```
-$ composer selfupdate
-$ composer update symfony/flex --no-plugins --no-scripts
+composer selfupdate
+composer update symfony/flex --no-plugins --no-scripts
 ```
 )
 Add .env.local to set mysql root PW .
