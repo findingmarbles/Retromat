@@ -12,7 +12,12 @@
 
     <ul>
         <li>
-            <a href="{{ path('team_activity_new') }}">Create new activity {% if 'en' != app.request.locale %} translation{% endif %}</a>
+            {% if 'en' == app.request.locale %}
+                <a href="{{ path('team_activity_new') }}">Create new activity</a>
+            {% else %}
+                <a href="{{ path('team_activity_new') }}">Create next activity translation</a>
+                This fails when there is no "next" activity left to be translated ;-)
+            {% endif %}
         </li>
     </ul>
 
