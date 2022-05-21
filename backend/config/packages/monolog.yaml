@@ -30,11 +30,7 @@ when@prod:
         handlers:
             main:
                 type: fingers_crossed
-                # https://symfony.com/doc/current/logging/monolog_email.html
-                # http://seldaek.github.io/monolog/doc/01-usage.html
-                # reduce to critical to filter 4xx
-                action_level: error
-                # excluded_http_codes: [404, 405]
+                action_level: critical
                 channels: ["!deprecation"]
                 handler: grouped
             grouped:
