@@ -13,7 +13,7 @@ about:
 about_old:
   path: /about.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: about
     permanent: true
 
@@ -32,21 +32,21 @@ books:
 books_old:
   path: /books.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: books
     permanent: true
 
 donate:
   path: /en/donate
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: membership
     permanent: true
 
 donate_old:
   path: /donate.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: membership
     permanent: true
 
@@ -65,14 +65,14 @@ ebook:
 ebook_old1:
   path: /ebook/index.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: ebook
     permanent: true
 
 ebook_old2:
   path: /ebook/
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: ebook
     permanent: true
 
@@ -97,14 +97,14 @@ print:
 print_old1:
   path: /print/index.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: print
     permanent: true
 
 print_old2:
   path: /print/
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: print
     permanent: true
 
@@ -117,7 +117,7 @@ print_paypal_pay:
 print_paypal_pay_old:
   path: /print/paypal_pay.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: print_paypal_pay
     permanent: true
 
@@ -130,7 +130,7 @@ print_paypal_success:
 print_paypal_success_old:
   path: /print/paypal_success.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: print_paypal_success
     permanent: true
 
@@ -143,7 +143,7 @@ print_paypal_cancel:
 print_paypal_cancel_old:
   path: /print/paypal_cancel.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: print_paypal_cancel
     permanent: true
 
@@ -162,7 +162,7 @@ sources:
 sources_old:
   path: /print/sources.html
   defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
     route: sources
     permanent: true
 
