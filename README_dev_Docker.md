@@ -11,7 +11,6 @@ Start session:
 ```
 cd retromat.git
 docker-compose up -d
-docker-compose stop
 ```
 End session:
 ```
