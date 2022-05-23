@@ -41,6 +41,7 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "liip/functional-test-bundle": "^4.4",
         "liip/test-fixtures-bundle": "^2.0",
         "phpunit/phpunit": "^9.5",
