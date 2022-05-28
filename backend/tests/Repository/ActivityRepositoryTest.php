@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Repository;
 
@@ -32,11 +33,11 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals(16, $ordered[4]->getRetromatId());
 
         // check for correct order of keys
-        $this->assertEquals(3, reset($ordered)->getRetromatId());
-        $this->assertEquals(87, next($ordered)->getRetromatId());
-        $this->assertEquals(113, next($ordered)->getRetromatId());
-        $this->assertEquals(13, next($ordered)->getRetromatId());
-        $this->assertEquals(16, end($ordered)->getRetromatId());
+        $this->assertEquals(3, \reset($ordered)->getRetromatId());
+        $this->assertEquals(87, \next($ordered)->getRetromatId());
+        $this->assertEquals(113, \next($ordered)->getRetromatId());
+        $this->assertEquals(13, \next($ordered)->getRetromatId());
+        $this->assertEquals(16, \end($ordered)->getRetromatId());
     }
 
     public function testFindAllOrdered()
@@ -51,9 +52,9 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals(3, $ordered[2]->getRetromatId());
 
         // check for correct order of keys
-        $this->assertEquals(1, reset($ordered)->getRetromatId());
-        $this->assertEquals(2, next($ordered)->getRetromatId());
-        $this->assertEquals(3, next($ordered)->getRetromatId());
+        $this->assertEquals(1, \reset($ordered)->getRetromatId());
+        $this->assertEquals(2, \next($ordered)->getRetromatId());
+        $this->assertEquals(3, \next($ordered)->getRetromatId());
     }
 
     public function testFindAllActivitiesForPhases()

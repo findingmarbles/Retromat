@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Plan;
 
@@ -29,7 +30,7 @@ class TitleIdGenerator
 
         $numberOfCombinations = 1;
         foreach ($parts['sequence_of_groups'][$id] as $groupId) {
-            $numberOfCombinations *= count($parts['groups_of_terms'][$groupId]);
+            $numberOfCombinations *= \count($parts['groups_of_terms'][$groupId]);
         }
 
         return $numberOfCombinations;
@@ -59,7 +60,7 @@ class TitleIdGenerator
      */
     private function extractTitleParts(string $locale): array
     {
-        if (array_key_exists($locale, $this->parts)) {
+        if (\array_key_exists($locale, $this->parts)) {
             return $this->parts[$locale];
         } else {
             throw new InconsistentInputException('Locale not found in parts: '.$locale);

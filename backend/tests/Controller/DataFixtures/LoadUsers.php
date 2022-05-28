@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Controller\DataFixtures;
 
@@ -10,10 +11,10 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadUsers extends Fixture
 {
-    const ROLE = 'ROLE_ADMIN';
-    const USERNAME = 'admin';
-    const PASSWORD = 'adminPass';
-    const EMAIL_ADDRESS = 'admin@example.com';
+    public const ROLE = 'ROLE_ADMIN';
+    public const USERNAME = 'admin';
+    public const PASSWORD = 'adminPass';
+    public const EMAIL_ADDRESS = 'admin@example.com';
 
     private UserManager $userManager;
 

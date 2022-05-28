@@ -182,7 +182,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
 
-        return array_unique($roles);
+        return \array_unique($roles);
     }
 
     /**
@@ -202,7 +202,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function grantRole($role): User
     {
         if (!\in_array($role, $this->roles)) {
-            array_push($this->roles, $role);
+            \array_push($this->roles, $role);
         }
 
         return $this;

@@ -2,8 +2,8 @@
 
 namespace App\Model\Sitemap\Subscriber;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class SitemapPopulateSubscriber implements EventSubscriberInterface
 {

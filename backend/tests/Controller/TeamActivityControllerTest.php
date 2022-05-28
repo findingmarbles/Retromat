@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
@@ -141,7 +142,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $formValues = $crawler->selectButton(self::SELECTOR_BUTTON_PRIMARY)->form()->getPhpValues();
 
         $translatableFields = ['name', 'summary', 'desc', '_token'];
-        $this->assertEquals($translatableFields, array_keys($formValues['activity_translatable_fields']));
+        $this->assertEquals($translatableFields, \array_keys($formValues['activity_translatable_fields']));
     }
 
     public function testCreateNewActivityTranslationDe()

@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
@@ -19,7 +20,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/32');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Emoticon Project Gauge',
@@ -27,7 +28,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/59');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Happiness Histogram',
@@ -35,7 +36,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/80');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Repeat &amp; Avoid',
@@ -49,7 +50,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/32?locale=de');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Projekt-Gef&uuml;hlsmesser',
@@ -57,7 +58,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/58?locale=de');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Verdeckter Boss',
@@ -65,7 +66,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/75?locale=de');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'Schreibe das Unaussprechliche',
@@ -79,7 +80,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/17');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://fairlygoodpractices.com/samolo.htm">Fairly good practices</a>',
@@ -87,7 +88,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/80');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://www.infoq.com/minibooks/agile-retrospectives-value">Luis Goncalves</a>',
@@ -101,7 +102,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/77');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>',
@@ -109,7 +110,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/5');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -123,7 +124,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/15');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives</a> who took it from \'The Satir Model: Family Therapy and Beyond\'',
@@ -131,7 +132,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/37');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann</a>, found at <a href="http://www.ayeconference.com/appreciativeretrospective/">Diana Larsen</a>',
@@ -145,7 +146,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activity/14');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -153,7 +154,7 @@ class ActivityControllerTest extends AbstractTestCase
         );
 
         $client->request('GET', '/api/activity/65');
-        $activity = json_decode($client->getResponse()->getContent(), true);
+        $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -167,7 +168,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
             'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -186,7 +187,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
         $this->assertEquals(32, $activities[32 - 1]['retromatId']);
@@ -203,7 +204,7 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities?locale=de');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
         $this->assertEquals(32, $activities[32 - 1]['retromatId']);
@@ -220,23 +221,23 @@ class ActivityControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $client->request('GET', '/api/activities?locale=de');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(75, $activities);
 
         $client->request('GET', '/api/activities?locale=en');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(131, $activities);
 
         $client->request('GET', '/api/activities?locale=es');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(95, $activities);
 
         $client->request('GET', '/api/activities?locale=fr');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(50, $activities);
 
         $client->request('GET', '/api/activities?locale=nl');
-        $activities = json_decode($client->getResponse()->getContent(), true);
+        $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(101, $activities);
     }
 }

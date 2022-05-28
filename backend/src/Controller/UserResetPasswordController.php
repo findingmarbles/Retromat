@@ -101,8 +101,9 @@ class UserResetPasswordController extends AbstractController
         try {
             $user = $this->userResetPasswordManager->validateTokenAndFetchUser($token);
         } catch (UserExceptionInterface $userException) {
-            $this->addFlash('reset_password_error',
-                sprintf('Something went wrong with the validation: "%s".', $userException->getErrorMessage())
+            $this->addFlash(
+                'reset_password_error',
+                \sprintf('Something went wrong with the validation: "%s".', $userException->getErrorMessage())
             );
             return $this->redirectToRoute('user_request_password_reset_email');
         }

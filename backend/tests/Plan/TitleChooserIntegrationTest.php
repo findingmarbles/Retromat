@@ -1,14 +1,15 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Plan;
 
+use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\TitleChooser;
 use App\Model\Plan\TitleRenderer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
-use App\Model\Plan\Exception\InconsistentInputException;
 
 class TitleChooserIntegrationTest extends TestCase
 {
@@ -241,18 +242,18 @@ YAML;
 
         $titleId = $chooser->chooseTitleId('1-2-3-4-5');
 
-        $idStringParts = explode(':', $titleId);
+        $idStringParts = \explode(':', $titleId);
         $sequenceId = $idStringParts[0];
-        $this->assertTrue(is_numeric($sequenceId));
+        $this->assertTrue(\is_numeric($sequenceId));
 
         $fragmentIdsString = $idStringParts[1];
         $this->assertStringContainsString('-', $fragmentIdsString);
 
-        $fragmentIds = explode('-', $fragmentIdsString);
-        $this->assertTrue(is_array($fragmentIds));
+        $fragmentIds = \explode('-', $fragmentIdsString);
+        $this->assertTrue(\is_array($fragmentIds));
 
         foreach ($fragmentIds as $fragmentId) {
-            $this->assertTrue(is_numeric($fragmentId));
+            $this->assertTrue(\is_numeric($fragmentId));
         }
     }
 
@@ -287,18 +288,18 @@ YAML;
 
         $titleId = $chooser->chooseTitleId('1-2-3-4-5', 'de');
 
-        $idStringParts = explode(':', $titleId);
+        $idStringParts = \explode(':', $titleId);
         $sequenceId = $idStringParts[0];
-        $this->assertTrue(is_numeric($sequenceId));
+        $this->assertTrue(\is_numeric($sequenceId));
 
         $fragmentIdsString = $idStringParts[1];
         $this->assertStringContainsString('-', $fragmentIdsString);
 
-        $fragmentIds = explode('-', $fragmentIdsString);
-        $this->assertTrue(is_array($fragmentIds));
+        $fragmentIds = \explode('-', $fragmentIdsString);
+        $this->assertTrue(\is_array($fragmentIds));
 
         foreach ($fragmentIds as $fragmentId) {
-            $this->assertTrue(is_numeric($fragmentId));
+            $this->assertTrue(\is_numeric($fragmentId));
         }
     }
 
@@ -495,7 +496,7 @@ de:
 YAML;
         $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
+        $maxLengthIncludingPlanId = \strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -505,7 +506,7 @@ YAML;
 
         $this->assertLessThanOrEqual(
             $maxLengthIncludingPlanId,
-            strlen($fullTitle),
+            \strlen($fullTitle),
             'This is longer than '.$maxLengthIncludingPlanId.': '.$fullTitle
         );
     }
@@ -537,7 +538,7 @@ de:
 YAML;
         $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('Agenda'.': '.'1-2-3-4-5');
+        $maxLengthIncludingPlanId = \strlen('Agenda'.': '.'1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -547,7 +548,7 @@ YAML;
 
         $this->assertLessThanOrEqual(
             $maxLengthIncludingPlanId,
-            strlen($fullTitle),
+            \strlen($fullTitle),
             'This is longer than '.$maxLengthIncludingPlanId.': '.$fullTitle
         );
     }
@@ -630,7 +631,7 @@ YAML;
         $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
+        $maxLengthIncludingPlanId = \strlen('foo'.': '.$planId);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -681,7 +682,7 @@ YAML;
         $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = strlen('foo'.': '.$planId);
+        $maxLengthIncludingPlanId = \strlen('foo'.': '.$planId);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -776,18 +777,18 @@ YAML;
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
 
         // some term is dropped
-        mt_srand(0);
+        \mt_srand(0);
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId2);
 
         // same seed, same term dropped
-        mt_srand(0);
+        \mt_srand(0);
         $titleId3 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId3);
         $this->assertEquals($titleId2, $titleId3);
 
         // different seed, different terms dropped
-        mt_srand(1);
+        \mt_srand(1);
         $titleId4 = $chooser->dropOneOptionalTerm($titleId1);
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId4);
         $this->assertNotEquals($titleId2, $titleId4);
@@ -838,18 +839,18 @@ YAML;
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
 
         // some term is dropped
-        mt_srand(0);
+        \mt_srand(0);
         $titleId2 = $chooser->dropOneOptionalTerm($titleId1, 'de');
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId2);
 
         // same seed, same term dropped
-        mt_srand(0);
+        \mt_srand(0);
         $titleId3 = $chooser->dropOneOptionalTerm($titleId1, 'de');
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId3);
         $this->assertEquals($titleId2, $titleId3);
 
         // different seed, different terms dropped
-        mt_srand(1);
+        \mt_srand(1);
         $titleId4 = $chooser->dropOneOptionalTerm($titleId1, 'de');
         $this->assertNotEquals('0:0-1-1-1-1-1-1-1-1-1', $titleId4);
         $this->assertNotEquals($titleId2, $titleId4);

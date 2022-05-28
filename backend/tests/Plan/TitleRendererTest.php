@@ -1,12 +1,13 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Plan;
 
+use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\TitleRenderer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
-use App\Model\Plan\Exception\InconsistentInputException;
 
 class TitleRendererTest extends TestCase
 {
@@ -15,7 +16,7 @@ class TitleRendererTest extends TestCase
      */
     public function testRenderDifferentTerms()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Agile Retrospective Plan', $title->render('0:0-0-0'));
@@ -27,7 +28,7 @@ class TitleRendererTest extends TestCase
      */
     public function testRenderDifferentTermsDe()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Agile Retrospective Plan', $title->render('0:0-0-0', 'de'));
@@ -39,7 +40,7 @@ class TitleRendererTest extends TestCase
      */
     public function testRenderDifferentSequences()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Retrospective Plan', $title->render('2:0-0'));
@@ -51,7 +52,7 @@ class TitleRendererTest extends TestCase
      */
     public function testRenderDifferentSequencesDe()
     {
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $this->assertEquals('Retrospective Plan', $title->render('2:0-0', 'de'));
@@ -65,7 +66,7 @@ class TitleRendererTest extends TestCase
     {
         $this->expectException(InconsistentInputException::class);
 
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $title->render('1:0-0-0');
@@ -75,7 +76,7 @@ class TitleRendererTest extends TestCase
     {
         $this->expectException(InconsistentInputException::class);
 
-        $titleParts = Yaml::parse(file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
+        $titleParts = Yaml::parse(\file_get_contents(__DIR__.'/TestData/title_minmal.yml'));
         $title = new TitleRenderer($titleParts);
 
         $title->render('1:0-0-0', 'de');

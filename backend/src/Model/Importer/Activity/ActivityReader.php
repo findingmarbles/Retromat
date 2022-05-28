@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Importer\Activity;
 
@@ -35,14 +36,14 @@ class ActivityReader
     public function highestRetromatId()
     {
         $key = 'all_activities[';
-        $keyPosition = strrpos($this->activities, "\n".$key) + 1;
+        $keyPosition = \strrpos($this->activities, "\n".$key) + 1;
 
-        $start = $keyPosition + strlen($key);
-        $end = strpos($this->activities, ']', $start);
+        $start = $keyPosition + \strlen($key);
+        $end = \strpos($this->activities, ']', $start);
 
         // $retromatId is the public ID as in https://retromat.org/?id=123
         // $jsArrayId is the interal ID as in lang/activities_en.php all_activities[122]
-        $highestJsArrayId = intval(trim(substr($this->activities, $start, $end - $start)));
+        $highestJsArrayId = \intval(\trim(\substr($this->activities, $start, $end - $start)));
         $highestRetromatId = $highestJsArrayId + 1;
 
         return $highestRetromatId;
@@ -77,11 +78,11 @@ class ActivityReader
         $startMarker = "{\n";
         $endMarker = "\n};";
 
-        $blockStart = strpos($this->activities, 'all_activities['.$jsArrayId.']');
-        $start = strpos($this->activities, $startMarker, $blockStart) + strlen($startMarker);
-        $end = strpos($this->activities, $endMarker, $start);
+        $blockStart = \strpos($this->activities, 'all_activities['.$jsArrayId.']');
+        $start = \strpos($this->activities, $startMarker, $blockStart) + \strlen($startMarker);
+        $end = \strpos($this->activities, $endMarker, $start);
 
-        return substr($this->activities, $start, $end - $start);
+        return \substr($this->activities, $start, $end - $start);
     }
 
     public function extractActivityName($activityBlock)
@@ -100,7 +101,7 @@ class ActivityReader
         if (empty($description)) {
             return null;
         } else {
-            return str_replace(["<a href='", "'>", "\\\n"], ['<a href="', '">', ''], $description);
+            return \str_replace(["<a href='", "'>", "\\\n"], ['<a href="', '">', ''], $description);
         }
     }
 
@@ -128,11 +129,11 @@ class ActivityReader
     {
         $key = 'phase:';
 
-        if (0 === strpos($activityBlock, $key)) {
-            $start = strlen($key);
-            $end = strpos($activityBlock, ',', $start);
+        if (0 === \strpos($activityBlock, $key)) {
+            $start = \strlen($key);
+            $end = \strpos($activityBlock, ',', $start);
 
-            return intval(trim(substr($activityBlock, $start, $end - $start)));
+            return \intval(\trim(\substr($activityBlock, $start, $end - $start)));
         } else {
             return null;
         }
@@ -142,17 +143,17 @@ class ActivityReader
     {
         $key = 'source:';
 
-        $keyPosition = strpos($activityBlock, "\n".$key) + 1;
-        $offset = $keyPosition + strlen($key);
-        if ((false !== $keyPosition) and ($offset < strlen($activityBlock))) {
-            $endOfLine = strpos($activityBlock, "\n", $keyPosition);
+        $keyPosition = \strpos($activityBlock, "\n".$key) + 1;
+        $offset = $keyPosition + \strlen($key);
+        if ((false !== $keyPosition) and ($offset < \strlen($activityBlock))) {
+            $endOfLine = \strpos($activityBlock, "\n", $keyPosition);
             if (false === $endOfLine) {
-                $endOfLine = strlen($activityBlock);
+                $endOfLine = \strlen($activityBlock);
             }
 
             // identify the first non-whitespace after the key "source: "
             for ($start = $offset; $start <= $endOfLine; $start++) {
-                if (!ctype_space($activityBlock[$start])) {
+                if (!\ctype_space($activityBlock[$start])) {
                     break;
                 }
             }
@@ -164,7 +165,7 @@ class ActivityReader
                 $end = $endOfLine;
             }
 
-            return substr($activityBlock, $start, $end - $start);
+            return \substr($activityBlock, $start, $end - $start);
         }
 
         return null;
@@ -177,13 +178,13 @@ class ActivityReader
      */
     private function extractStringValue($activityBlock, $key)
     {
-        $keyPosition = strpos($activityBlock, "\n".$key);
-        $offset = $keyPosition + 1 + strlen($key); // +1 to compensate for linebreak ("\n") that was prepended
-        if ((false !== $keyPosition) and ($offset < strlen($activityBlock))) {
-            $start = strpos($activityBlock, '"', $offset) + strlen('"');
-            $end = strpos($activityBlock, '"', $start);
+        $keyPosition = \strpos($activityBlock, "\n".$key);
+        $offset = $keyPosition + 1 + \strlen($key); // +1 to compensate for linebreak ("\n") that was prepended
+        if ((false !== $keyPosition) and ($offset < \strlen($activityBlock))) {
+            $start = \strpos($activityBlock, '"', $offset) + \strlen('"');
+            $end = \strpos($activityBlock, '"', $start);
 
-            return substr($activityBlock, $start, $end - $start);
+            return \substr($activityBlock, $start, $end - $start);
         }
 
         return null;
@@ -194,7 +195,7 @@ class ActivityReader
      */
     private function readActivities(string $fileName): void
     {
-        $this->activities = file_get_contents($fileName);
+        $this->activities = \file_get_contents($fileName);
     }
 
     /**

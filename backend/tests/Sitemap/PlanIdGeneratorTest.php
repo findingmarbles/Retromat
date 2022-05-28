@@ -1,10 +1,11 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Sitemap;
 
-use App\Model\Sitemap\PlanIdGenerator;
 use App\Model\Activity\ActivityByPhase;
+use App\Model\Sitemap\PlanIdGenerator;
 use PHPUnit\Framework\TestCase;
 
 class PlanIdGeneratorTest extends TestCase
@@ -37,7 +38,7 @@ class PlanIdGeneratorTest extends TestCase
             ->getMock();
         $activitiyByPhase->expects($this->any())
             ->method('getAllActivitiesByPhase')
-            ->will($this->returnValue($activitiesByPhase));
+            ->willReturn($activitiesByPhase);
         $this->planIdGenerator = new PlanIdGenerator($activitiyByPhase);
     }
 

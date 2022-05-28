@@ -61,7 +61,7 @@ class TeamActivityController extends AbstractController
     #[Route('/new', name: 'team_activity_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.\strtoupper($request->getLocale()));
 
         $activity = $this->createActivity($request->getLocale());
         $form = $this->createActivityForm($request->getLocale(), $activity);
@@ -91,7 +91,7 @@ class TeamActivityController extends AbstractController
     #[Route('/{id}', name: 'team_activity_show', methods: ['GET'])]
     public function show(Request $request, Activity $activity): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.strtoupper($request->getLocale()));
+        $this->denyAccessUnlessGranted('ROLE_TRANSLATOR_'.\strtoupper($request->getLocale()));
 
         $this->activityExpander->expandSource($activity);
 
@@ -146,9 +146,9 @@ class TeamActivityController extends AbstractController
 
         if ('en' === $locale) {
             $activity = new Activity();
-            $activity->setRetromatId(count($localizedActivities) + 1);
+            $activity->setRetromatId(\count($localizedActivities) + 1);
         } else {
-            $activity = $this->activityRepository->findOneBy(['retromatId' => count($localizedActivities) + 1]);
+            $activity = $this->activityRepository->findOneBy(['retromatId' => \count($localizedActivities) + 1]);
             $activity->setDefaultLocale($locale);
             $activity->setName($activity->translate('en')->getName());
             $activity->setSummary($activity->translate('en')->getSummary());

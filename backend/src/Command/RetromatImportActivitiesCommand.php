@@ -33,7 +33,7 @@ class RetromatImportActivitiesCommand extends Command
         try {
             $this->activityImporter->import();
         } catch (\Exception $exception) {
-            $io->error(sprintf('Import failed: "%s"', $exception->getMessage()));
+            $io->error(\sprintf('Import failed: "%s"', $exception->getMessage()));
             return 1;
         }
 

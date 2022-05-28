@@ -4,8 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Activity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query\Expr\Join;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Activity|null find($id, $lockMode = null, $lockVersion = null)
@@ -32,7 +32,7 @@ class ActivityRepository extends ServiceEntityRepository
         $allActivities = $this->findAllOrdered();
         $orderedActivities = [];
         foreach ($orderedIds as $id) {
-            if (array_key_exists($id - 1, $allActivities)) {
+            if (\array_key_exists($id - 1, $allActivities)) {
                 $orderedActivities[] = $allActivities[$id - 1];
             }
         }

@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Plan;
 
@@ -11,7 +12,7 @@ class DescriptionRenderer
      */
     public function render(array $activities): string
     {
-        if (5 !== count($activities)) {
+        if (5 !== \count($activities)) {
             return '';
         }
 

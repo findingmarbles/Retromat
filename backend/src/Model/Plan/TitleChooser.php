@@ -1,10 +1,11 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Plan;
 
-use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\Exception\InconsistentInputException;
+use App\Model\Plan\Exception\NoGroupLeftToDrop;
 
 class TitleChooser
 {
@@ -45,7 +46,7 @@ class TitleChooser
      */
     public function renderTitle(string $activityIdsString, string $locale = 'en'): string
     {
-        if (5 !== count(explode('-', $activityIdsString))) {
+        if (5 !== \count(\explode('-', $activityIdsString))) {
             return '';
         }
 
@@ -64,28 +65,28 @@ class TitleChooser
         $parts = $this->extractTitleParts($locale);
 
         // parse input
-        $activityIds = explode('-', $activityIdsString);
-        if (5 !== count($activityIds)) {
+        $activityIds = \explode('-', $activityIdsString);
+        if (5 !== \count($activityIds)) {
             return '';
         }
 
         // use input to seed the random number generator so we get deterministic randomness
-        $planNumber = (int)implode('0', $activityIds);
-        mt_srand($planNumber);
+        $planNumber = (int)\implode('0', $activityIds);
+        \mt_srand($planNumber);
 
         // randomly choose a squence to use and identify the groups of terms in it
-        $chosenSequenceId = mt_rand(0, count($parts['sequence_of_groups']) - 1);
+        $chosenSequenceId = \mt_rand(0, \count($parts['sequence_of_groups']) - 1);
         $groupIds = $parts['sequence_of_groups'][$chosenSequenceId];
 
         // randomly choose one term from each group in the sequence
         $chosenTermIds = [];
         foreach ($groupIds as $groupId) {
             $groupOfTerms = $parts['groups_of_terms'][$groupId];
-            $chosenTermIds[] = mt_rand(0, count($groupOfTerms) - 1);
+            $chosenTermIds[] = \mt_rand(0, \count($groupOfTerms) - 1);
         }
 
         // take care of $maxLengthIncludingPlanId
-        $titleId = $chosenSequenceId.':'.implode('-', $chosenTermIds);
+        $titleId = $chosenSequenceId.':'.\implode('-', $chosenTermIds);
         $titleId = $this->dropOptionalTermsUntilShortEnough($titleId, $activityIdsString, $locale);
 
         return $titleId;
@@ -120,19 +121,19 @@ class TitleChooser
         $parts = $this->extractTitleParts($locale);
 
         // parse titleId
-        $idStringParts = explode(':', $titleId);
+        $idStringParts = \explode(':', $titleId);
         $sequenceOfGroupsId = $idStringParts[0];
         $sequenceOfGroups = $parts['sequence_of_groups'][$sequenceOfGroupsId];
-        $fragmentIds = explode('-', $idStringParts[1]);
+        $fragmentIds = \explode('-', $idStringParts[1]);
         unset($titleId, $idStringParts);
 
         // find non-empty optional terms
         $nonEmptyOptionalGroupIds = [];
-        for ($i = 0; $i < count($fragmentIds); $i++) {
+        for ($i = 0; $i < \count($fragmentIds); $i++) {
             // non-empty (by convention, empty string must be listed first and therefore are id == 0)
             if (0 != $fragmentIds[$i]) {
                 // by convention, optional groups are marked by having an empty string as their first term
-                if (0 == strlen($parts['groups_of_terms'][$sequenceOfGroups[$i]][0])) {
+                if (0 == \strlen($parts['groups_of_terms'][$sequenceOfGroups[$i]][0])) {
                     $nonEmptyOptionalGroupIds[] = $i;
                 }
             }
@@ -140,15 +141,15 @@ class TitleChooser
         if (empty($nonEmptyOptionalGroupIds)) {
             throw new NoGroupLeftToDrop(
                 'Cannot drop enough groups to satisfy maximum length requirement: '.
-                $sequenceOfGroupsId.':'.implode('-', $fragmentIds)
+                $sequenceOfGroupsId.':'.\implode('-', $fragmentIds)
             );
         }
 
         // drop one term (random choice)
-        $termIdToDrop = $nonEmptyOptionalGroupIds[mt_rand(0, count($nonEmptyOptionalGroupIds) - 1)];
+        $termIdToDrop = $nonEmptyOptionalGroupIds[\mt_rand(0, \count($nonEmptyOptionalGroupIds) - 1)];
         $fragmentIds[$termIdToDrop] = 0;
 
-        return $sequenceOfGroupsId.':'.implode('-', $fragmentIds);
+        return $sequenceOfGroupsId.':'.\implode('-', $fragmentIds);
     }
 
     /**
@@ -160,9 +161,9 @@ class TitleChooser
      */
     public function isShortEnough(string $titleId, string $activityIdsString, string $locale = 'en'): bool
     {
-        return $this->maxLengthIncludingPlanId >= mb_strlen(
-                $this->titleRenderer->render($titleId, $locale).': '.$activityIdsString
-            );
+        return $this->maxLengthIncludingPlanId >= \mb_strlen(
+            $this->titleRenderer->render($titleId, $locale).': '.$activityIdsString
+        );
     }
 
     /**
@@ -172,7 +173,7 @@ class TitleChooser
      */
     private function extractTitleParts(string $locale): array
     {
-        if (array_key_exists($locale, $this->parts)) {
+        if (\array_key_exists($locale, $this->parts)) {
             return $this->parts[$locale];
         } else {
             throw new InconsistentInputException('Locale not found in parts: '.$locale);

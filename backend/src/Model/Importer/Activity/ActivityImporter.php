@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Importer\Activity;
 
@@ -102,7 +103,7 @@ class ActivityImporter
             $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, $newActivity);
 
             $violations = $this->validator->validate($activityFromReader);
-            if (0 === count($violations)) {
+            if (0 === \count($violations)) {
                 $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
                 if (isset($activityFromDb)) {
                     $activityFromDb->setDefaultLocale($locale);

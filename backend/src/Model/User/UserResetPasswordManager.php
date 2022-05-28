@@ -45,7 +45,7 @@ class UserResetPasswordManager
      */
     public function generateUserResetPasswordToken(UserInterface $user): UserResetPasswordToken
     {
-        $expiresAt = new \DateTimeImmutable(sprintf('+%d seconds', $this->resetRequestLifetime));
+        $expiresAt = new \DateTimeImmutable(\sprintf('+%d seconds', $this->resetRequestLifetime));
         $tokenComponents = $this->userResetPasswordTokenGenerator->generate(
             $expiresAt,
             $user
@@ -92,10 +92,10 @@ class UserResetPasswordManager
         $hashedVerifierToken = $this->userResetPasswordTokenGenerator->generate(
             $resetRequest->getExpiresAt(),
             $user,
-            substr($fullToken, UserResetPasswordTokenComponents::COMPONENTS_LENGTH)
+            \substr($fullToken, UserResetPasswordTokenComponents::COMPONENTS_LENGTH)
         );
 
-        if (false === hash_equals($resetRequest->getHashedToken(), $hashedVerifierToken->getHashedToken())) {
+        if (false === \hash_equals($resetRequest->getHashedToken(), $hashedVerifierToken->getHashedToken())) {
             throw new InvalidUserResetPasswordTokenException();
         }
 
@@ -138,7 +138,7 @@ class UserResetPasswordManager
     {
         return $this->userResetPasswordRequestRepository->findOneBy(
             [
-                'selector' => substr($token, 0, UserResetPasswordTokenComponents::COMPONENTS_LENGTH)
+                'selector' => \substr($token, 0, UserResetPasswordTokenComponents::COMPONENTS_LENGTH)
             ]
         );
     }

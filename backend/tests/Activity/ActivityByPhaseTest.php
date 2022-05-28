@@ -14,7 +14,7 @@ class ActivityByPhaseTest extends WebTestCase
      */
     private $activityByPhase;
 
-    public function setUp():void
+    public function setUp(): void
     {
         $activityByPhase = [
             0 => [1, 2, 3, 18, 22, 31, 32, 36, 42, 43, 46, 52, 59, 70, 76, 81, 82, 84, 85, 90, 106, 107, 108, 114, 122],
@@ -32,7 +32,7 @@ class ActivityByPhaseTest extends WebTestCase
             ->getMock();
         $activityRepository->expects($this->any())
             ->method('findAllActivitiesByPhases')
-            ->will($this->returnValue($activityByPhase));
+            ->willReturn($activityByPhase);
 
         $entityManager = $this
             ->getMockBuilder(EntityManager::class)
@@ -40,7 +40,7 @@ class ActivityByPhaseTest extends WebTestCase
             ->getMock();
         $entityManager->expects($this->any())
             ->method('getRepository')
-            ->will($this->returnValue($activityRepository));
+            ->willReturn($activityRepository);
 
         $this->activityByPhase = new ActivityByPhase($entityManager);
     }
@@ -114,9 +114,9 @@ class ActivityByPhaseTest extends WebTestCase
 
         $activities = [];
         foreach ($activityByPhase->getAllActivitiesByPhase() as $activitiesInPhase) {
-            $activities = array_merge($activities, $activitiesInPhase);
+            $activities = \array_merge($activities, $activitiesInPhase);
         }
 
-        $this->assertEquals(array_unique($activities), $activities);
+        $this->assertEquals(\array_unique($activities), $activities);
     }
 }

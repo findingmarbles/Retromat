@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Sitemap;
 
 use App\Model\Activity\ActivityByPhase;
-use App\Model\Sitemap\PlanIdGenerator;
 use App\Model\Sitemap\PlanGenerator;
+use App\Model\Sitemap\PlanIdGenerator;
 use PHPUnit\Framework\TestCase;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\Url;
@@ -38,7 +39,7 @@ class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInter
             ->getMock();
         $activitiyByPhase->expects($this->any())
             ->method('getAllActivitiesByPhase')
-            ->will($this->returnValue($activitiesByPhase));
+            ->willReturn($activitiesByPhase);
         $idGenerator = new PlanIdGenerator($activitiyByPhase);
         $planGenerator = new PlanGenerator($this, $idGenerator);
 

@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Plan;
 
@@ -16,7 +17,7 @@ class TitleRenderer
      * Title constructor.
      * @param array $parts
      */
-    function __construct(array $parts)
+    public function __construct(array $parts)
     {
         $this->parts = $parts;
     }
@@ -30,26 +31,26 @@ class TitleRenderer
     {
         $parts = $this->extractTitleParts($locale);
 
-        $idStringParts = explode(':', $idString);
+        $idStringParts = \explode(':', $idString);
         $sequenceOfGroups = $parts['sequence_of_groups'][$idStringParts[0]];
-        $fragmentIds = explode('-', $idStringParts[1]);
+        $fragmentIds = \explode('-', $idStringParts[1]);
         unset($idString, $idStringParts);
 
-        if (count($fragmentIds) != count($sequenceOfGroups)) {
+        if (\count($fragmentIds) != \count($sequenceOfGroups)) {
             throw new InconsistentInputException(
                 'Number of frament ids differs from number of groups in the sequence of groups. They need to be equal.'
             );
         }
 
         $fragments = [];
-        for ($i = 0; $i < count($fragmentIds); $i++) {
+        for ($i = 0; $i < \count($fragmentIds); $i++) {
             $fragment = $parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
-            if (0 < strlen($fragment)) {
+            if (0 < \strlen($fragment)) {
                 $fragments[] = $fragment;
             }
         }
 
-        return implode(' ', $fragments);
+        return \implode(' ', $fragments);
     }
 
     /**
@@ -59,7 +60,7 @@ class TitleRenderer
      */
     private function extractTitleParts(string $locale): array
     {
-        if (array_key_exists($locale, $this->parts)) {
+        if (\array_key_exists($locale, $this->parts)) {
             return $this->parts[$locale];
         } else {
             throw new InconsistentInputException('Locale not found in parts: '.$locale);

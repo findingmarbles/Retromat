@@ -12,14 +12,14 @@ class ColorVariation
 
     public function nextColor()
     {
-        if (count($this->colors) < 2) {
+        if (\count($this->colors) < 2) {
             $this->colors = $this->allColors;
-            shuffle($this->colors);
+            \shuffle($this->colors);
         }
 
-        $color = array_pop($this->colors);
+        $color = \array_pop($this->colors);
         if ($color == $this->previousColor) {
-            $color = array_pop($this->colors);
+            $color = \array_pop($this->colors);
         }
 
         $this->previousColor = $color;

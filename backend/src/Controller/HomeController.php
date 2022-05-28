@@ -55,9 +55,9 @@ class HomeController extends AbstractController
         $title = '';
         $description = '';
 
-        if (0 < count($ids) and ('en' === $locale or 'de' === $locale or 'ru' === $locale)) {
+        if (0 < \count($ids) and ('en' === $locale or 'de' === $locale or 'ru' === $locale)) {
             $activities = $this->activityRepository->findOrdered($ids);
-            if (count($ids) !== count($activities)) {
+            if (\count($ids) !== \count($activities)) {
                 throw $this->createNotFoundException();
             }
             foreach ($activities as $activity) {
@@ -104,7 +104,7 @@ class HomeController extends AbstractController
     {
         $ids = [];
         if (!empty($idString)) {
-            $rawIds = explode('-', $idString);
+            $rawIds = \explode('-', $idString);
             foreach ($rawIds as $rawId) {
                 $id = (int)$rawId;
                 if (0 !== $id and (string)$id === $rawId) {
@@ -127,16 +127,16 @@ class HomeController extends AbstractController
      */
     private function planTitleAndDescription(array $ids, array $activities, string $locale): array
     {
-        if ((1 === count($activities)) and (1 === count($ids))) {
-            $title = html_entity_decode(
+        if ((1 === \count($activities)) and (1 === \count($ids))) {
+            $title = \html_entity_decode(
                 'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')',
                 ENT_NOQUOTES
             );
-            $description = html_entity_decode(($activities[0])->getSummary(), ENT_NOQUOTES);
+            $description = \html_entity_decode(($activities[0])->getSummary(), ENT_NOQUOTES);
         } else {
             // Titles are generated from a separate config, so html_entity_decode is not necessary
-            $title = $this->titleChooser->renderTitle(implode('-', $ids), $locale);
-            $description = html_entity_decode(
+            $title = $this->titleChooser->renderTitle(\implode('-', $ids), $locale);
+            $description = \html_entity_decode(
                 $this->descriptionRenderer->render($activities),
                 ENT_NOQUOTES
             );

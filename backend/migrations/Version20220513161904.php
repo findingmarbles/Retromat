@@ -22,7 +22,8 @@ final class Version20220513161904 extends AbstractMigration
      */
     public function up(Schema $schema): void
     {
-        $this->addSql('
+        $this->addSql(
+            '
             CREATE TABLE user_reset_password_request 
             (
                 id INT AUTO_INCREMENT NOT NULL,
@@ -37,7 +38,8 @@ final class Version20220513161904 extends AbstractMigration
             DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` 
             ENGINE = InnoDB'
         );
-        $this->addSql('
+        $this->addSql(
+            '
             ALTER TABLE user_reset_password_request 
             ADD CONSTRAINT FK_B0B32CFCA76ED395 
             FOREIGN KEY (user_id) REFERENCES user (id)'

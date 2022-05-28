@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
@@ -83,7 +84,7 @@ class HomeControllerTest extends AbstractTestCase
 
         $this->assertEquals(
             $expected,
-            str_replace("\n", '', $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_description')->html())
+            \str_replace("\n", '', $crawler->filter('.js_activity_block')->eq(0)->filter('.js_fill_description')->html())
         );
     }
 
@@ -283,7 +284,7 @@ class HomeControllerTest extends AbstractTestCase
     {
         $colorCodePrefix = ' bg';
         $classesString = $activity->attr('class');
-        $colorCode = substr($classesString, strpos($classesString, $colorCodePrefix) + strlen($colorCodePrefix), 1);
+        $colorCode = \substr($classesString, \strpos($classesString, $colorCodePrefix) + \strlen($colorCodePrefix), 1);
 
         return $colorCode;
     }
@@ -295,10 +296,10 @@ class HomeControllerTest extends AbstractTestCase
 
         $idsStringPhase0 = '1-2-3-18-22-31-32-36-42-43-46-52-59-70-76-81-82-84-85-90-106-107-108-114-122';
         $crawler = $client->request('GET', '/en/?id='.$idsStringPhase0.'&phase=0');
-        $ids = explode('-', $idsStringPhase0);
+        $ids = \explode('-', $idsStringPhase0);
 
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
-        $this->assertEquals(count($ids), $activities->count());
+        $this->assertEquals(\count($ids), $activities->count());
         $this->assertEquals('3', $activities->eq(2)->filter('.js_fill_id')->text());
         $this->assertEquals('18', $activities->eq(3)->filter('.js_fill_id')->text());
         $this->assertEquals('22', $activities->eq(4)->filter('.js_fill_id')->text());

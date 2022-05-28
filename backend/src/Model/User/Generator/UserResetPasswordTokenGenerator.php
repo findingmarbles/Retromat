@@ -50,7 +50,7 @@ final class UserResetPasswordTokenGenerator
      */
     private function getRandomString(): string
     {
-        return md5(random_bytes(25));
+        return \md5(\random_bytes(25));
     }
 
     /**
@@ -61,7 +61,11 @@ final class UserResetPasswordTokenGenerator
      */
     private function getHashedToken(string $verifier, int $userId, int $expiresAtTimestamp): string
     {
-        return base64_encode(hash_hmac('sha256',
-            json_encode([$verifier, $userId, $expiresAtTimestamp]), $this->signingKey, true));
+        return \base64_encode(\hash_hmac(
+            'sha256',
+            \json_encode([$verifier, $userId, $expiresAtTimestamp]),
+            $this->signingKey,
+            true
+        ));
     }
 }

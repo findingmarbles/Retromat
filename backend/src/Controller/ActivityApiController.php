@@ -24,7 +24,7 @@ class ActivityApiController extends AbstractFOSRestController
         $this->activityExpander = $activitySourceExpander;
         $this->activityRepository = $activityRepository;
     }
-    
+
     /**
      * @Rest\Get("/api/activities", name="activities")
      */

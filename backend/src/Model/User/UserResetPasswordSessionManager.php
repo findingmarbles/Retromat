@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Model\User;
-
 
 use App\Model\User\Model\UserResetPasswordToken;
 use Symfony\Component\HttpFoundation\RequestStack;

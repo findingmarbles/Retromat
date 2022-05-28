@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Model\Sitemap;
 
@@ -37,7 +38,7 @@ class PlanIdGenerator
                                 --$skip;
                             } else {
                                 ++$totalResults;
-                                call_user_func($callback, $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4);
+                                \call_user_func($callback, $id0.'-'.$id1.'-'.$id2.'-'.$id3.'-'.$id4);
                             }
                         }
                     }

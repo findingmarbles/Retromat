@@ -1,10 +1,11 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Activity;
 
-use App\Model\Activity\Expander\ActivityExpander;
 use App\Entity\Activity;
+use App\Model\Activity\Expander\ActivityExpander;
 use Symfony\Component\Yaml\Yaml;
 
 class ActivityExpanderTest extends \PHPUnit\Framework\TestCase

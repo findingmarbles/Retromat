@@ -191,7 +191,8 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(
-            null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js']
+            null,
+            ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js']
         );
 
         $mapper = new ArrayToObjectMapper();
