@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D649C05FB297", columns={"confirmation_token"}), @ORM\UniqueConstraint(name="UNIQ_8D93D64992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_8D93D649A0D96FBF", columns={"email_canonical"})})
+ * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D64992FC23A8", columns={"username"}), @ORM\UniqueConstraint(name="UNIQ_8D93D649A0D96FBF", columns={"email"})})
  * @ORM\Entity
  * @method string getUserIdentifier()
  */
@@ -34,23 +34,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username_canonical", type="string", length=180, nullable=false)
-     */
-    private string $usernameCanonical;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="email", type="string", length=180, nullable=false)
      */
     private string $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email_canonical", type="string", length=180, nullable=false)
-     */
-    private string $emailCanonical;
 
     /**
      * @var bool
@@ -72,27 +58,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private string $password;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="last_login", type="datetime", nullable=true)
-     */
-    private ?\DateTime $lastLogin;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="confirmation_token", type="string", length=180, nullable=true)
-     */
-    private ?string $confirmationToken = null;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="password_requested_at", type="datetime", nullable=true)
-     */
-    private ?\DateTime $passwordRequestedAt = null;
 
     /**
      * @var array
@@ -133,25 +98,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function setUsername(string $username): User
     {
-        $this->username = $this->usernameCanonical = $username;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsernameCanonical(): string
-    {
-        return $this->usernameCanonical;
-    }
-
-    /**
-     * @param string $usernameCanonical
-     * @return User
-     */
-    public function setUsernameCanonical(string $usernameCanonical): User
-    {
-        $this->usernameCanonical = $usernameCanonical;
+        $this->username = $username;
         return $this;
     }
 
@@ -169,25 +116,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function setEmail(string $email): User
     {
-        $this->email = $this->emailCanonical = $email;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailCanonical(): string
-    {
-        return $this->emailCanonical;
-    }
-
-    /**
-     * @param string $emailCanonical
-     * @return User
-     */
-    public function setEmailCanonical(string $emailCanonical): User
-    {
-        $this->emailCanonical = $emailCanonical;
+        $this->email = $email;
         return $this;
     }
 
@@ -242,60 +171,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): User
     {
         $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getLastLogin(): ?\DateTime
-    {
-        return $this->lastLogin;
-    }
-
-    /**
-     * @param \DateTime|null $lastLogin
-     * @return User
-     */
-    public function setLastLogin(?\DateTime $lastLogin): User
-    {
-        $this->lastLogin = $lastLogin;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getConfirmationToken(): ?string
-    {
-        return $this->confirmationToken;
-    }
-
-    /**
-     * @param string|null $confirmationToken
-     * @return User
-     */
-    public function setConfirmationToken(?string $confirmationToken): User
-    {
-        $this->confirmationToken = $confirmationToken;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getPasswordRequestedAt(): ?\DateTime
-    {
-        return $this->passwordRequestedAt;
-    }
-
-    /**
-     * @param \DateTime|null $passwordRequestedAt
-     * @return User
-     */
-    public function setPasswordRequestedAt(?\DateTime $passwordRequestedAt): User
-    {
-        $this->passwordRequestedAt = $passwordRequestedAt;
         return $this;
     }
 

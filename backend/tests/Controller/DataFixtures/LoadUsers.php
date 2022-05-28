@@ -17,14 +17,15 @@ class LoadUsers extends Fixture
 
     private UserManager $userManager;
 
+    /**
+     * @param UserManager $userManager
+     */
     public function __construct(UserManager $userManager)
     {
         $this->userManager = $userManager;
     }
 
     /**
-     * Load data fixtures with the passed EntityManager
-     *
      * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager)
