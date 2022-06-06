@@ -16,13 +16,13 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
-     * @var int
+     * @var ?int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private int $id = 0;
+    private ?int $id = null;
 
     /**
      * @var string
@@ -67,18 +67,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private array $roles = [];
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
-     * @return User
+     * @param int|null $id
+     * @return $this
      */
-    public function setId(int $id): User
+    public function setId(?int $id): User
     {
         $this->id = $id;
         return $this;

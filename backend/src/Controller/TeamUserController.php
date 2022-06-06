@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Form\TeamUserType;
 use App\Form\UserPasswordType;
 use App\Model\User\UserManager;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,13 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeamUserController extends AbstractController
 {
     private UserManager $userManager;
+    private UserRepository $userRepository;
 
     /**
      * @param UserManager $userManager
      */
-    public function __construct(UserManager $userManager)
+    public function __construct(UserManager $userManager, UserRepository $userRepository)
     {
         $this->userManager = $userManager;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -47,5 +52,106 @@ class TeamUserController extends AbstractController
             'user' => $user,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @return Response
+     */
+    #[Route('/', name: 'team_user_index', methods: ['GET'])]
+    public function index(): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        return $this->render(
+            'team/user/index.html.twig',
+            [
+                'users' => $this->userRepository->findAll()
+            ]
+        );
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @throws \Exception
+     */
+    #[Route('/new', name: 'team_user_new', methods: ['GET', 'POST'])]
+    public function new(Request $request): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        $user = $this->userManager->create();
+        $form = $this->createForm(TeamUserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->userManager->persist($user);
+            $this->addFlash('success', \sprintf('Successfully added new user with password "%s".', $this->userManager->getPlainPassword()));
+
+            return $this->redirectToRoute('team_user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('team/user/new.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     * @param User $user
+     * @return Response
+     */
+    #[Route('/{id}', name: 'team_user_show', methods: ['GET'])]
+    public function show(User $user): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        return $this->render('team/user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param User $user
+     * @return Response
+     * @throws \Exception
+     */
+    #[Route('/{id}/edit', name: 'team_user_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, User $user): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        $form = $this->createForm(TeamUserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->userManager->persist($user);
+            $this->addFlash('success', \sprintf('Successfully updated user "%s".', $user->getUsername()));
+
+            return $this->redirectToRoute('team_user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('team/user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param User $user
+     * @return Response
+     */
+    #[Route('/{id}', name: 'team_user_delete', methods: ['POST'])]
+    public function delete(Request $request, User $user): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $this->userManager->drop($user);
+        }
+
+        return $this->redirectToRoute('team_user_index', [], Response::HTTP_SEE_OTHER);
     }
 }

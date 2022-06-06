@@ -1,0 +1,7 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{{ form_start(form) }}
+    {{ form_widget(form, {'attr': {'class': 'p-5 shadow-sm border mt-3 mb-3'}}) }}
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

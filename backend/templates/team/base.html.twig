@@ -40,6 +40,11 @@
                                 </ul>
                             </li>
                             {% endif %}
+                            {% if(is_granted('ROLE_ADMIN')) %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('team_user_index') }}">Users</a>
+                                </li>
+                            {% endif %}
                             {% if is_granted('ROLE_SERP_PREVIEW') %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

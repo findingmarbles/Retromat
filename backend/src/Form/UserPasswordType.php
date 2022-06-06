@@ -13,6 +13,9 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class UserPasswordType extends AbstractType
 {
+    private const PASSWORD_LENGTH_MIN = 6;
+    private const PASSWORD_LENGTH_MAX = 32;
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -29,10 +32,9 @@ class UserPasswordType extends AbstractType
                         'message' => 'Please enter a password',
                     ]),
                     new Length([
-                        'min' => 6,
+                        'min' => self::PASSWORD_LENGTH_MIN,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => self::PASSWORD_LENGTH_MAX,
                     ]),
                 ],
                 'invalid_message' => 'The password fields does not match.',

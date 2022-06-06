@@ -2,7 +2,7 @@
 
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
-    ->exclude(['backend/var', 'backend/bin']);
+    ->exclude(['var', 'bin']);
 
 return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)

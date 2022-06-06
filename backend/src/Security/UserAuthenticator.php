@@ -2,6 +2,7 @@
 
 namespace App\Security;
 
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,13 +24,16 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
     public const AUTHENTICATION_SUCCESS_ROUTE = 'team_dashboard';
 
     private UrlGeneratorInterface $urlGenerator;
+    private UserRepository $userRepository;
 
     /**
      * @param UrlGeneratorInterface $urlGenerator
+     * @param UserRepository $userRepository
      */
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    public function __construct(UrlGeneratorInterface $urlGenerator, UserRepository $userRepository)
     {
         $this->urlGenerator = $urlGenerator;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -39,14 +43,23 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
     public function authenticate(Request $request): Passport
     {
         $username = $request->request->get('username', '');
-
         $request->getSession()->set(Security::LAST_USERNAME, $username);
 
         return new Passport(
-            new UserBadge($username),
+            new UserBadge($username, function ($userIdentifier) {
+                return $this->userRepository->findOneBy(
+                    [
+                        'username' => $userIdentifier,
+                        'enabled' => 1
+                    ]
+                );
+            }),
             new PasswordCredentials($request->request->get('password', '')),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+                new CsrfTokenBadge(
+                    'authenticate',
+                    $request->request->get('_csrf_token')
+                ),
             ]
         );
     }

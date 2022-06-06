@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "621dde0d90264fad82079ba464c01d82",
+    "content-hash": "9c84127c19522ed29f69393864e3963a",
     "packages": [
         {
             "name": "brick/math",
@@ -1753,6 +1753,50 @@
                 "source": "https://github.com/FriendsOfSymfony/FOSRestBundle/tree/3.3.0"
             },
             "time": "2022-02-03T20:06:00+00:00"
+        },
+        {
+            "name": "hackzilla/password-generator",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hackzilla/password-generator.git",
+                "reference": "53c13507b5b9875a07618f1f2a7db95e5b8c0638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hackzilla/password-generator/zipball/53c13507b5b9875a07618f1f2a7db95e5b8c0638",
+                "reference": "53c13507b5b9875a07618f1f2a7db95e5b8c0638",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hackzilla\\PasswordGenerator\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Platt",
+                    "email": "github@ofdan.co.uk",
+                    "homepage": "https://www.hackzilla.org"
+                }
+            ],
+            "description": "Password Generator Library",
+            "support": {
+                "issues": "https://github.com/hackzilla/password-generator/issues",
+                "source": "https://github.com/hackzilla/password-generator/tree/1.6.0"
+            },
+            "time": "2021-01-13T23:18:24+00:00"
         },
         {
             "name": "knplabs/doctrine-behaviors",

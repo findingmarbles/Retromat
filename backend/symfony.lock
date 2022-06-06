@@ -139,6 +139,9 @@
             "config/packages/fos_rest.yaml"
         ]
     },
+    "hackzilla/password-generator": {
+        "version": "1.6.0"
+    },
     "knplabs/doctrine-behaviors": {
         "version": "1.6.1"
     },
