@@ -192,7 +192,7 @@ team_timon:
 
 imprint_privacy_old:
   path: /imprint-privacy
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
   defaults:
-    _controller: FrameworkBundle:Redirect:urlRedirect
-    path: /blog/privacy-policy/
+    path: '/blog/privacy-policy/'
     permanent: true
