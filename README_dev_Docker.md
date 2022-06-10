@@ -27,7 +27,7 @@ to login as root.
 In the Docker App, click "Open in Browser" on the PHPMyAdmin container or directly go to:
 http://localhost:8181/
 
-No you can e.g. obtain a DB dump from the live system ...
+Now you can e.g. obtain a DB dump from the live system ...
 ```
 [retro2@cordelia ~]$ /usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat > retro2_retromat.sql
 ```
@@ -56,11 +56,15 @@ composer update symfony/flex --no-plugins --no-scripts
 Add .env.local to set mysql root PW .
 ```
 php backend/bin/console doctrine:migrations:migrate --no-interaction
+php backend/bin/console doctrine:cache:clear-result
+php backend/bin/console doctrine:cache:clear-query
+php backend/bin/console doctrine:cache:clear-metadata
 ```
 
 # Run Tests
 Initially:
-Create .env.test.local (e.g. by copying .env.local) with a different DB name.
+Create .env.test.local (e.g. by copying .env.local) with a different DB name. 
+At this point the author prefers to create retromat-local-test
 
 On code change:
 ```
@@ -73,6 +77,14 @@ Each time:
 php backend/bin/console --env=test cache:clear
 php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
+
+Known issues at this point:
+
+All test are green on Travis-CI.
+BUT:
+These two fail in Docker:
+App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhases
+App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhasesDe
 
 # Access App via Browser
 In the Docker App, click "Open in Browser" on the retromat-httpd container or directly go to:
