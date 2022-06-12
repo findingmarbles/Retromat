@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Importer\Activity;
 
-class ActivityReader
+final class ActivityReader
 {
     private $activities;
 
@@ -18,19 +18,21 @@ class ActivityReader
             $this->activityFileNames = $activityFileNames;
             $this->currentLocale = $defaultLocale;
             $fileName = $this->activityFileNames[$this->currentLocale];
-        };
+        }
         $this->readActivities($fileName);
     }
 
-    public function extractAllActivities()
+    /**
+     * @return array
+     */
+    public function extractAllActivities(): array
     {
-        $activity = [];
-
-        for ($i = 1; $i <= $this->highestRetromatId(); $i++) {
-            $activity[$i] = $this->extractActivity($i);
+        $activities = [];
+        for ($i = 1; $i <= $this->highestRetromatId(); ++$i) {
+            $activities[$i] = $this->extractActivity($i);
         }
 
-        return $activity;
+        return $activities;
     }
 
     public function highestRetromatId()
@@ -152,7 +154,7 @@ class ActivityReader
             }
 
             // identify the first non-whitespace after the key "source: "
-            for ($start = $offset; $start <= $endOfLine; $start++) {
+            for ($start = $offset; $start <= $endOfLine; ++$start) {
                 if (!\ctype_space($activityBlock[$start])) {
                     break;
                 }
@@ -174,6 +176,7 @@ class ActivityReader
     /**
      * @param $activityBlock
      * @param $key
+     *
      * @return string
      */
     private function extractStringValue($activityBlock, $key)
@@ -190,18 +193,11 @@ class ActivityReader
         return null;
     }
 
-    /**
-     * @param string $fileName
-     */
     private function readActivities(string $fileName): void
     {
         $this->activities = \file_get_contents($fileName);
     }
 
-    /**
-     * @param string $currentLocale
-     * @return ActivityReader
-     */
     public function setCurrentLocale(string $currentLocale): ActivityReader
     {
         $this->currentLocale = $currentLocale;

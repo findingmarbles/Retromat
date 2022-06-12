@@ -6,58 +6,35 @@ namespace App\Model\Importer\Activity;
 
 use App\Entity\Activity;
 use App\Model\Importer\Activity\Exception\InvalidActivityException;
-use App\Model\Importer\ArrayToObjectMapper;
+use App\Model\Importer\Activity\Hydrator\ActivityHydrator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-/**
- * Class ActivityImporter
- * @package App\Importer\Activity
- */
-class ActivityImporter
+final class ActivityImporter
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
+
+    private ActivityReader $reader;
+
+    private ActivityHydrator $activityHydrator;
+
+    private ValidatorInterface $validator;
+
+    private array $locales;
 
     /**
-     * @var ActivityReader
-     */
-    private $reader;
-
-    /**
-     * @var ArrayToObjectMapper
-     */
-    private $mapper;
-
-    /**
-     * @var ValidatorInterface
-     */
-    private $validator;
-
-    /**
-     * @var array
-     */
-    private $locales;
-
-    /**
-     * @param EntityManagerInterface $entityManager
-     * @param ActivityReader $reader
-     * @param ArrayToObjectMapper $mapper
-     * @param ValidatorInterface $validator
      * @param array|string[] $locales
      */
     public function __construct(
         EntityManagerInterface $entityManager,
         ActivityReader $reader,
-        ArrayToObjectMapper $mapper,
+        ActivityHydrator $activityHydrator,
         ValidatorInterface $validator,
         array $locales = ['en']
     ) {
         $this->entityManager = $entityManager;
         $this->reader = $reader;
-        $this->mapper = $mapper;
+        $this->activityHydrator = $activityHydrator;
         $this->validator = $validator;
         $this->locales = $locales;
     }
@@ -71,7 +48,6 @@ class ActivityImporter
     }
 
     /**
-     * @param array $locales
      * @throws InvalidActivityException
      */
     public function import2Multiple(array $locales = [])
@@ -89,7 +65,6 @@ class ActivityImporter
     }
 
     /**
-     * @param string $locale
      * @throws InvalidActivityException
      */
     public function import2(string $locale = 'en')
@@ -98,23 +73,23 @@ class ActivityImporter
         $activityRepository = $this->entityManager->getRepository('App:Activity');
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
-            $newActivity = new Activity();
-            $newActivity->setDefaultLocale($locale);
-            $activityFromReader = $this->mapper->fillObjectFromArray($activityArray, $newActivity);
+            $activity = new Activity();
+            $activity->setDefaultLocale($locale);
+            $activityFromReader = $this->activityHydrator->hydrateFromArray($activityArray, $activity);
 
             $violations = $this->validator->validate($activityFromReader);
             if (0 === \count($violations)) {
                 $activityFromDb = $activityRepository->findOneBy(['retromatId' => $activityArray['retromatId']]);
                 if (isset($activityFromDb)) {
                     $activityFromDb->setDefaultLocale($locale);
-                    $this->mapper->fillObjectFromArray($activityArray, $activityFromDb);
+                    $this->activityHydrator->hydrateFromArray($activityArray, $activityFromDb);
                     $activityFromDb->mergeNewTranslations();
                 } else {
                     $activityFromReader->mergeNewTranslations();
                     $this->entityManager->persist($activityFromReader);
                 }
             } else {
-                $message = " This activity:\n ".(string)$activityFromReader."\n has these validations:\n ".(string)$violations."\n";
+                $message = " This activity:\n ".(string) $activityFromReader."\n has these validations:\n ".(string) $violations."\n";
 
                 throw new InvalidActivityException($message);
             }

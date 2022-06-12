@@ -2,6 +2,6 @@
 
 namespace App\Model\Importer\Activity\Exception;
 
-class InvalidActivityException extends \Exception
+final class InvalidActivityException extends \Exception
 {
 }
