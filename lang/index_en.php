@@ -22,13 +22,13 @@ if (is_output_format_twig($argv)) {
 }
 $_lang['INDEX_ABOUT_SUGGEST'] = 'Suggest it';
 
-//$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
-//$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Your Name';
-//$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'Your URL';
-//$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ - send me a picture; will be cut to 70x93px :)';
-//$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
-//             Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
-//EOT;
+$_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Translation: ';
+$_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Your Name';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'Your URL';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/ - send me a picture; will be cut to 70x93px :)';
+$_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
+             Tell us something about you! <a href="https://twitter.com/YourHandle">Twitter</a>!
+EOT;
 
 $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
