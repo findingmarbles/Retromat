@@ -1,0 +1,1 @@
+var phase_titles = ['Put Japanese: Set the stage', 'Put Japanese: Gather data', 'Put Japanese: Generate insights', 'Put Japanese: Decide what to do', 'Put Japanese: Close the retrospective', 'Put Japanese: Something completely different'];

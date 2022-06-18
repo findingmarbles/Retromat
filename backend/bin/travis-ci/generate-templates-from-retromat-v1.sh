@@ -13,6 +13,7 @@ php index.php de    twig ajax > backend/templates/home/generated/index_de.html.t
 php index.php es    html ajax > backend/templates/home/generated/index_es.html.twig
 php index.php fr    html ajax > backend/templates/home/generated/index_fr.html.twig
 php index.php nl    html ajax > backend/templates/home/generated/index_nl.html.twig
+php index.php ja    html ajax > backend/templates/home/generated/index_ja.html.twig
 php index.php pl    html ajax > backend/templates/home/generated/index_pl.html.twig
 php index.php pt-br html ajax > backend/templates/home/generated/index_pt-br.html.twig
 php index.php ru    twig ajax > backend/templates/home/generated/index_ru.html.twig
