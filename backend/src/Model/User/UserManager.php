@@ -21,6 +21,7 @@ class UserManager
         'ROLE_TRANSLATOR_ES',
         'ROLE_TRANSLATOR_FR',
         'ROLE_TRANSLATOR_NL',
+        'ROLE_TRANSLATOR_JA',
         'ROLE_TRANSLATOR_PL',
         'ROLE_TRANSLATOR_PT-BR',
         'ROLE_TRANSLATOR_RU',
