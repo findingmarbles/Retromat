@@ -1,5 +1,4 @@
 <?php
-
 $_lang['HTML_TITLE'] = 'Inspiration &amp; plans for (agile) retrospectives';
 
 $_lang['INDEX_PITCH'] = 'アジャイル<b>レトロスペクティブ</b>の計画はありますか？ ランダムに生成されたプランから始めて、チームの状況に合わせて変更し、印刷またはURLを共有しましょう。 あるいは色々見て回って新しいアイデアを探してください！<br><br>初めてのレトロスペクティブの場合は、<a href="/blog/best-retrospective-for-beginners/">ここから始めましょう！</a><br><br><b>リモート</b>でレトロスペクティブを行うのは初めての場合は、<a href="/blog/distributed-retrospectives-remote/">この記事が役立つかもしれません。</a>';
@@ -14,6 +13,11 @@ $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">Retromatについて</a>';
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">印刷版</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">アクティビティを追加</a>';
+
+$_lang['INDEX_NAVI_WHAT_IS_RETRO'] = 'Put Japanese: <a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
+$_lang['INDEX_NAVI_ABOUT'] = 'Put Japanese: <a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
+$_lang['INDEX_NAVI_PRINT'] = 'Put Japanese: <a href="/en/print">Print Edition</a>';
+$_lang['INDEX_NAVI_ADD_ACTIVITY'] = 'Put Japanese: <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
 if (is_output_format_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";

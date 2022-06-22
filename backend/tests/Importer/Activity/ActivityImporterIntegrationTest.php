@@ -5,24 +5,24 @@ namespace App\Tests\Importer\Activity;
 use App\Model\Importer\Activity\ActivityImporter;
 use App\Model\Importer\Activity\ActivityReader;
 use App\Model\Importer\Activity\Exception\InvalidActivityException;
-use App\Model\Importer\ArrayToObjectMapper;
+use App\Model\Importer\Activity\Hydrator\ActivityHydrator;
 use App\Tests\AbstractTestCase;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class ActivityImporterIntegrationTest extends AbstractTestCase
+final class ActivityImporterIntegrationTest extends AbstractTestCase
 {
     public function testImportOnEmptyDbEn()
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en.js']);
 
-        $mapper = new ArrayToObjectMapper();
+        $activityHydrator = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $activityImporter = new ActivityImporter($entityManager, $reader, $mapper, $validator);
+        $activityImporter = new ActivityImporter($entityManager, $reader, $activityHydrator, $validator);
 
         $activityImporter->import();
         $entityManager->clear();
@@ -44,7 +44,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en.js']);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -79,7 +79,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
                 'de' => __DIR__.'/TestData/activities_de.js',
             ]
         );
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -106,7 +106,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     public function testImportOnEmptyDbEnDe()
     {
         $this->loadFixtures([]);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -149,7 +149,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid.js']);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -160,6 +160,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
             $activityImporter->import();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+
             return;
         }
 
@@ -170,7 +171,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid.js']);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -181,6 +182,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
             $activityImporter->import2();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+
             return;
         }
 
@@ -195,7 +197,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
             ['en' => __DIR__.'/TestData/activities_en_1_valid_1_invalid_translation.js']
         );
 
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -206,6 +208,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
             $activityImporter->import2();
         } catch (InvalidActivityException $exception) {
             $this->assertTrue(true);
+
             return;
         }
 
@@ -216,7 +219,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     {
         $this->loadFixtures([]);
         $reader = new ActivityReader(null, ['en' => __DIR__.'/TestData/activities_en_esvp.js']);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -246,7 +249,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     public function testImport2MultipleImportsAllLanguages()
     {
         $this->loadFixtures([]);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -288,7 +291,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     public function testImport2MultipleMetaDataFromEnglishOnly()
     {
         $this->loadFixtures([]);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */
@@ -315,7 +318,7 @@ class ActivityImporterIntegrationTest extends AbstractTestCase
     public function testImport2MultipleNoSuperfluousNonEnglishTransations()
     {
         $this->loadFixtures([]);
-        $mapper = new ArrayToObjectMapper();
+        $mapper = new ActivityHydrator();
         /** @var ValidatorInterface $validator */
         $validator = $this->getContainer()->get('validator');
         /** @var ObjectManager $entityManager */

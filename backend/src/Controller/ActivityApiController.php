@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Activity;
 use App\Model\Activity\Expander\ActivityExpander;
+use App\Model\Activity\Localizer\ActivityLocalizer;
 use App\Repository\ActivityRepository;
 use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -12,45 +13,49 @@ use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ActivityApiController extends AbstractFOSRestController
+final class ActivityApiController extends AbstractFOSRestController
 {
     private const SERIALIZER_GROUP = 'api';
 
+    private ActivityLocalizer $activityLocalizer;
     private ActivityExpander $activityExpander;
     private ActivityRepository $activityRepository;
 
-    public function __construct(ActivityExpander $activitySourceExpander, ActivityRepository $activityRepository)
-    {
-        $this->activityExpander = $activitySourceExpander;
+    /**
+     * @param ActivityRepository $activityRepository
+     * @param ActivityExpander $activityExpander
+     * @param ActivityLocalizer $activityLocalizer
+     */
+    public function __construct(
+        ActivityRepository $activityRepository,
+        ActivityExpander $activityExpander,
+        ActivityLocalizer $activityLocalizer
+    ) {
+        $this->activityLocalizer = $activityLocalizer;
+        $this->activityExpander = $activityExpander;
         $this->activityRepository = $activityRepository;
     }
 
     /**
      * @Rest\Get("/api/activities", name="activities")
+     * @param Request $request
+     * @return View
      */
     public function getActivities(Request $request): View
     {
         $request->setLocale($request->query->get('locale', 'en'));
 
-        $activities = $this->activityRepository
-            ->findAllOrdered();
-
-        $localizedActivities = [];
-        foreach ($activities as $activity) {
-            /** @var $activity Activity */
-            if (!$activity->translate($request->getLocale(), false)->isEmpty()) {
-                $this->activityExpander->expandSource($activity);
-                $localizedActivities[] = $activity;
-            } else {
-                break;
-            }
-        }
+        $activities = $this->activityRepository->findAllOrdered();
+        $localizedActivities = $this->activityLocalizer->localize($activities, $request->getLocale(), true);
 
         return $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
     }
 
     /**
      * @Rest\Get("/api/activity/{id}", name="activity")
+     * @param Request $request
+     * @param string $id
+     * @return View
      */
     public function getActivity(Request $request, string $id): View
     {

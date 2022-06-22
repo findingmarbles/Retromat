@@ -69,3 +69,6 @@ services:
 
     Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator:
         class: Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator
+
+    Presta\SitemapBundle\Service\UrlContainerInterface:
+        class: Presta\SitemapBundle\Service\UrlContainerInterface

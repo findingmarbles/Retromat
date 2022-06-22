@@ -7,12 +7,9 @@ namespace App\Tests\Importer\Activity;
 use App\Model\Importer\Activity\ActivityReader;
 use PHPUnit\Framework\TestCase;
 
-class ActivityReader2Test extends TestCase
+final class ActivityReaderTest extends TestCase
 {
-    /**
-     * @var ActivityReader
-     */
-    private $reader;
+    private ActivityReader $reader;
 
     public function setUp(): void
     {
@@ -30,13 +27,13 @@ class ActivityReader2Test extends TestCase
         $expected = [
             'retromatId' => 48,
             'phase' => 3,
-            'name' => "Take a Stand - Line Dance",
+            'name' => 'Take a Stand - Line Dance',
             'summary' => "Get a sense of everyone's position and reach consensus",
             'desc' => "When the team can't decide between two options, create a big scale (i.e. a long line) on the floor with masking tape. Mark one end as option A) and the other as option B). Team members position themselves on the scale according to their preference for either option. Now tweak the options until one option has a clear majority.",
             'source' => 'source_skycoach',
             'more' => "<a href='http://skycoach.be/2010/06/17/12-retrospective-exercises/'>Original article</a>",
-            'duration' => "Short",
-            'suitable' => "iteration, release, project",
+            'duration' => 'Short',
+            'suitable' => 'iteration, release, project',
             'stage' => 'Storming, Norming',
         ];
 

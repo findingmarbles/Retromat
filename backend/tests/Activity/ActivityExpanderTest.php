@@ -6,17 +6,18 @@ namespace App\Tests\Activity;
 
 use App\Entity\Activity;
 use App\Model\Activity\Expander\ActivityExpander;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 
-class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
+final class ActivityExpanderTest extends TestCase
 {
-    public function testSimpleStringRawHtml()
+    public function testExpandSourceWithSimpleStringRawHtml(): void
     {
-        $expander = new ActivityExpander([]);
+        $activityExpander = new ActivityExpander([]);
         $activity = new Activity();
 
         $activity->setSource("<a href='http://fairlygoodpractices.com/samolo.htm'>Fairly good practices</a>");
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://fairlygoodpractices.com/samolo.htm">Fairly good practices</a>',
@@ -24,7 +25,7 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
 
         $activity->setSource("<a href='http://www.infoq.com/minibooks/agile-retrospectives-value'>Luis Goncalves</a>");
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://www.infoq.com/minibooks/agile-retrospectives-value">Luis Goncalves</a>',
@@ -32,13 +33,13 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSourcePlaceholderRawHtml()
+    public function testExpandSourceWithPlaceholderRawHtml(): void
     {
-        $expander = new ActivityExpander($this->retromatSources());
+        $activityExpander = new ActivityExpander($this->getSourcesYaml());
         $activity = new Activity();
 
         $activity->setSource('source_judith');
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="https://leanpub.com/ErfolgreicheRetrospektiven">Judith Andresen</a>',
@@ -46,7 +47,7 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
 
         $activity->setSource('source_findingMarbles');
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -54,15 +55,15 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSourcePlaceholderAndStringRawHtml()
+    public function testExpandSourceWithPlaceholderAndStringRawHtml(): void
     {
-        $expander = new ActivityExpander($this->retromatSources());
+        $activityExpander = new ActivityExpander($this->getSourcesYaml());
         $activity = new Activity();
 
         $activity->setSource(
             'source_agileRetrospectives + " who took it from \'The Satir Model: Family Therapy and Beyond\'"'
         );
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/">Agile Retrospectives</a> who took it from \'The Satir Model: Family Therapy and Beyond\'',
@@ -72,7 +73,7 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         $activity->setSource(
             'source_innovationGames + ", found at <a href=\'http://www.ayeconference.com/appreciativeretrospective/\'>Diana Larsen</a>"'
         );
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://www.amazon.com/Innovation-Games-Creating-Breakthrough-Collaborative/dp/0321437292/">Luke Hohmann</a>, found at <a href="http://www.ayeconference.com/appreciativeretrospective/">Diana Larsen</a>',
@@ -80,13 +81,13 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSourceStringAndPlaceholderRawHtml()
+    public function testExpandSourceStringAndPlaceholderRawHtml(): void
     {
-        $expander = new ActivityExpander($this->retromatSources());
+        $activityExpander = new ActivityExpander($this->getSourcesYaml());
         $activity = new Activity();
 
         $activity->setSource('"ALE 2011, " + source_findingMarbles');
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             'ALE 2011, <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -96,7 +97,7 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         $activity->setSource(
             '"<a href=\'http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html\'>Doug Bradbury</a>, adapted for SW development by " + source_findingMarbles'
         );
-        $expander->expandSource($activity);
+        $activityExpander->expandSource($activity);
 
         $this->assertEquals(
             '<a href="http://blog.8thlight.com/doug-bradbury/2011/09/19/apreciative_inquiry_retrospectives.html">Doug Bradbury</a>, adapted for SW development by <a href="http://www.finding-marbles.com/">Corinna Baldauf</a>',
@@ -104,7 +105,10 @@ class ActivityExpanderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function retromatSources()
+    /**
+     * @return array
+     */
+    private function getSourcesYaml(): array
     {
         $yaml = <<<YAML
 source_agileRetrospectives: "<a href=\"http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/\">Agile Retrospectives<\/a>"
