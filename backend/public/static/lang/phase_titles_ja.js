@@ -1,1 +1,1 @@
-var phase_titles = ['Put Japanese: Set the stage', 'Put Japanese: Gather data', 'Put Japanese: Generate insights', 'Put Japanese: Decide what to do', 'Put Japanese: Close the retrospective', 'Put Japanese: Something completely different'];
+var phase_titles = ['ステージを設定する', 'データを収集する', 'インサイトを発見する', '何をするか決める', 'レトロスペクティブを終了する', '他のフェーズとは全く異なるもの'];

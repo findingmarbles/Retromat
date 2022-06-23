@@ -1,7 +1,7 @@
 <?php
 $_lang['HTML_TITLE'] = 'Inspiration &amp; plans for (agile) retrospectives';
 
-$_lang['INDEX_PITCH'] = 'アジャイル<b>レトロスペクティブ</b>の計画はありますか？ ランダムに生成されたプランから始めて、チームの状況に合わせて変更し、印刷またはURLを共有しましょう。 あるいは色々見て回って新しいアイデアを探してください！<br><br>初めてのレトロスペクティブの場合は、<a href="/blog/best-retrospective-for-beginners/">ここから始めましょう！</a><br><br><b>リモート</b>でレトロスペクティブを行うのは初めての場合は、<a href="/blog/distributed-retrospectives-remote/">この記事が役立つかもしれません。</a>';
+$_lang['INDEX_PITCH'] = 'アジャイル<b>レトロスペクティブ</b>の計画はありますか？ ランダムに生成されたプランから始めて、チームの状況に合わせて変更し、印刷またはURLを共有しましょう。 あるいは色々見て回って新しいアイデアを探してください！<br><br>初めてのレトロスペクティブの場合は、<a href="/blog/best-retrospective-for-beginners/">ここから始めましょう！</a><br><br><b>リモート</b>でレトロスペクティブを行うのが初めての場合は、<a href="/blog/distributed-retrospectives-remote/">この記事が役立つかもしれません。</a>';
 $_lang['INDEX_PLAN_ID'] = 'プランIDの組み合わせ:';
 $_lang['INDEX_BUTTON_SHOW'] = '表示！';
 $_lang['INDEX_RANDOM_RETRO'] = 'ランダムなプランを生成';
@@ -29,7 +29,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = '提案する';
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '翻訳: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = '武田 智博';
 $_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://github.com/msiu-takeda/Retromat';
-$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/takeda_70_93.jpg';
+$_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/tomohiro_takeda.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 ソフトウェア開発で日夜スクラムを実践し、よりよい価値を世の中に届けるため、スクラムマスター、プロダクトオーナーを育成しています。 Retromatでよりよい振り返りにつなげられたなら幸いです。
 I practice Scrum in software development everyday and coach Scrum Masters and Product Owners to deliver true user value to the real world. I am glad that Retromat can help you practice better retrospective. Thank you.
