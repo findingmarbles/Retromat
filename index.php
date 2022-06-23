@@ -233,6 +233,7 @@ var PHASE_ID_TAG = 'phase';
 <link rel="alternate" hreflang="pl" href="/pl/" />
 <link rel="alternate" hreflang="ru" href="/ru/" />
 <link rel="alternate" hreflang="zh" href="/zh/" />
+<link rel="alternate" hreflang="ja" href="/ja/" />
 
 <!-- Matomo -->
 <script type="text/javascript">
@@ -284,6 +285,7 @@ var PHASE_ID_TAG = 'phase';
                 <option value="pl" <?php echo(print_if_selected("pl", $lang)); ?> >Polski (27 aktywności)</option>
                 <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
                 <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
+                <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（16アクティビティ）</option>
             </select>
         </div>
     </div>
