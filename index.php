@@ -285,7 +285,7 @@ var PHASE_ID_TAG = 'phase';
                 <option value="pl" <?php echo(print_if_selected("pl", $lang)); ?> >Polski (27 aktywności)</option>
                 <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
                 <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
-                <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（16アクティビティ）</option>
+                <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（60アクティビティ）</option>
             </select>
         </div>
     </div>
