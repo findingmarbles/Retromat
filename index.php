@@ -331,8 +331,26 @@ var PHASE_ID_TAG = 'phase';
     </div>
 -->
 
+<?php if ($lang == 'de') { ?>
+    
+    <!-- Inform German users about "Durch Fragen zur besseren Zukunft" -->
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+               NEU: Unterstütze dein Team in Retrospektiven mit lösungsfokussierten Fragen – 
+                Du kannst Corinna Baldaufs Mini-Buch "Durch Fragen zur besseren Zukunft" kostenlos herunterladen:
+                <br><br>
+                <a href="https://leanpub.com/durch-fragen-zur-besseren-zukunft"
+                   class="button-medium" style="color:white" target="_blank" rel="noopener">
+                   Zum kostenlosen Mini-Buch
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<?php } else { ?>
 
-<!-- ALL BOOKS -->
+    <!-- BUNDLE -->
     <div class="promo">
         <div class="content">
             <div class="inner">
@@ -349,6 +367,8 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
+    
+<?php } ?>
 
     <div class="plan-header">
         <div class="content">
