@@ -8,7 +8,7 @@ use App\Model\Activity\ActivityByPhase;
 
 class PlanIdGenerator
 {
-    private const MAX_RESULTS = 9999;
+    private const MAX_RESULTS = 1000000;
 
     private ActivityByPhase $activityByPhase;
 
