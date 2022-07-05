@@ -9,21 +9,20 @@ use App\Tests\AbstractTestCase;
 
 class ActivityRepositoryTest extends AbstractTestCase
 {
-    private $activityRepository;
+    private ActivityRepository $activityRepository;
 
     public function setUp(): void
     {
         parent::setUp();
         $this->loadFixtures([]);
-
         $this->activityRepository = $this->getContainer()->get(ActivityRepository::class);
     }
 
-    public function testFindOrdered()
+    public function testFindOrdered(): void
     {
         $this->loadFixtures(['App\Tests\Repository\DataFixtures\LoadActivityData']);
 
-        $ordered = $this->activityRepository->findOrdered($id = [3, 87, 113, 13, 16]);
+        $ordered = $this->activityRepository->findOrdered([3, 87, 113, 13, 16]);
 
         // check for correct keys
         $this->assertEquals(3, $ordered[0]->getRetromatId());
@@ -40,7 +39,7 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals(16, \end($ordered)->getRetromatId());
     }
 
-    public function testFindAllOrdered()
+    public function testFindAllOrdered(): void
     {
         $this->loadFixtures(['App\Tests\Repository\DataFixtures\LoadActivityData']);
 
@@ -57,7 +56,10 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals(3, \next($ordered)->getRetromatId());
     }
 
-    public function testFindAllActivitiesForPhases()
+    /**
+     * @return void
+     */
+    public function testFindAllActivitiesForPhases(): void
     {
         $this->loadFixtures(
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhases']
@@ -75,7 +77,7 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals($expectedActivityByPhase, $this->activityRepository->findAllActivitiesByPhases());
     }
 
-    public function testFindAllActivitiesForPhasesDe()
+    public function testFindAllActivitiesForPhasesDe(): void
     {
         $this->loadFixtures(
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhasesDe']

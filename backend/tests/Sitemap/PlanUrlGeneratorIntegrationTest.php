@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Sitemap;
 
 use App\Model\Activity\ActivityByPhase;
-use App\Model\Sitemap\PlanGenerator;
+use App\Model\Sitemap\PlanUrlGenerator;
 use App\Model\Sitemap\PlanIdGenerator;
 use PHPUnit\Framework\TestCase;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
@@ -13,17 +13,15 @@ use Presta\SitemapBundle\Sitemap\Url\Url;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RequestContext;
 
-/*
- * Self shunt pattern as described by Kent Beck: Test class implements interfaces to mock and injects $this
- */
-
-class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInterface, UrlGeneratorInterface
+class PlanUrlGeneratorIntegrationTest extends TestCase implements UrlContainerInterface, UrlGeneratorInterface
 {
-    private $urlContainer;
+    private array $urlContainer;
+    private string $baseUrl = 'https://plans-for-retrospectives.com/en/?id=';
 
-    private $baseUrl = 'https://plans-for-retrospectives.com/en/?id=';
-
-    public function testPopulatePlans()
+    /**
+     * @return void
+     */
+    public function testPopulatePlans(): void
     {
         $activitiesByPhase = [
             0 => [1, 6],
@@ -32,19 +30,19 @@ class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInter
             3 => [4],
             4 => [5],
         ];
-        $activitiyByPhase = $this
+        $activityByPhase = $this
             ->getMockBuilder(ActivityByPhase::class)
             ->setMethods(['getAllActivitiesByPhase'])
             ->disableOriginalConstructor()
             ->getMock();
-        $activitiyByPhase->expects($this->any())
+        $activityByPhase->expects($this->any())
             ->method('getAllActivitiesByPhase')
             ->willReturn($activitiesByPhase);
-        $idGenerator = new PlanIdGenerator($activitiyByPhase);
-        $planGenerator = new PlanGenerator($this, $idGenerator);
+        $idGenerator = new PlanIdGenerator($activityByPhase);
+        $planUrlGenerator = new PlanUrlGenerator($this, $idGenerator);
 
         $this->urlContainer = [];
-        $planGenerator->populatePlans($this);
+        $planUrlGenerator->generatePlanUrls($this);
 
         $this->assertEquals($this->baseUrl.'1-2-3-4-5', $this->urlContainer[0]->getLoc());
         $this->assertEquals($this->baseUrl.'6-2-3-4-5', $this->urlContainer[1]->getLoc());
@@ -52,21 +50,39 @@ class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInter
         $this->assertEquals($this->baseUrl.'6-7-3-4-5', $this->urlContainer[3]->getLoc());
     }
 
-    public function addUrl(Url $url, $section): void
+    /**
+     * @param Url $url
+     * @param string $section
+     * @return void
+     */
+    public function addUrl(Url $url, string $section): void
     {
         $this->urlContainer[] = $url;
     }
 
-    public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)
+    /**
+     * @param string $name
+     * @param array $parameters
+     * @param int $referenceType
+     * @return string
+     */
+    public function generate(string $name, array $parameters = array(), int $referenceType = self::ABSOLUTE_PATH): string
     {
         return $this->baseUrl.$parameters['id'];
     }
 
-    public function setContext(RequestContext $context)
+    /**
+     * @param RequestContext $context
+     * @return void
+     */
+    public function setContext(RequestContext $context): void
     {
     }
 
-    public function getContext()
+    /**
+     * @return void
+     */
+    public function getContext(): void
     {
     }
 }

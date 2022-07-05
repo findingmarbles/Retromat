@@ -18,7 +18,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->loadFixtures([]);
     }
 
-    public function testCreateNewActivityUsesNextFreeRetromatIdEmptyDb()
+    public function testCreateNewActivityUsesNextFreeRetromatIdEmptyDb(): void
     {
         $client = $this->makeClientLoginAdmin();
 
@@ -38,7 +38,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEquals(132, $prefilledRetromatId);
     }
 
-    public function testCreateNewActivityPhase1()
+    public function testCreateNewActivityPhase1(): void
     {
         $client = $this->makeClientLoginAdmin();
 
@@ -104,7 +104,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
-    public function testIndexContainsOnlyTranslatedActivities()
+    public function testIndexContainsOnlyTranslatedActivities(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -124,7 +124,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertCount(101 + 1, $crawler->filter('tr'));
     }
 
-    public function testCreateNewActivityTranslationDeForCorrectId()
+    public function testCreateNewActivityTranslationDeForCorrectId(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -133,7 +133,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEquals(75 + 1, $crawler->filter('#activity_translatable_fields_retromatId')->attr('value'));
     }
 
-    public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields()
+    public function testCreateNewActivityTranslationDeFormOnlyShowsTranslatableFields(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -145,7 +145,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEquals($translatableFields, \array_keys($formValues['activity_translatable_fields']));
     }
 
-    public function testCreateNewActivityTranslationDe()
+    public function testCreateNewActivityTranslationDe(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -162,7 +162,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertStatusCode(Response::HTTP_SEE_OTHER, $client);
     }
 
-    public function testCreateNewActivityNoPrefilledContentForEn()
+    public function testCreateNewActivityNoPrefilledContentForEn(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -175,7 +175,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEmpty($prefilled['app_activity[desc]']);
     }
 
-    public function testCreateNewActivityTranslationDePrefilledFromEn()
+    public function testCreateNewActivityTranslationDePrefilledFromEn(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
@@ -199,19 +199,20 @@ class TeamActivityControllerTest extends AbstractTestCase
      */
     private function makeClientLoginAdmin(): Client
     {
-        $refRepo = $this->loadFixtures(
+        $client = $this->makeClient();
+        $referenceRepository = $this->loadFixtures(
             [
                 'App\Tests\Controller\DataFixtures\LoadUsers'
             ]
         )->getReferenceRepository();
 
         try {
-            $this->loginAs($refRepo->getReferences()['admin'], 'main');
+            $this->loginClient($client, $referenceRepository->getReferences()[LoadUsers::USERNAME], 'main');
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
 
-        return $this->makeClient();
+        return $client;
     }
 
     /**
@@ -219,7 +220,8 @@ class TeamActivityControllerTest extends AbstractTestCase
      */
     private function makeClientLoginAdminLoadFixtures(): Client
     {
-        $refRepo = $this->loadFixtures(
+        $client = $this->makeClient();
+        $referenceRepository = $this->loadFixtures(
             [
                 'App\Tests\Controller\DataFixtures\LoadActivityData',
                 'App\Tests\Controller\DataFixtures\LoadUsers',
@@ -227,11 +229,11 @@ class TeamActivityControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginAs($refRepo->getReferences()[LoadUsers::USERNAME], 'main');
+            $this->loginClient($client, $referenceRepository->getReferences()[LoadUsers::USERNAME], 'main');
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
 
-        return $this->makeClient();
+        return $client;
     }
 }
