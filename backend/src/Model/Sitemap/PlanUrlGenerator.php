@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace App\Model\Sitemap;
 
-use App\Model\Sitemap\PlanIdGenerator;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class PlanGenerator
+class PlanUrlGenerator
 {
+    private const DEFAULT_LOCALE = 'en';
+
     private PlanIdGenerator $planIdGenerator;
-
     private UrlGeneratorInterface $urlGenerator;
-
     private UrlContainerInterface $urlContainer;
 
     /**
@@ -30,7 +29,7 @@ class PlanGenerator
     /**
      * @param UrlContainerInterface $urlContainer
      */
-    public function populatePlans(UrlContainerInterface $urlContainer)
+    public function generatePlanUrls(UrlContainerInterface $urlContainer)
     {
         // Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
         $this->urlContainer = $urlContainer;
@@ -49,7 +48,7 @@ class PlanGenerator
                     'activities_by_id',
                     [
                         'id' => $id,
-                        '_locale' => 'en',
+                        '_locale' => self::DEFAULT_LOCALE,
                     ],
                     UrlGeneratorInterface::ABSOLUTE_URL
                 )

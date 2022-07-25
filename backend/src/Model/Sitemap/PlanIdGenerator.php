@@ -8,6 +8,8 @@ use App\Model\Activity\ActivityByPhase;
 
 class PlanIdGenerator
 {
+    private const MAX_RESULTS = 1000000;
+
     private ActivityByPhase $activityByPhase;
 
     /**
@@ -22,9 +24,16 @@ class PlanIdGenerator
      * @param callable $callback
      * @param int $maxResults
      * @param int $skip
+     * @throws \Exception
      */
-    public function generate(callable $callback, int $maxResults = PHP_INT_MAX, int $skip = 0)
+    public function generate(callable $callback, int $maxResults = self::MAX_RESULTS, int $skip = 0): void
     {
+        if (self::MAX_RESULTS > PHP_INT_MAX) {
+            throw new \Exception(
+                \sprintf('Desired result loop "%d" is greater than the php internal "%d".', PHP_INT_MAX, self::MAX_RESULTS)
+            );
+        }
+
         $activitiesByPhase = $this->activityByPhase->getAllActivitiesByPhase();
         $totalResults = 0;
         foreach ($activitiesByPhase[4] as $id4) {
