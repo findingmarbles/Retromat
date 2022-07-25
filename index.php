@@ -285,7 +285,7 @@ var PHASE_ID_TAG = 'phase';
                 <option value="pl" <?php echo(print_if_selected("pl", $lang)); ?> >Polski (27 aktywności)</option>
                 <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
                 <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
-                <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（16アクティビティ）</option>
+                <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（143アクティビティ）</option>
             </select>
         </div>
     </div>
@@ -331,8 +331,26 @@ var PHASE_ID_TAG = 'phase';
     </div>
 -->
 
+<?php if ($lang == 'de') { ?>
+    
+    <!-- Inform German users about "Durch Fragen zur besseren Zukunft" -->
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+               NEU: Unterstütze dein Team in Retrospektiven mit lösungsfokussierten Fragen – 
+                Du kannst Corinna Baldaufs Mini-Buch "Durch Fragen zur besseren Zukunft" kostenlos herunterladen:
+                <br><br>
+                <a href="https://leanpub.com/durch-fragen-zur-besseren-zukunft"
+                   class="button-medium" style="color:white" target="_blank" rel="noopener">
+                   Zum kostenlosen Mini-Buch
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<?php } else { ?>
 
-<!-- ALL BOOKS -->
+    <!-- BUNDLE -->
     <div class="promo">
         <div class="content">
             <div class="inner">
@@ -349,6 +367,8 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
+    
+<?php } ?>
 
     <div class="plan-header">
         <div class="content">

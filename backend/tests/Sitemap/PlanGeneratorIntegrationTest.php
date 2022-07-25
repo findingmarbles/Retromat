@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Sitemap;
 
 use App\Model\Activity\ActivityByPhase;
-use App\Model\Sitemap\PlanGenerator;
+use App\Model\Sitemap\PlanUrlGenerator;
 use App\Model\Sitemap\PlanIdGenerator;
 use PHPUnit\Framework\TestCase;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\RequestContext;
  * Self shunt pattern as described by Kent Beck: Test class implements interfaces to mock and injects $this
  */
 
-class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInterface, UrlGeneratorInterface
+class PlanUrlGeneratorIntegrationTest extends TestCase implements UrlContainerInterface, UrlGeneratorInterface
 {
     private $urlContainer;
 
@@ -41,10 +41,10 @@ class PlanGeneratorIntegrationTest extends TestCase implements UrlContainerInter
             ->method('getAllActivitiesByPhase')
             ->willReturn($activitiesByPhase);
         $idGenerator = new PlanIdGenerator($activitiyByPhase);
-        $planGenerator = new PlanGenerator($this, $idGenerator);
+        $planGenerator = new PlanUrlGenerator($this, $idGenerator);
 
         $this->urlContainer = [];
-        $planGenerator->populatePlans($this);
+        $planGenerator->generatePlanUrls($this);
 
         $this->assertEquals($this->baseUrl.'1-2-3-4-5', $this->urlContainer[0]->getLoc());
         $this->assertEquals($this->baseUrl.'6-2-3-4-5', $this->urlContainer[1]->getLoc());
