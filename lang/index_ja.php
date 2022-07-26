@@ -28,7 +28,7 @@ $_lang['INDEX_ABOUT_SUGGEST'] = '提案する';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = '翻訳: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = '武田 智博';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://github.com/msiu-takeda/Retromat';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://scrum-cjgg.com/';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/tomohiro_takeda.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
 ソフトウェア開発で日夜スクラムを実践し、よりよい価値を世の中に届けるため、スクラムマスター、プロダクトオーナーを育成しています。 Retromatでよりよい振り返りにつなげられたなら幸いです。
