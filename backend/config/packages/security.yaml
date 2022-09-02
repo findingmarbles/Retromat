@@ -24,6 +24,8 @@ security:
             - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_ES:
             - ROLE_TRANSLATOR
+        ROLE_TRANSLATOR_FA:
+            - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_FR:
             - ROLE_TRANSLATOR
         ROLE_TRANSLATOR_JA:
@@ -44,6 +46,7 @@ security:
             - ROLE_TRANSLATOR_EN
             - ROLE_TRANSLATOR_DE
             - ROLE_TRANSLATOR_ES
+            - ROLE_TRANSLATOR_FA
             - ROLE_TRANSLATOR_FR
             - ROLE_TRANSLATOR_JA
             - ROLE_TRANSLATOR_NL

@@ -11,6 +11,7 @@
 php index.php en    twig ajax > backend/templates/home/generated/index_en.html.twig
 php index.php de    twig ajax > backend/templates/home/generated/index_de.html.twig
 php index.php es    html ajax > backend/templates/home/generated/index_es.html.twig
+php index.php fa    html ajax > backend/templates/home/generated/index_fa.html.twig
 php index.php fr    html ajax > backend/templates/home/generated/index_fr.html.twig
 php index.php nl    html ajax > backend/templates/home/generated/index_nl.html.twig
 php index.php ja    html ajax > backend/templates/home/generated/index_ja.html.twig

@@ -32,7 +32,7 @@
                                     Translator
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {% for locale in ['de', 'es', 'fr', 'ja', 'nl', 'pl', 'pt-br', 'ru', 'zh'] %}
+                                    {% for locale in ['de', 'es', 'fa', 'fr', 'ja', 'nl', 'pl', 'pt-br', 'ru', 'zh'] %}
                                         {% if is_granted('ROLE_TRANSLATOR_'~locale|upper) %}
                                             <li><a class="dropdown-item" href="{{ path('team_activity_index', {'_locale': locale}) }}">{{ locale }}</a></li>
                                         {% endif %}
