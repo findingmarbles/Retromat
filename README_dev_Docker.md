@@ -2,14 +2,14 @@
 
 * Clone git repo
 ```
-git clone git clone https://github.com/findingmarbles/Retromat.git retromat.git retromat.git
+git clone git clone https://github.com/findingmarbles/Retromat.git
 ```
 
 
 # Docker Compose
 Start session:
 ```
-cd retromat.git
+cd Retromat
 docker-compose up -d
 ```
 End session:
