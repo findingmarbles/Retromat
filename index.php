@@ -359,7 +359,7 @@ var PHASE_ID_TAG = 'phase';
                 <br><br>
                 It's the latest addition to the Retromat eBook Bundle, complementing 
                 <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">
-                   "Plans for Retrospectives"</a> for beginners and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"?</a> for advanced facilitators.
+                   "Plans for Retrospectives"</a> for beginners and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"</a> for advanced facilitators:
                 <br><br>
                 <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
                    class="button-medium" style="color:white" target="_blank" rel="noopener">
