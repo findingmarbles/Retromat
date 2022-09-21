@@ -318,42 +318,6 @@ var PHASE_ID_TAG = 'phase';
     <div class="promo">
         <div class="content">
             <div class="inner">
-                There's a new Retromat book geared towards beginners!
-                <br><br>
-                <a href="/blog/new-book-15-plans-for-retrospectives/"
-                   class="button-medium" style="color: white">
-                   Check out "Plans for Retrospectives"
-                </a>
-                <br><br>
-                (<a href="{{ path('print') }}" class="small-font">Looking for the Print Retromat?</a>)
-            </div>
-        </div>
-    </div>
--->
-
-<?php if ($lang == 'de') { ?>
-    
-    <!-- Inform German users about "Durch Fragen zur besseren Zukunft" -->
-    <div class="promo">
-        <div class="content">
-            <div class="inner">
-               NEU: Unterstütze dein Team in Retrospektiven mit lösungsfokussierten Fragen – 
-                Du kannst Corinna Baldaufs Mini-Buch "Durch Fragen zur besseren Zukunft" kostenlos herunterladen:
-                <br><br>
-                <a href="https://leanpub.com/durch-fragen-zur-besseren-zukunft"
-                   class="button-medium" style="color:white" target="_blank" rel="noopener">
-                   Zum kostenlosen Mini-Buch
-                </a>
-            </div>
-        </div>
-    </div>
-    
-<?php } else { ?>
-
-    <!-- BUNDLE -->
-    <div class="promo">
-        <div class="content">
-            <div class="inner">
                 Did you know there's a Retromat eBook Bundle, containing both 
                 <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">
                    "Plans for Retrospectives"</a> and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"?</a>
@@ -367,8 +331,45 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
-    
-<?php } ?>
+-->
+<!-- Inform German users about "Durch Fragen zur besseren Zukunft" 
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+               NEU: Unterstütze dein Team in Retrospektiven mit lösungsfokussierten Fragen – 
+                Du kannst Corinna Baldaufs Mini-Buch "Durch Fragen zur besseren Zukunft" kostenlos herunterladen:
+                <br><br>
+                <a href="https://leanpub.com/durch-fragen-zur-besseren-zukunft"
+                   class="button-medium" style="color:white" target="_blank" rel="noopener">
+                   Zum kostenlosen Mini-Buch
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+
+    <!-- BUNDLE -->
+    <div class="promo">
+        <div class="content">
+            <div class="inner">
+                NEW: Look, there's a free (mini) ebook 
+                <a href="https://leanpub.com/askingforabetterfuture" target="_blank"> "Asking for a Better Future"</a>
+                on how to energise teams and get better results – during retrospectives and other conversations – 
+                with solution-focussed questions. 
+                <br><br>
+                It's the latest addition to the Retromat eBook Bundle, complementing 
+                <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">
+                   "Plans for Retrospectives"</a> for beginners and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"?</a> for advanced facilitators.
+                <br><br>
+                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
+                   class="button-medium" style="color:white" target="_blank" rel="noopener">
+                   Check out the Retromat eBook Bundle
+                </a>
+                <br><br>
+                (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
+            </div>
+        </div>
+    </div>
 
     <div class="plan-header">
         <div class="content">
