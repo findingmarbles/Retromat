@@ -363,7 +363,7 @@ var PHASE_ID_TAG = 'phase';
             <div class="inner">
                 Are you serious about retrospectives? The
                 <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                   class="button-medium" style="color:white" target="_blank" rel="noopener">Retromat eBook Bundle</a> 
+                  target="_blank" rel="noopener">Retromat eBook Bundle</a> 
                 is here to support you: 
                 <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">"Plans for Retrospectives"</a> 
                 for beginners, 
