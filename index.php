@@ -268,7 +268,6 @@ var PHASE_ID_TAG = 'phase';
                 <ul>
                   <li><a href="/en/books">Books</a></li>
                   <li><a href="/blog/">Blog</a></li>
-                  <li><a href="/blog/forum/">Forum</a></li>
                   <li><a href="/en/membership">Membership</a></li>
                   <li><a href="/en/about">About</a></li>
                 </ul>
@@ -277,14 +276,14 @@ var PHASE_ID_TAG = 'phase';
 
         <div class="header__languageswitcher"> 
             <select onchange="switchLanguage(this.value)">
-                <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (143 Aktivit&auml;ten)</option>
+                <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (144 Aktivit&auml;ten)</option>
                 <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (143 activities)</option>
                 <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (140 actividades)</option>
-                <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (73 activit&eacute;s)</option>
+                <option value="fr" <?php echo(print_if_selected("fr", $lang)); ?> >Fran&ccedil;ais (88 activit&eacute;s)</option>
                 <option value="nl" <?php echo(print_if_selected("nl", $lang)); ?> >Nederlands (101 activiteiten)</option>
-                <option value="pl" <?php echo(print_if_selected("pl", $lang)); ?> >Polski (27 aktywności)</option>
+                <option value="pl" <?php echo(print_if_selected("pl", $lang)); ?> >Polski (30 aktywności)</option>
                 <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
-                <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (129 活动)</option>
+                <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (131 活动)</option>
                 <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（143アクティビティ）</option>
             </select>
         </div>
