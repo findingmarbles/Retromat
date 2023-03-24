@@ -7,7 +7,7 @@ Setting up a dev instance on Uberspace
 
 * Ensure the right (tm) version of PHP, see .travis.yml for which one you need, then activate that one on the new uberspace like this:
 ```
-uberspace tools version use php 7.4
+uberspace tools version use php 8.8
 ```
 
 * Setup Redis service https://lab.uberspace.de/guide_redis.html
@@ -24,7 +24,7 @@ scp <SpaceNameLive>_retromat.sql <SpaceNameDev>@canopus.uberspace.de:
 ```
 # ssh <SpaceNameDev>@canopus.uberspace.de
 echo 'CREATE DATABASE <SpaceNameDev>_retromat'| mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf
-mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf <SpaceNameDev>_retromat <  retro2_retromat.sql
+mysql --defaults-file=/home/<SpaceNameDev>/.my.cnf <SpaceNameDev>_retromat <  <SpaceNameLive>_retromat.sql
 ```
 * Clone git repo
 ```
@@ -54,7 +54,7 @@ composer install
 * Set up the database structure (skip if you imported a full dump from live, see OPTIONAL step higher up)
 ```
 bin/console doctrine:database:create
-doctrine:migrations:migrate
+bin/console doctrine:migrations:migrate
 ```
  
 * Import example content into the database  (skip if you imported a full dump from live, see OPTIONAL step higher up)
@@ -90,19 +90,10 @@ redis-cli -s /home/<SpaceNameDev>/.redis/sock FLUSHALL
 * We allow browser caching for HTML and assets (JS, CSS), so you may need to clear your browser cache as well. Some browsers allow disabling caches while the developer tools are open.
 
 # Bypass some caches on dev instance for easier development
-* (@TODO UPDATE THIS) Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony. To make it available on your dev instance (even without an SSH tunnel, like on avior) edit this file. Inside the file, you find instructions on which block to comment out:
+Make your dev activities easier by bypassing some caches and using the Symfony debug toolbar. This can be achieved using the dev environment that comes with Symfony: Edit .env.local  as follows:
 ```
-vim /var/www/virtual/<SpaceNameDev>/retromat.git/backend/web/app_dev.php
+APP_ENV=dev
 ```
-* In the example, this has been done already, so if you want to see this
-```
-https://<SpaceNameDev>.uber.space/en/?id=114-54-26-38-15
-```
-* ... but bypass most caches and see the debug toolbar see ...
-```
-https://<username>.uber.space/app_dev.php/en/?id=114-54-26-38-15
-```
-So basically replace ".space/" with ".space/app_dev.php/" in the URL.
 
 # Debug
 * See here for lowlevel PHP logs (may be empty, as most are handeled by Symfony)
