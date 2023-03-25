@@ -159,6 +159,23 @@
         background: rgba(255, 255, 255, .35);
     }
 
+    .promo-inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .promo-image,
+    .promo-text {
+        flex: 0 1 auto;
+    }
+
+    .promo-image img {
+        object-fit: cover; 
+        object-position: top left; 
+        width:100%; 
+        max-height:30vw
+    }
+
     .button-medium {
         display: inline-block;
         padding: 5px 8px; 
@@ -190,6 +207,28 @@
     }
 
 
+@media (min-width: 450px) { /* Promo-box is side-by-side for wider screens */
+  
+    .promo-inner {
+        flex-direction: row;
+    }
+
+    .promo-image {
+        width: 40%;
+        overflow: hidden;
+    }
+
+    .promo-image img {
+        object-fit: fill; 
+        object-position: top left; 
+        height:100%; 
+    }
+
+    .promo-text {
+        flex: 0 2 auto;
+    }
+
+}
 
     .plan-header {
         background-color: #e3f5ab;
