@@ -207,7 +207,7 @@
     }
 
 
-@media (min-width: 450px) { /* Promo-box is side-by-side for wider screens */
+@media (min-width: 530px) { /* Promo-box is side-by-side for wider screens */
   
     .promo-inner {
         flex-direction: row;
