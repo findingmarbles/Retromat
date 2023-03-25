@@ -296,90 +296,30 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
     </div>
-
-<!-- MEMBERSHIP
-    <div class="promo">
-        <div class="content">
-            <div class="inner">
-                Does Retromat make your work life easier? And your retrospectives have better outcomes? Great! Wanna help me make Retromat better?
-                <br><br>
-                <a href="/en/membership" class="button-medium" style="color: white">
-                   Support Retromat – Join the Retro Mates :)
-                </a>
-                <br><br>
-                (<a href="/en/books" class="small-font">Looking for the books instead?</a>)
-            </div>
-        </div>
-    </div>
--->
-
-<!-- PLANS BOOK 
-    <div class="promo">
-        <div class="content">
-            <div class="inner">
-                Did you know there's a Retromat eBook Bundle, containing both 
-                <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">
-                   "Plans for Retrospectives"</a> and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"?</a>
-                <br><br>
-                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                   class="button-medium" style="color:white" target="_blank" rel="noopener">
-                   Check out the Retromat eBook Bundle
-                </a>
-                <br><br>
-                (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
-            </div>
-        </div>
-    </div>
--->
-
-    <!-- New book + BUNDLE
-    <div class="promo">
-        <div class="content">
-            <div class="inner">
-                NEW: Look, there's a free (mini) ebook 
-                <a href="https://leanpub.com/askingforabetterfuture" target="_blank"> "Asking for a Better Future"</a>
-                on how to energise teams and get better results – during retrospectives and other conversations – 
-                with solution-focussed questions. 
-                <br><br>
-                It's the latest addition to the Retromat eBook Bundle, complementing 
-                <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">
-                   "Plans for Retrospectives"</a> for beginners and <a href="/en/ebook" target="_blank" rel="noopener">"Run great agile retrospectives"</a> for advanced facilitators:
-                <br><br>
-                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                   class="button-medium" style="color:white" target="_blank" rel="noopener">
-                   Check out the Retromat eBook Bundle
-                </a>
-                <br><br>
-                (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
-            </div>
-        </div>
-    </div>
--->
     
-    <!-- BUNDLE -->
+
+    <!-- Miroboard -->
     <div class="promo">
         <div class="content">
-            <div class="inner">
-                Are you serious about retrospectives? The
-                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                  target="_blank" rel="noopener">Retromat eBook Bundle</a> 
-                is here to support you: 
-                <a href="/blog/new-book-15-plans-for-retrospectives/" target="_blank" rel="noopener">"Plans for Retrospectives"</a> 
-                for beginners, 
-                <a href="/en/ebook" target="_blank" rel="noopener">"Run Great Agile Retrospectives"</a> 
-                for advanced facilitators and 
-                <a href="https://leanpub.com/askingforabetterfuture" target="_blank"> "Asking for a Better Future"</a>
-                on how to energise teams and get better results.
-                <br><br>
-                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                   class="button-medium" style="color:white" target="_blank" rel="noopener">
-                   Check out the Retromat eBook Bundle
-                </a>
-                <br><br>
-                (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
+            <div class="promo-inner">
+
+                <div class="promo-image">
+                    <a href="/blog/retromat-miroboard-mega-template/" target="_blank">
+                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
+                    </a>
+                </div>
+                    
+                <div class="promo-text inner">
+                    Are you running your retrospectives with <b>Miro</b>? Create prettier boards faster with the giant <b>Retromat Miroboard Mega Template</b>!
+                    <br><br>
+                    <a href="/blog/retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
+                       Check out the Mega Template
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
 
     <div class="plan-header">
         <div class="content">
@@ -417,16 +357,10 @@ var PHASE_ID_TAG = 'phase';
                                         <input type="submit" class="popup__submit" value="<?php echo($_lang['POPUP_SEARCH_BUTTON']); ?>">
                                         <a href="JavaScript:hide_popup('search');" class="popup__close-link"><?php echo($_lang['POPUP_CLOSE']); ?></a>
                                     </form>
-                                    <div class="popup__info"><?php echo($_lang['POPUP_SEARCH_INFO']); ?></div>
+                                    <div class="popup__info"><?php echo($_lang['POPUP_SEARCH_INFO']); ?> </div>
                                 </div>
                             </li>
                         </ul>
-                    </div>
-
-                    <div class="plan-header-promo">
-                        <a href="/en/books" target="_blank">
-                            <img src="/static/images/promo-ebook.jpg" width="132" height="95" alt="Did you know there are Retromat eBooks?">
-                        </a>
                     </div>
                 </div>
 
