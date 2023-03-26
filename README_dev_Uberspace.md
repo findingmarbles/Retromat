@@ -1,4 +1,51 @@
-[![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
+Using an existing dev instance on Uberspace
+========
+Let's assume you don't need to make changes to backend or activities right now.
+
+Then:
+
+To see frontend-only changes:
+
+Go to repo
+```
+cd /var/www/virtual/ ... /retromat.git/
+```
+
+Get latest version from GitHub
+```
+git pull origin master
+```
+
+if something is weird, check out:
+```
+git status
+```
+Cleanup:
+```
+git reset --hard
+```
+Maybe delete changed files manually, repeat steps named above.
+
+(re-) generate templates from index.php
+```
+backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
+```
+On a dev instance you can usually skip this step:
+But do it if something is weird:
+Clear and warmup compiled code, templates etc. from disk
+```
+php backend/bin/console cache:clear --no-warmup --env=prod
+php backend/bin/console cache:warmup --env=prod
+```
+
+On a dev instance you can usually skip this step:
+But do it if something is weird:
+Clear and warmup compiled code, templates etc. from RAM
+```
+uberspace tools restart php
+```
+
+Everything should be totally fresh at this point.
 
 Setting up a dev instance on Uberspace
 ========
