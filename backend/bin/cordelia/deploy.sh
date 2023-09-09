@@ -27,3 +27,8 @@ uberspace tools restart php
 
 # warmup RAM loading a page via http
 curl --silent --show-error --insecure https://retromat.org/en/ -o /dev/null
+
+# make sitemap files available via symlinks
+cd /var/www/virtual/retro2/retromat-deployments/retromat.git/backend/public/
+rm sitemap.*
+ln -s ../../../../retromat-sitemaps/* .
