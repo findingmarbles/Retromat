@@ -25,7 +25,7 @@ Obtain the value of MYSQL_ROOT_PASSWORD from
 to login as root.
 
 In the Docker App, click "Open in Browser" on the PHPMyAdmin container or directly go to:
-http://localhost:8181/
+http://localhost:8080/en/
 
 Now you can e.g. obtain a DB dump from the live system ...
 ```
