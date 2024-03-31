@@ -280,8 +280,19 @@ var PHASE_ID_TAG = 'phase';
             </div>
         </div>
 
-        <div class="header__languageswitcher"> 
+        <div class="header__languageswitcher">
             <select onchange="switchLanguage(this.value)">
+<?php if (is_output_format_twig($argv)) { ?>
+                <option value="de" {{ app.request.locale == 'de' ? 'selected' }}>Deutsch (144 Aktivit&auml;ten)</option>
+                <option value="en" {{ app.request.locale == 'en' ? 'selected' }}>English (146 activities)</option>
+                <option value="es" {{ app.request.locale == 'es' ? 'selected' }}>Espa&ntilde;ol (140 actividades)</option>
+                <option value="fr" {{ app.request.locale == 'fr' ? 'selected' }}>Fran&ccedil;ais (88 activit&eacute;s)</option>
+                <option value="nl" {{ app.request.locale == 'nl' ? 'selected' }}>Nederlands (101 activiteiten)</option>
+                <option value="pl" {{ app.request.locale == 'pl' ? 'selected' }}>Polski (30 aktywności)</option>
+                <option value="ru" {{ app.request.locale == 'ru' ? 'selected' }}>Русский (133 упражнений)</option>
+                <option value="zh" {{ app.request.locale == 'zh' ? 'selected' }}>中文 (131 活动)</option>
+                <option value="ja" {{ app.request.locale == 'ja' ? 'selected' }}>日本語（144アクティビティ）</option>
+<?php } else { ?>
                 <option value="de" <?php echo(print_if_selected("de", $lang)); ?> >Deutsch (144 Aktivit&auml;ten)</option>
                 <option value="en" <?php echo(print_if_selected("en", $lang)); ?> >English (146 activities)</option>
                 <option value="es" <?php echo(print_if_selected("es", $lang)); ?> >Espa&ntilde;ol (140 actividades)</option>
@@ -291,6 +302,7 @@ var PHASE_ID_TAG = 'phase';
                 <option value="ru" <?php echo(print_if_selected("ru", $lang)); ?> >Русский (133 упражнений)</option>
                 <option value="zh" <?php echo(print_if_selected("zh", $lang)); ?> >中文 (131 活动)</option>
                 <option value="ja" <?php echo(print_if_selected("ja", $lang)); ?> >日本語（144アクティビティ）</option>
+<?php } ?>
             </select>
         </div>
     </div>
