@@ -1,12 +1,6 @@
 #!/bin/bash
-
-# How to:
-# Execute this comand from the toplevel directory of your Retromat repository,
-# which is where index.php is currently located.
-
-# Background:
-# No cd ... or absolute paths here, because
-# this command needs to work on local machines and on travis-ci, too.
+# On our live server this is triggered from:
+# $ backend/bin/cordelia/deploy.sh
 
 php index.php en    twig ajax > backend/templates/home/generated/index_en.html.twig
 php index.php de    twig ajax > backend/templates/home/generated/index_de.html.twig

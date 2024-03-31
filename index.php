@@ -10,12 +10,16 @@
 //      language: de, en, es, etc. default: en
 //      format: html, twig, default: html
 
-// determine language and make it available variable
 $lang = 'en';
 if (isset($argv[1])) {
     $lang = $argv[1];
 } else if (array_key_exists('lang', $_GET)) {
     $lang = $_GET['lang'];
+}
+if ($lang == 'en') {
+    $isEnglish = true;
+} else {
+    $isEnglish = false;
 }
 
 function is_output_format_twig($argv)
@@ -26,11 +30,6 @@ function is_output_format_twig($argv)
 function load_activities_via_ajax($argv)
 {
     return (isset($argv[3]) and 'ajax' === $argv[3]);
-}
-
-$isEnglish = false;
-if ($lang == 'en') {
-    $isEnglish = true;
 }
 
 require(get_language_file_path($lang));
