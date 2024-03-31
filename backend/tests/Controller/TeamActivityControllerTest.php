@@ -32,6 +32,9 @@ class TeamActivityControllerTest extends AbstractTestCase
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
 
+        // WTF? When running in Docker, this fails, but when sleeping 1 s it succeeds.
+        sleep(1);
+
         $crawler = $client->request('GET', '/en/team/activity/new');
         $prefilledRetromatId = $crawler->filter('#app_activity_retromatId')->eq(0)->attr('value');
 
