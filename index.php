@@ -1,7 +1,14 @@
 <?php
-// run as follows: php index.php [langage] [format]
-// language: [de, en, es, fr, nl], default: en
-// format: [html, twig], default: html
+// PHP is deployed live as Twig templates using:
+// $ index_deploy-from-php-to-twig.sh
+//
+// On our live server this is triggered from:
+// $ backend/bin/cordelia/deploy.sh
+//
+// For experimentation only, run as follows:
+// $ php index.php [language] [format] ajax
+//      language: de, en, es, etc. default: en
+//      format: html, twig, default: html
 
 // determine language and make it available variable
 $lang = 'en';
