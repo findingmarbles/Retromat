@@ -596,6 +596,21 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertEquals('404', $client->getResponse()->getStatusCode());
     }
 
+    public function testShowActivityCount()
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        $crawler = $client->request('GET', '/en/?id=32');
+
+        $optionsHtml = $crawler->filter('.header__languageswitcher')->filter('select')->html();
+        $enlishCount = preg_replace('/(.*)English \((.*) activities(.*)/s', '\2', $optionsHtml);
+
+        $this->assertEquals(
+            '131', $enlishCount
+        );
+    }
+
     /**
      * @return \string[][]
      */
