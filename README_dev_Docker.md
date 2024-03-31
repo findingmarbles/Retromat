@@ -78,13 +78,20 @@ php backend/bin/console --env=test cache:clear
 php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
 
-Known issues at this point:
+Known Dock specific issues at this point:
 
-All test are green on Travis-CI.
+All test were green on Travis-CI, before we stopped using it.
+
 BUT:
-These two fail in Docker:
+These failed in Docker:
+App\Tests\Controller\TeamActivityControllerTest::testCreateNewActivityUsesNextFreeRetromatIdFullDb
 App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhases
 App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhasesDe
+
+AND:
+When sleeping 1 s after loading fixtures into the DB they succeed. 
+WTF? This is on a MBP with M2 CPU and 16 GB RAM, why would it need a delay? 
+Anyway, all tests green again.
 
 # Access App via Browser
 In the Docker App, click "Open in Browser" on the retromat-httpd container or directly go to:

@@ -65,6 +65,9 @@ class ActivityRepositoryTest extends AbstractTestCase
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhases']
         );
 
+        // WTF? When running in Docker, this fails, but when sleeping 1 s it succeeds.
+        sleep(1);
+
         $expectedActivityByPhase = [
             0 => [1, 7],
             1 => [2, 8],
@@ -82,6 +85,9 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->loadFixtures(
             ['App\Tests\Repository\DataFixtures\LoadActivityDataForTestFindAllActivitiesForPhasesDe']
         );
+
+        // WTF? When running in Docker, this fails, but when sleeping 1 s it succeeds.
+        sleep(1);
 
         $expectedActivityByPhase = [
             0 => [1, 7],
