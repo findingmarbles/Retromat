@@ -74,4 +74,12 @@ class ActivityRepository extends ServiceEntityRepository
 
         return $activitiesByPhase;
     }
+
+    /**
+     * @return array
+     */
+    public function countActivities(): array
+    {
+        return ['en' => '131'];
+    }
 }
