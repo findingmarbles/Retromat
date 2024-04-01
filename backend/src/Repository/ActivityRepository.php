@@ -29,6 +29,9 @@ class ActivityRepository extends ServiceEntityRepository
      */
     public function findOrdered(array $orderedIds): array
     {
+        // load all from RAM via results cache in Redis
+        // to avoid populating the results cache with individual results
+        // for billions of combinations
         $allActivities = $this->findAllOrdered();
         $orderedActivities = [];
         foreach ($orderedIds as $id) {
@@ -80,6 +83,8 @@ class ActivityRepository extends ServiceEntityRepository
      */
     public function countActivities(): array
     {
-        return ['en' => '131'];
+        $activities = $this->findAllOrdered();
+
+        return ['en' => count($activities)];
     }
 }
