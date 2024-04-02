@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Activity;
 
+use App\Entity\Activity;
 use Doctrine\ORM\EntityManagerInterface;
 
 class ActivityByPhase
@@ -83,7 +84,7 @@ class ActivityByPhase
     {
         if (!isset($this->activityByPhase)) {
             $this->activityByPhase = $this->entityManager->getRepository(
-                'App:Activity'
+                Activity::class
             )->findAllActivitiesByPhases();
         }
     }

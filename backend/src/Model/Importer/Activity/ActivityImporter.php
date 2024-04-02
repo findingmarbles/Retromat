@@ -70,7 +70,7 @@ final class ActivityImporter
     public function import2(string $locale = 'en')
     {
         $this->reader->setCurrentLocale($locale);
-        $activityRepository = $this->entityManager->getRepository('App:Activity');
+        $activityRepository = $this->entityManager->getRepository(Activity::class);
 
         foreach ($this->reader->extractAllActivities() as $activityArray) {
             $activity = new Activity();

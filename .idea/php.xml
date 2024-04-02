@@ -130,7 +130,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/backend/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/backend/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-invoker" />
@@ -191,9 +190,9 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/web-server-bundle" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/inflector" />
-      <path value="$PROJECT_DIR$/backend/vendor/php-cs-fixer/diff" />
       <path value="$PROJECT_DIR$/backend/vendor/friendsofphp/php-cs-fixer" />
       <path value="$PROJECT_DIR$/backend/vendor/hackzilla/password-generator" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpdoc-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
