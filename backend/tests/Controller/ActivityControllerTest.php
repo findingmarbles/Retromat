@@ -13,6 +13,7 @@ final class ActivityControllerTest extends AbstractTestCase
         $this->loadFixtures([]);
     }
 
+    /** @medium */
     public function testActivityNameEnglish()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);

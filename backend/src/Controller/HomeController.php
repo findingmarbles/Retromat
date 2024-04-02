@@ -72,7 +72,7 @@ class HomeController extends AbstractController
                 'ids' => $ids,
                 'phase' => $phase,
                 'activities' => $activities,
-                'activityCounts' => $this->activityRepository->countActivities(),
+                'activityCounts' => $this->activityRepository->countActivities($this->getParameter('retromat.activity.locales')),
                 'color_variation' => $this->colorVariation,
                 'activity_by_phase' => $this->activityByPhase,
                 'title' => $title,

@@ -81,24 +81,24 @@ class ActivityRepository extends ServiceEntityRepository
     /**
      * @return array
      */
-    public function countActivities(): array
+    public function countActivities($locales): array
     {
-        $activities = $this->findAllOrdered();
-
-        $activityCounts['en'] = count($activities);
-        $activityCounts['de'] = 132;
-
-        $locale = 'de';
-
-        $activityCounts[$locale] = 0;
-        foreach ($activities as $activity) {
-            /** @var $activity Activity */
-            if (!$activity->translate($locale, false)->isEmpty()) {
-                $activityCounts[$locale]++;
-            } else {
-                break;
-            }
-        }
+        // // works, but too slow without caching
+        // // solve via smart  query or cache it
+        // $activities = $this->findAllOrdered();
+        // foreach ($locales as $locale) {
+        //     $activityCounts[$locale] = 0;
+        //     foreach ($activities as $activity) {
+        //         /** @var $activity Activity */
+        //         if (!$activity->translate($locale, false)->isEmpty()) {
+        //             $activityCounts[$locale]++;
+        //         } else {
+        //             break;
+        //         }
+        //     }
+        // }
+        $activityCounts['en'] = 131;
+        $activityCounts['de'] = 75;
 
         return $activityCounts;
     }
