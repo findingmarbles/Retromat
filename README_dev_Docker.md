@@ -74,8 +74,7 @@ php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
 Each time:
 ```
-php backend/bin/console --env=test cache:clear
-php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
+php backend/bin/console --env=test cache:clear ; php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
 
 Known Dock specific issues at this point:
