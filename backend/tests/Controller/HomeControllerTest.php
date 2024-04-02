@@ -604,11 +604,12 @@ class HomeControllerTest extends AbstractTestCase
         $crawler = $client->request('GET', '/en/?id=32');
 
         $optionsHtml = $crawler->filter('.header__languageswitcher')->filter('select')->html();
-        $enlishCount = preg_replace('/(.*)English \((.*) activities(.*)/s', '\2', $optionsHtml);
 
-        $this->assertEquals(
-            '131', $enlishCount
-        );
+        $enlishCount = preg_replace('/(.*)English \((.*) activities(.*)/s', '\2', $optionsHtml);
+        $this->assertEquals('131', $enlishCount);
+
+        $germanCount = preg_replace('/(.*)Deutsch \((.*) Aktivitäten(.*)/s', '\2', $optionsHtml);
+        $this->assertEquals('75', $germanCount);
     }
 
     /**

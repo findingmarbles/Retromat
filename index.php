@@ -283,7 +283,7 @@ var PHASE_ID_TAG = 'phase';
         <div class="header__languageswitcher">
             <select onchange="switchLanguage(this.value)">
 <?php if (is_output_format_twig($argv)) { ?>
-                <option value="de" {{ app.request.locale == 'de' ? 'selected' }}>Deutsch (144 Aktivit&auml;ten)</option>
+                <option value="de" {{ app.request.locale == 'de' ? 'selected' }}>Deutsch ({{ activityCounts['de'] }} Aktivit&auml;ten)</option>
                 <option value="en" {{ app.request.locale == 'en' ? 'selected' }}>English ({{ activityCounts['en'] }} activities)</option>
                 <option value="es" {{ app.request.locale == 'es' ? 'selected' }}>Espa&ntilde;ol (140 actividades)</option>
                 <option value="fr" {{ app.request.locale == 'fr' ? 'selected' }}>Fran&ccedil;ais (88 activit&eacute;s)</option>
