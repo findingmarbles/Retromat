@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Cache\CacheInterface;
 
 class HomeController extends AbstractController
 {
@@ -24,6 +25,7 @@ class HomeController extends AbstractController
     private TitleChooser $titleChooser;
     private DescriptionRenderer $descriptionRenderer;
     private ActivityRepository $activityRepository;
+    private CacheInterface $cache;
 
     public function __construct(
         ActivityExpander $activityExpander,
@@ -31,7 +33,8 @@ class HomeController extends AbstractController
         ActivityByPhase $activityByPhase,
         TitleChooser $titleChooser,
         DescriptionRenderer $descriptionRenderer,
-        ActivityRepository $activityRepository
+        ActivityRepository $activityRepository,
+        CacheInterface $cache,
     ) {
         $this->activityExpander = $activityExpander;
         $this->colorVariation = $colorVariation;
@@ -39,6 +42,7 @@ class HomeController extends AbstractController
         $this->titleChooser = $titleChooser;
         $this->descriptionRenderer = $descriptionRenderer;
         $this->activityRepository = $activityRepository;
+        $this->cache = $cache;
     }
 
     /**
@@ -65,6 +69,14 @@ class HomeController extends AbstractController
             }
             list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }
+
+        $experimentFoo = 1;
+        $experimentBar = $this->cache->get('experiment_data', function() use ($experimentFoo) {
+            $magic = 41 + $experimentFoo;
+            sleep (3);
+
+            return $magic;
+        });
 
         return $this->render(
             'home/generated/index_'.$locale.'.html.twig',

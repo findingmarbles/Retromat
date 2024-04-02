@@ -66,13 +66,13 @@ Initially:
 Create .env.test.local (e.g. by copying .env.local) with a different DB name. 
 At this point the author prefers to create retromat-local-test
 
-On code change:
+On code change related to the DB (e.g. entities):
 ```
 php backend/bin/console --env=test doctrine:database:drop --force
 php backend/bin/console --env=test doctrine:database:create
 php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
-Each time:
+On any change:
 ```
 php backend/bin/console --env=test cache:clear ; php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
