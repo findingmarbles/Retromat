@@ -18,10 +18,12 @@ RUN apk update \
         mysqli \
         pdo \
         pdo_mysql \
+        pcntl \
     && pecl install \
         redis \
     && docker-php-ext-enable \
         redis \
+        pcntl \
     && apk del --purge \
         autoconf \
         g++ \
