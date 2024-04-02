@@ -596,6 +596,7 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertEquals('404', $client->getResponse()->getStatusCode());
     }
 
+    /** @small */
     public function testShowActivityCount()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);

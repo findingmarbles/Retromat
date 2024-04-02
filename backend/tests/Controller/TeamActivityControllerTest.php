@@ -28,6 +28,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEquals(1, $prefilledRetromatId);
     }
 
+    /** @medium */
     public function testCreateNewActivityUsesNextFreeRetromatIdFullDb()
     {
         $client = $this->makeClientLoginAdminLoadFixtures();

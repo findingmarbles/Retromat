@@ -56,9 +56,7 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals(3, \next($ordered)->getRetromatId());
     }
 
-    /**
-     * @return void
-     */
+    /** @medium */
     public function testFindAllActivitiesForPhases(): void
     {
         $this->loadFixtures(
@@ -80,6 +78,7 @@ class ActivityRepositoryTest extends AbstractTestCase
         $this->assertEquals($expectedActivityByPhase, $this->activityRepository->findAllActivitiesByPhases());
     }
 
+    /** @medium */
     public function testFindAllActivitiesForPhasesDe(): void
     {
         $this->loadFixtures(
