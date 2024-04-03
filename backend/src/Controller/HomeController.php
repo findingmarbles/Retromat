@@ -25,16 +25,16 @@ class HomeController extends AbstractController
     private TitleChooser $titleChooser;
     private DescriptionRenderer $descriptionRenderer;
     private ActivityRepository $activityRepository;
-    private CacheInterface $cache;
+    private CacheInterface $retromatCache;
 
     public function __construct(
-        ActivityExpander $activityExpander,
-        ColorVariation $colorVariation,
-        ActivityByPhase $activityByPhase,
-        TitleChooser $titleChooser,
+        ActivityExpander    $activityExpander,
+        ColorVariation      $colorVariation,
+        ActivityByPhase     $activityByPhase,
+        TitleChooser        $titleChooser,
         DescriptionRenderer $descriptionRenderer,
-        ActivityRepository $activityRepository,
-        CacheInterface $cache,
+        ActivityRepository  $activityRepository,
+        CacheInterface      $retromatCache,
     ) {
         $this->activityExpander = $activityExpander;
         $this->colorVariation = $colorVariation;
@@ -42,7 +42,7 @@ class HomeController extends AbstractController
         $this->titleChooser = $titleChooser;
         $this->descriptionRenderer = $descriptionRenderer;
         $this->activityRepository = $activityRepository;
-        $this->cache = $cache;
+        $this->retromatCache = $retromatCache;
     }
 
     /**
@@ -70,21 +70,13 @@ class HomeController extends AbstractController
             list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }
 
-        $experimentFoo = 1;
-        $experimentBar = $this->cache->get('experiment_data', function() use ($experimentFoo) {
-            $magic = 41 + $experimentFoo;
-            sleep (3);
-
-            return $magic;
-        });
-
         return $this->render(
             'home/generated/index_'.$locale.'.html.twig',
             [
                 'ids' => $ids,
                 'phase' => $phase,
                 'activities' => $activities,
-                'activityCounts' => $this->activityRepository->countActivities($this->getParameter('retromat.activity.locales')),
+                'activityCounts' => $this->countActivities($this->getParameter('retromat.activity.locales')),
                 'color_variation' => $this->colorVariation,
                 'activity_by_phase' => $this->activityByPhase,
                 'title' => $title,
@@ -156,5 +148,28 @@ class HomeController extends AbstractController
         }
 
         return [$title, $description];
+    }
+
+    /**
+     * @return array
+     */
+    public function countActivities(array $locales): array
+    {
+        $activityCounts = $this->retromatCache->get('HomeController->countActivities', function () use ($locales) {
+            $activities = $this->activityRepository->findAllOrdered();
+            foreach ($locales as $locale) {
+                $activityCounts[$locale] = 0;
+                foreach ($activities as $activity) {
+                    /** @var $activity Activity */
+                    if (!$activity->translate($locale, false)->isEmpty()) {
+                        $activityCounts[$locale]++;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            return $activityCounts;
+        });
+        return $activityCounts;
     }
 }

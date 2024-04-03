@@ -1,5 +1,5 @@
 parameters:
-  retromat.activity.locales: [en,de,fa,fr,es,ja,nl,pl,pt-br,ru,zh]
+  retromat.activity.locales: ['en','de','fa','fr','es','ja','nl','pl','pt-br','ru','zh']
 
   retromat.activity.source:
     source_agileRetrospectives: "<a href=\"http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649/\">Agile Retrospectives<\/a>"

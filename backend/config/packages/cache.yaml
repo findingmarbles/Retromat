@@ -4,4 +4,8 @@ framework:
         app: cache.adapter.redis
         pools:
             doctrine.result_cache_pool:
-                adapter: cache.adapter.redis
+                adapter: cache.app
+                default_lifetime: 86400
+            retromat.cache:
+                adapter: cache.app
+                default_lifetime: 86400

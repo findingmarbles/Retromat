@@ -149,6 +149,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         $this->assertEquals($translatableFields, \array_keys($formValues['activity_translatable_fields']));
     }
 
+    /** @medium */
     public function testCreateNewActivityTranslationDe(): void
     {
         $client = $this->makeClientLoginAdminLoadFixtures();
