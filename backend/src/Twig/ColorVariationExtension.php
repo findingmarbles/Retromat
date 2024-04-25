@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Model\Twig;
+namespace App\Twig;
 
-class ColorVariation
+use App\Utils\ColorVariationHelper;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class ColorVariationExtension extends AbstractExtension
 {
     private $colors = [];
 
@@ -10,7 +14,17 @@ class ColorVariation
 
     private $allColors = [0, 1, 2, 3, 4];
 
-    public function nextColor()
+    /**
+     * @return TwigFunction[]
+     */
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction('nextRetromatColor', [$this, 'nextColor']),
+        ];
+    }
+
+    public function nextColor(): int
     {
         if (\count($this->colors) < 2) {
             $this->colors = $this->allColors;

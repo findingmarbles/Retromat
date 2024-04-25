@@ -8,7 +8,6 @@ use App\Form\ActivityType;
 use App\Model\Activity\ActivityByPhase;
 use App\Model\Activity\Expander\ActivityExpander;
 use App\Model\Activity\Localizer\ActivityLocalizer;
-use App\Model\Twig\ColorVariation;
 use App\Repository\ActivityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +21,6 @@ use Symfony\Contracts\Cache\CacheInterface;
 class TeamActivityController extends AbstractController
 {
     private ActivityExpander $activityExpander;
-    private ColorVariation $colorVariation;
     private ActivityByPhase $activityByPhase;
     private CacheInterface $doctrineResultCachePool;
     private EntityManagerInterface $entityManager;
@@ -31,7 +29,6 @@ class TeamActivityController extends AbstractController
 
     public function __construct(
         ActivityExpander $activityExpander,
-        ColorVariation $colorVariation,
         ActivityByPhase $activityByPhase,
         CacheInterface $doctrineResultCachePool,
         EntityManagerInterface $entityManager,
@@ -39,7 +36,6 @@ class TeamActivityController extends AbstractController
         ActivityRepository $activityRepository
     ) {
         $this->activityExpander = $activityExpander;
-        $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
         $this->doctrineResultCachePool = $doctrineResultCachePool;
         $this->entityManager = $entityManager;

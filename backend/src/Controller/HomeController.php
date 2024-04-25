@@ -8,7 +8,6 @@ use App\Model\Plan\DescriptionRenderer;
 use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\TitleChooser;
-use App\Model\Twig\ColorVariation;
 use App\Repository\ActivityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -20,7 +19,6 @@ use Symfony\Contracts\Cache\CacheInterface;
 class HomeController extends AbstractController
 {
     private ActivityExpander $activityExpander;
-    private ColorVariation $colorVariation;
     private ActivityByPhase $activityByPhase;
     private TitleChooser $titleChooser;
     private DescriptionRenderer $descriptionRenderer;
@@ -29,7 +27,6 @@ class HomeController extends AbstractController
 
     public function __construct(
         ActivityExpander    $activityExpander,
-        ColorVariation      $colorVariation,
         ActivityByPhase     $activityByPhase,
         TitleChooser        $titleChooser,
         DescriptionRenderer $descriptionRenderer,
@@ -37,7 +34,6 @@ class HomeController extends AbstractController
         CacheInterface      $retromatCache,
     ) {
         $this->activityExpander = $activityExpander;
-        $this->colorVariation = $colorVariation;
         $this->activityByPhase = $activityByPhase;
         $this->titleChooser = $titleChooser;
         $this->descriptionRenderer = $descriptionRenderer;
@@ -77,7 +73,6 @@ class HomeController extends AbstractController
                 'phase' => $phase,
                 'activities' => $activities,
                 'activityCounts' => $this->countActivities($this->getParameter('retromat.activity.locales')),
-                'color_variation' => $this->colorVariation,
                 'activity_by_phase' => $this->activityByPhase,
                 'title' => $title,
                 'description' => $description,
