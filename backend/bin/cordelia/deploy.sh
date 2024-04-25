@@ -26,6 +26,7 @@ rm sitemap.*
 ln -s ../../../../retromat-sitemaps/* .
 
 # clear compiled code, templates, DB cache etc. from disk, Redis RAM, PHP RAM
+cd /var/www/virtual/retro2/retromat-deployments/retromat.git/
 php backend/bin/console cache:clear --no-warmup --env=prod
 redis-cli -s /home/retro2/.redis/sock FLUSHALL
 uberspace tools restart php
