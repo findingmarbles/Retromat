@@ -6,7 +6,7 @@
 // $ backend/bin/cordelia/deploy.sh
 //
 // For experimentation only, run as follows:
-// $ php index.php [language] [format] ajax
+// $ php index.php [language] [format]
 //      language: de, en, es, etc. default: en
 //      format: html, twig, default: html
 
@@ -25,11 +25,6 @@ if ($lang == 'en') {
 function is_output_format_twig($argv)
 {
     return (isset($argv[2]) and 'twig' === $argv[2]);
-}
-
-function load_activities_via_ajax($argv)
-{
-    return (isset($argv[3]) and 'ajax' === $argv[3]);
 }
 
 require(get_language_file_path($lang));
@@ -105,10 +100,6 @@ var PHASE_ID_TAG = 'phase';
 </script>
 
 <script src="/static/lang/phase_titles_<?php echo $lang ?>.js"></script>
-<?php if (!load_activities_via_ajax($argv)) { ?>
-    <script src="/static/sources.js"></script>
-    <script src="/static/lang/activities_<?php echo $lang ?>.js"></script>
-<?php } ?>
 <script src="/static/lang/photos.js"></script>
 <script src="/static/functions.js"></script>
 
