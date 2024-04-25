@@ -72,12 +72,21 @@ php backend/bin/console --env=test doctrine:database:drop --force
 php backend/bin/console --env=test doctrine:database:create
 php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
+On changes to index.php:
+```
+sh index_deploy-from-php-to-twig.sh
+```
 On any change:
 ```
 php backend/bin/console --env=test cache:clear ; php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
 
-Known Dock specific issues at this point:
+Known Docker specific issues at this point:
+
+Sometimes running cache:clear is not enough. In these cases this helps:
+```
+rm -rf backend/var/cache
+```
 
 All test were green on Travis-CI, before we stopped using it.
 
