@@ -27,11 +27,11 @@ ln -s ../../../../retromat-sitemaps/* .
 
 # clear compiled code, templates, DB cache etc. from disk, Redis RAM, PHP RAM
 cd /var/www/virtual/retro2/retromat-deployments/retromat.git/
-php backend/bin/console cache:clear --no-warmup --env=prod
+# https://askubuntu.com/questions/566474/why-do-i-get-directory-not-empty-when-i-try-to-remove-an-empty-directory
+rm -rf backend/var/cache/prod/*
 redis-cli -s /home/retro2/.redis/sock FLUSHALL
 uberspace tools restart php
 
-# warm up disk part 1
+# warm up
 php backend/bin/console cache:warmup --env=prod
-# warm up disk part 2, Redis RAM, PHP RAM
 curl --silent --show-error --insecure https://retromat.org/en/ -o /dev/null
