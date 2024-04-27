@@ -1,30 +1,16 @@
 <?php
-// PHP is deployed live as Twig templates using:
-// $ index_deploy-from-php-to-twig.sh
-//
-// On our live server this is triggered from:
-// $ backend/bin/cordelia/deploy.sh
-//
-// For experimentation only, run as follows:
-// $ php index.php [language] [format]
-//      language: de, en, es, etc. default: en
-//      format: html, twig, default: html
-
-$lang = 'en';
-if (isset($argv[1])) {
-    $lang = $argv[1];
-} else if (array_key_exists('lang', $_GET)) {
-    $lang = $_GET['lang'];
+if (empty($argv[1]) or empty($argv[2]) or 'html' === $argv[2]) {
+    exit(
+        PHP_EOL . $argv[0] . ' needs to be executed with specific parameters from index_deploy-from-php-to-twig.sh to produce TWIG templates which then produce HTML.' .
+        PHP_EOL . 'In development, you may run "sh index_deploy-from-php-to-twig.sh" manually.' .
+        PHP_EOL . 'On our live space it is triggered from: backend/bin/cordelia/deploy.sh' . PHP_EOL . PHP_EOL
+    );
 }
-if ($lang == 'en') {
-    $isEnglish = true;
-} else {
-    $isEnglish = false;
-}
+$lang = $argv[1];
 
-function is_output_format_twig($argv)
+function is_output_format_full_twig($argv)
 {
-    return (isset($argv[2]) and 'twig' === $argv[2]);
+    return ('fullTwig' === $argv[2]);
 }
 
 require(get_language_file_path($lang));
@@ -55,7 +41,7 @@ function get_url_to_index() {
 <!DOCTYPE html>
 <html lang="<?php echo $lang ?>">
 <head>
-<?php if (is_output_format_twig($argv)) { ?>
+<?php if (is_output_format_full_twig($argv)) { ?>
     {% if title is not empty %}
         <title>{{ title|raw }}</title>
     {% else %}
@@ -273,7 +259,7 @@ var PHASE_ID_TAG = 'phase';
 
         <div class="header__languageswitcher">
             <select onchange="switchLanguage(this.value)">
-<?php if (is_output_format_twig($argv)) { ?>
+<?php if (is_output_format_full_twig($argv)) { ?>
                 <!-- Yes, this will probably be turned into a loop some time -->
                 <option value="de" {{ app.request.locale == 'de' ? 'selected' }}>Deutsch ({{ activityCounts['de'] }} Aktivit&auml;ten)</option>
                 <option value="en" {{ app.request.locale == 'en' ? 'selected' }}>English ({{ activityCounts['en'] }} activities)</option>
@@ -339,7 +325,7 @@ var PHASE_ID_TAG = 'phase';
                         Retromat.org – by Corinna Baldauf
                     </div>
 
-                    <?php if (is_output_format_twig($argv)) { ?>
+                    <?php if (is_output_format_full_twig($argv)) { ?>
                         {% include 'home/header/idDisplay.html.twig' %}
                     <?php } else { ?>
                         <?php echo($_lang['INDEX_PLAN_ID']); ?>
@@ -378,7 +364,7 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 
-    <?php if (is_output_format_twig($argv)) { ?>
+    <?php if (is_output_format_full_twig($argv)) { ?>
         {% include 'home/titles/planTitle.html.twig' %}
     <?php } else { ?>
         <div class="js_plan_title_container plan-title display_none">
@@ -391,7 +377,7 @@ var PHASE_ID_TAG = 'phase';
     <?php } ?>
 
 
-    <?php if (is_output_format_twig($argv)) { ?>
+    <?php if (is_output_format_full_twig($argv)) { ?>
         {% include 'home/activities/activities.html.twig' %}
     <?php } else { ?>
         <div class="js_plan">
@@ -467,7 +453,7 @@ var PHASE_ID_TAG = 'phase';
     <div class="team">
         <div class="content">
             <div class="inner">
-            <?php if (!$isEnglish) { ?>
+            <?php if ($lang != 'en') { ?>
                 <?php for($i=0; $i < count($_lang['INDEX_TEAM_TRANSLATOR_LINK']); $i++) { ?>
                 <div class="team-member">
                     <a href="<?php echo($_lang['INDEX_TEAM_TRANSLATOR_LINK'][$i]); ?>">

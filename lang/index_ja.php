@@ -19,7 +19,7 @@ $_lang['INDEX_NAVI_ABOUT'] = 'Put Japanese: <a href="http://finding-marbles.com/
 $_lang['INDEX_NAVI_PRINT'] = 'Put Japanese: <a href="/en/print">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = 'Put Japanese: <a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-if (is_output_format_twig($argv)) {
+if (is_output_format_full_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
 } else {
     $_lang['INDEX_ABOUT'] = 'Retromatは現在、<span class="js_footer_no_of_activities"></span>のアクティビティがあり、<span class="js_footer_no_of_combinations"></span>通り(<span class="js_footer_no_of_combinations_formula"></span>)の組み合わせがあります。アクティビティは定期的に追加されます。'; // Do you know a great activity?

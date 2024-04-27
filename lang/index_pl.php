@@ -16,7 +16,7 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Wersja drukowana</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Dodaj pomysł na aktywość</a>';
 
-if (is_output_format_twig($argv)) {
+if (is_output_format_full_twig($argv)) {
     $_lang['INDEX_ABOUT'] = "{% include 'home/footer/footer.html.twig' %}";
 } else {
     $_lang['INDEX_ABOUT'] = 'Retromat zawiera <span class="js_footer_no_of_activities"></span> pomysłów, umożliwiających <span class="js_footer_no_of_combinations"></span> unikalnych kombinacji (<span class="js_footer_no_of_combinations_formula"></span>) i wciąż dodajemy nowe.'; // Masz własny pomysł albo znasz ciekawą grę na Retrospektywę?
