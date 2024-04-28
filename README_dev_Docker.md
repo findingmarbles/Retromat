@@ -27,9 +27,13 @@ to login as root.
 In the Docker App, click "Open in Browser" on the PHPMyAdmin container or directly go to:
 http://localhost:8181/
 
-Now you can e.g. obtain a DB dump from the live system ...
+Now you can e.g. create a DB dump on the live system for download ...
 ```
 [retro2@cordelia ~]$ /usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat > retro2_retromat.sql
+```
+... OR directly get the output via ssh and write to local disk ...
+```
+[local ~]$ ssh retro2@cordelia.uberspace.de "/usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat" > retro2_retromat.sql
 ```
 ... and import it via PHPMyAdmin:
 
