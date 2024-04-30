@@ -282,11 +282,21 @@ var PHASE_ID_TAG = 'phase';
     </div>
     
 
-    <!-- Miroboard -->
-    <div class="promo">
-        <div class="content">
-            <div class="promo-inner">
-
+<?php if ($lang == 'de') { ?>
+                <div class="promo-image">
+                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" target="_blank">
+                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
+                    </a>
+                </div>
+                    
+                <div class="promo-text inner">
+                    Macht ihr eure Retros in <b>Miro</b>? Gestalte schönere Boards in kürzerer Zeit mit dem <b>Retromat Miroboard Mega Template!</b>
+                    <br><br>
+                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
+                       Mega Template ansehen
+                    </a>
+                </div>
+<?php } else { ?>
                 <div class="promo-image">
                     <a href="/blog/retromat-miroboard-mega-template/" target="_blank">
                         <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
@@ -299,7 +309,8 @@ var PHASE_ID_TAG = 'phase';
                     <a href="/blog/retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
                        Check out the Mega Template
                     </a>
-                </div>
+                </div>   
+<?php } ?>
             </div>
         </div>
     </div>
