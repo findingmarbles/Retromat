@@ -281,7 +281,10 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
     
-
+    <!-- Promo Miroboard -->
+    <div class="promo">
+        <div class="content">
+            <div class="promo-inner">
 <?php if ($lang == 'de') { ?>
                 <div class="promo-image">
                     <a href="/blog/deutsches-retromat-miroboard-mega-template/" target="_blank">
