@@ -46,11 +46,17 @@ EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Mitentwickelt von ';
 $_lang['INDEX_TEAM_TIMON_TEXT'] = <<<EOT
-	Timon gibt Scrum Trainings. Als Mentor unterstützt er <a href="/en/team/timon">advanced Scrum Master</a> und <a href="/en/team/timon">advanced Product Owner</a>.
-    Mensch, Vater, Nerd, Contact Improv &amp; Tangotänzer.
-    Retromat Nutzer seit 2013, Mitentwickler seit 2016.  
-    Du kannst ihm <a href="mailto:retromat@fiddike.com">schreiben</a> oder ihm <a href="https://twitter.com/TimonFiddike">auf Twitter folgen</a>.
-    Photo © Ina Abraham.
+            Timon gibt Trainings zur <a href="/en/team/timon">Scrum Master Zertifizierung</a> und <a href="/en/team/timon">Product Owner Zertifizierung</a>. 
+            Als Mentor unterstützt er <a href="/en/team/timon">advanced Scrum Master</a> und <a href="/en/team/timon">advanced Product Owner</a>. 
+            Mensch, Vater, <a href="https://www.researchgate.net/profile/Timon-Fiddike">Nerd</a>, Contact Improv &amp; Tangotänzer. 
+            Retromat Nutzer seit 2013, <a href="https://github.com/fiddike">Mitentwickler</a> seit 2016.  
+            Verbinde Dich mit ihm auf 
+            <a href="https://de.linkedin.com/in/fiddike">LinkedIn</a>,
+            <a href="https://bsky.app/profile/fiddike.bsky.social">BlueSky</a>,
+            <a href="https://mstdn.social/@fiddike" title="">Mastodon</a>,
+            <a href="https://www.facebook.com/timon.fiddike/">FB</a>,
+            <a href="https://www.instagram.com/timon.fiddike/">Insta</a>,
+            <a href="https://www.threads.net/@timon.fiddike">Threads</a>.
 EOT;
 
 $_lang['PRINT_HEADER'] = '(retromat.org)';
