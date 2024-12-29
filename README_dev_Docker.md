@@ -43,7 +43,7 @@ Now you can e.g. create a DB dump on the live system for download ...
 ... and import it via PHPMyAdmin:
 
 Locally you need to use the same DB name as specified in 
-.env or .env local, at this point the author prefers to create (and import into)
+.env or .env.local, at this point the author prefers to create (and import into)
 retromat-local-prod to keep it separate from the local DB used for testing.
 
 In the Docker App, click CLI on the mariadb container for command live access to the database.
