@@ -1,10 +1,7 @@
-[![Build Status](https://travis-ci.org/findingmarbles/Retromat.svg?branch=master)](https://travis-ci.org/findingmarbles/Retromat)
-
 * Clone git repo
 ```
 git clone git clone https://github.com/findingmarbles/Retromat.git
 ```
-
 
 # Docker Compose
 Start session:
