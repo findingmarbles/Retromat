@@ -8,14 +8,20 @@ use App\Tests\AbstractTestCase;
 use App\Tests\Controller\DataFixtures\LoadUsers;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser as Client;
 use Symfony\Component\HttpFoundation\Response;
-use App\Entity\User;
+use App\Repository\UserRepository;
 
 class TeamActivityControllerTest extends AbstractTestCase
 {
     private const SELECTOR_BUTTON_PRIMARY = 'Save';
 
+    private Client $client;
+
     public function setUp(): void
     {
+        // https://symfony.com/doc/5.x/testing.html#logging-in-users-authentication
+        // need to create client before loading fixtures,
+        // because otherwise it runs into an error trying to boot a kernel when this has already been done before
+        $this->client = static::createClient();
         $this->loadFixtures([]);
     }
 
@@ -205,7 +211,6 @@ class TeamActivityControllerTest extends AbstractTestCase
      */
     private function makeClientLoginAdmin(): Client
     {
-        $client = $this->makeClient();
         $referenceRepository = $this->loadFixtures(
             [
                 'App\Tests\Controller\DataFixtures\LoadUsers'
@@ -213,12 +218,15 @@ class TeamActivityControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginClient($client, $referenceRepository->getReference(LoadUsers::USERNAME, User::class), 'main');
+            // https://symfony.com/doc/5.x/testing.html#logging-in-users-authentication
+            $userRepository = static::getContainer()->get(UserRepository::class);
+            $testUser = $userRepository->findOneByUsername(LoadUsers::USERNAME);
+            $this->client->loginUser($testUser);
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
 
-        return $client;
+        return $this->client;
     }
 
     /**
@@ -226,7 +234,6 @@ class TeamActivityControllerTest extends AbstractTestCase
      */
     private function makeClientLoginAdminLoadFixtures(): Client
     {
-        $client = $this->makeClient();
         $referenceRepository = $this->loadFixtures(
             [
                 'App\Tests\Controller\DataFixtures\LoadActivityData',
@@ -235,11 +242,14 @@ class TeamActivityControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginClient($client, $referenceRepository->getReference(LoadUsers::USERNAME, User::class), 'main');
+            // https://symfony.com/doc/5.x/testing.html#logging-in-users-authentication
+            $userRepository = static::getContainer()->get(UserRepository::class);
+            $testUser = $userRepository->findOneByUsername(LoadUsers::USERNAME);
+            $this->client->loginUser($testUser);
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
 
-        return $client;
+        return $this->client;
     }
 }
