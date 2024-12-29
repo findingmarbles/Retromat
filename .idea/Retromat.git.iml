@@ -5,7 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/backend/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/backend/var" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/behat/transliterator" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/bin/.phpunit" />
@@ -64,7 +63,6 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php80" />
-      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/expression-language" />
@@ -76,6 +74,16 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/hackzilla/password-generator" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/clue/ndjson-react" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/fidry/cpu-core-counter" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/child-process" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/stream" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

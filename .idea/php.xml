@@ -81,7 +81,6 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/backend/vendor/theseer/tokenizer" />
@@ -193,6 +192,16 @@
       <path value="$PROJECT_DIR$/backend/vendor/friendsofphp/php-cs-fixer" />
       <path value="$PROJECT_DIR$/backend/vendor/hackzilla/password-generator" />
       <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/backend/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/backend/vendor/evenement/evenement" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
