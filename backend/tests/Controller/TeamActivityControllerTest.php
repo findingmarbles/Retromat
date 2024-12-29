@@ -8,6 +8,7 @@ use App\Tests\AbstractTestCase;
 use App\Tests\Controller\DataFixtures\LoadUsers;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser as Client;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\User;
 
 class TeamActivityControllerTest extends AbstractTestCase
 {
@@ -212,7 +213,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginClient($client, $referenceRepository->getReferences()[LoadUsers::USERNAME], 'main');
+            $this->loginClient($client, $referenceRepository->getReference(LoadUsers::USERNAME, User::class), 'main');
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
@@ -234,7 +235,7 @@ class TeamActivityControllerTest extends AbstractTestCase
         )->getReferenceRepository();
 
         try {
-            $this->loginClient($client, $referenceRepository->getReferences()[LoadUsers::USERNAME], 'main');
+            $this->loginClient($client, $referenceRepository->getReference(LoadUsers::USERNAME, User::class), 'main');
         } catch (\Exception $e) {
             $this->fail($e->getMessage());
         }
