@@ -1,9 +1,17 @@
+# Install Docker + Docker-Compose
+* Install Docker https://docs.docker.com/desktop/setup/install/mac-install/
+* Symlink docker-compose https://docs.docker.com/compose/install/
+```
+sudo rm /usr/local/bin/docker-compose
+sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
+```
+
 * Clone git repo
 ```
 git clone git clone https://github.com/findingmarbles/Retromat.git
 ```
 
-# Docker Compose
+# Session start / stop 
 Start session:
 ```
 cd Retromat
