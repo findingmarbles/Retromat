@@ -21,7 +21,7 @@ class LoadActivityData extends Fixture implements ContainerAwareInterface
         $this->container = $container;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $this->container->get('App\Model\Importer\Activity\ActivityImporter')->import();
     }

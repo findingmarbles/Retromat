@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadActivityDataForTestFindAllActivitiesForPhasesDe extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $activitiesDeOnly[] = (new Activity())->setRetromatId(1)->setPhase((0));
         $activitiesDeOnly[] = (new Activity())->setRetromatId(2)->setPhase((1));
