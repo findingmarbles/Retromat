@@ -26,9 +26,9 @@ git reset --hard
 ```
 Maybe delete changed files manually, repeat steps named above.
 
-(re-) generate templates from index.php
+(re-) generate templates from index.php (the script is at repo toplevel, too) 
 ```
-backend/bin/travis-ci/generate-templates-from-retromat-v1.sh
+./index_deploy-from-php-to-twig.sh
 ```
 On a dev instance you can usually skip this step:
 But do it if something is weird:
