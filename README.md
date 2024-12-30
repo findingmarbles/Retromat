@@ -18,6 +18,9 @@ etc. please get in touch:
 * corinna@retromat.org
 * @corinnaBaldauf on Twitter
 
+[Timon Fiddike](https://fiddike.com/) helps with software development and hosting, so if anything about Retromat looks like it's broken from a technical perspective, let me know. Also, feel free to connect when things are working just fine 8-)
+I'm less active on the former birdsite nowadays, let's connect via [LinkedIn](https://de.linkedin.com/in/fiddike), [BlueSky](https://bsky.app/profile/fiddike.bsky.social), [Mastodon](https://mstdn.social/@fiddike), [FB](https://www.facebook.com/timon.fiddike/), [Insta](https://www.instagram.com/timon.fiddike/), [Threads](https://www.threads.net/@timon.fiddike).
+
 # Contribute
 
 You'd like to get involved with Retromat? Great!
@@ -49,7 +52,7 @@ Or "open" your own language.
 
 ### Translation How To
 
-Timon has build a translation frontend and made it much easier to help translate \o/
+[Timon Fiddike](https://agile.coach/de/team/timon-fiddike/) has build a translation frontend and made it much easier to help translate \o/
 
 If you'd like an account, drop me an email (see above for contact details)
 
