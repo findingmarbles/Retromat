@@ -378,23 +378,7 @@ var PHASE_ID_TAG = 'phase';
         </div>
     <?php } ?>
 
-
-    <?php if (is_output_format_full_twig($argv)) { ?>
-        {% include 'home/activities/activities.html.twig' %}
-    <?php } else { ?>
-        <div class="js_plan">
-            <div class="bg1">
-                <div class="content">
-                    <div class="inner">
-                        <?php echo($_lang['INDEX_LOADING']); ?>
-                        <noscript>
-                            <?php echo($_lang['ERROR_NO_SCRIPT']); ?>
-                        </noscript>
-                    </div>
-                </div>
-            </div>
-        </div><!-- END plan -->
-    <?php } ?>
+    {% include 'home/activities/activities.html.twig' %}
 
     <div class="js_activity_block_template js_activity_block display_none">
         <div class="content">

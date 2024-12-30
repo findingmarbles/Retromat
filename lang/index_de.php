@@ -7,7 +7,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Anzeigen';
 $_lang['INDEX_RANDOM_RETRO'] = 'Neuer zufälliger Ablauf';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Durchsuche Aktivitäten';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle Aktivit&auml;ten f&uuml;r';
-$_lang['INDEX_LOADING'] = '... LADE AKTIVITÄTEN ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/was-ist-eine-agile-retrospektive/">Was ist eine Retrospektive?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">&Uuml;ber den Retromat</a>';
@@ -71,7 +70,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Foto ansehen';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Fotos ansehen';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Foto von ';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat benutzt viel JavaScript und funktioniert ohne nicht richtig. Bitte schalte JavaScript in Deinem Browser ein. Danke!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Tut mir leid , ich kann keine Aktivit&auml;t mit dieser ID finden: ';
 
 $_lang['POPUP_CLOSE'] = 'Schlie&szlig;en';

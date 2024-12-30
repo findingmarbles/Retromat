@@ -4,8 +4,25 @@
             {% include 'home/activities/homeRandomPlans_en.html.twig' %}
             {% include 'home/activities/homeRandomPlans_de.html.twig' %}
             {% include 'home/activities/homeRandomPlans_ru.html.twig' %}
+        {% elseif 'de' == app.request.locale %}
+            {% include 'home/activities/homeRandomPlans_de.html.twig' %}
+        {% elseif 'ru' == app.request.locale %}
+            {% include 'home/activities/homeRandomPlans_ru.html.twig' %}
         {% else %}
-            {% include 'home/activities/homeRandomPlans_'~app.request.locale~'.html.twig' %}
+            <div class="js_plan">
+                <div class="bg1">
+                    <div class="content">
+                        <div class="inner">
+                            Loading activities ...
+                            <noscript>
+                                <br /><br />... JavaScript seems to be disabled in your browser!
+                                <br /><br />Retromat relies heavily on JavaScript and doesn't work without it.
+                                <br /><br />Please enable JavaScript in your browser. Thanks!
+                            </noscript>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- END plan -->
         {% endif %}
     {% else %}
         {% for activity in activities %}

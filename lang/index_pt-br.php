@@ -8,7 +8,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Show!';
 $_lang['INDEX_RANDOM_RETRO'] = 'New random retrospective plan';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Search activities for ID or  keyword';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
-$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
@@ -58,8 +57,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'View photo';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'View photos';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Photo by ';
 
-
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, can\'t find activity with ID';
 
 $_lang['POPUP_CLOSE'] = 'Close';

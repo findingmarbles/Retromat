@@ -8,7 +8,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Mostrar';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nuevo plan de retrospectiva aleatorio';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Buscar actividades por ID o palabra clave';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Todas las actividades para';
-$_lang['INDEX_LOADING'] = '... LOADING ACTIVITIES ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/10/que-es-una-retrospectiva.html">¿Qué es una retrospectiva?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/09/retr-o-mat-en-espanol.html">Sobre Retromat</a>';
@@ -64,7 +63,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Ver foto';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Ver fotos';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Foto por ';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat se apoya fuertemente sobre Javascript y no puede funcionar sin el. Por favor habilitalo en tu navegador. &iexcl;Gracias!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Disculpa, no se encuentra actividad con el ID';
 
 $_lang['POPUP_CLOSE'] = 'Cerrar';

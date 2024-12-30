@@ -8,7 +8,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Toon!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Nieuw random retrospective plan';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Zoek activities per ID of steekwoord';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Alle activiteiten voor';
-$_lang['INDEX_LOADING'] = '... ACTIVITEITEN WORDEN GELADEN ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">What\'s a retrospective?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">About Retromat</a>';
@@ -60,7 +59,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Bekijk foto';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Bekijke foto\'s';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Foto door ';
 
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat werkt niet zonder JavaScript. Enable alsjeblieft JavaScript in je browser als je de site wilt uitproberen.';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, er is geen activiteit met ID';
 
 $_lang['POPUP_CLOSE'] = 'Sluiten';

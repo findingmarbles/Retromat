@@ -9,7 +9,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Show!';
 $_lang['INDEX_RANDOM_RETRO'] = 'Wylosuj kolejny plan na Retro';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Szukaj po numerze ID lub słowie kluczowym';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'All activities for';
-$_lang['INDEX_LOADING'] = '... WCZYTYWANIE ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Czy jest Retrospektywa?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">O Retromacie</a>';
@@ -62,8 +61,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Pokaż zdjęcie';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Pokaż zdjęcia';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Autor zdjęcia ';
 
-
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat relies heavily on JavaScript and doesn\'t work without it. Please enable JavaScript in your browser. Thanks!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Przepraszamy, nie możemy znaleźć aktywności o takim numerze ID.';
 
 $_lang['POPUP_CLOSE'] = 'Zamknij';

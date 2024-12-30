@@ -9,7 +9,6 @@ $_lang['INDEX_BUTTON_SHOW'] = '显示！';
 $_lang['INDEX_RANDOM_RETRO'] = '新的随机回顾方案';
 $_lang['INDEX_SEARCH_KEYWORD'] = '按关键字或ID查找活动';
 $_lang['INDEX_ALL_ACTIVITIES'] = '所有活动 其归属于';
-$_lang['INDEX_LOADING'] = '... 加载活动 ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">回顾是什么?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">关于Retromat</a>';
@@ -59,8 +58,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = '查看图片';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = '查看图片';
 $_lang['ACTIVITY_PHOTO_BY'] = '图片来自 ';
 
-
-$_lang['ERROR_NO_SCRIPT'] = 'Retromat需要JavaScript才能运行。请在浏览器中启用JavaScript。 谢谢！';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Sorry, 找不到该ID对应的活动';
 
 $_lang['POPUP_CLOSE'] = '关闭';

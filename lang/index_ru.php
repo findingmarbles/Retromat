@@ -8,7 +8,6 @@ $_lang['INDEX_BUTTON_SHOW'] = 'Показать';
 $_lang['INDEX_RANDOM_RETRO'] = 'Новый случайную упражнение';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'Поиск в упражнениях или ID';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'Все упражнения для';
-$_lang['INDEX_LOADING'] = '... ЗАГРУЖАЮ УПРАЖНЕНИЕ ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">Что такое ретроспектива?</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">О Ретромате</a>';
@@ -77,8 +76,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = 'Посмотреть фотографию
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = 'Посмотреть фотографии';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Фото от ';
 
-
-$_lang['ERROR_NO_SCRIPT'] = 'Ретромат работает с Javascript. Пожалуйста активируйте в вашем браузере. Спасибо!';
 $_lang['ERROR_MISSING_ACTIVITY'] = 'Извиняюсь, не могу найти такой активности';
 
 $_lang['POPUP_CLOSE'] = 'Закрыть';

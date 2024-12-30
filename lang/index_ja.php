@@ -7,7 +7,6 @@ $_lang['INDEX_BUTTON_SHOW'] = '表示！';
 $_lang['INDEX_RANDOM_RETRO'] = 'ランダムなプランを生成';
 $_lang['INDEX_SEARCH_KEYWORD'] = 'IDまたはキーワードでアクティビティを検索';
 $_lang['INDEX_ALL_ACTIVITIES'] = 'すべてのアクティビティ: フェーズ';
-$_lang['INDEX_LOADING'] = '... アクティビティを読み込んでいます ...';
 
 $_lang['INDEX_NAVI_WHAT_IS_RETRO'] = '<a href="http://finding-marbles.com/retr-o-mat/what-is-a-retrospective/">レトロスペクティブとは？</a>';
 $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/about-retr-o-mat/">Retromatについて</a>';
@@ -60,8 +59,6 @@ $_lang['ACTIVITY_PHOTO_VIEW_PHOTO'] = '写真を表示';
 $_lang['ACTIVITY_PHOTO_VIEW_PHOTOS'] = '写真を表示';
 $_lang['ACTIVITY_PHOTO_BY'] = 'Photo by ';
 
-
-$_lang['ERROR_NO_SCRIPT'] = 'RetromatはJavaScriptを使用しており、ご利用いただくためにはJavaScriptを有効にしていただく必要がございます。';
 $_lang['ERROR_MISSING_ACTIVITY'] = '指定のアクティビティは見つかりませんでした。ID';
 
 $_lang['POPUP_CLOSE'] = '閉じる';
