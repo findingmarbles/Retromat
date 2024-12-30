@@ -378,7 +378,7 @@ class HomeControllerTest extends AbstractTestCase
         $crawler = $client->request('GET', '/en/');
 
         $this->assertEquals(
-            'Is loading taking too long? Here are some random plans:',
+            'Here are some random plans:',
             $crawler->filter('.js_fill_summary')->text()
         );
     }
