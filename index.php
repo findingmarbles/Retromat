@@ -326,15 +326,8 @@ var PHASE_ID_TAG = 'phase';
                     <div class="print-header font-serif">
                         Retromat.org – by Corinna Baldauf
                     </div>
-
-                    <?php if (is_output_format_full_twig($argv)) { ?>
-                        {% include 'home/header/idDisplay.html.twig' %}
-                    <?php } else { ?>
-                        <?php echo($_lang['INDEX_PLAN_ID']); ?>
-                        <form name="js_ids-display__form" class="ids-display__form" action="JavaScript:publish_plan($('.ids-display__input').val());">
-                            <input type="text" size="18" name="js_display" class="ids-display__input" value="">
-                        </form>
-                    <?php } ?>
+                    <?php echo($_lang['INDEX_PLAN_ID']); ?>
+                    {% include 'home/header/idDisplay.html.twig' %}
                 </div>
                 
                 <div class="plan-header-inner-right">
