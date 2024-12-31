@@ -366,17 +366,7 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
 
-    <?php if (is_output_format_full_twig($argv)) { ?>
-        {% include 'home/titles/planTitle.html.twig' %}
-    <?php } else { ?>
-        <div class="js_plan_title_container plan-title display_none">
-            <div class="content">
-                <div class="inner">
-                   <span class="js_fill_plan_title">Replaced by JS</span>
-               </div>
-            </div>
-        </div>
-    <?php } ?>
+    {% include 'home/titles/planTitle.html.twig' %}
 
     {% include 'home/activities/activities.html.twig' %}
 
