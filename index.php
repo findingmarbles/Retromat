@@ -41,7 +41,6 @@ function get_url_to_index() {
 <!DOCTYPE html>
 <html lang="<?php echo $lang ?>">
 <head>
-<?php if (is_output_format_full_twig($argv)) { ?>
     {% if title is not empty %}
         <title>{{ title|raw }}</title>
     {% else %}
@@ -50,9 +49,6 @@ function get_url_to_index() {
     {% if description is not empty %}
         <meta name="description" content="{{ description|raw }}">
     {% endif %}
-<?php } else { ?>
-    <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
-<?php } ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
