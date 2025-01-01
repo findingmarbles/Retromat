@@ -359,19 +359,6 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertStringContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
     }
 
-    public function testShowNumbersInFooter()
-    {
-        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
-        $client = $this->getKernelBrowser();
-
-        $crawler = $client->request('GET', '/en/?id=3-87-113-13-16');
-
-        $footer = $crawler->filter('.about')->filter('.content');
-        $this->assertEquals('127', $footer->filter('.js_footer_no_of_activities')->text());
-        $this->assertEquals('8349005', $footer->filter('.js_footer_no_of_combinations')->text());
-        $this->assertEquals('25x30x22x22x23+5', $footer->filter('.js_footer_no_of_combinations_formula')->text());
-    }
-
     public function testShowRandomPlanLinksOnHome()
     {
         $client = $this->getKernelBrowser();

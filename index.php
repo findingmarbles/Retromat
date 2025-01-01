@@ -1,43 +1,12 @@
 <?php
-if (empty($argv[1]) or empty($argv[2]) or 'html' === $argv[2]) {
-    exit(
-        PHP_EOL . $argv[0] . ' needs to be executed with specific parameters from index_deploy-from-php-to-twig.sh to produce TWIG templates which then produce HTML.' .
-        PHP_EOL . 'In development, you may run "sh index_deploy-from-php-to-twig.sh" manually.' .
-        PHP_EOL . 'On our live space it is triggered from: backend/bin/cordelia/deploy.sh' . PHP_EOL . PHP_EOL
-    );
-}
-$lang = $argv[1];
+if (empty($lang = $argv[1])) exit(
+    PHP_EOL . $argv[0] . ' needs to be executed with specific parameters from index_deploy-from-php-to-twig.sh to produce TWIG templates which then produce HTML.' .
+    PHP_EOL . 'In development, you may run "sh index_deploy-from-php-to-twig.sh" manually.' .
+    PHP_EOL . 'On our live space it is triggered from: backend/bin/cordelia/deploy.sh' . PHP_EOL . PHP_EOL
+);
 
-function is_output_format_full_twig($argv)
-{
-    return ('fullTwig' === $argv[2]);
-}
-
-require(get_language_file_path($lang));
-
-// PHP FUNCTIONS
-
-function get_language_file_path($lang) {
-    $res = 'lang/index_' . $lang . '.php';
-    return $res;
-}
-
-function print_if_selected($candidate, $chosen) {
-    $res = '';
-    if ($chosen == $candidate) {
-        $res = 'selected';
-    }
-    return $res;
-}
-
-function get_url_to_index() {
-    global $lang;
-
-    return '/' . $lang . '/';
-}
-
+require 'lang/index_' . $lang . '.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="<?php echo $lang ?>">
 <head>
@@ -236,7 +205,7 @@ var PHASE_ID_TAG = 'phase';
     <div class="header">
         <div class="header__leftblock">
             <div class="header__logo">
-                <a href="<?php echo(get_url_to_index()) ?>" class="header__logo">
+                <a href="<?php echo '/' . $lang . '/' ?>" class="header__logo">
                     <img src="/static/images/retromat-logo.svg"
                      alt="Retromat"
                      title="Retromat">

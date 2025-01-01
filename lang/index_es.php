@@ -14,8 +14,7 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://thomaswallet.blogspot.com.ar/2014/
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat contiene <span class="js_footer_no_of_activities"></span> actividades, permitiendo generar <span class="js_footer_no_of_combinations"></span> combinaciones (<span class="js_footer_no_of_combinations_formula"></span>) y estamos continuamente agregando m&aacute;s.'; // &iquest;Conoces una buena actividad?
-$_lang['INDEX_ABOUT_SUGGEST'] = '&iexcl;Proponla';
+$_lang['INDEX_ABOUT'] = 'Retromat contiene <span class="js_footer_no_of_activities"></span> actividades, permitiendo generar <span class="js_footer_no_of_combinations"></span> combinaciones (<span class="js_footer_no_of_combinations_formula"></span>) y estamos continuamente agregando m&aacute;s.';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traducido por ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Thomas Wallet';

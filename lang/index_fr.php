@@ -14,8 +14,7 @@ $_lang['INDEX_NAVI_ABOUT'] = '<a href="http://finding-marbles.com/retr-o-mat/abo
 $_lang['INDEX_NAVI_PRINT'] = '<a href="/en/print">Print Edition</a>';
 $_lang['INDEX_NAVI_ADD_ACTIVITY'] = '<a href="https://docs.google.com/a/finding-marbles.com/spreadsheet/viewform?formkey=dEZZV1hPYWVZUDc2MFNsUEVRdXpMNWc6MQ">Add activity</a>';
 
-$_lang['INDEX_ABOUT'] = 'Retromat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus.'; // Vous connaissez une activité géniale?
-$_lang['INDEX_ABOUT_SUGGEST'] = 'Suggérez la ';
+$_lang['INDEX_ABOUT'] = 'Retromat contient <span class="js_footer_no_of_activities"></span> activités, permettant <span class="js_footer_no_of_combinations"></span> combinaisons (<span class="js_footer_no_of_combinations_formula"></span>) et nous en ajoutons sans cesse plus.';
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Traduction: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Pierre Martin';
