@@ -1,3 +1,11 @@
+Deploy to live instance on Uberspace
+========
+```
+# ssh <SpaceNameLive>@c....uberspace.de
+cd /var/www/virtual/ ... /retromat.git/
+sh backend/bin/cordelia/deploy.sh
+```
+
 Using an existing dev instance on Uberspace
 ========
 Let's assume you don't need to make changes to backend or activities right now.
