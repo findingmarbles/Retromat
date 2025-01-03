@@ -8,7 +8,7 @@ if (empty($lang = $argv[1])) exit(
 require 'lang/index_' . $lang . '.php';
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $lang ?>">
+<html lang="{{ app.request.locale }}">
 <head>
     {% if title is not empty %}
         <title>{{ title|raw }}</title>
@@ -50,7 +50,7 @@ var INVERTED_CHANCE_OF_SOMETHING_DIFFERENT = 25; // Probability to show "differe
 var PHASE_ID_TAG = 'phase';
 </script>
 
-<script src="/static/lang/phase_titles_<?php echo $lang ?>.js"></script>
+<script src="/static/lang/phase_titles_{{ app.request.locale }}.js"></script>
 <script src="/static/lang/photos.js"></script>
 <script src="/static/functions.js"></script>
 
@@ -205,7 +205,7 @@ var PHASE_ID_TAG = 'phase';
     <div class="header">
         <div class="header__leftblock">
             <div class="header__logo">
-                <a href="<?php echo '/' . $lang . '/' ?>" class="header__logo">
+                <a href="/{{ app.request.locale }}/" class="header__logo">
                     <img src="/static/images/retromat-logo.svg"
                      alt="Retromat"
                      title="Retromat">
