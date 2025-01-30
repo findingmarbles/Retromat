@@ -33,8 +33,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     W końcu zdecydowała się, że zbuduje je sama z nadzieją, że może być też przydatne dla innych.
     Masz pytania, sugestie, zachęty?
     Napisz <a href="mailto:corinna@retromat.org">wiadomość</a> lub
-    <a href="https://twitter.com/corinnabaldauf">śledź na Twitterze</a>.
-    Jeżeli podoba ci się Retromat, możesz także polubbić    <a href="http://finding-marbles.com">Blog Corinny</a> oraz jej materiały na <a href="http://wall-skills.com">Wall-Skills.com</a>.  
+    <a href="https://nrw.social/@CorinnaBaldauf">śledź na Mastodonze</a>.
+    Jeżeli podoba ci się Retromat, możesz także polubbić    <a href="https://corinnabaldauf.de/blog/">Blog Corinny</a> oraz jej materiały na <a href="http://wall-skills.com">Wall-Skills.com</a>.  
 EOT;
 
 
