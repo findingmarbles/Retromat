@@ -39,7 +39,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
 	Letztlich hat sie ihn einfach selbst gebaut in der Hoffnung, dass er auch anderen hilft.
     Hast Du Fragen, Vorschl&auml;ge oder Aufmunterungen für sie?
 	Du kannst ihr <a href="mailto:corinna@retromat.org">schreiben</a> oder
-    ihr <a href="https://twitter.com/corinnabaldauf">auf Twitter folgen</a>.
+    ihr <a href="https://nrw.social/@CorinnaBaldauf">auf Mastodon folgen</a>.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Mitentwickelt von ';
