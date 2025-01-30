@@ -30,8 +30,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Eventually she just built it herself in the hope that it would be useful to others, too.
     Any questions, suggestions or encouragement?
     You can <a href="mailto:corinna@retromat.org">email her</a> or
-    <a href="https://twitter.com/corinnabaldauf">follow her on Twitter</a>.
-    If you like Retromat you might also like <a href="http://finding-marbles.com">Corinna's blog</a> and her <a href="http://wall-skills.com">summaries on Wall-Skills.com</a>.  
+    <a href="https://nrw.social/@CorinnaBaldauf">follow her on Mastodon</a>.
+    If you like Retromat you might also like <a href="https://corinnabaldauf.de/blog/">Corinna's blog</a> and her <a href="http://wall-skills.com">summaries on Wall-Skills.com</a>.  
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
