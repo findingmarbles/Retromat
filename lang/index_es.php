@@ -41,7 +41,7 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
 Corinna ech&oacute; en falta algo como Retromat en sus a&ntilde;os de Scrummaster.
 Finalmente lo desarroll&oacute; ella misma, esperando que tambi&eacute;n sea de utilidad para otros.
 &iquest;Preguntas, sugerencias o aliento?
-Puede <a href="mailto:corinna@retromat.org">escribirle</a> o <a href="https://twitter.com/corinnabaldauf">seguirla en Twitter</a>.
+Puede <a href="mailto:corinna@retromat.org">escribirle</a> o <a href="https://nrw.social/@CorinnaBaldauf">seguirla en Mastodon</a>.
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
