@@ -49,8 +49,8 @@ $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
 	В конце концов она сама построила его в надежде на то, что он и другим поможет.
     У вас есть вопросы, предложения или тёплые слова? 
     <a href="mailto:corinna@retromat.org">Пишите ей</a> или
-    <a href="https://twitter.com/corinnabaldauf">читайте её Twitter</a>.
-    Если вам нравится Ретромат, вам может понравится <a href="http://finding-marbles.com">блог Коринны</a> и
+    <a href="https://nrw.social/@CorinnaBaldauf">читайте её Mastodon</a>.
+    Если вам нравится Ретромат, вам может понравится <a href="https://corinnabaldauf.de/blog/">блог Коринны</a> и
  	её сайт с <a href="http://wall-skills.com">обзорами и распечатками Wall-Skills.com</a>.
 EOT;
 
