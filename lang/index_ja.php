@@ -33,8 +33,8 @@ $_lang['INDEX_TEAM_CORINNA_TITLE'] = 'Created by ';
 $_lang['INDEX_TEAM_CORINNA_TEXT'] = $_lang['INDEX_MINI_TEAM'] = <<<EOT
     Corinna自身、スクラムマスターをやっていた頃にRetromatのようなものを欲していました。
     最終的には、「他の人の役に立つ」と思い、彼女自身が作り出しました。
-    ご質問、ご提案、励ましの言葉などがありましたら、<a href="mailto:corinna@retromat.org">eメール</a>、または<a href="https://twitter.com/corinnabaldauf">Twitter</a>へお願いします。
-    Retromatを気に入った方は、<a href="http://finding-marbles.com">Corinnaのブログ</a>や<a href="http://wall-skills.com">Wall-Skills.comのまとめ</a>もぜひご覧ください。
+    ご質問、ご提案、励ましの言葉などがありましたら、<a href="mailto:corinna@retromat.org">eメール</a>、または<a href="https://nrw.social/@CorinnaBaldauf">Mastodon</a>へお願いします。
+    Retromatを気に入った方は、<a href="https://corinnabaldauf.de/blog/">Corinnaのブログ</a>や<a href="http://wall-skills.com">Wall-Skills.comのまとめ</a>もぜひご覧ください。
 EOT;
 
 $_lang['INDEX_TEAM_TIMON_TITLE'] = 'Co-developed by ';
