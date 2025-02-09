@@ -214,7 +214,7 @@ var PHASE_ID_TAG = 'phase';
 
             <div class="header__navi">
                 <ul>
-                  <li><a href="/en/books">Books</a></li>
+                  <li><a href="/blog/books-products/">Books</a></li>
                   <li><a href="/blog/">Blog</a></li>
                   <li><a href="/en/membership">Supporters</a></li>
                   <li><a href="/en/about">About</a></li>
