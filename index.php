@@ -250,10 +250,10 @@ var PHASE_ID_TAG = 'phase';
     <div class="promo">
         <div class="content">
                 <div class="promo-text inner">
-                    Do you want to <b>learn how to facilitate effective retrospectives</b>? Check out our new series: 
+                    Do you want to <b>learn how to facilitate effective retrospectives</b>? Check out our new series for beginners: 
                     <br><br>
                     <a href="/blog/corinnas-guide-to-facilitating-retrospectives/" class="button-medium" style="color:white" target="_blank" rel="noopener">
-                       Go to Corinna's Guide to Facilitating Retrospectives
+                       New: Corinna's Guide to Facilitating Retrospectives
                     </a>
                 </div>   
             </div>
