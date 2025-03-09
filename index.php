@@ -246,43 +246,19 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
     
-    <!-- Promo Miroboard -->
+    <!-- Promo Guide 20250309 -->
     <div class="promo">
         <div class="content">
-            <div class="promo-inner">
-<?php if ($lang == 'de') { ?>
-                <div class="promo-image">
-                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" target="_blank">
-                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
-                    </a>
-                </div>
-                    
                 <div class="promo-text inner">
-                    Macht ihr eure Retros in <b>Miro</b>? Gestalte schönere Boards in kürzerer Zeit mit dem <b>Retromat Miroboard Mega Template!</b>
+                    Do you want to <b>learn how to facilitate effective retrospectives</b>? Check out our new series: 
                     <br><br>
-                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
-                       Mega Template ansehen
-                    </a>
-                </div>
-<?php } else { ?>
-                <div class="promo-image">
-                    <a href="/blog/retromat-miroboard-mega-template/" target="_blank">
-                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
-                    </a>
-                </div>
-                    
-                <div class="promo-text inner">
-                    Are you running your retrospectives with <b>Miro</b>? Create prettier boards faster with the giant <b>Retromat Miroboard Mega Template</b>!
-                    <br><br>
-                    <a href="/blog/retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
-                       Check out the Mega Template
+                    <a href="/blog/corinnas-guide-to-facilitating-retrospectives/" class="button-medium" style="color:white" target="_blank" rel="noopener">
+                       Go to Corinna's Guide to Facilitating Retrospectives
                     </a>
                 </div>   
-<?php } ?>
             </div>
         </div>
     </div>
-
 
     <div class="plan-header">
         <div class="content">
