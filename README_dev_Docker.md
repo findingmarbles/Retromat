@@ -89,6 +89,11 @@ On any change:
 ```
 php backend/bin/console --env=test cache:clear ; php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
 ```
+OR
+```
+cd backend
+php bin/console --env=test cache:clear ; php -d memory_limit=1000M vendor/bin/phpunit
+```
 
 Known Docker specific issues at this point:
 
