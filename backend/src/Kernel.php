@@ -15,22 +15,6 @@ class Kernel extends BaseKernel
 
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
     private const RETROMAT_CONFIG_NAME = 'retromat';
-
-    public function registerBundles(): iterable
-    {
-        $contents = require $this->getProjectDir().'/config/bundles.php';
-        foreach ($contents as $class => $envs) {
-            if ($envs[$this->environment] ?? $envs['all'] ?? false) {
-                yield new $class();
-            }
-        }
-    }
-
-    public function getProjectDir(): string
-    {
-        return \dirname(__DIR__);
-    }
-
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
         $container->addResource(new FileResource($this->getProjectDir().'/config/bundles.php'));
@@ -44,14 +28,5 @@ class Kernel extends BaseKernel
         $loader->load($confDir.'/{services}_'.$this->environment.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/'.self::RETROMAT_CONFIG_NAME.'/'.self::RETROMAT_CONFIG_NAME.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/'.self::RETROMAT_CONFIG_NAME.'/'.self::RETROMAT_CONFIG_NAME.'_'.$this->environment.self::CONFIG_EXTS, 'glob');
-    }
-
-    protected function configureRoutes(RouteCollectionBuilder $routes): void
-    {
-        $confDir = $this->getProjectDir().'/config';
-
-        $routes->import($confDir.'/{routes}/'.$this->environment.'/*'.self::CONFIG_EXTS, '/', 'glob');
-        $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
-        $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
     }
 }
