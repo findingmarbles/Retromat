@@ -45,6 +45,10 @@ Clear and warmup compiled code, templates etc. from disk
 php backend/bin/console cache:clear --no-warmup --env=prod
 php backend/bin/console cache:warmup --env=prod
 ```
+Sometimes running cache:clear is not enough. In these cases this helps:
+```
+rm -rf backend/var/cache
+```
 
 On a dev instance you can usually skip this step:
 But do it if something is weird:
@@ -141,6 +145,10 @@ cd /var/www/virtual/<SpaceNameDev>/retromat.git/backend
 bin/console cache:clear --no-warmup --env=prod
 bin/console cache:clear --no-warmup --env=dev
 redis-cli -s /home/<SpaceNameDev>/.redis/sock FLUSHALL
+```
+Sometimes running cache:clear is not enough. In these cases this helps:
+```
+rm -rf backend/var/cache
 ```
 * We allow browser caching for HTML and assets (JS, CSS), so you may need to clear your browser cache as well. Some browsers allow disabling caches while the developer tools are open.
 
