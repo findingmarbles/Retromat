@@ -119,9 +119,10 @@ parameters:
   retromat.activity.import.languages.whitelist: []
 
   retromat.activity.import.file_names:
-    en: "%kernel.project_dir%/public/static/lang/activities_en.js"
-    de: "%kernel.project_dir%/public/static/lang/activities_de.js"
-    es: "%kernel.project_dir%/public/static/lang/activities_es.js"
-    fr: "%kernel.project_dir%/public/static/lang/activities_fr.js"
-    nl: "%kernel.project_dir%/public/static/lang/activities_nl.js"
-    ru: "%kernel.project_dir%/public/static/lang/activities_ru.js"
+    en: "%kernel.project_dir%/tests/data/activities_en.js"
+    de: "%kernel.project_dir%/tests/data/activities_de.js"
+    es: "%kernel.project_dir%/tests/data/activities_es.js"
+    fr: "%kernel.project_dir%/tests/data/activities_fr.js"
+    nl: "%kernel.project_dir%/tests/data/activities_nl.js"
+    ru: "%kernel.project_dir%/tests/data/activities_ru.js"
+
