@@ -1,10 +1,9 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '16'
+        url: '%env(resolve:DATABASE_URL)%'
         use_savepoints: true
     orm:
         auto_generate_proxy_classes: true
@@ -26,6 +25,23 @@ doctrine:
         result_cache_driver:
             type: pool
             pool: doctrine.result_cache_pool
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            query_cache_driver:
+                type: pool
+                pool: doctrine.system_cache_pool
+            result_cache_driver:
+                type: pool
+                pool: doctrine.result_cache_pool
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system
 when@test:
     doctrine:
         dbal:
