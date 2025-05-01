@@ -226,16 +226,38 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
     
-    <!-- Promo Guide 20250309 -->
+    <!-- Promo eBook Bundle 20250501 -->
+ 
     <div class="promo">
         <div class="content">
-                <div class="promo-text inner">
-                    Do you want to <b>learn how to facilitate effective retrospectives</b>? Check out our new series for beginners: 
-                    <br><br>
-                    <a href="/blog/corinnas-guide-to-facilitating-retrospectives/" class="button-medium" style="color:white" target="_blank" rel="noopener">
-                       New: Corinna's Guide to Facilitating Retrospectives
+            <div class="promo-inner">
+                <div class="promo-image">
+ 
+                    <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives" target="_blank">
+ 
+                        <img src="/static/images/promo-eBook-bundle.jpg" alt="3 Books in the Retromat eBook Bundle">
+ 
                     </a>
-                </div>   
+ 
+                </div>
+                <div class="promo-text inner">
+ 
+                Are you serious about retrospectives? The
+                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
+                  target="_blank" rel="noopener">Retromat eBook Bundle</a> 
+                is here to support you from beginner to experienced facilitator</b>
+ 
+                    <br><br>
+ 
+                    <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives" class="button-medium" style="color:white" target="_blank" rel="noopener">
+ 
+                       Check Out the Retromat eBook Bundle
+ 
+                    </a>
+                    <br><br>
+                    (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
+ 
+                </div>
             </div>
         </div>
     </div>
