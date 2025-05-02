@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [[ "$USER" != "retro2" ]]; then
+  echo  >&2
+  echo "Error: This script is specific to deploying on the live host." >&2
+  echo  >&2
+  echo "For dev purposes, please proceed like this: README_dev_Uberspace.md" >&2
+  echo  >&2
+  exit 1
+fi
+
 # go to repo
 cd /var/www/virtual/retro2/retromat.git/
 
