@@ -1,4 +1,4 @@
-Deploy to live instance on Uberspace
+Deploy to LIVE instance on Uberspace
 ========
 ```
 # ssh <SpaceNameLive>@c....uberspace.de
@@ -6,13 +6,20 @@ cd /var/www/virtual/ ... /retromat.git/
 sh backend/bin/cordelia/deploy.sh
 ```
 
-Using an existing dev instance on Uberspace
+Using an existing DEV instance on Uberspace
 ========
 Let's assume you don't need to make changes to backend or activities right now.
 
 Then:
 
 To see frontend-only changes:
+
+1. Get the lastest code
+2. (re-) generate templates from index.php (the script is at repo toplevel)
+```
+./index_deploy-from-php-to-twig.sh
+```
+If anything is weird (long time since last checkout, lots of changes, ...), then work thorugh the long version of the steps below:
 
 Go to repo
 ```
@@ -34,20 +41,39 @@ git reset --hard
 ```
 Maybe delete changed files manually, repeat steps named above.
 
-(re-) generate templates from index.php (the script is at repo toplevel, too) 
+This could also help (to get out of a dangling HEAD state):
 ```
-./index_deploy-from-php-to-twig.sh
+git checkout master
 ```
-On a dev instance you can usually skip this step:
-But do it if something is weird:
-Clear and warmup compiled code, templates etc. from disk
+
+Install libraries as defined in repo:
+```
+composer install --working-dir=backend
+```
+ONLY IF composer fails, try this combo:
+```
+composer install --no-plugins --no-scripts --working-dir=backend
+composer install --working-dir=backend
+```
+ONLY IF composer still fails, try this 2x, then the combo above:
+```
+rm -rf backend/var/cache/*
+```
+
+Adapt database as specified in repo:
+```
+php backend/bin/console doctrine:migrations:migrate --no-interaction
+```
+
+Clear compiled code, templates, DB cache etc. from disk, Redis RAM, PHP RAM
+```
+rm -rf backend/var/cache
+redis-cli -s /home/retro2/.redis/sock FLUSHALL
+```
+Clear and warump disk cache
 ```
 php backend/bin/console cache:clear --no-warmup --env=prod
 php backend/bin/console cache:warmup --env=prod
-```
-Sometimes running cache:clear is not enough. In these cases this helps:
-```
-rm -rf backend/var/cache
 ```
 
 On a dev instance you can usually skip this step:
@@ -55,6 +81,11 @@ But do it if something is weird:
 Clear and warmup compiled code, templates etc. from RAM
 ```
 uberspace tools restart php
+```
+
+(re-) generate templates from index.php (the script is at repo toplevel) 
+```
+./index_deploy-from-php-to-twig.sh
 ```
 
 Everything should be totally fresh at this point.
