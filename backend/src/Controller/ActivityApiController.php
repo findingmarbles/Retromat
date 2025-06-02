@@ -48,7 +48,12 @@ final class ActivityApiController extends AbstractFOSRestController
         $activities = $this->activityRepository->findAllOrdered();
         $localizedActivities = $this->activityLocalizer->localize($activities, $request->getLocale(), true);
 
-        return $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+        $response = $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+
+        // cache for 1 day on CloudFlare edge (can be purged as needed) and 1 hour on Uberspace server
+        $response->setHeaders(['Cache-Control' => 'public, s-maxage=84600, max-age=3600']);
+
+        return $response;
     }
 
     /**
@@ -66,6 +71,11 @@ final class ActivityApiController extends AbstractFOSRestController
 
         $this->activityExpander->expandSource($activity);
 
-        return $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+        $response = $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+
+        // cache for 1 day on CloudFlare edge (can be purged as needed) and 1 hour on Uberspace server
+        $response->setHeaders(['Cache-Control' => 'public, s-maxage=84600, max-age=3600']);
+
+        return $response;
     }
 }
