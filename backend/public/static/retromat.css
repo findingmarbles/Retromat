@@ -173,7 +173,8 @@
         object-fit: cover; 
         object-position: top left; 
         width:100%; 
-        max-height:30vw
+        max-height:30vw;
+        border-bottom: white solid 5px;
     }
 
     .button-medium {
@@ -216,6 +217,7 @@
     .promo-image {
         width: 40%;
         overflow: hidden;
+        border: none;
     }
 
     .promo-image img {
