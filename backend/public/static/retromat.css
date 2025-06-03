@@ -217,13 +217,13 @@
     .promo-image {
         width: 40%;
         overflow: hidden;
-        border: none;
     }
 
     .promo-image img {
         object-fit: fill; 
         object-position: top left; 
         height:100%; 
+        border: none;
     }
 
     .promo-text {
