@@ -181,6 +181,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/runtime" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php84" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/runtime" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
