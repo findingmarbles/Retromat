@@ -19,10 +19,20 @@ Start session:
 ```
 docker-compose up -d
 ```
-## Trying out: Amazon Linux 2023
+## Amazon Linux 2023
 ```
 docker compose up -d
 ```
+
+
+@todo WIP: 
+Still need to work through the remaining installation.
+Small victory of today: All containers come up as hoped for.
+http://localhost:8080/ reponds with and error at this point,
+which was to be expected as the installation is incomplete.
+Very promising error though, http, php etc. are there,
+only not yet installed libs are missing. Yay :-D
+
 
 End session:
 ```
