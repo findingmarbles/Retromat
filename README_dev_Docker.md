@@ -1,22 +1,29 @@
 # Install Docker + Docker-Compose
+
+## macOS
 * Install Docker https://docs.docker.com/desktop/setup/install/mac-install/
 * Symlink docker-compose https://docs.docker.com/compose/install/
 ```
 sudo rm /usr/local/bin/docker-compose
 sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
 ```
-
+## any OS
 * Clone git repo
 ```
 git clone git clone https://github.com/findingmarbles/Retromat.git
 ```
 
+## macOS
 # Session start / stop 
 Start session:
 ```
-cd Retromat
 docker-compose up -d
 ```
+## Trying out: Amazon Linux 2023
+```
+docker compose up -d
+```
+
 End session:
 ```
 docker-compose stop
