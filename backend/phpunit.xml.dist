@@ -8,6 +8,10 @@
          bootstrap="tests/bootstrap.php"
          convertDeprecationsToExceptions="false"
          enforceTimeLimit="true"
+         timeoutForSmallTests="10"
+         timeoutForMediumTests="30"
+         timeoutForLargeTests="120"
+         defaultTimeLimit="10"
 >
     <php>
         <ini name="display_errors" value="1" />
@@ -15,7 +19,7 @@
         <server name="APP_ENV" value="test" force="true" />
         <server name="SHELL_VERBOSITY" value="-1" />
         <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
-        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />cd backupGlobals
     </php>
 
     <testsuites>
