@@ -1,72 +1,54 @@
-# Install Docker + Docker-Compose
+# Setup Retromat using Docker
 
-## macOS
-* Install Docker https://docs.docker.com/desktop/setup/install/mac-install/
-* Symlink docker-compose https://docs.docker.com/compose/install/
-```
-sudo rm /usr/local/bin/docker-compose
-sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
-```
-## any OS
-* Clone git repo
-```
-git clone git clone https://github.com/findingmarbles/Retromat.git
-```
+## Install Docker + Docker-Compose
 
-## macOS
-# Session start / stop 
-Start session:
-```
-docker-compose up -d
-```
-## Amazon Linux 2023
+* macOS: Install Docker Desktop (because Docker Engine is not available), this now inlcudes Docker-compose https://docs.docker.com/compose/install/
+* AL2023 (Amazon Linux 2023): Install Docker Engine (because Docker Desktop is not available) via dnf and Docker Compose from their website.
+
+## Session start 
+
 ```
 docker compose up -d
 ```
 
+## Obtain a sql dump fron the live DB.
 
-@todo WIP: 
-Still need to work through the remaining installation.
-Small victory of today: All containers come up as hoped for.
-http://localhost:8080/ reponds with and error at this point,
-which was to be expected as the installation is incomplete.
-Very promising error though, http, php etc. are there,
-only not yet installed libs are missing. Yay :-D
+Locally, outside of docker, ec2 etc. do this:
 
+[local ~]$ ssh retro2@cordelia.uberspace.de "/usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat" > retro2_retromat.sql
 
-End session:
-```
-docker-compose stop
-```
+## Insert the sql dump into the Docker DB:
 
-# Prepare Database
+## Prepare Database
+
+Open PHPMyAdmin instance running in Docker:
+
+* macOS: In the Docker Desktop App, click "Open in Browser" on the PHPMyAdmin container or directly use a browser to go to: http://localhost:8181/
+* AL2023: Set up ssh tunnelm then open http://localhost:8181/
+
 Obtain the value of MYSQL_ROOT_PASSWORD from
 ```
 /docker-compose.yml
 ```
 to login as root.
 
-In the Docker App, click "Open in Browser" on the PHPMyAdmin container or directly go to:
-http://localhost:8181/
-
-Now you can e.g. create a DB dump on the live system for download ...
-```
-[retro2@cordelia ~]$ /usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat > retro2_retromat.sql
-```
-... OR directly get the output via ssh and write to local disk ...
-```
-[local ~]$ ssh retro2@cordelia.uberspace.de "/usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat" > retro2_retromat.sql
-```
-... and import it via PHPMyAdmin:
-
-Locally you need to use the same DB name as specified in 
+Create the DB: 
+Name: You need to use the same DB name as specified in 
 .env or .env.local, at this point the author prefers to create (and import into)
 retromat-local-prod to keep it separate from the local DB used for testing.
+Collation: utf8mb4_unicode_ci
 
-In the Docker App, click CLI on the mariadb container for command live access to the database.
+Then import retro2_retromat.sql 
 
-# Install
-In the Docker App, click CLI on the retromat-app-php-fpm-1
+* macOS: In the Docker Desktop App, click CLI on the container: retromat-app-php-fpm-1
+* AL2023:
+
+```
+docker exec -it retromat-php-fpm-1 sh
+```
+
+## Install libraries
+
 ```
 cd backend
 composer install
@@ -87,7 +69,7 @@ php backend/bin/console doctrine:cache:clear-query
 php backend/bin/console doctrine:cache:clear-metadata
 ```
 
-# Run Tests
+## Run Tests
 Initially:
 Create .env.test.local (e.g. by copying .env.local) with a different DB name. 
 At this point the author prefers to create retromat-local-test
