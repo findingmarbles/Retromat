@@ -42,18 +42,21 @@ Collation: utf8mb4_unicode_ci
 
 Then import retro2_retromat.sql 
 
+## Install libraries
+
 * macOS: In the Docker Desktop App, click CLI on the container: retromat-app-php-fpm-1
 * AL2023:
 
 ```
 docker exec -it retromat-php-fpm-1 sh
-```
-
-## Install libraries
-
-```
 cd backend
 composer install
+```
+
+or short version:
+
+```
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer install"
 ```
 
 if that fails {
