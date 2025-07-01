@@ -24,12 +24,14 @@ Locally, outside of docker, ec2 etc. do this:
 Open PHPMyAdmin instance running in Docker:
 
 * macOS: In the Docker Desktop App, click "Open in Browser" on the PHPMyAdmin container or directly use a browser to go to: http://localhost:8181/
-* AL2023: Set up ssh tunnelm then open http://localhost:8181/
+* AL2023: Set up ssh tunnel, then open http://localhost:8181/
 
 Obtain the value of MYSQL_ROOT_PASSWORD from
+
 ```
 /docker-compose.yml
 ```
+
 to login as root.
 
 Create the DB: 
@@ -53,15 +55,18 @@ docker exec -it retromat-php-fpm-1 sh
 cd backend
 composer install
 ```
-(if that fails:
+
+if that fails {
 https://github.com/symfony/flex/issues/836
 https://github.com/symfony/flex/issues/890
 ```
 composer selfupdate
 composer update symfony/flex --no-plugins --no-scripts
 ```
-)
+}
+
 Add .env.local to set mysql root PW .
+
 ```
 php backend/bin/console doctrine:migrations:migrate --no-interaction
 php backend/bin/console doctrine:cache:clear-result
@@ -75,45 +80,25 @@ Create .env.test.local (e.g. by copying .env.local) with a different DB name.
 At this point the author prefers to create retromat-local-test
 
 On code change related to the DB (e.g. entities):
+
 ```
 php backend/bin/console --env=test doctrine:database:drop --force
 php backend/bin/console --env=test doctrine:database:create
 php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
+
 On changes to index.php:
+
 ```
 sh index_deploy-from-php-to-twig.sh
 ```
+
 On any change:
-```
-php backend/bin/console --env=test cache:clear ; php -d memory_limit=1000M backend/vendor/bin/phpunit -c backend
-```
-OR
-```
-cd backend
-php bin/console --env=test cache:clear ; php -d memory_limit=1000M vendor/bin/phpunit
-```
 
-Known Docker specific issues at this point:
-
-Sometimes running cache:clear is not enough. In these cases this helps:
 ```
-rm -rf backend/var/cache
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
 ```
-
-All test were green on Travis-CI, before we stopped using it.
-
-BUT:
-These failed in Docker:
-App\Tests\Controller\TeamActivityControllerTest::testCreateNewActivityUsesNextFreeRetromatIdFullDb
-App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhases
-App\Tests\Repository\ActivityRepositoryTest::testFindAllActivitiesForPhasesDe
-
-AND:
-When sleeping 1 s after loading fixtures into the DB they succeed. 
-WTF? This is on a MBP with M2 CPU and 16 GB RAM, why would it need a delay? 
-Anyway, all tests green again.
 
 # Access App via Browser
-In the Docker App, click "Open in Browser" on the retromat-httpd container or directly go to:
-http://localhost:8080/
+* macOS: In Docker Desktop, click "Open in Browser" on the retromat-httpd container or directly go to: http://localhost:8080/
+* AL2023: Set up ssh tunnel, then open http://localhost:8080/
