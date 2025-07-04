@@ -8,7 +8,9 @@ services:
   depends_on:
    - php-fpm
   ports:
-   - 8080:80
+   - ${RETROMAT_HTTPD_PORT:-8080}:80
+  env_file:
+   - docker-ports.env
   networks:
    - retromat
  php-fpm:
@@ -24,15 +26,19 @@ services:
  db:
   image: mariadb
   ports:
-   - 3306:3306
+   - ${RETROMAT_DB_PORT:-3306}:3306
   environment:
    MYSQL_ROOT_PASSWORD: PaSsWoRd
+  env_file:
+   - docker-ports.env
   networks:
    - retromat
  redis:
   image: redis
   ports:
-   - 6379:6379
+   - ${RETROMAT_REDIS_PORT:-6379}:6379
+  env_file:
+   - docker-ports.env
   networks:
    - retromat
  phpmyadmin:
@@ -40,14 +46,18 @@ services:
   links:
    - db:db
   ports:
-   - 8181:80
+   - ${RETROMAT_PHPMYADMIN_PORT:-8181}:80
+  env_file:
+   - docker-ports.env
   networks:
    - retromat
  mailcatcher:
   image: schickling/mailcatcher
   ports:
-   - 1025:1025
-   - 1080:1080
+   - ${RETROMAT_MAILCATCHER_SMTP_PORT:-1025}:1025
+   - ${RETROMAT_MAILCATCHER_WEB_PORT:-1080}:1080
+  env_file:
+   - docker-ports.env
   networks:
    - retromat
 networks:
