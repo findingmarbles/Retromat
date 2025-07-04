@@ -30,8 +30,8 @@ Locally, outside of docker, ec2 etc. do this:
 
 Open PHPMyAdmin instance running in Docker:
 
-* macOS: In the Docker Desktop App, click "Open in Browser" on the PHPMyAdmin container or directly use a browser to go to: http://localhost:8181/
-* AL2023: Set up ssh tunnel, then open http://localhost:8181/
+* macOS: In the Docker Desktop App, click "Open in Browser" on the PHPMyAdmin container or directly use a browser to go to: http://localhost:10181/
+* AL2023: Set up ssh tunnel, then open http://localhost:10181/
 
 Obtain the value of MYSQL_ROOT_PASSWORD from
 
@@ -97,7 +97,7 @@ php backend/bin/console --env=test doctrine:database:create
 php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
 
-On changes to index.php:
+ON setup and on changes to index.php:
 
 ```
 sh index_deploy-from-php-to-twig.sh
@@ -110,5 +110,5 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache &&
 ```
 
 # Access App via Browser
-* macOS: In Docker Desktop, click "Open in Browser" on the retromat-httpd container or directly go to: http://localhost:8080/
-* AL2023: Set up ssh tunnel, then open http://localhost:8080/
+* macOS: In Docker Desktop, click "Open in Browser" on the retromat-httpd container or directly go to: http://localhost:10180/
+* AL2023: Set up ssh tunnel, then open http://localhost:10180/
