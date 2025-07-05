@@ -1,0 +1,1999 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$activity Activity\)\: Unexpected token "\$activity", expected type at offset 9 on line 1$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/Controller/ActivityApiController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:countActivities\(\) has parameter \$locales with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:countActivities\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:parseIds\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:planTitleAndDescription\(\) has parameter \$activities with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:planTitleAndDescription\(\) has parameter \$ids with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Method App\\Controller\\HomeController\:\:planTitleAndDescription\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$activity Activity\)\: Unexpected token "\$activity", expected type at offset 9 on line 1$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Variable \$activityCounts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: src/Controller/HomeController.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setDesc\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setSummary\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Contracts\\Cache\\CacheInterface\:\:clear\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Method App\\Controller\\TeamActivityController\:\:createActivityForm\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Method App\\Controller\\TeamActivityController\:\:createActivityForm\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Property App\\Controller\\TeamActivityController\:\:\$activityByPhase is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Controller/TeamActivityController.php
+
+		-
+			message: '#^Method App\\Controller\\TeamDashboardController\:\:dashboardAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Controller/TeamDashboardController.php
+
+		-
+			message: '#^Property App\\Controller\\TeamSerpController\:\:\$planIds type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Controller/TeamSerpController.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__call\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__call\(\) has parameter \$method with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__get\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__get\(\) has parameter \$property with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__set\(\) has parameter \$argument with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__set\(\) has parameter \$property with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:__set\(\) with return type void returns mixed but should not return anything\.$#'
+			identifier: return.void
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setDuration\(\) has parameter \$duration with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setMore\(\) has parameter \$more with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setPhase\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setRetromatId\(\) has parameter \$retromatId with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setSource\(\) has parameter \$source with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\Activity\:\:setSuitable\(\) has parameter \$suitable with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Property App\\Entity\\Activity\:\:\$id has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Property App\\Entity\\Activity\:\:\$id is never written, only read\.$#'
+			identifier: property.onlyRead
+			count: 1
+			path: src/Entity/Activity.php
+
+		-
+			message: '#^Method App\\Entity\\ActivityTranslation\:\:setDesc\(\) has parameter \$desc with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/ActivityTranslation.php
+
+		-
+			message: '#^Method App\\Entity\\ActivityTranslation\:\:setName\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/ActivityTranslation.php
+
+		-
+			message: '#^Method App\\Entity\\ActivityTranslation\:\:setSummary\(\) has parameter \$summary with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/ActivityTranslation.php
+
+		-
+			message: '#^Property App\\Entity\\ActivityTranslation\:\:\$id has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Entity/ActivityTranslation.php
+
+		-
+			message: '#^Property App\\Entity\\ActivityTranslation\:\:\$id is unused\.$#'
+			identifier: property.unused
+			count: 1
+			path: src/Entity/ActivityTranslation.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:__call\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:eraseCredentials\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:grantRole\(\) has parameter \$role with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:setRoles\(\) has parameter \$roles with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Property App\\Entity\\User\:\:\$roles type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Entity/User.php
+
+		-
+			message: '#^Property App\\Entity\\UserResetPasswordRequest\:\:\$id is never written, only read\.$#'
+			identifier: property.onlyRead
+			count: 1
+			path: src/Entity/UserResetPasswordRequest.php
+
+		-
+			message: '#^Class App\\Form\\ActivityTranslatableFieldsType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/ActivityTranslatableFieldsType.php
+
+		-
+			message: '#^Class App\\Form\\ActivityType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/ActivityType.php
+
+		-
+			message: '#^Class App\\Form\\TeamUserType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/TeamUserType.php
+
+		-
+			message: '#^Class App\\Form\\UserPasswordType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/UserPasswordType.php
+
+		-
+			message: '#^Class App\\Form\\UserResetPasswordRequestFormType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/UserResetPasswordRequestFormType.php
+
+		-
+			message: '#^Call to an undefined method Doctrine\\ORM\\EntityRepository\<App\\Entity\\Activity\>\:\:findAllActivitiesByPhases\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:getActivitiesString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:getActivitiesString\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:getAllActivitiesByPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:lazyInit\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextActivityIdInPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextActivityIdInPhase\(\) has parameter \$id with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextActivityIdInPhase\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextIds\(\) has parameter \$id with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextIds\(\) has parameter \$ids with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:nextIds\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousActivityIdInPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousActivityIdInPhase\(\) has parameter \$id with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousActivityIdInPhase\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousIds\(\) has parameter \$id with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousIds\(\) has parameter \$ids with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\ActivityByPhase\:\:previousIds\(\) has parameter \$phase with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Property App\\Model\\Activity\\ActivityByPhase\:\:\$activityByPhase has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Model/Activity/ActivityByPhase.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\Expander\\ActivityExpander\:\:__construct\(\) has parameter \$sources with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/Expander/ActivityExpander.php
+
+		-
+			message: '#^Property App\\Model\\Activity\\Expander\\ActivityExpander\:\:\$sources type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/Expander/ActivityExpander.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\Localizer\\ActivityLocalizer\:\:localize\(\) has parameter \$activities with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/Localizer/ActivityLocalizer.php
+
+		-
+			message: '#^Method App\\Model\\Activity\\Localizer\\ActivityLocalizer\:\:localize\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Activity/Localizer/ActivityLocalizer.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$activity Activity\)\: Unexpected token "\$activity", expected type at offset 9 on line 1$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/Model/Activity/Localizer/ActivityLocalizer.php
+
+		-
+			message: '#^Cannot cast Symfony\\Component\\Validator\\ConstraintViolationListInterface to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityImporter\:\:import\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityImporter\:\:import2\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityImporter\:\:import2Multiple\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityImporter\:\:import2Multiple\(\) has parameter \$locales with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Property App\\Model\\Importer\\Activity\\ActivityImporter\:\:\$locales type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Importer/Activity/ActivityImporter.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:__construct\(\) has parameter \$activityFileNames with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:__construct\(\) has parameter \$defaultLocale with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivity\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivity\(\) has parameter \$retromatId with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityBlock\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityBlock\(\) has parameter \$retromatId with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityDescription\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityDescription\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityDuration\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityDuration\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityMore\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityMore\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityName\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityName\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityPhase\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySource\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySource\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityStage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivityStage\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySuitable\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySuitable\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySummary\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractActivitySummary\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractAllActivities\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractStringValue\(\) has parameter \$activityBlock with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractStringValue\(\) has parameter \$key with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:extractStringValue\(\) should return string but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\ActivityReader\:\:highestRetromatId\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Property App\\Model\\Importer\\Activity\\ActivityReader\:\:\$activities has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Property App\\Model\\Importer\\Activity\\ActivityReader\:\:\$activityFileNames has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Property App\\Model\\Importer\\Activity\\ActivityReader\:\:\$currentLocale has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between false and int\<1, max\> will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: src/Model/Importer/Activity/ActivityReader.php
+
+		-
+			message: '#^Method App\\Model\\Importer\\Activity\\Hydrator\\ActivityHydrator\:\:hydrateFromArray\(\) has parameter \$inputArray with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Importer/Activity/Hydrator/ActivityHydrator.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\DescriptionRenderer\:\:render\(\) has parameter \$activities with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/DescriptionRenderer.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleChooser\:\:__construct\(\) has parameter \$titleParts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleChooser.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleChooser\:\:extractTitleParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleChooser.php
+
+		-
+			message: '#^PHPDoc tag @param for parameter \$title with type App\\Model\\Plan\\TitleRenderer\|null is not subtype of native type App\\Model\\Plan\\TitleRenderer\.$#'
+			identifier: parameter.phpDocType
+			count: 1
+			path: src/Model/Plan/TitleChooser.php
+
+		-
+			message: '#^Property App\\Model\\Plan\\TitleChooser\:\:\$parts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleChooser.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleIdGenerator\:\:__construct\(\) has parameter \$titleParts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleIdGenerator.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleIdGenerator\:\:extractTitleParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleIdGenerator.php
+
+		-
+			message: '#^Property App\\Model\\Plan\\TitleIdGenerator\:\:\$parts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleIdGenerator.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleRenderer\:\:__construct\(\) has parameter \$parts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleRenderer.php
+
+		-
+			message: '#^Method App\\Model\\Plan\\TitleRenderer\:\:extractTitleParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleRenderer.php
+
+		-
+			message: '#^Property App\\Model\\Plan\\TitleRenderer\:\:\$parts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/Plan/TitleRenderer.php
+
+		-
+			message: '#^Comparison operation "\>" between 1000000 and 2147483647\|9223372036854775807 is always false\.$#'
+			identifier: greater.alwaysFalse
+			count: 1
+			path: src/Model/Sitemap/PlanIdGenerator.php
+
+		-
+			message: '#^Method App\\Model\\Sitemap\\PlanUrlGenerator\:\:addToUrlContainer\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Sitemap/PlanUrlGenerator.php
+
+		-
+			message: '#^Method App\\Model\\Sitemap\\PlanUrlGenerator\:\:generatePlanUrls\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Model/Sitemap/PlanUrlGenerator.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Component\\Security\\Core\\User\\UserInterface\:\:getId\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Model/User/Generator/UserResetPasswordTokenGenerator.php
+
+		-
+			message: '#^Method App\\Model\\User\\Mailer\\UserResetPasswordMailer\:\:prepare\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/User/Mailer/UserResetPasswordMailer.php
+
+		-
+			message: '#^Method App\\Model\\User\\Mailer\\UserResetPasswordMailer\:\:send\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Model/User/Mailer/UserResetPasswordMailer.php
+
+		-
+			message: '#^Constructor of class App\\Model\\User\\Model\\UserResetPasswordToken has an unused parameter \$expiresAt\.$#'
+			identifier: constructor.unusedParameter
+			count: 1
+			path: src/Model/User/Model/UserResetPasswordToken.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Component\\Security\\Core\\User\\PasswordAuthenticatedUserInterface\|Symfony\\Component\\Security\\Core\\User\\UserInterface\:\:getId\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Model/User/UserManager.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Component\\Security\\Core\\User\\PasswordAuthenticatedUserInterface\|Symfony\\Component\\Security\\Core\\User\\UserInterface\:\:setPassword\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Model/User/UserManager.php
+
+		-
+			message: '#^Class App\\Repository\\ActivityRepository extends generic class Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository but does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ActivityRepository has PHPDoc tag @method for method findBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ActivityRepository has PHPDoc tag @method for method findBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ActivityRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ActivityRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ActivityRepository\:\:findAllActivitiesByPhases\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ActivityRepository\:\:findAllOrdered\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ActivityRepository\:\:findOrdered\(\) has parameter \$orderedIds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ActivityRepository\:\:findOrdered\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$activity Activity\)\: Unexpected token "\$activity", expected type at offset 9 on line 1$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Parameter \#1 \$lifetime of method Doctrine\\ORM\\AbstractQuery\:\:enableResultCache\(\) expects int\|null, true given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Parameter \#2 \$resultCacheId of method Doctrine\\ORM\\AbstractQuery\:\:enableResultCache\(\) expects string\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Repository/ActivityRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository extends generic class Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository but does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository has PHPDoc tag @method for method findBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository has PHPDoc tag @method for method findBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserResetPasswordRepository has PHPDoc tag @method for method findBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserResetPasswordRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserResetPasswordRepository has PHPDoc tag @method for method findBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserResetPasswordRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserResetPasswordRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#1 \$criteria with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserResetPasswordRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserResetPasswordRepository has PHPDoc tag @method for method findOneBy\(\) parameter \#2 \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Repository/UserResetPasswordRepository.php
+
+		-
+			message: '#^Property App\\Twig\\ColorVariationExtension\:\:\$allColors has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Twig/ColorVariationExtension.php
+
+		-
+			message: '#^Property App\\Twig\\ColorVariationExtension\:\:\$colors has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Twig/ColorVariationExtension.php
+
+		-
+			message: '#^Property App\\Twig\\ColorVariationExtension\:\:\$previousColor has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/Twig/ColorVariationExtension.php
+
+		-
+			message: '#^Method App\\Tests\\AbstractTestCase\:\:loadFixtures\(\) has parameter \$fixtures with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/AbstractTestCase.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testActiviyIdsUnique\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testGetActivitiesString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testGetAllActivitiesByPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testNextActivityIdInPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testNextIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testPreviousActivityIdInPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityByPhaseTest\:\:testPreviousIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Activity/ActivityByPhaseTest.php
+
+		-
+			message: '#^Method App\\Tests\\Activity\\ActivityExpanderTest\:\:getSourcesYaml\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Activity/ActivityExpanderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivityIdsAndNamesInCollectionRequestsEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivityIdsAndNamesInCollectionRequestsGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivityNameEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivityNameGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivitySourcePlaceholder\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivitySourcePlaceholderAndString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivitySourceSimpleString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testActivitySourceStringAndPlaceholder\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testExpandedActivitySourceInCollectionRequests\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\ActivityControllerTest\:\:testOnlyTranslatedActivitiesInCollectionRequests\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/ActivityControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\DataFixtures\\LoadActivityData\:\:setContainer\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/DataFixtures/LoadActivityData.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:extractColorCode\(\) has parameter \$activity with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:test404OnIdNotFound\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:test404OnIdNotFound\(\) has parameter \$url with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testHideSteppersPhase0LongUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testRedirectIndexToNewUrlDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testRedirectIndexToNewUrlEn\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testRedirectPhase0ToNewUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testRedirectSlashToNewUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testRegressionAvoidUnlessNeededHeaderAllActivitiesFor\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityCount\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityDescriptionsRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityLinksHref\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityLinksText\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityNameRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityPhaseLinkHref\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivityPhaseLinkText\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivitySourcePlaceholderAndStringRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivitySourcePlaceholderRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivitySourceSimpleStringRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivitySourceStringAndPlaceholderRawHtml\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowActivitySummaries\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowAllActivitiesInPhase0LongUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowAny5Activities\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowIdsInInputField\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowMetaDescription1ActivitiyEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowMetaDescription1ActivitiyGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowMetaDescription5ActivitiesEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowMetaDescription5ActivitiesGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPageTitle1ActivitiyEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPageTitle1ActivitiyGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPageTitle5ActivitiesEnglish\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPageTitle5ActivitiesGerman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPhaseStepperNextMultipleActivities\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPhaseStepperNextSingleActivity\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowPhaseStepperPreviousSingleActivity\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowRandomPlanLinksOnHome\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowSingleActivityBlock\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowSuccessiveActivitiesInDifferentColors\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowTitlePhase0LongUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\HomeControllerTest\:\:testShowTitlePhase1LongUrl\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/HomeControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\RobotsControllerTest\:\:testRobotsTxtAllow\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/RobotsControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\RobotsControllerTest\:\:testRobotsTxtDisallow\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/RobotsControllerTest.php
+
+		-
+			message: '#^Method App\\Tests\\Controller\\TeamActivityControllerTest\:\:testCreateNewActivityUsesNextFreeRetromatIdFullDb\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Controller/TeamActivityControllerTest.php
+
+		-
+			message: '#^Parameter \#2 \$client of method Liip\\FunctionalTestBundle\\Test\\WebTestCase\:\:assertStatusCode\(\) expects Symfony\\Bundle\\FrameworkBundle\\Client, Symfony\\Bundle\\FrameworkBundle\\KernelBrowser given\.$#'
+			identifier: argument.type
+			count: 5
+			path: tests/Controller/TeamActivityControllerTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:getName\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:getSummary\(\)\.$#'
+			identifier: method.notFound
+			count: 7
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
+			count: 3
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImport2MultipleImportsAllLanguages\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImport2MultipleMetaDataFromEnglishOnly\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImport2MultipleNoSuperfluousNonEnglishTransations\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportOnEmptyDbDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportOnEmptyDbEn\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportOnEmptyDbEnDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportOnTopOfExisting\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportThrowsExceptionOnInvalidActivity\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportThrowsExceptionOnInvalidActivityMeta\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportThrowsExceptionOnInvalidActivityTranslation\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityImporterIntegrationTest\:\:testImportUpdatesExisting\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Parameter \#1 \$entityManager of class App\\Model\\Importer\\Activity\\ActivityImporter constructor expects Doctrine\\ORM\\EntityManagerInterface, Doctrine\\Persistence\\ObjectManager given\.$#'
+			identifier: argument.type
+			count: 12
+			path: tests/Importer/Activity/ActivityImporterIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivity\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityDescriptionMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityDurationMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityMoreMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityName\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityNameMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityNameWhenPhaseHasJSComment\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityPhase\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityPhaseMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityPhaseNotFirstInBlock\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivityPhaseWhenPhaseHasJSComment\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivitySourceMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivitySuitableMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractActivitySummaryMissing\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractAllActivitiesDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractAllActivitiesEn\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractDescription\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractDescriptionWithHref\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractDuration\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractMore\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourceKeyCanAppearInValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourcePlaceholderAndString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourcePlaceholderLastLine\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourcePlaceholderLastLineNoComma\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourceString\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSourceStringAndPlaceholder\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractStage\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSuitable\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSummary\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testExtractSummaryKeyCanAppearInValue\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\ActivityReaderTest\:\:testHighestActivityNumber\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Importer/Activity/ActivityReaderTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:getDesc\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:getName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setDesc\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setSummary\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Importer\\Activity\\Hydrator\\ActivityHydratorTest\:\:createInputArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Importer/Activity/Hydrator/ActivityHydratorTest.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setSummary\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Plan/DescriptionRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\DescriptionRendererTest\:\:testRender\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/DescriptionRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\DescriptionRendererTest\:\:testRenderEmptyDescriptionUnless5Activities\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/DescriptionRendererTest.php
+
+		-
+			message: '#^Call to function is_array\(\) with list\<string\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdCorrectFormat\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdCorrectFormatDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdDifferentPlansGetDifferentTitles\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdDifferentPlansGetDifferentTitlesDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdEmptyUnless5Activities\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdEmptyUnless5ActivitiesDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdLocaleHandlingRu\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdMaxLength\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdMaxLengthDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdPlanAlwaysGetsSameTitle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testChooseTitleIdPlanAlwaysGetsSameTitleDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOneOptionalTerm\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOneOptionalTermDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOneOptionalTermDeterministicRandomness\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOneOptionalTermDeterministicRandomnessDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOptionalTermsUntilShortEnough\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testDropOptionalTermsUntilShortEnoughDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testIsShortEnough\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testIsShortEnoughDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testRenderTitleEmptyUnless5Activities\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testRenderTitleEmptyUnless5ActivitiesDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testRenderTitleSingleChoice\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleChooserIntegrationTest\:\:testRenderTitleSingleChoiceDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleChooserIntegrationTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInAllSequencesMany\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInAllSequencesManyDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInAllSequencesTwo\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInAllSequencesTwoDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInSequenceMultiple\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInSequenceMultipleDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInSequenceSingle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleIdGeneratorTest\:\:testCountCombinationsInSequenceSingleDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderDifferentSequences\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderDifferentSequencesDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderDifferentTerms\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderDifferentTermsDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderNoSuperfluousWhitespace\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderNoSuperfluousWhitespaceDe\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Plan\\TitleRendererTest\:\:testRenderWrongNumberOfIds\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Plan/TitleRendererTest.php
+
+		-
+			message: '#^Method App\\Tests\\Repository\\DataFixtures\\LoadActivityData\:\:setContainer\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Repository/DataFixtures/LoadActivityData.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Repository/DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhases.php
+
+		-
+			message: '#^Call to an undefined method App\\Entity\\Activity\:\:setName\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Repository/DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhasesDe.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$activity Activity\)\: Unexpected token "\$activity", expected type at offset 9 on line 1$#'
+			identifier: phpDoc.parseError
+			count: 2
+			path: tests/Repository/DataFixtures/LoadActivityDataForTestFindAllActivitiesForPhasesDe.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:collect\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:testGenerateAll\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:testGenerateMaxResults\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:testGenerateSkip0\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:testGenerateSkip1\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:testGenerateSkip2\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Property App\\Tests\\Sitemap\\PlanIdGeneratorTest\:\:\$ids type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Sitemap/PlanIdGeneratorTest.php
+
+		-
+			message: '#^Method App\\Tests\\Sitemap\\PlanUrlGeneratorIntegrationTest\:\:generate\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Sitemap/PlanUrlGeneratorIntegrationTest.php
+
+		-
+			message: '#^Offset 0 does not exist on array\{\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Sitemap/PlanUrlGeneratorIntegrationTest.php
+
+		-
+			message: '#^Property App\\Tests\\Sitemap\\PlanUrlGeneratorIntegrationTest\:\:\$urlContainer type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Sitemap/PlanUrlGeneratorIntegrationTest.php
+
+		-
+			message: '#^Return type \(void\) of method App\\Tests\\Sitemap\\PlanUrlGeneratorIntegrationTest\:\:getContext\(\) should be compatible with return type \(Symfony\\Component\\Routing\\RequestContext\) of method Symfony\\Component\\Routing\\RequestContextAwareInterface\:\:getContext\(\)$#'
+			identifier: method.childReturnType
+			count: 2
+			path: tests/Sitemap/PlanUrlGeneratorIntegrationTest.php

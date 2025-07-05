@@ -6,8 +6,6 @@ if [ ! -d "/app/" ]; then
     exit 1
 fi
 
-php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php
+php vendor/bin/phpstan --memory-limit=2g  analyse src tests
 php vendor/bin/parallel-lint --exclude /.git --exclude /app/backend/vendor --exclude /app/backend/var /app/backend/
-
-# finds many issues, need to expore this more before activating it
-# vendor/bin/phpstan --memory-limit=2g  analyse src tests
+php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php

@@ -1,8 +1,15 @@
+includes:
+    - phpstan-baseline.neon
+
 parameters:
     level: 6
     paths:
-        - bin/
-        - config/
-        - public/
         - src/
         - tests/
+    excludePaths:
+        - tests/bootstrap.php
+        - src/Kernel.php
+    bootstrapFiles:
+        - vendor/autoload.php
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
