@@ -1,15 +1,13 @@
 # PHP CS Fixer Configuration
 
-This project uses PHP CS Fixer with the official `@Symfony` ruleset optimized for Symfony 5.4 projects.
+This project uses PHP CS Fixer with the official `@Symfony` ruleset.
 
 ## Configuration
 
 The configuration file is located at `backend/.php-cs-fixer.dist.php` and includes:
 
-- **@Symfony ruleset**: Official Symfony coding standards
-- **@PHP80Migration**: PHP 8.0 migration rules
-- **Custom rules**: Additional rules for consistency
-- **Exclusions**: Excludes `vendor`, `var`, `public/static`, `public/print`, `docker`, and `bin` directories
+- **@Symfony ruleset** <https://cs.symfony.com/doc/ruleSets/Symfony.html>
+- **@PSR12 rulset** <https://cs.symfony.com/doc/ruleSets/PSR12.html>
 
 ## Usage
 
@@ -58,5 +56,3 @@ Install the `PHP CS Fixer` extension and add to your `settings.json`:
     "php-cs-fixer.config": ".php-cs-fixer.dist.php"
 }
 ```
-
-
