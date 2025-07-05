@@ -28,7 +28,7 @@ class TeamSerpController extends AbstractController
         TitleChooser $titleChooser,
         DescriptionRenderer $descriptionRenderer,
         ActivityRepository $activityRepository,
-        TitleIdGenerator $titleIdGenerator
+        TitleIdGenerator $titleIdGenerator,
     ) {
         $this->planIdGenerator = $planIdGenerator;
         $this->titleChooser = $titleChooser;
@@ -38,8 +38,6 @@ class TeamSerpController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @return Response
      * @throws InconsistentInputException
      */
     #[Route('/team/serp/preview', name: 'team_serp_preview')]
@@ -47,7 +45,7 @@ class TeamSerpController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_SERP_PREVIEW');
 
-        $this->planIdGenerator->generate([$this, 'pushPlanId'], (int)$request->get('max'), (int)$request->get('skip'));
+        $this->planIdGenerator->generate([$this, 'pushPlanId'], (int) $request->get('max'), (int) $request->get('skip'));
         $totalCombinations = $this->titleIdGenerator->countCombinationsInAllSequences(
             $request->getLocale()
         );
@@ -61,9 +59,6 @@ class TeamSerpController extends AbstractController
         ]);
     }
 
-    /**
-     * @param string $id
-     */
     public function pushPlanId(string $id): void
     {
         $this->planIds[] = $id;

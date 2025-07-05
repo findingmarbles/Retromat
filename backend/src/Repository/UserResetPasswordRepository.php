@@ -17,17 +17,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class UserResetPasswordRepository extends ServiceEntityRepository
 {
-    /**
-     * @param ManagerRegistry $registry
-     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, UserResetPasswordRequest::class);
     }
 
-    /**
-     * @param UserInterface $user
-     */
     public function deleteUserResetPasswordRequestByUser(UserInterface $user): void
     {
         $this->createQueryBuilder('urp')
@@ -38,9 +32,6 @@ class UserResetPasswordRepository extends ServiceEntityRepository
             ->execute();
     }
 
-    /**
-     * @param int $resetRequestLifetime
-     */
     public function deleteExpiredResetPasswordRequests(int $resetRequestLifetime): void
     {
         $this->createQueryBuilder('urp')

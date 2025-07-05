@@ -8,9 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class ActivityHydratorTest extends TestCase
 {
-    /**
-     * @return void
-     */
     public function testHydrateEmptyActivity(): void
     {
         $activityHydrator = new ActivityHydrator();
@@ -28,9 +25,6 @@ class ActivityHydratorTest extends TestCase
         $this->assertEquals($inputArray['suitable'], $activity->getSuitable());
     }
 
-    /**
-     * @return void
-     */
     public function testHydrateActivity(): void
     {
         $inputArray = $this->createInputArray();
@@ -43,9 +37,6 @@ class ActivityHydratorTest extends TestCase
         $this->assertEquals($activity, $exampleActivity);
     }
 
-    /**
-     * @return Activity
-     */
     private function createActivity(): Activity
     {
         $activity = new Activity();
@@ -83,9 +74,6 @@ rather choose the second position, why?');
         return $activity;
     }
 
-    /**
-     * @return array
-     */
     private function createInputArray(): array
     {
         $inputArray = [

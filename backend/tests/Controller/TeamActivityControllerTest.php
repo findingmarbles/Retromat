@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
+use App\Repository\UserRepository;
 use App\Tests\AbstractTestCase;
 use App\Tests\Controller\DataFixtures\LoadUsers;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser as Client;
 use Symfony\Component\HttpFoundation\Response;
-use App\Repository\UserRepository;
 
 class TeamActivityControllerTest extends AbstractTestCase
 {
@@ -206,14 +206,11 @@ class TeamActivityControllerTest extends AbstractTestCase
         );
     }
 
-    /**
-     * @return Client
-     */
     private function makeClientLoginAdmin(): Client
     {
         $referenceRepository = $this->loadFixtures(
             [
-                'App\Tests\Controller\DataFixtures\LoadUsers'
+                'App\Tests\Controller\DataFixtures\LoadUsers',
             ]
         )->getReferenceRepository();
 
@@ -229,9 +226,6 @@ class TeamActivityControllerTest extends AbstractTestCase
         return $this->client;
     }
 
-    /**
-     * @return Client
-     */
     private function makeClientLoginAdminLoadFixtures(): Client
     {
         $referenceRepository = $this->loadFixtures(

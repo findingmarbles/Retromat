@@ -98,9 +98,6 @@ class PlanIdGeneratorTest extends TestCase
         $this->assertCount($maxResults, $this->ids);
     }
 
-    /**
-     * @param string $id
-     */
     public function collect(string $id)
     {
         $this->ids[] = $id;

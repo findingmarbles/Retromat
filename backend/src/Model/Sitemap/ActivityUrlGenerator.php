@@ -24,9 +24,6 @@ class ActivityUrlGenerator
         $this->activityByPhase = $activityByPhase;
     }
 
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
     public function generateHomeUrls(UrlContainerInterface $urlContainer): void
     {
         foreach (self::LOCALE as $locale) {
@@ -43,9 +40,6 @@ class ActivityUrlGenerator
         }
     }
 
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
     public function generateAllActivityUrls(UrlContainerInterface $urlContainer): void
     {
         $activities = $this->activityRepository->findAll();
@@ -71,9 +65,6 @@ class ActivityUrlGenerator
         );
     }
 
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
     public function generateIndividualActivityUrls(UrlContainerInterface $urlContainer): void
     {
         $activities = $this->activityRepository->findAll();
@@ -95,9 +86,6 @@ class ActivityUrlGenerator
         }
     }
 
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
     public function generateAllPhaseUrls(UrlContainerInterface $urlContainer): void
     {
         foreach (\range(0, 5) as $phase) {

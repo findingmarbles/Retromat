@@ -6,10 +6,6 @@ namespace App\Model\Plan;
 
 class DescriptionRenderer
 {
-    /**
-     * @param array $activities
-     * @return string
-     */
     public function render(array $activities): string
     {
         if (5 !== \count($activities)) {

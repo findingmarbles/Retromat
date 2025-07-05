@@ -26,20 +26,12 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
     private UrlGeneratorInterface $urlGenerator;
     private UserRepository $userRepository;
 
-    /**
-     * @param UrlGeneratorInterface $urlGenerator
-     * @param UserRepository $userRepository
-     */
     public function __construct(UrlGeneratorInterface $urlGenerator, UserRepository $userRepository)
     {
         $this->urlGenerator = $urlGenerator;
         $this->userRepository = $userRepository;
     }
 
-    /**
-     * @param Request $request
-     * @return Passport
-     */
     public function authenticate(Request $request): Passport
     {
         $username = $request->request->get('username', '');
@@ -50,7 +42,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
                 return $this->userRepository->findOneBy(
                     [
                         'username' => $userIdentifier,
-                        'enabled' => 1
+                        'enabled' => 1,
                     ]
                 );
             }),
@@ -64,12 +56,6 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
-    /**
-     * @param Request $request
-     * @param TokenInterface $token
-     * @param string $firewallName
-     * @return Response|null
-     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
@@ -79,10 +65,6 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         return new RedirectResponse($this->urlGenerator->generate(self::AUTHENTICATION_SUCCESS_ROUTE));
     }
 
-    /**
-     * @param Request $request
-     * @return string
-     */
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);

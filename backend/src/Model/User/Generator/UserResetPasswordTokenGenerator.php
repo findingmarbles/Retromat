@@ -9,22 +9,15 @@ final class UserResetPasswordTokenGenerator
 {
     private string $signingKey;
 
-    /**
-     * @param string $signingKey
-     */
     public function __construct(string $signingKey)
     {
         $this->signingKey = $signingKey;
     }
 
     /**
-     * @param \DateTimeInterface $expiresAt
-     * @param UserInterface $user
-     * @param string|null $verifier
-     * @return UserResetPasswordTokenComponents
      * @throws \Exception
      */
-    public function generate(\DateTimeInterface $expiresAt, UserInterface $user, string $verifier = null): UserResetPasswordTokenComponents
+    public function generate(\DateTimeInterface $expiresAt, UserInterface $user, ?string $verifier = null): UserResetPasswordTokenComponents
     {
         if (null === $verifier) {
             $verifier = $this->getRandomString();
@@ -45,7 +38,6 @@ final class UserResetPasswordTokenGenerator
     }
 
     /**
-     * @return string
      * @throws \Exception
      */
     private function getRandomString(): string
@@ -53,12 +45,6 @@ final class UserResetPasswordTokenGenerator
         return \md5(\random_bytes(25));
     }
 
-    /**
-     * @param string $verifier
-     * @param int $userId
-     * @param int $expiresAtTimestamp
-     * @return string
-     */
     private function getHashedToken(string $verifier, int $userId, int $expiresAtTimestamp): string
     {
         return \base64_encode(\hash_hmac(

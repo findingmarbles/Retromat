@@ -26,12 +26,12 @@ class HomeController extends AbstractController
     private CacheInterface $retromatCache;
 
     public function __construct(
-        ActivityExpander    $activityExpander,
-        ActivityByPhase     $activityByPhase,
-        TitleChooser        $titleChooser,
+        ActivityExpander $activityExpander,
+        ActivityByPhase $activityByPhase,
+        TitleChooser $titleChooser,
         DescriptionRenderer $descriptionRenderer,
-        ActivityRepository  $activityRepository,
-        CacheInterface      $retromatCache,
+        ActivityRepository $activityRepository,
+        CacheInterface $retromatCache,
     ) {
         $this->activityExpander = $activityExpander;
         $this->activityByPhase = $activityByPhase;
@@ -43,7 +43,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/{_locale}/", requirements={"_locale": "en|de|fa|fr|es|ja|nl|pl|pt-br|ru|zh"}, name="activities_by_id")
-     * @param Request $request
+     *
      * @return Response
      */
     public function homeAction(Request $request)
@@ -84,8 +84,6 @@ class HomeController extends AbstractController
      * @Route("/", defaults={"_locale": "en"}, name="home_slash")
      * @Route("/index.html", defaults={"_locale": "en"}, name="home_index")
      * @Route("/index_{_locale}.html", requirements={"_locale": "en|de|fa|fr|es|ja|nl|pl|pt-br|ru|zh"}, name="home")
-     * @param Request $request
-     * @return RedirectResponse
      */
     public function redirectAction(Request $request): RedirectResponse
     {
@@ -96,18 +94,14 @@ class HomeController extends AbstractController
         );
     }
 
-    /**
-     * @param $idString
-     * @return array
-     */
-    private function parseIds(string $idString = null): array
+    private function parseIds(?string $idString = null): array
     {
         $ids = [];
         if (!empty($idString)) {
             $rawIds = \explode('-', $idString);
             foreach ($rawIds as $rawId) {
-                $id = (int)$rawId;
-                if (0 !== $id and (string)$id === $rawId) {
+                $id = (int) $rawId;
+                if (0 !== $id and (string) $id === $rawId) {
                     $ids[] = $id;
                 } else {
                     throw $this->createNotFoundException();
@@ -119,9 +113,6 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @param array $ids
-     * @param array $activities
-     * @return array
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -129,10 +120,10 @@ class HomeController extends AbstractController
     {
         if ((1 === \count($activities)) and (1 === \count($ids))) {
             $title = \html_entity_decode(
-                'Retromat: '.($activities[0])->getName().' (#'.($activities[0])->getRetromatId().')',
+                'Retromat: '.$activities[0]->getName().' (#'.$activities[0]->getRetromatId().')',
                 ENT_NOQUOTES
             );
-            $description = \html_entity_decode(($activities[0])->getSummary(), ENT_NOQUOTES);
+            $description = \html_entity_decode($activities[0]->getSummary(), ENT_NOQUOTES);
         } else {
             // Titles are generated from a separate config, so html_entity_decode is not necessary
             $title = $this->titleChooser->renderTitle(\implode('-', $ids), $locale);
@@ -145,9 +136,6 @@ class HomeController extends AbstractController
         return [$title, $description];
     }
 
-    /**
-     * @return array
-     */
     public function countActivities(array $locales): array
     {
         $activityCounts = $this->retromatCache->get('HomeController->countActivities', function () use ($locales) {
@@ -157,14 +145,16 @@ class HomeController extends AbstractController
                 foreach ($activities as $activity) {
                     /** @var $activity Activity */
                     if (!$activity->translate($locale, false)->isEmpty()) {
-                        $activityCounts[$locale]++;
+                        ++$activityCounts[$locale];
                     } else {
                         break;
                     }
                 }
             }
+
             return $activityCounts;
         });
+
         return $activityCounts;
     }
 }

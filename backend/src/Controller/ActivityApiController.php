@@ -21,15 +21,10 @@ final class ActivityApiController extends AbstractFOSRestController
     private ActivityExpander $activityExpander;
     private ActivityRepository $activityRepository;
 
-    /**
-     * @param ActivityRepository $activityRepository
-     * @param ActivityExpander $activityExpander
-     * @param ActivityLocalizer $activityLocalizer
-     */
     public function __construct(
         ActivityRepository $activityRepository,
         ActivityExpander $activityExpander,
-        ActivityLocalizer $activityLocalizer
+        ActivityLocalizer $activityLocalizer,
     ) {
         $this->activityLocalizer = $activityLocalizer;
         $this->activityExpander = $activityExpander;
@@ -38,8 +33,6 @@ final class ActivityApiController extends AbstractFOSRestController
 
     /**
      * @Rest\Get("/api/activities", name="activities")
-     * @param Request $request
-     * @return View
      */
     public function getActivities(Request $request): View
     {
@@ -58,9 +51,6 @@ final class ActivityApiController extends AbstractFOSRestController
 
     /**
      * @Rest\Get("/api/activity/{id}", name="activity")
-     * @param Request $request
-     * @param string $id
-     * @return View
      */
     public function getActivity(Request $request, string $id): View
     {

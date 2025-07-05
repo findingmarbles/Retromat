@@ -19,10 +19,6 @@ class TeamUserType extends AbstractType
     public const USERNAME_LENGTH_MIN = 3;
     public const USERNAME_LENGTH_MAX = 20;
 
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -44,20 +40,17 @@ class TeamUserType extends AbstractType
                         'message' => 'Please enter a email address',
                     ]),
                     new Email([
-                        'message' => 'Invalid email address'
-                    ])
+                        'message' => 'Invalid email address',
+                    ]),
                 ],
             ])
             ->add('enabled')
             ->add('roles', ChoiceType::class, [
                 'choices' => $this->getRolesCombined(),
-                'multiple' => true
+                'multiple' => true,
             ]);
     }
 
-    /**
-     * @param OptionsResolver $resolver
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

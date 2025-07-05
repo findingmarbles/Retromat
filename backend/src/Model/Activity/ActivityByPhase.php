@@ -11,9 +11,6 @@ class ActivityByPhase
 {
     private $activityByPhase;
 
-    /**
-     * @var EntityManagerInterface
-     */
     private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
@@ -78,7 +75,7 @@ class ActivityByPhase
     }
 
     /**
-     * http://www.martinfowler.com/bliki/LazyInitialization.html
+     * http://www.martinfowler.com/bliki/LazyInitialization.html.
      */
     private function lazyInit()
     {

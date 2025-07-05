@@ -18,18 +18,11 @@ class LoadUsers extends Fixture
 
     private UserManager $userManager;
 
-    /**
-     * @param UserManager $userManager
-     */
     public function __construct(UserManager $userManager)
     {
         $this->userManager = $userManager;
     }
 
-    /**
-     * @param ObjectManager $manager
-     * @return void
-     */
     public function load(ObjectManager $manager): void
     {
         $adminUser = new User();

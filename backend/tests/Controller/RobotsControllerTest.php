@@ -15,9 +15,9 @@ class RobotsControllerTest extends AbstractTestCase
         $client->request(
             'GET',
             '/robots.txt',
-            array(),
-            array(),
-            array('HTTP_HOST' => 'redev01.canopus.uberspace.de')
+            [],
+            [],
+            ['HTTP_HOST' => 'redev01.canopus.uberspace.de']
         );
 
         $this->assertEquals(
@@ -37,9 +37,9 @@ class RobotsControllerTest extends AbstractTestCase
         $client->request(
             'GET',
             '/robots.txt',
-            array(),
-            array(),
-            array('HTTP_HOST' => 'retromat.org')
+            [],
+            [],
+            ['HTTP_HOST' => 'retromat.org']
         );
 
         $this->assertEquals(

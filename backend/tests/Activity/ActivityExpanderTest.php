@@ -105,9 +105,6 @@ final class ActivityExpanderTest extends TestCase
         );
     }
 
-    /**
-     * @return array
-     */
     private function getSourcesYaml(): array
     {
         $yaml = <<<YAML

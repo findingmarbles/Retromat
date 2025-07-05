@@ -421,7 +421,7 @@ YAML;
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5');
 
         // if it works 100 times in a row, we believe it always works
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $titleId2 = $chooser->chooseTitleId('1-2-3-4-5');
             $this->assertEquals($titleId2, $titleId1);
         }
@@ -463,7 +463,7 @@ YAML;
         $titleId1 = $chooser->chooseTitleId('1-2-3-4-5', 'de');
 
         // if it works 100 times in a row, we believe it always works
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $titleId2 = $chooser->chooseTitleId('1-2-3-4-5', 'de');
             $this->assertEquals($titleId2, $titleId1);
         }
@@ -496,7 +496,7 @@ de:
 YAML;
         $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = \strlen('Agenda'.': '.'1-2-3-4-5');
+        $maxLengthIncludingPlanId = \strlen('Agenda: 1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -538,7 +538,7 @@ de:
 YAML;
         $titleParts = Yaml::parse($yaml);
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = \strlen('Agenda'.': '.'1-2-3-4-5');
+        $maxLengthIncludingPlanId = \strlen('Agenda: 1-2-3-4-5');
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -631,7 +631,7 @@ YAML;
         $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = \strlen('foo'.': '.$planId);
+        $maxLengthIncludingPlanId = \strlen('foo: '.$planId);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 
@@ -682,7 +682,7 @@ YAML;
         $titleParts = Yaml::parse($yaml);
         $titleId1 = '0:0-1-1-1-1-1-1-1-1-1';
         $planId = '1-2-3-4-5';
-        $maxLengthIncludingPlanId = \strlen('foo'.': '.$planId);
+        $maxLengthIncludingPlanId = \strlen('foo: '.$planId);
         $title = new TitleRenderer($titleParts);
         $chooser = new TitleChooser($titleParts, $title, $maxLengthIncludingPlanId);
 

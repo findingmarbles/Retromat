@@ -16,19 +16,12 @@ class PlanUrlGenerator
     private UrlGeneratorInterface $urlGenerator;
     private UrlContainerInterface $urlContainer;
 
-    /**
-     * @param UrlGeneratorInterface $urlGenerator
-     * @param PlanIdGenerator $planIdGenerator
-     */
     public function __construct(UrlGeneratorInterface $urlGenerator, PlanIdGenerator $planIdGenerator)
     {
         $this->urlGenerator = $urlGenerator;
         $this->planIdGenerator = $planIdGenerator;
     }
 
-    /**
-     * @param UrlContainerInterface $urlContainer
-     */
     public function generatePlanUrls(UrlContainerInterface $urlContainer)
     {
         // Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
@@ -38,7 +31,7 @@ class PlanUrlGenerator
 
     /**
      * @param string $id
-     * Maybe move urlContainer and addToUrlContainer() to a separate collector object later.
+     *                   Maybe move urlContainer and addToUrlContainer() to a separate collector object later
      */
     public function addToUrlContainer(string $id)
     {

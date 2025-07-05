@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
+ *
  * @ORM\Table(name="activity_translation")
  */
 class ActivityTranslation implements TranslationInterface
@@ -17,37 +18,47 @@ class ActivityTranslation implements TranslationInterface
 
     /**
      * @ORM\Id
+     *
      * @ORM\GeneratedValue
+     *
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
      * @var string
+     *
      * @Assert\Type("string")
+     *
      * @Assert\NotBlank()
+     *
      * @ORM\Column(name="`name`", type="string", length=255)
      */
     private $name = '';
 
     /**
      * @var string
+     *
      * @Assert\Type("string")
+     *
      * @Assert\NotBlank()
+     *
      * @ORM\Column(name="summary", type="string", length=255)
      */
     private $summary = '';
 
     /**
      * @var string
+     *
      * @Assert\Type("string")
+     *
      * @Assert\NotBlank()
+     *
      * @ORM\Column(name="`desc`", type="text")
      */
     private $desc = '';
 
     /**
-     * @param $name
      * @return $this
      */
     public function setName($name): self
@@ -57,16 +68,12 @@ class ActivityTranslation implements TranslationInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param $summary
      * @return $this
      */
     public function setSummary($summary): self
@@ -76,16 +83,12 @@ class ActivityTranslation implements TranslationInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getSummary(): string
     {
         return $this->summary;
     }
 
     /**
-     * @param $desc
      * @return $this
      */
     public function setDesc($desc): self
@@ -95,9 +98,6 @@ class ActivityTranslation implements TranslationInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDesc(): string
     {
         return $this->desc;

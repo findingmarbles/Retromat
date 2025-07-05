@@ -12,26 +12,18 @@ class PlanIdGenerator
 
     private ActivityByPhase $activityByPhase;
 
-    /**
-     * @param ActivityByPhase $activityByPhase
-     */
     public function __construct(ActivityByPhase $activityByPhase)
     {
         $this->activityByPhase = $activityByPhase;
     }
 
     /**
-     * @param callable $callback
-     * @param int $maxResults
-     * @param int $skip
      * @throws \Exception
      */
     public function generate(callable $callback, int $maxResults = self::MAX_RESULTS, int $skip = 0): void
     {
         if (self::MAX_RESULTS > PHP_INT_MAX) {
-            throw new \Exception(
-                \sprintf('Desired result loop "%d" is greater than the php internal "%d".', PHP_INT_MAX, self::MAX_RESULTS)
-            );
+            throw new \Exception(\sprintf('Desired result loop "%d" is greater than the php internal "%d".', PHP_INT_MAX, self::MAX_RESULTS));
         }
 
         $activitiesByPhase = $this->activityByPhase->getAllActivitiesByPhase();

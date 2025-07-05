@@ -9,10 +9,6 @@ use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 class AbstractTestCase extends WebTestCase
 {
-    /**
-     * @param $fixtures
-     * @return ORMExecutor
-     */
     public function loadFixtures($fixtures): ORMExecutor
     {
         return $this->getContainer()
@@ -21,9 +17,6 @@ class AbstractTestCase extends WebTestCase
             ->loadFixtures($fixtures);
     }
 
-    /**
-     * @return KernelBrowser
-     */
     protected function getKernelBrowser(): KernelBrowser
     {
         if (static::$booted) {

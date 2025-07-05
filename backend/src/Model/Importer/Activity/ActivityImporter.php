@@ -30,7 +30,7 @@ final class ActivityImporter
         ActivityReader $reader,
         ActivityHydrator $activityHydrator,
         ValidatorInterface $validator,
-        array $locales = ['en']
+        array $locales = ['en'],
     ) {
         $this->entityManager = $entityManager;
         $this->reader = $reader;

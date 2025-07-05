@@ -12,18 +12,12 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     private ActivityUrlGenerator $activityUrlGenerator;
     private PlanUrlGenerator $planUrlGenerator;
 
-    /**
-     * @param ActivityUrlGenerator $activityUrlGenerator
-     */
     public function __construct(ActivityUrlGenerator $activityUrlGenerator, PlanUrlGenerator $planUrlGenerator)
     {
         $this->activityUrlGenerator = $activityUrlGenerator;
         $this->planUrlGenerator = $planUrlGenerator;
     }
 
-    /**
-     * @param SitemapPopulateEvent $event
-     */
     public function onPrestaSitemapPopulate(SitemapPopulateEvent $event): void
     {
         $this->activityUrlGenerator->generateHomeUrls($event->getUrlContainer());

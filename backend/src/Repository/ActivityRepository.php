@@ -15,18 +15,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ActivityRepository extends ServiceEntityRepository
 {
-    /**
-     * @param ManagerRegistry $registry
-     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Activity::class);
     }
 
-    /**
-     * @param array $orderedIds
-     * @return array
-     */
     public function findOrdered(array $orderedIds): array
     {
         // load all from RAM via results cache in Redis
@@ -43,9 +36,6 @@ class ActivityRepository extends ServiceEntityRepository
         return $orderedActivities;
     }
 
-    /**
-     * @return array
-     */
     public function findAllOrdered(): array
     {
         return $this->createQueryBuilder('a')
@@ -57,10 +47,6 @@ class ActivityRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    /**
-     * @param string $locale
-     * @return array
-     */
     public function findAllActivitiesByPhases(string $locale = 'en'): array
     {
         $activitiesByPhase = [];

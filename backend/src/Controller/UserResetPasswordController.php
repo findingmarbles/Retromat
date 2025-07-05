@@ -25,19 +25,12 @@ class UserResetPasswordController extends AbstractController
     private UserResetPasswordMailer $userResetPasswordMailer;
     private UserRepository $userRepository;
 
-    /**
-     * @param UserManager $userManager
-     * @param UserResetPasswordManager $userResetPasswordManager
-     * @param UserResetPasswordSessionManager $userResetPasswordSessionManager
-     * @param UserResetPasswordMailer $userResetPasswordMailer
-     * @param UserRepository $userRepository
-     */
     public function __construct(
         UserManager $userManager,
         UserResetPasswordManager $userResetPasswordManager,
         UserResetPasswordSessionManager $userResetPasswordSessionManager,
         UserResetPasswordMailer $userResetPasswordMailer,
-        UserRepository $userRepository
+        UserRepository $userRepository,
     ) {
         $this->userManager = $userManager;
         $this->userResetPasswordManager = $userResetPasswordManager;
@@ -47,8 +40,6 @@ class UserResetPasswordController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @return Response
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
     #[Route('', name: 'user_request_password_reset_email')]
@@ -68,9 +59,6 @@ class UserResetPasswordController extends AbstractController
         ]);
     }
 
-    /**
-     * @return Response
-     */
     #[Route('/check-email', name: 'user_check_email')]
     public function checkEmail(): Response
     {
@@ -80,16 +68,14 @@ class UserResetPasswordController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @param string|null $token
-     * @return Response
      * @throws \App\Model\User\Exception\InvalidUserResetPasswordTokenException
      */
     #[Route('/reset/{token}', name: 'user_reset_password')]
-    public function resetPassword(Request $request, string $token = null): Response
+    public function resetPassword(Request $request, ?string $token = null): Response
     {
         if ($token) {
             $this->userResetPasswordSessionManager->setToken($token);
+
             return $this->redirectToRoute('user_reset_password');
         }
 
@@ -105,6 +91,7 @@ class UserResetPasswordController extends AbstractController
                 'reset_password_error',
                 \sprintf('Something went wrong with the validation: "%s".', $userException->getErrorMessage())
             );
+
             return $this->redirectToRoute('user_request_password_reset_email');
         }
 
@@ -125,10 +112,6 @@ class UserResetPasswordController extends AbstractController
         ]);
     }
 
-    /**
-     * @param string $email
-     * @return RedirectResponse
-     */
     private function processSendingPasswordResetEmail(string $email): RedirectResponse
     {
         $user = $this->userRepository->findOneBy(['email' => $email]);
@@ -145,7 +128,7 @@ class UserResetPasswordController extends AbstractController
         $this->userResetPasswordMailer->send(
             $user->getEmail(),
             [
-                'token' => $userResetPasswordToken->getToken()
+                'token' => $userResetPasswordToken->getToken(),
             ]
         );
 

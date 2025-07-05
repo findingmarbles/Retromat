@@ -26,9 +26,8 @@ class TitleChooser
 
     /**
      * TitleIdChooser constructor.
-     * @param array $titleParts
+     *
      * @param TitleRenderer|null $title
-     * @param int $maxLengthIncludingPlanId
      */
     public function __construct(array $titleParts, TitleRenderer $title, int $maxLengthIncludingPlanId = PHP_INT_MAX)
     {
@@ -38,9 +37,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $activityIdsString
-     * @param string $locale
-     * @return string
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -54,9 +50,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $activityIdsString
-     * @param string $locale
-     * @return string
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -71,7 +64,7 @@ class TitleChooser
         }
 
         // use input to seed the random number generator so we get deterministic randomness
-        $planNumber = (int)\implode('0', $activityIds);
+        $planNumber = (int) \implode('0', $activityIds);
         \mt_srand($planNumber);
 
         // randomly choose a squence to use and identify the groups of terms in it
@@ -93,10 +86,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $titleId
-     * @param string $planId
-     * @param string $locale
-     * @return string
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -110,9 +99,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $titleId
-     * @param string $locale
-     * @return string
      * @throws InconsistentInputException
      * @throws NoGroupLeftToDrop
      */
@@ -129,7 +115,7 @@ class TitleChooser
 
         // find non-empty optional terms
         $nonEmptyOptionalGroupIds = [];
-        for ($i = 0; $i < \count($fragmentIds); $i++) {
+        for ($i = 0; $i < \count($fragmentIds); ++$i) {
             // non-empty (by convention, empty string must be listed first and therefore are id == 0)
             if (0 != $fragmentIds[$i]) {
                 // by convention, optional groups are marked by having an empty string as their first term
@@ -139,10 +125,7 @@ class TitleChooser
             }
         }
         if (empty($nonEmptyOptionalGroupIds)) {
-            throw new NoGroupLeftToDrop(
-                'Cannot drop enough groups to satisfy maximum length requirement: '.
-                $sequenceOfGroupsId.':'.\implode('-', $fragmentIds)
-            );
+            throw new NoGroupLeftToDrop('Cannot drop enough groups to satisfy maximum length requirement: '.$sequenceOfGroupsId.':'.\implode('-', $fragmentIds));
         }
 
         // drop one term (random choice)
@@ -153,10 +136,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $titleId
-     * @param string $activityIdsString
-     * @param string $locale
-     * @return bool
      * @throws InconsistentInputException
      */
     public function isShortEnough(string $titleId, string $activityIdsString, string $locale = 'en'): bool
@@ -167,8 +146,6 @@ class TitleChooser
     }
 
     /**
-     * @param string $locale
-     * @return array
      * @throws InconsistentInputException
      */
     private function extractTitleParts(string $locale): array

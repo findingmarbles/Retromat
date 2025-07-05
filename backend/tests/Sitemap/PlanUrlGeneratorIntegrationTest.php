@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\Sitemap;
 
 use App\Model\Activity\ActivityByPhase;
-use App\Model\Sitemap\PlanUrlGenerator;
 use App\Model\Sitemap\PlanIdGenerator;
+use App\Model\Sitemap\PlanUrlGenerator;
 use PHPUnit\Framework\TestCase;
 use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\Url;
@@ -18,9 +18,6 @@ class PlanUrlGeneratorIntegrationTest extends TestCase implements UrlContainerIn
     private array $urlContainer;
     private string $baseUrl = 'https://plans-for-retrospectives.com/en/?id=';
 
-    /**
-     * @return void
-     */
     public function testPopulatePlans(): void
     {
         $activitiesByPhase = [
@@ -50,38 +47,20 @@ class PlanUrlGeneratorIntegrationTest extends TestCase implements UrlContainerIn
         $this->assertEquals($this->baseUrl.'6-7-3-4-5', $this->urlContainer[3]->getLoc());
     }
 
-    /**
-     * @param Url $url
-     * @param string $section
-     * @return void
-     */
     public function addUrl(Url $url, string $section): void
     {
         $this->urlContainer[] = $url;
     }
 
-    /**
-     * @param string $name
-     * @param array $parameters
-     * @param int $referenceType
-     * @return string
-     */
-    public function generate(string $name, array $parameters = array(), int $referenceType = self::ABSOLUTE_PATH): string
+    public function generate(string $name, array $parameters = [], int $referenceType = self::ABSOLUTE_PATH): string
     {
         return $this->baseUrl.$parameters['id'];
     }
 
-    /**
-     * @param RequestContext $context
-     * @return void
-     */
     public function setContext(RequestContext $context): void
     {
     }
 
-    /**
-     * @return void
-     */
     public function getContext(): void
     {
     }

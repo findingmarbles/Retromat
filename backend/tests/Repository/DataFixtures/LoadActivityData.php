@@ -14,7 +14,7 @@ class LoadActivityData extends Fixture implements ContainerAwareInterface
      */
     private $container;
 
-    public function setContainer(ContainerInterface $container = null)
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

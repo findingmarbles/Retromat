@@ -19,9 +19,6 @@ class TitleIdGenerator
     }
 
     /**
-     * @param int $id
-     * @param string $locale
-     * @return int
      * @throws InconsistentInputException
      */
     public function countCombinationsInSequence(int $id, string $locale = 'en'): int
@@ -37,8 +34,6 @@ class TitleIdGenerator
     }
 
     /**
-     * @param string $locale
-     * @return int
      * @throws InconsistentInputException
      */
     public function countCombinationsInAllSequences(string $locale = 'en'): int
@@ -54,8 +49,6 @@ class TitleIdGenerator
     }
 
     /**
-     * @param string $locale
-     * @return array
      * @throws InconsistentInputException
      */
     private function extractTitleParts(string $locale): array

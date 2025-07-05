@@ -14,9 +14,6 @@ final class Version20220518160255 extends AbstractMigration
         return 'Drop unused reset password columns from user table';
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -27,9 +24,6 @@ final class Version20220518160255 extends AbstractMigration
         );
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function down(Schema $schema): void
     {
         $this->addSql(

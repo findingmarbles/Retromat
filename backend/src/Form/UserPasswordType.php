@@ -16,10 +16,6 @@ class UserPasswordType extends AbstractType
     private const PASSWORD_LENGTH_MIN = 6;
     private const PASSWORD_LENGTH_MAX = 32;
 
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -47,9 +43,6 @@ class UserPasswordType extends AbstractType
             ]);
     }
 
-    /**
-     * @param OptionsResolver $resolver
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

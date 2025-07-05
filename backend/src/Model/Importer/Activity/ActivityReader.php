@@ -12,7 +12,7 @@ final class ActivityReader
 
     private $currentLocale;
 
-    public function __construct(string $fileName = null, array $activityFileNames = null, $defaultLocale = 'en')
+    public function __construct(?string $fileName = null, ?array $activityFileNames = null, $defaultLocale = 'en')
     {
         if ($activityFileNames) {
             $this->activityFileNames = $activityFileNames;
@@ -22,9 +22,6 @@ final class ActivityReader
         $this->readActivities($fileName);
     }
 
-    /**
-     * @return array
-     */
     public function extractAllActivities(): array
     {
         $activities = [];
@@ -174,9 +171,6 @@ final class ActivityReader
     }
 
     /**
-     * @param $activityBlock
-     * @param $key
-     *
      * @return string
      */
     private function extractStringValue($activityBlock, $key)

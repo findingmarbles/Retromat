@@ -8,19 +8,23 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="user_reset_password_request")
+ *
  * @ORM\Entity(repositoryClass=UserResetPasswordRepository::class)
  */
 class UserResetPasswordRequest implements UserResetPasswordRequestInterface
 {
     /**
      * @ORM\Id
+     *
      * @ORM\GeneratedValue
+     *
      * @ORM\Column(type="integer")
      */
     private int $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
+     *
      * @ORM\JoinColumn(nullable=false)
      */
     private UserInterface $user;
@@ -54,49 +58,31 @@ class UserResetPasswordRequest implements UserResetPasswordRequestInterface
         $this->hashedToken = $hashedToken;
     }
 
-    /**
-     * @return int|null
-     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return UserInterface
-     */
     public function getUser(): UserInterface
     {
         return $this->user;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
     public function getRequestedAt(): \DateTimeInterface
     {
         return $this->requestedAt;
     }
 
-    /**
-     * @return bool
-     */
     public function isExpired(): bool
     {
         return $this->expiresAt->getTimestamp() <= \time();
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
     public function getExpiresAt(): \DateTimeInterface
     {
         return $this->expiresAt;
     }
 
-    /**
-     * @return string
-     */
     public function getHashedToken(): string
     {
         return $this->hashedToken;

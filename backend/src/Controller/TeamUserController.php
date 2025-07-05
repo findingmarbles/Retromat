@@ -18,9 +18,6 @@ class TeamUserController extends AbstractController
     private UserManager $userManager;
     private UserRepository $userRepository;
 
-    /**
-     * @param UserManager $userManager
-     */
     public function __construct(UserManager $userManager, UserRepository $userRepository)
     {
         $this->userManager = $userManager;
@@ -28,8 +25,6 @@ class TeamUserController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @return Response
      * @throws \Exception
      */
     #[Route('/password', name: 'team_user_password', methods: ['POST', 'GET'])]
@@ -54,9 +49,6 @@ class TeamUserController extends AbstractController
         ]);
     }
 
-    /**
-     * @return Response
-     */
     #[Route('/', name: 'team_user_index', methods: ['GET'])]
     public function index(): Response
     {
@@ -65,14 +57,12 @@ class TeamUserController extends AbstractController
         return $this->render(
             'team/user/index.html.twig',
             [
-                'users' => $this->userRepository->findAll()
+                'users' => $this->userRepository->findAll(),
             ]
         );
     }
 
     /**
-     * @param Request $request
-     * @return Response
      * @throws \Exception
      */
     #[Route('/new', name: 'team_user_new', methods: ['GET', 'POST'])]
@@ -97,10 +87,6 @@ class TeamUserController extends AbstractController
         ]);
     }
 
-    /**
-     * @param User $user
-     * @return Response
-     */
     #[Route('/{id}', name: 'team_user_show', methods: ['GET'])]
     public function show(User $user): Response
     {
@@ -112,9 +98,6 @@ class TeamUserController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @param User $user
-     * @return Response
      * @throws \Exception
      */
     #[Route('/{id}/edit', name: 'team_user_edit', methods: ['GET', 'POST'])]
@@ -138,11 +121,6 @@ class TeamUserController extends AbstractController
         ]);
     }
 
-    /**
-     * @param Request $request
-     * @param User $user
-     * @return Response
-     */
     #[Route('/{id}', name: 'team_user_delete', methods: ['POST'])]
     public function delete(Request $request, User $user): Response
     {

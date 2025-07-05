@@ -2,7 +2,6 @@
 
 namespace App\Twig;
 
-use App\Utils\ColorVariationHelper;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 

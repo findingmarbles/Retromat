@@ -20,17 +20,11 @@ class UserResetPasswordManager
     private int $resetRequestLifetime;
     private EntityManagerInterface $entityManager;
 
-    /**
-     * @param UserResetPasswordTokenGenerator $userResetPasswordTokenGenerator
-     * @param UserResetPasswordRepository $userResetPasswordRequestRepository
-     * @param EntityManagerInterface $entityManager
-     * @param int $resetRequestLifetime
-     */
     public function __construct(
         UserResetPasswordTokenGenerator $userResetPasswordTokenGenerator,
         UserResetPasswordRepository $userResetPasswordRequestRepository,
         EntityManagerInterface $entityManager,
-        int $resetRequestLifetime
+        int $resetRequestLifetime,
     ) {
         $this->userResetPasswordTokenGenerator = $userResetPasswordTokenGenerator;
         $this->userResetPasswordRequestRepository = $userResetPasswordRequestRepository;
@@ -39,8 +33,6 @@ class UserResetPasswordManager
     }
 
     /**
-     * @param UserInterface $user
-     * @return UserResetPasswordToken
      * @throws \Exception
      */
     public function generateUserResetPasswordToken(UserInterface $user): UserResetPasswordToken
@@ -67,14 +59,12 @@ class UserResetPasswordManager
     }
 
     /**
-     * @param string $fullToken
-     * @return UserInterface
      * @throws ExpiredUserResetPasswordTokenException
      * @throws InvalidUserResetPasswordTokenException
      */
     public function validateTokenAndFetchUser(string $fullToken): UserInterface
     {
-        if (UserResetPasswordTokenComponents::COMPONENTS_LENGTH*2 !== \strlen($fullToken)) {
+        if (UserResetPasswordTokenComponents::COMPONENTS_LENGTH * 2 !== \strlen($fullToken)) {
             throw new InvalidUserResetPasswordTokenException();
         }
 
@@ -103,7 +93,6 @@ class UserResetPasswordManager
     }
 
     /**
-     * @param string $fullToken
      * @throws InvalidUserResetPasswordTokenException
      */
     public function deleteUserResetPasswordRequest(string $fullToken): void
@@ -117,7 +106,6 @@ class UserResetPasswordManager
     }
 
     /**
-     * @param UserResetPasswordRequestInterface $userResetPasswordRequest
      * @throws \Exception
      */
     public function persist(UserResetPasswordRequestInterface $userResetPasswordRequest): void
@@ -130,22 +118,15 @@ class UserResetPasswordManager
         }
     }
 
-    /**
-     * @param string $token
-     * @return UserResetPasswordRequestInterface|null
-     */
     private function findUserResetPasswordRequest(string $token): ?UserResetPasswordRequestInterface
     {
         return $this->userResetPasswordRequestRepository->findOneBy(
             [
-                'selector' => \substr($token, 0, UserResetPasswordTokenComponents::COMPONENTS_LENGTH)
+                'selector' => \substr($token, 0, UserResetPasswordTokenComponents::COMPONENTS_LENGTH),
             ]
         );
     }
 
-    /**
-     * @return void
-     */
     public function deleteExpiredResetRequests(): void
     {
         $this->userResetPasswordRequestRepository->deleteExpiredResetPasswordRequests($this->resetRequestLifetime);

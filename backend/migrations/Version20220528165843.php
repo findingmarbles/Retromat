@@ -9,17 +9,11 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version20220528165843 extends AbstractMigration
 {
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return 'Remove orphaned columns from user entity and rewrite unique index';
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function up(Schema $schema): void
     {
         $this->addSql('DROP INDEX UNIQ_8D93D649C05FB297 ON user');
@@ -36,9 +30,6 @@ final class Version20220528165843 extends AbstractMigration
         $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D649A0D96FBF ON user (email)');
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function down(Schema $schema): void
     {
         $this->addSql('DROP INDEX UNIQ_8D93D64992FC23A8 ON user');

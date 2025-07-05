@@ -13,12 +13,6 @@ class UserResetPasswordMailer
     private string $template;
     private MailerInterface $mailer;
 
-    /**
-     * @param string $from
-     * @param string $subject
-     * @param string $template
-     * @param MailerInterface $mailer
-     */
     public function __construct(string $from, string $subject, string $template, MailerInterface $mailer)
     {
         $this->from = $from;
@@ -28,8 +22,6 @@ class UserResetPasswordMailer
     }
 
     /**
-     * @param string $to
-     * @param array $context
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
     public function send(string $to, array $context): void
@@ -42,11 +34,6 @@ class UserResetPasswordMailer
         );
     }
 
-    /**
-     * @param string $to
-     * @param array $context
-     * @return TemplatedEmail
-     */
     private function prepare(string $to, array $context): TemplatedEmail
     {
         return (new TemplatedEmail())

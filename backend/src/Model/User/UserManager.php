@@ -4,7 +4,6 @@ namespace App\Model\User;
 
 use App\Entity\User;
 use App\Model\User\Exception\DropUserException;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -27,7 +26,7 @@ class UserManager
         'ROLE_TRANSLATOR_PT-BR',
         'ROLE_TRANSLATOR_RU',
         'ROLE_TRANSLATOR_ZH',
-        'ROLE_SERP_PREVIEW'
+        'ROLE_SERP_PREVIEW',
     ];
 
     private EntityManagerInterface $entityManager;
@@ -36,11 +35,6 @@ class UserManager
 
     private ?string $plainPassword = null;
 
-    /**
-     * @param EntityManagerInterface $entityManager
-     * @param UserPasswordHasherInterface $userPasswordHasher
-     * @param ComputerPasswordGenerator $computerPasswordGenerator
-     */
     public function __construct(EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher, ComputerPasswordGenerator $computerPasswordGenerator)
     {
         $this->entityManager = $entityManager;
@@ -49,7 +43,6 @@ class UserManager
     }
 
     /**
-     * @param UserInterface|PasswordAuthenticatedUserInterface $user
      * @throws \Exception
      */
     public function persist(UserInterface|PasswordAuthenticatedUserInterface $user): void
@@ -66,9 +59,6 @@ class UserManager
         $this->entityManager->flush();
     }
 
-    /**
-     * @return UserInterface
-     */
     public function create(): UserInterface
     {
         $user = new User();
@@ -86,8 +76,6 @@ class UserManager
     }
 
     /**
-     * @param UserInterface $user
-     * @return bool
      * @throws DropUserException
      */
     public function drop(UserInterface $user): bool
@@ -96,21 +84,12 @@ class UserManager
             $this->entityManager->remove($user);
             $this->entityManager->flush();
         } catch (\Exception $exception) {
-            throw new DropUserException(
-                \sprintf(
-                    'Drop user "%s" failed with error: "%s"',
-                    $user->getUsername(),
-                    $exception->getMessage()
-                )
-            );
+            throw new DropUserException(\sprintf('Drop user "%s" failed with error: "%s"', $user->getUsername(), $exception->getMessage()));
         }
 
         return true;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPlainPassword(): ?string
     {
         return $this->plainPassword;

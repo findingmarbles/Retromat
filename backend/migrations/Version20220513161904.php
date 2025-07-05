@@ -9,17 +9,11 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version20220513161904 extends AbstractMigration
 {
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return 'Create user password reset request table';
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -46,9 +40,6 @@ final class Version20220513161904 extends AbstractMigration
         );
     }
 
-    /**
-     * @param Schema $schema
-     */
     public function down(Schema $schema): void
     {
         $this->addSql('DROP TABLE user_reset_password_request');

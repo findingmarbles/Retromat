@@ -33,7 +33,7 @@ class TeamActivityController extends AbstractController
         CacheInterface $doctrineResultCachePool,
         EntityManagerInterface $entityManager,
         ActivityLocalizer $activityLocalizer,
-        ActivityRepository $activityRepository
+        ActivityRepository $activityRepository,
     ) {
         $this->activityExpander = $activityExpander;
         $this->activityByPhase = $activityByPhase;
@@ -129,10 +129,6 @@ class TeamActivityController extends AbstractController
         return $this->redirectToRoute('team_activity_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    /**
-     * @param string $locale
-     * @return Activity
-     */
     private function createActivity(string $locale): Activity
     {
         $localizedActivities = $this->activityLocalizer->localize(
@@ -155,14 +151,10 @@ class TeamActivityController extends AbstractController
     }
 
     /**
-     * @param string $locale
-     * @param Activity|null $activity
-     * @param array $options
-     * @return FormInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    private function createActivityForm(string $locale, Activity $activity = null, array $options = []): FormInterface
+    private function createActivityForm(string $locale, ?Activity $activity = null, array $options = []): FormInterface
     {
         if ('en' === $locale) {
             $type = ActivityType::class;

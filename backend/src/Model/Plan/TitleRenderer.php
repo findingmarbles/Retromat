@@ -15,7 +15,6 @@ class TitleRenderer
 
     /**
      * Title constructor.
-     * @param array $parts
      */
     public function __construct(array $parts)
     {
@@ -23,8 +22,6 @@ class TitleRenderer
     }
 
     /**
-     * @param $idString
-     * @return string
      * @throws InconsistentInputException
      */
     public function render(string $idString, string $locale = 'en'): string
@@ -37,13 +34,11 @@ class TitleRenderer
         unset($idString, $idStringParts);
 
         if (\count($fragmentIds) != \count($sequenceOfGroups)) {
-            throw new InconsistentInputException(
-                'Number of frament ids differs from number of groups in the sequence of groups. They need to be equal.'
-            );
+            throw new InconsistentInputException('Number of frament ids differs from number of groups in the sequence of groups. They need to be equal.');
         }
 
         $fragments = [];
-        for ($i = 0; $i < \count($fragmentIds); $i++) {
+        for ($i = 0; $i < \count($fragmentIds); ++$i) {
             $fragment = $parts['groups_of_terms'][$sequenceOfGroups[$i]][$fragmentIds[$i]];
             if (0 < \strlen($fragment)) {
                 $fragments[] = $fragment;
@@ -54,8 +49,6 @@ class TitleRenderer
     }
 
     /**
-     * @param string $locale
-     * @return array
      * @throws InconsistentInputException
      */
     private function extractTitleParts(string $locale): array

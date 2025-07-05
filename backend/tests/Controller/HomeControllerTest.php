@@ -268,7 +268,7 @@ class HomeControllerTest extends AbstractTestCase
 
         $activities = $crawler->filter('.js_plan')->filter('.js_activity_block');
         $colorCode = $this->extractColorCode($activities->eq(0));
-        for ($i = 1; $i < $activities->count(); $i++) {
+        for ($i = 1; $i < $activities->count(); ++$i) {
             $previousColorCode = $colorCode;
             $colorCode = $this->extractColorCode($activities->eq($i));
 
@@ -277,7 +277,6 @@ class HomeControllerTest extends AbstractTestCase
     }
 
     /**
-     * @param $activity
      * @return string
      */
     public function extractColorCode($activity)
@@ -601,7 +600,7 @@ class HomeControllerTest extends AbstractTestCase
     }
 
     /**
-     * @return \string[][]
+     * @return string[][]
      */
     public function malformedPathsProvider(): array
     {
