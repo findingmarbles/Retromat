@@ -1,0 +1,21 @@
+---
+description: Code Quality Checks Must Pass
+globs: 
+alwaysApply: true
+---
+# Code Quality Checks
+
+<rule>
+name: code_quality_checks
+description: On any code change, the quality-checks-in-docker.sh script must be executed and pass successfully.
+filters:
+  - type: event
+    pattern: ".*"  # Match any event
+  - type: file_extension
+    pattern: ".*"  # Match any file extension
+actions:
+  - type: execute
+    command: "./quality-checks-in-docker.sh"
+    require_success: true
+    message: "All code quality checks (formatting, linting, type checking) must pass before merging."
+</rule>

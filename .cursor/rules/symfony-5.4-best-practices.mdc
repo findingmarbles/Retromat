@@ -1,0 +1,355 @@
+---
+name: symfony_5_4_best_practices
+description: Enforce Symfony 5.4 best practices for project structure, code organization, and development standards
+version: 1.0.0
+author: Timon Fiddike
+date: 2025-07-08
+globs:
+  - "**/*"
+tags:
+  - symfony
+  - best-practices
+  - php
+  - structure
+---
+
+# Symfony 5.4 Best Practices
+
+<rule>
+name: symfony_5_4_best_practices
+description: Enforces official Symfony 5.4 best practices for project structure, code organization, configuration, and development standards across all file types
+filters:
+  - type: file_extension
+    pattern: "\\.php$"
+  - type: file_extension
+    pattern: "\\.yaml$"
+  - type: file_extension
+    pattern: "\\.yml$"
+  - type: file_extension
+    pattern: "\\.twig$"
+  - type: file_extension
+    pattern: "\\.xml$"
+  - type: content
+    pattern: "(?i)(symfony|doctrine|twig|controller|entity|form|template|service|config)"
+  - type: event
+    pattern: "file_create"
+  - type: event
+    pattern: "file_modify"
+actions:
+  - type: suggest
+    message: |
+      Follow Symfony 5.4 Best Practices:
+
+      ## Project Structure & Organization
+      1. **Use Default Directory Structure**:
+         ```
+         your_project/
+         ├─ assets/
+         ├─ bin/console
+         ├─ config/
+         │  ├─ packages/
+         │  ├─ routes/
+         │  └─ services.yaml
+         ├─ migrations/
+         ├─ public/
+         │  ├─ build/
+         │  └─ index.php
+         ├─ src/
+         │  ├─ Kernel.php
+         │  ├─ Controller/
+         │  ├─ Entity/
+         │  ├─ Form/
+         │  ├─ Repository/
+         │  └─ Security/
+         ├─ templates/
+         ├─ tests/
+         ├─ translations/
+         ├─ var/
+         └─ vendor/
+         ```
+
+      2. **Don't Create Bundles for Application Logic**:
+         - Use PHP namespaces instead of bundles
+         - Bundles are only for reusable standalone components
+
+      ## Configuration Best Practices
+      1. **Environment Variables for Infrastructure**:
+         - Use .env files for machine-specific config
+         - DATABASE_URL, MAILER_DSN, etc.
+
+      2. **Secrets for Sensitive Information**:
+         - Use Symfony's secrets management system
+         - Never commit sensitive data to version control
+
+      3. **Parameters for Application Configuration**:
+         - Define in config/services.yaml
+         - Use app.* prefix: app.contents_dir, app.admin_email
+         - Keep parameters short and descriptive
+
+      4. **Constants for Rarely Changing Options**:
+         ```php
+         // src/Entity/Post.php
+         class Post
+         {
+             public const NUMBER_OF_ITEMS = 10;
+         }
+         ```
+
+      ## Controller Best Practices
+      1. **Extend AbstractController**:
+         ```php
+         use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+         
+         class MyController extends AbstractController
+         {
+             // ...
+         }
+         ```
+
+      2. **Use Attributes for Configuration**:
+         ```php
+         #[Route('/posts', name: 'post_list')]
+         public function list(): Response
+         {
+             // ...
+         }
+         ```
+
+      3. **Use Dependency Injection**:
+         ```php
+         public function show(PostRepository $repository, int $id): Response
+         {
+             $post = $repository->find($id);
+             // ...
+         }
+         ```
+
+      4. **Use ParamConverters When Convenient**:
+         ```php
+         #[Route('/posts/{id}', name: 'post_show')]
+         public function show(Post $post): Response
+         {
+             // Automatically queries for Post by ID
+         }
+         ```
+
+      ## Business Logic & Services
+      1. **Use Autowiring**:
+         - Enable service autowiring in config/services.yaml
+         - Let Symfony automatically inject dependencies
+
+      2. **Make Services Private**:
+         - Don't access services via container->get()
+         - Use proper dependency injection
+
+      3. **Use YAML for Service Configuration**:
+         - Keep services.yaml for manual service definitions
+         - Use when autowiring isn't sufficient
+
+      ## Doctrine Entity Best Practices
+      1. **Use Attributes for Mapping**:
+         ```php
+         #[Entity(repositoryClass: PostRepository::class)]
+         #[Table(name: 'posts')]
+         class Post
+         {
+             #[Id]
+             #[GeneratedValue]
+             #[Column]
+             private ?int $id = null;
+         }
+         ```
+
+      ## Template Best Practices
+      1. **Use Snake Case for Names**:
+         - user_profile.html.twig (not userProfile.html.twig)
+         - Template variables: {{ user_name }} (not {{ userName }})
+
+      2. **Prefix Fragments with Underscore**:
+         - _user_metadata.html.twig
+         - _navigation.html.twig
+
+      ## Form Best Practices
+      1. **Define Forms as PHP Classes**:
+         ```php
+         // src/Form/PostType.php
+         class PostType extends AbstractType
+         {
+             public function buildForm(FormBuilderInterface $builder, array $options)
+             {
+                 // ...
+             }
+         }
+         ```
+
+      2. **Add Form Buttons in Templates**:
+         - Don't add submit buttons in form classes
+         - Add them in Twig templates for flexibility
+
+      3. **Define Validation on Entities**:
+         ```php
+         class Post
+         {
+             #[Assert\NotBlank]
+             #[Assert\Length(min: 3)]
+             private string $title;
+         }
+         ```
+
+      ## Security Best Practices
+      1. **Single Firewall Configuration**:
+         ```yaml
+         # config/packages/security.yaml
+         security:
+           firewalls:
+             main:
+               anonymous: true
+               # single firewall for most cases
+         ```
+
+      2. **Use Auto Password Hasher**:
+         ```yaml
+         security:
+           password_hashers:
+             App\Entity\User: 'auto'
+         ```
+
+      3. **Use Voters for Complex Security**:
+         ```php
+         class PostVoter extends Voter
+         {
+             protected function supports(string $attribute, mixed $subject): bool
+             {
+                 return in_array($attribute, ['POST_EDIT', 'POST_DELETE']);
+             }
+         }
+         ```
+
+      ## Internationalization
+      1. **Use XLIFF Format**:
+         - translations/messages.en.xlf
+         - translations/messages.fr.xlf
+
+      2. **Use Keys for Translations**:
+         ```php
+         // Good: descriptive keys
+         $this->translator->trans('form.submit.button');
+         
+         // Avoid: content strings
+         $this->translator->trans('Submit');
+         ```
+
+      ## Testing Best Practices
+      1. **Smoke Test URLs**:
+         ```php
+         /**
+          * @dataProvider urlProvider
+          */
+         public function testPageIsSuccessful($url)
+         {
+             $client = self::createClient();
+             $client->request('GET', $url);
+             $this->assertResponseIsSuccessful();
+         }
+         ```
+
+      2. **Hard-code URLs in Tests**:
+         - Use actual URLs instead of route generation
+         - Catch URL changes that need redirects
+
+      ## Performance Considerations
+      1. **Enable OPcache in Production**
+      2. **Use container.dumper.inline_factories: true**
+      3. **Optimize Composer Autoloader**:
+         ```bash
+         composer dump-autoload --no-dev --classmap-authoritative
+         ```
+
+      ## File Naming Conventions
+      1. **Controllers**: PascalCase (PostController.php)
+      2. **Entities**: PascalCase (Post.php)
+      3. **Templates**: snake_case (post_list.html.twig)
+      4. **Services**: snake_case with namespace
+      5. **Configuration**: snake_case (.yaml files)
+
+examples:
+  - input: |
+      Creating a new controller
+    output: |
+      ```php
+      // src/Controller/PostController.php
+      namespace App\Controller;
+      
+      use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+      use Symfony\Component\HttpFoundation\Response;
+      use Symfony\Component\Routing\Annotation\Route;
+      
+      class PostController extends AbstractController
+      {
+          #[Route('/posts', name: 'post_list')]
+          public function list(): Response
+          {
+              return $this->render('post/list.html.twig');
+          }
+      }
+      ```
+  - input: |
+      Creating a Doctrine entity
+    output: |
+      ```php
+      // src/Entity/Post.php
+      namespace App\Entity;
+      
+      use Doctrine\ORM\Mapping as ORM;
+      use Symfony\Component\Validator\Constraints as Assert;
+      
+      #[ORM\Entity(repositoryClass: PostRepository::class)]
+      class Post
+      {
+          #[ORM\Id]
+          #[ORM\GeneratedValue]
+          #[ORM\Column]
+          private ?int $id = null;
+      
+          #[ORM\Column(length: 255)]
+          #[Assert\NotBlank]
+          private ?string $title = null;
+      }
+      ```
+  - input: |
+      Creating a form type
+    output: |
+      ```php
+      // src/Form/PostType.php
+      namespace App\Form;
+      
+      use App\Entity\Post;
+      use Symfony\Component\Form\AbstractType;
+      use Symfony\Component\Form\FormBuilderInterface;
+      use Symfony\Component\OptionsResolver\OptionsResolver;
+      
+      class PostType extends AbstractType
+      {
+          public function buildForm(FormBuilderInterface $builder, array $options): void
+          {
+              $builder->add('title');
+          }
+      
+          public function configureOptions(OptionsResolver $resolver): void
+          {
+              $resolver->setDefaults(['data_class' => Post::class]);
+          }
+      }
+      ```
+metadata:
+  priority: high
+  version: 1.0
+  symfony_version: 5.4
+  tags:
+    - symfony
+    - best-practices
+    - php
+    - framework
+    - structure
+    - coding-standards
+</rule>
