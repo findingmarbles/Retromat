@@ -18,15 +18,15 @@ docker compose --env-file docker-ports.env up    # keep the shell + docker compo
 docker compose --env-file docker-ports.env up -d # detach, logs at: docker compose logs
 ```
 
-## Obtain a sql dump fron the live DB.
+## Setu up the database
+
+### Obtain a sql dump from the live DB.
 
 Locally, outside of docker, ec2 etc. do this:
 
 [local ~]$ ssh retro2@cordelia.uberspace.de "/usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat" > retro2_retromat.sql
 
-## Insert the sql dump into the Docker DB:
-
-## Prepare Database
+### Prepare the Docker DB
 
 Open PHPMyAdmin instance running in Docker:
 
@@ -47,7 +47,9 @@ Name: You need to use the same DB name as specified in
 retromat-local-prod to keep it separate from the local DB used for testing.
 Collation: utf8mb4_unicode_ci
 
-Then import retro2_retromat.sql 
+### Insert the sql dump into the Docker DB
+
+Finally, import retro2_retromat.sql into the DB you just created, via command line or using PHPMyAdmin (which can actually be convenient when accessing it from a laptop through a tunnel).
 
 ## Install libraries
 
