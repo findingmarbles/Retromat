@@ -35,7 +35,7 @@ Open PHPMyAdmin instance running in Docker:
 
 Obtain the value of MYSQL_ROOT_PASSWORD from
 
-```
+```bash
 /docker-compose.yml
 ```
 
@@ -56,7 +56,7 @@ Finally, import retro2_retromat.sql into the DB you just created, via command li
 * macOS: In the Docker Desktop App, click CLI on the container: retromat-app-php-fpm-1
 * AL2023:
 
-```
+```bash
 docker exec -it retromat-php-fpm-1 sh
 cd backend
 composer install
@@ -64,14 +64,14 @@ composer install
 
 or short version:
 
-```
+```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer install"
 ```
 
 if that fails {
 https://github.com/symfony/flex/issues/836
 https://github.com/symfony/flex/issues/890
-```
+```bash
 composer selfupdate
 composer update symfony/flex --no-plugins --no-scripts
 ```
@@ -79,11 +79,11 @@ composer update symfony/flex --no-plugins --no-scripts
 
 Add .env.local to set mysql root PW .
 
-```
-php backend/bin/console doctrine:migrations:migrate --no-interaction
-php backend/bin/console doctrine:cache:clear-result
-php backend/bin/console doctrine:cache:clear-query
-php backend/bin/console doctrine:cache:clear-metadata
+```bash
+php bin/console doctrine:migrations:migrate --no-interaction
+php bin/console doctrine:cache:clear-result
+php bin/console doctrine:cache:clear-query
+php bin/console doctrine:cache:clear-metadata
 ```
 
 ## Run Tests
@@ -93,22 +93,28 @@ At this point the author prefers to create retromat-local-test
 
 On code change related to the DB (e.g. entities):
 
-```
-php backend/bin/console --env=test doctrine:database:drop --force
-php backend/bin/console --env=test doctrine:database:create
-php backend/bin/console --env=test doctrine:migrations:migrate --no-interaction
+```bash
+php bin/console --env=test doctrine:database:drop --force
+php bin/console --env=test doctrine:database:create
+php bin/console --env=test doctrine:migrations:migrate --no-interaction
 ```
 
 ON setup and on changes to index.php:
 
-```
+```bash
 sh index_deploy-from-php-to-twig.sh
 ```
 
 On any change:
 
-```
+```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
+```
+
+Or, more specific and quicK
+
+```bash
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit --filter testCachingHeaders"
 ```
 
 # Access App via Browser

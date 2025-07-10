@@ -241,4 +241,43 @@ final class ActivityControllerTest extends AbstractTestCase
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(101, $activities);
     }
+
+    public function testCachingHeadersSingleActivity()
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        $client->request('GET', '/api/activity/59');
+        $response = $client->getResponse();
+
+        $cacheControl = $response->headers->get('Cache-Control');
+        
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+    }
+
+    public function testCachingHeadersForCollections()
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        // Test English collection
+        $client->request('GET', '/api/activities?locale=en');
+        $response = $client->getResponse();
+        $cacheControl = $response->headers->get('Cache-Control');
+        
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+
+        // Test German collection
+        $client->request('GET', '/api/activities?locale=de');
+        $response = $client->getResponse();
+        $cacheControl = $response->headers->get('Cache-Control');
+        
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+    }
 }
