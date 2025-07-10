@@ -111,7 +111,7 @@ On any change:
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
 ```
 
-Or, more specific and quicK
+Or, more specific and quick
 
 ```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit --filter testCachingHeaders"

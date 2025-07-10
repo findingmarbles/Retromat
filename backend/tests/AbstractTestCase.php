@@ -7,7 +7,7 @@ use Liip\FunctionalTestBundle\Test\WebTestCase;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
-class AbstractTestCase extends WebTestCase
+abstract class AbstractTestCase extends WebTestCase
 {
     public function loadFixtures($fixtures): ORMExecutor
     {

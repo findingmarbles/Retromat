@@ -6,7 +6,7 @@ namespace App\Tests\Controller;
 
 use App\Tests\AbstractTestCase;
 
-final class ActivityControllerTest extends AbstractTestCase
+final class ActivityApiControllerTest extends AbstractTestCase
 {
     public function setUp(): void
     {
