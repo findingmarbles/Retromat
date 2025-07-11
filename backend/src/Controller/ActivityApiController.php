@@ -10,6 +10,7 @@ use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -34,6 +35,7 @@ final class ActivityApiController extends AbstractFOSRestController
     /**
      * @Rest\Get("/api/activities", name="activities")
      */
+    #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivities(Request $request): View
     {
         $request->setLocale($request->query->get('locale', 'en'));
@@ -43,15 +45,13 @@ final class ActivityApiController extends AbstractFOSRestController
 
         $response = $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
 
-        // cache for 1 day on CloudFlare edge (can be purged as needed) and 1 hour on Uberspace server
-        $response->setHeaders(['Cache-Control' => 'public, s-maxage=84600, max-age=3600']);
-
         return $response;
     }
 
     /**
      * @Rest\Get("/api/activity/{id}", name="activity")
      */
+    #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivity(Request $request, string $id): View
     {
         $request->setLocale($request->query->get('locale', 'en'));
@@ -62,9 +62,6 @@ final class ActivityApiController extends AbstractFOSRestController
         $this->activityExpander->expandSource($activity);
 
         $response = $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
-
-        // cache for 1 day on CloudFlare edge (can be purged as needed) and 1 hour on Uberspace server
-        $response->setHeaders(['Cache-Control' => 'public, s-maxage=84600, max-age=3600']);
 
         return $response;
     }

@@ -9,6 +9,7 @@ use App\Model\Plan\Exception\InconsistentInputException;
 use App\Model\Plan\Exception\NoGroupLeftToDrop;
 use App\Model\Plan\TitleChooser;
 use App\Repository\ActivityRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,6 +47,7 @@ class HomeController extends AbstractController
      *
      * @return Response
      */
+    #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function homeAction(Request $request)
     {
         $locale = $request->getLocale();
@@ -66,7 +68,7 @@ class HomeController extends AbstractController
             list($title, $description) = $this->planTitleAndDescription($ids, $activities, $locale);
         }
 
-        return $this->render(
+        $response = $this->render(
             'home/generated/index_'.$locale.'.html.twig',
             [
                 'ids' => $ids,
@@ -78,6 +80,8 @@ class HomeController extends AbstractController
                 'description' => $description,
             ]
         );
+
+        return $response;
     }
 
     /**

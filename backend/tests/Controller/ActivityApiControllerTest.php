@@ -251,7 +251,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $response = $client->getResponse();
 
         $cacheControl = $response->headers->get('Cache-Control');
-        
+
         $this->assertStringContainsString('public', $cacheControl);
         $this->assertStringContainsString('s-maxage=84600', $cacheControl);
         $this->assertStringContainsString('max-age=3600', $cacheControl);
@@ -266,7 +266,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $client->request('GET', '/api/activities?locale=en');
         $response = $client->getResponse();
         $cacheControl = $response->headers->get('Cache-Control');
-        
+
         $this->assertStringContainsString('public', $cacheControl);
         $this->assertStringContainsString('s-maxage=84600', $cacheControl);
         $this->assertStringContainsString('max-age=3600', $cacheControl);
@@ -275,7 +275,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $client->request('GET', '/api/activities?locale=de');
         $response = $client->getResponse();
         $cacheControl = $response->headers->get('Cache-Control');
-        
+
         $this->assertStringContainsString('public', $cacheControl);
         $this->assertStringContainsString('s-maxage=84600', $cacheControl);
         $this->assertStringContainsString('max-age=3600', $cacheControl);

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,6 +12,7 @@ class RobotsController extends AbstractController
     /**
      * @Route("/robots.txt", host="retromat.org")
      */
+    #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function robotsAllow(): Response
     {
         $response = new Response(
@@ -30,6 +32,7 @@ class RobotsController extends AbstractController
     /**
      * @Route("/robots.txt")
      */
+    #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function robotsDisallow(): Response
     {
         $response = new Response(

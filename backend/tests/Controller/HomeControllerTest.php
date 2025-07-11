@@ -638,4 +638,52 @@ class HomeControllerTest extends AbstractTestCase
             ['/en/?id=511111111111111%2522%2520UNION%2520SELECT%2520CHAR%2845%2C120%2C49%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C50%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C51%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C52%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C53%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C54%2C45%2C81%2C45%29%2CCHAR%2845%2C120%2C55%2C45%2C81%2C45%29%2520-%2520%2F%2A%2520order%2520by%2520%2522as'],
         ];
     }
+
+    public function testCachingHeadersSingleActivity()
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        $client->request('GET', '/en/?id=32');
+        $response = $client->getResponse();
+
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+
+        $client->request('GET', '/de/?id=16');
+        $response = $client->getResponse();
+
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+    }
+
+    public function testCachingHeadersMultipleActivities()
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        $client->request('GET', '/en/?id=32-3-87-113-13');
+        $response = $client->getResponse();
+
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+
+        $client->request('GET', '/de/?id=70-4-69-29-71');
+        $response = $client->getResponse();
+
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+    }
 }

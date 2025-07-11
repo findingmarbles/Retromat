@@ -1,198 +1,199 @@
+# Static pages handled by single StaticPageController::staticPageAction method
 about:
-  path: /en/about
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    about.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2017-01-31T21:11:16+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/about
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'about.html.twig'
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2017-01-31T21:11:16+01:00"
+            changefreq: weekly
+            section: meta
 
 about_old:
-  path: /about.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: about
-    permanent: true
+    path: /about.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: about
+        permanent: true
 
 books:
-  path: /en/books
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    books.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2017-01-31T21:11:16+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/books
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'books.html.twig'
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2017-01-31T21:11:16+01:00"
+            changefreq: weekly
+            section: meta
 
 books_old:
-  path: /books.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: books
-    permanent: true
+    path: /books.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: books
+        permanent: true
 
 donate:
-  path: /en/donate
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: membership
-    permanent: true
+    path: /en/donate
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: membership
+        permanent: true
 
 donate_old:
-  path: /donate.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: membership
-    permanent: true
+    path: /donate.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: membership
+        permanent: true
 
 ebook:
-  path: /en/ebook
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    /ebook/index.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2017-01-31T21:11:16+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/ebook
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'ebook/index.html.twig'
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2017-01-31T21:11:16+01:00"
+            changefreq: weekly
+            section: meta
 
 ebook_old1:
-  path: /ebook/index.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: ebook
-    permanent: true
+    path: /ebook/index.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: ebook
+        permanent: true
 
 ebook_old2:
-  path: /ebook/
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: ebook
-    permanent: true
+    path: /ebook/
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: ebook
+        permanent: true
 
 membership:
-  path: /en/membership
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    membership.html.twig
+    path: /en/membership
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'membership.html.twig'
 
 print:
-  path: /en/print
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    print/index.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2017-01-31T21:11:16+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/print
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'print/index.html.twig'
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2017-01-31T21:11:16+01:00"
+            changefreq: weekly
+            section: meta
 
 print_old1:
-  path: /print/index.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: print
-    permanent: true
+    path: /print/index.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: print
+        permanent: true
 
 print_old2:
-  path: /print/
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: print
-    permanent: true
+    path: /print/
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: print
+        permanent: true
 
 print_paypal_pay:
-  path: /en/print/paypal_pay
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    print/paypal_pay.html.twig
+    path: /en/print/paypal_pay
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template:    print/paypal_pay.html.twig
 
 print_paypal_pay_old:
-  path: /print/paypal_pay.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: print_paypal_pay
-    permanent: true
+    path: /print/paypal_pay.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: print_paypal_pay
+        permanent: true
 
 print_paypal_success:
-  path: /en/print/paypal_success
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    print/paypal_success.html.twig
+    path: /en/print/paypal_success
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template:    print/paypal_success.html.twig
 
 print_paypal_success_old:
-  path: /print/paypal_success.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: print_paypal_success
-    permanent: true
+    path: /print/paypal_success.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: print_paypal_success
+        permanent: true
 
 print_paypal_cancel:
-  path: /en/print/paypal_cancel
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    print/paypal_cancel.html.twig
+    path: /en/print/paypal_cancel
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template:    print/paypal_cancel.html.twig
 
 print_paypal_cancel_old:
-  path: /print/paypal_cancel.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: print_paypal_cancel
-    permanent: true
+    path: /print/paypal_cancel.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: print_paypal_cancel
+        permanent: true
 
 sources:
-  path: /en/sources
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template:    print/sources.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2017-01-31T21:11:16+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/sources
+    controller: App\Controller\StaticPageController::staticPageAction
+    defaults:
+        template: 'print/sources.html.twig'
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2017-01-31T21:11:16+01:00"
+            changefreq: weekly
+            section: meta
 
 sources_old:
-  path: /print/sources.html
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
-    route: sources
-    permanent: true
+    path: /print/sources.html
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+        route: sources
+        permanent: true
 
 team_anton:
-  path: /en/team/anton
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template: team/members/anton.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2019-12-29T15:31:02+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/team/anton
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template: team/members/anton.html.twig
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2019-12-29T15:31:02+01:00"
+            changefreq: weekly
+            section: meta
 
 team_timon:
-  path: /en/team/timon
-  defaults:
-    _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    template: team/members/timon.html.twig
-  options:
-    sitemap:
-      priority: 0.5
-      lastmod: "2019-09-29T15:31:02+01:00"
-      changefreq: weekly
-      section: meta
+    path: /en/team/timon
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template: team/members/timon.html.twig
+    options:
+        sitemap:
+            priority: 0.5
+            lastmod: "2019-09-29T15:31:02+01:00"
+            changefreq: weekly
+            section: meta
 
 imprint_privacy_old:
-  path: /imprint-privacy
-  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
-  defaults:
-    path: '/blog/privacy-policy/'
-    permanent: true
+    path: /imprint-privacy
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        path: '/blog/privacy-policy/'
+        permanent: true 

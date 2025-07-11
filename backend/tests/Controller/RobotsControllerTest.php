@@ -54,4 +54,41 @@ class RobotsControllerTest extends AbstractTestCase
         );
         $this->assertEquals('text/plain; charset=UTF-8', $client->getResponse()->headers->get('content-type'));
     }
+
+    public function testRobotsTxtCachingHeaders()
+    {
+        $client = static::createClient();
+
+        // Test robots.txt with retromat.org host (allow)
+        $client->request(
+            'GET',
+            '/robots.txt',
+            [],
+            [],
+            ['HTTP_HOST' => 'retromat.org']
+        );
+
+        $response = $client->getResponse();
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+
+        // Test robots.txt with other host (disallow)
+        $client->request(
+            'GET',
+            '/robots.txt',
+            [],
+            [],
+            ['HTTP_HOST' => 'redev01.canopus.uberspace.de']
+        );
+
+        $response = $client->getResponse();
+        $cacheControl = $response->headers->get('Cache-Control');
+
+        $this->assertStringContainsString('public', $cacheControl);
+        $this->assertStringContainsString('s-maxage=84600', $cacheControl);
+        $this->assertStringContainsString('max-age=3600', $cacheControl);
+    }
 }
