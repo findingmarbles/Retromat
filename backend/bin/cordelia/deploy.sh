@@ -12,8 +12,20 @@ fi
 # go to repo
 cd /var/www/virtual/retro2/retromat.git/
 
+# stop on error
+set -e
+set -u
+
+trap 'echo "ERROR: Deployment failed - check the command above"; exit 1' ERR
+
 # get latest version from GitHub
-git pull origin master
+
+git clean -fd
+git reset --hard HEAD
+git fetch origin
+git reset --hard origin/master
+
+echo "✓ Successfully reset to latest origin/master"
 
 # install libs as specified in repo
 composer install --working-dir=backend
