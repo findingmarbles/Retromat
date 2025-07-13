@@ -25,7 +25,7 @@ git reset --hard HEAD
 git fetch origin
 git reset --hard origin/master
 
-echo "✓ Successfully reset to latest origin/master"
+echo "Successfully reset to latest origin/master"
 
 # install libs as specified in repo
 composer install --working-dir=backend
