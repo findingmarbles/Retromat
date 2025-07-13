@@ -64,7 +64,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
