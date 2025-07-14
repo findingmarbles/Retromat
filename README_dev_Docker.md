@@ -5,20 +5,16 @@
 * macOS: Install Docker Desktop (because Docker Engine is not available), this now inlcudes Docker-compose https://docs.docker.com/compose/install/
 * AL2023 (Amazon Linux 2023): Install Docker Engine (because Docker Desktop is not available) via dnf and Docker Compose from their website.
 
-Start the services (first time or after modifications):
-
-```bash
-docker compose --env-file docker-ports.env up -d --build
-```
-
 Start the services (normally):
 
 ```bash
-docker compose --env-file docker-ports.env up    # keep the shell + docker compose logs -f
-docker compose --env-file docker-ports.env up -d # detach, logs at: docker compose logs
+docker compose --env-file docker-ports.env up -d # detach, logs at: docker compose logs -f
 ```
 
-## Setu up the database
+After modifications add "--build".
+
+
+## Setup up the database
 
 ### Obtain a sql dump from the live DB.
 
