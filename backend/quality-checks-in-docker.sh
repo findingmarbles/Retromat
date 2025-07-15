@@ -8,4 +8,5 @@ fi
 
 php vendor/bin/phpstan --memory-limit=2g  analyse src tests
 php vendor/bin/parallel-lint --exclude /.git --exclude /app/backend/vendor --exclude /app/backend/var /app/backend/
+php bin/console lint:yaml config/ translations/
 php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php
