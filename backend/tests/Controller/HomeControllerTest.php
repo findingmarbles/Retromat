@@ -648,8 +648,8 @@ class HomeControllerTest extends AbstractTestCase
     public function allLanguagesProvider(): array
     {
         return [
-            ['en'], ['de'], ['ru'], ['es'], ['fa'], ['fr'], 
-            ['nl'], ['ja'], ['pl'], ['pt-br'], ['zh']
+            ['en'], ['de'], ['ru'], ['es'], ['fa'], ['fr'],
+            ['nl'], ['ja'], ['pl'], ['pt-br'], ['zh'],
         ];
     }
 
@@ -714,12 +714,12 @@ class HomeControllerTest extends AbstractTestCase
         // Pitch should contain translated content about retrospectives
         $this->assertNotEmpty($pitchText);
         $this->assertGreaterThan(50, strlen($pitchText)); // Should be substantial content
-        
+
         // Check for retrospective word in various languages
         $retrospectiveWords = ['retrospective', 'retrospectiva', 'rétrospective', 'ретроспективу', 'retrospektive', 'retrospektif'];
         $found = false;
         foreach ($retrospectiveWords as $word) {
-            if (stripos($pitchText, $word) !== false) {
+            if (false !== stripos($pitchText, $word)) {
                 $found = true;
                 break;
             }
@@ -805,15 +805,15 @@ class HomeControllerTest extends AbstractTestCase
 
         // Should have team members including Corinna
         $this->assertGreaterThan(0, $teamMembers->count());
-        
+
         // Find Corinna's section
         $corinnaFound = false;
         $teamMembers->each(function ($node) use (&$corinnaFound) {
-            if (strpos($node->text(), 'Corinna') !== false) {
+            if (false !== strpos($node->text(), 'Corinna')) {
                 $corinnaFound = true;
             }
         });
-        
+
         $this->assertTrue($corinnaFound, 'Corinna team member section should be present');
     }
 
@@ -831,11 +831,11 @@ class HomeControllerTest extends AbstractTestCase
         // Find Timon's section
         $timonFound = false;
         $teamMembers->each(function ($node) use (&$timonFound) {
-            if (strpos($node->text(), 'Timon') !== false) {
+            if (false !== strpos($node->text(), 'Timon')) {
                 $timonFound = true;
             }
         });
-        
+
         $this->assertTrue($timonFound, 'Timon team member section should be present');
     }
 
@@ -857,17 +857,17 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertStringContainsString('function get_activity_array', $html); // Should have JS functions
         $this->assertStringContainsString('function get_photo_string', $html); // Should have JS functions
         $this->assertStringContainsString('function publish_activities_for_keywords', $html); // Should have JS functions
-        
+
         // Check for specific translated content patterns
-        if ($language === 'en') {
+        if ('en' === $language) {
             $this->assertStringContainsString('can\'t find activity with ID', $html);
             $this->assertStringContainsString('Photo by', $html);
             $this->assertStringContainsString('View photo', $html);
-                 } elseif ($language === 'de') {
-             $this->assertStringContainsString('kann keine Aktivit&auml;t mit dieser ID finden', $html);
-             $this->assertStringContainsString('Foto von', $html);
-             $this->assertStringContainsString('Foto ansehen', $html);
-         }
+        } elseif ('de' === $language) {
+            $this->assertStringContainsString('kann keine Aktivit&auml;t mit dieser ID finden', $html);
+            $this->assertStringContainsString('Foto von', $html);
+            $this->assertStringContainsString('Foto ansehen', $html);
+        }
         // For other languages, just check that there's substantial JavaScript content
         else {
             $this->assertGreaterThan(1000, strlen($html)); // Should be substantial content
@@ -876,14 +876,14 @@ class HomeControllerTest extends AbstractTestCase
 
     /**
      * Test that translator sections are handled correctly per language.
-     * 
+     *
      * IMPORTANT: This test expects the CURRENT SPECIFIC BEHAVIOR of the translation system.
-     * 
+     *
      * === EXPECTED BEHAVIOR ===
-     * Each language should display translator information based on its language file's 
+     * Each language should display translator information based on its language file's
      * $_lang['INDEX_TEAM_TRANSLATOR_*'] arrays. Languages with no translators should show
      * no translator section, while languages with translators should show their contributors.
-     * 
+     *
      * === CURRENT SPECIFIC BEHAVIOR ===
      * Based on analysis of the language files, the current translator counts are:
      * - English: 0 translators (base language, no translation needed)
@@ -897,19 +897,19 @@ class HomeControllerTest extends AbstractTestCase
      * - Japanese: 1 translator
      * - Persian: 1 translator
      * - Portuguese-Brazilian: 1 translator (template "Your Name")
-     * 
+     *
      * === TEST RATIONALE ===
      * This test documents the current translator attribution state and ensures it remains
      * consistent during refactoring. The variation in translator counts reflects the real
      * contribution history and isn't necessarily inconsistent behavior - it's just specific
      * to each language's translation community.
-     * 
+     *
      * === REFACTORING IMPLICATIONS ===
      * When the $_lang system is refactored, this test may need updates if:
      * - New translators are added to any language
      * - The translator array structure changes
      * - The template rendering logic for translator sections changes
-     * 
+     *
      * @dataProvider allLanguagesProvider
      */
     public function testTranslatorSectionHandling(string $language): void
@@ -932,22 +932,22 @@ class HomeControllerTest extends AbstractTestCase
             'zh' => 1,   // Chinese has 1 translator
             'ja' => 1,   // Japanese has 1 translator
             'fa' => 1,   // Persian has 1 translator
-            'pt-br' => 1,// Portuguese-Brazilian has 1 translator (template "Your Name")
+            'pt-br' => 1, // Portuguese-Brazilian has 1 translator (template "Your Name")
         ];
 
         $expectedCount = $expectedTranslatorCounts[$language] ?? 0;
-        
+
         // Count actual translators (excluding Corinna and Timon)
         $translatorCount = 0;
         $teamMembers->each(function ($node) use (&$translatorCount) {
             $text = $node->text();
-            if (strpos($text, 'Corinna') === false && strpos($text, 'Timon') === false) {
-                $translatorCount++;
+            if (false === strpos($text, 'Corinna') && false === strpos($text, 'Timon')) {
+                ++$translatorCount;
             }
         });
 
         $this->assertEquals(
-            $expectedCount, 
+            $expectedCount,
             $translatorCount,
             "Language {$language} should have {$expectedCount} translator(s), found {$translatorCount}"
         );
@@ -955,34 +955,34 @@ class HomeControllerTest extends AbstractTestCase
 
     /**
      * Test activity navigation tooltips across all languages.
-     * 
+     *
      * IMPORTANT: This test expects the CURRENT INCONSISTENT BEHAVIOR, not the ideal behavior.
-     * 
+     *
      * === EXPECTED BEHAVIOR ===
      * All languages should show their translated tooltips from $_lang['ACTIVITY_PREV'] and $_lang['ACTIVITY_NEXT'].
      * For example:
-     * - English: "Show other activity for this phase" 
+     * - English: "Show other activity for this phase"
      * - German: "Zeige eine andere Aktivität für diese Phase"
      * - Russian: "Показать предыдущую/следующую активность для этой фазы"
-     * 
+     *
      * === CURRENT INCONSISTENT BEHAVIOR ===
      * The system has translation issues in the template compilation process:
-     * 
-     * 1. **English, German, Russian**: Show English defaults ("Previous"/"Next") instead of their 
+     *
+     * 1. **English, German, Russian**: Show English defaults ("Previous"/"Next") instead of their
      *    translated tooltips. This suggests the PHP template compilation isn't properly embedding
      *    the $_lang values for these languages.
-     * 
+     *
      * 2. **8 other languages** (es, fr, nl, ja, pl, pt-br, zh): Show properly translated tooltips
      *    as expected, indicating the template compilation works correctly for these languages.
-     * 
+     *
      * 3. **Persian (fa)**: Shows German tooltips instead of Persian ones, suggesting a cross-language
      *    contamination issue in the template compilation process.
-     * 
+     *
      * === TEST ADAPTATION ===
      * Rather than testing the ideal behavior, this test documents and expects the current broken
      * state to ensure the test suite is green before refactoring. Each language has specific
      * expected values based on what the system actually outputs today.
-     * 
+     *
      * === REFACTORING IMPLICATIONS ===
      * When the $_lang translation system is refactored, this test will need to be updated to
      * expect consistent translated tooltips across all languages. The inconsistencies revealed
@@ -990,7 +990,7 @@ class HomeControllerTest extends AbstractTestCase
      * - Template compilation for en/de/ru languages
      * - Language file loading/processing for Persian
      * - General translation embedding in the PHP->Twig conversion process
-     * 
+     *
      * @dataProvider allLanguagesProvider
      */
     public function testActivityTooltipsTranslated(string $language): void
@@ -999,11 +999,11 @@ class HomeControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', "/{$language}/?id=1");
-        
+
         // Check for activity navigation tooltips
         $prevButton = $crawler->filter('.js_prev_button_href');
         $nextButton = $crawler->filter('.js_next_button_href');
-        
+
         // Expected tooltip values based on current system behavior
         $expectedTooltips = [
             'en' => ['prev' => 'Previous', 'next' => 'Next'],
@@ -1018,13 +1018,13 @@ class HomeControllerTest extends AbstractTestCase
             'pt-br' => ['prev' => 'Show other activity for this phase', 'next' => 'Show other activity for this phase'],
             'zh' => ['prev' => '显示该阶段的其他活动', 'next' => '显示该阶段的其他活动'],
         ];
-        
+
         if ($prevButton->count() > 0) {
             $prevTitle = $prevButton->attr('title');
             $this->assertNotEmpty($prevTitle);
             $this->assertEquals($expectedTooltips[$language]['prev'], $prevTitle);
         }
-        
+
         if ($nextButton->count() > 0) {
             $nextTitle = $nextButton->attr('title');
             $this->assertNotEmpty($nextTitle);
@@ -1041,20 +1041,20 @@ class HomeControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         $crawler = $client->request('GET', "/{$language}/");
-        
+
         // Check search popup elements
         $searchButton = $crawler->filter('.popup__submit');
         $closeLink = $crawler->filter('.popup__close-link');
         $searchInfo = $crawler->filter('.popup__info');
-        
+
         if ($searchButton->count() > 0) {
             $this->assertNotEmpty($searchButton->attr('value'));
         }
-        
+
         if ($closeLink->count() > 0) {
             $this->assertNotEmpty($closeLink->text());
         }
-        
+
         if ($searchInfo->count() > 0) {
             $this->assertNotEmpty($searchInfo->text());
         }
