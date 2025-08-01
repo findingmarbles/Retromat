@@ -90,7 +90,7 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --e
 ON setup and on changes to index.php:
 
 ```bash
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && sh index_deploy-from-php-to-twig.sh"
+docker exec -it retromat-php-fpm-1 sh -c "sh index_deploy-from-php-to-twig.sh"
 ```
 
 On any change:
