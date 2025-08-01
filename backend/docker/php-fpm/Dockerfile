@@ -21,9 +21,11 @@ RUN apk update \
         pcntl \
     && pecl install \
         redis \
+        pcov \
     && docker-php-ext-enable \
         redis \
         pcntl \
+        pcov \
     && apk del --purge \
         autoconf \
         g++ \
