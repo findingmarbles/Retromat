@@ -53,14 +53,6 @@ Finally, import retro2_retromat.sql into the DB you just created, via command li
 * AL2023:
 
 ```bash
-docker exec -it retromat-php-fpm-1 sh
-cd backend
-composer install
-```
-
-or short version:
-
-```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer install"
 ```
 
@@ -68,18 +60,18 @@ if that fails {
 https://github.com/symfony/flex/issues/836
 https://github.com/symfony/flex/issues/890
 ```bash
-composer selfupdate
-composer update symfony/flex --no-plugins --no-scripts
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer selfupdate"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer update symfony/flex --no-plugins --no-scripts"
 ```
 }
 
 Add .env.local to set mysql root PW .
 
 ```bash
-php bin/console doctrine:migrations:migrate --no-interaction
-php bin/console doctrine:cache:clear-result
-php bin/console doctrine:cache:clear-query
-php bin/console doctrine:cache:clear-metadata
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:migrations:migrate --no-interaction"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-result"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-query"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-metadata"
 ```
 
 ## Run Tests
@@ -90,15 +82,15 @@ At this point the author prefers to create retromat-local-test
 On code change related to the DB (e.g. entities):
 
 ```bash
-php bin/console --env=test doctrine:database:drop --force
-php bin/console --env=test doctrine:database:create
-php bin/console --env=test doctrine:migrations:migrate --no-interaction
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:drop --force"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:migrations:migrate --no-interaction"
 ```
 
 ON setup and on changes to index.php:
 
 ```bash
-sh index_deploy-from-php-to-twig.sh
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && sh index_deploy-from-php-to-twig.sh"
 ```
 
 On any change:
