@@ -77,7 +77,7 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doc
 ## Run Tests
 Initially:
 Create .env.test.local (e.g. by copying .env.local) with a different DB name. 
-At this point the author prefers to create retromat-local-test
+At this point the author prefers to create retromat-local-test (and for unkown reasons, while running phpunit, this now becomes retromat-local-test_test - need to find that out later).
 
 On code change related to the DB (e.g. entities):
 
