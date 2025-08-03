@@ -643,7 +643,7 @@ class HomeControllerTest extends AbstractTestCase
     // Testing all $_lang elements to ensure they work during refactoring
 
     /**
-     * @return array<string, array<string>>
+     * @return array<int, list<string>>
      */
     public function allLanguagesProvider(): array
     {
@@ -654,7 +654,7 @@ class HomeControllerTest extends AbstractTestCase
     }
 
     /**
-     * @return array<string, array<string>>
+     * @return array<int, list<string>>
      */
     public function coreTranslationKeysProvider(): array
     {
@@ -1060,7 +1060,7 @@ class HomeControllerTest extends AbstractTestCase
         }
     }
 
-    public function testCachingHeadersSingleActivity()
+    public function testCachingHeadersSingleActivity(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -1084,7 +1084,7 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertStringContainsString('max-age=3600', $cacheControl);
     }
 
-    public function testCachingHeadersMultipleActivities()
+    public function testCachingHeadersMultipleActivities(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();

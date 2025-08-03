@@ -55,7 +55,7 @@ class RobotsControllerTest extends AbstractTestCase
         $this->assertEquals('text/plain; charset=UTF-8', $client->getResponse()->headers->get('content-type'));
     }
 
-    public function testRobotsTxtCachingHeaders()
+    public function testRobotsTxtCachingHeaders(): void
     {
         $client = static::createClient();
 

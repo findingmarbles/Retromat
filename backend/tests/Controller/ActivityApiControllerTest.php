@@ -14,7 +14,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
     }
 
     /** @medium */
-    public function testActivityNameEnglish()
+    public function testActivityNameEnglish(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
 
@@ -45,7 +45,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivityNameGerman()
+    public function testActivityNameGerman(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -75,7 +75,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivitySourceSimpleString()
+    public function testActivitySourceSimpleString(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -97,7 +97,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivitySourcePlaceholder()
+    public function testActivitySourcePlaceholder(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -119,7 +119,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivitySourcePlaceholderAndString()
+    public function testActivitySourcePlaceholderAndString(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -141,7 +141,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivitySourceStringAndPlaceholder()
+    public function testActivitySourceStringAndPlaceholder(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -163,7 +163,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testExpandedActivitySourceInCollectionRequests()
+    public function testExpandedActivitySourceInCollectionRequests(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -182,7 +182,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         );
     }
 
-    public function testActivityIdsAndNamesInCollectionRequestsEnglish()
+    public function testActivityIdsAndNamesInCollectionRequestsEnglish(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -199,7 +199,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->assertEquals('Repeat &amp; Avoid', $activities[80 - 1]['name']);
     }
 
-    public function testActivityIdsAndNamesInCollectionRequestsGerman()
+    public function testActivityIdsAndNamesInCollectionRequestsGerman(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -216,7 +216,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->assertEquals('Schreibe das Unaussprechliche', $activities[75 - 1]['name']);
     }
 
-    public function testOnlyTranslatedActivitiesInCollectionRequests()
+    public function testOnlyTranslatedActivitiesInCollectionRequests(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -242,7 +242,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->assertCount(101, $activities);
     }
 
-    public function testCachingHeadersSingleActivity()
+    public function testCachingHeadersSingleActivity(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
@@ -257,7 +257,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->assertStringContainsString('max-age=3600', $cacheControl);
     }
 
-    public function testCachingHeadersForCollections()
+    public function testCachingHeadersForCollections(): void
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();

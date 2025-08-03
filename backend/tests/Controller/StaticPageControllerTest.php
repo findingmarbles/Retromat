@@ -8,7 +8,7 @@ use App\Tests\AbstractTestCase;
 
 class StaticPageControllerTest extends AbstractTestCase
 {
-    public function testStaticPagesCachingHeaders()
+    public function testStaticPagesCachingHeaders(): void
     {
         $client = static::createClient();
 
