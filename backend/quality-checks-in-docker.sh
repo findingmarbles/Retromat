@@ -41,13 +41,13 @@ if [ "$COVERAGE" = true ]; then
         echo "No coverage driver available - running tests without coverage..."
         echo "To enable coverage, install PCOV or Xdebug in your Docker container."
         echo ""
-        php -d memory_limit=1000M vendor/bin/phpunit
+        php -d memory_limit=1000M vendor/bin/phpunit --no-coverage
     fi
 else
     echo ""
     echo "Running tests without coverage (use --coverage flag to enable)..."
     echo ""
-    php -d memory_limit=1000M vendor/bin/phpunit
+    php -d memory_limit=1000M vendor/bin/phpunit --no-coverage
 fi
 
 # Calculate and display total time
