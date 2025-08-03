@@ -230,7 +230,7 @@
 ### Pre-Execution Checklist:
 ```bash
 # 1. Ensure Docker environment is running
-docker-compose up -d
+docker compose --env-file docker-ports.env up -d
 
 # 2. Verify current coverage baseline
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh"
@@ -242,7 +242,7 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in
 
 #### For Each Step:
 1. **Create Test Files** as specified in the step details
-2. **Run Quality Checks**:
+2. **Run Quality Checks (without coverage)**:
    ```bash
    docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh"
    ```
@@ -257,7 +257,7 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in
 #### After All Steps:
 ```bash
 # Final verification
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh --coverage"
 # Should show 80-90% total coverage
 ```
 
@@ -304,6 +304,3 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in
 - ✅ All tests pass (no failures or errors)
 - ✅ No risky tests due to timeouts
 - ✅ Coverage improvement visible after each step
-
-**Estimated Total Time:** 8-12 hours across all remaining steps
-**Priority Order:** Steps 3 → 5 → 6 → 4 → 8 → 7 → 9
