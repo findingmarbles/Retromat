@@ -233,7 +233,7 @@
 docker compose --env-file docker-ports.env up -d
 
 # 2. Verify current coverage baseline
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh --coverage"
 
 # 3. Note current coverage percentage from output
 ```

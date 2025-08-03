@@ -1107,4 +1107,45 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertStringContainsString('s-maxage=84600', $cacheControl);
         $this->assertStringContainsString('max-age=3600', $cacheControl);
     }
+
+    public function testCountActivitiesWithValidLocales(): void
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        // Make a request to trigger the countActivities method through homeAction
+        $crawler = $client->request('GET', '/en/');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        // The method is called internally and should not throw any exceptions
+        $this->assertSelectorExists('body');
+    }
+
+    public function testCountActivitiesWithEmptyDatabase(): void
+    {
+        // Load no fixtures to test with empty database
+        $client = $this->getKernelBrowser();
+
+        // Make a request to trigger the countActivities method
+        $crawler = $client->request('GET', '/en/');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        // Should handle empty database gracefully
+        $this->assertSelectorExists('body');
+    }
+
+    public function testCountActivitiesWithMultipleLocales(): void
+    {
+        $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
+        $client = $this->getKernelBrowser();
+
+        // Test different locales to ensure countActivities works for all
+        $locales = ['en', 'de'];
+
+        foreach ($locales as $locale) {
+            $crawler = $client->request('GET', "/{$locale}/");
+            $this->assertEquals(200, $client->getResponse()->getStatusCode());
+            $this->assertSelectorExists('body');
+        }
+    }
 }
