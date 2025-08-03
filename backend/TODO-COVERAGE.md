@@ -242,9 +242,9 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in
 
 #### For Each Step:
 1. **Create Test Files** as specified in the step details
-2. **Run Quality Checks (without coverage)**:
+2. **Run Quality Checks**:
    ```bash
-   docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh"
+   docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./quality-checks-in-docker.sh --coverage"
    ```
 3. **Fix Any Issues** that arise from PHPStan, CS-Fixer, or test failures
 4. **Measure Progress**:
