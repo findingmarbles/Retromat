@@ -10,7 +10,7 @@ use App\Model\Importer\Activity\Hydrator\ActivityHydrator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-final class ActivityImporter
+class ActivityImporter
 {
     private EntityManagerInterface $entityManager;
 

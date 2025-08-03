@@ -5,7 +5,7 @@ namespace App\Model\User\Generator;
 use App\Model\User\Model\UserResetPasswordTokenComponents;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-final class UserResetPasswordTokenGenerator
+class UserResetPasswordTokenGenerator
 {
     private string $signingKey;
 
