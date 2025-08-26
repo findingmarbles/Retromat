@@ -3,11 +3,11 @@ description: Code Quality Checks Must Pass
 globs: 
 alwaysApply: true
 ---
-# Code Quality Checks
+# Code Quality Checks Rule
 
 <rule>
 name: code_quality_checks
-description: On any code change, the quality-checks-in-docker.sh script must be executed and pass successfully.
+description: After any code change, the qquality-checks-in-docker.sh script must be executed in Docker (as described inside the script): Fix type errors and formatting immediately. For failing tests: If an error/failure was just introduced in the context of a change we are working on at the moment, fix and re-run quality.sh up to five times if, and only if, it is clear whether tests or app code are at fault and what the desired behavior is. If the origin of the error or the desired behaviour is unclear, report to the user and ask how to continue.
 filters:
   - type: event
     pattern: ".*"  # Match any event
