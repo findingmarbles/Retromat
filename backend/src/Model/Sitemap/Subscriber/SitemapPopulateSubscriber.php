@@ -21,10 +21,10 @@ class SitemapPopulateSubscriber implements EventSubscriberInterface
     public function onPrestaSitemapPopulate(SitemapPopulateEvent $event): void
     {
         $this->activityUrlGenerator->generateHomeUrls($event->getUrlContainer());
-        $this->activityUrlGenerator->generateAllActivityUrls($event->getUrlContainer());
-        $this->activityUrlGenerator->generateIndividualActivityUrls($event->getUrlContainer());
-        $this->activityUrlGenerator->generateAllPhaseUrls($event->getUrlContainer());
-        $this->planUrlGenerator->generatePlanUrls($event->getUrlContainer());
+        // $this->activityUrlGenerator->generateAllActivityUrls($event->getUrlContainer());
+        // $this->activityUrlGenerator->generateIndividualActivityUrls($event->getUrlContainer());
+        // $this->activityUrlGenerator->generateAllPhaseUrls($event->getUrlContainer());
+        // $this->planUrlGenerator->generatePlanUrls($event->getUrlContainer());
     }
 
     /**
