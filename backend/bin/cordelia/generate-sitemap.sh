@@ -13,6 +13,6 @@ mkdir -p /var/www/virtual/retro2/retromat-sitemaps/generating-now/
 
 php /var/www/virtual/retro2/retromat.git/backend/bin/console --env=prod presta:sitemaps:dump --gzip \
   /var/www/virtual/retro2/retromat-sitemaps/generating-now/
-mv /var/www/virtual/retro2/retromat-sitemaps/generating-now/* /var/www/virtual/retromat/retromat-sitemaps
+mv /var/www/virtual/retro2/retromat-sitemaps/generating-now/* /var/www/virtual/retro2/retromat-sitemaps
 
 rmdir /var/www/virtual/retro2/retromat-sitemaps/generating-now/
