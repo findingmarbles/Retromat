@@ -43,6 +43,6 @@ class UserResetPasswordFormTypeTest extends TestCase
     public function testFormTypeCanBeInstantiated(): void
     {
         $formType = new UserResetPasswordFormType();
-        $this->assertNotNull($formType);
+        $this->assertInstanceOf(UserResetPasswordFormType::class, $formType);
     }
 }

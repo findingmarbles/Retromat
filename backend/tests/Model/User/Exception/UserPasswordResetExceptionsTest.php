@@ -16,7 +16,6 @@ class UserPasswordResetExceptionsTest extends TestCase
 
         $errorMessage = $exception->getErrorMessage();
 
-        $this->assertIsString($errorMessage);
         $this->assertNotEmpty($errorMessage);
     }
 
@@ -26,7 +25,6 @@ class UserPasswordResetExceptionsTest extends TestCase
 
         $errorMessage = $exception->getErrorMessage();
 
-        $this->assertIsString($errorMessage);
         $this->assertNotEmpty($errorMessage);
     }
 

@@ -39,7 +39,6 @@ class SitemapPopulateSubscriberTest extends TestCase
     {
         $subscribedEvents = SitemapPopulateSubscriber::getSubscribedEvents();
 
-        $this->assertIsArray($subscribedEvents);
         $this->assertArrayHasKey(SitemapPopulateEvent::class, $subscribedEvents);
         $this->assertEquals('onPrestaSitemapPopulate', $subscribedEvents[SitemapPopulateEvent::class]);
     }
@@ -90,10 +89,5 @@ class SitemapPopulateSubscriberTest extends TestCase
         );
 
         $this->assertInstanceOf(SitemapPopulateSubscriber::class, $subscriber);
-    }
-
-    public function testSubscriberMethodExists(): void
-    {
-        $this->assertTrue(method_exists($this->subscriber, 'onPrestaSitemapPopulate'));
     }
 }
