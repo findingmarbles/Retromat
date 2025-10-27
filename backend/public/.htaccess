@@ -5,6 +5,11 @@
     Header set Keep-Alive timeout=301,max=500
 </ifModule>
 
+# Cache static HTML files for 1 hour (locale index pages)
+<filesMatch "^(en|de|ru|es|fa|fr|nl|ja|pl|pt-br|zh)/index\.html$">
+    Header set Cache-Control "max-age=3600, public"
+</filesMatch>
+
 # Cache JavaScript files for 1 day
 <filesMatch ".(js)$">
     Header set Cache-Control "max-age=86400, public"
@@ -39,12 +44,15 @@ AddOutputFilterByType DEFLATE font/opentype
 # Set appropriate mime type
 AddType  application/font-woff2  .woff2
 
+# Symfony:
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
 # start page (path "/") because otherwise Apache will apply the rewriting rules
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
-DirectoryIndex index.php
+# Adapting to AI bot load:
+# index.html is checked first to serve pre-generated static locale pages.
+DirectoryIndex index.html index.php
 
 # By default, Apache does not evaluate symbolic links if you did not enable this
 # feature in your server configuration. Uncomment the following line if you
@@ -106,9 +114,10 @@ DirectoryIndex index.php
     RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
 
     # If the requested filename exists, simply serve it.
-    # We only want to let Apache serve files and not directories.
+    # Adapting to AI bot load: Also allow directories that contain index.html to be served directly.
     # Rewrite all other queries to the front controller.
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}/index.html !-f
     RewriteRule ^ %{ENV:BASE}/index.php [L]
 </IfModule>
 

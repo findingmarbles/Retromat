@@ -1,3 +1,8 @@
+# HTML files are created by the HomeController when the page is requested
+# and no HTML exists yet. They are deleted by index_deploy-from-php-to-twig.sh
+# when the templates are (re-) generated.
+/public/*/index.html
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php

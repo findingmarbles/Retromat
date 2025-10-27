@@ -3,6 +3,9 @@
 
 for lang in en de ru es fa fr nl ja pl pt-br zh; do
   php index.php "$lang" > "backend/templates/home/generated/index_${lang}.html.twig"
+  # HTML files are created by the HomeController when the page is requested
+  # and no HTML exists yet.
+  rm -f "backend/public/${lang}/index.html"
 done
 
 php backend/bin/console cache:clear --no-warmup --env=prod

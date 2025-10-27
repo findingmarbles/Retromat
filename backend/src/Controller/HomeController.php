@@ -86,6 +86,14 @@ class HomeController extends AbstractController
             ]
         );
 
+        // Write HTML to static file
+        $publicDir = $this->getParameter('kernel.project_dir').'/public';
+        $localeDir = $publicDir.'/'.$locale;
+        if (!is_dir($localeDir)) {
+            mkdir($localeDir, 0755, true);
+        }
+        file_put_contents($localeDir.'/index.html', $response->getContent());
+
         return $response;
     }
 
