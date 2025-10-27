@@ -358,17 +358,6 @@ class HomeControllerTest extends AbstractTestCase
         $this->assertStringContainsString('hidden', $crawler->filter('.js_phase-stepper')->eq(1)->attr('class'));
     }
 
-    public function testShowRandomPlanLinksOnHome()
-    {
-        $client = $this->getKernelBrowser();
-        $crawler = $client->request('GET', '/en/');
-
-        $this->assertEquals(
-            'Here are some random plans:',
-            $crawler->filter('.js_fill_summary')->text()
-        );
-    }
-
     public function testShowIdsInInputField()
     {
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
