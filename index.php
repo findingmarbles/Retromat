@@ -10,25 +10,16 @@ require 'lang/index_' . $lang . '.php';
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
 <head>
-    {% if title is not empty %}
-        <title>{{ title|raw }}</title>
-    {% else %}
-        <title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>
-    {% endif %}
-    {% if description is not empty %}
-        <meta name="description" content="{{ description|raw }}">
-    {% endif %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"> 
-
-    <link rel="stylesheet" type="text/css" href="/static/retromat.css?v=2" />
-
+<link rel="canonical" href="https://retromat.org/{{ app.request.locale }}/" />
+<meta charset="utf-8">
+{% if title is not empty %}<title>{{ title|raw }}</title>{% else %}<title>Retromat - <?php echo($_lang['HTML_TITLE']); ?></title>{% endif %}
+{% if description is not empty %}<meta name="description" content="{{description|raw }}">{% endif %}
+<meta name="viewport" content="width=device-width,initial-scale=1"> 
+<link rel="stylesheet" type="text/css" href="/static/retromat.css?v=2" />
 <link rel="shortcut icon" href="/static/images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="/static/images/apple-touch-icon.png" />
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/static/jquery.min.js"><\/script>')</script>
-
 <script src="/static/lightbox/lightbox.js"></script>
 <link href="/static/lightbox/lightbox.css" rel="stylesheet" />
 
