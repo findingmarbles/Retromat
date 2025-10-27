@@ -15,6 +15,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowSingleActivityBlock()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -27,6 +28,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityNameRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -51,6 +53,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivitySummaries()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -69,6 +72,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityDescriptionsRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -90,6 +94,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityLinksText()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -108,6 +113,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityLinksHref()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -126,6 +132,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityPhaseLinkText()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -145,6 +152,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivityPhaseLinkHref()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -165,6 +173,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivitySourceSimpleStringRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -183,6 +192,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivitySourcePlaceholderRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -201,6 +211,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivitySourcePlaceholderAndStringRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -219,6 +230,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowActivitySourceStringAndPlaceholderRawHtml()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -237,6 +249,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowAny5Activities()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -261,6 +274,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowSuccessiveActivitiesInDifferentColors()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -290,6 +304,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowAllActivitiesInPhase0LongUrl()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -343,6 +358,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testHideSteppersPhase0LongUrl()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -360,6 +376,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowIdsInInputField()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -372,6 +389,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPhaseStepperNextSingleActivity()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -384,6 +402,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPhaseStepperPreviousSingleActivity()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -396,6 +415,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPhaseStepperNextMultipleActivities()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -468,6 +488,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPageTitle5ActivitiesEnglish()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -478,6 +499,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPageTitle5ActivitiesGerman()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -488,6 +510,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPageTitle1ActivitiyEnglish()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -498,6 +521,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowPageTitle1ActivitiyGerman()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -508,6 +532,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowMetaDescription5ActivitiesEnglish()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -521,6 +546,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowMetaDescription5ActivitiesGerman()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -534,6 +560,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowMetaDescription1ActivitiyEnglish()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -547,6 +574,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testShowMetaDescription1ActivitiyGerman()
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -563,6 +591,7 @@ class HomeControllerTest extends AbstractTestCase
      */
     public function test404OnIdNotFound($url)
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -984,6 +1013,7 @@ class HomeControllerTest extends AbstractTestCase
      */
     public function testActivityTooltipsTranslated(string $language): void
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -1051,6 +1081,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testCachingHeadersSingleActivity(): void
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
@@ -1075,6 +1106,7 @@ class HomeControllerTest extends AbstractTestCase
 
     public function testCachingHeadersMultipleActivities(): void
     {
+        $this->markTestSkipped('IDs from query strings are intentionally ignored to reduce AI crawler load.');
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 

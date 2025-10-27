@@ -51,7 +51,12 @@ class HomeController extends AbstractController
     public function homeAction(Request $request)
     {
         $locale = $request->getLocale();
-        $ids = $this->parseIds($request->query->get('id'));
+        // Reducing load from AI crawlers:
+        // Both CloudFlare and this function
+        // ignore ids from the query string for now,
+        // so plans are only loaded via JS.
+        // $ids = $this->parseIds($request->query->get('id'));
+        $ids = [];
         $phase = $request->query->get('phase');
         $activities = [];
         $title = '';
@@ -98,23 +103,23 @@ class HomeController extends AbstractController
         );
     }
 
-    private function parseIds(?string $idString = null): array
-    {
-        $ids = [];
-        if (!empty($idString)) {
-            $rawIds = \explode('-', $idString);
-            foreach ($rawIds as $rawId) {
-                $id = (int) $rawId;
-                if (0 !== $id and (string) $id === $rawId) {
-                    $ids[] = $id;
-                } else {
-                    throw $this->createNotFoundException();
-                }
-            }
-        }
-
-        return $ids;
-    }
+    // private function parseIds(?string $idString = null): array
+    // {
+    //     $ids = [];
+    //     if (!empty($idString)) {
+    //         $rawIds = \explode('-', $idString);
+    //         foreach ($rawIds as $rawId) {
+    //             $id = (int) $rawId;
+    //             if (0 !== $id and (string) $id === $rawId) {
+    //                 $ids[] = $id;
+    //             } else {
+    //                 throw $this->createNotFoundException();
+    //             }
+    //         }
+    //     }
+    //
+    //     return $ids;
+    // }
 
     /**
      * @throws InconsistentInputException
