@@ -9,6 +9,11 @@ fi
 # Start timing
 start_time=$(date +%s)
 
+# Avoid superflous loops due to templates being out of date
+cd .. 
+./index_deploy-from-php-to-twig.sh 
+cd backend
+
 # Parse command line arguments
 COVERAGE=false
 for arg in "$@"; do
