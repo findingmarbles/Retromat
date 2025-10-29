@@ -9,7 +9,7 @@ for lang in en de ru es fa fr nl ja pl pt-br zh; do
 done
 # data files are created by the ActivityApiController when requested
 # and no data files exist yet.
-rm -f "backend/public/api/"
+rm -f "backend/public/api/*.json"
 
 php backend/bin/console cache:clear --no-warmup --env=prod
 php backend/bin/console cache:warmup --env=prod
