@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Model\Sitemap\Subscriber;
 
 use App\Model\Sitemap\ActivityUrlGenerator;
-use App\Model\Sitemap\PlanUrlGenerator;
 use App\Model\Sitemap\Subscriber\SitemapPopulateSubscriber;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -16,17 +15,14 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class SitemapPopulateSubscriberTest extends TestCase
 {
     private MockObject|ActivityUrlGenerator $activityUrlGenerator;
-    private MockObject|PlanUrlGenerator $planUrlGenerator;
     private SitemapPopulateSubscriber $subscriber;
 
     public function setUp(): void
     {
         $this->activityUrlGenerator = $this->createMock(ActivityUrlGenerator::class);
-        $this->planUrlGenerator = $this->createMock(PlanUrlGenerator::class);
 
         $this->subscriber = new SitemapPopulateSubscriber(
-            $this->activityUrlGenerator,
-            $this->planUrlGenerator
+            $this->activityUrlGenerator
         );
     }
 
@@ -49,7 +45,7 @@ class SitemapPopulateSubscriberTest extends TestCase
         $urlContainer = $this->createMock(UrlContainerInterface::class);
 
         $event
-            ->expects($this->exactly(5)) // Called 5 times for different generators
+            ->expects($this->once()) // Called once for generateHomeUrls
             ->method('getUrlContainer')
             ->willReturn($urlContainer);
 
@@ -58,25 +54,6 @@ class SitemapPopulateSubscriberTest extends TestCase
             ->method('generateHomeUrls')
             ->with($urlContainer);
 
-        $this->activityUrlGenerator
-            ->expects($this->once())
-            ->method('generateAllActivityUrls')
-            ->with($urlContainer);
-
-        $this->activityUrlGenerator
-            ->expects($this->once())
-            ->method('generateIndividualActivityUrls')
-            ->with($urlContainer);
-
-        $this->activityUrlGenerator
-            ->expects($this->once())
-            ->method('generateAllPhaseUrls')
-            ->with($urlContainer);
-
-        $this->planUrlGenerator
-            ->expects($this->once())
-            ->method('generatePlanUrls')
-            ->with($urlContainer);
 
         $this->subscriber->onPrestaSitemapPopulate($event);
     }
@@ -84,8 +61,7 @@ class SitemapPopulateSubscriberTest extends TestCase
     public function testConstructor(): void
     {
         $subscriber = new SitemapPopulateSubscriber(
-            $this->activityUrlGenerator,
-            $this->planUrlGenerator
+            $this->activityUrlGenerator
         );
 
         $this->assertInstanceOf(SitemapPopulateSubscriber::class, $subscriber);
