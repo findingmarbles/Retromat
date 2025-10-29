@@ -7,6 +7,9 @@ for lang in en de ru es fa fr nl ja pl pt-br zh; do
   # and no HTML exists yet.
   rm -f "backend/public/${lang}/index.html"
 done
+# data files are created by the ActivityApiController when requested
+# and no data files exist yet.
+rm -f "backend/public/api/"
 
 php backend/bin/console cache:clear --no-warmup --env=prod
 php backend/bin/console cache:warmup --env=prod

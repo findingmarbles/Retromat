@@ -3,6 +3,10 @@
 # when the templates are (re-) generated.
 /public/*/index.html
 
+# data files are created by the ActivityApiController when requested
+# and no data files exist yet. They are deleted by # index_deploy-from-php-to-twig.sh when the templates are (re-) generated.
+/public/api/
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php

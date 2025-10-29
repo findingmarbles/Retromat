@@ -11,6 +11,12 @@
     Header set Cache-Control "max-age=3600, s-maxage=84600, public"
 </filesMatch>
 
+# Cache API JSON files
+# Matches ActivityApiController cache policy: maxage=3600, smaxage=84600
+<filesMatch "^api/(activities_[a-z\-]+|activity_[0-9]+_[a-z\-]+)\.json$">
+    Header set Cache-Control "max-age=3600, s-maxage=84600, public"
+</filesMatch>
+
 # Cache JavaScript files for 1 day
 <filesMatch ".(js)$">
     Header set Cache-Control "max-age=86400, public"

@@ -38,12 +38,22 @@ final class ActivityApiController extends AbstractFOSRestController
     #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivities(Request $request): View
     {
+        $locale = $request->getLocale();
         $activities = $this->activityRepository->findAllOrdered();
-        $localizedActivities = $this->activityLocalizer->localize($activities, $request->getLocale(), true);
+        $localizedActivities = $this->activityLocalizer->localize($activities, $locale, true);
 
-        $response = $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
-
-        return $response;
+        $view = $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+        
+        // Write Data to static file
+        $response = $this->handleView($view);
+        $publicDir = $this->getParameter('kernel.project_dir').'/public';
+        $staticDir = $publicDir.'/'.'api';
+        if (!is_dir($staticDir)) {
+            mkdir($staticDir, 0755, true);
+        }
+        file_put_contents($staticDir.'/activities_'.$locale.'.json', $response->getContent());
+        
+        return $view;
     }
 
     /**
@@ -52,13 +62,24 @@ final class ActivityApiController extends AbstractFOSRestController
     #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivity(Request $request, string $id): View
     {
+        $locale = $request->getLocale();
+
         /** @var $activity Activity */
         $activity = $this->activityRepository->find($id);
 
         $this->activityExpander->expandSource($activity);
 
-        $response = $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
-
-        return $response;
+        $view = $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
+        
+        // Write HTML to static file
+        $response = $this->handleView($view);
+        $publicDir = $this->getParameter('kernel.project_dir').'/public';
+        $staticDir = $publicDir.'/'.'api';
+        if (!is_dir($staticDir)) {
+            mkdir($staticDir, 0755, true);
+        }
+        file_put_contents($staticDir.'/activity_'.$id.'_'.$locale.'.json', $response->getContent());
+        
+        return $view;
     }
 }
