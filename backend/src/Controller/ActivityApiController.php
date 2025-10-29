@@ -33,13 +33,11 @@ final class ActivityApiController extends AbstractFOSRestController
     }
 
     /**
-     * @Rest\Get("/api/activities", name="activities")
+     * @Rest\Get("/api/activities_{_locale}.json", name="activities", defaults={ "_format" = "json" })
      */
     #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivities(Request $request): View
     {
-        $request->setLocale($request->query->get('locale', 'en'));
-
         $activities = $this->activityRepository->findAllOrdered();
         $localizedActivities = $this->activityLocalizer->localize($activities, $request->getLocale(), true);
 
@@ -49,13 +47,11 @@ final class ActivityApiController extends AbstractFOSRestController
     }
 
     /**
-     * @Rest\Get("/api/activity/{id}", name="activity")
+     * @Rest\Get("/api/activity_{id}_{_locale}.json", name="activity", defaults={ "_format" = "json" })
      */
     #[Cache(public: true, maxage: 3600, smaxage: 84600)]
     public function getActivity(Request $request, string $id): View
     {
-        $request->setLocale($request->query->get('locale', 'en'));
-
         /** @var $activity Activity */
         $activity = $this->activityRepository->find($id);
 

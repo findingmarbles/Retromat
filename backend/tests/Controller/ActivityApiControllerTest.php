@@ -20,7 +20,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
 
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/32');
+        $client->request('GET', '/api/activity_32_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -28,7 +28,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/api/activity/59');
+        $client->request('GET', '/api/activity_59_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -36,7 +36,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/api/activity/80');
+        $client->request('GET', '/api/activity_80_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -50,7 +50,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/32?locale=de');
+        $client->request('GET', '/api/activity_32_de.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -58,7 +58,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/api/activity/58?locale=de');
+        $client->request('GET', '/api/activity_58_de.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -66,7 +66,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['name']
         );
 
-        $client->request('GET', '/api/activity/75?locale=de');
+        $client->request('GET', '/api/activity_75_de.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -80,7 +80,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/17');
+        $client->request('GET', '/api/activity_17_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -88,7 +88,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/api/activity/80');
+        $client->request('GET', '/api/activity_80_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -102,7 +102,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/77');
+        $client->request('GET', '/api/activity_77_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -110,7 +110,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/api/activity/5');
+        $client->request('GET', '/api/activity_5_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -124,7 +124,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/15');
+        $client->request('GET', '/api/activity_15_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -132,7 +132,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/api/activity/37');
+        $client->request('GET', '/api/activity_37_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -146,7 +146,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/14');
+        $client->request('GET', '/api/activity_14_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -154,7 +154,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
             $activity['source']
         );
 
-        $client->request('GET', '/api/activity/65');
+        $client->request('GET', '/api/activity_65_en.json');
         $activity = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -168,7 +168,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activities');
+        $client->request('GET', '/api/activities_en.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(
@@ -187,7 +187,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activities');
+        $client->request('GET', '/api/activities_en.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
@@ -204,7 +204,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activities?locale=de');
+        $client->request('GET', '/api/activities_de.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(1, $activities[1 - 1]['retromatId']);
@@ -221,23 +221,23 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activities?locale=de');
+        $client->request('GET', '/api/activities_de.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(75, $activities);
 
-        $client->request('GET', '/api/activities?locale=en');
+        $client->request('GET', '/api/activities_en.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(131, $activities);
 
-        $client->request('GET', '/api/activities?locale=es');
+        $client->request('GET', '/api/activities_es.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(95, $activities);
 
-        $client->request('GET', '/api/activities?locale=fr');
+        $client->request('GET', '/api/activities_fr.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(50, $activities);
 
-        $client->request('GET', '/api/activities?locale=nl');
+        $client->request('GET', '/api/activities_nl.json');
         $activities = \json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(101, $activities);
     }
@@ -247,7 +247,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->loadFixtures(['App\Tests\Controller\DataFixtures\LoadActivityData']);
         $client = $this->getKernelBrowser();
 
-        $client->request('GET', '/api/activity/59');
+        $client->request('GET', '/api/activity_59_en.json');
         $response = $client->getResponse();
 
         $cacheControl = $response->headers->get('Cache-Control');
@@ -263,7 +263,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $client = $this->getKernelBrowser();
 
         // Test English collection
-        $client->request('GET', '/api/activities?locale=en');
+        $client->request('GET', '/api/activities_en.json');
         $response = $client->getResponse();
         $cacheControl = $response->headers->get('Cache-Control');
 
@@ -272,7 +272,7 @@ final class ActivityApiControllerTest extends AbstractTestCase
         $this->assertStringContainsString('max-age=3600', $cacheControl);
 
         // Test German collection
-        $client->request('GET', '/api/activities?locale=de');
+        $client->request('GET', '/api/activities_de.json');
         $response = $client->getResponse();
         $cacheControl = $response->headers->get('Cache-Control');
 
