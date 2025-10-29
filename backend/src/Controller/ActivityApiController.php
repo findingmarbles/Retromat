@@ -43,16 +43,16 @@ final class ActivityApiController extends AbstractFOSRestController
         $localizedActivities = $this->activityLocalizer->localize($activities, $locale, true);
 
         $view = $this->view($localizedActivities, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
-        
+
         // Write Data to static file
         $response = $this->handleView($view);
         $publicDir = $this->getParameter('kernel.project_dir').'/public';
-        $staticDir = $publicDir.'/'.'api';
+        $staticDir = $publicDir.'/api';
         if (!is_dir($staticDir)) {
             mkdir($staticDir, 0755, true);
         }
         file_put_contents($staticDir.'/activities_'.$locale.'.json', $response->getContent());
-        
+
         return $view;
     }
 
@@ -70,16 +70,16 @@ final class ActivityApiController extends AbstractFOSRestController
         $this->activityExpander->expandSource($activity);
 
         $view = $this->view($activity, Response::HTTP_OK)->setContext((new Context())->addGroup(self::SERIALIZER_GROUP));
-        
+
         // Write HTML to static file
         $response = $this->handleView($view);
         $publicDir = $this->getParameter('kernel.project_dir').'/public';
-        $staticDir = $publicDir.'/'.'api';
+        $staticDir = $publicDir.'/api';
         if (!is_dir($staticDir)) {
             mkdir($staticDir, 0755, true);
         }
         file_put_contents($staticDir.'/activity_'.$id.'_'.$locale.'.json', $response->getContent());
-        
+
         return $view;
     }
 }
