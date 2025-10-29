@@ -99,10 +99,15 @@ On any change:
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
 ```
 
-Or, more specific and quick
+Run one test:
 
 ```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit --filter testCachingHeaders"
+```
+
+Run one test file:
+```bash
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php -d memory_limit=1000M vendor/bin/phpunit tests/Controller/ActivityApiControllerTest.php"
 ```
 
 # Access App via Browser
