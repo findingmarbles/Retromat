@@ -19,7 +19,7 @@ To see frontend-only changes:
 ```
 ./index_deploy-from-php-to-twig.sh
 ```
-If anything is weird (long time since last checkout, lots of changes, ...), then work thorugh the long version of the steps below:
+If anything is weird (long time since last checkout, lots of changes, ...), then work through the long version of the steps below:
 
 Go to repo
 ```
@@ -60,7 +60,7 @@ ONLY IF composer still fails, try this 2x, then the combo above:
 rm -rf backend/var/cache/*
 ```
 
-Adapt database as specified in repo:
+Adapt database automatically using our defined migrations:
 ```
 php backend/bin/console doctrine:migrations:migrate --no-interaction
 ```
@@ -68,12 +68,17 @@ php backend/bin/console doctrine:migrations:migrate --no-interaction
 Clear compiled code, templates, DB cache etc. from disk, Redis RAM, PHP RAM
 ```
 rm -rf backend/var/cache
-redis-cli -s /home/retro2/.redis/sock FLUSHALL
+redis-cli -s /home/retrodev/.redis/sock FLUSHALL
 ```
-Clear and warump disk cache
+Clear and warmup disk cache
 ```
 php backend/bin/console cache:clear --no-warmup --env=prod
 php backend/bin/console cache:warmup --env=prod
+```
+
+(re-) generate templates from index.php (the script is at repo toplevel) 
+```
+./index_deploy-from-php-to-twig.sh
 ```
 
 On a dev instance you can usually skip this step:
@@ -81,11 +86,6 @@ But do it if something is weird:
 Clear and warmup compiled code, templates etc. from RAM
 ```
 uberspace tools restart php
-```
-
-(re-) generate templates from index.php (the script is at repo toplevel) 
-```
-./index_deploy-from-php-to-twig.sh
 ```
 
 Everything should be totally fresh at this point.
