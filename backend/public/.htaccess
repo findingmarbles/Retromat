@@ -30,7 +30,7 @@
 </filesMatch>
 
 # Cache static assets for 1 month
-<filesMatch ".(css|jpg|jpeg|png|gif|ico|txt)$">
+<filesMatch ".(css|jpg|jpeg|png|gif|ico|svg|txt)$">
     Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
 
