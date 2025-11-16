@@ -154,21 +154,6 @@ var PHASE_ID_TAG = 'phase';
 <link rel="alternate" hreflang="zh" href="/zh/" />
 <link rel="alternate" hreflang="ja" href="/ja/" />
 
-<!-- Matomo -->
-<script type="text/javascript">
-    var _paq = _paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u="//retromat.org/piwik/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', '3']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
-</script>
-<!-- End Matomo Code -->
 </head>
 
 <body onload="JavaScript:init()">
@@ -419,10 +404,6 @@ var PHASE_ID_TAG = 'phase';
             <li><a href="/blog/privacy-policy">Imprint &amp; Privacy Policy</a></li>
         </ul>
     </div>
-
-    <!-- Matomo -->
-    <noscript><img src="//retromat.org/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></noscript>
-    <!-- End Matomo Code -->
 
 </body>
 </html>
