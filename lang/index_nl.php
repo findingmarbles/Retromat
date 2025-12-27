@@ -18,7 +18,7 @@ $_lang['INDEX_ABOUT'] = 'Retromat bevat <span class="js_footer_no_of_activities"
 
 $_lang['INDEX_TEAM_TRANSLATOR_TITLE'] = 'Vertaling: ';
 $_lang['INDEX_TEAM_TRANSLATOR_NAME'][0] = 'Linda van der Pal';
-$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://twitter.com/DuchessFounder';
+$_lang['INDEX_TEAM_TRANSLATOR_LINK'][0] = 'https://www.linkedin.com/in/lvdpal/';
 $_lang['INDEX_TEAM_TRANSLATOR_IMAGE'][0] = '/static/images/team/lvdpal.jpg';
 $_lang['INDEX_TEAM_TRANSLATOR_TEXT'][0] = <<<EOT
                                             Linda is Java ontwikkelaar en Scrum master bij Trailblazers. Ze is de 
