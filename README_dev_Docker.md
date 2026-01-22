@@ -1,23 +1,19 @@
 # Setup Retromat using Docker
 
-Short version (see long version below for explanations and plan c and c)
+Ideally, run this and be done:
 
 ```bash
-echo "DATABASE_URL=mysql://root:PaSsWoRd@db:3306/retromat?serverVersion=mariadb-10.3.30" > backend/.env.local
-docker compose --env-file docker-ports.env up -d
-docker exec -it retromat-db-1 sh -c "cd /app/backend && ./db-setup-in-docker.sh"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer install"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:migrations:migrate --no-interaction"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-result"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-query"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-metadata"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create --if-not-exists"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:drop --force"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:migrations:migrate --no-interaction"
-docker exec -it retromat-php-fpm-1 sh -c "sh index_deploy-from-php-to-twig.sh"
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
+./docker-dev-setup.sh
 ```
+
+If you need to free up diskspace or habe another reason the really start from scratch, run this before setup (careful, slow and traffic intensive, as even image caches are cleared):
+
+```bash
+docker compose down --remove-orphans --rmi local -v
+docker builder prune -a -f
+```
+
+If you want to understand each step or you need a plan b or plan c, see below.
 
 ## Install Docker + Docker-Compose
 
