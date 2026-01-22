@@ -28,6 +28,8 @@ services:
   image: mariadb
   ports:
    - ${RETROMAT_DB_PORT:-3306}:3306
+  volumes:
+   - .:/app
   environment:
    MYSQL_ROOT_PASSWORD: PaSsWoRd
   env_file:

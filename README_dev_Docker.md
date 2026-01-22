@@ -19,7 +19,7 @@ After modifications add "--build".
 Run the database setup script to create the database and import the SQL dump:
 
 ```bash
-docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./db-setup-in-docker.sh"
+ docker exec -it retromat-db-1 sh -c 'cd /app/backend && ./db-setup-in-docker.sh'
 ```
 
 If `DB_NAME` is not provided, it will be extracted from `DATABASE_URL` in `.env` or `.env.local`. The script will create the database with the correct collation (`utf8mb4_unicode_ci`) and import `backend/sql-dumps/retromat-anonymized.sql`.
