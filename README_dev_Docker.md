@@ -1,11 +1,30 @@
 # Setup Retromat using Docker
 
+Short version (see long version below for explanations and plan c and c)
+
+```bash
+echo "DATABASE_URL=mysql://root:PaSsWoRd@db:3306/retromat?serverVersion=mariadb-10.3.30" > backend/.env.local
+docker compose --env-file docker-ports.env up -d
+docker exec -it retromat-db-1 sh -c "cd /app/backend && ./db-setup-in-docker.sh"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer install"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:migrations:migrate --no-interaction"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-result"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-query"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:cache:clear-metadata"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create --if-not-exists"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:drop --force"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:migrations:migrate --no-interaction"
+docker exec -it retromat-php-fpm-1 sh -c "sh index_deploy-from-php-to-twig.sh"
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && rm -rf var/cache && php -d memory_limit=1000M vendor/bin/phpunit"
+```
+
 ## Install Docker + Docker-Compose
 
 * macOS: Install Docker Desktop (because Docker Engine is not available), this now inlcudes Docker-compose https://docs.docker.com/compose/install/
 * AL2023 (Amazon Linux 2023): Install Docker Engine (because Docker Desktop is not available) via dnf and Docker Compose from their website.
 
-Start the services (normally):
+## Start the services
 
 ```bash
 docker compose --env-file docker-ports.env up -d # detach, logs at: docker compose logs -f
@@ -19,7 +38,7 @@ After modifications add "--build".
 Run the database setup script to create the database and import the SQL dump:
 
 ```bash
- docker exec -it retromat-db-1 sh -c 'cd /app/backend && ./db-setup-in-docker.sh'
+docker exec -it retromat-db-1 sh -c "cd /app/backend && ./db-setup-in-docker.sh" # [DB_NAME] is usually not needed
 ```
 
 If `DB_NAME` is not provided, it will be extracted from `DATABASE_URL` in `.env` or `.env.local`. The script will create the database with the correct collation (`utf8mb4_unicode_ci`) and import `backend/sql-dumps/retromat-anonymized.sql`.
@@ -43,6 +62,9 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && composer update sym
 }
 
 Add .env.local to set mysql root PW .
+```bash
+echo "DATABASE_URL=mysql://root:PaSsWoRd@db:3306/retromat?serverVersion=mariadb-10.3.30" > backend/.env.local
+```
 
 ```bash
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doctrine:migrations:migrate --no-interaction"
@@ -52,13 +74,11 @@ docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console doc
 ```
 
 ## Run Tests
-Initially:
-Create .env.test.local (e.g. by copying .env.local) with a different DB name. 
-At this point the author prefers to create retromat-local-test (and for unkown reasons, while running phpunit, this now becomes retromat-local-test_test - need to find that out later).
 
 On code change related to the DB (e.g. entities):
 
 ```bash
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create --if-not-exists"
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:drop --force"
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:database:create"
 docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && php bin/console --env=test doctrine:migrations:migrate --no-interaction"

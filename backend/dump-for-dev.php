@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 // Check if running as retro2 user
 $currentUser = posix_getpwuid(posix_geteuid())['name'] ?? getenv('USER') ?? '';
-if ($currentUser !== 'retro2') {
+if ('retro2' !== $currentUser) {
     fwrite(STDERR, "\n");
     fwrite(STDERR, "Error: This script is specific to the live host.\n");
     fwrite(STDERR, "\n");
@@ -15,8 +15,8 @@ if ($currentUser !== 'retro2') {
 }
 
 $sqlDumpsDir = '/var/www/virtual/retro2/retromat.git/backend/sql-dumps/';
-$tmpFile = $sqlDumpsDir . 'tmp_retro2_retromat.sql';
-$outputFile = $sqlDumpsDir . 'retromat-anonymized.sql';
+$tmpFile = $sqlDumpsDir.'tmp_retro2_retromat.sql';
+$outputFile = $sqlDumpsDir.'retromat-anonymized.sql';
 
 // Change to sql-dumps directory
 if (!chdir($sqlDumpsDir)) {
@@ -27,7 +27,7 @@ if (!chdir($sqlDumpsDir)) {
 // Run mysqldump
 $mysqldumpCmd = "/usr/bin/mysqldump --defaults-file=/home/retro2/.my.cnf retro2_retromat > $tmpFile";
 exec($mysqldumpCmd, $output, $returnVar);
-if ($returnVar !== 0) {
+if (0 !== $returnVar) {
     fwrite(STDERR, "Error: mysqldump failed\n");
     exit(1);
 }
@@ -39,13 +39,13 @@ if (!file_exists($tmpFile)) {
 }
 
 $inputHandle = fopen($tmpFile, 'r');
-if ($inputHandle === false) {
+if (false === $inputHandle) {
     fwrite(STDERR, "Error: Cannot open input file: $tmpFile\n");
     exit(1);
 }
 
 $outputHandle = fopen($outputFile, 'w');
-if ($outputHandle === false) {
+if (false === $outputHandle) {
     fwrite(STDERR, "Error: Cannot create output file: $outputFile\n");
     fclose($inputHandle);
     exit(1);
@@ -55,7 +55,7 @@ if ($outputHandle === false) {
 $defaultPasswordHash = '$2y$13$KxxSkgG1NkPHm.Kk3ctkY.1CqJACjK7O4KKJQOqHM469E3rD87Z/2';
 
 /**
- * Parse SQL value - handles quoted strings with escaped quotes (doubled quotes in MySQL)
+ * Parse SQL value - handles quoted strings with escaped quotes (doubled quotes in MySQL).
  */
 function parseSqlValue(string $sql, int &$pos): ?string
 {
@@ -66,7 +66,7 @@ function parseSqlValue(string $sql, int &$pos): ?string
 
     // Skip whitespace
     while ($pos < $len && ctype_space($sql[$pos])) {
-        $pos++;
+        ++$pos;
     }
 
     if ($pos >= $len) {
@@ -74,45 +74,48 @@ function parseSqlValue(string $sql, int &$pos): ?string
     }
 
     // Handle NULL
-    if (substr($sql, $pos, 4) === 'NULL') {
+    if ('NULL' === substr($sql, $pos, 4)) {
         $pos += 4;
+
         return 'NULL';
     }
 
     // Handle quoted string
-    if ($sql[$pos] === "'") {
-        $pos++; // Skip opening quote
+    if ("'" === $sql[$pos]) {
+        ++$pos; // Skip opening quote
         $value = '';
         while ($pos < $len) {
-            if ($sql[$pos] === "'") {
+            if ("'" === $sql[$pos]) {
                 // Check if it's an escaped quote (doubled)
-                if ($pos + 1 < $len && $sql[$pos + 1] === "'") {
+                if ($pos + 1 < $len && "'" === $sql[$pos + 1]) {
                     $value .= "'";
                     $pos += 2;
                 } else {
                     // End of string
-                    $pos++;
+                    ++$pos;
                     break;
                 }
             } else {
                 $value .= $sql[$pos];
-                $pos++;
+                ++$pos;
             }
         }
+
         return $value;
     }
 
     // Handle unquoted value (number, etc.)
     $start = $pos;
-    while ($pos < $len && $sql[$pos] !== ',' && $sql[$pos] !== ')') {
-        $pos++;
+    while ($pos < $len && ',' !== $sql[$pos] && ')' !== $sql[$pos]) {
+        ++$pos;
     }
+
     return substr($sql, $start, $pos - $start);
 }
 
 /**
  * Parse a single user record from SQL VALUES format
- * Format: (id,'username','email',enabled,salt,'password','roles')
+ * Format: (id,'username','email',enabled,salt,'password','roles').
  */
 function parseUserRecord(string $record): ?array
 {
@@ -120,46 +123,46 @@ function parseUserRecord(string $record): ?array
     $len = strlen($record);
 
     // Skip opening parenthesis
-    if ($pos >= $len || $record[$pos] !== '(') {
+    if ($pos >= $len || '(' !== $record[$pos]) {
         return null;
     }
-    $pos++;
+    ++$pos;
 
     $id = parseSqlValue($record, $pos);
-    if ($id === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $id || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $username = parseSqlValue($record, $pos);
-    if ($username === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $username || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $email = parseSqlValue($record, $pos);
-    if ($email === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $email || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $enabled = parseSqlValue($record, $pos);
-    if ($enabled === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $enabled || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $salt = parseSqlValue($record, $pos);
-    if ($salt === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $salt || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $password = parseSqlValue($record, $pos);
-    if ($password === null || $pos >= $len || $record[$pos] !== ',') {
+    if (null === $password || $pos >= $len || ',' !== $record[$pos]) {
         return null;
     }
-    $pos++; // Skip comma
+    ++$pos; // Skip comma
 
     $roles = parseSqlValue($record, $pos);
 
@@ -175,7 +178,7 @@ function parseUserRecord(string $record): ?array
 }
 
 /**
- * Escape a string for SQL (doubles single quotes)
+ * Escape a string for SQL (doubles single quotes).
  */
 function escapeSqlString(string $str): string
 {
@@ -202,14 +205,14 @@ while (($line = fgets($inputHandle)) !== false) {
         foreach ($records as $record) {
             // Add back parentheses if they were removed by split
             if (!str_starts_with($record, '(')) {
-                $record = '(' . $record;
+                $record = '('.$record;
             }
             if (!str_ends_with($record, ')')) {
-                $record = $record . ')';
+                $record = $record.')';
             }
 
             $userData = parseUserRecord($record);
-            if ($userData === null) {
+            if (null === $userData) {
                 // If parsing fails, keep original
                 $anonymizedRecords[] = $record;
                 continue;
@@ -238,11 +241,11 @@ while (($line = fgets($inputHandle)) !== false) {
             $anonymizedRecords[] = $anonymizedRecord;
         }
 
-        $line = "INSERT INTO `user` VALUES " . implode(',', $anonymizedRecords) . ';';
+        $line = 'INSERT INTO `user` VALUES '.implode(',', $anonymizedRecords).';';
     }
 
     // Always write with standard Unix line ending
-    fwrite($outputHandle, $line . "\n");
+    fwrite($outputHandle, $line."\n");
 }
 
 fclose($inputHandle);
