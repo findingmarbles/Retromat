@@ -183,6 +183,9 @@ function escapeSqlString(string $str): string
 }
 
 while (($line = fgets($inputHandle)) !== false) {
+    // Normalize line endings: remove any existing line terminators (CR, LF, LS, PS, etc.)
+    $line = rtrim($line, "\r\n\x{2028}\x{2029}");
+
     // Skip user_reset_password_request INSERT statements
     if (preg_match('/^INSERT INTO `user_reset_password_request`/', $line)) {
         continue;
@@ -235,10 +238,11 @@ while (($line = fgets($inputHandle)) !== false) {
             $anonymizedRecords[] = $anonymizedRecord;
         }
 
-        $line = "INSERT INTO `user` VALUES " . implode(',', $anonymizedRecords) . "\n";
+        $line = "INSERT INTO `user` VALUES " . implode(',', $anonymizedRecords);
     }
 
-    fwrite($outputHandle, $line);
+    // Always write with standard Unix line ending
+    fwrite($outputHandle, $line . "\n");
 }
 
 fclose($inputHandle);
