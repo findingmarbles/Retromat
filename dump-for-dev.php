@@ -238,7 +238,7 @@ while (($line = fgets($inputHandle)) !== false) {
             $anonymizedRecords[] = $anonymizedRecord;
         }
 
-        $line = "INSERT INTO `user` VALUES " . implode(',', $anonymizedRecords);
+        $line = "INSERT INTO `user` VALUES " . implode(',', $anonymizedRecords) . ';';
     }
 
     // Always write with standard Unix line ending

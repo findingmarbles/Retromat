@@ -16,30 +16,13 @@ After modifications add "--build".
 
 ## Setup up the database
 
-### Prepare the Docker DB
-
-Open PHPMyAdmin instance running in Docker:
-
-* macOS: In the Docker Desktop App, click "Open in Browser" on the PHPMyAdmin container or directly use a browser to go to: http://localhost:10181/
-* AL2023: Set up ssh tunnel, then open http://localhost:10181/
-
-Obtain the value of MYSQL_ROOT_PASSWORD from
+Run the database setup script to create the database and import the SQL dump:
 
 ```bash
-/docker-compose.yml
+docker exec -it retromat-php-fpm-1 sh -c "cd /app/backend && ./db-setup-in-docker.sh [DB_NAME]"
 ```
 
-to login as root.
-
-Create the DB: 
-Name: You need to use the same DB name as specified in 
-.env or .env.local, at this point the author prefers to create (and import into)
-retromat-local-prod to keep it separate from the local DB used for testing.
-Collation: utf8mb4_unicode_ci
-
-### Insert the sql dump into the Docker DB
-
-Finally, import backend/sql-dumps/retromat-anonymized.sql (created on the live host using dump-for-dev.php) into the DB you just created, via command line or using PHPMyAdmin (which can actually be convenient when accessing it from a laptop through a tunnel).
+If `DB_NAME` is not provided, it will be extracted from `DATABASE_URL` in `.env` or `.env.local`. The script will create the database with the correct collation (`utf8mb4_unicode_ci`) and import `backend/sql-dumps/retromat-anonymized.sql`.
 
 ## Install libraries
 
