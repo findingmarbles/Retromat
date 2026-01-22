@@ -16,16 +16,15 @@ else
     # Check if docker is available
     if ! command -v docker >/dev/null 2>&1; then
         echo "Error: docker command not found."
-        echo "This script can be run either:"
-        echo "  1. From the host: ./db-setup-in-docker.sh [DB_NAME]"
-        echo "  2. Inside Docker: docker exec -it retromat-php-fpm-1 sh -c 'cd /app/backend && ./db-setup-in-docker.sh [DB_NAME]'"
+        echo "This script must be run from the host machine where Docker is available."
+        echo "Usage: ./db-setup-in-docker.sh [DB_NAME]"
         exit 1
     fi
     
     # Check if db container is running
     if ! docker ps --format '{{.Names}}' | grep -q '^retromat-db-1$'; then
         echo "Error: retromat-db-1 container is not running."
-        echo "Please start Docker containers first: docker compose up -d"
+        echo "Please start Docker containers first: docker compose --env-file docker-ports.env up -d"
         exit 1
     fi
 fi
