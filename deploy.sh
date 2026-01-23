@@ -51,6 +51,11 @@ cd /var/www/virtual/retro2/retromat.git/
 # https://askubuntu.com/questions/566474/why-do-i-get-directory-not-empty-when-i-try-to-remove-an-empty-directory
 rm -rf backend/var/cache/prod/*
 redis-cli -s /home/retro2/.redis/sock FLUSHALL
+rm -rf backend/public/api/*
+LOCALES=(en de fa fr es ja nl pl pt-br ru zh)
+for locale in "${LOCALES[@]}"; do
+  rm -rf "backend/public/$locale/"
+done
 uberspace tools restart php
 
 # warm up
