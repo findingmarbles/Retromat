@@ -6,7 +6,7 @@ Ideally, run this and be done:
 ./docker-dev-setup.sh
 ```
 
-If you need to free up diskspace or habe another reason the really start from scratch, run this before setup (careful, slow and traffic intensive, as even image caches are cleared):
+If you need to free up diskspace or have another reason the really start from scratch, run this before setup (careful, slow and traffic intensive, as even image caches are cleared):
 
 ```bash
 docker compose down --remove-orphans --rmi local -v
