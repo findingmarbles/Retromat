@@ -211,7 +211,7 @@ var PHASE_ID_TAG = 'phase';
  
                     <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives" target="_blank">
  
-                        <img src="/static/images/promo-eBook-bundle.jpg" alt="3 Books in the Retromat eBook Bundle">
+                        <img src="/static/images/promo-eBook-bundle.jpg" alt="5 Books in the Retromat eBook Bundle">
  
                     </a>
  
