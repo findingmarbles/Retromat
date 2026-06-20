@@ -202,41 +202,48 @@ var PHASE_ID_TAG = 'phase';
         </div>
     </div>
     
-    <!-- Promo eBook Bundle 20250501 -->
+<!-- Promo Miro Board 20260620 -->
  
     <div class="promo">
         <div class="content">
             <div class="promo-inner">
+ 
+<?php if ($lang == 'de') { ?>
+                          
                 <div class="promo-image">
- 
-                    <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives" target="_blank">
- 
-                        <img src="/static/images/promo-eBook-bundle.jpg" alt="5 Books in the Retromat eBook Bundle">
- 
+                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" target="_blank">
+                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
                     </a>
- 
                 </div>
                 <div class="promo-text inner">
- 
-                Are you serious about retrospectives? The
-                <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives"
-                  target="_blank" rel="noopener">Retromat eBook Bundle</a> 
-                is here to support you from beginner to experienced facilitator</b>
- 
+                    Macht ihr eure Retros in <b>Miro</b>? Gestalte schönere Boards in kürzerer Zeit mit dem <b>Retromat Miroboard Mega Template!</b>
                     <br><br>
- 
-                    <a href="https://leanpub.com/b/retromat-bundle-agile-retrospectives" class="button-medium" style="color:white" target="_blank" rel="noopener">
- 
-                       Check Out the Retromat eBook Bundle
- 
+                    <a href="/blog/deutsches-retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
+                       Mega Template angucken
                     </a>
-                    <br><br>
-                    (<a href="{{ path('print') }}" class="small-font" target="_blank" rel="noopener">And of course there's also the Print Retromat.</a>)
- 
                 </div>
+ 
+<?php } else { ?>
+ 
+                <div class="promo-image">
+                    <a href="/blog/retromat-miroboard-mega-template/" target="_blank">
+                        <img src="/static/images/miroboard/Retromat-Miroboard-Mega-Template.jpg" alt="Retromat Miroboard Mega Template">
+                    </a>
+                </div>
+                <div class="promo-text inner">
+                    Are you running your retrospectives with <b>Miro</b>? Create prettier boards faster with the giant <b>Retromat Miroboard Mega Template</b>!
+                    <br><br
+                    <a href="/blog/retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
+                       Check out the Mega Template 
+                    </a>
+                </div>   
+ 
+<?php } ?>
+ 
             </div>
-        </div>
+        </div> 
     </div>
+<!-- END Promo Miro Board 20260620 -->
 
     <div class="plan-header">
         <div class="content">
