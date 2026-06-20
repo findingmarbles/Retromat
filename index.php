@@ -232,7 +232,7 @@ var PHASE_ID_TAG = 'phase';
                 </div>
                 <div class="promo-text inner">
                     Are you running your retrospectives with <b>Miro</b>? Create prettier boards faster with the giant <b>Retromat Miroboard Mega Template</b>!
-                    <br><br
+                    <br><br>
                     <a href="/blog/retromat-miroboard-mega-template/" class="button-medium" style="color:white" target="_blank" rel="noopener">
                        Check out the Mega Template 
                     </a>
